@@ -1,0 +1,14 @@
+# Ignore generated screenshot files
+JForexScreenshots/
+
+# Ignore Visual Studio and Rider files
+.vs/
+*.suo
+*.user
+
+build_errors.txt
+build_output.txt
+
+# Ignore build output
+[Bb]in/
+[Oo]bj/ 

@@ -1,0 +1,791 @@
+using System;
+using System.Linq;
+using System.Windows;
+using System.Windows.Input;
+using System.ComponentModel;
+using System.Windows.Forms;
+using ScreenCaptureApp.Services;
+using ScreenCaptureApp.Models;
+using System.Collections.Generic;
+using System.IO;
+using System.Windows.Threading;
+using ScreenCaptureApp.Helpers;
+using System.Threading.Tasks;
+using System.Threading;
+using System.Windows.Media;
+using System.Drawing;
+
+namespace ScreenCaptureApp
+{
+    public partial class MainWindow : Window
+    {
+        private ScreenCaptureOverlay overlay;
+        private bool isCapturing = false;
+        private IntPtr targetWindow = IntPtr.Zero; // Variable to store target window handle
+        private CanvasWindow currentCanvasWindow = null;
+        private string activeSymbol = null;
+        private CancellationTokenSource _autoTrackingCts;
+        private Task _autoTrackingTask;
+        private bool isAutoTrackingActive = false;
+        private const double CollapsedHeight = 110;
+        private const double ExpandedHeight = 600;
+        
+        // Brush color state
+        private bool isYellowBrush = true; // true = yellow, false = black - default to yellow for SimpleMod
+        
+        // Public property to access brush color state
+        public bool IsYellowBrush => isYellowBrush;
+
+        public MainWindow()
+        {
+            ServiceInitializer.RegisterAllServices();
+            InitializeComponent();
+
+            this.Loaded += MainWindow_Loaded;
+            this.Closing += MainWindow_Closing;
+
+            InitializeServices();
+
+            StartAutoTracking();
+
+            var mt4SocketService = ServiceContainer.Instance.GetService<Mt4SocketService>();
+            if (mt4SocketService != null)
+                mt4SocketService.ConnectionStatusChanged += Mt4SocketService_ConnectionStatusChanged;
+
+            var captureTrackingService = ServiceContainer.Instance.GetService<CaptureTrackingService>();
+            if (mt4SocketService != null && captureTrackingService != null)
+                mt4SocketService.SubscribeToCaptureTrackingEvents(captureTrackingService);
+
+            this.Loaded += async (s, e) =>
+            {
+                if (mt4SocketService != null)
+                    await mt4SocketService.ConnectAsync();
+            };
+
+            var databaseService = ServiceContainer.Instance.GetService<DatabaseService>();
+            ((App)System.Windows.Application.Current).SubscribeToCaptureTrackingIteration(captureTrackingService, databaseService);
+
+            var hotkeysService = ServiceContainer.Instance.GetService<HotkeysService>();
+            if (hotkeysService != null)
+            {
+                hotkeysService.OnSymbolHotkeyPressed1 += () => TriggerSymbolButton(0);
+                hotkeysService.OnSymbolHotkeyPressed2 += () => TriggerSymbolButton(1);
+                hotkeysService.OnSymbolHotkeyPressed3 += () => TriggerSymbolButton(2);
+                hotkeysService.OnSymbolHotkeyPressed4 += () => TriggerSymbolButton(3);
+                hotkeysService.OnSymbolHotkeyPressed5 += () => TriggerSymbolButton(4);
+                hotkeysService.OnSymbolHotkeyPressed6 += () => TriggerSymbolButton(5);
+            }
+        }
+
+        private void InitializeServices()
+        {
+            try
+            {
+                // Initialize services using helper
+                            ServiceInitializer.InitializeHotkeysService(
+                Dispatcher,
+                OnSpaceKeyPressed,
+                OnTKeyPressed,
+                OnEscapeKeyPressed,
+                OnBackQuoteKeyPressed,
+                OnCKeyPressed,
+                OnWKeyPressed,
+                OnAKeyPressed,
+                OnSKeyPressed,
+                OnDKeyPressed);
+
+                ServiceInitializer.InitializeWindowManagementService(Dispatcher);
+                ServiceInitializer.InitializeMt4SocketService(Dispatcher);
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show($"Failed to initialize services: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void OnSpaceKeyPressed()
+        {
+            // Проверяем, находится ли курсор мыши над CanvasWindow
+            if (IsMouseOverCanvasWindow())
+            {
+                // Если курсор над CanvasWindow — переключаем Trading Mode
+                if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
+                {
+                    currentCanvasWindow.ToggleTradingMode();
+                    Logger.LogDebug("Space pressed over CanvasWindow: toggled trading mode");
+                }
+                return;
+            }
+            
+            // Если курсор не над CanvasWindow — обновляем target window
+            IntPtr newTargetWindow = MainHelper.GetWindowUnderCursor();
+            
+            // Show status information
+            if (newTargetWindow != IntPtr.Zero)
+            {
+                Logger.LogDebug($"Target window captured (Handle: 0x{newTargetWindow:X})");
+            }
+            else
+            {
+                Logger.LogDebug("No target window found under cursor");
+                return;
+            }
+            
+            // Если CanvasWindow уже открыт, обновляем его target window
+            if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
+            {
+                currentCanvasWindow.UpdateTargetWindow(newTargetWindow, activeSymbol);
+                targetWindow = newTargetWindow;
+                Logger.LogDebug("CanvasWindow target updated");
+            }
+            else
+            {
+                // Если CanvasWindow не открыт, открываем новый
+                targetWindow = newTargetWindow;
+                Canvas_Click(null, null);
+                Logger.LogDebug("New CanvasWindow opened");
+            }
+        }
+
+        private bool IsMouseOverCanvasWindow()
+        {
+            if (currentCanvasWindow == null || !currentCanvasWindow.IsVisible)
+                return false;
+            
+            try
+            {
+                // Получаем позицию курсора мыши
+                var cursorPos = System.Windows.Forms.Cursor.Position;
+                
+                // Получаем границы CanvasWindow
+                var canvasBounds = new Rectangle(
+                    (int)currentCanvasWindow.Left,
+                    (int)currentCanvasWindow.Top,
+                    (int)currentCanvasWindow.Width,
+                    (int)currentCanvasWindow.Height
+                );
+                
+                // Проверяем, находится ли курсор в пределах CanvasWindow
+                return canvasBounds.Contains(cursorPos.X, cursorPos.Y);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("Error checking if mouse is over CanvasWindow", ex);
+                return false;
+            }
+        }
+
+        private void OnTKeyPressed()
+        {
+            // Get the window handle under the current mouse cursor
+            targetWindow = MainHelper.GetWindowUnderCursor();
+
+            // Show status information
+            if (targetWindow != IntPtr.Zero)
+            {
+                Logger.LogDebug($"Target window captured (Handle: 0x{targetWindow:X})");
+            }
+            else
+            {
+                Logger.LogDebug("No target window found under cursor");
+            }
+
+            Logger.LogDebug("T key pressed - starting capture");
+            StartCapture_Click(null, null);
+        }
+
+        private void OnEscapeKeyPressed()
+        {
+            Logger.LogDebug("Escape key pressed - starting cleanup");
+            Logger.LogDebug($"Before cleanup: isCapturing={isCapturing}, overlay={(overlay == null ? "null" : "not null")}");
+            
+            // Check if canvas window is open and close it
+            if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
+            {
+                Logger.LogDebug("Closing canvas window");
+                currentCanvasWindow.Close();
+                currentCanvasWindow = null;
+                Logger.LogDebug("Canvas window closed");
+            }
+            
+            // Check if screen capture overlay is open and close it
+            if (overlay != null)
+            {
+                Logger.LogDebug($"Overlay exists, IsVisible={overlay.IsVisible}");
+                overlay.CaptureCompleted -= OnCaptureCompleted; // Unsubscribe from event
+                overlay.Close();
+                overlay = null;
+                isCapturing = false;
+                Logger.LogDebug("Overlay closed and state reset");
+            }
+            else
+            {
+                Logger.LogDebug("No overlay to close");
+            }
+            
+            Logger.LogDebug($"After cleanup: isCapturing={isCapturing}, overlay={(overlay == null ? "null" : "not null")}");
+        }
+
+        private void OnBackQuoteKeyPressed()
+        {
+            // Переключить Global Hotkeys ToggleButton
+            Dispatcher.Invoke(() =>
+            {
+                HotkeyToggleButton.IsChecked = !(HotkeyToggleButton.IsChecked ?? false);
+                if (HotkeyToggleButton.IsChecked == true)
+                    EnableHotkeys();
+                else
+                    DisableHotkeys();
+            });
+        }
+        
+        private void OnCKeyPressed()
+        {
+            Logger.LogDebug("C key pressed - clearing canvas");
+            if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
+            {
+                currentCanvasWindow.ClearCanvas();
+            }
+        }
+        
+        private void OnWKeyPressed()
+        {
+            Logger.LogDebug("W key pressed - shifting canvas up");
+            if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
+            {
+                currentCanvasWindow.ShiftCanvasUp();
+            }
+        }
+        
+        private void OnAKeyPressed()
+        {
+            Logger.LogDebug("A key pressed - shifting canvas left");
+            if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
+            {
+                currentCanvasWindow.ShiftCanvasLeft();
+            }
+        }
+        
+        private void OnSKeyPressed()
+        {
+            Logger.LogDebug("S key pressed - shifting canvas down");
+            if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
+            {
+                currentCanvasWindow.ShiftCanvasDown();
+            }
+        }
+        
+        private void OnDKeyPressed()
+        {
+            Logger.LogDebug("D key pressed - shifting canvas right");
+            if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
+            {
+                currentCanvasWindow.ShiftCanvasRight();
+            }
+        }
+
+        private void StartCapture_Click(object sender, RoutedEventArgs e)
+        {
+            Logger.LogDebug($"StartCapture_Click called. isCapturing: {isCapturing}, overlay: {(overlay == null ? "null" : "not null")}");
+            
+            if (!isCapturing)
+            {
+                Logger.LogDebug("Starting capture...");
+                StartCapture();
+            }
+            else
+            {
+                Logger.LogDebug("Capture already in progress, ignoring click");
+            }
+        }
+
+        private void StartCapture()
+        {
+            Logger.LogDebug("StartCapture method called");
+            if (!MainHelper.ValidateTargetWindow(targetWindow, "No target window selected! Hover over a window and press Space first."))
+            {
+                return;
+            }
+            
+            isCapturing = true;
+            Logger.LogDebug("Starting capture... Press hotkey again to stop");
+            overlay = new ScreenCaptureOverlay(targetWindow, activeSymbol);
+            Logger.LogDebug($"Overlay created: {overlay}");
+            overlay.CaptureCompleted += OnCaptureCompleted;
+            Logger.LogDebug("Event handler subscribed");
+            overlay.Show();
+            Logger.LogDebug("Overlay shown");
+        }
+
+        private void OnCaptureCompleted(object sender, CaptureEventArgs e)
+        {
+            var info = e.DebugInfo;
+            Logger.LogDebug("Capture completed");
+            isCapturing = false;
+
+            if (overlay != null)
+            {
+                overlay.CaptureCompleted -= OnCaptureCompleted; // Unsubscribe from event
+                overlay.Close();
+                overlay = null;
+            }
+            
+            // Запускаем трекинг после завершения захвата
+            var captureTrackingService = ServiceContainer.Instance.GetService<CaptureTrackingService>();
+            if (captureTrackingService != null)
+            {
+                _ = Task.Run(async () => await captureTrackingService.RunOnceAsync());
+            }
+        }
+
+        private void Canvas_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (!MainHelper.ValidateTargetWindow(targetWindow))
+                {
+                    return;
+                }
+                
+                if (currentCanvasWindow != null)
+                {
+                    currentCanvasWindow.Close();
+                    currentCanvasWindow = null;
+                }
+                currentCanvasWindow = new CanvasWindow(targetWindow, activeSymbol);
+                currentCanvasWindow.Closed += (s, args) => currentCanvasWindow = null;
+                currentCanvasWindow.Show();
+                Logger.LogDebug("Canvas window opened");
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show($"Error opening canvas window: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            StopAutoTracking();
+            ServiceInitializer.CleanupServices();
+            System.Windows.Application.Current.Shutdown();
+        }
+
+        private void MainWindow_Closing(object sender, CancelEventArgs e)
+        {
+            Logger.LogInfo("MainWindow closing - cleaning up resources");
+            
+            // Stop auto tracking
+            StopAutoTracking();
+            
+            // Cleanup services
+            ServiceInitializer.CleanupServices();
+            
+            Logger.LogInfo("MainWindow cleanup completed");
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            LoadLog();
+            
+            // Get screen positioning using helper
+            var (left, top, width, height) = MainHelper.GetScreenPositioning();
+
+            // Set window parameters
+            this.Left = left;
+            this.Top = top;
+            this.Width = width;
+            this.Height = CollapsedHeight;
+
+            StartAutoTracking(); // автозапуск при открытии окна
+            
+            // Включаем hotkeys по умолчанию
+            HotkeyToggleButton.IsChecked = true;
+            EnableHotkeys();
+            
+            // Обновляем заголовок окна с начальными статусами
+            UpdateWindowTitle();
+            
+            // Инициализируем индикаторы кистей
+            UpdateBrushColorIndicators();
+        }
+
+        private void LoadLog()
+        {
+            string logContent = Logger.GetAllLogs();
+            if (!string.IsNullOrEmpty(logContent))
+            {
+                var lines = logContent.Split(new[] { Environment.NewLine }, StringSplitOptions.None).Reverse();
+                LogTextBox.Text = string.Join(Environment.NewLine, lines);
+            }
+            else
+            {
+                LogTextBox.Text = "Log file not found.";
+            }
+        }
+
+        private void HotkeyToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (HotkeyToggleButton.IsChecked == true)
+            {
+                EnableHotkeys();
+            }
+            else
+            {
+                DisableHotkeys();
+            }
+        }
+
+        private void EnableHotkeys()
+        {
+            var hotkeysService = ServiceContainer.Instance.GetService<HotkeysService>();
+            hotkeysService?.Enable();
+            HotkeyToggleButton.Background = System.Windows.Media.Brushes.DarkGreen;
+            HotkeyStatusIndicator.Fill = System.Windows.Media.Brushes.LimeGreen;
+        }
+
+        private void DisableHotkeys()
+        {
+            var hotkeysService = ServiceContainer.Instance.GetService<HotkeysService>();
+            hotkeysService?.Disable();
+            HotkeyToggleButton.Background = System.Windows.Media.Brushes.DarkRed;
+            HotkeyStatusIndicator.Fill = System.Windows.Media.Brushes.Red;
+        }
+
+        /// <summary>
+        /// Event handler for symbol button clicks
+        /// </summary>
+        private void SymbolButton_Click(object sender, RoutedEventArgs e)
+        {
+            var windowManagementService = ServiceContainer.Instance.GetService<WindowManagementService>();
+            activeSymbol = MainHelper.HandleSymbolButtonClick(sender, windowManagementService);
+            UpdateSymbolIndicators(activeSymbol);
+            
+            // Если CanvasWindow открыт, переинициализируем его для нового символа
+            if (currentCanvasWindow != null && !string.IsNullOrEmpty(activeSymbol))
+            {
+                // Используем новый метод для полной переинициализации
+                currentCanvasWindow.ReinitializeForNewSymbol(activeSymbol);
+                
+                Logger.LogInfo($"CanvasWindow reinitialized for new symbol: {activeSymbol}");
+            }
+        }
+
+        /// <summary>
+        /// Event handler for Reset DB button click
+        /// </summary>
+        private void ResetDB_Click(object sender, RoutedEventArgs e)
+        {
+            var databaseService = ServiceContainer.Instance.GetService<DatabaseService>();
+            var windowManagementService = ServiceContainer.Instance.GetService<WindowManagementService>();
+            MainHelper.ResetDatabase(databaseService, windowManagementService);
+            
+            // Сбрасываем настройки символов в DI Container
+            var symbolSettingsManager = ServiceContainer.Instance.GetService<SymbolSettingsManager>();
+            symbolSettingsManager?.ResetAllSettings();
+            
+            // Сбрасываем настройки брокеров в DI Container
+            var brokerSettingsManager = ServiceContainer.Instance.GetService<BrokerSettingsManager>();
+            brokerSettingsManager?.ResetAllSettings();
+            
+            // Show toast notification that database is reset
+            var toastService = ServiceContainer.Instance.GetService<ToastNotifyService>();
+            toastService?.ShowToast("Database has been reset successfully!", ToastType.Success);
+        }
+
+        private async void RunCaptureTracking_Click(object sender, RoutedEventArgs e)
+        {
+            var captureTrackingService = ServiceContainer.Instance.GetService<CaptureTrackingService>();
+            if (captureTrackingService == null)
+            {
+                Logger.LogDebug("CaptureTrackingService не инициализирован!");
+                return;
+            }
+            await captureTrackingService.RunOnceAsync();
+        }
+
+        private void ToggleTrackingViewer_Click(object sender, RoutedEventArgs e)
+        {
+            var databaseService = ServiceContainer.Instance.GetService<DatabaseService>();
+            ((App)System.Windows.Application.Current).ToggleTrackingViewer(databaseService);
+        }
+
+        // Обработчик события статуса подключения MT4 Socket
+        private void Mt4SocketService_ConnectionStatusChanged(object sender, string status)
+        {
+            Dispatcher.Invoke(() =>
+            {
+                Mt4Helper.UpdateMt4StatusUI(this, SocketStatusIndicator, status);
+                UpdateWindowTitle();
+            });
+        }
+
+        private async void ReconnectMT4_Click(object sender, RoutedEventArgs e)
+        {
+            var mt4SocketService = ServiceContainer.Instance.GetService<Mt4SocketService>();
+            await Mt4Helper.ReconnectMt4WithUiAsync(this, SocketStatusIndicator, mt4SocketService);
+            UpdateWindowTitle();
+        }
+
+        private void AutoTrackingButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (isAutoTrackingActive)
+            {
+                StopAutoTracking();
+            }
+            else
+            {
+                StartAutoTracking();
+            }
+        }
+
+        private void StartAutoTracking()
+        {
+            if (isAutoTrackingActive)
+                return;
+            isAutoTrackingActive = true;
+            _autoTrackingCts = new CancellationTokenSource();
+            _autoTrackingTask = Task.Run(() => AutoTrackingLoop(_autoTrackingCts.Token));
+            AutoTrackingStatusIndicator.Fill = System.Windows.Media.Brushes.LimeGreen;
+        }
+
+        private void StopAutoTracking()
+        {
+            if (!isAutoTrackingActive)
+                return;
+            isAutoTrackingActive = false;
+            _autoTrackingCts?.Cancel();
+            _autoTrackingCts = null;
+            AutoTrackingStatusIndicator.Fill = System.Windows.Media.Brushes.Red;
+        }
+
+        private async Task AutoTrackingLoop(CancellationToken token)
+        {
+            var captureTrackingService = ServiceContainer.Instance.GetService<CaptureTrackingService>();
+            while (true)
+            {
+                await captureTrackingService.RunOnceAsync();
+                if (token.IsCancellationRequested)
+                    break;
+                try { await Task.Delay(1000, token); } catch { break; }
+            }
+        }
+
+        public CaptureTrackingService GetCaptureTrackingService()
+        {
+            return ServiceContainer.Instance.GetService<CaptureTrackingService>();
+        }
+
+        private void RefreshLogButton_Click(object sender, RoutedEventArgs e)
+        {
+            LoadLog();
+            if (this.Height <= CollapsedHeight + 1)
+                this.Height = ExpandedHeight;
+            else
+                this.Height = CollapsedHeight;
+        }
+
+        // Обработчик события статуса подключения Pocket Option Socket
+        private void PocketOptionSocketService_ConnectionStatusChanged(object sender, string status)
+        {
+            Dispatcher.Invoke(() =>
+            {
+                PocketOptionHelper.UpdatePocketOptionStatusUI(this, PocketOptionStatusIndicator, status);
+                UpdateWindowTitle();
+            });
+        }
+
+        private async void ReconnectPocketOption_Click(object sender, RoutedEventArgs e)
+        {
+            var pocketOptionSocketService = ServiceContainer.Instance.GetService<PocketOptionSocketService>();
+            if (pocketOptionSocketService != null)
+            {
+                await pocketOptionSocketService.ConnectAsync();
+            }
+            UpdateWindowTitle();
+        }
+
+        /// <summary>
+        /// Обновляет заголовок окна с учетом статуса обоих сервисов
+        /// </summary>
+        private void UpdateWindowTitle()
+        {
+            var mt4SocketService = ServiceContainer.Instance.GetService<Mt4SocketService>();
+            
+            string mt4Status = "⚫";
+            string pocketOptionStatus = "⚫";
+            
+            if (mt4SocketService != null && mt4SocketService.IsConnected)
+                mt4Status = "🟢";
+            else if (mt4SocketService != null)
+                mt4Status = "🔴";
+                
+            this.Title = $"Screen Capture Tool [MT4: {mt4Status}] [Pocket Option: {pocketOptionStatus}]";
+        }
+
+        private void ResetLogButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainHelper.DeleteAppLogFile();
+            LoadLog();
+        }
+
+        private void TriggerSymbolButton(int idx)
+        {
+            var symbolButtons = new[] {
+                FindName("XAUUSD") as System.Windows.Controls.Button,
+                FindName("GBPJPY") as System.Windows.Controls.Button,
+                FindName("EURUSD") as System.Windows.Controls.Button,
+                FindName("USDJPY") as System.Windows.Controls.Button,
+                FindName("GBPUSD") as System.Windows.Controls.Button,
+                FindName("EURJPY") as System.Windows.Controls.Button
+            };
+            if (idx >= 0 && idx < symbolButtons.Length && symbolButtons[idx] != null)
+            {
+                symbolButtons[idx].RaiseEvent(new RoutedEventArgs(System.Windows.Controls.Button.ClickEvent));
+                // activeSymbol обновится через SymbolButton_Click
+            }
+        }
+
+        private void UpdateSymbolIndicators(string activeSymbol)
+        {
+            // Reset all indicators
+            XAUUSD_ActiveIndicator.Visibility = Visibility.Collapsed;
+            GBPJPY_ActiveIndicator.Visibility = Visibility.Collapsed;
+            EURUSD_ActiveIndicator.Visibility = Visibility.Collapsed;
+            USDJPY_ActiveIndicator.Visibility = Visibility.Collapsed;
+            GBPUSD_ActiveIndicator.Visibility = Visibility.Collapsed;
+            EURJPY_ActiveIndicator.Visibility = Visibility.Collapsed;
+
+            // Show active indicator
+            if (!string.IsNullOrEmpty(activeSymbol))
+            {
+                switch (activeSymbol)
+                {
+                    case "XAUUSD":
+                        XAUUSD_ActiveIndicator.Visibility = Visibility.Visible;
+                        break;
+                    case "GBPJPY":
+                        GBPJPY_ActiveIndicator.Visibility = Visibility.Visible;
+                        break;
+                    case "EURUSD":
+                        EURUSD_ActiveIndicator.Visibility = Visibility.Visible;
+                        break;
+                    case "USDJPY":
+                        USDJPY_ActiveIndicator.Visibility = Visibility.Visible;
+                        break;
+                    case "GBPUSD":
+                        GBPUSD_ActiveIndicator.Visibility = Visibility.Visible;
+                        break;
+                    case "EURJPY":
+                        EURJPY_ActiveIndicator.Visibility = Visibility.Visible;
+                        break;
+                }
+            }
+        }
+
+        private void YellowBrushButton_Click(object sender, RoutedEventArgs e)
+        {
+            isYellowBrush = true;
+            UpdateBrushColorIndicators();
+            if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
+                currentCanvasWindow.UpdateSimpleBrushColor(isYellowBrush);
+            Logger.LogInfo("Brush color set to Yellow");
+        }
+
+        private void BlackBrushButton_Click(object sender, RoutedEventArgs e)
+        {
+            isYellowBrush = false;
+            UpdateBrushColorIndicators();
+            if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
+                currentCanvasWindow.UpdateSimpleBrushColor(isYellowBrush);
+            Logger.LogInfo("Brush color set to Black");
+        }
+
+        private void UpdateBrushColorIndicators()
+        {
+            if (isYellowBrush)
+            {
+                YellowBrushIndicator.StrokeThickness = 4;
+                BlackBrushIndicator.StrokeThickness = 2;
+            }
+            else
+            {
+                YellowBrushIndicator.StrokeThickness = 2;
+                BlackBrushIndicator.StrokeThickness = 4;
+            }
+        }
+
+        private async void TestKeyA_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Logger.Log("Test Key A: Начинаем тестирование рисования трендовой линии по случайным точкам");
+                
+                // Получаем текущее активное окно
+                if (targetWindow == IntPtr.Zero)
+                {
+                    Logger.LogError("Test Key A: TargetWindow не установлен. Сначала выберите окно с помощью Space или T");
+                    return;
+                }
+
+                Logger.Log($"Test Key A: TargetWindow Handle: {targetWindow.ToInt64()}");
+                
+                // Получаем информацию об окне
+                var windowManagementService = ServiceContainer.Instance.GetService<WindowManagementService>();
+                if (windowManagementService != null)
+                {
+                    string windowTitle = windowManagementService.GetWindowTitle(targetWindow);
+                    string className = windowManagementService.GetWindowClassName(targetWindow);
+                    Logger.Log($"Test Key A: Window Title: '{windowTitle}', Class: '{className}'");
+                }
+
+                // Получаем JForexWindowsManagerService
+                var jForexService = ServiceContainer.Instance.GetService<JForexWindowsManagerService>();
+                if (jForexService == null)
+                {
+                    Logger.LogError("Test Key A: JForexWindowsManagerService не найден в DI контейнере");
+                    return;
+                }
+
+                // Получаем размеры окна
+                var windowRect = new Services.JForexWindowsManagerService.RECT();
+                if (!Services.JForexWindowsManagerService.GetWindowRect(targetWindow, out windowRect))
+                {
+                    Logger.LogError("Test Key A: Ошибка получения размеров окна");
+                    return;
+                }
+
+                int windowWidth = windowRect.Right - windowRect.Left;
+                Logger.Log($"Test Key A: Размеры окна: {windowWidth}x{windowRect.Bottom - windowRect.Top}");
+
+                // Получаем две случайные точки в окне
+                var (point1X, point1Y, point2X, point2Y) = jForexService.GetRandomPointsInWindow(targetWindow);
+                
+                if (point1X == 0 && point1Y == 0 && point2X == 0 && point2Y == 0)
+                {
+                    Logger.LogError("Test Key A: Не удалось получить случайные точки");
+                    return;
+                }
+
+                Logger.Log($"Test Key A: Случайные точки: ({point1X}, {point1Y}) и ({point2X}, {point2Y})");
+
+                // Рисуем трендовую линию по случайным точкам
+                Logger.Log("Test Key A: Рисуем трендовую линию");
+                bool result = await jForexService.AddTrendlineAsync(targetWindow, windowWidth, point1X, point1Y, point2X, point2Y);
+                
+                if (result)
+                {
+                    Logger.Log("Test Key A: Трендовая линия успешно нарисована по случайным точкам");
+                }
+                else
+                {
+                    Logger.LogError("Test Key A: Ошибка при рисовании трендовой линии");
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Test Key A: Ошибка при тестировании: {ex.Message}");
+            }
+        }
+    }
+} 

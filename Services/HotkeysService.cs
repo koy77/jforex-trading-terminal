@@ -1,0 +1,224 @@
+using System;
+using System.Runtime.InteropServices;
+using System.Windows;
+
+namespace ScreenCaptureApp.Services
+{
+    public class HotkeysService : IDisposable
+    {
+        // Global keyboard hook variables
+        private IntPtr keyboardHookId = IntPtr.Zero;
+        private const int WH_KEYBOARD_LL = 13;
+        private const int WM_KEYDOWN = 0x0100;
+        private const int VK_SPACE = 0x20;
+        private const int VK_ESCAPE = 0x1B;
+        private const int VK_T = 0x54;
+        private const int VK_ENTER = 0x0D;
+        private const int VK_OEM_3 = 0xC0; // '`' (backquote)
+        private const int VK_C = 0x43;
+        private const int VK_W = 0x57;
+        private const int VK_A = 0x41;
+        private const int VK_S = 0x53;
+        private const int VK_D = 0x44;
+        // Events
+        public event Action OnSpaceKeyPressed;
+        public event Action OnEscapeKeyPressed;
+        public event Action OnTKeyPressed;
+        public event Action OnEnterKeyPressed;
+        public event Action OnBackQuoteKeyPressed;
+        public event Action OnCKeyPressed;
+        public event Action OnWKeyPressed;
+        public event Action OnAKeyPressed;
+        public event Action OnSKeyPressed;
+        public event Action OnDKeyPressed;
+        // Symbol hotkey events (1-6)
+        public event Action OnSymbolHotkeyPressed1;
+        public event Action OnSymbolHotkeyPressed2;
+        public event Action OnSymbolHotkeyPressed3;
+        public event Action OnSymbolHotkeyPressed4;
+        public event Action OnSymbolHotkeyPressed5;
+        public event Action OnSymbolHotkeyPressed6;
+        // Properties
+        public bool IsEnabled { get; private set; } = false;
+        
+        // Import Windows API functions
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        private static extern IntPtr SetWindowsHookEx(int idHook, LowLevelKeyboardProc lpfn, IntPtr hMod, uint dwThreadId);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private static extern bool UnhookWindowsHookEx(IntPtr hhk);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        private static extern IntPtr CallNextHookEx(IntPtr hhk, int nCode, IntPtr wParam, IntPtr lParam);
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        private static extern IntPtr GetModuleHandle(string lpModuleName);
+
+        private const int VK_1 = 0x31;
+        private const int VK_2 = 0x32;
+        private const int VK_3 = 0x33;
+        private const int VK_4 = 0x34;
+        private const int VK_5 = 0x35;
+        private const int VK_6 = 0x36;
+        private const int VK_NUMPAD1 = 0x61;
+        private const int VK_NUMPAD2 = 0x62;
+        private const int VK_NUMPAD3 = 0x63;
+        private const int VK_NUMPAD4 = 0x64;
+        private const int VK_NUMPAD5 = 0x65;
+        private const int VK_NUMPAD6 = 0x66;
+
+        // Delegate for the keyboard hook
+        private delegate IntPtr LowLevelKeyboardProc(int nCode, IntPtr wParam, IntPtr lParam);
+        private LowLevelKeyboardProc keyboardProc;
+
+        public HotkeysService()
+        {
+            InitializeKeyboardHook();
+        }
+
+        private void InitializeKeyboardHook()
+        {
+            keyboardProc = KeyboardHookCallback;
+            keyboardHookId = SetWindowsHookEx(WH_KEYBOARD_LL, keyboardProc, GetModuleHandle("user32"), 0);
+            
+            if (keyboardHookId == IntPtr.Zero)
+            {
+                throw new InvalidOperationException("Failed to set keyboard hook");
+            }
+        }
+
+        private IntPtr KeyboardHookCallback(int nCode, IntPtr wParam, IntPtr lParam)
+        {
+            if (nCode >= 0 && wParam == (IntPtr)WM_KEYDOWN)
+            {
+                int vkCode = Marshal.ReadInt32(lParam);
+                
+                if (vkCode == VK_SPACE && IsEnabled)
+                {
+                    // Trigger the space key event
+                    Logger.LogDebug("Space key detected and service is enabled");
+                    OnSpaceKeyPressed?.Invoke();
+                    
+                    // return (IntPtr)1; // Prevent further processing
+                }
+                else if (vkCode == VK_ESCAPE && IsEnabled)
+                {
+                    // Trigger the escape key event
+                    Logger.LogDebug("Escape key detected and service is enabled");
+                    OnEscapeKeyPressed?.Invoke();
+                    
+                    // return (IntPtr)1; // Prevent further processing
+                }
+                else if (vkCode == VK_T && IsEnabled)
+                {
+                    // Trigger the T key event
+                    Logger.LogDebug("T key detected and service is enabled");
+                    OnTKeyPressed?.Invoke();
+                    
+                    // return (IntPtr)1; // Prevent further processing
+                }
+                else if (vkCode == VK_ENTER && IsEnabled)
+                {
+                    Logger.LogDebug("Enter key detected and service is enabled");
+                    OnEnterKeyPressed?.Invoke();
+                    return (IntPtr)1;
+                }
+                // Symbol hotkeys 1-6 (top row and numpad)
+                else if (IsEnabled && (vkCode == VK_1 || vkCode == VK_NUMPAD1))
+                {
+                    Logger.LogDebug("Symbol hotkey 1 pressed");
+                    OnSymbolHotkeyPressed1?.Invoke();
+                }
+                else if (IsEnabled && (vkCode == VK_2 || vkCode == VK_NUMPAD2))
+                {
+                    Logger.LogDebug("Symbol hotkey 2 pressed");
+                    OnSymbolHotkeyPressed2?.Invoke();
+                }
+                else if (IsEnabled && (vkCode == VK_3 || vkCode == VK_NUMPAD3))
+                {
+                    Logger.LogDebug("Symbol hotkey 3 pressed");
+                    OnSymbolHotkeyPressed3?.Invoke();
+                }
+                else if (IsEnabled && (vkCode == VK_4 || vkCode == VK_NUMPAD4))
+                {
+                    Logger.LogDebug("Symbol hotkey 4 pressed");
+                    OnSymbolHotkeyPressed4?.Invoke();
+                }
+                else if (IsEnabled && (vkCode == VK_5 || vkCode == VK_NUMPAD5))
+                {
+                    Logger.LogDebug("Symbol hotkey 5 pressed");
+                    OnSymbolHotkeyPressed5?.Invoke();
+                }
+                else if (IsEnabled && (vkCode == VK_6 || vkCode == VK_NUMPAD6))
+                {
+                    Logger.LogDebug("Symbol hotkey 6 pressed");
+                    OnSymbolHotkeyPressed6?.Invoke();
+                }
+                else if (vkCode == VK_ESCAPE && !IsEnabled)
+                {
+                    Logger.LogDebug("Escape key detected but service is disabled");
+                }
+                else if (vkCode == VK_SPACE && !IsEnabled)
+                {
+                    Logger.LogDebug("Space key detected but service is disabled");
+                }
+                else if (vkCode == VK_T && !IsEnabled)
+                {
+                    Logger.LogDebug("T key detected but service is disabled");
+                }
+                else if (vkCode == VK_OEM_3 && IsEnabled)
+                {
+                    Logger.LogDebug("BackQuote (`) key detected and service is enabled");
+                    OnBackQuoteKeyPressed?.Invoke();
+                }
+                else if (vkCode == VK_C && IsEnabled)
+                {
+                    Logger.LogDebug("C key detected and service is enabled");
+                    OnCKeyPressed?.Invoke();
+                }
+                else if (vkCode == VK_W && IsEnabled)
+                {
+                    Logger.LogDebug("W key detected and service is enabled");
+                    OnWKeyPressed?.Invoke();
+                }
+                else if (vkCode == VK_A && IsEnabled)
+                {
+                    Logger.LogDebug("A key detected and service is enabled");
+                    OnAKeyPressed?.Invoke();
+                }
+                else if (vkCode == VK_S && IsEnabled)
+                {
+                    Logger.LogDebug("S key detected and service is enabled");
+                    OnSKeyPressed?.Invoke();
+                }
+                else if (vkCode == VK_D && IsEnabled)
+                {
+                    Logger.LogDebug("D key detected and service is enabled");
+                    OnDKeyPressed?.Invoke();
+                }
+            }
+            
+            return CallNextHookEx(keyboardHookId, nCode, wParam, lParam);
+        }
+
+        public void Enable()
+        {
+            IsEnabled = true;
+        }
+
+        public void Disable()
+        {
+            IsEnabled = false;
+        }
+
+        public void Dispose()
+        {
+            if (keyboardHookId != IntPtr.Zero)
+            {
+                UnhookWindowsHookEx(keyboardHookId);
+                keyboardHookId = IntPtr.Zero;
+            }
+        }
+    }
+} 
