@@ -743,8 +743,9 @@ container.RegisterSingleton(new JForexWindowsManagerService());
   - **Q**: Undo last stroke (removes the most recently drawn stroke)
   - **C**: Clear all strokes and delete canvas files
   - **T**: Toggle trading mode
-  - **W/A/S/D**: Shift canvas strokes
-  - **Space**: Force focus to InkCanvas
+  - **Arrow Keys (←/↑/↓/→)**: Shift canvas strokes
+  - **W/A/S/D**: Reserved for future use
+  - **Space**: Force focus to InkCanvas3
   - **Escape**: Close window
 - При создании Capture:
   - Если брокер Forex — Duration = 0.

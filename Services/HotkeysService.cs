@@ -67,6 +67,10 @@ namespace ScreenCaptureApp.Services
         private const int VK_NUMPAD4 = 0x64;
         private const int VK_NUMPAD5 = 0x65;
         private const int VK_NUMPAD6 = 0x66;
+        private const int VK_LEFT = 0x25;
+        private const int VK_UP = 0x26;
+        private const int VK_RIGHT = 0x27;
+        private const int VK_DOWN = 0x28;
 
         // Delegate for the keyboard hook
         private delegate IntPtr LowLevelKeyboardProc(int nCode, IntPtr wParam, IntPtr lParam);
@@ -179,22 +183,38 @@ namespace ScreenCaptureApp.Services
                 }
                 else if (vkCode == VK_W && IsEnabled)
                 {
-                    Logger.LogDebug("W key detected and service is enabled");
-                    OnWKeyPressed?.Invoke();
+                    // W key detected, reserved for future use
                 }
                 else if (vkCode == VK_A && IsEnabled)
                 {
-                    Logger.LogDebug("A key detected and service is enabled");
-                    OnAKeyPressed?.Invoke();
+                    // A key detected, reserved for future use
                 }
                 else if (vkCode == VK_S && IsEnabled)
                 {
-                    Logger.LogDebug("S key detected and service is enabled");
-                    OnSKeyPressed?.Invoke();
+                    // S key detected, reserved for future use
                 }
                 else if (vkCode == VK_D && IsEnabled)
                 {
-                    Logger.LogDebug("D key detected and service is enabled");
+                    // D key detected, reserved for future use
+                }
+                else if (vkCode == VK_LEFT && IsEnabled)
+                {
+                    Logger.LogDebug("Left Arrow key detected and service is enabled");
+                    OnAKeyPressed?.Invoke();
+                }
+                else if (vkCode == VK_UP && IsEnabled)
+                {
+                    Logger.LogDebug("Up Arrow key detected and service is enabled");
+                    OnWKeyPressed?.Invoke();
+                }
+                else if (vkCode == VK_DOWN && IsEnabled)
+                {
+                    Logger.LogDebug("Down Arrow key detected and service is enabled");
+                    OnSKeyPressed?.Invoke();
+                }
+                else if (vkCode == VK_RIGHT && IsEnabled)
+                {
+                    Logger.LogDebug("Right Arrow key detected and service is enabled");
                     OnDKeyPressed?.Invoke();
                 }
             }
