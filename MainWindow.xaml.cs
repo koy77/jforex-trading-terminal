@@ -759,7 +759,7 @@ namespace ScreenCaptureApp
                                             }
                                         }
                                     },
-                                    // Вторая строка: проценты и поинты
+                                    // Вторая строка: проценты и поинты + кнопки BE, TP1, TP2, TP3
                                     new System.Windows.Controls.StackPanel {
                                         Orientation = System.Windows.Controls.Orientation.Horizontal,
                                         Margin = new Thickness(0,2,0,0),
@@ -767,6 +767,46 @@ namespace ScreenCaptureApp
                                         {
                                             new System.Windows.Controls.TextBlock { Text = $"%: {symbol.Percent:F2}", Foreground = System.Windows.Media.Brushes.DarkBlue, Margin = new Thickness(0,0,8,0) },
                                             new System.Windows.Controls.TextBlock { Text = $"Pts: {symbol.ProfitPoints:F0}", Foreground = System.Windows.Media.Brushes.DarkRed, Margin = new Thickness(0,0,8,0) },
+                                            new System.Windows.Controls.Button {
+                                                Content = "BE",
+                                                Tag = symbol.Symbol,
+                                                Margin = new Thickness(2,0,0,0),
+                                                Padding = new Thickness(2,0,2,0),
+                                                Background = System.Windows.Media.Brushes.LightGray,
+                                                Foreground = System.Windows.Media.Brushes.Black,
+                                                FontWeight = FontWeights.Bold,
+                                                Cursor = System.Windows.Input.Cursors.Hand,
+                                            },
+                                            new System.Windows.Controls.Button {
+                                                Content = "TP1",
+                                                Tag = symbol.Symbol,
+                                                Margin = new Thickness(2,0,0,0),
+                                                Padding = new Thickness(2,0,2,0),
+                                                Background = System.Windows.Media.Brushes.LightGray,
+                                                Foreground = System.Windows.Media.Brushes.Black,
+                                                FontWeight = FontWeights.Bold,
+                                                Cursor = System.Windows.Input.Cursors.Hand,
+                                            },
+                                            new System.Windows.Controls.Button {
+                                                Content = "TP2",
+                                                Tag = symbol.Symbol,
+                                                Margin = new Thickness(2,0,0,0),
+                                                Padding = new Thickness(2,0,2,0),
+                                                Background = System.Windows.Media.Brushes.LightGray,
+                                                Foreground = System.Windows.Media.Brushes.Black,
+                                                FontWeight = FontWeights.Bold,
+                                                Cursor = System.Windows.Input.Cursors.Hand,
+                                            },
+                                            new System.Windows.Controls.Button {
+                                                Content = "TP3",
+                                                Tag = symbol.Symbol,
+                                                Margin = new Thickness(2,0,0,0),
+                                                Padding = new Thickness(2,0,2,0),
+                                                Background = System.Windows.Media.Brushes.LightGray,
+                                                Foreground = System.Windows.Media.Brushes.Black,
+                                                FontWeight = FontWeights.Bold,
+                                                Cursor = System.Windows.Input.Cursors.Hand,
+                                            },
                                         }
                                     }
                                 }
@@ -775,6 +815,16 @@ namespace ScreenCaptureApp
                         // Кнопка Close теперь внутри первой строки
                         var btn = (((border.Child as System.Windows.Controls.StackPanel).Children[0] as System.Windows.Controls.StackPanel).Children[2]) as System.Windows.Controls.Button;
                         btn.Click += (s, e) => CloseSymbolOrder(symbol.Symbol);
+                        // Находим кнопки BE, TP1, TP2, TP3 и подписываем на клики
+                        var secondRow = ((border.Child as System.Windows.Controls.StackPanel).Children[1] as System.Windows.Controls.StackPanel);
+                        var btnBE = secondRow.Children[2] as System.Windows.Controls.Button;
+                        var btnTP1 = secondRow.Children[3] as System.Windows.Controls.Button;
+                        var btnTP2 = secondRow.Children[4] as System.Windows.Controls.Button;
+                        var btnTP3 = secondRow.Children[5] as System.Windows.Controls.Button;
+                        btnBE.Click += (s, e) => OnBEClick(symbol.Symbol);
+                        btnTP1.Click += (s, e) => OnTP1Click(symbol.Symbol);
+                        btnTP2.Click += (s, e) => OnTP2Click(symbol.Symbol);
+                        btnTP3.Click += (s, e) => OnTP3Click(symbol.Symbol);
                         SymbolSummaryPanel.Children.Add(border);
                     }
                 }
@@ -792,5 +842,10 @@ namespace ScreenCaptureApp
                 _ = mt4SocketService.WriteAsync(cmd);
             }
         }
+
+        private void OnBEClick(string symbol) { Logger.LogInfo($"BE clicked for {symbol}"); }
+        private void OnTP1Click(string symbol) { Logger.LogInfo($"TP1 clicked for {symbol}"); }
+        private void OnTP2Click(string symbol) { Logger.LogInfo($"TP2 clicked for {symbol}"); }
+        private void OnTP3Click(string symbol) { Logger.LogInfo($"TP3 clicked for {symbol}"); }
     }
 } 
