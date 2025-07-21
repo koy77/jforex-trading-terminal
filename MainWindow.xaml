@@ -76,7 +76,6 @@
             </Grid>
 
             <Button Content="Toggle Tracking Viewer" Click="ToggleTrackingViewer_Click" Background="Purple" Foreground="White" Padding="10,5" Margin="10,0,0,0"/>
-            <Button Content="Draw Random Trendline" Click="TestKeyA_Click" Background="DarkMagenta" Foreground="White" Padding="10,5" Margin="10,0,0,0"/>
         </StackPanel>
 
         <TextBox x:Name="LogTextBox" Grid.Row="4" Margin="0,0,0,10" FontFamily="Consolas" FontSize="12" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" IsReadOnly="True" TextWrapping="NoWrap"/>

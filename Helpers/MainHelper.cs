@@ -221,9 +221,9 @@ namespace ScreenCaptureApp.Helpers
             var screen = screens[0]; // Всегда используем основной экран
 
             // Вычисляем параметры
-            double left = screen.WorkingArea.Left + 230;
+            double left = screen.WorkingArea.Left;
             double top = screen.WorkingArea.Top;
-            double width = screen.WorkingArea.Width * 0.8;
+            double width = screen.WorkingArea.Width;
             double height = 500; // Increased height for symbol buttons
 
             return (left, top, width, height);
