@@ -240,9 +240,9 @@ namespace ScreenCaptureApp.Helpers
             var screen = screens[0]; // Всегда используем основной экран
 
             // Вычисляем параметры для окна трекинга
-            double left = screen.WorkingArea.Left + 50;
-            double top = screen.WorkingArea.Top + 50;
-            double width = screen.WorkingArea.Width * 0.9;
+            double left = screen.WorkingArea.Left;
+            double top = screen.WorkingArea.Top + 100;
+            double width = screen.WorkingArea.Width;
             double height = screen.WorkingArea.Height * 0.8;
 
             return (left, top, width, height);
