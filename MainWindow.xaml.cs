@@ -27,7 +27,7 @@ namespace ScreenCaptureApp
         private CancellationTokenSource _autoTrackingCts;
         private Task _autoTrackingTask;
         private bool isAutoTrackingActive = false;
-        private const double CollapsedHeight = 80;
+        private const double CollapsedHeight = 90;
         private const double ExpandedHeight = 600;
         
         // Brush color state
@@ -737,32 +737,48 @@ namespace ScreenCaptureApp
                             Background = System.Windows.Media.Brushes.WhiteSmoke,
                             Child = new System.Windows.Controls.StackPanel
                             {
-                                Orientation = System.Windows.Controls.Orientation.Horizontal,
+                                Orientation = System.Windows.Controls.Orientation.Vertical,
                                 Children =
                                 {
-                                    new System.Windows.Controls.TextBlock { Text = symbol.Symbol, FontWeight = FontWeights.Bold, Margin = new Thickness(0,0,8,0) },
-                                    new System.Windows.Controls.TextBlock { Text = $"%: {symbol.Percent:F2}", Foreground = System.Windows.Media.Brushes.DarkBlue, Margin = new Thickness(0,0,8,0) },
-                                    new System.Windows.Controls.TextBlock { Text = $"Lots: {symbol.Lots:F2}", Foreground = System.Windows.Media.Brushes.DarkGreen, Margin = new Thickness(0,0,8,0) },
-                                    new System.Windows.Controls.TextBlock { Text = $"Pts: {symbol.ProfitPoints:F0}", Foreground = System.Windows.Media.Brushes.DarkRed, Margin = new Thickness(0,0,8,0) },
-                                    new System.Windows.Controls.Button {
-                                        Content = "Close",
-                                        Tag = symbol.Symbol,
-                                        Margin = new Thickness(0,0,0,0),
-                                        Padding = new Thickness(6,0,6,0),
-                                        Background = System.Windows.Media.Brushes.OrangeRed,
-                                        Foreground = System.Windows.Media.Brushes.White,
-                                        FontWeight = FontWeights.Bold,
-                                        Cursor = System.Windows.Input.Cursors.Hand,
+                                    // Первая строка: символ и лоты
+                                    new System.Windows.Controls.StackPanel {
+                                        Orientation = System.Windows.Controls.Orientation.Horizontal,
+                                        Children =
+                                        {
+                                            new System.Windows.Controls.TextBlock { Text = symbol.Symbol, FontWeight = FontWeights.Bold, Margin = new Thickness(0,0,8,0) },
+                                            new System.Windows.Controls.TextBlock { Text = $"Lots: {symbol.Lots:F2}", Foreground = System.Windows.Media.Brushes.DarkGreen, Margin = new Thickness(0,0,8,0) },
+                                            new System.Windows.Controls.Button {
+                                                Content = "Close",
+                                                Tag = symbol.Symbol,
+                                                Margin = new Thickness(0,0,0,0),
+                                                Padding = new Thickness(1,0,1,0),
+                                                Background = System.Windows.Media.Brushes.OrangeRed,
+                                                Foreground = System.Windows.Media.Brushes.White,
+                                                FontWeight = FontWeights.Bold,
+                                                Cursor = System.Windows.Input.Cursors.Hand,
+                                            }
+                                        }
+                                    },
+                                    // Вторая строка: проценты и поинты
+                                    new System.Windows.Controls.StackPanel {
+                                        Orientation = System.Windows.Controls.Orientation.Horizontal,
+                                        Margin = new Thickness(0,2,0,0),
+                                        Children =
+                                        {
+                                            new System.Windows.Controls.TextBlock { Text = $"%: {symbol.Percent:F2}", Foreground = System.Windows.Media.Brushes.DarkBlue, Margin = new Thickness(0,0,8,0) },
+                                            new System.Windows.Controls.TextBlock { Text = $"Pts: {symbol.ProfitPoints:F0}", Foreground = System.Windows.Media.Brushes.DarkRed, Margin = new Thickness(0,0,8,0) },
+                                        }
                                     }
                                 }
                             }
                         };
-                        var btn = ((border.Child as System.Windows.Controls.StackPanel).Children[4]) as System.Windows.Controls.Button;
+                        // Кнопка Close теперь внутри первой строки
+                        var btn = (((border.Child as System.Windows.Controls.StackPanel).Children[0] as System.Windows.Controls.StackPanel).Children[2]) as System.Windows.Controls.Button;
                         btn.Click += (s, e) => CloseSymbolOrder(symbol.Symbol);
                         SymbolSummaryPanel.Children.Add(border);
                     }
                 }
-                TotalBalanceText.Text = summary != null ? $"Total Balance: {summary.TotalBalance:F2}" : string.Empty;
+                TotalBalanceText.Text = summary != null ? $"$ {summary.TotalBalance:F2}" : string.Empty;
             });
         }
 
