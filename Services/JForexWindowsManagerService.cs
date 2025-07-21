@@ -108,8 +108,8 @@ namespace ScreenCaptureApp.Services
                 }
 
                 // Небольшая задержка для стабилизации
-                await Task.Delay(100);
-
+                await Task.Delay(200);
+                SendEscKey(targetWindowHandle);
                 // Отправляем нажатие клавиши A для активации инструмента трендовой линии
                 if (!SendKeyPress(targetWindowHandle, 'A'))
                 {
@@ -140,6 +140,8 @@ namespace ScreenCaptureApp.Services
                     Logger.Log("JForex: Ошибка клика на второй точке");
                     return false;
                 }
+
+                SendEscKey(targetWindowHandle);
 
                 Logger.Log("JForex: Треховая линия успешно добавлена");
                 return true;
@@ -336,6 +338,16 @@ namespace ScreenCaptureApp.Services
             }
         }
 
+        public void SendEscKey(IntPtr hwnd)
+        {
+            const int WM_KEYDOWN = 0x0100;
+            const int WM_KEYUP = 0x0101;
+            const int VK_ESCAPE = 0x1B;
+            if (hwnd == IntPtr.Zero) return;
+            SendMessage(hwnd, WM_KEYDOWN, (IntPtr)VK_ESCAPE, IntPtr.Zero);
+            SendMessage(hwnd, WM_KEYUP, (IntPtr)VK_ESCAPE, IntPtr.Zero);
+            Logger.Log($"JForex: Sent ESC key to hwnd=0x{hwnd.ToInt64():X}");
+        }
        
     }
 }
