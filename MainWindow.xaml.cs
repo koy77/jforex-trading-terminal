@@ -727,105 +727,19 @@ namespace ScreenCaptureApp
                 {
                     foreach (var symbol in summary.Symbols)
                     {
-                        var border = new System.Windows.Controls.Border
+                        var orderSymbol = new ScreenCaptureApp.Controls.OrderSymbol
                         {
-                            BorderBrush = System.Windows.Media.Brushes.Gray,
-                            BorderThickness = new Thickness(1),
-                            CornerRadius = new CornerRadius(6),
-                            Margin = new Thickness(4, 0, 4, 0),
-                            Padding = new Thickness(8, 4, 8, 4),
-                            Background = System.Windows.Media.Brushes.WhiteSmoke,
-                            Child = new System.Windows.Controls.StackPanel
-                            {
-                                Orientation = System.Windows.Controls.Orientation.Vertical,
-                                Children =
-                                {
-                                    // Первая строка: символ и лоты
-                                    new System.Windows.Controls.StackPanel {
-                                        Orientation = System.Windows.Controls.Orientation.Horizontal,
-                                        Children =
-                                        {
-                                            new System.Windows.Controls.TextBlock { Text = symbol.Symbol, FontWeight = FontWeights.Bold, Margin = new Thickness(0,0,8,0) },
-                                            new System.Windows.Controls.TextBlock { Text = $"Lots: {symbol.Lots:F2}", Foreground = System.Windows.Media.Brushes.DarkGreen, Margin = new Thickness(0,0,8,0) },
-                                            new System.Windows.Controls.Button {
-                                                Content = "Close",
-                                                Tag = symbol.Symbol,
-                                                Margin = new Thickness(0,0,0,0),
-                                                Padding = new Thickness(1,0,1,0),
-                                                Background = System.Windows.Media.Brushes.OrangeRed,
-                                                Foreground = System.Windows.Media.Brushes.White,
-                                                FontWeight = FontWeights.Bold,
-                                                Cursor = System.Windows.Input.Cursors.Hand,
-                                            }
-                                        }
-                                    },
-                                    // Вторая строка: проценты и поинты + кнопки BE, TP1, TP2, TP3
-                                    new System.Windows.Controls.StackPanel {
-                                        Orientation = System.Windows.Controls.Orientation.Horizontal,
-                                        Margin = new Thickness(0,2,0,0),
-                                        Children =
-                                        {
-                                            new System.Windows.Controls.TextBlock { Text = $"%: {symbol.Percent:F2}", Foreground = System.Windows.Media.Brushes.DarkBlue, Margin = new Thickness(0,0,8,0) },
-                                            new System.Windows.Controls.TextBlock { Text = $"Pts: {symbol.ProfitPoints:F0}", Foreground = System.Windows.Media.Brushes.DarkRed, Margin = new Thickness(0,0,8,0) },
-                                            new System.Windows.Controls.Button {
-                                                Content = "BE",
-                                                Tag = symbol.Symbol,
-                                                Margin = new Thickness(2,0,0,0),
-                                                Padding = new Thickness(2,0,2,0),
-                                                Background = System.Windows.Media.Brushes.LightGray,
-                                                Foreground = System.Windows.Media.Brushes.Black,
-                                                FontWeight = FontWeights.Bold,
-                                                Cursor = System.Windows.Input.Cursors.Hand,
-                                            },
-                                            new System.Windows.Controls.Button {
-                                                Content = "TP1",
-                                                Tag = symbol.Symbol,
-                                                Margin = new Thickness(2,0,0,0),
-                                                Padding = new Thickness(2,0,2,0),
-                                                Background = System.Windows.Media.Brushes.LightGray,
-                                                Foreground = System.Windows.Media.Brushes.Black,
-                                                FontWeight = FontWeights.Bold,
-                                                Cursor = System.Windows.Input.Cursors.Hand,
-                                            },
-                                            new System.Windows.Controls.Button {
-                                                Content = "TP2",
-                                                Tag = symbol.Symbol,
-                                                Margin = new Thickness(2,0,0,0),
-                                                Padding = new Thickness(2,0,2,0),
-                                                Background = System.Windows.Media.Brushes.LightGray,
-                                                Foreground = System.Windows.Media.Brushes.Black,
-                                                FontWeight = FontWeights.Bold,
-                                                Cursor = System.Windows.Input.Cursors.Hand,
-                                            },
-                                            new System.Windows.Controls.Button {
-                                                Content = "TP3",
-                                                Tag = symbol.Symbol,
-                                                Margin = new Thickness(2,0,0,0),
-                                                Padding = new Thickness(2,0,2,0),
-                                                Background = System.Windows.Media.Brushes.LightGray,
-                                                Foreground = System.Windows.Media.Brushes.Black,
-                                                FontWeight = FontWeights.Bold,
-                                                Cursor = System.Windows.Input.Cursors.Hand,
-                                            },
-                                        }
-                                    }
-                                }
-                            }
+                            Symbol = symbol.Symbol,
+                            Lots = symbol.Lots,
+                            Percent = symbol.Percent,
+                            Points = symbol.ProfitPoints
                         };
-                        // Кнопка Close теперь внутри первой строки
-                        var btn = (((border.Child as System.Windows.Controls.StackPanel).Children[0] as System.Windows.Controls.StackPanel).Children[2]) as System.Windows.Controls.Button;
-                        btn.Click += (s, e) => CloseSymbolOrder(symbol.Symbol);
-                        // Находим кнопки BE, TP1, TP2, TP3 и подписываем на клики
-                        var secondRow = ((border.Child as System.Windows.Controls.StackPanel).Children[1] as System.Windows.Controls.StackPanel);
-                        var btnBE = secondRow.Children[2] as System.Windows.Controls.Button;
-                        var btnTP1 = secondRow.Children[3] as System.Windows.Controls.Button;
-                        var btnTP2 = secondRow.Children[4] as System.Windows.Controls.Button;
-                        var btnTP3 = secondRow.Children[5] as System.Windows.Controls.Button;
-                        btnBE.Click += (s, e) => OnBEClick(symbol.Symbol);
-                        btnTP1.Click += (s, e) => OnTP1Click(symbol.Symbol);
-                        btnTP2.Click += (s, e) => OnTP2Click(symbol.Symbol);
-                        btnTP3.Click += (s, e) => OnTP3Click(symbol.Symbol);
-                        SymbolSummaryPanel.Children.Add(border);
+                        orderSymbol.CloseClicked += (sym) => CloseSymbolOrder(sym);
+                        orderSymbol.BEClicked += (sym) => OnBEClick(sym);
+                        orderSymbol.TP1Clicked += (sym) => OnTP1Click(sym);
+                        orderSymbol.TP2Clicked += (sym) => OnTP2Click(sym);
+                        orderSymbol.TP3Clicked += (sym) => OnTP3Click(sym);
+                        SymbolSummaryPanel.Children.Add(orderSymbol);
                     }
                 }
                 TotalBalanceText.Text = summary != null ? $"$ {summary.TotalBalance:F2}" : string.Empty;
