@@ -6794,3 +6794,1142 @@
 [2025-07-21 20:11:31.075] [INFO] MT4 Connection status: Disconnected
 [2025-07-21 20:11:31.075] [INFO] MT4 Socket: Breakout processing completed for GBPJPY, type: BreakoutDown, ID: 20250721201130928
 [2025-07-21 20:11:31.075] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250721201130928\tracking.png: BreakoutDown
+[2025-07-21 20:11:45.381] [INFO] MainWindow closing - cleaning up resources
+[2025-07-21 20:11:45.384] [INFO] Disconnecting from MT4 socket
+[2025-07-21 20:11:45.384] [WARNING] Not connected to MT4 socket
+[2025-07-21 20:11:45.385] [INFO] Disconnecting from Pocket Option socket
+[2025-07-21 20:11:45.385] [WARNING] Not connected to Pocket Option socket
+[2025-07-21 20:11:45.385] [INFO] All services cleaned up
+[2025-07-21 20:11:45.385] [INFO] MainWindow cleanup completed
+[2025-07-21 20:11:45.385] [INFO] Disconnecting from MT4 socket
+[2025-07-21 20:11:45.385] [WARNING] Not connected to MT4 socket
+[2025-07-21 20:11:45.386] [INFO] Disconnecting from Pocket Option socket
+[2025-07-21 20:11:45.386] [WARNING] Not connected to Pocket Option socket
+[2025-07-21 20:11:45.386] [INFO] All services cleaned up
+[2025-07-21 20:11:49.600] [INFO] MT4 Socket Service initialized
+[2025-07-21 20:11:49.609] [INFO] Pocket Option Socket Service initialized
+[2025-07-21 20:11:49.614] [INFO] BrokerSettingsManager initialized with default settings
+[2025-07-21 20:11:49.616] [INFO] All services registered in DI container
+[2025-07-21 20:11:49.620] [INFO] Attempting to connect to Pocket Option socket at 127.0.0.1:65300
+[2025-07-21 20:11:49.804] [INFO] MT4 Socket Service initialized in MainWindow
+[2025-07-21 20:11:49.806] [INFO] MT4 Socket Service subscribed to CaptureTrackingService BreakoutDetected event
+[2025-07-21 20:11:50.490] [INFO] Attempting to connect to MT4 socket at 127.0.0.1:23456
+[2025-07-21 20:11:51.687] [ERROR] Failed to connect to Pocket Option socket at 127.0.0.1:65300
+Exception: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+StackTrace:    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Net.Sockets.TcpClient.CompleteConnectAsync(Task task)
+   at ScreenCaptureApp.Services.PocketOptionSocketService.ConnectAsync() in C:\apps\jforex-trading-terminal-win10\Services\PocketOptionSocketService.cs:line 146
+[2025-07-21 20:11:52.518] [ERROR] Failed to connect to MT4 socket at 127.0.0.1:23456
+Exception: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+StackTrace:    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Net.Sockets.TcpClient.CompleteConnectAsync(Task task)
+   at ScreenCaptureApp.Services.Mt4SocketService.ConnectAsync() in C:\apps\jforex-trading-terminal-win10\Services\Mt4SocketService.cs:line 167
+[2025-07-21 20:11:52.520] [DEBUG] MT4 Connection: Connection failed: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+[2025-07-21 20:11:52.520] [INFO] MT4 Connection status: Connection failed: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+[2025-07-21 20:13:10.569] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 20:13:10.570] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 20:13:15.601] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 20:13:15.601] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 20:13:15.825] [DEBUG] Enter key detected and service is enabled
+[2025-07-21 20:13:15.977] [DEBUG] Enter key detected and service is enabled
+[2025-07-21 20:15:36.535] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 20:15:36.536] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 20:15:37.303] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 20:15:37.304] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 20:15:37.759] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 20:15:37.760] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 20:15:38.415] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 20:15:38.416] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 20:15:39.311] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 20:15:39.312] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 20:15:41.271] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 20:15:41.272] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 20:15:41.999] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 20:15:42.000] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 20:15:43.791] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 20:15:43.792] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 20:15:44.287] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 20:15:44.288] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 20:15:47.231] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 20:15:47.232] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 20:15:49.319] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 20:15:49.320] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 20:15:54.351] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 20:15:54.352] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 20:15:54.839] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 20:15:54.840] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 20:20:19.111] [INFO] MainWindow closing - cleaning up resources
+[2025-07-21 20:20:19.113] [INFO] Disconnecting from MT4 socket
+[2025-07-21 20:20:19.114] [WARNING] Not connected to MT4 socket
+[2025-07-21 20:20:19.115] [INFO] Disconnecting from Pocket Option socket
+[2025-07-21 20:20:19.115] [WARNING] Not connected to Pocket Option socket
+[2025-07-21 20:20:19.115] [INFO] All services cleaned up
+[2025-07-21 20:20:19.115] [INFO] MainWindow cleanup completed
+[2025-07-21 20:20:19.115] [INFO] Disconnecting from MT4 socket
+[2025-07-21 20:20:19.115] [WARNING] Not connected to MT4 socket
+[2025-07-21 20:20:19.116] [INFO] Disconnecting from Pocket Option socket
+[2025-07-21 20:20:19.116] [WARNING] Not connected to Pocket Option socket
+[2025-07-21 20:20:19.116] [INFO] All services cleaned up
+[2025-07-21 20:20:27.813] [INFO] MT4 Socket Service initialized
+[2025-07-21 20:20:27.824] [INFO] Pocket Option Socket Service initialized
+[2025-07-21 20:20:27.829] [INFO] BrokerSettingsManager initialized with default settings
+[2025-07-21 20:20:27.833] [INFO] All services registered in DI container
+[2025-07-21 20:20:27.836] [INFO] Attempting to connect to Pocket Option socket at 127.0.0.1:65300
+[2025-07-21 20:20:28.015] [INFO] MT4 Socket Service initialized in MainWindow
+[2025-07-21 20:20:28.016] [INFO] MT4 Socket Service subscribed to CaptureTrackingService BreakoutDetected event
+[2025-07-21 20:20:28.792] [INFO] Attempting to connect to MT4 socket at 127.0.0.1:23456
+[2025-07-21 20:20:29.907] [ERROR] Failed to connect to Pocket Option socket at 127.0.0.1:65300
+Exception: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+StackTrace:    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Net.Sockets.TcpClient.CompleteConnectAsync(Task task)
+   at ScreenCaptureApp.Services.PocketOptionSocketService.ConnectAsync() in C:\apps\jforex-trading-terminal-win10\Services\PocketOptionSocketService.cs:line 146
+[2025-07-21 20:20:30.821] [ERROR] Failed to connect to MT4 socket at 127.0.0.1:23456
+Exception: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+StackTrace:    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Net.Sockets.TcpClient.CompleteConnectAsync(Task task)
+   at ScreenCaptureApp.Services.Mt4SocketService.ConnectAsync() in C:\apps\jforex-trading-terminal-win10\Services\Mt4SocketService.cs:line 167
+[2025-07-21 20:20:30.822] [DEBUG] MT4 Connection: Connection failed: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+[2025-07-21 20:20:30.822] [INFO] MT4 Connection status: Connection failed: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+[2025-07-21 20:20:35.222] [DEBUG] Space key detected and service is enabled
+[2025-07-21 20:20:35.227] [DEBUG] Target window captured (Handle: 0x304AC)
+[2025-07-21 20:20:35.330] [INFO] Window activated - focus set to InkCanvas
+[2025-07-21 20:20:35.335] [INFO] Window loaded for handler 197804
+[2025-07-21 20:20:35.487] [INFO] InkCanvas initialized successfully with Yellow brush
+[2025-07-21 20:20:35.507] [INFO] Canvas loaded: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\197804.xaml
+[2025-07-21 20:20:35.508] [INFO] Brush mode updated: Simple mode
+[2025-07-21 20:20:35.509] [INFO] Active symbol display hidden - no active symbol
+[2025-07-21 20:20:35.570] [DEBUG] Canvas window opened
+[2025-07-21 20:20:35.570] [DEBUG] New CanvasWindow opened
+[2025-07-21 20:20:36.340] [INFO] Mouse move on InkCanvas at 1571;428
+[2025-07-21 20:20:36.354] [INFO] Mouse move on InkCanvas at 1571;431
+[2025-07-21 20:20:36.371] [INFO] Mouse move on InkCanvas at 1577;430
+[2025-07-21 20:20:36.382] [INFO] Mouse move on InkCanvas at 1584;428
+[2025-07-21 20:20:36.384] [INFO] Mouse move on InkCanvas at 1586;428
+[2025-07-21 20:20:36.401] [INFO] Mouse move on InkCanvas at 1593;426
+[2025-07-21 20:20:36.418] [INFO] Mouse move on InkCanvas at 1598;428
+[2025-07-21 20:20:36.433] [INFO] Mouse move on InkCanvas at 1598;433
+[2025-07-21 20:20:36.450] [INFO] Mouse move on InkCanvas at 1597;441
+[2025-07-21 20:20:36.460] [INFO] Mouse move on InkCanvas at 1597;446
+[2025-07-21 20:20:36.482] [INFO] Mouse move on InkCanvas at 1598;449
+[2025-07-21 20:20:36.483] [INFO] Mouse move on InkCanvas at 1599;449
+[2025-07-21 20:20:36.559] [INFO] Canvas saved: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\197804.xaml, C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\197804.png
+[2025-07-21 20:20:36.559] [INFO] Canvas saved properly
+[2025-07-21 20:20:36.561] [INFO] Mouse move on InkCanvas at 1599;449
+[2025-07-21 20:20:36.562] [INFO] Mouse up on InkCanvas at 1599;449
+[2025-07-21 20:20:36.580] [DEBUG] C key detected and service is enabled
+[2025-07-21 20:20:36.580] [DEBUG] C key pressed - clearing canvas
+[2025-07-21 20:20:36.581] [INFO] Clearing canvas and deleting files
+[2025-07-21 20:20:36.582] [INFO] Deleted: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\197804.png
+[2025-07-21 20:20:36.582] [INFO] Deleted: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\197804.xaml
+[2025-07-21 20:20:36.587] [INFO] Pressed C: clear canvas and delete files
+[2025-07-21 20:20:37.212] [DEBUG] Space key detected and service is enabled
+[2025-07-21 20:20:37.214] [INFO] Brush mode updated: Trading mode
+[2025-07-21 20:20:37.214] [DEBUG] Space pressed over CanvasWindow: toggled trading mode
+[2025-07-21 20:20:37.230] [INFO] Pressed Space: force focus to InkCanvas
+[2025-07-21 20:20:37.926] [INFO] CaptureData created for trading queue: ID=20250721202037926, Symbol=, Risk=1, Duration=2, Broker=Forex, Source=window
+[2025-07-21 20:20:37.927] [INFO] Stroke added to trading queue. Queue size: 1
+[2025-07-21 20:20:37.928] [INFO] Starting trading queue processing
+[2025-07-21 20:20:37.928] [INFO] Processing stroke from queue. Remaining items: 0
+[2025-07-21 20:20:37.984] [INFO] Updated broker settings for Forex: Risk=1, Duration=2
+[2025-07-21 20:20:37.984] [INFO] Settings updated from capture
+[2025-07-21 20:20:37.985] [INFO] CaptureData saved to database: ID=20250721202037926
+[2025-07-21 20:20:37.986] [INFO] Adding trendline to GForex: TargetWindowHandle=197804, Point1=(1648, 235), Point2=(1680, 219), WindowWidth=1920
+[2025-07-21 20:20:37.988] [INFO] JForex: Начинаем добавление трендовой линии. Точка 1: (1648, 235), Точка 2: (1680, 219)
+[2025-07-21 20:20:37.992] [INFO] Mouse move on InkCanvas at 1648;235
+[2025-07-21 20:20:37.994] [INFO] JForex: Окно успешно активировано
+[2025-07-21 20:20:37.995] [INFO] Mouse up on InkCanvas at 1648;235
+[2025-07-21 20:20:38.199] [INFO] JForex: Sent ESC key to hwnd=0x304AC
+[2025-07-21 20:20:38.260] [INFO] JForex: Клавиша 'A' успешно отправлена
+[2025-07-21 20:20:38.465] [INFO] JForex: Конвертированные координаты. Точка 1: (1648, 235), Точка 2: (1680, 219)
+[2025-07-21 20:20:38.591] [INFO] JForex: Клик успешно выполнен в позиции (1648, 235)
+[2025-07-21 20:20:38.824] [INFO] JForex: Клик успешно выполнен в позиции (1680, 219)
+[2025-07-21 20:20:38.825] [INFO] JForex: Sent ESC key to hwnd=0x304AC
+[2025-07-21 20:20:38.825] [INFO] JForex: Треховая линия успешно добавлена
+[2025-07-21 20:20:38.825] [INFO] Trendline successfully added to GForex
+[2025-07-21 20:20:38.825] [INFO] Trendline successfully added to GForex
+[2025-07-21 20:20:38.826] [INFO] Stroke removed from canvas
+[2025-07-21 20:20:38.873] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-21 20:20:38.873] [DEBUG] CaptureTrackingService: Обработка capture ID=20250721202037926, Handle=197804, X=1624, Y=191, W=87, H=63
+[2025-07-21 20:20:38.875] [INFO] Trading stroke processing completed: ID=20250721202037926
+[2025-07-21 20:20:38.894] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 87x63
+[2025-07-21 20:20:38.898] [DEBUG] TrendlineBreakDetector: Found 88 white pixels
+[2025-07-21 20:20:38.900] [DEBUG] TrendlineBreakDetector: Found 1 clusters
+[2025-07-21 20:20:38.901] [DEBUG] Cluster: size=88, len=36,2, center=(38,5,35,5), score=0,176
+[2025-07-21 20:20:38.901] [DEBUG] TrendlineBreakDetector: Selected white line from (22,43) to (55,28)
+[2025-07-21 20:20:38.901] [DEBUG] TrendlineBreakDetector: Trendline direction: Upward (SELL), searching for SELL breakout
+[2025-07-21 20:20:38.902] [INFO] TrendlineBreakDetector: Breakout DOWN detected at (45,37) - Red: 0,38
+[2025-07-21 20:20:38.910] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250721202037926\tracking.png] Breakout DOWN detected!
+[2025-07-21 20:20:38.912] [INFO] CaptureTrackingService: Updated IsFired=True for capture ID=20250721202037926, Handle=197804
+[2025-07-21 20:20:38.933] [INFO] MT4 Socket: >>> OnBreakoutDetected handler CALLED <<< (type: BreakoutDown)
+[2025-07-21 20:20:38.933] [WARNING] MT4 Socket: Symbol is missing in CaptureData, not sending to MT4
+[2025-07-21 20:20:38.933] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250721202037926\tracking.png: BreakoutDown
+[2025-07-21 20:20:38.986] [INFO] Trading queue processing completed
+[2025-07-21 20:20:40.548] [DEBUG] Escape key detected and service is enabled
+[2025-07-21 20:20:40.549] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-21 20:20:40.549] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-21 20:20:40.549] [DEBUG] Closing canvas window
+[2025-07-21 20:20:40.550] [INFO] Window closing: saving canvas
+[2025-07-21 20:20:40.600] [INFO] Canvas saved: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\197804.xaml, C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\197804.png
+[2025-07-21 20:20:40.600] [INFO] Canvas saved properly
+[2025-07-21 20:20:40.607] [DEBUG] Canvas window closed
+[2025-07-21 20:20:40.608] [DEBUG] No overlay to close
+[2025-07-21 20:20:40.608] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-21 20:20:40.756] [DEBUG] Escape key detected and service is enabled
+[2025-07-21 20:20:40.756] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-21 20:20:40.756] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-21 20:20:40.757] [DEBUG] No overlay to close
+[2025-07-21 20:20:40.757] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-21 20:21:20.227] [DEBUG] Symbol hotkey 1 pressed
+[2025-07-21 20:21:20.448] [DEBUG] Status: Found and brought 2 window(s) to foreground: XAU/USD, T610, XAU/USD, T8
+[2025-07-21 20:21:24.539] [DEBUG] Space key detected and service is enabled
+[2025-07-21 20:21:24.540] [DEBUG] Target window captured (Handle: 0x1049A)
+[2025-07-21 20:21:24.575] [INFO] Window activated - focus set to InkCanvas
+[2025-07-21 20:21:24.579] [INFO] Window loaded for handler 66714
+[2025-07-21 20:21:24.696] [INFO] InkCanvas initialized successfully with Yellow brush
+[2025-07-21 20:21:24.697] [INFO] Canvas loaded: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\66714.xaml
+[2025-07-21 20:21:24.698] [INFO] Brush mode updated: Simple mode
+[2025-07-21 20:21:24.699] [INFO] Applied symbol defaults for XAUUSD: Risk=1, Duration=2
+[2025-07-21 20:21:24.699] [INFO] Active symbol display updated: XAUUSD
+[2025-07-21 20:21:24.757] [DEBUG] Canvas window opened
+[2025-07-21 20:21:24.757] [DEBUG] New CanvasWindow opened
+[2025-07-21 20:21:26.244] [DEBUG] Escape key detected and service is enabled
+[2025-07-21 20:21:26.244] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-21 20:21:26.245] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-21 20:21:26.245] [DEBUG] Closing canvas window
+[2025-07-21 20:21:26.245] [INFO] Window closing: saving canvas
+[2025-07-21 20:21:26.318] [INFO] Canvas saved: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\66714.xaml, C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\66714.png
+[2025-07-21 20:21:26.319] [INFO] Canvas saved properly
+[2025-07-21 20:21:26.326] [DEBUG] Canvas window closed
+[2025-07-21 20:21:26.326] [DEBUG] No overlay to close
+[2025-07-21 20:21:26.326] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-21 20:21:26.787] [DEBUG] Space key detected and service is enabled
+[2025-07-21 20:21:26.788] [DEBUG] Target window captured (Handle: 0x2048E)
+[2025-07-21 20:21:26.804] [INFO] Window activated - focus set to InkCanvas
+[2025-07-21 20:21:26.807] [INFO] Window loaded for handler 132238
+[2025-07-21 20:21:26.954] [INFO] InkCanvas initialized successfully with Yellow brush
+[2025-07-21 20:21:26.971] [INFO] Canvas loaded: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\132238.xaml
+[2025-07-21 20:21:26.971] [INFO] Brush mode updated: Simple mode
+[2025-07-21 20:21:26.971] [INFO] Applied symbol defaults for XAUUSD: Risk=1, Duration=2
+[2025-07-21 20:21:26.971] [INFO] Active symbol display updated: XAUUSD
+[2025-07-21 20:21:27.051] [DEBUG] Canvas window opened
+[2025-07-21 20:21:27.051] [DEBUG] New CanvasWindow opened
+[2025-07-21 20:21:27.875] [DEBUG] C key detected and service is enabled
+[2025-07-21 20:21:27.876] [DEBUG] C key pressed - clearing canvas
+[2025-07-21 20:21:27.876] [INFO] Clearing canvas and deleting files
+[2025-07-21 20:21:27.877] [INFO] Deleted: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\132238.png
+[2025-07-21 20:21:27.877] [INFO] Deleted: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\132238.xaml
+[2025-07-21 20:21:28.177] [INFO] Canvas saved: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\132238.xaml, C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\132238.png
+[2025-07-21 20:21:28.177] [INFO] Canvas saved properly
+[2025-07-21 20:21:28.178] [INFO] Mouse move on InkCanvas at 1431;430
+[2025-07-21 20:21:28.179] [INFO] Mouse up on InkCanvas at 1431;430
+[2025-07-21 20:21:28.304] [INFO] Mouse move on InkCanvas at 1456;458
+[2025-07-21 20:21:28.304] [INFO] Mouse move on InkCanvas at 1456;459
+[2025-07-21 20:21:28.320] [INFO] Mouse move on InkCanvas at 1455;462
+[2025-07-21 20:21:28.322] [INFO] Mouse move on InkCanvas at 1455;463
+[2025-07-21 20:21:28.332] [INFO] Mouse move on InkCanvas at 1454;464
+[2025-07-21 20:21:28.391] [INFO] Canvas saved: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\132238.xaml, C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\132238.png
+[2025-07-21 20:21:28.391] [INFO] Canvas saved properly
+[2025-07-21 20:21:28.392] [INFO] Mouse move on InkCanvas at 1454;464
+[2025-07-21 20:21:28.393] [INFO] Mouse up on InkCanvas at 1454;464
+[2025-07-21 20:21:28.393] [DEBUG] C key detected and service is enabled
+[2025-07-21 20:21:28.393] [DEBUG] C key pressed - clearing canvas
+[2025-07-21 20:21:28.393] [INFO] Clearing canvas and deleting files
+[2025-07-21 20:21:28.394] [INFO] Deleted: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\132238.png
+[2025-07-21 20:21:28.394] [INFO] Deleted: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\132238.xaml
+[2025-07-21 20:21:28.396] [INFO] Pressed C: clear canvas and delete files
+[2025-07-21 20:21:28.629] [INFO] Canvas saved: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\132238.xaml, C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\132238.png
+[2025-07-21 20:21:28.629] [INFO] Canvas saved properly
+[2025-07-21 20:21:28.630] [INFO] Mouse move on InkCanvas at 1454;489
+[2025-07-21 20:21:28.631] [INFO] Mouse up on InkCanvas at 1454;489
+[2025-07-21 20:21:28.867] [DEBUG] C key detected and service is enabled
+[2025-07-21 20:21:28.868] [DEBUG] C key pressed - clearing canvas
+[2025-07-21 20:21:28.868] [INFO] Clearing canvas and deleting files
+[2025-07-21 20:21:28.868] [INFO] Deleted: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\132238.png
+[2025-07-21 20:21:28.868] [INFO] Deleted: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\132238.xaml
+[2025-07-21 20:21:28.870] [INFO] Pressed C: clear canvas and delete files
+[2025-07-21 20:21:29.667] [DEBUG] Space key detected and service is enabled
+[2025-07-21 20:21:29.668] [INFO] Brush mode updated: Trading mode
+[2025-07-21 20:21:29.669] [DEBUG] Space pressed over CanvasWindow: toggled trading mode
+[2025-07-21 20:21:29.681] [INFO] Pressed Space: force focus to InkCanvas
+[2025-07-21 20:21:30.359] [INFO] CaptureData created for trading queue: ID=20250721202130359, Symbol=XAUUSD, Risk=1, Duration=2, Broker=Forex, Source=window
+[2025-07-21 20:21:30.359] [INFO] Stroke added to trading queue. Queue size: 1
+[2025-07-21 20:21:30.359] [INFO] Starting trading queue processing
+[2025-07-21 20:21:30.359] [INFO] Processing stroke from queue. Remaining items: 0
+[2025-07-21 20:21:30.373] [INFO] Created new settings for XAUUSD with DefaultRisk=1
+[2025-07-21 20:21:30.373] [INFO] Updated DefaultDuration for XAUUSD to 2
+[2025-07-21 20:21:30.373] [INFO] Updated symbol settings from capture: XAUUSD, Risk=1, Duration=2
+[2025-07-21 20:21:30.373] [INFO] Updated broker settings for Forex: Risk=1, Duration=2
+[2025-07-21 20:21:30.374] [INFO] Settings updated from capture
+[2025-07-21 20:21:30.374] [INFO] CaptureData saved to database: ID=20250721202130359
+[2025-07-21 20:21:30.374] [INFO] Adding trendline to GForex: TargetWindowHandle=132238, Point1=(1532, 226), Point2=(1577, 203), WindowWidth=1920
+[2025-07-21 20:21:30.374] [INFO] JForex: Начинаем добавление трендовой линии. Точка 1: (1532, 226), Точка 2: (1577, 203)
+[2025-07-21 20:21:30.377] [INFO] Mouse move on InkCanvas at 1532;226
+[2025-07-21 20:21:30.378] [INFO] JForex: Окно успешно активировано
+[2025-07-21 20:21:30.379] [INFO] Mouse up on InkCanvas at 1532;226
+[2025-07-21 20:21:30.594] [INFO] JForex: Sent ESC key to hwnd=0x2048E
+[2025-07-21 20:21:30.594] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-21 20:21:30.595] [DEBUG] CaptureTrackingService: Обработка capture ID=20250721202130359, Handle=132238, X=1511, Y=181, W=92, H=64
+[2025-07-21 20:21:30.608] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 92x64
+[2025-07-21 20:21:30.611] [DEBUG] TrendlineBreakDetector: Found 25 white pixels
+[2025-07-21 20:21:30.611] [DEBUG] TrendlineBreakDetector: Found 1 clusters
+[2025-07-21 20:21:30.612] [DEBUG] Cluster: size=25, len=10,4, center=(5,0,1,5), score=4,895
+[2025-07-21 20:21:30.612] [DEBUG] TrendlineBreakDetector: Selected white line from (0,3) to (10,0)
+[2025-07-21 20:21:30.612] [DEBUG] TrendlineBreakDetector: Trendline direction: Upward (SELL), searching for SELL breakout
+[2025-07-21 20:21:30.613] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: SELL
+[2025-07-21 20:21:30.616] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250721202130359\tracking.png] Trendline detected, breakout NOT found.
+[2025-07-21 20:21:30.616] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250721202130359\tracking.png: NoBreakout
+[2025-07-21 20:21:30.656] [INFO] JForex: Клавиша 'A' успешно отправлена
+[2025-07-21 20:21:30.864] [INFO] JForex: Конвертированные координаты. Точка 1: (1532, 226), Точка 2: (1577, 203)
+[2025-07-21 20:21:30.989] [INFO] JForex: Клик успешно выполнен в позиции (1532, 226)
+[2025-07-21 20:21:31.223] [INFO] JForex: Клик успешно выполнен в позиции (1577, 203)
+[2025-07-21 20:21:31.224] [INFO] JForex: Sent ESC key to hwnd=0x2048E
+[2025-07-21 20:21:31.225] [INFO] JForex: Треховая линия успешно добавлена
+[2025-07-21 20:21:31.225] [INFO] Trendline successfully added to GForex
+[2025-07-21 20:21:31.225] [INFO] Trendline successfully added to GForex
+[2025-07-21 20:21:31.226] [INFO] Stroke removed from canvas
+[2025-07-21 20:21:31.283] [INFO] Trading stroke processing completed: ID=20250721202130359
+[2025-07-21 20:21:31.396] [INFO] Trading queue processing completed
+[2025-07-21 20:21:31.667] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-21 20:21:31.668] [DEBUG] CaptureTrackingService: Обработка capture ID=20250721202130359, Handle=132238, X=1511, Y=181, W=92, H=64
+[2025-07-21 20:21:31.681] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 92x64
+[2025-07-21 20:21:31.683] [DEBUG] TrendlineBreakDetector: Found 145 white pixels
+[2025-07-21 20:21:31.684] [DEBUG] TrendlineBreakDetector: Found 2 clusters
+[2025-07-21 20:21:31.684] [DEBUG] Cluster: size=25, len=10,4, center=(5,0,1,5), score=4,895
+[2025-07-21 20:21:31.684] [DEBUG] Cluster: size=120, len=49,2, center=(44,0,33,0), score=0,045
+[2025-07-21 20:21:31.684] [DEBUG] TrendlineBreakDetector: Selected white line from (22,44) to (66,22)
+[2025-07-21 20:21:31.684] [DEBUG] TrendlineBreakDetector: Trendline direction: Upward (SELL), searching for SELL breakout
+[2025-07-21 20:21:31.685] [INFO] TrendlineBreakDetector: Breakout DOWN detected at (52,33) - Red: 0,31
+[2025-07-21 20:21:31.687] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250721202130359\tracking.png] Breakout DOWN detected!
+[2025-07-21 20:21:31.688] [INFO] CaptureTrackingService: Updated IsFired=True for capture ID=20250721202130359, Handle=132238
+[2025-07-21 20:21:31.698] [INFO] MT4 Socket: >>> OnBreakoutDetected handler CALLED <<< (type: BreakoutDown)
+[2025-07-21 20:21:31.698] [INFO] MT4 Socket: Sending to MT4: {"cmd":"SELL","symbol":"XAUUSD","risk":1,"id":"20250721202130359"} (with CRLF)
+[2025-07-21 20:21:31.699] [WARNING] Cannot write message: not connected to MT4 socket
+[2025-07-21 20:21:31.700] [DEBUG] MT4 Connection: Disconnected
+[2025-07-21 20:21:31.700] [INFO] MT4 Connection status: Disconnected
+[2025-07-21 20:21:31.700] [INFO] MT4 Socket: Breakout processing completed for XAUUSD, type: BreakoutDown, ID: 20250721202130359
+[2025-07-21 20:21:31.700] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250721202130359\tracking.png: BreakoutDown
+[2025-07-21 20:21:32.851] [DEBUG] Escape key detected and service is enabled
+[2025-07-21 20:21:32.852] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-21 20:21:32.852] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-21 20:21:32.852] [DEBUG] Closing canvas window
+[2025-07-21 20:21:32.852] [INFO] Window closing: saving canvas
+[2025-07-21 20:21:32.901] [INFO] Canvas saved: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\132238.xaml, C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\132238.png
+[2025-07-21 20:21:32.901] [INFO] Canvas saved properly
+[2025-07-21 20:21:32.904] [DEBUG] Canvas window closed
+[2025-07-21 20:21:32.904] [DEBUG] No overlay to close
+[2025-07-21 20:21:32.904] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-21 20:22:23.211] [DEBUG] C key detected and service is enabled
+[2025-07-21 20:22:23.211] [DEBUG] C key pressed - clearing canvas
+[2025-07-21 20:22:23.459] [DEBUG] E hotkey detected and service is enabled
+[2025-07-21 20:22:23.459] [INFO] [DEBUG] OnEHotkey event in MainWindow
+[2025-07-21 20:22:23.583] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
+[2025-07-21 20:22:23.585] [INFO] Hotkey button index 2 clicked at (480,56) on window 66452
+[2025-07-21 20:22:23.585] [INFO] [DEBUG] Mouse returned to (3692,933)
+[2025-07-21 20:22:23.586] [DEBUG] C key detected and service is enabled
+[2025-07-21 20:22:23.586] [DEBUG] C key pressed - clearing canvas
+[2025-07-21 20:22:23.763] [DEBUG] Space key detected and service is enabled
+[2025-07-21 20:22:23.763] [DEBUG] Target window captured (Handle: 0x10394)
+[2025-07-21 20:22:23.776] [INFO] Window activated - focus set to InkCanvas
+[2025-07-21 20:22:23.778] [INFO] Window loaded for handler 66452
+[2025-07-21 20:22:23.912] [INFO] InkCanvas initialized successfully with Yellow brush
+[2025-07-21 20:22:23.913] [INFO] Canvas loaded: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\66452.xaml
+[2025-07-21 20:22:23.913] [INFO] Brush mode updated: Simple mode
+[2025-07-21 20:22:23.913] [INFO] Applied symbol defaults for XAUUSD: Risk=1, Duration=2
+[2025-07-21 20:22:23.913] [INFO] Active symbol display updated: XAUUSD
+[2025-07-21 20:22:23.948] [DEBUG] Canvas window opened
+[2025-07-21 20:22:23.948] [DEBUG] New CanvasWindow opened
+[2025-07-21 20:22:25.412] [INFO] Mouse move on InkCanvas at 628;378
+[2025-07-21 20:22:25.417] [INFO] Mouse move on InkCanvas at 628;378
+[2025-07-21 20:22:25.418] [INFO] Mouse move on InkCanvas at 627;379
+[2025-07-21 20:22:25.421] [INFO] Mouse move on InkCanvas at 626;380
+[2025-07-21 20:22:25.429] [INFO] Mouse move on InkCanvas at 621;381
+[2025-07-21 20:22:25.437] [INFO] Mouse move on InkCanvas at 611;385
+[2025-07-21 20:22:25.445] [INFO] Mouse move on InkCanvas at 602;388
+[2025-07-21 20:22:25.453] [INFO] Mouse move on InkCanvas at 592;390
+[2025-07-21 20:22:25.517] [INFO] Canvas saved: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\66452.xaml, C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\66452.png
+[2025-07-21 20:22:25.517] [INFO] Canvas saved properly
+[2025-07-21 20:22:25.518] [INFO] Mouse up on InkCanvas at 592;390
+[2025-07-21 20:22:25.579] [DEBUG] Escape key detected and service is enabled
+[2025-07-21 20:22:25.579] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-21 20:22:25.579] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-21 20:22:25.579] [DEBUG] Closing canvas window
+[2025-07-21 20:22:25.579] [INFO] Window closing: saving canvas
+[2025-07-21 20:22:25.630] [INFO] Canvas saved: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\66452.xaml, C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\66452.png
+[2025-07-21 20:22:25.631] [INFO] Canvas saved properly
+[2025-07-21 20:22:25.635] [DEBUG] Canvas window closed
+[2025-07-21 20:22:25.635] [DEBUG] No overlay to close
+[2025-07-21 20:22:25.635] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-21 20:22:25.763] [DEBUG] Escape key detected and service is enabled
+[2025-07-21 20:22:25.763] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-21 20:22:25.763] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-21 20:22:25.763] [DEBUG] No overlay to close
+[2025-07-21 20:22:25.763] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-21 20:22:29.571] [DEBUG] Space key detected but service is disabled
+[2025-07-21 20:24:22.041] [DEBUG] Escape key detected but service is disabled
+[2025-07-21 20:24:24.809] [DEBUG] Escape key detected but service is disabled
+[2025-07-21 20:24:24.953] [DEBUG] Escape key detected but service is disabled
+[2025-07-21 20:24:25.089] [DEBUG] Escape key detected but service is disabled
+[2025-07-21 20:24:27.233] [DEBUG] Escape key detected but service is disabled
+[2025-07-21 20:24:39.233] [DEBUG] Escape key detected but service is disabled
+[2025-07-21 20:24:42.673] [DEBUG] Escape key detected but service is disabled
+[2025-07-21 20:24:42.857] [DEBUG] Escape key detected but service is disabled
+[2025-07-21 20:26:03.008] [DEBUG] Symbol hotkey 2 pressed
+[2025-07-21 20:26:03.237] [DEBUG] Status: Found and brought 2 window(s) to foreground: GBP/JPY, T34, GBP/JPY, T8
+[2025-07-21 20:26:04.448] [DEBUG] E hotkey detected and service is enabled
+[2025-07-21 20:26:04.449] [INFO] [DEBUG] OnEHotkey event in MainWindow
+[2025-07-21 20:26:04.564] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
+[2025-07-21 20:26:04.565] [INFO] Hotkey button index 2 clicked at (480,56) on window 4654244
+[2025-07-21 20:26:04.565] [INFO] [DEBUG] Mouse returned to (584,482)
+[2025-07-21 20:26:04.872] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-21 20:26:04.995] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
+[2025-07-21 20:26:04.995] [INFO] Hotkey button index 1 clicked at (280,56) on window 4654244
+[2025-07-21 20:26:04.996] [INFO] [DEBUG] Mouse returned to (584,482)
+[2025-07-21 20:26:05.232] [DEBUG] Q hotkey detected and service is enabled
+[2025-07-21 20:26:05.233] [INFO] [DEBUG] OnQHotkey event in MainWindow
+[2025-07-21 20:26:05.357] [INFO] JForex: Клик успешно выполнен в позиции (80, 56)
+[2025-07-21 20:26:05.358] [INFO] Hotkey button index 0 clicked at (80,56) on window 4654244
+[2025-07-21 20:26:05.358] [INFO] [DEBUG] Mouse returned to (584,482)
+[2025-07-21 20:26:05.696] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-21 20:26:05.813] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
+[2025-07-21 20:26:05.813] [INFO] Hotkey button index 1 clicked at (280,56) on window 4654244
+[2025-07-21 20:26:05.813] [INFO] [DEBUG] Mouse returned to (584,482)
+[2025-07-21 20:26:06.000] [DEBUG] E hotkey detected and service is enabled
+[2025-07-21 20:26:06.000] [INFO] [DEBUG] OnEHotkey event in MainWindow
+[2025-07-21 20:26:06.129] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
+[2025-07-21 20:26:06.129] [INFO] Hotkey button index 2 clicked at (480,56) on window 4654244
+[2025-07-21 20:26:06.129] [INFO] [DEBUG] Mouse returned to (584,482)
+[2025-07-21 20:26:06.272] [DEBUG] R hotkey detected and service is enabled
+[2025-07-21 20:26:06.273] [INFO] [DEBUG] OnRHotkey event in MainWindow
+[2025-07-21 20:26:06.398] [INFO] JForex: Клик успешно выполнен в позиции (680, 56)
+[2025-07-21 20:26:06.399] [INFO] Hotkey button index 3 clicked at (680,56) on window 4654244
+[2025-07-21 20:26:06.399] [INFO] [DEBUG] Mouse returned to (584,482)
+[2025-07-21 20:26:06.776] [DEBUG] Q hotkey detected and service is enabled
+[2025-07-21 20:26:06.777] [INFO] [DEBUG] OnQHotkey event in MainWindow
+[2025-07-21 20:26:06.905] [INFO] JForex: Клик успешно выполнен в позиции (80, 56)
+[2025-07-21 20:26:06.906] [INFO] Hotkey button index 0 clicked at (80,56) on window 4654244
+[2025-07-21 20:26:06.906] [INFO] [DEBUG] Mouse returned to (584,482)
+[2025-07-21 20:26:07.256] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-21 20:26:07.380] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
+[2025-07-21 20:26:07.380] [INFO] Hotkey button index 1 clicked at (280,56) on window 4654244
+[2025-07-21 20:26:07.381] [INFO] [DEBUG] Mouse returned to (584,482)
+[2025-07-21 20:26:08.360] [DEBUG] E hotkey detected and service is enabled
+[2025-07-21 20:26:08.361] [INFO] [DEBUG] OnEHotkey event in MainWindow
+[2025-07-21 20:26:08.484] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
+[2025-07-21 20:26:08.484] [INFO] Hotkey button index 2 clicked at (480,56) on window 4654244
+[2025-07-21 20:26:08.485] [INFO] [DEBUG] Mouse returned to (584,482)
+[2025-07-21 20:26:08.712] [DEBUG] R hotkey detected and service is enabled
+[2025-07-21 20:26:08.712] [INFO] [DEBUG] OnRHotkey event in MainWindow
+[2025-07-21 20:26:08.832] [INFO] JForex: Клик успешно выполнен в позиции (680, 56)
+[2025-07-21 20:26:08.833] [INFO] Hotkey button index 3 clicked at (680,56) on window 4654244
+[2025-07-21 20:26:08.833] [INFO] [DEBUG] Mouse returned to (584,482)
+[2025-07-21 20:26:09.280] [DEBUG] Q hotkey detected and service is enabled
+[2025-07-21 20:26:09.281] [INFO] [DEBUG] OnQHotkey event in MainWindow
+[2025-07-21 20:26:09.395] [INFO] JForex: Клик успешно выполнен в позиции (80, 56)
+[2025-07-21 20:26:09.396] [INFO] Hotkey button index 0 clicked at (80,56) on window 4654244
+[2025-07-21 20:26:09.396] [INFO] [DEBUG] Mouse returned to (584,482)
+[2025-07-21 20:26:09.744] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-21 20:26:09.868] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
+[2025-07-21 20:26:09.868] [INFO] Hotkey button index 1 clicked at (280,56) on window 4654244
+[2025-07-21 20:26:09.869] [INFO] [DEBUG] Mouse returned to (584,482)
+[2025-07-21 20:26:10.096] [DEBUG] R hotkey detected and service is enabled
+[2025-07-21 20:26:10.097] [INFO] [DEBUG] OnRHotkey event in MainWindow
+[2025-07-21 20:26:10.216] [INFO] JForex: Клик успешно выполнен в позиции (680, 56)
+[2025-07-21 20:26:10.216] [INFO] Hotkey button index 3 clicked at (680,56) on window 4654244
+[2025-07-21 20:26:10.217] [INFO] [DEBUG] Mouse returned to (584,482)
+[2025-07-21 20:26:10.720] [DEBUG] Q hotkey detected and service is enabled
+[2025-07-21 20:26:10.721] [INFO] [DEBUG] OnQHotkey event in MainWindow
+[2025-07-21 20:26:10.841] [INFO] JForex: Клик успешно выполнен в позиции (80, 56)
+[2025-07-21 20:26:10.841] [INFO] Hotkey button index 0 clicked at (80,56) on window 4654244
+[2025-07-21 20:26:10.841] [INFO] [DEBUG] Mouse returned to (584,482)
+[2025-07-21 20:26:11.376] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-21 20:26:11.491] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
+[2025-07-21 20:26:11.491] [INFO] Hotkey button index 1 clicked at (280,56) on window 4654244
+[2025-07-21 20:26:11.492] [INFO] [DEBUG] Mouse returned to (584,482)
+[2025-07-21 20:26:12.136] [DEBUG] E hotkey detected and service is enabled
+[2025-07-21 20:26:12.137] [INFO] [DEBUG] OnEHotkey event in MainWindow
+[2025-07-21 20:26:12.264] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
+[2025-07-21 20:26:12.264] [INFO] Hotkey button index 2 clicked at (480,56) on window 4654244
+[2025-07-21 20:26:12.264] [INFO] [DEBUG] Mouse returned to (584,482)
+[2025-07-21 20:26:12.840] [DEBUG] R hotkey detected and service is enabled
+[2025-07-21 20:26:12.841] [INFO] [DEBUG] OnRHotkey event in MainWindow
+[2025-07-21 20:26:12.954] [INFO] JForex: Клик успешно выполнен в позиции (680, 56)
+[2025-07-21 20:26:12.954] [INFO] Hotkey button index 3 clicked at (680,56) on window 4654244
+[2025-07-21 20:26:12.954] [INFO] [DEBUG] Mouse returned to (584,482)
+[2025-07-21 20:26:14.648] [DEBUG] R hotkey detected and service is enabled
+[2025-07-21 20:26:14.649] [INFO] [DEBUG] OnRHotkey event in MainWindow
+[2025-07-21 20:26:14.765] [INFO] JForex: Клик успешно выполнен в позиции (680, 56)
+[2025-07-21 20:26:14.766] [INFO] Hotkey button index 3 clicked at (680,56) on window 4654244
+[2025-07-21 20:26:14.766] [INFO] [DEBUG] Mouse returned to (681,442)
+[2025-07-21 20:26:14.960] [DEBUG] E hotkey detected and service is enabled
+[2025-07-21 20:26:14.960] [INFO] [DEBUG] OnEHotkey event in MainWindow
+[2025-07-21 20:26:15.082] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
+[2025-07-21 20:26:15.082] [INFO] Hotkey button index 2 clicked at (480,56) on window 4654244
+[2025-07-21 20:26:15.082] [INFO] [DEBUG] Mouse returned to (681,443)
+[2025-07-21 20:26:15.376] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-21 20:26:15.504] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
+[2025-07-21 20:26:15.504] [INFO] Hotkey button index 1 clicked at (280,56) on window 4654244
+[2025-07-21 20:26:15.504] [INFO] [DEBUG] Mouse returned to (681,443)
+[2025-07-21 20:26:15.776] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-21 20:26:15.899] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
+[2025-07-21 20:26:15.899] [INFO] Hotkey button index 1 clicked at (280,56) on window 4654244
+[2025-07-21 20:26:15.899] [INFO] [DEBUG] Mouse returned to (681,443)
+[2025-07-21 20:26:16.056] [DEBUG] Q hotkey detected and service is enabled
+[2025-07-21 20:26:16.056] [INFO] [DEBUG] OnQHotkey event in MainWindow
+[2025-07-21 20:26:16.185] [INFO] JForex: Клик успешно выполнен в позиции (80, 56)
+[2025-07-21 20:26:16.185] [INFO] Hotkey button index 0 clicked at (80,56) on window 4654244
+[2025-07-21 20:26:16.185] [INFO] [DEBUG] Mouse returned to (681,443)
+[2025-07-21 20:26:17.216] [DEBUG] Q hotkey detected and service is enabled
+[2025-07-21 20:26:17.217] [INFO] [DEBUG] OnQHotkey event in MainWindow
+[2025-07-21 20:26:17.346] [INFO] JForex: Клик успешно выполнен в позиции (80, 56)
+[2025-07-21 20:26:17.346] [INFO] Hotkey button index 0 clicked at (80,56) on window 4654244
+[2025-07-21 20:26:17.346] [INFO] [DEBUG] Mouse returned to (1290,509)
+[2025-07-21 20:27:18.382] [INFO] MT4 Socket: Manual reconnect initiated
+[2025-07-21 20:27:18.382] [INFO] Attempting to connect to MT4 socket at 127.0.0.1:23456
+[2025-07-21 20:27:18.384] [INFO] Successfully connected to MT4 socket at 127.0.0.1:23456
+[2025-07-21 20:27:18.384] [DEBUG] MT4 Connection: Connected
+[2025-07-21 20:27:18.385] [INFO] MT4 Connection status: Connected
+[2025-07-21 20:27:18.385] [INFO] MT4 Socket: Connection status indicator updated to Connected (Green)
+[2025-07-21 20:27:18.385] [INFO] MT4 Socket: Manual reconnect successful
+[2025-07-21 20:27:18.386] [INFO] MT4 Socket: Connection status indicator updated to Connected (Green)
+[2025-07-21 20:27:18.387] [INFO] Starting to read messages from MT4 socket
+[2025-07-21 20:27:18.388] [INFO] Received from MT4 socket: {"event":"welcome","version":"1.4.0","server_name":"RIPPER_MT4_SOCKET_SERVER","port":"23456","debug_mode":false,"symbol_suffix":".s","account":{"balance":8091.29000000,"equity":8091.29000000,"margin":0.00000000,"free_margin":8091.29000000,"currency":"USD","company":"PU Prime Ltd","server":"PUPrime-Demo"}}
+{"event":"watchlist_stats"}
+[2025-07-21 20:27:18.404] [WARNING] MT4 Socket: Failed to parse JSON message: '{' is invalid after a single JSON value. Expected end of data. LineNumber: 1 | BytePositionInLine: 0.
+[2025-07-21 20:27:18.405] [DEBUG] MT4: {"event":"welcome","version":"1.4.0","server_name":"RIPPER_MT4_SOCKET_SERVER","port":"23456","debug_mode":false,"symbol_suffix":".s","account":{"balance":8091.29000000,"equity":8091.29000000,"margin":0.00000000,"free_margin":8091.29000000,"currency":"USD","company":"PU Prime Ltd","server":"PUPrime-Demo"}}
+{"event":"watchlist_stats"}
+[2025-07-21 20:27:20.564] [DEBUG] Status: Found and brought 2 window(s) to foreground: XAU/USD, T8, XAU/USD, T610
+[2025-07-21 20:27:24.735] [DEBUG] Escape key detected and service is enabled
+[2025-07-21 20:27:24.736] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-21 20:27:24.736] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-21 20:27:24.736] [DEBUG] No overlay to close
+[2025-07-21 20:27:24.736] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-21 20:27:26.063] [DEBUG] T key detected and service is enabled
+[2025-07-21 20:27:26.064] [DEBUG] Target window captured (Handle: 0x1049A)
+[2025-07-21 20:27:26.064] [DEBUG] T key pressed - starting capture
+[2025-07-21 20:27:26.064] [DEBUG] StartCapture_Click called. isCapturing: False, overlay: null
+[2025-07-21 20:27:26.065] [DEBUG] Starting capture...
+[2025-07-21 20:27:26.065] [DEBUG] StartCapture method called
+[2025-07-21 20:27:26.065] [DEBUG] Starting capture... Press hotkey again to stop
+[2025-07-21 20:27:26.071] [INFO] Applied symbol defaults for XAUUSD: Risk=1, Duration=2
+[2025-07-21 20:27:26.074] [DEBUG] Overlay created: ScreenCaptureApp.ScreenCaptureOverlay
+[2025-07-21 20:27:26.074] [DEBUG] Event handler subscribed
+[2025-07-21 20:27:26.171] [DEBUG] Overlay shown
+[2025-07-21 20:27:27.695] [DEBUG] Enter key detected and service is enabled
+[2025-07-21 20:27:27.704] [INFO] ScreenCaptureOverlay calling CaptureAreaWithSymbolAndRisk: SelectedRisk=1, SelectedDuration=2, activeSymbol=XAUUSD
+[2025-07-21 20:27:27.705] [INFO] ScreenCaptureOverlay local values: selectedRisk=1, selectedDuration=2
+[2025-07-21 20:27:27.706] [INFO] CaptureService.CaptureAreaWithSymbolAndRisk called with: risk=1, duration=2, symbol=XAUUSD
+[2025-07-21 20:27:27.707] [INFO] CaptureData created: ID=20250721202727706, Symbol=XAUUSD, Risk=1, Duration=2, Broker=Forex, Source=window
+[2025-07-21 20:27:27.736] [INFO] Updated DefaultRisk for XAUUSD to 1
+[2025-07-21 20:27:27.737] [INFO] Updated DefaultDuration for XAUUSD to 2
+[2025-07-21 20:27:27.737] [INFO] Updated symbol settings from capture: XAUUSD, Risk=1, Duration=2
+[2025-07-21 20:27:27.737] [INFO] Updated broker settings for Forex: Risk=1, Duration=2
+[2025-07-21 20:27:27.738] [DEBUG] Capture completed
+[2025-07-21 20:27:27.739] [WARNING] CaptureTrackingService: Уже выполняется процесс трекинга, повторный запуск игнорируется
+[2025-07-21 20:27:27.739] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-21 20:27:27.739] [DEBUG] CaptureTrackingService: Обработка capture ID=20250721202727706, Handle=66714, X=1231, Y=559, W=90, H=87
+[2025-07-21 20:27:27.750] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 90x87
+[2025-07-21 20:27:27.753] [DEBUG] TrendlineBreakDetector: Found 227 white pixels
+[2025-07-21 20:27:27.753] [DEBUG] TrendlineBreakDetector: Found 1 clusters
+[2025-07-21 20:27:27.753] [DEBUG] Cluster: size=227, len=92,2, center=(37,0,47,5), score=0,100
+[2025-07-21 20:27:27.753] [DEBUG] TrendlineBreakDetector: Selected white line from (0,75) to (74,20)
+[2025-07-21 20:27:27.754] [DEBUG] TrendlineBreakDetector: Trendline direction: Upward (SELL), searching for SELL breakout
+[2025-07-21 20:27:27.754] [INFO] TrendlineBreakDetector: Breakout DOWN detected at (56,37) - Red: 0,38
+[2025-07-21 20:27:27.756] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250721202727706\tracking.png] Breakout DOWN detected!
+[2025-07-21 20:27:27.757] [INFO] CaptureTrackingService: Updated IsFired=True for capture ID=20250721202727706, Handle=66714
+[2025-07-21 20:27:27.768] [INFO] MT4 Socket: >>> OnBreakoutDetected handler CALLED <<< (type: BreakoutDown)
+[2025-07-21 20:27:27.768] [INFO] MT4 Socket: Sending to MT4: {"cmd":"SELL","symbol":"XAUUSD","risk":1,"id":"20250721202727706"} (with CRLF)
+[2025-07-21 20:27:27.770] [INFO] Sent message to MT4 socket: {"cmd":"SELL","symbol":"XAUUSD","risk":1,"id":"20250721202727706"}
+
+[2025-07-21 20:27:27.770] [INFO] MT4 Socket: Breakout processing completed for XAUUSD, type: BreakoutDown, ID: 20250721202727706
+[2025-07-21 20:27:27.770] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250721202727706\tracking.png: BreakoutDown
+[2025-07-21 20:27:28.016] [INFO] Received from MT4 socket: {"success":true,"ticket":77329456,"symbol":"XAUUSD.s","direction":"SELL","lot_size":0.40000000,"price":3391.91000000,"sl_level":3393.91000000,"sl_pips":20,"risk":1,"debug_mode":false,"completed":"1","cmd":"SELL"}
+[2025-07-21 20:27:28.026] [DEBUG] MT4: {"success":true,"ticket":77329456,"symbol":"XAUUSD.s","direction":"SELL","lot_size":0.40000000,"price":3391.91000000,"sl_level":3393.91000000,"sl_pips":20,"risk":1,"debug_mode":false,"completed":"1","cmd":"SELL"}
+[2025-07-21 20:27:28.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-10.80000000,"percent":-0.13000000,"lots":0.40000000,"profit_points":-26}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:28.393] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:28.401] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-10.80000000,"percent":-0.13000000,"lots":0.40000000,"profit_points":-26}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:29.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-10.40000000,"percent":-0.13000000,"lots":0.40000000,"profit_points":-25}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:29.390] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:29.393] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-10.40000000,"percent":-0.13000000,"lots":0.40000000,"profit_points":-25}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:30.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-10.40000000,"percent":-0.13000000,"lots":0.40000000,"profit_points":-25}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:30.390] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:30.394] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-10.40000000,"percent":-0.13000000,"lots":0.40000000,"profit_points":-25}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:31.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-10.80000000,"percent":-0.13000000,"lots":0.40000000,"profit_points":-26}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:31.390] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:31.392] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-10.80000000,"percent":-0.13000000,"lots":0.40000000,"profit_points":-26}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:32.386] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-12.80000000,"percent":-0.16000000,"lots":0.40000000,"profit_points":-31}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:32.386] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:32.388] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-12.80000000,"percent":-0.16000000,"lots":0.40000000,"profit_points":-31}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:33.392] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-12.40000000,"percent":-0.15000000,"lots":0.40000000,"profit_points":-30}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:33.392] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:33.394] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-12.40000000,"percent":-0.15000000,"lots":0.40000000,"profit_points":-30}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:34.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-12.40000000,"percent":-0.15000000,"lots":0.40000000,"profit_points":-30}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:34.390] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:34.392] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-12.40000000,"percent":-0.15000000,"lots":0.40000000,"profit_points":-30}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:35.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-13.20000000,"percent":-0.16000000,"lots":0.40000000,"profit_points":-32}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:35.390] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:35.392] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-13.20000000,"percent":-0.16000000,"lots":0.40000000,"profit_points":-32}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:36.394] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-15.60000000,"percent":-0.19000000,"lots":0.40000000,"profit_points":-38}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:36.395] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:36.398] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-15.60000000,"percent":-0.19000000,"lots":0.40000000,"profit_points":-38}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:37.392] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-15.60000000,"percent":-0.19000000,"lots":0.40000000,"profit_points":-38}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:37.392] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:37.393] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-15.60000000,"percent":-0.19000000,"lots":0.40000000,"profit_points":-38}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:38.389] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-14.80000000,"percent":-0.18000000,"lots":0.40000000,"profit_points":-36}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:38.389] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:38.391] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-14.80000000,"percent":-0.18000000,"lots":0.40000000,"profit_points":-36}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:39.389] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-12.00000000,"percent":-0.15000000,"lots":0.40000000,"profit_points":-29}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:39.390] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:39.403] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-12.00000000,"percent":-0.15000000,"lots":0.40000000,"profit_points":-29}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:40.391] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-10.80000000,"percent":-0.13000000,"lots":0.40000000,"profit_points":-26}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:40.391] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:40.404] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-10.80000000,"percent":-0.13000000,"lots":0.40000000,"profit_points":-26}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:41.385] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-10.80000000,"percent":-0.13000000,"lots":0.40000000,"profit_points":-26}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:41.386] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:41.389] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-10.80000000,"percent":-0.13000000,"lots":0.40000000,"profit_points":-26}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:42.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-11.60000000,"percent":-0.14000000,"lots":0.40000000,"profit_points":-28}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:42.391] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:42.393] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-11.60000000,"percent":-0.14000000,"lots":0.40000000,"profit_points":-28}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:43.383] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-10.80000000,"percent":-0.13000000,"lots":0.40000000,"profit_points":-26}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:43.384] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:43.385] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-10.80000000,"percent":-0.13000000,"lots":0.40000000,"profit_points":-26}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:44.384] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-11.20000000,"percent":-0.14000000,"lots":0.40000000,"profit_points":-27}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:44.384] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:44.386] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-11.20000000,"percent":-0.14000000,"lots":0.40000000,"profit_points":-27}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:45.396] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-12.40000000,"percent":-0.15000000,"lots":0.40000000,"profit_points":-30}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:45.396] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:45.398] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-12.40000000,"percent":-0.15000000,"lots":0.40000000,"profit_points":-30}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:46.447] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-28.40000000,"percent":-0.35000000,"lots":0.40000000,"profit_points":-71}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:46.447] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:46.449] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-28.40000000,"percent":-0.35000000,"lots":0.40000000,"profit_points":-71}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:47.391] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-20.80000000,"percent":-0.26000000,"lots":0.40000000,"profit_points":-51}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:47.391] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:47.393] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-20.80000000,"percent":-0.26000000,"lots":0.40000000,"profit_points":-51}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:48.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-23.60000000,"percent":-0.29000000,"lots":0.40000000,"profit_points":-59}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:48.390] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:48.392] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-23.60000000,"percent":-0.29000000,"lots":0.40000000,"profit_points":-59}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:49.404] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-22.80000000,"percent":-0.28000000,"lots":0.40000000,"profit_points":-56}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:49.404] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:49.406] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-22.80000000,"percent":-0.28000000,"lots":0.40000000,"profit_points":-56}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:50.387] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-23.20000000,"percent":-0.29000000,"lots":0.40000000,"profit_points":-57}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:50.387] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:50.389] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-23.20000000,"percent":-0.29000000,"lots":0.40000000,"profit_points":-57}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:51.383] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-26.80000000,"percent":-0.33000000,"lots":0.40000000,"profit_points":-67}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:51.384] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:51.386] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-26.80000000,"percent":-0.33000000,"lots":0.40000000,"profit_points":-67}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:52.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-25.60000000,"percent":-0.32000000,"lots":0.40000000,"profit_points":-63}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:52.390] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:52.392] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-25.60000000,"percent":-0.32000000,"lots":0.40000000,"profit_points":-63}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:53.391] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-26.40000000,"percent":-0.33000000,"lots":0.40000000,"profit_points":-65}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:53.391] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:53.393] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-26.40000000,"percent":-0.33000000,"lots":0.40000000,"profit_points":-65}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:54.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-28.00000000,"percent":-0.35000000,"lots":0.40000000,"profit_points":-69}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:54.390] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:54.393] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-28.00000000,"percent":-0.35000000,"lots":0.40000000,"profit_points":-69}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:55.382] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-28.40000000,"percent":-0.35000000,"lots":0.40000000,"profit_points":-71}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:55.383] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:55.390] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-28.40000000,"percent":-0.35000000,"lots":0.40000000,"profit_points":-71}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:56.396] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-32.00000000,"percent":-0.40000000,"lots":0.40000000,"profit_points":-79}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:56.397] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:56.398] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-32.00000000,"percent":-0.40000000,"lots":0.40000000,"profit_points":-79}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:57.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-34.40000000,"percent":-0.43000000,"lots":0.40000000,"profit_points":-86}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:57.391] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:57.406] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-34.40000000,"percent":-0.43000000,"lots":0.40000000,"profit_points":-86}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:58.398] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-36.40000000,"percent":-0.45000000,"lots":0.40000000,"profit_points":-90}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:58.399] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:58.412] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-36.40000000,"percent":-0.45000000,"lots":0.40000000,"profit_points":-90}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:59.151] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 20:27:59.151] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 20:27:59.393] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-36.80000000,"percent":-0.45000000,"lots":0.40000000,"profit_points":-92}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:59.394] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:27:59.395] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-36.80000000,"percent":-0.45000000,"lots":0.40000000,"profit_points":-92}},"total_balance":8091.29000000}
+
+[2025-07-21 20:27:59.666] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 20:27:59.666] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 20:27:59.696] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 20:27:59.696] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 20:27:59.733] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 20:27:59.733] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 20:27:59.759] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 20:27:59.760] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 20:28:00.406] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-38.00000000,"percent":-0.47000000,"lots":0.40000000,"profit_points":-94}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:00.406] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:00.408] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-38.00000000,"percent":-0.47000000,"lots":0.40000000,"profit_points":-94}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:00.839] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 20:28:00.839] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 20:28:01.383] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-36.40000000,"percent":-0.45000000,"lots":0.40000000,"profit_points":-90}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:01.383] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:01.391] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-36.40000000,"percent":-0.45000000,"lots":0.40000000,"profit_points":-90}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:02.386] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-38.40000000,"percent":-0.47000000,"lots":0.40000000,"profit_points":-96}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:02.386] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:02.389] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-38.40000000,"percent":-0.47000000,"lots":0.40000000,"profit_points":-96}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:03.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-39.20000000,"percent":-0.48000000,"lots":0.40000000,"profit_points":-98}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:03.390] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:03.393] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-39.20000000,"percent":-0.48000000,"lots":0.40000000,"profit_points":-98}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:04.383] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-41.60000000,"percent":-0.51000000,"lots":0.40000000,"profit_points":-103}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:04.383] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:04.385] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-41.60000000,"percent":-0.51000000,"lots":0.40000000,"profit_points":-103}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:05.391] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-38.80000000,"percent":-0.48000000,"lots":0.40000000,"profit_points":-96}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:05.392] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:05.393] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-38.80000000,"percent":-0.48000000,"lots":0.40000000,"profit_points":-96}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:06.398] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-37.20000000,"percent":-0.46000000,"lots":0.40000000,"profit_points":-92}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:06.398] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:06.400] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-37.20000000,"percent":-0.46000000,"lots":0.40000000,"profit_points":-92}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:07.440] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-34.00000000,"percent":-0.42000000,"lots":0.40000000,"profit_points":-84}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:07.440] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:07.442] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-34.00000000,"percent":-0.42000000,"lots":0.40000000,"profit_points":-84}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:08.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-28.00000000,"percent":-0.35000000,"lots":0.40000000,"profit_points":-69}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:08.391] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:08.392] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-28.00000000,"percent":-0.35000000,"lots":0.40000000,"profit_points":-69}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:09.389] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-30.00000000,"percent":-0.37000000,"lots":0.40000000,"profit_points":-75}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:09.389] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:09.391] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-30.00000000,"percent":-0.37000000,"lots":0.40000000,"profit_points":-75}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:10.392] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-28.80000000,"percent":-0.36000000,"lots":0.40000000,"profit_points":-71}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:10.392] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:10.394] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-28.80000000,"percent":-0.36000000,"lots":0.40000000,"profit_points":-71}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:11.383] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-28.40000000,"percent":-0.35000000,"lots":0.40000000,"profit_points":-71}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:11.383] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:11.385] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-28.40000000,"percent":-0.35000000,"lots":0.40000000,"profit_points":-71}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:12.393] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-26.80000000,"percent":-0.33000000,"lots":0.40000000,"profit_points":-67}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:12.393] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:12.395] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-26.80000000,"percent":-0.33000000,"lots":0.40000000,"profit_points":-67}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:13.388] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-27.20000000,"percent":-0.34000000,"lots":0.40000000,"profit_points":-67}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:13.389] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:13.391] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-27.20000000,"percent":-0.34000000,"lots":0.40000000,"profit_points":-67}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:14.395] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-28.40000000,"percent":-0.35000000,"lots":0.40000000,"profit_points":-71}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:14.396] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:14.402] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-28.40000000,"percent":-0.35000000,"lots":0.40000000,"profit_points":-71}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:15.397] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-32.40000000,"percent":-0.40000000,"lots":0.40000000,"profit_points":-80}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:15.397] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:15.404] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-32.40000000,"percent":-0.40000000,"lots":0.40000000,"profit_points":-80}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:16.388] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-31.60000000,"percent":-0.39000000,"lots":0.40000000,"profit_points":-78}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:16.389] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:16.390] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-31.60000000,"percent":-0.39000000,"lots":0.40000000,"profit_points":-78}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:17.389] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-32.80000000,"percent":-0.41000000,"lots":0.40000000,"profit_points":-81}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:17.390] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:17.394] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-32.80000000,"percent":-0.41000000,"lots":0.40000000,"profit_points":-81}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:18.385] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-32.80000000,"percent":-0.41000000,"lots":0.40000000,"profit_points":-81}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:18.385] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:18.393] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-32.80000000,"percent":-0.41000000,"lots":0.40000000,"profit_points":-81}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:19.384] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-33.60000000,"percent":-0.42000000,"lots":0.40000000,"profit_points":-84}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:19.385] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:19.386] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-33.60000000,"percent":-0.42000000,"lots":0.40000000,"profit_points":-84}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:20.389] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-33.60000000,"percent":-0.42000000,"lots":0.40000000,"profit_points":-84}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:20.389] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:20.390] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-33.60000000,"percent":-0.42000000,"lots":0.40000000,"profit_points":-84}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:21.394] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-33.60000000,"percent":-0.42000000,"lots":0.40000000,"profit_points":-84}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:21.395] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:21.396] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-33.60000000,"percent":-0.42000000,"lots":0.40000000,"profit_points":-84}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:22.388] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-35.20000000,"percent":-0.44000000,"lots":0.40000000,"profit_points":-88}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:22.389] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:22.405] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-35.20000000,"percent":-0.44000000,"lots":0.40000000,"profit_points":-88}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:23.394] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-34.80000000,"percent":-0.43000000,"lots":0.40000000,"profit_points":-86}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:23.395] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:23.413] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-34.80000000,"percent":-0.43000000,"lots":0.40000000,"profit_points":-86}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:24.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-40.00000000,"percent":-0.49000000,"lots":0.40000000,"profit_points":-100}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:24.390] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:24.399] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-40.00000000,"percent":-0.49000000,"lots":0.40000000,"profit_points":-100}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:25.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-38.80000000,"percent":-0.48000000,"lots":0.40000000,"profit_points":-96}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:25.390] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:25.406] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-38.80000000,"percent":-0.48000000,"lots":0.40000000,"profit_points":-96}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:26.386] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-41.20000000,"percent":-0.51000000,"lots":0.40000000,"profit_points":-102}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:26.387] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:26.388] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-41.20000000,"percent":-0.51000000,"lots":0.40000000,"profit_points":-102}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:27.391] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-40.80000000,"percent":-0.50000000,"lots":0.40000000,"profit_points":-101}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:27.392] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:27.393] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-40.80000000,"percent":-0.50000000,"lots":0.40000000,"profit_points":-101}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:28.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-37.60000000,"percent":-0.46000000,"lots":0.40000000,"profit_points":-94}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:28.390] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:28.392] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-37.60000000,"percent":-0.46000000,"lots":0.40000000,"profit_points":-94}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:29.391] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-38.00000000,"percent":-0.47000000,"lots":0.40000000,"profit_points":-94}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:29.391] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:29.393] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-38.00000000,"percent":-0.47000000,"lots":0.40000000,"profit_points":-94}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:30.389] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-39.20000000,"percent":-0.48000000,"lots":0.40000000,"profit_points":-98}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:30.390] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:30.391] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-39.20000000,"percent":-0.48000000,"lots":0.40000000,"profit_points":-98}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:31.414] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-33.20000000,"percent":-0.41000000,"lots":0.40000000,"profit_points":-82}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:31.415] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:31.425] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-33.20000000,"percent":-0.41000000,"lots":0.40000000,"profit_points":-82}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:32.386] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-32.80000000,"percent":-0.41000000,"lots":0.40000000,"profit_points":-81}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:32.387] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:32.388] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-32.80000000,"percent":-0.41000000,"lots":0.40000000,"profit_points":-81}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:33.395] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-30.80000000,"percent":-0.38000000,"lots":0.40000000,"profit_points":-76}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:33.395] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:33.397] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-30.80000000,"percent":-0.38000000,"lots":0.40000000,"profit_points":-76}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:34.395] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-29.20000000,"percent":-0.36000000,"lots":0.40000000,"profit_points":-73}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:34.396] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:34.398] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-29.20000000,"percent":-0.36000000,"lots":0.40000000,"profit_points":-73}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:35.391] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-29.60000000,"percent":-0.37000000,"lots":0.40000000,"profit_points":-73}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:35.392] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:35.400] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-29.60000000,"percent":-0.37000000,"lots":0.40000000,"profit_points":-73}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:36.389] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-30.40000000,"percent":-0.38000000,"lots":0.40000000,"profit_points":-75}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:36.389] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:36.390] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-30.40000000,"percent":-0.38000000,"lots":0.40000000,"profit_points":-75}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:37.389] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-30.80000000,"percent":-0.38000000,"lots":0.40000000,"profit_points":-76}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:37.389] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:37.405] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-30.80000000,"percent":-0.38000000,"lots":0.40000000,"profit_points":-76}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:38.385] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-30.80000000,"percent":-0.38000000,"lots":0.40000000,"profit_points":-76}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:38.385] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:38.394] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-30.80000000,"percent":-0.38000000,"lots":0.40000000,"profit_points":-76}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:39.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-24.80000000,"percent":-0.31000000,"lots":0.40000000,"profit_points":-61}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:39.390] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:39.392] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-24.80000000,"percent":-0.31000000,"lots":0.40000000,"profit_points":-61}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:40.391] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-30.40000000,"percent":-0.38000000,"lots":0.40000000,"profit_points":-75}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:40.391] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:40.393] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-30.40000000,"percent":-0.38000000,"lots":0.40000000,"profit_points":-75}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:41.389] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-29.60000000,"percent":-0.37000000,"lots":0.40000000,"profit_points":-73}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:41.389] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:41.396] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-29.60000000,"percent":-0.37000000,"lots":0.40000000,"profit_points":-73}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:42.389] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-31.60000000,"percent":-0.39000000,"lots":0.40000000,"profit_points":-78}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:42.389] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:42.397] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-31.60000000,"percent":-0.39000000,"lots":0.40000000,"profit_points":-78}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:43.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-31.60000000,"percent":-0.39000000,"lots":0.40000000,"profit_points":-78}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:43.390] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:43.393] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-31.60000000,"percent":-0.39000000,"lots":0.40000000,"profit_points":-78}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:44.429] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-28.40000000,"percent":-0.35000000,"lots":0.40000000,"profit_points":-71}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:44.430] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:44.432] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-28.40000000,"percent":-0.35000000,"lots":0.40000000,"profit_points":-71}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:45.389] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-27.60000000,"percent":-0.34000000,"lots":0.40000000,"profit_points":-69}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:45.390] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:45.396] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-27.60000000,"percent":-0.34000000,"lots":0.40000000,"profit_points":-69}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:46.391] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-31.60000000,"percent":-0.39000000,"lots":0.40000000,"profit_points":-78}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:46.391] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:46.398] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-31.60000000,"percent":-0.39000000,"lots":0.40000000,"profit_points":-78}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:47.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-32.00000000,"percent":-0.40000000,"lots":0.40000000,"profit_points":-79}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:47.390] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:47.392] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-32.00000000,"percent":-0.40000000,"lots":0.40000000,"profit_points":-79}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:48.389] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-34.40000000,"percent":-0.43000000,"lots":0.40000000,"profit_points":-86}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:48.389] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:48.397] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-34.40000000,"percent":-0.43000000,"lots":0.40000000,"profit_points":-86}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:49.394] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-33.60000000,"percent":-0.42000000,"lots":0.40000000,"profit_points":-84}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:49.394] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:49.396] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-33.60000000,"percent":-0.42000000,"lots":0.40000000,"profit_points":-84}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:50.389] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-29.20000000,"percent":-0.36000000,"lots":0.40000000,"profit_points":-73}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:50.389] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:50.391] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-29.20000000,"percent":-0.36000000,"lots":0.40000000,"profit_points":-73}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:51.401] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-28.80000000,"percent":-0.36000000,"lots":0.40000000,"profit_points":-71}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:51.401] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:51.409] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-28.80000000,"percent":-0.36000000,"lots":0.40000000,"profit_points":-71}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:52.383] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-29.20000000,"percent":-0.36000000,"lots":0.40000000,"profit_points":-73}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:52.383] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:52.385] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-29.20000000,"percent":-0.36000000,"lots":0.40000000,"profit_points":-73}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:53.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-29.60000000,"percent":-0.37000000,"lots":0.40000000,"profit_points":-73}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:53.390] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:53.392] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-29.60000000,"percent":-0.37000000,"lots":0.40000000,"profit_points":-73}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:54.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-29.60000000,"percent":-0.37000000,"lots":0.40000000,"profit_points":-73}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:54.391] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:54.392] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-29.60000000,"percent":-0.37000000,"lots":0.40000000,"profit_points":-73}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:55.430] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-31.20000000,"percent":-0.39000000,"lots":0.40000000,"profit_points":-77}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:55.431] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:55.432] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-31.20000000,"percent":-0.39000000,"lots":0.40000000,"profit_points":-77}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:56.395] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-28.00000000,"percent":-0.35000000,"lots":0.40000000,"profit_points":-69}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:56.395] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:56.397] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-28.00000000,"percent":-0.35000000,"lots":0.40000000,"profit_points":-69}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:57.394] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-24.40000000,"percent":-0.30000000,"lots":0.40000000,"profit_points":-61}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:57.395] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:57.397] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-24.40000000,"percent":-0.30000000,"lots":0.40000000,"profit_points":-61}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:58.392] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-20.00000000,"percent":-0.25000000,"lots":0.40000000,"profit_points":-50}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:58.392] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:58.405] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-20.00000000,"percent":-0.25000000,"lots":0.40000000,"profit_points":-50}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:59.391] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-17.60000000,"percent":-0.22000000,"lots":0.40000000,"profit_points":-44}},"total_balance":8091.29000000}
+
+[2025-07-21 20:28:59.391] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:28:59.393] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-17.60000000,"percent":-0.22000000,"lots":0.40000000,"profit_points":-44}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:00.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-18.80000000,"percent":-0.23000000,"lots":0.40000000,"profit_points":-46}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:00.391] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:29:00.393] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-18.80000000,"percent":-0.23000000,"lots":0.40000000,"profit_points":-46}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:01.386] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-21.20000000,"percent":-0.26000000,"lots":0.40000000,"profit_points":-52}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:01.386] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:29:01.393] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-21.20000000,"percent":-0.26000000,"lots":0.40000000,"profit_points":-52}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:02.391] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-19.20000000,"percent":-0.24000000,"lots":0.40000000,"profit_points":-48}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:02.391] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:29:02.398] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-19.20000000,"percent":-0.24000000,"lots":0.40000000,"profit_points":-48}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:03.388] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-19.20000000,"percent":-0.24000000,"lots":0.40000000,"profit_points":-48}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:03.389] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:29:03.391] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-19.20000000,"percent":-0.24000000,"lots":0.40000000,"profit_points":-48}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:04.385] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-19.20000000,"percent":-0.24000000,"lots":0.40000000,"profit_points":-48}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:04.385] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:29:04.387] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-19.20000000,"percent":-0.24000000,"lots":0.40000000,"profit_points":-48}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:05.393] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-16.40000000,"percent":-0.20000000,"lots":0.40000000,"profit_points":-40}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:05.393] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:29:05.395] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-16.40000000,"percent":-0.20000000,"lots":0.40000000,"profit_points":-40}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:06.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-16.40000000,"percent":-0.20000000,"lots":0.40000000,"profit_points":-40}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:06.391] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:29:06.392] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-16.40000000,"percent":-0.20000000,"lots":0.40000000,"profit_points":-40}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:07.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-16.80000000,"percent":-0.21000000,"lots":0.40000000,"profit_points":-42}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:07.390] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:29:07.392] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-16.80000000,"percent":-0.21000000,"lots":0.40000000,"profit_points":-42}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:08.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-16.80000000,"percent":-0.21000000,"lots":0.40000000,"profit_points":-42}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:08.390] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:29:08.397] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-16.80000000,"percent":-0.21000000,"lots":0.40000000,"profit_points":-42}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:09.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-19.60000000,"percent":-0.24000000,"lots":0.40000000,"profit_points":-48}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:09.390] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:29:09.393] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-19.60000000,"percent":-0.24000000,"lots":0.40000000,"profit_points":-48}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:10.399] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-19.60000000,"percent":-0.24000000,"lots":0.40000000,"profit_points":-48}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:10.399] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:29:10.412] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-19.60000000,"percent":-0.24000000,"lots":0.40000000,"profit_points":-48}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:11.401] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-13.60000000,"percent":-0.17000000,"lots":0.40000000,"profit_points":-34}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:11.402] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:29:11.403] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-13.60000000,"percent":-0.17000000,"lots":0.40000000,"profit_points":-34}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:12.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-12.40000000,"percent":-0.15000000,"lots":0.40000000,"profit_points":-30}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:12.390] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:29:12.392] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-12.40000000,"percent":-0.15000000,"lots":0.40000000,"profit_points":-30}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:13.389] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-12.00000000,"percent":-0.15000000,"lots":0.40000000,"profit_points":-29}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:13.389] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:29:13.391] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-12.00000000,"percent":-0.15000000,"lots":0.40000000,"profit_points":-29}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:14.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-13.20000000,"percent":-0.16000000,"lots":0.40000000,"profit_points":-32}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:14.390] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:29:14.392] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-13.20000000,"percent":-0.16000000,"lots":0.40000000,"profit_points":-32}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:15.390] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-10.80000000,"percent":-0.13000000,"lots":0.40000000,"profit_points":-26}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:15.391] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:29:15.392] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-10.80000000,"percent":-0.13000000,"lots":0.40000000,"profit_points":-26}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:16.397] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-9.20000000,"percent":-0.11000000,"lots":0.40000000,"profit_points":-23}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:16.397] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:29:16.398] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-9.20000000,"percent":-0.11000000,"lots":0.40000000,"profit_points":-23}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:17.408] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-8.40000000,"percent":-0.10000000,"lots":0.40000000,"profit_points":-21}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:17.408] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:29:17.423] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-8.40000000,"percent":-0.10000000,"lots":0.40000000,"profit_points":-21}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:18.407] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-9.20000000,"percent":-0.11000000,"lots":0.40000000,"profit_points":-23}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:18.407] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:29:18.416] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-9.20000000,"percent":-0.11000000,"lots":0.40000000,"profit_points":-23}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:19.405] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-8.80000000,"percent":-0.11000000,"lots":0.40000000,"profit_points":-21}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:19.405] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:29:19.407] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-8.80000000,"percent":-0.11000000,"lots":0.40000000,"profit_points":-21}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:20.413] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-9.20000000,"percent":-0.11000000,"lots":0.40000000,"profit_points":-23}},"total_balance":8091.29000000}
+
+[2025-07-21 20:29:20.413] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-21 20:29:20.420] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-9.20000000,"percent":-0.11000000,"lots":0.40000000,"profit_points":-23}},"total_balance":8091.29000000}
+

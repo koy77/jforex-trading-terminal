@@ -8,6 +8,7 @@ namespace ScreenCaptureApp.Services
     {
         private static readonly object _lock = new object();
         private static readonly string _logFilePath = "app.log";
+        private static readonly string _socketLogFilePath = "socket.log";
 
         public static event Action LogUpdated;
 
@@ -82,6 +83,50 @@ namespace ScreenCaptureApp.Services
                 File.WriteAllText(_logFilePath, string.Empty);
             }
             LogUpdated?.Invoke();
+        }
+
+        public static void LogSocket(string message)
+        {
+            try
+            {
+                lock (_lock)
+                {
+                    string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
+                    string logEntry = $"[{timestamp}] [SOCKET] {message}";
+                    File.AppendAllText(_socketLogFilePath, logEntry + Environment.NewLine);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Logger SOCKET error: {ex.Message}");
+            }
+        }
+
+        public static string GetAllSocketLogs()
+        {
+            try
+            {
+                if (File.Exists(_socketLogFilePath))
+                {
+                    return File.ReadAllText(_socketLogFilePath);
+                }
+                else
+                {
+                    return string.Empty;
+                }
+            }
+            catch (Exception ex)
+            {
+                return $"Logger SOCKET error: {ex.Message}";
+            }
+        }
+
+        public static void ClearSocketLog()
+        {
+            lock (_lock)
+            {
+                File.WriteAllText(_socketLogFilePath, string.Empty);
+            }
         }
     }
 } 

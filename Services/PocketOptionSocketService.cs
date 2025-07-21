@@ -223,6 +223,7 @@ namespace ScreenCaptureApp.Services
                     return false;
                 }
 
+                Logger.LogSocket($"PO OUT: {message.Trim()}");
                 byte[] data = Encoding.UTF8.GetBytes(message);
                 await _networkStream.WriteAsync(data, 0, data.Length);
                 await _networkStream.FlushAsync();
