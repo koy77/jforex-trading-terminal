@@ -27,7 +27,7 @@ namespace ScreenCaptureApp
         private CancellationTokenSource _autoTrackingCts;
         private Task _autoTrackingTask;
         private bool isAutoTrackingActive = false;
-        private const double CollapsedHeight = 110;
+        private const double CollapsedHeight = 80;
         private const double ExpandedHeight = 600;
         
         // Brush color state
@@ -771,8 +771,8 @@ namespace ScreenCaptureApp
             var mt4SocketService = ServiceContainer.Instance.GetService<Mt4SocketService>();
             if (mt4SocketService != null && !string.IsNullOrEmpty(symbol))
             {
-                // Send close order command for the symbol
-                var cmd = $"{{\"cmd\":\"CLOSE\",\"symbol\":\"{symbol}\"}}\r\n";
+                // Send close_positions command for the symbol
+                var cmd = $"{{\"cmd\":\"close_positions\",\"symbol\":\"{symbol}\"}}\r\n";
                 _ = mt4SocketService.WriteAsync(cmd);
             }
         }
