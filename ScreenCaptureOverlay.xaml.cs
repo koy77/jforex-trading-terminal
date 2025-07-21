@@ -579,7 +579,11 @@ namespace ScreenCaptureApp
             int xVirtual = (int)x;
             if (System.Windows.Forms.Screen.AllScreens.Length > 1)
             {
-                xVirtual = (int)(x - System.Windows.Forms.Screen.AllScreens[0].Bounds.Width);
+                int firstScreenWidth = System.Windows.Forms.Screen.AllScreens[0].Bounds.Width;
+                if (x >= firstScreenWidth)
+                {
+                    xVirtual = (int)(x - firstScreenWidth);
+                }
             }
             this.Close();
             
