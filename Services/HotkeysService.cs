@@ -42,6 +42,7 @@ namespace ScreenCaptureApp.Services
         public event Action OnWHotkey;
         public event Action OnEHotkey;
         public event Action OnRHotkey;
+        public event Action OnLeftShiftHotkey;
         // Properties
         public bool IsEnabled { get; private set; } = false;
         
@@ -78,6 +79,7 @@ namespace ScreenCaptureApp.Services
         private const int VK_Q = 0x51;
         private const int VK_E = 0x45;
         private const int VK_R = 0x52;
+        private const int VK_LSHIFT = 0xA0;
 
         // Delegate for the keyboard hook
         private delegate IntPtr LowLevelKeyboardProc(int nCode, IntPtr wParam, IntPtr lParam);
@@ -219,6 +221,11 @@ namespace ScreenCaptureApp.Services
                 {
                     Logger.LogDebug("R hotkey detected and service is enabled");
                     OnRHotkey?.Invoke();
+                }
+                else if (vkCode == VK_LSHIFT && IsEnabled)
+                {
+                    Logger.LogDebug("Left Shift hotkey detected and service is enabled");
+                    OnLeftShiftHotkey?.Invoke();
                 }
                 else if (vkCode == VK_LEFT && IsEnabled)
                 {

@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Media;
 using System.Drawing;
+using System.Runtime.InteropServices;
 
 namespace ScreenCaptureApp
 {
@@ -81,6 +82,11 @@ namespace ScreenCaptureApp
                 hotkeysService.OnWHotkey += () => { Logger.LogInfo("[DEBUG] OnWHotkey event in MainWindow"); ClickHotkeyButtonByIndex(1); };
                 hotkeysService.OnEHotkey += () => { Logger.LogInfo("[DEBUG] OnEHotkey event in MainWindow"); ClickHotkeyButtonByIndex(2); };
                 hotkeysService.OnRHotkey += () => { Logger.LogInfo("[DEBUG] OnRHotkey event in MainWindow"); ClickHotkeyButtonByIndex(3); };
+                hotkeysService.OnLeftShiftHotkey += () =>
+                {
+                    Logger.LogInfo("[DEBUG] OnLeftShiftHotkey event in MainWindow");
+                    ToggleTrackingViewer_Click(null, null);
+                };
             }
         }
 
@@ -766,8 +772,21 @@ namespace ScreenCaptureApp
         private void OnTP2Click(string symbol) { Logger.LogInfo($"TP2 clicked for {symbol}"); }
         private void OnTP3Click(string symbol) { Logger.LogInfo($"TP3 clicked for {symbol}"); }
 
+        [DllImport("user32.dll")]
+        private static extern bool GetCursorPos(out POINT lpPoint);
+        [DllImport("user32.dll")]
+        private static extern bool SetCursorPos(int X, int Y);
+
+        private struct POINT
+        {
+            public int X;
+            public int Y;
+        }
+
         private void ClickHotkeyButtonByIndex(int index)
         {
+            // Сохраняем текущую позицию мыши
+            GetCursorPos(out POINT oldPos);
             // Проверяем, что targetWindow активен и находится на основном мониторе (X=0)
             targetWindow = MainHelper.GetWindowUnderCursor();
             int x = 80 + 200 * index;
@@ -776,9 +795,13 @@ namespace ScreenCaptureApp
             var jforexService = ServiceContainer.Instance.GetService<JForexWindowsManagerService>();
             if (jforexService != null)
             {
-                _ = jforexService.ClickAtPosition(targetWindow, x, y);
+                jforexService.ClickAtPosition(targetWindow, x, y);
                 Logger.LogInfo($"Hotkey button index {index} clicked at ({x},{y}) on window {targetWindow}");
             }
+            // Возвращаем курсор на прежнее место
+            SetCursorPos(oldPos.X, oldPos.Y);
+            Logger.LogInfo($"[DEBUG] Mouse returned to ({oldPos.X},{oldPos.Y})");
         }
+
     }
 } 

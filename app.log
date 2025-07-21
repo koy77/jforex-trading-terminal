@@ -1,215 +1,361 @@
-[2025-07-21 17:48:06.274] [INFO] app.log file deleted successfully
-[2025-07-21 17:48:06.275] [INFO] Trade counter reset successfully
-[2025-07-21 17:48:06.289] [INFO] Initialized 6 symbols in database
-[2025-07-21 17:48:06.291] [INFO] Initialized symbol settings for XAUUSD: DefaultRisk=1, DefaultDuration=2
-[2025-07-21 17:48:06.291] [INFO] Initialized symbol settings for GBPJPY: DefaultRisk=1, DefaultDuration=2
-[2025-07-21 17:48:06.291] [INFO] Initialized symbol settings for USDJPY: DefaultRisk=1, DefaultDuration=2
-[2025-07-21 17:48:06.292] [INFO] Initialized symbol settings for EURJPY: DefaultRisk=1, DefaultDuration=2
-[2025-07-21 17:48:06.292] [INFO] Initialized symbol settings for EURUSD: DefaultRisk=1, DefaultDuration=2
-[2025-07-21 17:48:06.293] [INFO] Initialized symbol settings for GBPUSD: DefaultRisk=1, DefaultDuration=2
-[2025-07-21 17:48:06.293] [INFO] Symbol settings manager initialized with 6 symbols
-[2025-07-21 17:48:06.293] [INFO] All symbol settings reset to defaults
-[2025-07-21 17:48:06.293] [INFO] BrokerSettingsManager initialized with default settings
-[2025-07-21 17:48:06.294] [INFO] All broker settings reset to default values
-[2025-07-21 17:48:08.069] [DEBUG] Q hotkey detected and service is enabled
-[2025-07-21 17:48:08.070] [INFO] [DEBUG] OnQHotkey event in MainWindow
-[2025-07-21 17:48:08.195] [INFO] JForex: Клик успешно выполнен в позиции (80, 56)
-[2025-07-21 17:48:08.195] [INFO] Hotkey button index 0 clicked at (80,56) on window 132238
-[2025-07-21 17:48:09.229] [DEBUG] Q hotkey detected and service is enabled
-[2025-07-21 17:48:09.230] [INFO] [DEBUG] OnQHotkey event in MainWindow
-[2025-07-21 17:48:09.332] [INFO] JForex: Клик успешно выполнен в позиции (80, 56)
-[2025-07-21 17:48:09.332] [INFO] Hotkey button index 0 clicked at (80,56) on window 132228
-[2025-07-21 17:48:09.869] [DEBUG] Q hotkey detected and service is enabled
-[2025-07-21 17:48:09.870] [INFO] [DEBUG] OnQHotkey event in MainWindow
-[2025-07-21 17:48:09.991] [INFO] JForex: Клик успешно выполнен в позиции (80, 56)
-[2025-07-21 17:48:09.991] [INFO] Hotkey button index 0 clicked at (80,56) on window 132228
-[2025-07-21 17:48:10.949] [DEBUG] Q hotkey detected and service is enabled
-[2025-07-21 17:48:10.950] [INFO] [DEBUG] OnQHotkey event in MainWindow
-[2025-07-21 17:48:11.073] [INFO] JForex: Клик успешно выполнен в позиции (80, 56)
-[2025-07-21 17:48:11.073] [INFO] Hotkey button index 0 clicked at (80,56) on window 132228
-[2025-07-21 17:48:12.181] [INFO] [DEBUG] OnWHotkey event in MainWindow
-[2025-07-21 17:48:12.306] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
-[2025-07-21 17:48:12.306] [INFO] Hotkey button index 1 clicked at (280,56) on window 132238
-[2025-07-21 17:48:14.669] [DEBUG] E hotkey detected and service is enabled
-[2025-07-21 17:48:14.669] [INFO] [DEBUG] OnEHotkey event in MainWindow
-[2025-07-21 17:48:14.796] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
-[2025-07-21 17:48:14.796] [INFO] Hotkey button index 2 clicked at (480,56) on window 132228
-[2025-07-21 17:48:16.077] [DEBUG] E hotkey detected and service is enabled
-[2025-07-21 17:48:16.077] [INFO] [DEBUG] OnEHotkey event in MainWindow
-[2025-07-21 17:48:16.196] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
-[2025-07-21 17:48:16.197] [INFO] Hotkey button index 2 clicked at (480,56) on window 132228
-[2025-07-21 17:48:16.437] [DEBUG] E hotkey detected and service is enabled
-[2025-07-21 17:48:16.438] [INFO] [DEBUG] OnEHotkey event in MainWindow
-[2025-07-21 17:48:16.557] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
-[2025-07-21 17:48:16.558] [INFO] Hotkey button index 2 clicked at (480,56) on window 132228
-[2025-07-21 17:48:16.605] [DEBUG] E hotkey detected and service is enabled
-[2025-07-21 17:48:16.606] [INFO] [DEBUG] OnEHotkey event in MainWindow
-[2025-07-21 17:48:16.728] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
-[2025-07-21 17:48:16.729] [INFO] Hotkey button index 2 clicked at (480,56) on window 132228
-[2025-07-21 17:48:16.845] [DEBUG] E hotkey detected and service is enabled
-[2025-07-21 17:48:16.846] [INFO] [DEBUG] OnEHotkey event in MainWindow
-[2025-07-21 17:48:16.964] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
-[2025-07-21 17:48:16.964] [INFO] Hotkey button index 2 clicked at (480,56) on window 132228
-[2025-07-21 17:48:17.053] [DEBUG] E hotkey detected and service is enabled
-[2025-07-21 17:48:17.053] [INFO] [DEBUG] OnEHotkey event in MainWindow
-[2025-07-21 17:48:17.172] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
-[2025-07-21 17:48:17.172] [INFO] Hotkey button index 2 clicked at (480,56) on window 132228
-[2025-07-21 17:48:17.205] [DEBUG] E hotkey detected and service is enabled
-[2025-07-21 17:48:17.205] [INFO] [DEBUG] OnEHotkey event in MainWindow
-[2025-07-21 17:48:17.332] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
-[2025-07-21 17:48:17.332] [INFO] Hotkey button index 2 clicked at (480,56) on window 132228
-[2025-07-21 17:48:17.469] [INFO] [DEBUG] OnWHotkey event in MainWindow
-[2025-07-21 17:48:17.584] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
-[2025-07-21 17:48:17.584] [INFO] Hotkey button index 1 clicked at (280,56) on window 132228
-[2025-07-21 17:48:17.797] [DEBUG] E hotkey detected and service is enabled
-[2025-07-21 17:48:17.797] [INFO] [DEBUG] OnEHotkey event in MainWindow
-[2025-07-21 17:48:17.914] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
-[2025-07-21 17:48:17.914] [INFO] Hotkey button index 2 clicked at (480,56) on window 132228
-[2025-07-21 17:48:19.189] [DEBUG] E hotkey detected and service is enabled
-[2025-07-21 17:48:19.189] [INFO] [DEBUG] OnEHotkey event in MainWindow
-[2025-07-21 17:48:19.315] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
-[2025-07-21 17:48:19.316] [INFO] Hotkey button index 2 clicked at (480,56) on window 132228
-[2025-07-21 17:48:19.925] [INFO] [DEBUG] OnWHotkey event in MainWindow
-[2025-07-21 17:48:20.054] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
-[2025-07-21 17:48:20.054] [INFO] Hotkey button index 1 clicked at (280,56) on window 132228
-[2025-07-21 17:48:20.749] [INFO] [DEBUG] OnWHotkey event in MainWindow
-[2025-07-21 17:48:20.876] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
-[2025-07-21 17:48:20.877] [INFO] Hotkey button index 1 clicked at (280,56) on window 132228
-[2025-07-21 17:48:21.093] [DEBUG] Q hotkey detected and service is enabled
-[2025-07-21 17:48:21.093] [INFO] [DEBUG] OnQHotkey event in MainWindow
-[2025-07-21 17:48:21.207] [INFO] JForex: Клик успешно выполнен в позиции (80, 56)
-[2025-07-21 17:48:21.208] [INFO] Hotkey button index 0 clicked at (80,56) on window 132228
-[2025-07-21 17:48:22.525] [DEBUG] Q hotkey detected and service is enabled
-[2025-07-21 17:48:22.525] [INFO] [DEBUG] OnQHotkey event in MainWindow
-[2025-07-21 17:48:22.648] [INFO] JForex: Клик успешно выполнен в позиции (80, 56)
-[2025-07-21 17:48:22.648] [INFO] Hotkey button index 0 clicked at (80,56) on window 132238
-[2025-07-21 17:48:23.765] [DEBUG] E hotkey detected and service is enabled
-[2025-07-21 17:48:23.765] [INFO] [DEBUG] OnEHotkey event in MainWindow
-[2025-07-21 17:48:23.884] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
-[2025-07-21 17:48:23.884] [INFO] Hotkey button index 2 clicked at (480,56) on window 132238
-[2025-07-21 17:48:24.373] [INFO] [DEBUG] OnWHotkey event in MainWindow
-[2025-07-21 17:48:24.501] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
-[2025-07-21 17:48:24.501] [INFO] Hotkey button index 1 clicked at (280,56) on window 132238
-[2025-07-21 17:48:24.965] [DEBUG] E hotkey detected and service is enabled
-[2025-07-21 17:48:24.965] [INFO] [DEBUG] OnEHotkey event in MainWindow
-[2025-07-21 17:48:25.087] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
-[2025-07-21 17:48:25.088] [INFO] Hotkey button index 2 clicked at (480,56) on window 132238
-[2025-07-21 17:48:25.461] [DEBUG] R hotkey detected and service is enabled
-[2025-07-21 17:48:25.461] [INFO] [DEBUG] OnRHotkey event in MainWindow
-[2025-07-21 17:48:25.579] [INFO] JForex: Клик успешно выполнен в позиции (680, 56)
-[2025-07-21 17:48:25.580] [INFO] Hotkey button index 3 clicked at (680,56) on window 132238
-[2025-07-21 17:48:26.157] [DEBUG] R hotkey detected and service is enabled
-[2025-07-21 17:48:26.157] [INFO] [DEBUG] OnRHotkey event in MainWindow
-[2025-07-21 17:48:26.281] [INFO] JForex: Клик успешно выполнен в позиции (680, 56)
-[2025-07-21 17:48:26.281] [INFO] Hotkey button index 3 clicked at (680,56) on window 132238
-[2025-07-21 17:48:26.629] [DEBUG] E hotkey detected and service is enabled
-[2025-07-21 17:48:26.629] [INFO] [DEBUG] OnEHotkey event in MainWindow
-[2025-07-21 17:48:26.757] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
-[2025-07-21 17:48:26.757] [INFO] Hotkey button index 2 clicked at (480,56) on window 132238
-[2025-07-21 17:48:27.229] [INFO] [DEBUG] OnWHotkey event in MainWindow
-[2025-07-21 17:48:27.358] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
-[2025-07-21 17:48:27.358] [INFO] Hotkey button index 1 clicked at (280,56) on window 132238
-[2025-07-21 17:48:27.749] [DEBUG] Q hotkey detected and service is enabled
-[2025-07-21 17:48:27.749] [INFO] [DEBUG] OnQHotkey event in MainWindow
-[2025-07-21 17:48:27.863] [INFO] JForex: Клик успешно выполнен в позиции (80, 56)
-[2025-07-21 17:48:27.863] [INFO] Hotkey button index 0 clicked at (80,56) on window 132238
-[2025-07-21 17:48:28.501] [INFO] [DEBUG] OnWHotkey event in MainWindow
-[2025-07-21 17:48:28.619] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
-[2025-07-21 17:48:28.619] [INFO] Hotkey button index 1 clicked at (280,56) on window 132238
-[2025-07-21 17:48:29.117] [DEBUG] E hotkey detected and service is enabled
-[2025-07-21 17:48:29.117] [INFO] [DEBUG] OnEHotkey event in MainWindow
-[2025-07-21 17:48:29.233] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
-[2025-07-21 17:48:29.233] [INFO] Hotkey button index 2 clicked at (480,56) on window 132238
-[2025-07-21 17:48:29.781] [DEBUG] R hotkey detected and service is enabled
-[2025-07-21 17:48:29.781] [INFO] [DEBUG] OnRHotkey event in MainWindow
-[2025-07-21 17:48:29.899] [INFO] JForex: Клик успешно выполнен в позиции (680, 56)
-[2025-07-21 17:48:29.900] [INFO] Hotkey button index 3 clicked at (680,56) on window 132238
-[2025-07-21 17:48:30.493] [INFO] [DEBUG] OnWHotkey event in MainWindow
-[2025-07-21 17:48:30.613] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
-[2025-07-21 17:48:30.614] [INFO] Hotkey button index 1 clicked at (280,56) on window 132238
-[2025-07-21 17:48:31.037] [DEBUG] E hotkey detected and service is enabled
-[2025-07-21 17:48:31.037] [INFO] [DEBUG] OnEHotkey event in MainWindow
-[2025-07-21 17:48:31.166] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
-[2025-07-21 17:48:31.167] [INFO] Hotkey button index 2 clicked at (480,56) on window 132238
-[2025-07-21 17:48:31.421] [DEBUG] R hotkey detected and service is enabled
-[2025-07-21 17:48:31.421] [INFO] [DEBUG] OnRHotkey event in MainWindow
-[2025-07-21 17:48:31.547] [INFO] JForex: Клик успешно выполнен в позиции (680, 56)
-[2025-07-21 17:48:31.547] [INFO] Hotkey button index 3 clicked at (680,56) on window 132238
-[2025-07-21 17:48:32.109] [INFO] [DEBUG] OnWHotkey event in MainWindow
-[2025-07-21 17:48:32.224] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
-[2025-07-21 17:48:32.224] [INFO] Hotkey button index 1 clicked at (280,56) on window 132238
-[2025-07-21 17:48:32.565] [DEBUG] Q hotkey detected and service is enabled
-[2025-07-21 17:48:32.565] [INFO] [DEBUG] OnQHotkey event in MainWindow
-[2025-07-21 17:48:32.683] [INFO] JForex: Клик успешно выполнен в позиции (80, 56)
-[2025-07-21 17:48:32.683] [INFO] Hotkey button index 0 clicked at (80,56) on window 132238
-[2025-07-21 17:48:33.229] [INFO] [DEBUG] OnWHotkey event in MainWindow
-[2025-07-21 17:48:33.359] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
-[2025-07-21 17:48:33.359] [INFO] Hotkey button index 1 clicked at (280,56) on window 132238
-[2025-07-21 17:48:33.629] [DEBUG] E hotkey detected and service is enabled
-[2025-07-21 17:48:33.629] [INFO] [DEBUG] OnEHotkey event in MainWindow
-[2025-07-21 17:48:33.753] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
-[2025-07-21 17:48:33.754] [INFO] Hotkey button index 2 clicked at (480,56) on window 132238
-[2025-07-21 17:48:34.037] [DEBUG] R hotkey detected and service is enabled
-[2025-07-21 17:48:34.037] [INFO] [DEBUG] OnRHotkey event in MainWindow
-[2025-07-21 17:48:34.165] [INFO] JForex: Клик успешно выполнен в позиции (680, 56)
-[2025-07-21 17:48:34.166] [INFO] Hotkey button index 3 clicked at (680,56) on window 132238
-[2025-07-21 17:48:34.981] [DEBUG] Q hotkey detected and service is enabled
-[2025-07-21 17:48:34.982] [INFO] [DEBUG] OnQHotkey event in MainWindow
-[2025-07-21 17:48:35.107] [INFO] JForex: Клик успешно выполнен в позиции (80, 56)
-[2025-07-21 17:48:35.108] [INFO] Hotkey button index 0 clicked at (80,56) on window 132238
-[2025-07-21 17:48:35.373] [INFO] [DEBUG] OnWHotkey event in MainWindow
-[2025-07-21 17:48:35.499] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
-[2025-07-21 17:48:35.500] [INFO] Hotkey button index 1 clicked at (280,56) on window 132238
-[2025-07-21 17:48:35.725] [DEBUG] E hotkey detected and service is enabled
-[2025-07-21 17:48:35.725] [INFO] [DEBUG] OnEHotkey event in MainWindow
-[2025-07-21 17:48:35.849] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
-[2025-07-21 17:48:35.849] [INFO] Hotkey button index 2 clicked at (480,56) on window 132238
-[2025-07-21 17:48:36.125] [DEBUG] R hotkey detected and service is enabled
-[2025-07-21 17:48:36.125] [INFO] [DEBUG] OnRHotkey event in MainWindow
-[2025-07-21 17:48:36.245] [INFO] JForex: Клик успешно выполнен в позиции (680, 56)
-[2025-07-21 17:48:36.245] [INFO] Hotkey button index 3 clicked at (680,56) on window 132238
-[2025-07-21 17:48:36.973] [DEBUG] Q hotkey detected and service is enabled
-[2025-07-21 17:48:36.973] [INFO] [DEBUG] OnQHotkey event in MainWindow
-[2025-07-21 17:48:37.088] [INFO] JForex: Клик успешно выполнен в позиции (80, 56)
-[2025-07-21 17:48:37.088] [INFO] Hotkey button index 0 clicked at (80,56) on window 132238
-[2025-07-21 17:48:37.429] [INFO] [DEBUG] OnWHotkey event in MainWindow
-[2025-07-21 17:48:37.548] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
-[2025-07-21 17:48:37.549] [INFO] Hotkey button index 1 clicked at (280,56) on window 132238
-[2025-07-21 17:48:37.749] [DEBUG] E hotkey detected and service is enabled
-[2025-07-21 17:48:37.749] [INFO] [DEBUG] OnEHotkey event in MainWindow
-[2025-07-21 17:48:37.877] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
-[2025-07-21 17:48:37.877] [INFO] Hotkey button index 2 clicked at (480,56) on window 132238
-[2025-07-21 17:48:38.125] [DEBUG] R hotkey detected and service is enabled
-[2025-07-21 17:48:38.125] [INFO] [DEBUG] OnRHotkey event in MainWindow
-[2025-07-21 17:48:38.254] [INFO] JForex: Клик успешно выполнен в позиции (680, 56)
-[2025-07-21 17:48:38.254] [INFO] Hotkey button index 3 clicked at (680,56) on window 132238
-[2025-07-21 17:48:39.021] [DEBUG] Q hotkey detected and service is enabled
-[2025-07-21 17:48:39.021] [INFO] [DEBUG] OnQHotkey event in MainWindow
-[2025-07-21 17:48:39.136] [INFO] JForex: Клик успешно выполнен в позиции (80, 56)
-[2025-07-21 17:48:39.137] [INFO] Hotkey button index 0 clicked at (80,56) on window 132238
-[2025-07-21 17:48:39.477] [INFO] [DEBUG] OnWHotkey event in MainWindow
-[2025-07-21 17:48:39.593] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
-[2025-07-21 17:48:39.593] [INFO] Hotkey button index 1 clicked at (280,56) on window 132238
-[2025-07-21 17:48:40.341] [DEBUG] E hotkey detected and service is enabled
-[2025-07-21 17:48:40.341] [INFO] [DEBUG] OnEHotkey event in MainWindow
-[2025-07-21 17:48:40.457] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
-[2025-07-21 17:48:40.457] [INFO] Hotkey button index 2 clicked at (480,56) on window 132238
-[2025-07-21 17:48:40.765] [DEBUG] R hotkey detected and service is enabled
-[2025-07-21 17:48:40.765] [INFO] [DEBUG] OnRHotkey event in MainWindow
-[2025-07-21 17:48:40.887] [INFO] JForex: Клик успешно выполнен в позиции (680, 56)
-[2025-07-21 17:48:40.887] [INFO] Hotkey button index 3 clicked at (680,56) on window 132238
-[2025-07-21 17:48:41.381] [DEBUG] Q hotkey detected and service is enabled
-[2025-07-21 17:48:41.381] [INFO] [DEBUG] OnQHotkey event in MainWindow
-[2025-07-21 17:48:41.506] [INFO] JForex: Клик успешно выполнен в позиции (80, 56)
-[2025-07-21 17:48:41.506] [INFO] Hotkey button index 0 clicked at (80,56) on window 132238
-[2025-07-21 17:48:41.893] [INFO] [DEBUG] OnWHotkey event in MainWindow
-[2025-07-21 17:48:42.013] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
-[2025-07-21 17:48:42.013] [INFO] Hotkey button index 1 clicked at (280,56) on window 132238
-[2025-07-21 17:48:42.221] [DEBUG] E hotkey detected and service is enabled
-[2025-07-21 17:48:42.221] [INFO] [DEBUG] OnEHotkey event in MainWindow
-[2025-07-21 17:48:42.346] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
-[2025-07-21 17:48:42.347] [INFO] Hotkey button index 2 clicked at (480,56) on window 132238
-[2025-07-21 17:48:42.541] [DEBUG] R hotkey detected and service is enabled
-[2025-07-21 17:48:42.541] [INFO] [DEBUG] OnRHotkey event in MainWindow
-[2025-07-21 17:48:42.665] [INFO] JForex: Клик успешно выполнен в позиции (680, 56)
-[2025-07-21 17:48:42.665] [INFO] Hotkey button index 3 clicked at (680,56) on window 132238
+[2025-07-21 18:10:21.907] [INFO] app.log file deleted successfully
+[2025-07-21 18:10:25.150] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:25.150] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:25.326] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:25.326] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:25.494] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:25.494] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:34.622] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:34.622] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:35.198] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:35.198] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:39.518] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:39.518] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:39.942] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:39.942] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:40.094] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:40.094] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:40.390] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:40.392] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:40.566] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:40.566] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:41.046] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:41.046] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:43.182] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:43.182] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:44.078] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:44.078] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:44.585] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:44.586] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:44.645] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:44.645] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:44.649] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:44.649] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:44.687] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:44.687] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:44.713] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:44.713] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:44.759] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:44.760] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:44.776] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:44.776] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:44.813] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:44.813] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:44.856] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:44.856] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:44.898] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:44.898] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:44.918] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:44.918] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:44.965] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:44.966] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:44.982] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:44.982] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:45.032] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:45.032] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:45.045] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:45.045] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:45.084] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:45.084] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:45.108] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:45.108] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:45.152] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:45.152] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:45.172] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:45.172] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:45.221] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:45.221] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:45.251] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:45.251] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:45.291] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:45.291] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:45.314] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:45.314] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:45.352] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:45.353] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:45.376] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:45.377] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:45.422] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:45.422] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:45.441] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:45.441] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:45.491] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:45.492] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:45.504] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:45.504] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:45.646] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:45.646] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:46.147] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:46.147] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:46.191] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:46.191] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:46.226] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:46.226] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:48.302] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:48.302] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:48.808] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:48.808] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:48.845] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:48.846] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:48.870] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:48.870] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:48.908] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:48.908] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:48.934] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:48.934] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:48.982] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:48.982] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:49.014] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:49.014] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:49.054] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:49.055] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:49.077] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:49.077] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:49.119] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:49.119] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:49.141] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:49.141] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:49.183] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:49.183] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:49.204] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:49.204] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:49.251] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:49.251] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:49.268] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:49.268] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:49.317] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:49.317] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:49.332] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:49.332] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:50.989] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:50.990] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:51.503] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:51.503] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:51.550] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:51.550] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:51.566] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:51.567] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:51.598] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:51.598] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:51.630] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:51.630] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:51.669] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:51.669] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:51.692] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:51.693] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:51.738] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:51.738] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:51.756] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:51.757] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:51.794] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:51.795] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:51.834] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:51.835] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:54.318] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:54.318] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:54.653] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:54.654] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:54.894] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:54.894] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:55.406] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:55.406] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:55.438] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:55.438] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:55.469] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:55.469] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:55.512] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:55.513] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:55.532] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:55.532] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:55.576] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:55.576] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:55.595] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:55.595] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:55.629] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:55.630] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:10:55.658] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:10:55.658] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:11:01.110] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:11:01.110] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:11:01.617] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:11:01.618] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:11:01.648] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:11:01.649] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:11:01.681] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:11:01.681] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:11:01.721] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:11:01.721] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:11:08.517] [DEBUG] Space key detected and service is enabled
+[2025-07-21 18:11:08.522] [DEBUG] Target window captured (Handle: 0x2048E)
+[2025-07-21 18:11:08.588] [INFO] Window activated - focus set to InkCanvas
+[2025-07-21 18:11:08.591] [INFO] Window loaded for handler 132238
+[2025-07-21 18:11:08.739] [INFO] InkCanvas initialized successfully with Yellow brush
+[2025-07-21 18:11:08.740] [INFO] Canvas loaded: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\132238.xaml
+[2025-07-21 18:11:08.741] [INFO] Brush mode updated: Simple mode
+[2025-07-21 18:11:08.741] [INFO] Active symbol display hidden - no active symbol
+[2025-07-21 18:11:08.787] [DEBUG] Canvas window opened
+[2025-07-21 18:11:08.787] [DEBUG] New CanvasWindow opened
+[2025-07-21 18:11:10.173] [DEBUG] Space key detected and service is enabled
+[2025-07-21 18:11:10.176] [INFO] Brush mode updated: Trading mode
+[2025-07-21 18:11:10.177] [DEBUG] Space pressed over CanvasWindow: toggled trading mode
+[2025-07-21 18:11:10.651] [INFO] Mouse move on InkCanvas at 966;479
+[2025-07-21 18:11:10.658] [INFO] Mouse move on InkCanvas at 966;479
+[2025-07-21 18:11:10.661] [INFO] Mouse move on InkCanvas at 984;490
+[2025-07-21 18:11:10.664] [INFO] Mouse move on InkCanvas at 995;497
+[2025-07-21 18:11:10.672] [INFO] Mouse move on InkCanvas at 1008;504
+[2025-07-21 18:11:10.680] [INFO] Mouse move on InkCanvas at 1020;509
+[2025-07-21 18:11:10.688] [INFO] Mouse move on InkCanvas at 1033;515
+[2025-07-21 18:11:10.696] [INFO] Mouse move on InkCanvas at 1044;519
+[2025-07-21 18:11:10.704] [INFO] Mouse move on InkCanvas at 1052;523
+[2025-07-21 18:11:10.712] [INFO] Mouse move on InkCanvas at 1059;526
+[2025-07-21 18:11:10.720] [INFO] Mouse move on InkCanvas at 1064;527
+[2025-07-21 18:11:10.728] [INFO] Mouse move on InkCanvas at 1065;528
+[2025-07-21 18:11:10.744] [INFO] Mouse move on InkCanvas at 1066;528
+[2025-07-21 18:11:10.766] [INFO] CaptureData created for trading queue: ID=20250721181110765, Symbol=, Risk=1, Duration=2, Broker=Forex, Source=window
+[2025-07-21 18:11:10.766] [INFO] Stroke added to trading queue. Queue size: 1
+[2025-07-21 18:11:10.767] [INFO] Starting trading queue processing
+[2025-07-21 18:11:10.767] [INFO] Processing stroke from queue. Remaining items: 0
+[2025-07-21 18:11:10.821] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-21 18:11:10.821] [DEBUG] CaptureTrackingService: Обработка capture ID=20250721181110765, Handle=132238, X=945, Y=457, W=142, H=91
+[2025-07-21 18:11:10.831] [INFO] Updated broker settings for Forex: Risk=1, Duration=2
+[2025-07-21 18:11:10.831] [INFO] Settings updated from capture
+[2025-07-21 18:11:10.831] [INFO] CaptureData saved to database: ID=20250721181110765
+[2025-07-21 18:11:10.833] [INFO] Adding trendline to GForex: TargetWindowHandle=132238, Point1=(966, 479), Point2=(1066, 528), WindowWidth=1920
+[2025-07-21 18:11:10.835] [INFO] JForex: Начинаем добавление трендовой линии. Точка 1: (966, 479), Точка 2: (1066, 528)
+[2025-07-21 18:11:10.838] [INFO] JForex: Окно успешно активировано
+[2025-07-21 18:11:10.839] [INFO] Mouse up on InkCanvas at 1066;528
+[2025-07-21 18:11:10.842] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 142x91
+[2025-07-21 18:11:10.850] [DEBUG] TrendlineBreakDetector: Found 0 white pixels
+[2025-07-21 18:11:10.850] [DEBUG] TrendlineBreakDetector: Found 0 clusters
+[2025-07-21 18:11:10.851] [INFO] TrendlineBreakDetector: No white line cluster detected
+[2025-07-21 18:11:10.855] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250721181110765\tracking.png] Trendline not detected.
+[2025-07-21 18:11:10.856] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250721181110765\tracking.png: NoTrendline
+[2025-07-21 18:11:11.013] [INFO] JForex: Клавиша 'A' успешно отправлена
+[2025-07-21 18:11:11.215] [INFO] JForex: Конвертированные координаты. Точка 1: (966, 479), Точка 2: (1066, 528)
+[2025-07-21 18:11:11.342] [INFO] JForex: Клик успешно выполнен в позиции (966, 479)
+[2025-07-21 18:11:11.579] [INFO] JForex: Клик успешно выполнен в позиции (1066, 528)
+[2025-07-21 18:11:11.580] [INFO] JForex: Треховая линия успешно добавлена
+[2025-07-21 18:11:11.580] [INFO] Trendline successfully added to GForex
+[2025-07-21 18:11:11.581] [INFO] Trendline successfully added to GForex
+[2025-07-21 18:11:11.581] [INFO] Stroke removed from canvas
+[2025-07-21 18:11:11.635] [INFO] Trading stroke processing completed: ID=20250721181110765
+[2025-07-21 18:11:11.751] [INFO] Trading queue processing completed
+[2025-07-21 18:11:11.863] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-21 18:11:11.863] [DEBUG] CaptureTrackingService: Обработка capture ID=20250721181110765, Handle=132238, X=945, Y=457, W=142, H=91
+[2025-07-21 18:11:11.876] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 142x91
+[2025-07-21 18:11:11.881] [DEBUG] TrendlineBreakDetector: Found 241 white pixels
+[2025-07-21 18:11:11.883] [DEBUG] TrendlineBreakDetector: Found 1 clusters
+[2025-07-21 18:11:11.885] [DEBUG] Cluster: size=241, len=106,9, center=(70,0,46,5), score=0,017
+[2025-07-21 18:11:11.885] [DEBUG] TrendlineBreakDetector: Selected white line from (22,23) to (118,70)
+[2025-07-21 18:11:11.885] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
+[2025-07-21 18:11:11.886] [INFO] TrendlineBreakDetector: Breakout UP detected at (51,32) - Green: 0,44
+[2025-07-21 18:11:11.891] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250721181110765\tracking.png] Breakout UP detected!
+[2025-07-21 18:11:11.892] [INFO] CaptureTrackingService: Updated IsFired=True for capture ID=20250721181110765, Handle=132238
+[2025-07-21 18:11:11.914] [INFO] MT4 Socket: >>> OnBreakoutDetected handler CALLED <<< (type: BreakoutUp)
+[2025-07-21 18:11:11.914] [WARNING] MT4 Socket: Symbol is missing in CaptureData, not sending to MT4
+[2025-07-21 18:11:11.914] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250721181110765\tracking.png: BreakoutUp
+[2025-07-21 18:11:12.605] [DEBUG] Escape key detected and service is enabled
+[2025-07-21 18:11:12.607] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-21 18:11:12.607] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-21 18:11:12.607] [DEBUG] Closing canvas window
+[2025-07-21 18:11:12.607] [INFO] Window closing: saving canvas
+[2025-07-21 18:11:12.676] [INFO] Canvas saved: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\132238.xaml, C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\132238.png
+[2025-07-21 18:11:12.676] [INFO] Canvas saved properly
+[2025-07-21 18:11:12.683] [DEBUG] Canvas window closed
+[2025-07-21 18:11:12.683] [DEBUG] No overlay to close
+[2025-07-21 18:11:12.683] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-21 18:11:13.597] [DEBUG] Space key detected and service is enabled
+[2025-07-21 18:11:13.598] [DEBUG] Target window captured (Handle: 0x2048E)
+[2025-07-21 18:11:13.613] [INFO] Window activated - focus set to InkCanvas
+[2025-07-21 18:11:13.616] [INFO] Window loaded for handler 132238
+[2025-07-21 18:11:13.726] [INFO] InkCanvas initialized successfully with Yellow brush
+[2025-07-21 18:11:13.738] [INFO] Canvas loaded: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\132238.xaml
+[2025-07-21 18:11:13.739] [INFO] Brush mode updated: Simple mode
+[2025-07-21 18:11:13.739] [INFO] Active symbol display hidden - no active symbol
+[2025-07-21 18:11:13.774] [DEBUG] Canvas window opened
+[2025-07-21 18:11:13.774] [DEBUG] New CanvasWindow opened
+[2025-07-21 18:11:14.405] [DEBUG] Space key detected and service is enabled
+[2025-07-21 18:11:14.407] [INFO] Brush mode updated: Trading mode
+[2025-07-21 18:11:14.408] [DEBUG] Space pressed over CanvasWindow: toggled trading mode
+[2025-07-21 18:11:14.797] [INFO] Mouse move on InkCanvas at 1226;206
+[2025-07-21 18:11:14.798] [INFO] Mouse move on InkCanvas at 1226;206
+[2025-07-21 18:11:14.799] [INFO] Mouse move on InkCanvas at 1235;217
+[2025-07-21 18:11:14.800] [INFO] Mouse move on InkCanvas at 1242;224
+[2025-07-21 18:11:14.808] [INFO] Mouse move on InkCanvas at 1248;232
+[2025-07-21 18:11:14.816] [INFO] Mouse move on InkCanvas at 1254;242
+[2025-07-21 18:11:14.824] [INFO] Mouse move on InkCanvas at 1262;252
+[2025-07-21 18:11:14.832] [INFO] Mouse move on InkCanvas at 1269;260
+[2025-07-21 18:11:14.861] [INFO] Mouse move on InkCanvas at 1282;281
+[2025-07-21 18:11:14.864] [INFO] Mouse move on InkCanvas at 1285;284
+[2025-07-21 18:11:14.890] [INFO] Mouse move on InkCanvas at 1286;287
+[2025-07-21 18:11:14.891] [INFO] Mouse move on InkCanvas at 1289;291
+[2025-07-21 18:11:14.896] [INFO] Mouse move on InkCanvas at 1289;293
+[2025-07-21 18:11:14.904] [INFO] Mouse move on InkCanvas at 1290;295
+[2025-07-21 18:11:14.920] [INFO] Mouse move on InkCanvas at 1291;298
+[2025-07-21 18:11:14.928] [INFO] Mouse move on InkCanvas at 1291;299
+[2025-07-21 18:11:14.936] [INFO] Mouse move on InkCanvas at 1292;302
+[2025-07-21 18:11:14.945] [INFO] Mouse move on InkCanvas at 1293;303
+[2025-07-21 18:11:14.946] [INFO] CaptureData created for trading queue: ID=20250721181114946, Symbol=, Risk=1, Duration=2, Broker=Forex, Source=window
+[2025-07-21 18:11:14.947] [INFO] Stroke added to trading queue. Queue size: 1
+[2025-07-21 18:11:14.947] [INFO] Starting trading queue processing
+[2025-07-21 18:11:14.947] [INFO] Processing stroke from queue. Remaining items: 0
+[2025-07-21 18:11:14.955] [INFO] Updated broker settings for Forex: Risk=1, Duration=2
+[2025-07-21 18:11:14.955] [INFO] Settings updated from capture
+[2025-07-21 18:11:14.955] [INFO] CaptureData saved to database: ID=20250721181114946
+[2025-07-21 18:11:14.955] [INFO] Adding trendline to GForex: TargetWindowHandle=132238, Point1=(1226, 206), Point2=(1293, 303), WindowWidth=1920
+[2025-07-21 18:11:14.955] [INFO] JForex: Начинаем добавление трендовой линии. Точка 1: (1226, 206), Точка 2: (1293, 303)
+[2025-07-21 18:11:14.958] [INFO] JForex: Окно успешно активировано
+[2025-07-21 18:11:14.959] [INFO] Mouse up on InkCanvas at 1293;303
+[2025-07-21 18:11:15.113] [INFO] JForex: Клавиша 'A' успешно отправлена
+[2025-07-21 18:11:15.319] [INFO] JForex: Конвертированные координаты. Точка 1: (1226, 206), Точка 2: (1293, 303)
+[2025-07-21 18:11:15.444] [INFO] JForex: Клик успешно выполнен в позиции (1226, 206)
+[2025-07-21 18:11:15.682] [INFO] JForex: Клик успешно выполнен в позиции (1293, 303)
+[2025-07-21 18:11:15.682] [INFO] JForex: Треховая линия успешно добавлена
+[2025-07-21 18:11:15.683] [INFO] Trendline successfully added to GForex
+[2025-07-21 18:11:15.683] [INFO] Trendline successfully added to GForex
+[2025-07-21 18:11:15.683] [INFO] Stroke removed from canvas
+[2025-07-21 18:11:15.754] [INFO] Trading stroke processing completed: ID=20250721181114946
+[2025-07-21 18:11:15.869] [INFO] Trading queue processing completed
+[2025-07-21 18:11:15.947] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-21 18:11:15.948] [DEBUG] CaptureTrackingService: Обработка capture ID=20250721181114946, Handle=132238, X=1205, Y=184, W=109, H=138
+[2025-07-21 18:11:15.966] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 109x138
+[2025-07-21 18:11:15.977] [DEBUG] TrendlineBreakDetector: Found 259 white pixels
+[2025-07-21 18:11:15.979] [DEBUG] TrendlineBreakDetector: Found 1 clusters
+[2025-07-21 18:11:15.979] [DEBUG] Cluster: size=259, len=112,6, center=(53,5,70,0), score=0,010
+[2025-07-21 18:11:15.979] [DEBUG] TrendlineBreakDetector: Selected white line from (21,24) to (86,116)
+[2025-07-21 18:11:15.979] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
+[2025-07-21 18:11:15.980] [INFO] TrendlineBreakDetector: Breakout UP detected at (67,85) - Green: 0,31
+[2025-07-21 18:11:15.987] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250721181114946\tracking.png] Breakout UP detected!
+[2025-07-21 18:11:15.988] [INFO] CaptureTrackingService: Updated IsFired=True for capture ID=20250721181114946, Handle=132238
+[2025-07-21 18:11:15.997] [INFO] MT4 Socket: >>> OnBreakoutDetected handler CALLED <<< (type: BreakoutUp)
+[2025-07-21 18:11:15.997] [WARNING] MT4 Socket: Symbol is missing in CaptureData, not sending to MT4
+[2025-07-21 18:11:15.997] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250721181114946\tracking.png: BreakoutUp
+[2025-07-21 18:11:16.447] [DEBUG] Escape key detected and service is enabled
+[2025-07-21 18:11:16.448] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-21 18:11:16.448] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-21 18:11:16.448] [DEBUG] Closing canvas window
+[2025-07-21 18:11:16.448] [INFO] Window closing: saving canvas
+[2025-07-21 18:11:16.495] [INFO] Canvas saved: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\132238.xaml, C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\132238.png
+[2025-07-21 18:11:16.496] [INFO] Canvas saved properly
+[2025-07-21 18:11:16.501] [DEBUG] Canvas window closed
+[2025-07-21 18:11:16.501] [DEBUG] No overlay to close
+[2025-07-21 18:11:16.502] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-21 18:11:16.613] [DEBUG] Escape key detected and service is enabled
+[2025-07-21 18:11:16.614] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-21 18:11:16.614] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-21 18:11:16.614] [DEBUG] No overlay to close
+[2025-07-21 18:11:16.614] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-21 18:11:33.149] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-21 18:11:33.149] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-21 18:11:42.229] [DEBUG] Escape key detected and service is enabled
+[2025-07-21 18:11:42.229] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-21 18:11:42.229] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-21 18:11:42.229] [DEBUG] No overlay to close
+[2025-07-21 18:11:42.230] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-21 18:11:42.405] [DEBUG] Escape key detected and service is enabled
+[2025-07-21 18:11:42.405] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-21 18:11:42.405] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-21 18:11:42.406] [DEBUG] No overlay to close
+[2025-07-21 18:11:42.406] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-21 18:12:18.660] [DEBUG] C key detected and service is enabled
+[2025-07-21 18:12:18.661] [DEBUG] C key pressed - clearing canvas
