@@ -28,7 +28,7 @@ namespace ScreenCaptureApp
         private CancellationTokenSource _autoTrackingCts;
         private Task _autoTrackingTask;
         private bool isAutoTrackingActive = false;
-        private const double CollapsedHeight = 50;
+        private const double CollapsedHeight = 55;
         private const double ExpandedHeight = 600;
         
         // Brush color state

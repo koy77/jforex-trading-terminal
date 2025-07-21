@@ -2,3 +2,4 @@
 [2025-07-21 22:49:06.918] [SOCKET] MT4 OUT: {"cmd":"SELL","symbol":"XAUUSD","risk":1,"id":"20250721224906773"}
 [2025-07-21 22:50:46.913] [SOCKET] MT4 OUT: {"cmd":"close_positions","symbol":"XAUUSD.s"}
 [2025-07-21 22:51:08.423] [SOCKET] MT4 OUT: {"cmd":"BUY","symbol":"GBPJPY","risk":1,"id":"20250721225108357"}
+[2025-07-21 23:01:02.227] [SOCKET] MT4 OUT: {"cmd":"close_positions","symbol":"GBPJPY.s"}

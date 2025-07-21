@@ -56,27 +56,27 @@
 
             <Grid>
                 <Ellipse x:Name="XAUUSD_ActiveIndicator" Width="10" Height="10" Fill="Blue" Stroke="Black" StrokeThickness="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,16,0,0" Visibility="Collapsed"/>
-                <Button x:Name="XAUUSD" Content="XAUUSD" Tag="XAUUSD" Click="SymbolButton_Click" Background="Gold" Padding="8,4" Margin="2" MinWidth="70"/>
+                <Button x:Name="XAUUSD" Content="XAUUSD" Tag="XAUUSD" Click="SymbolButton_Click" Background="Gold" Padding="8,4" Margin="2" MinWidth="70" Height="30"/>
             </Grid>
             <Grid>
                 <Ellipse x:Name="GBPJPY_ActiveIndicator" Width="10" Height="10" Fill="Blue" Stroke="Black" StrokeThickness="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,16,0,0" Visibility="Collapsed"/>
-                <Button x:Name="GBPJPY" Content="GBPJPY" Tag="GBPJPY" Click="SymbolButton_Click" Background="LightCoral" Padding="8,4" Margin="2" MinWidth="70"/>
+                <Button x:Name="GBPJPY" Content="GBPJPY" Tag="GBPJPY" Click="SymbolButton_Click" Background="LightCoral" Padding="8,4" Margin="2" MinWidth="70" Height="30"/>
             </Grid>
             <Grid>
                 <Ellipse x:Name="EURUSD_ActiveIndicator" Width="10" Height="10" Fill="Blue" Stroke="Black" StrokeThickness="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,16,0,0" Visibility="Collapsed"/>
-                <Button x:Name="EURUSD" Content="EURUSD" Tag="EURUSD" Click="SymbolButton_Click" Background="LightBlue" Padding="8,4" Margin="2" MinWidth="70"/>
+                <Button x:Name="EURUSD" Content="EURUSD" Tag="EURUSD" Click="SymbolButton_Click" Background="LightBlue" Padding="8,4" Margin="2" MinWidth="70" Height="30"/>
             </Grid>
             <Grid>
                 <Ellipse x:Name="USDJPY_ActiveIndicator" Width="10" Height="10" Fill="Blue" Stroke="Black" StrokeThickness="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,16,0,0" Visibility="Collapsed"/>
-                <Button x:Name="USDJPY" Content="USDJPY" Tag="USDJPY" Click="SymbolButton_Click" Background="LightGreen" Padding="8,4" Margin="2" MinWidth="70"/>
+                <Button x:Name="USDJPY" Content="USDJPY" Tag="USDJPY" Click="SymbolButton_Click" Background="LightGreen" Padding="8,4" Margin="2" MinWidth="70" Height="30"/>
             </Grid>
             <Grid>
                 <Ellipse x:Name="GBPUSD_ActiveIndicator" Width="10" Height="10" Fill="Blue" Stroke="Black" StrokeThickness="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,16,0,0" Visibility="Collapsed"/>
-                <Button x:Name="GBPUSD" Content="GBPUSD" Tag="GBPUSD" Click="SymbolButton_Click" Background="LightPink" Padding="8,4" Margin="2" MinWidth="70"/>
+                <Button x:Name="GBPUSD" Content="GBPUSD" Tag="GBPUSD" Click="SymbolButton_Click" Background="LightPink" Padding="8,4" Margin="2" MinWidth="70" Height="30"/>
             </Grid>
             <Grid>
                 <Ellipse x:Name="EURJPY_ActiveIndicator" Width="10" Height="10" Fill="Blue" Stroke="Black" StrokeThickness="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,16,0,0" Visibility="Collapsed"/>
-                <Button x:Name="EURJPY" Content="EURJPY" Tag="EURJPY" Click="SymbolButton_Click" Background="LightGreen" Padding="8,4" Margin="2" MinWidth="70"/>
+                <Button x:Name="EURJPY" Content="EURJPY" Tag="EURJPY" Click="SymbolButton_Click" Background="LightGreen" Padding="8,4" Margin="2" MinWidth="70" Height="30"/>
             </Grid>
 
             <!-- Symbol summary panel for MT4 orders summary, now inline -->
