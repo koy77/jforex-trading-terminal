@@ -7,6 +7,7 @@ using System.Collections.Concurrent;
 using System.Text.Json;
 using ScreenCaptureApp.Models;
 using ScreenCaptureApp.Helpers;
+using System.Collections.Generic;
 
 namespace ScreenCaptureApp.Services
 {
@@ -28,6 +29,22 @@ namespace ScreenCaptureApp.Services
 
         public event EventHandler<string> MessageReceived;
         public event EventHandler<string> ConnectionStatusChanged;
+
+        public class OrdersSummary
+        {
+            public class SymbolInfo
+            {
+                public string Symbol { get; set; }
+                public double Profit { get; set; }
+                public double Percent { get; set; }
+                public double Lots { get; set; }
+                public double ProfitPoints { get; set; }
+            }
+            public List<SymbolInfo> Symbols { get; set; } = new List<SymbolInfo>();
+            public double TotalBalance { get; set; }
+        }
+
+        public event EventHandler<OrdersSummary> OrdersSummaryReceived;
 
         public bool IsConnected
         {
@@ -372,6 +389,9 @@ namespace ScreenCaptureApp.Services
                         case "order_closed":
                             HandleOrderClosedEvent(root);
                             break;
+                        case "orders_summary":
+                            HandleOrdersSummaryEvent(root);
+                            break;
                         default:
                             Logger.LogInfo($"MT4 Socket: Received unknown event type: {eventType}");
                             break;
@@ -432,6 +452,41 @@ namespace ScreenCaptureApp.Services
             catch (Exception ex)
             {
                 Logger.LogError("MT4 Socket: Error handling order_closed event", ex);
+            }
+        }
+
+        private void HandleOrdersSummaryEvent(JsonElement eventData)
+        {
+            try
+            {
+                Logger.LogInfo("MT4 Socket: Processing orders_summary event");
+                var summary = new OrdersSummary();
+                if (eventData.TryGetProperty("symbols", out var symbolsElement) && symbolsElement.ValueKind == JsonValueKind.Object)
+                {
+                    foreach (var symbolProp in symbolsElement.EnumerateObject())
+                    {
+                        var symbolInfo = new OrdersSummary.SymbolInfo { Symbol = symbolProp.Name };
+                        var val = symbolProp.Value;
+                        if (val.TryGetProperty("profit", out var profit))
+                            symbolInfo.Profit = profit.GetDouble();
+                        if (val.TryGetProperty("percent", out var percent))
+                            symbolInfo.Percent = percent.GetDouble();
+                        if (val.TryGetProperty("lots", out var lots))
+                            symbolInfo.Lots = lots.GetDouble();
+                        if (val.TryGetProperty("profit_points", out var profitPoints))
+                            symbolInfo.ProfitPoints = profitPoints.GetDouble();
+                        summary.Symbols.Add(symbolInfo);
+                    }
+                }
+                if (eventData.TryGetProperty("total_balance", out var balance))
+                {
+                    summary.TotalBalance = balance.GetDouble();
+                }
+                OrdersSummaryReceived?.Invoke(this, summary);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("MT4 Socket: Error handling orders_summary event", ex);
             }
         }
 

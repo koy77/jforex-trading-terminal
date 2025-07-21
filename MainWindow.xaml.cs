@@ -50,7 +50,10 @@ namespace ScreenCaptureApp
 
             var mt4SocketService = ServiceContainer.Instance.GetService<Mt4SocketService>();
             if (mt4SocketService != null)
+            {
                 mt4SocketService.ConnectionStatusChanged += Mt4SocketService_ConnectionStatusChanged;
+                mt4SocketService.OrdersSummaryReceived += Mt4SocketService_OrdersSummaryReceived;
+            }
 
             var captureTrackingService = ServiceContainer.Instance.GetService<CaptureTrackingService>();
             if (mt4SocketService != null && captureTrackingService != null)
@@ -712,6 +715,65 @@ namespace ScreenCaptureApp
             {
                 YellowBrushIndicator.StrokeThickness = 2;
                 BlackBrushIndicator.StrokeThickness = 4;
+            }
+        }
+
+        private void Mt4SocketService_OrdersSummaryReceived(object sender, Mt4SocketService.OrdersSummary summary)
+        {
+            Dispatcher.Invoke(() =>
+            {
+                SymbolSummaryPanel.Children.Clear();
+                if (summary?.Symbols != null && summary.Symbols.Count > 0)
+                {
+                    foreach (var symbol in summary.Symbols)
+                    {
+                        var border = new System.Windows.Controls.Border
+                        {
+                            BorderBrush = System.Windows.Media.Brushes.Gray,
+                            BorderThickness = new Thickness(1),
+                            CornerRadius = new CornerRadius(6),
+                            Margin = new Thickness(4, 0, 4, 0),
+                            Padding = new Thickness(8, 4, 8, 4),
+                            Background = System.Windows.Media.Brushes.WhiteSmoke,
+                            Child = new System.Windows.Controls.StackPanel
+                            {
+                                Orientation = System.Windows.Controls.Orientation.Horizontal,
+                                Children =
+                                {
+                                    new System.Windows.Controls.TextBlock { Text = symbol.Symbol, FontWeight = FontWeights.Bold, Margin = new Thickness(0,0,8,0) },
+                                    new System.Windows.Controls.TextBlock { Text = $"%: {symbol.Percent:F2}", Foreground = System.Windows.Media.Brushes.DarkBlue, Margin = new Thickness(0,0,8,0) },
+                                    new System.Windows.Controls.TextBlock { Text = $"Lots: {symbol.Lots:F2}", Foreground = System.Windows.Media.Brushes.DarkGreen, Margin = new Thickness(0,0,8,0) },
+                                    new System.Windows.Controls.TextBlock { Text = $"Pts: {symbol.ProfitPoints:F0}", Foreground = System.Windows.Media.Brushes.DarkRed, Margin = new Thickness(0,0,8,0) },
+                                    new System.Windows.Controls.Button {
+                                        Content = "Close",
+                                        Tag = symbol.Symbol,
+                                        Margin = new Thickness(0,0,0,0),
+                                        Padding = new Thickness(6,0,6,0),
+                                        Background = System.Windows.Media.Brushes.OrangeRed,
+                                        Foreground = System.Windows.Media.Brushes.White,
+                                        FontWeight = FontWeights.Bold,
+                                        Cursor = System.Windows.Input.Cursors.Hand,
+                                    }
+                                }
+                            }
+                        };
+                        var btn = ((border.Child as System.Windows.Controls.StackPanel).Children[4]) as System.Windows.Controls.Button;
+                        btn.Click += (s, e) => CloseSymbolOrder(symbol.Symbol);
+                        SymbolSummaryPanel.Children.Add(border);
+                    }
+                }
+                TotalBalanceText.Text = summary != null ? $"Total Balance: {summary.TotalBalance:F2}" : string.Empty;
+            });
+        }
+
+        private void CloseSymbolOrder(string symbol)
+        {
+            var mt4SocketService = ServiceContainer.Instance.GetService<Mt4SocketService>();
+            if (mt4SocketService != null && !string.IsNullOrEmpty(symbol))
+            {
+                // Send close order command for the symbol
+                var cmd = $"{{\"cmd\":\"CLOSE\",\"symbol\":\"{symbol}\"}}\r\n";
+                _ = mt4SocketService.WriteAsync(cmd);
             }
         }
     }

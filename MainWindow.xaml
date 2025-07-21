@@ -75,6 +75,10 @@
                 <Button x:Name="EURJPY" Content="EURJPY" Tag="EURJPY" Click="SymbolButton_Click" Background="LightGreen" Padding="8,4" Margin="2" MinWidth="70"/>
             </Grid>
 
+            <!-- Symbol summary panel for MT4 orders summary, now inline -->
+            <StackPanel x:Name="SymbolSummaryPanel" Orientation="Horizontal" VerticalAlignment="Center" Margin="16,0,0,0"/>
+            <TextBlock x:Name="TotalBalanceText" FontWeight="Bold" FontSize="16" Foreground="DarkGreen" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10,0,0,0"/>
+
             <Button Content="Toggle Tracking Viewer" Click="ToggleTrackingViewer_Click" Background="Purple" Foreground="White" Padding="10,5" Margin="10,0,0,0"/>
         </StackPanel>
 
