@@ -117,7 +117,7 @@ namespace ScreenCaptureApp.Services
             try
             {
                 var captures = _databaseService.GetAllUnfiredAndUnskippedCaptures();
-                Logger.LogDebug($"CaptureTrackingService: Найдено {captures.Count} неактивированных и не пропущенных capture(ов) для обработки");
+                // Logger.LogDebug($"CaptureTrackingService: Найдено {captures.Count} неактивированных и не пропущенных capture(ов) для обработки");
                 
                 if(captures.Count > 0)
                 {
@@ -208,7 +208,7 @@ namespace ScreenCaptureApp.Services
             finally
             {
                 _isProcessing = false;
-                Logger.LogInfo("CaptureTrackingService: Завершение обработки captures");
+                // Logger.LogInfo("CaptureTrackingService: Завершение обработки captures");
                 await OnCaptureTrackingIterationEnded();
             }
         }

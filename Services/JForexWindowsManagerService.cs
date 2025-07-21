@@ -227,7 +227,7 @@ namespace ScreenCaptureApp.Services
         /// <summary>
         /// Кликает мышью в указанной позиции окна
         /// </summary>
-        private bool ClickAtPosition(IntPtr windowHandle, int x, int y)
+        public bool ClickAtPosition(IntPtr windowHandle, int x, int y)
         {
             try
             {

@@ -38,6 +38,10 @@ namespace ScreenCaptureApp.Services
         public event Action OnSymbolHotkeyPressed4;
         public event Action OnSymbolHotkeyPressed5;
         public event Action OnSymbolHotkeyPressed6;
+        public event Action OnQHotkey;
+        public event Action OnWHotkey;
+        public event Action OnEHotkey;
+        public event Action OnRHotkey;
         // Properties
         public bool IsEnabled { get; private set; } = false;
         
@@ -71,6 +75,9 @@ namespace ScreenCaptureApp.Services
         private const int VK_UP = 0x26;
         private const int VK_RIGHT = 0x27;
         private const int VK_DOWN = 0x28;
+        private const int VK_Q = 0x51;
+        private const int VK_E = 0x45;
+        private const int VK_R = 0x52;
 
         // Delegate for the keyboard hook
         private delegate IntPtr LowLevelKeyboardProc(int nCode, IntPtr wParam, IntPtr lParam);
@@ -184,6 +191,7 @@ namespace ScreenCaptureApp.Services
                 else if (vkCode == VK_W && IsEnabled)
                 {
                     // W key detected, reserved for future use
+                    OnWHotkey?.Invoke();
                 }
                 else if (vkCode == VK_A && IsEnabled)
                 {
@@ -196,6 +204,21 @@ namespace ScreenCaptureApp.Services
                 else if (vkCode == VK_D && IsEnabled)
                 {
                     // D key detected, reserved for future use
+                }
+                else if (vkCode == VK_Q && IsEnabled)
+                {
+                    Logger.LogDebug("Q hotkey detected and service is enabled");
+                    OnQHotkey?.Invoke();
+                }
+                else if (vkCode == VK_E && IsEnabled)
+                {
+                    Logger.LogDebug("E hotkey detected and service is enabled");
+                    OnEHotkey?.Invoke();
+                }
+                else if (vkCode == VK_R && IsEnabled)
+                {
+                    Logger.LogDebug("R hotkey detected and service is enabled");
+                    OnRHotkey?.Invoke();
                 }
                 else if (vkCode == VK_LEFT && IsEnabled)
                 {

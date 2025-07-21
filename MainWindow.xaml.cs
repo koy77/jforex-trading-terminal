@@ -77,6 +77,10 @@ namespace ScreenCaptureApp
                 hotkeysService.OnSymbolHotkeyPressed4 += () => TriggerSymbolButton(3);
                 hotkeysService.OnSymbolHotkeyPressed5 += () => TriggerSymbolButton(4);
                 hotkeysService.OnSymbolHotkeyPressed6 += () => TriggerSymbolButton(5);
+                hotkeysService.OnQHotkey += () => { Logger.LogInfo("[DEBUG] OnQHotkey event in MainWindow"); ClickHotkeyButtonByIndex(0); };
+                hotkeysService.OnWHotkey += () => { Logger.LogInfo("[DEBUG] OnWHotkey event in MainWindow"); ClickHotkeyButtonByIndex(1); };
+                hotkeysService.OnEHotkey += () => { Logger.LogInfo("[DEBUG] OnEHotkey event in MainWindow"); ClickHotkeyButtonByIndex(2); };
+                hotkeysService.OnRHotkey += () => { Logger.LogInfo("[DEBUG] OnRHotkey event in MainWindow"); ClickHotkeyButtonByIndex(3); };
             }
         }
 
@@ -761,5 +765,20 @@ namespace ScreenCaptureApp
         private void OnTP1Click(string symbol) { Logger.LogInfo($"TP1 clicked for {symbol}"); }
         private void OnTP2Click(string symbol) { Logger.LogInfo($"TP2 clicked for {symbol}"); }
         private void OnTP3Click(string symbol) { Logger.LogInfo($"TP3 clicked for {symbol}"); }
+
+        private void ClickHotkeyButtonByIndex(int index)
+        {
+            // Проверяем, что targetWindow активен и находится на основном мониторе (X=0)
+            targetWindow = MainHelper.GetWindowUnderCursor();
+            int x = 80 + 200 * index;
+            int y = 56; // Y задаёт пользователь
+            // Отправляем клик мышкой по окну
+            var jforexService = ServiceContainer.Instance.GetService<JForexWindowsManagerService>();
+            if (jforexService != null)
+            {
+                _ = jforexService.ClickAtPosition(targetWindow, x, y);
+                Logger.LogInfo($"Hotkey button index {index} clicked at ({x},{y}) on window {targetWindow}");
+            }
+        }
     }
 } 
