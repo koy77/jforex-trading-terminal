@@ -28,7 +28,7 @@ namespace ScreenCaptureApp
         private CancellationTokenSource _autoTrackingCts;
         private Task _autoTrackingTask;
         private bool isAutoTrackingActive = false;
-        private const double CollapsedHeight = 90;
+        private const double CollapsedHeight = 50;
         private const double ExpandedHeight = 600;
         
         // Brush color state
@@ -803,5 +803,14 @@ namespace ScreenCaptureApp
             Logger.LogInfo($"[DEBUG] Mouse returned to ({oldPos.X},{oldPos.Y})");
         }
 
+        private void CloseEllipse_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MinimizeEllipse_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
     }
 } 
