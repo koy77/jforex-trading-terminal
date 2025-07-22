@@ -112,7 +112,8 @@ namespace ScreenCaptureApp
                     IsFired = capture.IsFired,
                     IsSkipped = capture.IsSkipped,
                     Model = capture.Model,
-                    Mt4Order = capture.Mt4Order
+                    Mt4Order = capture.Mt4Order,
+                    Period = capture.Period
                 });
             }
             return items;
@@ -248,6 +249,7 @@ namespace ScreenCaptureApp
         public bool IsSkipped { get; set; }
         public string Model { get; set; }
         public string Mt4Order { get; set; }
+        public string Period { get; set; } // <--- добавлено
 
         public System.Windows.Media.Imaging.BitmapImage ImageSource
         {
