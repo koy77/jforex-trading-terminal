@@ -69,6 +69,24 @@ namespace ScreenCaptureApp
                 _hotkeysService.OnEnterKeyPressed -= HotkeysService_OnEnterKeyPressed;
         }
 
+        protected override void OnPreviewKeyDown(System.Windows.Input.KeyEventArgs e)
+        {
+            base.OnPreviewKeyDown(e);
+            if (e.Key == System.Windows.Input.Key.Escape)
+            {
+                this.Close();
+                e.Handled = true;
+            }
+            else if (e.Key == System.Windows.Input.Key.F)
+            {
+                if (SelectionRectangle.Visibility == Visibility.Visible && SelectionRectangle.Width > 0 && SelectionRectangle.Height > 0)
+                {
+                    CompleteCapture();
+                    e.Handled = true;
+                }
+            }
+        }
+
         public ScreenCaptureOverlay(IntPtr windowHandle, string symbol = null)
         {
             InitializeComponent();
