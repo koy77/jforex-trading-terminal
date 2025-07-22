@@ -62,3 +62,4 @@
 [2025-07-22 17:49:10.628] [SOCKET] MT4 OUT: {"cmd":"close_positions","symbol":"GBPJPY.s"}
 [2025-07-22 18:00:37.297] [SOCKET] MT4 OUT: {"cmd":"BUY","symbol":"GBPUSD","risk":1,"id":"20250722180037082"}
 [2025-07-22 18:01:10.212] [SOCKET] MT4 OUT: {"cmd":"BUY","symbol":"USDJPY","risk":1,"id":"20250722180110003"}
+[2025-07-22 18:26:33.724] [SOCKET] MT4 OUT: {"cmd":"close_positions","symbol":"XAUUSD.s"}

@@ -12,7 +12,7 @@ namespace ScreenCaptureApp.Services
         private const int WM_KEYDOWN = 0x0100;
         private const int VK_SPACE = 0x20;
         private const int VK_ESCAPE = 0x1B;
-        private const int VK_T = 0x54;
+        private const int VK_F = 0x46; // Клавиша F
         private const int VK_ENTER = 0x0D;
         private const int VK_OEM_3 = 0xC0; // '`' (backquote)
         private const int VK_C = 0x43;
@@ -124,13 +124,11 @@ namespace ScreenCaptureApp.Services
                     
                     // return (IntPtr)1; // Prevent further processing
                 }
-                else if (vkCode == VK_T && IsEnabled)
+                else if (vkCode == VK_F && IsEnabled)
                 {
-                    // Trigger the T key event
-                    Logger.LogDebug("T key detected and service is enabled");
+                    // Trigger the F key event
+                    Logger.LogDebug("F key detected and service is enabled");
                     OnTKeyPressed?.Invoke();
-                    
-                    // return (IntPtr)1; // Prevent further processing
                 }
                 else if (vkCode == VK_ENTER && IsEnabled)
                 {
@@ -176,10 +174,6 @@ namespace ScreenCaptureApp.Services
                 else if (vkCode == VK_SPACE && !IsEnabled)
                 {
                     Logger.LogDebug("Space key detected but service is disabled");
-                }
-                else if (vkCode == VK_T && !IsEnabled)
-                {
-                    Logger.LogDebug("T key detected but service is disabled");
                 }
                 else if (vkCode == VK_OEM_3 && IsEnabled)
                 {
