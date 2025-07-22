@@ -49,6 +49,7 @@
                                     <TextBlock Text="{Binding Handle, StringFormat='Handle: {0}'}"/>
                                     <TextBlock Text="{Binding Timestamp, StringFormat='Timestamp: {0}'}"/>
                                     <TextBlock Text="{Binding Model, StringFormat='Model: {0}'}"/>
+                                    <TextBlock Text="{Binding Period, StringFormat='Period: {0}'}" FontWeight="Bold" Foreground="DarkGoldenrod"/>
                                     <TextBlock Text="is_fired" Foreground="Red" FontWeight="Bold" Visibility="{Binding IsFired, Converter={StaticResource BoolToVisibilityConverter}}" Margin="0,10,0,0"/>
                                     <TextBlock Text="is_skipped" Foreground="Orange" FontWeight="Bold" Visibility="{Binding IsSkipped, Converter={StaticResource BoolToVisibilityConverter}}" Margin="0,5,0,0"/>
                                 </StackPanel>

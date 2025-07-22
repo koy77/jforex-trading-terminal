@@ -23,6 +23,7 @@ namespace ScreenCaptureApp.Models
         public int Duration { get; set; } // Длительность (секунд, миллисекунд и т.д.)
         public string Model { get; set; } // "OHLC" или "MACD"
         public string Mt4Order { get; set; } // MT4 order information as JSON string
+        public string Period { get; set; } // Период, парсится из заголовка окна
     }
 
     public class SymbolData

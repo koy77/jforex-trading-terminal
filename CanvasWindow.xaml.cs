@@ -18,6 +18,7 @@ using System.Windows.Forms;
 using System.Linq;
 using System.Windows.Controls;
 using System.Collections.Generic;
+using ScreenCaptureApp.Helpers;
 
 namespace ScreenCaptureApp
 {
@@ -842,6 +843,8 @@ namespace ScreenCaptureApp
                 else if (bounds.Top < 656 && bounds.Bottom < 656)
                     model = "OHLC";
                 
+                string windowTitle = MainHelper.GetWindowTitle(targetWindowHandle);
+                string period = MainHelper.ParsePeriodFromTitle(windowTitle);
                 var captureEntry = new CaptureData
                 {
                     X = x,
@@ -856,7 +859,8 @@ namespace ScreenCaptureApp
                     Source = "window", // Изменено с "trading_canvas" на "window"
                     Broker = brokerState.GetDisplayName(),
                     Duration = duration,
-                    Model = model
+                    Model = model,
+                    Period = period
                 };
                 
                 Logger.LogInfo($"CaptureData created for trading queue: ID={captureEntry.ID}, Symbol={captureEntry.Symbol}, Risk={captureEntry.Risk}, Duration={captureEntry.Duration}, Broker={captureEntry.Broker}, Source={captureEntry.Source}");

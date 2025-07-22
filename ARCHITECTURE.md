@@ -741,7 +741,7 @@ container.RegisterSingleton(new JForexWindowsManagerService());
 - **DURATION** — блок с кнопками выбора длительности (1, 2, 3, 4, 5), появляется только если выбран бинарный брокер. По умолчанию выбрана 2.
 - **Hotkeys**:
   - **Q**: Undo last stroke (removes the most recently drawn stroke)
-  - **C**: Clear all strokes and delete canvas files
+  - **C**: Clear all strokes and delete canvasCaptureService files
   - **T**: Toggle trading mode
   - **Arrow Keys (←/↑/↓/→)**: Shift canvas strokes
   - **W/A/S/D**: Reserved for future use

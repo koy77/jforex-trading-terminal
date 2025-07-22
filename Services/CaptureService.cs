@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Interop;
 using ScreenCaptureApp.Models;
 using ScreenCaptureApp.Services;
+using ScreenCaptureApp.Helpers;
 
 namespace ScreenCaptureApp.Services
 {
@@ -109,6 +110,8 @@ namespace ScreenCaptureApp.Services
                 model = "OHLC";
             // Если одна точка выше, другая ниже — по умолчанию OHLC
             
+            string windowTitle = MainHelper.GetWindowTitle(windowHandle);
+            string period = MainHelper.ParsePeriodFromTitle(windowTitle);
             var captureEntry = new CaptureData
             {
                 X = (int)windowX,
@@ -123,7 +126,8 @@ namespace ScreenCaptureApp.Services
                 Source = "window",
                 Broker = brokerState.GetDisplayName(),
                 Duration = duration,
-                Model = model
+                Model = model,
+                Period = period
             };
             _databaseService.SaveCapture(captureEntry);
             

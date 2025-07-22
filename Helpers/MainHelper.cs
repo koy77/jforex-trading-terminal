@@ -35,8 +35,15 @@ namespace ScreenCaptureApp.Helpers
         [DllImport("user32.dll")]
         private static extern IntPtr FindWindowEx(IntPtr hWndParent, IntPtr hWndChildAfter, string lpszClass, string lpszWindow);
 
-        [DllImport("user32.dll")]
+        [DllImport("user32.dll", SetLastError = true, CharSet = System.Runtime.InteropServices.CharSet.Auto)]
         private static extern int GetWindowText(IntPtr hWnd, System.Text.StringBuilder lpString, int nMaxCount);
+
+        public static string GetWindowTitle(IntPtr handle)
+        {
+            var sb = new System.Text.StringBuilder(256);
+            GetWindowText(handle, sb, sb.Capacity);
+            return sb.ToString();
+        }
 
         [DllImport("user32.dll")]
         private static extern bool EnumWindows(EnumWindowsProc lpEnumFunc, IntPtr lParam);
@@ -340,6 +347,17 @@ namespace ScreenCaptureApp.Helpers
             {
                 Logger.LogError("Failed to delete Canvases folder contents", ex);
             }
+        }
+
+        public static string ParsePeriodFromTitle(string title)
+        {
+            if (string.IsNullOrEmpty(title)) return null;
+            var idx = title.IndexOf(',');
+            if (idx >= 0 && idx + 1 < title.Length)
+            {
+                return title.Substring(idx + 1).Trim();
+            }
+            return null;
         }
     }
 } 
