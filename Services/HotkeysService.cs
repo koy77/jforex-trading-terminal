@@ -79,6 +79,7 @@ namespace ScreenCaptureApp.Services
         private const int VK_Q = 0x51;
         private const int VK_E = 0x45;
         private const int VK_R = 0x52;
+        private const int VK_Z = 0x5A; // Клавиша Z
         private const int VK_LSHIFT = 0xA0;
 
         // Delegate for the keyboard hook
@@ -222,9 +223,9 @@ namespace ScreenCaptureApp.Services
                     Logger.LogDebug("R hotkey detected and service is enabled");
                     OnRHotkey?.Invoke();
                 }
-                else if (vkCode == VK_LSHIFT && IsEnabled)
+                else if (vkCode == VK_Z && IsEnabled)
                 {
-                    Logger.LogDebug("Left Shift hotkey detected and service is enabled");
+                    Logger.LogDebug("Z hotkey detected and service is enabled");
                     OnLeftShiftHotkey?.Invoke();
                 }
                 else if (vkCode == VK_LEFT && IsEnabled)
