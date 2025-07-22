@@ -1,60 +1,498 @@
-[2025-07-22 13:49:53.453] [INFO] app.log file deleted successfully
-[2025-07-22 13:49:53.453] [INFO] Trade counter reset successfully
-[2025-07-22 13:49:53.454] [INFO] Initialized 6 symbols in database
-[2025-07-22 13:49:53.454] [INFO] Initialized symbol settings for XAUUSD: DefaultRisk=1, DefaultDuration=2
-[2025-07-22 13:49:53.454] [INFO] Initialized symbol settings for GBPJPY: DefaultRisk=1, DefaultDuration=2
-[2025-07-22 13:49:53.454] [INFO] Initialized symbol settings for USDJPY: DefaultRisk=1, DefaultDuration=2
-[2025-07-22 13:49:53.455] [INFO] Initialized symbol settings for EURJPY: DefaultRisk=1, DefaultDuration=2
-[2025-07-22 13:49:53.455] [INFO] Initialized symbol settings for EURUSD: DefaultRisk=1, DefaultDuration=2
-[2025-07-22 13:49:53.456] [INFO] Initialized symbol settings for GBPUSD: DefaultRisk=1, DefaultDuration=2
-[2025-07-22 13:49:53.456] [INFO] Symbol settings manager initialized with 6 symbols
-[2025-07-22 13:49:53.456] [INFO] All symbol settings reset to defaults
-[2025-07-22 13:49:53.456] [INFO] BrokerSettingsManager initialized with default settings
-[2025-07-22 13:49:53.456] [INFO] All broker settings reset to default values
-[2025-07-22 13:49:53.780] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":9.61000000,"percent":0.13000000,"lots":1.83000000,"profit_points":23}},"total_balance":7671.03000000}
+[2025-07-22 14:01:34.363] [INFO] app.log file deleted successfully
+[2025-07-22 14:01:34.363] [INFO] Trade counter reset successfully
+[2025-07-22 14:01:34.364] [INFO] Initialized 6 symbols in database
+[2025-07-22 14:01:34.364] [INFO] Initialized symbol settings for XAUUSD: DefaultRisk=1, DefaultDuration=2
+[2025-07-22 14:01:34.364] [INFO] Initialized symbol settings for GBPJPY: DefaultRisk=1, DefaultDuration=2
+[2025-07-22 14:01:34.365] [INFO] Initialized symbol settings for USDJPY: DefaultRisk=1, DefaultDuration=2
+[2025-07-22 14:01:34.365] [INFO] Initialized symbol settings for EURJPY: DefaultRisk=1, DefaultDuration=2
+[2025-07-22 14:01:34.365] [INFO] Initialized symbol settings for EURUSD: DefaultRisk=1, DefaultDuration=2
+[2025-07-22 14:01:34.366] [INFO] Initialized symbol settings for GBPUSD: DefaultRisk=1, DefaultDuration=2
+[2025-07-22 14:01:34.366] [INFO] Symbol settings manager initialized with 6 symbols
+[2025-07-22 14:01:34.366] [INFO] All symbol settings reset to defaults
+[2025-07-22 14:01:34.366] [INFO] BrokerSettingsManager initialized with default settings
+[2025-07-22 14:01:34.366] [INFO] All broker settings reset to default values
+[2025-07-22 14:01:38.106] [INFO] MainWindow closing - cleaning up resources
+[2025-07-22 14:01:38.110] [INFO] Disconnecting from MT4 socket
+[2025-07-22 14:01:38.112] [INFO] MT4 socket read operation cancelled
+[2025-07-22 14:01:38.112] [INFO] MT4 socket read loop ended
+[2025-07-22 14:01:38.113] [INFO] Disconnecting from Pocket Option socket
+[2025-07-22 14:01:38.113] [WARNING] Not connected to Pocket Option socket
+[2025-07-22 14:01:38.113] [INFO] All services cleaned up
+[2025-07-22 14:01:38.114] [INFO] MainWindow cleanup completed
+[2025-07-22 14:01:38.114] [INFO] Disconnecting from MT4 socket
+[2025-07-22 14:01:38.114] [WARNING] Not connected to MT4 socket
+[2025-07-22 14:01:38.114] [INFO] Disconnecting from Pocket Option socket
+[2025-07-22 14:01:38.115] [WARNING] Not connected to Pocket Option socket
+[2025-07-22 14:01:38.115] [INFO] All services cleaned up
+[2025-07-22 14:01:38.129] [DEBUG] MT4 Connection: Disconnected
+[2025-07-22 14:01:38.130] [INFO] MT4 Connection status: Disconnected
+[2025-07-22 14:01:38.131] [INFO] Successfully disconnected from MT4 socket
+[2025-07-22 14:01:38.131] [DEBUG] MT4 Connection: Disconnected
+[2025-07-22 14:01:38.131] [INFO] MT4 Connection status: Disconnected
+[2025-07-22 14:07:04.875] [INFO] MT4 Socket Service initialized
+[2025-07-22 14:07:04.884] [INFO] Pocket Option Socket Service initialized
+[2025-07-22 14:07:04.889] [INFO] BrokerSettingsManager initialized with default settings
+[2025-07-22 14:07:04.892] [INFO] All services registered in DI container
+[2025-07-22 14:07:04.896] [INFO] Attempting to connect to Pocket Option socket at 127.0.0.1:65300
+[2025-07-22 14:07:05.102] [INFO] MT4 Socket Service initialized in MainWindow
+[2025-07-22 14:07:05.103] [INFO] MT4 Socket Service subscribed to CaptureTrackingService BreakoutDetected event
+[2025-07-22 14:07:05.553] [INFO] Attempting to connect to MT4 socket at 127.0.0.1:23456
+[2025-07-22 14:07:05.558] [INFO] Successfully connected to MT4 socket at 127.0.0.1:23456
+[2025-07-22 14:07:05.558] [DEBUG] MT4 Connection: Connected
+[2025-07-22 14:07:05.558] [INFO] MT4 Connection status: Connected
+[2025-07-22 14:07:05.559] [INFO] MT4 Socket: Connection status indicator updated to Connected (Green)
+[2025-07-22 14:07:05.561] [INFO] Starting to read messages from MT4 socket
+[2025-07-22 14:07:05.563] [INFO] Received from MT4 socket: {"event":"welcome","version":"1.4.0","server_name":"RIPPER_MT4_SOCKET_SERVER","port":"23456","debug_mode":false,"symbol_suffix":".s","account":{"balance":7670.37000000,"equity":7670.37000000,"margin":0.00000000,"free_margin":7670.37000000,"currency":"USD","company":"PU Prime Ltd","server":"PUPrime-Demo"}}
+{"event":"watchlist_stats"}
+[2025-07-22 14:07:05.579] [WARNING] MT4 Socket: Failed to parse JSON message: '{' is invalid after a single JSON value. Expected end of data. LineNumber: 1 | BytePositionInLine: 0.
+[2025-07-22 14:07:05.579] [DEBUG] MT4: {"event":"welcome","version":"1.4.0","server_name":"RIPPER_MT4_SOCKET_SERVER","port":"23456","debug_mode":false,"symbol_suffix":".s","account":{"balance":7670.37000000,"equity":7670.37000000,"margin":0.00000000,"free_margin":7670.37000000,"currency":"USD","company":"PU Prime Ltd","server":"PUPrime-Demo"}}
+{"event":"watchlist_stats"}
+[2025-07-22 14:07:06.963] [ERROR] Failed to connect to Pocket Option socket at 127.0.0.1:65300
+Exception: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+StackTrace:    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Net.Sockets.TcpClient.CompleteConnectAsync(Task task)
+   at ScreenCaptureApp.Services.PocketOptionSocketService.ConnectAsync() in C:\apps\jforex-trading-terminal-win10\Services\PocketOptionSocketService.cs:line 146
+[2025-07-22 14:07:10.631] [DEBUG] Status: Found and brought 2 window(s) to foreground: XAU/USD, T610, XAU/USD, T8
+[2025-07-22 14:07:13.683] [DEBUG] Symbol hotkey 1 pressed
+[2025-07-22 14:07:13.899] [DEBUG] Status: Found and brought 2 window(s) to foreground: XAU/USD, T610, XAU/USD, T8
+[2025-07-22 14:07:14.050] [DEBUG] Symbol hotkey 2 pressed
+[2025-07-22 14:07:14.276] [DEBUG] Status: Found and brought 2 window(s) to foreground: GBP/JPY, T144, GBP/JPY, T8
+[2025-07-22 14:07:21.385] [DEBUG] Symbol hotkey 2 pressed
+[2025-07-22 14:07:21.612] [DEBUG] Status: Found and brought 2 window(s) to foreground: GBP/JPY, T144, GBP/JPY, T8
+[2025-07-22 14:07:21.613] [DEBUG] Symbol hotkey 3 pressed
+[2025-07-22 14:07:21.834] [DEBUG] Status: Found and brought 2 window(s) to foreground: EUR/USD, T144, EUR/USD, T8
+[2025-07-22 14:07:57.117] [DEBUG] Status: Found and brought 2 window(s) to foreground: USD/JPY, T8, USD/JPY, T144
+[2025-07-22 14:08:11.393] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-22 14:08:11.514] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
+[2025-07-22 14:08:11.517] [INFO] Hotkey button index 1 clicked at (280,56) on window 67028
+[2025-07-22 14:08:11.517] [INFO] [DEBUG] Mouse returned to (1075,326)
+[2025-07-22 14:08:12.553] [DEBUG] E hotkey detected and service is enabled
+[2025-07-22 14:08:12.553] [INFO] [DEBUG] OnEHotkey event in MainWindow
+[2025-07-22 14:08:12.668] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
+[2025-07-22 14:08:12.668] [INFO] Hotkey button index 2 clicked at (480,56) on window 67028
+[2025-07-22 14:08:12.668] [INFO] [DEBUG] Mouse returned to (1075,326)
+[2025-07-22 14:08:13.921] [DEBUG] Symbol hotkey 3 pressed
+[2025-07-22 14:08:14.136] [DEBUG] Status: Found and brought 2 window(s) to foreground: EUR/USD, T8, EUR/USD, T144
+[2025-07-22 14:08:14.553] [DEBUG] Symbol hotkey 4 pressed
+[2025-07-22 14:08:14.780] [DEBUG] Status: Found and brought 2 window(s) to foreground: USD/JPY, T144, USD/JPY, T8
+[2025-07-22 14:08:14.905] [DEBUG] Symbol hotkey 5 pressed
+[2025-07-22 14:08:15.127] [DEBUG] Status: Found and brought 2 window(s) to foreground: GBP/USD, T8, GBP/USD, T34
+[2025-07-22 14:08:22.409] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-22 14:08:22.523] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
+[2025-07-22 14:08:22.524] [INFO] Hotkey button index 1 clicked at (280,56) on window 67016
+[2025-07-22 14:08:22.524] [INFO] [DEBUG] Mouse returned to (737,479)
+[2025-07-22 14:08:23.585] [DEBUG] E hotkey detected and service is enabled
+[2025-07-22 14:08:23.585] [INFO] [DEBUG] OnEHotkey event in MainWindow
+[2025-07-22 14:08:23.702] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
+[2025-07-22 14:08:23.703] [INFO] Hotkey button index 2 clicked at (480,56) on window 67016
+[2025-07-22 14:08:23.703] [INFO] [DEBUG] Mouse returned to (818,458)
+[2025-07-22 14:08:27.961] [DEBUG] Symbol hotkey 1 pressed
+[2025-07-22 14:08:28.186] [DEBUG] Status: Found and brought 2 window(s) to foreground: XAU/USD, T8, XAU/USD, T610
+[2025-07-22 14:08:30.561] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-22 14:08:30.690] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
+[2025-07-22 14:08:30.690] [INFO] Hotkey button index 1 clicked at (280,56) on window 198110
+[2025-07-22 14:08:30.690] [INFO] [DEBUG] Mouse returned to (808,156)
+[2025-07-22 14:08:31.209] [DEBUG] Symbol hotkey 1 pressed
+[2025-07-22 14:08:31.429] [DEBUG] Status: Found and brought 2 window(s) to foreground: XAU/USD, T610, XAU/USD, T8
+[2025-07-22 14:08:31.953] [DEBUG] Symbol hotkey 1 pressed
+[2025-07-22 14:08:32.172] [DEBUG] Status: Found and brought 2 window(s) to foreground: XAU/USD, T8, XAU/USD, T610
+[2025-07-22 14:08:32.249] [DEBUG] Symbol hotkey 1 pressed
+[2025-07-22 14:08:32.473] [DEBUG] Status: Found and brought 2 window(s) to foreground: XAU/USD, T610, XAU/USD, T8
+[2025-07-22 14:08:32.521] [DEBUG] Symbol hotkey 2 pressed
+[2025-07-22 14:08:32.741] [DEBUG] Status: Found and brought 2 window(s) to foreground: GBP/JPY, T8, GBP/JPY, T144
+[2025-07-22 14:08:34.833] [DEBUG] Symbol hotkey 2 pressed
+[2025-07-22 14:08:35.053] [DEBUG] Status: Found and brought 2 window(s) to foreground: GBP/JPY, T144, GBP/JPY, T8
+[2025-07-22 14:08:35.105] [DEBUG] Symbol hotkey 3 pressed
+[2025-07-22 14:08:35.321] [DEBUG] Status: Found and brought 2 window(s) to foreground: EUR/USD, T144, EUR/USD, T8
+[2025-07-22 14:08:36.993] [DEBUG] Symbol hotkey 3 pressed
+[2025-07-22 14:08:37.206] [DEBUG] Status: Found and brought 2 window(s) to foreground: EUR/USD, T144, EUR/USD, T8
+[2025-07-22 14:08:37.257] [DEBUG] Symbol hotkey 4 pressed
+[2025-07-22 14:08:37.476] [DEBUG] Status: Found and brought 2 window(s) to foreground: USD/JPY, T8, USD/JPY, T144
+[2025-07-22 14:08:39.345] [DEBUG] Symbol hotkey 5 pressed
+[2025-07-22 14:08:39.562] [DEBUG] Status: Found and brought 2 window(s) to foreground: GBP/USD, T144, GBP/USD, T8
+[2025-07-22 14:08:40.809] [DEBUG] Symbol hotkey 6 pressed
+[2025-07-22 14:08:41.024] [DEBUG] Status: Found and brought 2 window(s) to foreground: EUR/JPY, T2589, EUR/JPY, T8
+[2025-07-22 14:08:52.550] [DEBUG] Symbol hotkey 1 pressed
+[2025-07-22 14:08:52.782] [DEBUG] Status: Found and brought 2 window(s) to foreground: XAU/USD, T8, XAU/USD, T610
+[2025-07-22 14:08:55.248] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-22 14:08:55.371] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
+[2025-07-22 14:08:55.371] [INFO] Hotkey button index 1 clicked at (280,56) on window 198110
+[2025-07-22 14:08:55.371] [INFO] [DEBUG] Mouse returned to (1299,470)
+[2025-07-22 14:08:55.624] [DEBUG] E hotkey detected and service is enabled
+[2025-07-22 14:08:55.625] [INFO] [DEBUG] OnEHotkey event in MainWindow
+[2025-07-22 14:08:55.746] [INFO] JForex: Клик успешно выполнен в позиции (480, 56)
+[2025-07-22 14:08:55.747] [INFO] Hotkey button index 2 clicked at (480,56) on window 198110
+[2025-07-22 14:08:55.747] [INFO] [DEBUG] Mouse returned to (1299,470)
+[2025-07-22 14:08:57.696] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-22 14:08:57.697] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-22 14:08:58.204] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-22 14:08:58.204] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-22 14:08:58.235] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-22 14:08:58.235] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-22 14:08:58.281] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-22 14:08:58.281] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-22 14:08:59.952] [DEBUG] Escape key detected and service is enabled
+[2025-07-22 14:08:59.954] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-22 14:08:59.955] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-22 14:08:59.955] [DEBUG] No overlay to close
+[2025-07-22 14:08:59.955] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-22 14:09:02.576] [DEBUG] Symbol hotkey 2 pressed
+[2025-07-22 14:09:02.797] [DEBUG] Status: Found and brought 2 window(s) to foreground: GBP/JPY, T8, GBP/JPY, T144
+[2025-07-22 14:09:11.488] [DEBUG] T key detected and service is enabled
+[2025-07-22 14:09:11.492] [DEBUG] Target window captured (Handle: 0x105D2)
+[2025-07-22 14:09:11.492] [DEBUG] T key pressed - starting capture
+[2025-07-22 14:09:11.493] [DEBUG] StartCapture_Click called. isCapturing: False, overlay: null
+[2025-07-22 14:09:11.493] [DEBUG] Starting capture...
+[2025-07-22 14:09:11.494] [DEBUG] StartCapture method called
+[2025-07-22 14:09:11.494] [DEBUG] Starting capture... Press hotkey again to stop
+[2025-07-22 14:09:11.540] [INFO] Applied symbol defaults for GBPJPY: Risk=1, Duration=2
+[2025-07-22 14:09:11.543] [DEBUG] Overlay created: ScreenCaptureApp.ScreenCaptureOverlay
+[2025-07-22 14:09:11.543] [DEBUG] Event handler subscribed
+[2025-07-22 14:09:11.661] [DEBUG] Overlay shown
+[2025-07-22 14:09:14.304] [DEBUG] Enter key detected and service is enabled
+[2025-07-22 14:09:14.316] [INFO] ScreenCaptureOverlay calling CaptureAreaWithSymbolAndRisk: SelectedRisk=1, SelectedDuration=2, activeSymbol=GBPJPY
+[2025-07-22 14:09:14.317] [INFO] ScreenCaptureOverlay local values: selectedRisk=1, selectedDuration=2
+[2025-07-22 14:09:14.318] [INFO] CaptureService.CaptureAreaWithSymbolAndRisk called with: risk=1, duration=2, symbol=GBPJPY
+[2025-07-22 14:09:14.378] [INFO] CaptureData created: ID=20250722140914320, Symbol=GBPJPY, Risk=1, Duration=2, Broker=Forex, Source=window
+[2025-07-22 14:09:14.414] [INFO] Created new settings for GBPJPY with DefaultRisk=1
+[2025-07-22 14:09:14.415] [INFO] Updated DefaultDuration for GBPJPY to 2
+[2025-07-22 14:09:14.415] [INFO] Updated symbol settings from capture: GBPJPY, Risk=1, Duration=2
+[2025-07-22 14:09:14.417] [INFO] Updated broker settings for Forex: Risk=1, Duration=2
+[2025-07-22 14:09:14.418] [DEBUG] Capture completed
+[2025-07-22 14:09:14.419] [WARNING] CaptureTrackingService: Уже выполняется процесс трекинга, повторный запуск игнорируется
+[2025-07-22 14:09:14.421] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-22 14:09:14.421] [DEBUG] CaptureTrackingService: Обработка capture ID=20250722140914320, Handle=67026, X=1596, Y=604, W=103, H=51
+[2025-07-22 14:09:14.441] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 103x51
+[2025-07-22 14:09:14.446] [DEBUG] TrendlineBreakDetector: Found 178 white pixels
+[2025-07-22 14:09:14.449] [DEBUG] TrendlineBreakDetector: Found 1 clusters
+[2025-07-22 14:09:14.451] [DEBUG] Cluster: size=178, len=74,4, center=(55,0,26,5), score=0,057
+[2025-07-22 14:09:14.451] [DEBUG] TrendlineBreakDetector: Selected white line from (27,51) to (83,2)
+[2025-07-22 14:09:14.451] [DEBUG] TrendlineBreakDetector: Trendline direction: Upward (SELL), searching for SELL breakout
+[2025-07-22 14:09:14.453] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: SELL
+[2025-07-22 14:09:14.462] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250722140914320\tracking.png] Trendline detected, breakout NOT found.
+[2025-07-22 14:09:14.463] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250722140914320\tracking.png: NoBreakout
+[2025-07-22 14:09:14.697] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-22 14:09:14.697] [DEBUG] CaptureTrackingService: Обработка capture ID=20250722140914320, Handle=67026, X=1596, Y=604, W=103, H=51
+[2025-07-22 14:09:14.708] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 103x51
+[2025-07-22 14:09:14.711] [DEBUG] TrendlineBreakDetector: Found 178 white pixels
+[2025-07-22 14:09:14.711] [DEBUG] TrendlineBreakDetector: Found 1 clusters
+[2025-07-22 14:09:14.711] [DEBUG] Cluster: size=178, len=74,4, center=(55,0,26,5), score=0,057
+[2025-07-22 14:09:14.712] [DEBUG] TrendlineBreakDetector: Selected white line from (27,51) to (83,2)
+[2025-07-22 14:09:14.712] [DEBUG] TrendlineBreakDetector: Trendline direction: Upward (SELL), searching for SELL breakout
+[2025-07-22 14:09:14.713] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: SELL
+[2025-07-22 14:09:14.715] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250722140914320\tracking.png] Trendline detected, breakout NOT found.
+[2025-07-22 14:09:14.715] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250722140914320\tracking.png: NoBreakout
+[2025-07-22 14:09:15.719] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-22 14:09:15.720] [DEBUG] CaptureTrackingService: Обработка capture ID=20250722140914320, Handle=67026, X=1596, Y=604, W=103, H=51
+[2025-07-22 14:09:15.731] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 103x51
+[2025-07-22 14:09:15.733] [DEBUG] TrendlineBreakDetector: Found 178 white pixels
+[2025-07-22 14:09:15.734] [DEBUG] TrendlineBreakDetector: Found 1 clusters
+[2025-07-22 14:09:15.734] [DEBUG] Cluster: size=178, len=74,4, center=(55,0,26,5), score=0,057
+[2025-07-22 14:09:15.734] [DEBUG] TrendlineBreakDetector: Selected white line from (27,51) to (83,2)
+[2025-07-22 14:09:15.734] [DEBUG] TrendlineBreakDetector: Trendline direction: Upward (SELL), searching for SELL breakout
+[2025-07-22 14:09:15.735] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: SELL
+[2025-07-22 14:09:15.739] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250722140914320\tracking.png] Trendline detected, breakout NOT found.
+[2025-07-22 14:09:15.739] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250722140914320\tracking.png: NoBreakout
+[2025-07-22 14:09:16.742] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-22 14:09:16.742] [DEBUG] CaptureTrackingService: Обработка capture ID=20250722140914320, Handle=67026, X=1596, Y=604, W=103, H=51
+[2025-07-22 14:09:16.756] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 103x51
+[2025-07-22 14:09:16.758] [DEBUG] TrendlineBreakDetector: Found 178 white pixels
+[2025-07-22 14:09:16.759] [DEBUG] TrendlineBreakDetector: Found 1 clusters
+[2025-07-22 14:09:16.759] [DEBUG] Cluster: size=178, len=74,4, center=(55,0,26,5), score=0,057
+[2025-07-22 14:09:16.759] [DEBUG] TrendlineBreakDetector: Selected white line from (27,51) to (83,2)
+[2025-07-22 14:09:16.759] [DEBUG] TrendlineBreakDetector: Trendline direction: Upward (SELL), searching for SELL breakout
+[2025-07-22 14:09:16.760] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: SELL
+[2025-07-22 14:09:16.762] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250722140914320\tracking.png] Trendline detected, breakout NOT found.
+[2025-07-22 14:09:16.762] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250722140914320\tracking.png: NoBreakout
+[2025-07-22 14:09:17.776] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-22 14:09:17.777] [DEBUG] CaptureTrackingService: Обработка capture ID=20250722140914320, Handle=67026, X=1596, Y=604, W=103, H=51
+[2025-07-22 14:09:17.788] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 103x51
+[2025-07-22 14:09:17.790] [DEBUG] TrendlineBreakDetector: Found 178 white pixels
+[2025-07-22 14:09:17.791] [DEBUG] TrendlineBreakDetector: Found 1 clusters
+[2025-07-22 14:09:17.791] [DEBUG] Cluster: size=178, len=74,4, center=(55,0,26,5), score=0,057
+[2025-07-22 14:09:17.791] [DEBUG] TrendlineBreakDetector: Selected white line from (27,51) to (83,2)
+[2025-07-22 14:09:17.791] [DEBUG] TrendlineBreakDetector: Trendline direction: Upward (SELL), searching for SELL breakout
+[2025-07-22 14:09:17.792] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: SELL
+[2025-07-22 14:09:17.792] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-22 14:09:17.792] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-22 14:09:17.794] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250722140914320\tracking.png] Trendline detected, breakout NOT found.
+[2025-07-22 14:09:17.794] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250722140914320\tracking.png: NoBreakout
+[2025-07-22 14:09:18.884] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-22 14:09:18.884] [DEBUG] CaptureTrackingService: Обработка capture ID=20250722140914320, Handle=67026, X=1596, Y=604, W=103, H=51
+[2025-07-22 14:09:18.896] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 103x51
+[2025-07-22 14:09:18.898] [DEBUG] TrendlineBreakDetector: Found 178 white pixels
+[2025-07-22 14:09:18.899] [DEBUG] TrendlineBreakDetector: Found 1 clusters
+[2025-07-22 14:09:18.899] [DEBUG] Cluster: size=178, len=74,4, center=(55,0,26,5), score=0,057
+[2025-07-22 14:09:18.899] [DEBUG] TrendlineBreakDetector: Selected white line from (27,51) to (83,2)
+[2025-07-22 14:09:18.899] [DEBUG] TrendlineBreakDetector: Trendline direction: Upward (SELL), searching for SELL breakout
+[2025-07-22 14:09:18.900] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: SELL
+[2025-07-22 14:09:18.902] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250722140914320\tracking.png] Trendline detected, breakout NOT found.
+[2025-07-22 14:09:18.902] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250722140914320\tracking.png: NoBreakout
+[2025-07-22 14:09:19.922] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-22 14:09:19.922] [DEBUG] CaptureTrackingService: Обработка capture ID=20250722140914320, Handle=67026, X=1596, Y=604, W=103, H=51
+[2025-07-22 14:09:19.935] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 103x51
+[2025-07-22 14:09:19.937] [DEBUG] TrendlineBreakDetector: Found 177 white pixels
+[2025-07-22 14:09:19.937] [DEBUG] TrendlineBreakDetector: Found 1 clusters
+[2025-07-22 14:09:19.937] [DEBUG] Cluster: size=177, len=72,2, center=(52,0,26,0), score=0,020
+[2025-07-22 14:09:19.938] [DEBUG] TrendlineBreakDetector: Selected white line from (25,50) to (79,2)
+[2025-07-22 14:09:19.938] [DEBUG] TrendlineBreakDetector: Trendline direction: Upward (SELL), searching for SELL breakout
+[2025-07-22 14:09:19.938] [INFO] TrendlineBreakDetector: Breakout DOWN detected at (65,19) - Red: 0,31
+[2025-07-22 14:09:19.940] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250722140914320\tracking.png] Breakout DOWN detected!
+[2025-07-22 14:09:19.942] [INFO] CaptureTrackingService: Updated IsFired=True for capture ID=20250722140914320, Handle=67026
+[2025-07-22 14:09:19.965] [INFO] MT4 Socket: >>> OnBreakoutDetected handler CALLED <<< (type: BreakoutDown)
+[2025-07-22 14:09:19.965] [INFO] MT4 Socket: Sending to MT4: {"cmd":"SELL","symbol":"GBPJPY","risk":1,"id":"20250722140914320"} (with CRLF)
+[2025-07-22 14:09:19.968] [INFO] Sent message to MT4 socket: {"cmd":"SELL","symbol":"GBPJPY","risk":1,"id":"20250722140914320"}
 
-[2025-07-22 13:49:53.780] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-22 13:49:53.798] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":9.61000000,"percent":0.13000000,"lots":1.83000000,"profit_points":23}},"total_balance":7671.03000000}
+[2025-07-22 14:09:19.968] [INFO] MT4 Socket: Breakout processing completed for GBPJPY, type: BreakoutDown, ID: 20250722140914320
+[2025-07-22 14:09:19.981] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250722140914320\tracking.png: BreakoutDown
+[2025-07-22 14:09:20.223] [INFO] Received from MT4 socket: {"success":true,"ticket":77380855,"symbol":"GBPJPY.s","direction":"SELL","lot_size":0.57000000,"price":198.86100000,"sl_level":199.06100000,"sl_pips":20,"risk":1,"debug_mode":false,"completed":"1","cmd":"SELL"}
+[2025-07-22 14:09:20.235] [DEBUG] MT4: {"success":true,"ticket":77380855,"symbol":"GBPJPY.s","direction":"SELL","lot_size":0.57000000,"price":198.86100000,"sl_level":199.06100000,"sl_pips":20,"risk":1,"debug_mode":false,"completed":"1","cmd":"SELL"}
+[2025-07-22 14:09:20.876] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.41000000,"percent":-0.07000000,"lots":0.57000000,"profit_points":-14}},"total_balance":7670.37000000}
 
-[2025-07-22 13:49:54.802] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":6.03000000,"percent":0.08000000,"lots":1.83000000,"profit_points":15}},"total_balance":7671.03000000}
+[2025-07-22 14:09:20.878] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:20.885] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.41000000,"percent":-0.07000000,"lots":0.57000000,"profit_points":-14}},"total_balance":7670.37000000}
 
-[2025-07-22 13:49:54.803] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-22 13:49:54.804] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":6.03000000,"percent":0.08000000,"lots":1.83000000,"profit_points":15}},"total_balance":7671.03000000}
+[2025-07-22 14:09:21.870] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.02000000,"percent":-0.07000000,"lots":0.57000000,"profit_points":-13}},"total_balance":7670.37000000}
 
-[2025-07-22 13:49:55.783] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":3.16000000,"percent":0.04000000,"lots":1.83000000,"profit_points":8}},"total_balance":7671.03000000}
+[2025-07-22 14:09:21.871] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:21.872] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.02000000,"percent":-0.07000000,"lots":0.57000000,"profit_points":-13}},"total_balance":7670.37000000}
 
-[2025-07-22 13:49:55.783] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-22 13:49:55.785] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":3.16000000,"percent":0.04000000,"lots":1.83000000,"profit_points":8}},"total_balance":7671.03000000}
+[2025-07-22 14:09:22.874] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.02000000,"percent":-0.07000000,"lots":0.57000000,"profit_points":-13}},"total_balance":7670.37000000}
 
-[2025-07-22 13:49:56.773] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":0.29000000,"percent":0.00000000,"lots":1.83000000,"profit_points":-2}},"total_balance":7671.03000000}
+[2025-07-22 14:09:22.874] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:22.876] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.02000000,"percent":-0.07000000,"lots":0.57000000,"profit_points":-13}},"total_balance":7670.37000000}
 
-[2025-07-22 13:49:56.774] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-22 13:49:56.789] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":0.29000000,"percent":0.00000000,"lots":1.83000000,"profit_points":-2}},"total_balance":7671.03000000}
+[2025-07-22 14:09:23.882] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.80000000,"percent":-0.08000000,"lots":0.57000000,"profit_points":-15}},"total_balance":7670.37000000}
 
-[2025-07-22 13:49:57.258] [INFO] Sent message to MT4 socket: {"cmd":"close_positions","symbol":"XAUUSD.s"}
+[2025-07-22 14:09:23.883] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:23.885] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.80000000,"percent":-0.08000000,"lots":0.57000000,"profit_points":-15}},"total_balance":7670.37000000}
 
-[2025-07-22 13:49:58.675] [INFO] Received from MT4 socket: {"event":"orders_summary","total_balance":7674.31000000}
+[2025-07-22 14:09:24.892] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.02000000,"percent":-0.07000000,"lots":0.57000000,"profit_points":-13}},"total_balance":7670.37000000}
 
-[2025-07-22 13:49:58.676] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-22 13:49:58.680] [DEBUG] MT4: {"event":"orders_summary","total_balance":7674.31000000}
+[2025-07-22 14:09:24.892] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:24.894] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.02000000,"percent":-0.07000000,"lots":0.57000000,"profit_points":-13}},"total_balance":7670.37000000}
 
-[2025-07-22 13:49:58.680] [INFO] Received from MT4 socket: {"closed_count":5,"all_closed":true,"completed":"1","cmd":"close_positions"}
-[2025-07-22 13:49:58.682] [DEBUG] MT4: {"closed_count":5,"all_closed":true,"completed":"1","cmd":"close_positions"}
-[2025-07-22 13:50:00.162] [INFO] MainWindow closing - cleaning up resources
-[2025-07-22 13:50:00.166] [INFO] Disconnecting from MT4 socket
-[2025-07-22 13:50:00.167] [INFO] MT4 socket read operation cancelled
-[2025-07-22 13:50:00.168] [INFO] MT4 socket read loop ended
-[2025-07-22 13:50:00.169] [INFO] Disconnecting from Pocket Option socket
-[2025-07-22 13:50:00.169] [WARNING] Not connected to Pocket Option socket
-[2025-07-22 13:50:00.169] [INFO] All services cleaned up
-[2025-07-22 13:50:00.169] [INFO] MainWindow cleanup completed
-[2025-07-22 13:50:00.170] [INFO] Disconnecting from MT4 socket
-[2025-07-22 13:50:00.170] [WARNING] Not connected to MT4 socket
-[2025-07-22 13:50:00.170] [INFO] Disconnecting from Pocket Option socket
-[2025-07-22 13:50:00.171] [WARNING] Not connected to Pocket Option socket
-[2025-07-22 13:50:00.171] [INFO] All services cleaned up
-[2025-07-22 13:50:00.190] [DEBUG] MT4 Connection: Disconnected
-[2025-07-22 13:50:00.190] [INFO] MT4 Connection status: Disconnected
-[2025-07-22 13:50:00.192] [INFO] Successfully disconnected from MT4 socket
-[2025-07-22 13:50:00.193] [DEBUG] MT4 Connection: Disconnected
-[2025-07-22 13:50:00.193] [INFO] MT4 Connection status: Disconnected
+[2025-07-22 14:09:25.696] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-22 14:09:25.696] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-22 14:09:25.884] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.41000000,"percent":-0.07000000,"lots":0.57000000,"profit_points":-14}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:25.884] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:25.886] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.41000000,"percent":-0.07000000,"lots":0.57000000,"profit_points":-14}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:26.903] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.02000000,"percent":-0.07000000,"lots":0.57000000,"profit_points":-13}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:26.903] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:26.905] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.02000000,"percent":-0.07000000,"lots":0.57000000,"profit_points":-13}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:27.911] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.02000000,"percent":-0.07000000,"lots":0.57000000,"profit_points":-13}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:27.911] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:27.913] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.02000000,"percent":-0.07000000,"lots":0.57000000,"profit_points":-13}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:28.902] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.02000000,"percent":-0.07000000,"lots":0.57000000,"profit_points":-13}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:28.902] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:28.904] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.02000000,"percent":-0.07000000,"lots":0.57000000,"profit_points":-13}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:28.984] [DEBUG] Escape key detected and service is enabled
+[2025-07-22 14:09:28.984] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-22 14:09:28.984] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-22 14:09:28.985] [DEBUG] No overlay to close
+[2025-07-22 14:09:28.985] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-22 14:09:29.192] [DEBUG] Escape key detected and service is enabled
+[2025-07-22 14:09:29.192] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-22 14:09:29.192] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-22 14:09:29.193] [DEBUG] No overlay to close
+[2025-07-22 14:09:29.193] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-22 14:09:29.898] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.02000000,"percent":-0.07000000,"lots":0.57000000,"profit_points":-13}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:29.899] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:29.900] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.02000000,"percent":-0.07000000,"lots":0.57000000,"profit_points":-13}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:30.552] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-22 14:09:30.553] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-22 14:09:30.902] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.02000000,"percent":-0.07000000,"lots":0.57000000,"profit_points":-13}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:30.902] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:30.904] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.02000000,"percent":-0.07000000,"lots":0.57000000,"profit_points":-13}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:31.336] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-22 14:09:31.336] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-22 14:09:31.680] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-22 14:09:31.680] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-22 14:09:31.908] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.02000000,"percent":-0.07000000,"lots":0.57000000,"profit_points":-13}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:31.908] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:31.916] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.02000000,"percent":-0.07000000,"lots":0.57000000,"profit_points":-13}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:32.901] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-4.25000000,"percent":-0.06000000,"lots":0.57000000,"profit_points":-11}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:32.901] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:32.903] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-4.25000000,"percent":-0.06000000,"lots":0.57000000,"profit_points":-11}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:33.904] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-4.25000000,"percent":-0.06000000,"lots":0.57000000,"profit_points":-11}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:33.905] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:33.906] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-4.25000000,"percent":-0.06000000,"lots":0.57000000,"profit_points":-11}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:34.128] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-22 14:09:34.128] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-22 14:09:34.368] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-22 14:09:34.368] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-22 14:09:34.911] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-3.48000000,"percent":-0.05000000,"lots":0.57000000,"profit_points":-9}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:34.911] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:34.913] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-3.48000000,"percent":-0.05000000,"lots":0.57000000,"profit_points":-9}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:35.248] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-22 14:09:35.248] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-22 14:09:35.480] [DEBUG] Left Shift hotkey detected and service is enabled
+[2025-07-22 14:09:35.480] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-22 14:09:35.901] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-3.87000000,"percent":-0.05000000,"lots":0.57000000,"profit_points":-10}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:35.902] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:35.904] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-3.87000000,"percent":-0.05000000,"lots":0.57000000,"profit_points":-10}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:36.910] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-3.87000000,"percent":-0.05000000,"lots":0.57000000,"profit_points":-10}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:36.910] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:36.911] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-3.87000000,"percent":-0.05000000,"lots":0.57000000,"profit_points":-10}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:37.903] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-3.87000000,"percent":-0.05000000,"lots":0.57000000,"profit_points":-10}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:37.904] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:37.905] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-3.87000000,"percent":-0.05000000,"lots":0.57000000,"profit_points":-10}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:38.903] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-3.87000000,"percent":-0.05000000,"lots":0.57000000,"profit_points":-10}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:38.903] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:38.905] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-3.87000000,"percent":-0.05000000,"lots":0.57000000,"profit_points":-10}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:39.897] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-4.64000000,"percent":-0.06000000,"lots":0.57000000,"profit_points":-12}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:39.897] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:39.899] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-4.64000000,"percent":-0.06000000,"lots":0.57000000,"profit_points":-12}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:40.911] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-4.64000000,"percent":-0.06000000,"lots":0.57000000,"profit_points":-12}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:40.912] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:40.913] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-4.64000000,"percent":-0.06000000,"lots":0.57000000,"profit_points":-12}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:41.902] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-3.87000000,"percent":-0.05000000,"lots":0.57000000,"profit_points":-10}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:41.902] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:41.904] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-3.87000000,"percent":-0.05000000,"lots":0.57000000,"profit_points":-10}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:42.913] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-3.87000000,"percent":-0.05000000,"lots":0.57000000,"profit_points":-10}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:42.913] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:42.915] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-3.87000000,"percent":-0.05000000,"lots":0.57000000,"profit_points":-10}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:43.903] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-3.48000000,"percent":-0.05000000,"lots":0.57000000,"profit_points":-9}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:43.904] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:43.905] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-3.48000000,"percent":-0.05000000,"lots":0.57000000,"profit_points":-9}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:44.905] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-3.09000000,"percent":-0.04000000,"lots":0.57000000,"profit_points":-8}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:44.905] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:44.907] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-3.09000000,"percent":-0.04000000,"lots":0.57000000,"profit_points":-8}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:45.906] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-3.87000000,"percent":-0.05000000,"lots":0.57000000,"profit_points":-10}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:45.907] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:45.908] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-3.87000000,"percent":-0.05000000,"lots":0.57000000,"profit_points":-10}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:46.910] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-3.87000000,"percent":-0.05000000,"lots":0.57000000,"profit_points":-10}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:46.910] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:46.911] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-3.87000000,"percent":-0.05000000,"lots":0.57000000,"profit_points":-10}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:47.911] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-3.87000000,"percent":-0.05000000,"lots":0.57000000,"profit_points":-10}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:47.911] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:47.912] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-3.87000000,"percent":-0.05000000,"lots":0.57000000,"profit_points":-10}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:48.909] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-4.64000000,"percent":-0.06000000,"lots":0.57000000,"profit_points":-12}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:48.909] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:48.911] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-4.64000000,"percent":-0.06000000,"lots":0.57000000,"profit_points":-12}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:49.899] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.80000000,"percent":-0.08000000,"lots":0.57000000,"profit_points":-15}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:49.900] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:49.901] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-5.80000000,"percent":-0.08000000,"lots":0.57000000,"profit_points":-15}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:50.907] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-6.18000000,"percent":-0.08000000,"lots":0.57000000,"profit_points":-16}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:50.907] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:50.908] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-6.18000000,"percent":-0.08000000,"lots":0.57000000,"profit_points":-16}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:51.905] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-6.18000000,"percent":-0.08000000,"lots":0.57000000,"profit_points":-16}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:51.905] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:51.907] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-6.18000000,"percent":-0.08000000,"lots":0.57000000,"profit_points":-16}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:52.897] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-6.18000000,"percent":-0.08000000,"lots":0.57000000,"profit_points":-16}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:52.898] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:52.899] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-6.18000000,"percent":-0.08000000,"lots":0.57000000,"profit_points":-16}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:53.939] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-8.12000000,"percent":-0.11000000,"lots":0.57000000,"profit_points":-21}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:53.940] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:53.941] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-8.12000000,"percent":-0.11000000,"lots":0.57000000,"profit_points":-21}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:54.898] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-7.73000000,"percent":-0.10000000,"lots":0.57000000,"profit_points":-20}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:54.899] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:54.900] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-7.73000000,"percent":-0.10000000,"lots":0.57000000,"profit_points":-20}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:55.903] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-7.34000000,"percent":-0.10000000,"lots":0.57000000,"profit_points":-19}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:55.903] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:55.905] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-7.34000000,"percent":-0.10000000,"lots":0.57000000,"profit_points":-19}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:56.908] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-7.34000000,"percent":-0.10000000,"lots":0.57000000,"profit_points":-19}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:56.909] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:56.910] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-7.34000000,"percent":-0.10000000,"lots":0.57000000,"profit_points":-19}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:57.934] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-7.34000000,"percent":-0.10000000,"lots":0.57000000,"profit_points":-19}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:57.934] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:57.936] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-7.34000000,"percent":-0.10000000,"lots":0.57000000,"profit_points":-19}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:58.902] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-8.50000000,"percent":-0.11000000,"lots":0.57000000,"profit_points":-22}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:58.903] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:58.904] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-8.50000000,"percent":-0.11000000,"lots":0.57000000,"profit_points":-22}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:59.902] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-7.73000000,"percent":-0.10000000,"lots":0.57000000,"profit_points":-20}},"total_balance":7670.37000000}
+
+[2025-07-22 14:09:59.903] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:09:59.904] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-7.73000000,"percent":-0.10000000,"lots":0.57000000,"profit_points":-20}},"total_balance":7670.37000000}
+
+[2025-07-22 14:10:00.909] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-7.73000000,"percent":-0.10000000,"lots":0.57000000,"profit_points":-20}},"total_balance":7670.37000000}
+
+[2025-07-22 14:10:00.909] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:10:00.911] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-7.73000000,"percent":-0.10000000,"lots":0.57000000,"profit_points":-20}},"total_balance":7670.37000000}
+
+[2025-07-22 14:10:01.910] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-9.66000000,"percent":-0.13000000,"lots":0.57000000,"profit_points":-25}},"total_balance":7670.37000000}
+
+[2025-07-22 14:10:01.910] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:10:01.912] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-9.66000000,"percent":-0.13000000,"lots":0.57000000,"profit_points":-25}},"total_balance":7670.37000000}
+
+[2025-07-22 14:10:02.905] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-8.89000000,"percent":-0.12000000,"lots":0.57000000,"profit_points":-22}},"total_balance":7670.37000000}
+
+[2025-07-22 14:10:02.905] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:10:02.907] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-8.89000000,"percent":-0.12000000,"lots":0.57000000,"profit_points":-22}},"total_balance":7670.37000000}
+
+[2025-07-22 14:10:03.898] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-8.89000000,"percent":-0.12000000,"lots":0.57000000,"profit_points":-22}},"total_balance":7670.37000000}
+
+[2025-07-22 14:10:03.898] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-22 14:10:03.900] [DEBUG] MT4: {"event":"orders_summary","symbols":{"GBPJPY.s":{"profit":-8.89000000,"percent":-0.12000000,"lots":0.57000000,"profit_points":-22}},"total_balance":7670.37000000}
+

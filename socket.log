@@ -18,3 +18,7 @@
 [2025-07-22 13:49:36.833] [SOCKET] MT4 OUT: {"cmd":"BUY","symbol":"XAUUSD","risk":1,"id":"20250722134935480"}
 [2025-07-22 13:49:49.015] [SOCKET] MT4 OUT: {"cmd":"SELL","symbol":"XAUUSD","risk":1,"id":"20250722134947328"}
 [2025-07-22 13:49:57.258] [SOCKET] MT4 OUT: {"cmd":"close_positions","symbol":"XAUUSD.s"}
+[2025-07-22 14:00:42.004] [SOCKET] MT4 OUT: {"cmd":"SELL","symbol":"XAUUSD","risk":1,"id":"20250722140041867"}
+[2025-07-22 14:01:10.180] [SOCKET] MT4 OUT: {"cmd":"BUY","symbol":"XAUUSD","risk":1,"id":"20250722140108479"}
+[2025-07-22 14:01:19.826] [SOCKET] MT4 OUT: {"cmd":"close_positions","symbol":"XAUUSD.s"}
+[2025-07-22 14:09:19.967] [SOCKET] MT4 OUT: {"cmd":"SELL","symbol":"GBPJPY","risk":1,"id":"20250722140914320"}
