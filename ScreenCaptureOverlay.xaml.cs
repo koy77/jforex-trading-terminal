@@ -29,6 +29,7 @@ namespace ScreenCaptureApp
         private int selectedDuration = 2; // Значение duration по умолчанию
         private BrokerState brokerState;
         private DurationState durationState;
+        private ToolbarSettingsManager _toolbarSettingsManager;
 
         private readonly CaptureService _captureService;
         private readonly DatabaseService _databaseService;
@@ -95,48 +96,43 @@ namespace ScreenCaptureApp
             _hotkeysService = ServiceContainer.Instance.GetService<HotkeysService>();
             brokerState = ServiceContainer.Instance.GetService<BrokerState>();
             durationState = ServiceContainer.Instance.GetService<DurationState>();
+            _toolbarSettingsManager = ServiceContainer.Instance.GetService<ToolbarSettingsManager>();
             _captureService.CaptureCompleted += OnCaptureCompleted;
             _captureService.MouseHookEvent += OnMouseHookEvent;
             activeSymbol = symbol;
             _windowHandle = windowHandle;
             
-            // Применяем настройки символа из DI Container, если символ установлен
-            if (!string.IsNullOrEmpty(activeSymbol))
+            // Применяем настройки тулбара по handle окна
+            if (_windowHandle != IntPtr.Zero)
             {
-                var symbolSettingsManager = ServiceContainer.Instance.GetService<SymbolSettingsManager>();
-                if (symbolSettingsManager != null)
+                var toolbarSettings = _toolbarSettingsManager.GetSettings(_windowHandle.ToInt64());
+                if (toolbarSettings != null)
                 {
-                    selectedRisk = symbolSettingsManager.GetDefaultRisk(activeSymbol);
-                    selectedDuration = symbolSettingsManager.GetDefaultDuration(activeSymbol);
-                    
-                    Logger.LogInfo($"Applied symbol defaults for {activeSymbol}: Risk={selectedRisk}, Duration={selectedDuration}");
+                    selectedRisk = toolbarSettings.Risk;
+                    selectedDuration = toolbarSettings.Duration;
+                    brokerState.CurrentBroker = toolbarSettings.Broker;
+                    Logger.LogInfo($"Applied toolbar settings for handle={_windowHandle.ToInt64()}: Risk={selectedRisk}, Duration={selectedDuration}, Broker={toolbarSettings.Broker}");
                 }
             }
             
             InitializeWindow();
             // Подписка на события TradingToolbar
-            TradingToolbar.RiskChanged += (risk) => { selectedRisk = risk; };
+            TradingToolbar.RiskChanged += (risk) => {
+                selectedRisk = risk;
+                if (_windowHandle != IntPtr.Zero)
+                    _toolbarSettingsManager.UpdateSettings(_windowHandle.ToInt64(), risk: risk);
+            };
             TradingToolbar.BrokerChanged += (broker) => {
                 brokerState.CurrentBroker = broker;
                 UpdateTradingToolbarUiByBroker(broker);
-                
-                // Применяем настройки брокера из DI Container
-                var brokerSettingsManager = ServiceContainer.Instance.GetService<BrokerSettingsManager>();
-                if (brokerSettingsManager != null)
-                {
-                    selectedRisk = brokerSettingsManager.GetDefaultRisk(broker);
-                    selectedDuration = brokerSettingsManager.GetDefaultDuration(broker);
-                    
-                    // Применяем настройки к UI
-                    TradingToolbar.HighlightSelectedRiskButton(selectedRisk);
-                    TradingToolbar.HighlightSelectedDurationButton(selectedDuration);
-                    
-                    Logger.LogInfo($"Applied broker defaults for {broker}: Risk={selectedRisk}, Duration={selectedDuration}");
-                }
+                if (_windowHandle != IntPtr.Zero)
+                    _toolbarSettingsManager.UpdateSettings(_windowHandle.ToInt64(), broker: broker);
             };
             TradingToolbar.DurationChanged += (duration) => {
                 durationState.CurrentDuration = duration;
                 selectedDuration = duration;
+                if (_windowHandle != IntPtr.Zero)
+                    _toolbarSettingsManager.UpdateSettings(_windowHandle.ToInt64(), duration: duration);
             };
             // Инициализация UI по текущему брокеру
             TradingToolbar.HighlightSelectedBroker(brokerState.CurrentBroker);

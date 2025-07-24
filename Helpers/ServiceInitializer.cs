@@ -39,13 +39,10 @@ namespace ScreenCaptureApp.Helpers
                 // Register services that depend on other services
                 container.RegisterSingleton(new CaptureService());
                 container.RegisterSingleton(new CaptureTrackingService());
-                
-                // Register SymbolSettingsManager after DatabaseService and WindowManagementService
-                var databaseService = container.GetService<DatabaseService>();
-                var windowManagementService = container.GetService<WindowManagementService>();
-                container.RegisterSingleton(new SymbolSettingsManager(databaseService, windowManagementService));
-                container.RegisterSingleton(new BrokerSettingsManager(databaseService));
-                
+
+                // Register ToolbarSettingsManager (singleton, in-memory)
+                container.RegisterSingleton(new ToolbarSettingsManager());
+
                 // Асинхронный запуск подключения PocketOptionSocketService
                 var pocketOptionSocketService = container.GetService<PocketOptionSocketService>();
                 if (pocketOptionSocketService != null)
@@ -282,10 +279,6 @@ namespace ScreenCaptureApp.Helpers
             {
                 // Инициализируем символы в базе данных, если их еще нет
                 databaseService.InitializeSymbolsFromWindowManagementService(windowManagementService);
-                
-                // Инициализируем настройки символов в DI Container
-                var symbolSettingsManager = ServiceContainer.Instance.GetService<SymbolSettingsManager>();
-                symbolSettingsManager?.InitializeSymbolSettings();
                 
                 Logger.LogInfo("Database Service initialized in MainWindow");
             }

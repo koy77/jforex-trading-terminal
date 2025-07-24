@@ -493,14 +493,6 @@ namespace ScreenCaptureApp
             var windowManagementService = ServiceContainer.Instance.GetService<WindowManagementService>();
             MainHelper.ResetDatabase(databaseService, windowManagementService);
             
-            // Сбрасываем настройки символов в DI Container
-            var symbolSettingsManager = ServiceContainer.Instance.GetService<SymbolSettingsManager>();
-            symbolSettingsManager?.ResetAllSettings();
-            
-            // Сбрасываем настройки брокеров в DI Container
-            var brokerSettingsManager = ServiceContainer.Instance.GetService<BrokerSettingsManager>();
-            brokerSettingsManager?.ResetAllSettings();
-            
             // Show toast notification that database is reset
             var toastService = ServiceContainer.Instance.GetService<ToastNotifyService>();
             toastService?.ShowToast("Database has been reset successfully!", ToastType.Success);

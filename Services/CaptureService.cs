@@ -144,13 +144,13 @@ namespace ScreenCaptureApp.Services
                 _databaseService.UpdateSymbolRisk(symbol, risk);
                 
                 // Обновляем настройки символа в DI Container
-                var symbolSettingsManager = ServiceContainer.Instance.GetService<SymbolSettingsManager>();
-                symbolSettingsManager?.UpdateSettingsFromCapture(symbol, risk, duration);
+                // var symbolSettingsManager = ServiceContainer.Instance.GetService<SymbolSettingsManager>();
+                // symbolSettingsManager?.UpdateSettingsFromCapture(symbol, risk, duration);
             }
             
             // Обновляем настройки брокера в DI Container
-            var brokerSettingsManager = ServiceContainer.Instance.GetService<BrokerSettingsManager>();
-            brokerSettingsManager?.UpdateSettingsFromCapture(brokerState.CurrentBroker, risk, duration);
+            // var brokerSettingsManager = ServiceContainer.Instance.GetService<BrokerSettingsManager>();
+            // brokerSettingsManager?.UpdateSettingsFromCapture(brokerState.CurrentBroker, risk, duration);
 
             CaptureCompleted?.Invoke(this, new CaptureEventArgs
             {

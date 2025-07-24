@@ -35,6 +35,14 @@ namespace ScreenCaptureApp.Models
         public DateTime? LastUpdated { get; set; }
     }
 
+    public class ToolbarSettings
+    {
+        public long Handle { get; set; }
+        public double Risk { get; set; }
+        public int Duration { get; set; }
+        public BrokerType Broker { get; set; }
+    }
+
     public class CaptureDbRoot
     {
         public List<CaptureData> Captures { get; set; } = new List<CaptureData>();

@@ -110,6 +110,8 @@ namespace ScreenCaptureApp
             public DateTime CreatedAt { get; set; }
         }
 
+        private ToolbarSettingsManager _toolbarSettingsManager;
+
         public CanvasWindow()
         {
             InitializeComponent();
@@ -120,30 +122,37 @@ namespace ScreenCaptureApp
             brokerState = ServiceContainer.Instance.GetService<BrokerState>();
             durationState = ServiceContainer.Instance.GetService<DurationState>();
             jForexService = ServiceContainer.Instance.GetService<JForexWindowsManagerService>();
+            _toolbarSettingsManager = ServiceContainer.Instance.GetService<ToolbarSettingsManager>();
             
+            // Применяем настройки тулбара по handle окна
+            if (targetWindowHandle != IntPtr.Zero)
+            {
+                var toolbarSettings = _toolbarSettingsManager.GetSettings(targetWindowHandle.ToInt64());
+                if (toolbarSettings != null)
+                {
+                    selectedRisk = toolbarSettings.Risk;
+                    selectedDuration = toolbarSettings.Duration;
+                    brokerState.CurrentBroker = toolbarSettings.Broker;
+                    Logger.LogInfo($"Applied toolbar settings for handle={targetWindowHandle.ToInt64()}: Risk={selectedRisk}, Duration={selectedDuration}, Broker={toolbarSettings.Broker}");
+                }
+            }
             // Подписка на события TradingToolbar
-            TradingToolbar.RiskChanged += (risk) => { selectedRisk = risk; };
+            TradingToolbar.RiskChanged += (risk) => {
+                selectedRisk = risk;
+                if (targetWindowHandle != IntPtr.Zero)
+                    _toolbarSettingsManager.UpdateSettings(targetWindowHandle.ToInt64(), risk: risk);
+            };
             TradingToolbar.BrokerChanged += (broker) => {
                 brokerState.CurrentBroker = broker;
                 UpdateTradingToolbarUiByBroker(broker);
-                
-                // Применяем настройки брокера из DI Container
-                var brokerSettingsManager = ServiceContainer.Instance.GetService<BrokerSettingsManager>();
-                if (brokerSettingsManager != null)
-                {
-                    selectedRisk = brokerSettingsManager.GetDefaultRisk(broker);
-                    selectedDuration = brokerSettingsManager.GetDefaultDuration(broker);
-                    
-                    // Применяем настройки к UI
-                    HighlightSelectedRiskButton(selectedRisk);
-                    HighlightSelectedDurationButton(selectedDuration);
-                    
-                    Logger.LogInfo($"Applied broker defaults for {broker}: Risk={selectedRisk}, Duration={selectedDuration}");
-                }
+                if (targetWindowHandle != IntPtr.Zero)
+                    _toolbarSettingsManager.UpdateSettings(targetWindowHandle.ToInt64(), broker: broker);
             };
             TradingToolbar.DurationChanged += (duration) => {
                 durationState.CurrentDuration = duration;
                 selectedDuration = duration;
+                if (targetWindowHandle != IntPtr.Zero)
+                    _toolbarSettingsManager.UpdateSettings(targetWindowHandle.ToInt64(), duration: duration);
             };
             // Инициализация UI по текущему брокеру
             TradingToolbar.HighlightSelectedBroker(brokerState.CurrentBroker);
@@ -162,30 +171,37 @@ namespace ScreenCaptureApp
             brokerState = ServiceContainer.Instance.GetService<BrokerState>();
             durationState = ServiceContainer.Instance.GetService<DurationState>();
             jForexService = ServiceContainer.Instance.GetService<JForexWindowsManagerService>();
+            _toolbarSettingsManager = ServiceContainer.Instance.GetService<ToolbarSettingsManager>();
             
+            // Применяем настройки тулбара по handle окна
+            if (targetWindowHandle != IntPtr.Zero)
+            {
+                var toolbarSettings = _toolbarSettingsManager.GetSettings(targetWindowHandle.ToInt64());
+                if (toolbarSettings != null)
+                {
+                    selectedRisk = toolbarSettings.Risk;
+                    selectedDuration = toolbarSettings.Duration;
+                    brokerState.CurrentBroker = toolbarSettings.Broker;
+                    Logger.LogInfo($"Applied toolbar settings for handle={targetWindowHandle.ToInt64()}: Risk={selectedRisk}, Duration={selectedDuration}, Broker={toolbarSettings.Broker}");
+                }
+            }
             // Подписка на события TradingToolbar
-            TradingToolbar.RiskChanged += (risk) => { selectedRisk = risk; };
+            TradingToolbar.RiskChanged += (risk) => {
+                selectedRisk = risk;
+                if (targetWindowHandle != IntPtr.Zero)
+                    _toolbarSettingsManager.UpdateSettings(targetWindowHandle.ToInt64(), risk: risk);
+            };
             TradingToolbar.BrokerChanged += (broker) => {
                 brokerState.CurrentBroker = broker;
                 UpdateTradingToolbarUiByBroker(broker);
-                
-                // Применяем настройки брокера из DI Container
-                var brokerSettingsManager = ServiceContainer.Instance.GetService<BrokerSettingsManager>();
-                if (brokerSettingsManager != null)
-                {
-                    selectedRisk = brokerSettingsManager.GetDefaultRisk(broker);
-                    selectedDuration = brokerSettingsManager.GetDefaultDuration(broker);
-                    
-                    // Применяем настройки к UI
-                    HighlightSelectedRiskButton(selectedRisk);
-                    HighlightSelectedDurationButton(selectedDuration);
-                    
-                    Logger.LogInfo($"Applied broker defaults for {broker}: Risk={selectedRisk}, Duration={selectedDuration}");
-                }
+                if (targetWindowHandle != IntPtr.Zero)
+                    _toolbarSettingsManager.UpdateSettings(targetWindowHandle.ToInt64(), broker: broker);
             };
             TradingToolbar.DurationChanged += (duration) => {
                 durationState.CurrentDuration = duration;
                 selectedDuration = duration;
+                if (targetWindowHandle != IntPtr.Zero)
+                    _toolbarSettingsManager.UpdateSettings(targetWindowHandle.ToInt64(), duration: duration);
             };
             
             // Инициализация UI по текущему брокеру
@@ -282,35 +298,6 @@ namespace ScreenCaptureApp
             
             // Subscribe to stroke completion events
             DrawingCanvas.StrokeCollected += DrawingCanvas_StrokeCollected;
-
-            // --- Установить риск из Symbol ---
-            if (!string.IsNullOrEmpty(activeSymbol))
-            {
-                var symbolSettingsManager = ServiceContainer.Instance.GetService<SymbolSettingsManager>();
-                if (symbolSettingsManager != null)
-                {
-                    // Получаем DefaultRisk и DefaultDuration из DI Container
-                    selectedRisk = symbolSettingsManager.GetDefaultRisk(activeSymbol);
-                    selectedDuration = symbolSettingsManager.GetDefaultDuration(activeSymbol);
-                    
-                    // Применяем настройки к UI
-                    HighlightSelectedRiskButton(selectedRisk);
-                    HighlightSelectedDurationButton(selectedDuration);
-                    
-                    Logger.LogInfo($"Applied symbol defaults for {activeSymbol}: Risk={selectedRisk}, Duration={selectedDuration}");
-                }
-                else
-                {
-                    // Fallback к старому методу, если SymbolSettingsManager недоступен
-                    var databaseService = ServiceContainer.Instance.GetService<DatabaseService>();
-                    var symbol = databaseService.GetSymbolByName(activeSymbol);
-                    if (symbol != null)
-                    {
-                        selectedRisk = symbol.RiskPercent;
-                        HighlightSelectedRiskButton(selectedRisk);
-                    }
-                }
-            }
 
             // Initialize broker state
             InitializeBrokerComboBox();
@@ -702,46 +689,19 @@ namespace ScreenCaptureApp
         public void UpdateTargetWindow(IntPtr newTargetWindow, string symbol = null)
         {
             Logger.LogInfo($"Updating target window from {targetWindowHandle.ToInt64()} to {newTargetWindow.ToInt64()}");
-            
-            // Сохраняем текущий canvas перед сменой окна
             SaveCanvasProperly();
-            
-            // Обновляем target window
             targetWindowHandle = newTargetWindow;
             if (!string.IsNullOrEmpty(symbol))
             {
                 activeSymbol = symbol;
-                
-                // Применяем настройки символа из DI Container
-                var symbolSettingsManager = ServiceContainer.Instance.GetService<SymbolSettingsManager>();
-                if (symbolSettingsManager != null)
-                {
-                    selectedRisk = symbolSettingsManager.GetDefaultRisk(activeSymbol);
-                    selectedDuration = symbolSettingsManager.GetDefaultDuration(activeSymbol);
-                    
-                    // Применяем настройки к UI
-                    HighlightSelectedRiskButton(selectedRisk);
-                    HighlightSelectedDurationButton(selectedDuration);
-                    
-                    Logger.LogInfo($"Applied symbol defaults for {activeSymbol}: Risk={selectedRisk}, Duration={selectedDuration}");
-                }
+                // (Удалено: SymbolSettingsManager)
             }
-            
-            // Обновляем отображение активного символа
             UpdateActiveSymbolDisplay();
-            
-            // Очищаем canvas и загружаем новый
             DrawingCanvas.Strokes.Clear();
-            // Очищаем очередь торговых штрихов
             tradingStrokeQueue.Clear();
             LoadCanvas();
-            
-            // Обновляем фоновое изображение
             SetBackgroundImage();
-            
-            // Устанавливаем фокус на InkCanvas
             DrawingCanvas.Focus();
-            
             Logger.LogInfo($"Target window updated successfully");
         }
 
@@ -979,20 +939,12 @@ namespace ScreenCaptureApp
         {
             try
             {
-                // Обновляем настройки символа
                 if (!string.IsNullOrEmpty(activeSymbol))
                 {
                     var databaseService = ServiceContainer.Instance.GetService<DatabaseService>();
                     databaseService.UpdateSymbolRisk(activeSymbol, selectedRisk);
-                    
-                    var symbolSettingsManager = ServiceContainer.Instance.GetService<SymbolSettingsManager>();
-                    symbolSettingsManager?.UpdateSettingsFromCapture(activeSymbol, selectedRisk, captureData.Duration);
                 }
-                
-                // Обновляем настройки брокера
-                var brokerSettingsManager = ServiceContainer.Instance.GetService<BrokerSettingsManager>();
-                brokerSettingsManager?.UpdateSettingsFromCapture(brokerState.CurrentBroker, selectedRisk, captureData.Duration);
-                
+                // (Удалено: SymbolSettingsManager и BrokerSettingsManager)
                 Logger.LogInfo("Settings updated from capture");
             }
             catch (Exception ex)
@@ -1253,53 +1205,14 @@ namespace ScreenCaptureApp
 
         public void ReinitializeForNewSymbol(string newSymbol)
         {
-            Logger.LogInfo($"Reinitializing CanvasWindow for new symbol: {newSymbol}");
-            
-            // Сохраняем текущий canvas перед сменой символа
-            SaveCanvasProperly();
-            
-            // Обновляем активный символ
             activeSymbol = newSymbol;
-            
-            // Обновляем отображение активного символа
-            UpdateActiveSymbolDisplay();
-            
-            // Получаем новый target window для символа
-            var windowManagementService = ServiceContainer.Instance.GetService<WindowManagementService>();
-            var newTargetWindow = windowManagementService?.GetSymbolWindowHandle(newSymbol) ?? IntPtr.Zero;
-            
-            if (newTargetWindow != IntPtr.Zero)
-            {
-                targetWindowHandle = newTargetWindow;
-                Logger.LogInfo($"Updated target window to {newTargetWindow.ToInt64()} for symbol {newSymbol}");
-            }
-            
-            // Применяем настройки символа из DI Container
-            var symbolSettingsManager = ServiceContainer.Instance.GetService<SymbolSettingsManager>();
-            if (symbolSettingsManager != null)
-            {
-                selectedRisk = symbolSettingsManager.GetDefaultRisk(activeSymbol);
-                selectedDuration = symbolSettingsManager.GetDefaultDuration(activeSymbol);
-                
-                // Применяем настройки к UI
-                HighlightSelectedRiskButton(selectedRisk);
-                HighlightSelectedDurationButton(selectedDuration);
-                
-                Logger.LogInfo($"Applied symbol defaults for {activeSymbol}: Risk={selectedRisk}, Duration={selectedDuration}");
-            }
-            
+            // (Удалено: SymbolSettingsManager)
             // Очищаем canvas и загружаем новый
             DrawingCanvas.Strokes.Clear();
-            // Очищаем очередь торговых штрихов
             tradingStrokeQueue.Clear();
             LoadCanvas();
-            
-            // Обновляем фоновое изображение
             SetBackgroundImage();
-            
-            // Устанавливаем фокус на InkCanvas
             DrawingCanvas.Focus();
-            
             Logger.LogInfo($"CanvasWindow reinitialized successfully for symbol {newSymbol}");
         }
 

@@ -23,7 +23,7 @@ ScreenCaptureApp — это WPF-приложение для трекинга, а
   - Методы для установки/удаления глобального mouse hook.
 - **События:**
   - `CaptureCompleted`, `MouseHookEvent` — для уведомления UI.
-- **Связи:** Использует DatabaseService, ScreenshotService, BrokerState, DurationState, SymbolSettingsManager, BrokerSettingsManager.
+- **Связи:** Использует DatabaseService, ScreenshotService, BrokerState, DurationState, ToolbarSettingsManager.
 
 ### HotkeysService
 - **Назначение:** Глобальный перехват клавиш, генерация событий для UI и сервисов.
@@ -53,7 +53,15 @@ ScreenCaptureApp — это WPF-приложение для трекинга, а
   - SaveCapture, UpdateCapture, GetAllCaptures, GetAllFiredCaptures, GetAllSkippedCaptures, GetTrackingCaptures, UpdateCaptureIsFired, UpdateCaptureIsSkipped, InitializeSymbolsFromWindowManagementService, SaveSymbol, UpdateSymbolRisk, ClearAllCaptures, ClearAllData.
 - **Связи:** Используется CaptureService, CaptureTrackingViewer, MainWindow.
 
-(Остальные сервисы: CaptureTrackingService, ScreenshotService, WindowManagementService, JForexWindowsManagerService, SymbolSettingsManager, BrokerSettingsManager, ToastNotifyService, Logger — аналогично, с описанием их задач и основных методов.)
+### ToolbarSettingsManager
+- **Назначение:** Хранение и управление настройками TradingToolbar (risk, broker, duration) для каждого окна по window handle. Singleton, только в памяти (DI), не сохраняется в базу.
+- **Поля:**
+  - Словарь: handle → ToolbarSettings (risk, broker, duration)
+- **Методы:**
+  - GetSettings(handle), SetSettings(handle, ...), UpdateSettings(handle, ...), RemoveSettings(handle)
+- **Связи:** Используется CanvasWindow, ScreenCaptureOverlay, MainWindow для инициализации и сохранения настроек тулбара по окну.
+
+(Остальные сервисы: CaptureTrackingService, ScreenshotService, WindowManagementService, JForexWindowsManagerService, ToastNotifyService, Logger — аналогично, с описанием их задач и основных методов.)
 
 ---
 
@@ -75,9 +83,9 @@ ScreenCaptureApp — это WPF-приложение для трекинга, а
 - **Назначение:** Глобальное состояние длительности (duration) для захватов.
 - **Поля:** CurrentDuration, событие DurationChanged.
 
-### SymbolSettings, BrokerSettings, BrokerState
-- **Назначение:** Хранение настроек по символам и брокерам (дефолтные риски, длительности, текущий брокер).
-- **Поля:** Symbol, DefaultRisk, DefaultDuration, BrokerType, методы GetDisplayName, события BrokerChanged.
+### ToolbarSettings
+- **Назначение:** Модель для хранения настроек TradingToolbar по handle окна.
+- **Поля:** Handle, Risk, Duration, Broker.
 
 ---
 
@@ -89,7 +97,7 @@ ScreenCaptureApp — это WPF-приложение для трекинга, а
 
 ### ServiceInitializer
 - **Назначение:** Регистрация и инициализация всех сервисов в DI-контейнере, подписка на события.
-- **Ключевые методы:** RegisterAllServices, CleanupServices, InitializeHotkeysService, InitializeWindowManagementService, InitializeMt4SocketService, InitializePocketOptionSocketService, InitializeDatabaseService.
+- **Ключевые методы:** RegisterAllServices, CleanupServices, InitializeHotkeysService, InitializeWindowManagementService, InitializeMt4SocketService, InitializePocketOptionSocketService, InitializeDatabaseService, InitializeToolbarSettingsManager.
 
 ### TrendlineBreakDetector
 - **Назначение:** Алгоритмы анализа скриншотов на предмет пробоя трендовой линии (OHLC/MACD), кластеризация, поиск breakout.
@@ -136,6 +144,7 @@ ScreenCaptureApp — это WPF-приложение для трекинга, а
 - Mt4SocketService и PocketOptionSocketService работают с внешними брокерами, отправляют команды, получают события.
 - CaptureTrackingViewer отображает данные из DatabaseService, реагирует на события CaptureTrackingService.
 - HotkeysService генерирует события для MainWindow, CaptureService, CanvasWindow.
+- ToolbarSettingsManager обеспечивает хранение и доступ к настройкам TradingToolbar по handle окна (в памяти, на время работы приложения).
 - Helpers используются для утилит, парсинга, сброса базы, работы с окнами.
 
 ---
@@ -152,7 +161,19 @@ ScreenCaptureApp — это WPF-приложение для трекинга, а
    - CaptureTrackingViewer позволяет фильтровать захваты (Tracking, Fired, Skipped), просматривать скриншоты, помечать как Skipped.
 4. **Интеграция с брокерами:**
    - Mt4SocketService и PocketOptionSocketService отправляют команды, получают историю, обновляют UI-индикаторы через Helpers.
+5. **Индивидуальные настройки TradingToolbar:**
+   - Для каждого окна (handle) ToolbarSettingsManager хранит risk, broker, duration. При открытии окна настройки подгружаются из ToolbarSettingsManager, при изменении — обновляются там же.
 
 ---
 
 _Документация подготовлена для Cursor.AI. Для расширения — добавить описание остальных сервисов, моделей, вспомогательных классов._
+
+---
+
+# UpdateLog
+
+## 2024-06-XX
+- Удалены SymbolSettingsManager, BrokerSettingsManager и связанные модели (SymbolSettings, BrokerSettings).
+- Вся логика хранения настроек TradingToolbar (risk, broker, duration) теперь реализована через ToolbarSettingsManager — singleton DI-сервис, который хранит настройки для каждого окна по handle (только в памяти, не сохраняется в базу).
+- CanvasWindow, ScreenCaptureOverlay и другие окна используют ToolbarSettingsManager для инициализации и сохранения индивидуальных настроек тулбара.
+- Документация обновлена: удалены устаревшие разделы, добавлено описание новой архитектуры ToolbarSettingsManager.
