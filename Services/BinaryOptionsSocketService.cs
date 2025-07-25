@@ -9,11 +9,11 @@ using ScreenCaptureApp.Helpers;
 
 namespace ScreenCaptureApp.Services
 {
-    public class PocketOptionSocketService : IDisposable
+    public class BinaryOptionsSocketService : IDisposable
     {
         private TcpClient _tcpClient;
         private NetworkStream _networkStream;
-        private readonly string _host = "127.0.0.1";
+        private readonly string _host = "192.168.0.3";
         private readonly int _port = 65300;
         private bool _isConnected = false;
         private bool _isDisposed = false;
@@ -39,9 +39,9 @@ namespace ScreenCaptureApp.Services
             }
         }
 
-        public PocketOptionSocketService()
+        public BinaryOptionsSocketService()
         {
-            Logger.LogInfo("Pocket Option Socket Service initialized");
+            Logger.LogInfo("Binary Options Socket Service initialized");
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace ScreenCaptureApp.Services
                 // Подписываемся на событие BreakoutDetected
                 _captureTrackingService.BreakoutDetected += OnBreakoutDetected;
                 
-                Logger.LogInfo("Pocket Option Socket Service subscribed to CaptureTrackingService BreakoutDetected event");
+                Logger.LogInfo("Binary Options Socket Service subscribed to CaptureTrackingService BreakoutDetected event");
             }
         }
 
@@ -77,26 +77,26 @@ namespace ScreenCaptureApp.Services
                 _captureTrackingService.BreakoutDetected -= OnBreakoutDetected;
                 
                 _captureTrackingService = null;
-                Logger.LogInfo("Pocket Option Socket Service unsubscribed from CaptureTrackingService events");
+                Logger.LogInfo("Binary Options Socket Service unsubscribed from CaptureTrackingService events");
             }
         }
 
         // Обработчик события BreakoutDetected
         private async Task OnBreakoutDetected(CaptureData capture, TrendlineBreakResult result)
         {
-            Logger.LogInfo($"Pocket Option Socket: >>> OnBreakoutDetected handler CALLED <<< (type: {result})");
+            Logger.LogInfo($"Binary Options Socket: >>> OnBreakoutDetected handler CALLED <<< (type: {result})");
             try
             {
                 // Проверяем, что брокер в Capture - Pocket Option
                 if (!string.Equals(capture.Broker, "Pocket Option", StringComparison.OrdinalIgnoreCase))
                 {
-                    Logger.LogInfo($"Pocket Option Socket: Skipping Pocket Option message - capture broker is {capture.Broker}, not Pocket Option");
+                    Logger.LogInfo($"Binary Options Socket: Skipping Pocket Option message - capture broker is {capture.Broker}, not Pocket Option");
                     return;
                 }
 
                 if (string.IsNullOrWhiteSpace(capture.Symbol))
                 {
-                    Logger.LogWarning("Pocket Option Socket: Symbol is missing in CaptureData, not sending to Pocket Option");
+                    Logger.LogWarning("Binary Options Socket: Symbol is missing in CaptureData, not sending to Pocket Option");
                     return;
                 }
 
@@ -113,15 +113,15 @@ namespace ScreenCaptureApp.Services
                 if (json != null)
                 {
                     json += "\r\n";
-                    Logger.LogInfo($"Pocket Option Socket: Sending to Pocket Option: {json.Trim()} (with CRLF)");
+                    Logger.LogInfo($"Binary Options Socket: Sending to Pocket Option: {json.Trim()} (with CRLF)");
                     await WriteAsync(json);
                 }
 
-                Logger.LogInfo($"Pocket Option Socket: Breakout processing completed for {capture.Symbol}, type: {result}");
+                Logger.LogInfo($"Binary Options Socket: Breakout processing completed for {capture.Symbol}, type: {result}");
             }
             catch (Exception ex)
             {
-                Logger.LogError($"Pocket Option Socket: Error processing breakout for {capture.Symbol}, type: {result}", ex);
+                Logger.LogError($"Binary Options Socket: Error processing breakout for {capture.Symbol}, type: {result}", ex);
             }
         }
 

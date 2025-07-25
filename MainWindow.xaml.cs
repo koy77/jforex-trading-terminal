@@ -60,6 +60,10 @@ namespace ScreenCaptureApp
             if (mt4SocketService != null && captureTrackingService != null)
                 mt4SocketService.SubscribeToCaptureTrackingEvents(captureTrackingService);
 
+            var binaryOptionsSocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
+            if (binaryOptionsSocketService != null && captureTrackingService != null)
+                binaryOptionsSocketService.SubscribeToCaptureTrackingEvents(captureTrackingService);
+
             this.Loaded += async (s, e) =>
             {
                 if (mt4SocketService != null)
@@ -590,22 +594,22 @@ namespace ScreenCaptureApp
                 this.Height = CollapsedHeight;
         }
 
-        // Обработчик события статуса подключения Pocket Option Socket
-        private void PocketOptionSocketService_ConnectionStatusChanged(object sender, string status)
+        // Обработчик события статуса подключения Binary Options Socket
+        private void BinaryOptionsSocketService_ConnectionStatusChanged(object sender, string status)
         {
             Dispatcher.Invoke(() =>
             {
-                PocketOptionHelper.UpdatePocketOptionStatusUI(this, PocketOptionStatusIndicator, status);
+                PocketOptionHelper.UpdatePocketOptionStatusUI(this, BinaryOptionsStatusIndicator, status);
                 UpdateWindowTitle();
             });
         }
 
-        private async void ReconnectPocketOption_Click(object sender, RoutedEventArgs e)
+        private async void ReconnectBinaryOptions_Click(object sender, RoutedEventArgs e)
         {
-            var pocketOptionSocketService = ServiceContainer.Instance.GetService<PocketOptionSocketService>();
-            if (pocketOptionSocketService != null)
+            var binaryOptionsSocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
+            if (binaryOptionsSocketService != null)
             {
-                await pocketOptionSocketService.ConnectAsync();
+                await binaryOptionsSocketService.ConnectAsync();
             }
             UpdateWindowTitle();
         }
@@ -618,14 +622,14 @@ namespace ScreenCaptureApp
             var mt4SocketService = ServiceContainer.Instance.GetService<Mt4SocketService>();
             
             string mt4Status = "⚫";
-            string pocketOptionStatus = "⚫";
+            string binaryOptionsStatus = "⚫";
             
             if (mt4SocketService != null && mt4SocketService.IsConnected)
                 mt4Status = "🟢";
             else if (mt4SocketService != null)
                 mt4Status = "🔴";
                 
-            this.Title = $"Screen Capture Tool [MT4: {mt4Status}] [Pocket Option: {pocketOptionStatus}]";
+            this.Title = $"Screen Capture Tool [MT4: {mt4Status}] [Binary Options: {binaryOptionsStatus}]";
         }
 
         private void ResetLogButton_Click(object sender, RoutedEventArgs e)

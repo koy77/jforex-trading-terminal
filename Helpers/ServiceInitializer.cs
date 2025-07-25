@@ -27,7 +27,7 @@ namespace ScreenCaptureApp.Helpers
                 container.RegisterSingleton(new ScreenshotService());
                 container.RegisterSingleton(new DatabaseService());
                 container.RegisterSingleton(new Mt4SocketService());
-                container.RegisterSingleton(new PocketOptionSocketService());
+                container.RegisterSingleton(new BinaryOptionsSocketService());
                 container.RegisterSingleton(new ToastNotifyService());
                 container.RegisterSingleton(new JForexWindowsManagerService());
                 
@@ -43,11 +43,11 @@ namespace ScreenCaptureApp.Helpers
                 // Register ToolbarSettingsManager (singleton, in-memory)
                 container.RegisterSingleton(new ToolbarSettingsManager());
 
-                // Асинхронный запуск подключения PocketOptionSocketService
-                var pocketOptionSocketService = container.GetService<PocketOptionSocketService>();
-                if (pocketOptionSocketService != null)
+                // Асинхронный запуск подключения BinaryOptionsSocketService
+                var binaryOptionsSocketService = container.GetService<BinaryOptionsSocketService>();
+                if (binaryOptionsSocketService != null)
                 {
-                    Task.Run(async () => await pocketOptionSocketService.ConnectAsync());
+                    Task.Run(async () => await binaryOptionsSocketService.ConnectAsync());
                 }
                 
                 Logger.LogInfo("All services registered in DI container");
@@ -81,10 +81,10 @@ namespace ScreenCaptureApp.Helpers
                     mt4Service?.DisconnectAsync();
                 }
                 
-                if (container.IsRegistered<PocketOptionSocketService>())
+                if (container.IsRegistered<BinaryOptionsSocketService>())
                 {
-                    var pocketOptionService = container.GetService<PocketOptionSocketService>();
-                    pocketOptionService?.DisconnectAsync();
+                    var binaryOptionsService = container.GetService<BinaryOptionsSocketService>();
+                    binaryOptionsService?.DisconnectAsync();
                 }
                 
                 Logger.LogInfo("All services cleaned up");
@@ -239,32 +239,29 @@ namespace ScreenCaptureApp.Helpers
         }
 
         /// <summary>
-        /// Initializes the Pocket Option socket service
+        /// Initializes the Binary Options socket service
         /// </summary>
         /// <param name="dispatcher">The dispatcher for UI operations</param>
-        public static void InitializePocketOptionSocketService(Dispatcher dispatcher)
+        public static void InitializeBinaryOptionsSocketService(Dispatcher dispatcher)
         {
             try
             {
-                var pocketOptionSocketService = ServiceContainer.Instance.GetService<PocketOptionSocketService>();
-                
+                var binaryOptionsSocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
                 // Subscribe to events
-                pocketOptionSocketService.MessageReceived += (sender, message) =>
+                binaryOptionsSocketService.MessageReceived += (sender, message) =>
                 {
                     dispatcher.Invoke(() => PocketOptionHelper.HandlePocketOptionMessageReceived(message));
                 };
-                
-                pocketOptionSocketService.ConnectionStatusChanged += (sender, status) =>
+                binaryOptionsSocketService.ConnectionStatusChanged += (sender, status) =>
                 {
                     dispatcher.Invoke(() => PocketOptionHelper.HandlePocketOptionConnectionStatusChanged(status));
                 };
-                
-                Logger.LogInfo("Pocket Option Socket Service initialized in MainWindow");
+                Logger.LogInfo("Binary Options Socket Service initialized in MainWindow");
             }
             catch (Exception ex)
             {
-                Logger.LogError("Failed to initialize Pocket Option Socket Service", ex);
-                MessageBox.Show($"Failed to initialize Pocket Option Socket Service: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Logger.LogError("Failed to initialize Binary Options Socket Service", ex);
+                MessageBox.Show($"Failed to initialize Binary Options Socket Service: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

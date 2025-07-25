@@ -15,18 +15,18 @@ namespace ScreenCaptureApp.Helpers
         /// <summary>
         /// Connects to Pocket Option socket
         /// </summary>
-        /// <param name="pocketOptionSocketService">The Pocket Option socket service instance</param>
+        /// <param name="binaryOptionsSocketService">The Pocket Option socket service instance</param>
         /// <returns>True if connection successful, false otherwise</returns>
-        public static async Task<bool> ConnectToPocketOptionSocket(PocketOptionSocketService pocketOptionSocketService)
+        public static async Task<bool> ConnectToPocketOptionSocket(BinaryOptionsSocketService binaryOptionsSocketService)
         {
             try
             {
-                bool connected = await pocketOptionSocketService.ConnectAsync();
+                bool connected = await binaryOptionsSocketService.ConnectAsync();
                 if (connected)
                 {
                     Logger.LogInfo("Successfully connected to Pocket Option socket");
                     // You can send initial commands here
-                    await pocketOptionSocketService.WriteAsync("HELLO");
+                    await binaryOptionsSocketService.WriteAsync("HELLO");
                     return true;
                 }
                 else
@@ -45,16 +45,16 @@ namespace ScreenCaptureApp.Helpers
         /// <summary>
         /// Sends a command to Pocket Option
         /// </summary>
-        /// <param name="pocketOptionSocketService">The Pocket Option socket service instance</param>
+        /// <param name="binaryOptionsSocketService">The Pocket Option socket service instance</param>
         /// <param name="command">The command to send</param>
         /// <returns>True if command sent successfully, false otherwise</returns>
-        public static async Task<bool> SendPocketOptionCommand(PocketOptionSocketService pocketOptionSocketService, string command)
+        public static async Task<bool> SendPocketOptionCommand(BinaryOptionsSocketService binaryOptionsSocketService, string command)
         {
             try
             {
-                if (pocketOptionSocketService.IsConnected)
+                if (binaryOptionsSocketService.IsConnected)
                 {
-                    bool sent = await pocketOptionSocketService.WriteAsync(command);
+                    bool sent = await binaryOptionsSocketService.WriteAsync(command);
                     if (sent)
                     {
                         Logger.LogInfo($"Command sent to Pocket Option: {command}");
@@ -82,15 +82,15 @@ namespace ScreenCaptureApp.Helpers
         /// <summary>
         /// Reads a line from Pocket Option socket
         /// </summary>
-        /// <param name="pocketOptionSocketService">The Pocket Option socket service instance</param>
+        /// <param name="binaryOptionsSocketService">The Pocket Option socket service instance</param>
         /// <returns>The read line or null if failed</returns>
-        public static async Task<string> ReadPocketOptionLine(PocketOptionSocketService pocketOptionSocketService)
+        public static async Task<string> ReadPocketOptionLine(BinaryOptionsSocketService binaryOptionsSocketService)
         {
             try
             {
-                if (pocketOptionSocketService.IsConnected)
+                if (binaryOptionsSocketService.IsConnected)
                 {
-                    string line = await pocketOptionSocketService.ReadLineAsync();
+                    string line = await binaryOptionsSocketService.ReadLineAsync();
                     if (line != null)
                     {
                         Logger.LogInfo($"Read line from Pocket Option: {line}");
@@ -189,20 +189,20 @@ namespace ScreenCaptureApp.Helpers
         /// <summary>
         /// Performs reconnect to Pocket Option and updates UI status
         /// </summary>
-        public static async Task ReconnectPocketOptionWithUiAsync(Window window, Ellipse statusIndicator, PocketOptionSocketService pocketOptionSocketService)
+        public static async Task ReconnectPocketOptionWithUiAsync(Window window, Ellipse statusIndicator, BinaryOptionsSocketService binaryOptionsSocketService)
         {
             try
             {
                 Logger.LogInfo("Pocket Option Socket: Manual reconnect initiated");
                 UpdatePocketOptionStatusUI(window, statusIndicator, "Connecting");
-                if (pocketOptionSocketService != null && pocketOptionSocketService.IsConnected)
+                if (binaryOptionsSocketService != null && binaryOptionsSocketService.IsConnected)
                 {
                     Logger.LogInfo("Pocket Option Socket: Disconnecting before reconnect");
-                    await pocketOptionSocketService.DisconnectAsync();
+                    await binaryOptionsSocketService.DisconnectAsync();
                 }
-                if (pocketOptionSocketService != null)
+                if (binaryOptionsSocketService != null)
                 {
-                    bool connected = await pocketOptionSocketService.ConnectAsync();
+                    bool connected = await binaryOptionsSocketService.ConnectAsync();
                     if (connected)
                     {
                         Logger.LogInfo("Pocket Option Socket: Manual reconnect successful");
@@ -230,13 +230,13 @@ namespace ScreenCaptureApp.Helpers
         /// <summary>
         /// Checks Pocket Option connection status and updates UI
         /// </summary>
-        public static void CheckPocketOptionConnectionStatusWithUi(Window window, Ellipse statusIndicator, PocketOptionSocketService pocketOptionSocketService)
+        public static void CheckPocketOptionConnectionStatusWithUi(Window window, Ellipse statusIndicator, BinaryOptionsSocketService binaryOptionsSocketService)
         {
             try
             {
-                if (pocketOptionSocketService != null)
+                if (binaryOptionsSocketService != null)
                 {
-                    bool isConnected = pocketOptionSocketService.IsConnected;
+                    bool isConnected = binaryOptionsSocketService.IsConnected;
                     string status = isConnected ? "Connected" : "Disconnected";
                     UpdatePocketOptionStatusUI(window, statusIndicator, status);
                 }
