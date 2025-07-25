@@ -124,11 +124,11 @@ namespace ScreenCaptureApp.Services
                 string json = null;
                 if (result == TrendlineBreakResult.BreakoutUp)
                 {
-                    json = $"{{\"cmd\":\"BUY\",\"symbol\":\"{capture.Symbol}\",\"risk\":{capture.Risk},\"id\":\"{captureId}\"}}";
+                    json = $"{{\"cmd\":\"breakout_up\",\"symbol\":\"{capture.Symbol}\",\"risk\":{capture.Risk},\"id\":\"{captureId}\"}}";
                 }
                 else if (result == TrendlineBreakResult.BreakoutDown)
                 {
-                    json = $"{{\"cmd\":\"SELL\",\"symbol\":\"{capture.Symbol}\",\"risk\":{capture.Risk},\"id\":\"{captureId}\"}}";
+                    json = $"{{\"cmd\":\"breakout_down\",\"symbol\":\"{capture.Symbol}\",\"risk\":{capture.Risk},\"id\":\"{captureId}\"}}";
                 }
 
                 if (json != null)
