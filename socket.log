@@ -154,3 +154,9 @@
 [2025-07-25 13:07:04.726] [SOCKET] MT4 OUT: {"cmd":"breakout_down","symbol":"XAUUSD","risk":1,"id":"20250725130704667"}
 [2025-07-25 13:12:11.553] [SOCKET] MT4 OUT: {"cmd":"close_positions","symbol":"XAUUSD.s"}
 [2025-07-25 13:32:52.390] [SOCKET] MT4 OUT: {"cmd":"breakout_down","symbol":"XAUUSD","risk":1,"id":"20250725130720823"}
+[2025-07-25 13:56:52.839] [SOCKET] PO OUT: {"cmd":"BUY","symbol":"GBPJPY","risk":5,"duration":2}
+[2025-07-25 14:10:51.572] [SOCKET] MT4 OUT: {"cmd":"breakout_down","symbol":"GBPJPY","risk":1,"id":"20250725141051437"}
+[2025-07-25 14:11:11.476] [SOCKET] MT4 OUT: {"cmd":"breakout_down","symbol":"GBPJPY","risk":1,"id":"20250725141111404"}
+[2025-07-25 14:11:17.519] [SOCKET] PO OUT: {"cmd":"sell","symbol":"GBPJPY","risk":5,"duration":2,"broker":"Quotex"}
+[2025-07-25 14:11:47.106] [SOCKET] PO OUT: {"cmd":"sell","symbol":"GBPJPY","risk":1,"duration":2,"broker":"Pocket Option"}
+[2025-07-25 14:15:24.637] [SOCKET] PO OUT: {"cmd":"buy","symbol":"GBPJPY","risk":1,"duration":2,"broker":"Pocket Option"}

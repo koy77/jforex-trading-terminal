@@ -87,10 +87,10 @@ namespace ScreenCaptureApp.Services
             Logger.LogInfo($"Binary Options Socket: >>> OnBreakoutDetected handler CALLED <<< (type: {result})");
             try
             {
-                // Проверяем, что брокер в Capture - Pocket Option
-                if (!string.Equals(capture.Broker, "Pocket Option", StringComparison.OrdinalIgnoreCase))
+                // Теперь обрабатываем все брокеры, кроме Forex
+                if (string.Equals(capture.Broker, "Forex", StringComparison.OrdinalIgnoreCase))
                 {
-                    Logger.LogInfo($"Binary Options Socket: Skipping Pocket Option message - capture broker is {capture.Broker}, not Pocket Option");
+                    Logger.LogInfo($"Binary Options Socket: Skipping message - capture broker is {capture.Broker}, not a binary broker");
                     return;
                 }
 
@@ -103,11 +103,11 @@ namespace ScreenCaptureApp.Services
                 string json = null;
                 if (result == TrendlineBreakResult.BreakoutUp)
                 {
-                    json = $"{{\"cmd\":\"BUY\",\"symbol\":\"{capture.Symbol}\",\"risk\":{capture.Risk},\"duration\":{capture.Duration}}}";
+                    json = $"{{\"cmd\":\"buy\",\"symbol\":\"{capture.Symbol}\",\"risk\":{capture.Risk},\"duration\":{capture.Duration},\"broker\":\"{(capture.Broker ?? "").Replace(" ", "")}\"}}";
                 }
                 else if (result == TrendlineBreakResult.BreakoutDown)
                 {
-                    json = $"{{\"cmd\":\"SELL\",\"symbol\":\"{capture.Symbol}\",\"risk\":{capture.Risk},\"duration\":{capture.Duration}}}";
+                    json = $"{{\"cmd\":\"sell\",\"symbol\":\"{capture.Symbol}\",\"risk\":{capture.Risk},\"duration\":{capture.Duration},\"broker\":\"{(capture.Broker ?? "").Replace(" ", "")}\"}}";
                 }
 
                 if (json != null)
