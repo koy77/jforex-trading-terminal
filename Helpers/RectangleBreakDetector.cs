@@ -35,9 +35,17 @@ namespace ScreenCaptureApp.Helpers
                     rightVerticalLineX = FindRightmostVerticalWhiteLineAlternative(image);
                     if (rightVerticalLineX == -1)
                     {
-                        Logger.LogDebug($"RectangleBreakDetector: Both methods failed to find vertical line for capture ID={capture.ID}");
+                        Logger.LogDebug($"RectangleBreakDetector: Both methods failed to find right vertical line for capture ID={capture.ID}");
                         return RectangleBreakResult.NoBreakout;
                     }
+                }
+                
+                // Находим левую вертикальную линию
+                int leftVerticalLineX = FindLeftmostVerticalWhiteLine(image);
+                if (leftVerticalLineX == -1)
+                {
+                    Logger.LogDebug($"RectangleBreakDetector: Left vertical line not found for capture ID={capture.ID}");
+                    return RectangleBreakResult.NoBreakout;
                 }
                 
                 var (topY, bottomY) = FindHorizontalLines(image, rightVerticalLineX);
@@ -48,7 +56,7 @@ namespace ScreenCaptureApp.Helpers
                 }
                 
                 int rectangleHeight = bottomY - topY;
-                Logger.LogDebug($"RectangleBreakDetector: Rectangle boundaries - rightX={rightVerticalLineX}, topY={topY}, bottomY={bottomY}, height={rectangleHeight}");
+                Logger.LogDebug($"RectangleBreakDetector: Rectangle boundaries - rightX={rightVerticalLineX}, leftX={leftVerticalLineX}, topY={topY}, bottomY={bottomY}, height={rectangleHeight}");
                 Logger.LogDebug($"RectangleBreakDetector: Image size: {image.Width}x{image.Height}");
                 
                 // Определяем область анализа в зависимости от направления
@@ -77,8 +85,8 @@ namespace ScreenCaptureApp.Helpers
                     return RectangleBreakResult.NoBreakout;
                 }
                 
-                // Ищем вертикальные кластеры в области анализа
-                var (breakoutDetected, clusterX, clusterStartY, clusterEndY) = DetectVerticalClustersInArea(image, rightVerticalLineX, analysisStartY, analysisEndY, lookingForRedPixels);
+                // Ищем вертикальные кластеры в области анализа между правой и левой линиями
+                var (breakoutDetected, clusterX, clusterStartY, clusterEndY) = DetectVerticalClustersInArea(image, rightVerticalLineX, leftVerticalLineX, analysisStartY, analysisEndY, lookingForRedPixels);
                 
                 if (breakoutDetected)
                 {
@@ -88,7 +96,7 @@ namespace ScreenCaptureApp.Helpers
                     // Сохраняем отладочное изображение
                     if (!string.IsNullOrEmpty(debugPath))
                     {
-                        SaveDebugVisualization(image, rightVerticalLineX, topY, bottomY, analysisStartY, analysisEndY, lookingForRedPixels, debugPath, result, clusterX, clusterStartY, clusterEndY);
+                        SaveDebugVisualization(image, rightVerticalLineX, leftVerticalLineX, topY, bottomY, analysisStartY, analysisEndY, lookingForRedPixels, debugPath, result, clusterX, clusterStartY, clusterEndY);
                     }
                     
                     return result;
@@ -100,7 +108,7 @@ namespace ScreenCaptureApp.Helpers
                     // Сохраняем отладочное изображение даже если пробой не найден
                     if (!string.IsNullOrEmpty(debugPath))
                     {
-                        SaveDebugVisualization(image, rightVerticalLineX, topY, bottomY, analysisStartY, analysisEndY, lookingForRedPixels, debugPath, RectangleBreakResult.NoBreakout, -1, -1, -1);
+                        SaveDebugVisualization(image, rightVerticalLineX, leftVerticalLineX, topY, bottomY, analysisStartY, analysisEndY, lookingForRedPixels, debugPath, RectangleBreakResult.NoBreakout, -1, -1, -1);
                     }
                     
                     return RectangleBreakResult.NoBreakout;
@@ -239,80 +247,76 @@ namespace ScreenCaptureApp.Helpers
         /// Алгоритм: справа налево находит первую вертикальную белую линию,
         /// затем горизонтальные линии сверху и снизу, анализирует содержимое внутри
         /// </summary>
-        public string BuildMetadata(Bitmap image, string debugPath = null)
+        public string BuildMetadata(Bitmap image, CaptureData capture, string debugPath = null)
         {
             try
             {
                 Logger.LogDebug($"RectangleBreakDetector: Building metadata for image {image.Width}x{image.Height}");
                 
-                // 1. Находим правую вертикальную линию (справа налево)
-                int rightVerticalLineX = FindRightmostVerticalWhiteLine(image);
-                if (rightVerticalLineX == -1)
+                // Вызываем DetectBreakout для определения координаты пробоя
+                var breakoutResult = DetectBreakout(image, capture, debugPath);
+                
+                int breakoutX = 0; // По умолчанию 0, если пробой не найден
+                
+                // Если найден пробой, вычисляем координату X
+                if (breakoutResult == RectangleBreakResult.BreakoutUp || breakoutResult == RectangleBreakResult.BreakoutDown)
                 {
-                    Logger.LogWarning($"RectangleBreakDetector: Right vertical line not found, trying alternative method");
-                    // Попробуем альтернативный метод поиска
-                    rightVerticalLineX = FindRightmostVerticalWhiteLineAlternative(image);
+                    // Находим границы прямоугольника
+                    int rightVerticalLineX = FindRightmostVerticalWhiteLine(image);
                     if (rightVerticalLineX == -1)
                     {
-                        Logger.LogWarning($"RectangleBreakDetector: Right vertical line not found with alternative method");
-                        return JsonSerializer.Serialize(new { error = "Right vertical line not found" });
+                        rightVerticalLineX = FindRightmostVerticalWhiteLineAlternative(image);
+                    }
+                    
+                    int leftVerticalLineX = FindLeftmostVerticalWhiteLine(image);
+                    
+                    if (rightVerticalLineX != -1 && leftVerticalLineX != -1)
+                    {
+                        var (topY, bottomY) = FindHorizontalLines(image, rightVerticalLineX);
+                        
+                        if (topY != -1 && bottomY != -1)
+                        {
+                            int rectangleHeight = bottomY - topY;
+                            
+                            // Определяем область анализа в зависимости от направления
+                            int analysisStartY, analysisEndY;
+                            bool lookingForRedPixels;
+                            
+                            if (capture.Direction == "Up")
+                            {
+                                analysisStartY = Math.Max(0, topY - rectangleHeight);
+                                analysisEndY = topY;
+                                lookingForRedPixels = false; // Ищем зеленые пиксели
+                            }
+                            else
+                            {
+                                analysisStartY = bottomY;
+                                analysisEndY = Math.Min(image.Height - 1, bottomY + rectangleHeight);
+                                lookingForRedPixels = true; // Ищем красные пиксели
+                            }
+                            
+                            // Ищем кластер в области анализа
+                            var (breakoutDetected, clusterX, clusterStartY, clusterEndY) = DetectVerticalClustersInArea(image, rightVerticalLineX, leftVerticalLineX, analysisStartY, analysisEndY, lookingForRedPixels);
+                            
+                            if (breakoutDetected && clusterX != -1)
+                            {
+                                // Вычисляем расстояние от правой линии до кластера
+                                breakoutX = rightVerticalLineX - clusterX;
+                                Logger.LogDebug($"RectangleBreakDetector: Breakout detected at clusterX={clusterX}, rightEdgeX={rightVerticalLineX}, breakoutX={breakoutX}");
+                            }
+                        }
                     }
                 }
                 
-                Logger.LogDebug($"RectangleBreakDetector: Found right vertical line at X={rightVerticalLineX}");
-                
-                // 2. Находим верхнюю и нижнюю горизонтальные линии
-                var (topY, bottomY) = FindHorizontalLines(image, rightVerticalLineX);
-                if (topY == -1 || bottomY == -1)
-                {
-                    Logger.LogWarning($"RectangleBreakDetector: Horizontal lines not found. TopY={topY}, BottomY={bottomY}");
-                    return JsonSerializer.Serialize(new { error = "Horizontal lines not found" });
-                }
-                
-                Logger.LogDebug($"RectangleBreakDetector: Found horizontal lines at TopY={topY}, BottomY={bottomY}");
-                
-                // 3. Анализируем содержимое внутри прямоугольника
-                var contentAnalysis = AnalyzeRectangleContent(image, rightVerticalLineX, topY, bottomY);
-                
-                // 4. Находим расстояние от правой линии до содержимого
-                int distanceToContent = FindDistanceToContent(image, rightVerticalLineX, topY, bottomY);
-                
-                Logger.LogDebug($"RectangleBreakDetector: Distance to content = {distanceToContent} pixels");
-                
-                // 5. Создаем отладочное изображение, если указан путь
-                if (!string.IsNullOrEmpty(debugPath))
-                {
-                    CreateMetadataDebugImage(image, rightVerticalLineX, topY, bottomY, distanceToContent, contentAnalysis, debugPath);
-                }
-                
-                // 6. Собираем все мета-данные
+                // Собираем мета-данные только с координатой пробоя
                 var metadata = new
                 {
-                    timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"),
-                    imageSize = new { width = image.Width, height = image.Height },
-                    
-                    // Координаты прямоугольника
-                    rectangle = new
-                    {
-                        rightEdgeX = rightVerticalLineX,
-                        topY = topY,
-                        bottomY = bottomY,
-                        width = rightVerticalLineX,
-                        height = bottomY - topY
-                    },
-                    
-                    // Анализ содержимого
-                    content = contentAnalysis,
-                    
-                    // Основное значение - расстояние от правой линии до содержимого
-                    distanceToContent = distanceToContent,
-                    
-                    // Дополнительная информация
-                    contentRightEdgeX = rightVerticalLineX - distanceToContent
+                    // Координата пробоя (дистанция от красной линии до места пробоя)
+                    breakoutX = breakoutX
                 };
 
                 var jsonResult = JsonSerializer.Serialize(metadata, new JsonSerializerOptions { WriteIndented = true });
-                Logger.LogDebug($"RectangleBreakDetector: Built metadata with distanceToContent={distanceToContent}");
+                Logger.LogDebug($"RectangleBreakDetector: Built metadata with breakoutX={breakoutX}, result={breakoutResult}");
                 
                 return jsonResult;
             }
@@ -435,6 +439,67 @@ namespace ScreenCaptureApp.Helpers
         }
 
         /// <summary>
+        /// Ищет левую вертикальную белую линию слева направо
+        /// </summary>
+        private int FindLeftmostVerticalWhiteLine(Bitmap image)
+        {
+            // Более гибкие параметры для поиска вертикальной линии
+            int minWhitePixelsInLine = image.Height / 6; // Еще более мягкие требования
+            int minConsecutiveWhitePixels = image.Height / 10; // Минимум подряд идущих белых пикселей
+            int maxGaps = 5; // Максимальное количество разрывов в линии
+            
+            Logger.LogDebug($"RectangleBreakDetector: Searching for left vertical line with minWhitePixels={minWhitePixelsInLine}, minConsecutive={minConsecutiveWhitePixels}");
+            
+            for (int x = 0; x < image.Width; x++)
+            {
+                int whitePixelsInColumn = 0;
+                int consecutiveWhitePixels = 0;
+                int maxConsecutiveInColumn = 0;
+                int gaps = 0;
+                bool lastWasWhite = false;
+                
+                for (int y = 0; y < image.Height; y++)
+                {
+                    var pixel = image.GetPixel(x, y);
+                    bool isWhite = IsWhite(pixel);
+                    
+                    if (isWhite)
+                    {
+                        whitePixelsInColumn++;
+                        consecutiveWhitePixels++;
+                        maxConsecutiveInColumn = Math.Max(maxConsecutiveInColumn, consecutiveWhitePixels);
+                        lastWasWhite = true;
+                    }
+                    else
+                    {
+                        if (lastWasWhite && consecutiveWhitePixels > 0)
+                        {
+                            gaps++;
+                        }
+                        consecutiveWhitePixels = 0;
+                        lastWasWhite = false;
+                    }
+                }
+                
+                Logger.LogDebug($"RectangleBreakDetector: Column X={x}: whitePixels={whitePixelsInColumn}, maxConsecutive={maxConsecutiveInColumn}, gaps={gaps}");
+                
+                // Проверяем несколько условий для определения вертикальной линии
+                bool hasEnoughWhitePixels = whitePixelsInColumn >= minWhitePixelsInLine;
+                bool hasConsecutiveWhitePixels = maxConsecutiveInColumn >= minConsecutiveWhitePixels;
+                bool hasReasonableGaps = gaps <= maxGaps;
+                
+                if (hasEnoughWhitePixels && hasConsecutiveWhitePixels && hasReasonableGaps)
+                {
+                    Logger.LogDebug($"RectangleBreakDetector: Found left vertical line at X={x} (whitePixels={whitePixelsInColumn}, maxConsecutive={maxConsecutiveInColumn}, gaps={gaps})");
+                    return x;
+                }
+            }
+            
+            Logger.LogWarning($"RectangleBreakDetector: No left vertical line found with current parameters");
+            return -1; // Линия не найдена
+        }
+
+        /// <summary>
         /// Ищет горизонтальные линии сверху и снизу
         /// </summary>
         private (int topY, int bottomY) FindHorizontalLines(Bitmap image, int verticalLineX)
@@ -484,104 +549,6 @@ namespace ScreenCaptureApp.Helpers
             
             return (topY, bottomY);
         }
-
-        /// <summary>
-        /// Анализирует содержимое внутри прямоугольника
-        /// </summary>
-        private object AnalyzeRectangleContent(Bitmap image, int rightEdgeX, int topY, int bottomY)
-        {
-            int redCount = 0, greenCount = 0, totalPixels = 0;
-            var redPoints = new List<Point>();
-            var greenPoints = new List<Point>();
-            
-            // Анализируем область внутри прямоугольника
-            for (int y = topY + 1; y < bottomY; y++)
-            {
-                for (int x = 0; x < rightEdgeX; x++)
-                {
-                    var pixel = image.GetPixel(x, y);
-                    totalPixels++;
-                    
-                    if (IsRed(pixel))
-                    {
-                        redCount++;
-                        redPoints.Add(new Point(x, y));
-                    }
-                    else if (IsGreen(pixel))
-                    {
-                        greenCount++;
-                        greenPoints.Add(new Point(x, y));
-                    }
-                }
-            }
-            
-            // Находим границы содержимого
-            int leftmostContentX = redPoints.Count > 0 || greenPoints.Count > 0 ? 
-                Math.Min(redPoints.Count > 0 ? redPoints.Min(p => p.X) : int.MaxValue, 
-                         greenPoints.Count > 0 ? greenPoints.Min(p => p.X) : int.MaxValue) : -1;
-            
-            int rightmostContentX = redPoints.Count > 0 || greenPoints.Count > 0 ? 
-                Math.Max(redPoints.Count > 0 ? redPoints.Max(p => p.X) : -1, 
-                         greenPoints.Count > 0 ? greenPoints.Max(p => p.X) : -1) : -1;
-            
-            return new
-            {
-                totalPixels = totalPixels,
-                redPixels = redCount,
-                greenPixels = greenCount,
-                redRatio = totalPixels > 0 ? (double)redCount / totalPixels : 0,
-                greenRatio = totalPixels > 0 ? (double)greenCount / totalPixels : 0,
-                redPoints = redPoints.Count,
-                greenPoints = greenPoints.Count,
-                contentBounds = new
-                {
-                    leftmostX = leftmostContentX,
-                    rightmostX = rightmostContentX,
-                    hasContent = redCount > 0 || greenCount > 0
-                }
-            };
-        }
-
-        /// <summary>
-        /// Находит расстояние от правой линии до содержимого
-        /// </summary>
-        private int FindDistanceToContent(Bitmap image, int rightEdgeX, int topY, int bottomY)
-        {
-            // Ищем самый правый красный или зеленый пиксель внутри прямоугольника
-            int rightmostContentX = -1;
-            
-            // Проходим по всем строкам внутри прямоугольника
-            for (int y = topY + 1; y < bottomY; y++)
-            {
-                // Ищем справа налево (от правой линии к левому краю)
-                for (int x = rightEdgeX - 1; x >= 0; x--)
-                {
-                    var pixel = image.GetPixel(x, y);
-                    if (IsRed(pixel) || IsGreen(pixel))
-                    {
-                        // Нашли цветной пиксель, обновляем самую правую позицию
-                        if (x > rightmostContentX)
-                        {
-                            rightmostContentX = x;
-                        }
-                        break; // Переходим к следующей строке
-                    }
-                }
-            }
-            
-            if (rightmostContentX == -1)
-            {
-                Logger.LogDebug($"RectangleBreakDetector: No content found in rectangle");
-                return 0; // Содержимое не найдено
-            }
-            
-            // Расстояние от правой линии до содержимого
-            int distance = rightEdgeX - rightmostContentX;
-            Logger.LogDebug($"RectangleBreakDetector: Rightmost content at X={rightmostContentX}, distance to right edge={distance}");
-            
-            return distance;
-        }
-
 
 
         private bool IsWhite(System.Drawing.Color pixel)
@@ -658,16 +625,16 @@ namespace ScreenCaptureApp.Helpers
         /// <summary>
         /// Ищет вертикальные кластеры пикселей в заданной области для определения пробоя
         /// </summary>
-        private (bool found, int clusterX, int clusterStartY, int clusterEndY) DetectVerticalClustersInArea(Bitmap image, int rightEdgeX, int startY, int endY, bool lookingForRedPixels)
+        private (bool found, int clusterX, int clusterStartY, int clusterEndY) DetectVerticalClustersInArea(Bitmap image, int rightEdgeX, int leftEdgeX, int startY, int endY, bool lookingForRedPixels)
         {
             try
             {
-                Logger.LogDebug($"RectangleBreakDetector: Searching for vertical clusters in area: X=0 to {rightEdgeX}, Y={startY} to {endY}, lookingForRed={lookingForRedPixels}");
+                Logger.LogDebug($"RectangleBreakDetector: Searching for vertical clusters in area: X={leftEdgeX} to {rightEdgeX}, Y={startY} to {endY}, lookingForRed={lookingForRedPixels}");
                 
                 int minClusterHeight = 3; // Минимальная высота кластера
                 
-                // Ищем кластеры в области анализа справа налево (от красной линии влево)
-                for (int x = rightEdgeX; x >= 0; x--)
+                // Ищем кластеры в области анализа справа налево (от красной линии влево до левой линии)
+                for (int x = rightEdgeX; x >= leftEdgeX; x--)
                 {
                     int clusterHeight = 0;
                     int maxClusterHeightInColumn = 0;
@@ -733,7 +700,7 @@ namespace ScreenCaptureApp.Helpers
         /// <summary>
         /// Создает отладочное изображение для визуализации процесса поиска пробоя
         /// </summary>
-        private void SaveDebugVisualization(Bitmap originalImage, int rightEdgeX, int topY, int bottomY, int analysisStartY, int analysisEndY, bool lookingForRedPixels, string debugPath, RectangleBreakResult result, int clusterX = -1, int clusterStartY = -1, int clusterEndY = -1)
+        private void SaveDebugVisualization(Bitmap originalImage, int rightEdgeX, int leftEdgeX, int topY, int bottomY, int analysisStartY, int analysisEndY, bool lookingForRedPixels, string debugPath, RectangleBreakResult result, int clusterX = -1, int clusterStartY = -1, int clusterEndY = -1)
         {
             try
             {
@@ -749,36 +716,42 @@ namespace ScreenCaptureApp.Helpers
                         g.DrawLine(redPen, rightEdgeX, 0, rightEdgeX, originalImage.Height);
                     }
 
-                    // 2. Выделяем верхнюю и нижнюю горизонтальные линии (синие линии)
-                    using (var bluePen = new Pen(Color.Blue, 2))
-                    {
-                        g.DrawLine(bluePen, 0, topY, rightEdgeX, topY);
-                        g.DrawLine(bluePen, 0, bottomY, rightEdgeX, bottomY);
-                    }
-
-                    // 3. Выделяем область прямоугольника (полупрозрачный желтый)
-                    using (var yellowBrush = new SolidBrush(Color.FromArgb(80, Color.Yellow)))
-                    {
-                        g.FillRectangle(yellowBrush, 0, topY, rightEdgeX, bottomY - topY);
-                    }
-
-                    // 4. Выделяем область анализа пробоя (полупрозрачный оранжевый)
-                    using (var orangeBrush = new SolidBrush(Color.FromArgb(60, Color.Orange)))
-                    {
-                        g.FillRectangle(orangeBrush, 0, analysisStartY, rightEdgeX, analysisEndY - analysisStartY);
-                    }
-
-                    // 5. Рисуем границы области анализа (зеленая рамка)
+                    // 2. Выделяем левую вертикальную линию (зеленая линия)
                     using (var greenPen = new Pen(Color.Lime, 2))
                     {
-                        g.DrawRectangle(greenPen, 0, analysisStartY, rightEdgeX, analysisEndY - analysisStartY);
+                        g.DrawLine(greenPen, leftEdgeX, 0, leftEdgeX, originalImage.Height);
                     }
 
-                    // 6. Показываем все найденные пиксели целевого цвета в области анализа
+                    // 3. Выделяем верхнюю и нижнюю горизонтальные линии (синие линии)
+                    using (var bluePen = new Pen(Color.Blue, 2))
+                    {
+                        g.DrawLine(bluePen, leftEdgeX, topY, rightEdgeX, topY);
+                        g.DrawLine(bluePen, leftEdgeX, bottomY, rightEdgeX, bottomY);
+                    }
+
+                    // 4. Выделяем область прямоугольника между линиями (полупрозрачный желтый)
+                    using (var yellowBrush = new SolidBrush(Color.FromArgb(80, Color.Yellow)))
+                    {
+                        g.FillRectangle(yellowBrush, leftEdgeX, topY, rightEdgeX - leftEdgeX, bottomY - topY);
+                    }
+
+                    // 5. Выделяем область анализа пробоя (полупрозрачный оранжевый)
+                    using (var orangeBrush = new SolidBrush(Color.FromArgb(60, Color.Orange)))
+                    {
+                        g.FillRectangle(orangeBrush, leftEdgeX, analysisStartY, rightEdgeX - leftEdgeX, analysisEndY - analysisStartY);
+                    }
+
+                    // 6. Рисуем границы области анализа (зеленая рамка)
+                    using (var greenPen = new Pen(Color.Lime, 2))
+                    {
+                        g.DrawRectangle(greenPen, leftEdgeX, analysisStartY, rightEdgeX - leftEdgeX, analysisEndY - analysisStartY);
+                    }
+
+                    // 7. Показываем все найденные пиксели целевого цвета в области анализа
                     var targetColor = lookingForRedPixels ? Color.Red : Color.Green;
                     var targetBrush = new SolidBrush(Color.FromArgb(120, targetColor));
                     
-                    for (int x = 0; x <= rightEdgeX; x++)
+                    for (int x = leftEdgeX; x <= rightEdgeX; x++)
                     {
                         for (int y = analysisStartY; y <= analysisEndY; y++)
                         {

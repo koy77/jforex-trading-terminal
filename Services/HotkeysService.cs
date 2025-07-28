@@ -130,12 +130,12 @@ namespace ScreenCaptureApp.Services
                     Logger.LogDebug("F key detected and service is enabled");
                     OnTKeyPressed?.Invoke();
                 }
-                else if (vkCode == VK_ENTER && IsEnabled)
-                {
-                    Logger.LogDebug("Enter key detected and service is enabled");
-                    OnEnterKeyPressed?.Invoke();
-                    return (IntPtr)1;
-                }
+                // else if (vkCode == VK_ENTER && IsEnabled)
+                // {
+                //     Logger.LogDebug("Enter key detected and service is enabled");
+                //     OnEnterKeyPressed?.Invoke();
+                //     return (IntPtr)1;
+                // }
                 // Symbol hotkeys 1-6 (top row and numpad)
                 else if (IsEnabled && (vkCode == VK_1 || vkCode == VK_NUMPAD1))
                 {

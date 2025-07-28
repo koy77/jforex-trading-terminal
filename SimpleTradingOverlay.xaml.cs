@@ -27,6 +27,12 @@ namespace ScreenCaptureApp
         private const int WM_MOUSEMOVE = 0x0200;
         private const int WM_LBUTTONDOWN = 0x0201;
         private const int WM_LBUTTONUP = 0x0202;
+        
+        // Keyboard message constants
+        private const int WM_KEYDOWN = 0x0100;
+        private const int WM_KEYUP = 0x0101;
+        private const int VK_ESCAPE = 0x1B;
+        private const int SW_RESTORE = 9;
 
         // Mouse hook DllImports
         [DllImport("user32.dll")]
@@ -52,6 +58,15 @@ namespace ScreenCaptureApp
 
         [DllImport("user32.dll")]
         private static extern int GetWindowText(IntPtr hWnd, System.Text.StringBuilder lpString, int nMaxCount);
+
+        [DllImport("user32.dll")]
+        private static extern bool PostMessage(IntPtr hWnd, uint Msg, IntPtr wParam, IntPtr lParam);
+
+        [DllImport("user32.dll")]
+        private static extern bool SetForegroundWindow(IntPtr hWnd);
+
+        [DllImport("user32.dll")]
+        private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 
         [StructLayout(LayoutKind.Sequential)]
         private struct RECT
@@ -675,11 +690,58 @@ namespace ScreenCaptureApp
 
                 // Показываем рамку в абсолютных координатах экрана
                 _patternOverlay.ShowPattern(left, top, width, height);
+                
+                // Отправляем клавишу Escape в целевое окно
+                SendEscapeToTargetWindow();
             }
             catch (Exception ex)
             {
                 Logger.LogError("Error showing trading pattern rectangle", ex);
             }
+        }
+
+        /// <summary>
+        /// Отправляет клавишу Escape в целевое окно в отдельном потоке
+        /// </summary>
+        private void SendEscapeToTargetWindow()
+        {
+            if (_currentWindowHandle == IntPtr.Zero)
+            {
+                Logger.LogWarning("Cannot send Escape key: no current window handle");
+                return;
+            }
+
+            Logger.LogInfo($"Scheduling Escape key send to window handle: {_currentWindowHandle}");
+
+            // Запускаем отправку клавиши в отдельном потоке
+            System.Threading.Thread escapeThread = new System.Threading.Thread(() =>
+            {
+                try
+                {
+                    Logger.LogInfo($"Escape thread started for window handle: {_currentWindowHandle}");
+
+                    // // Активируем окно
+                    // SetForegroundWindow(_currentWindowHandle);
+                    // ShowWindow(_currentWindowHandle, SW_RESTORE);
+
+                    // Небольшая задержка для активации окна
+                    System.Threading.Thread.Sleep(1000);
+
+                    // Отправляем нажатие клавиши Escape
+                    PostMessage(_currentWindowHandle, WM_KEYDOWN, (IntPtr)VK_ESCAPE, IntPtr.Zero);
+                    System.Threading.Thread.Sleep(10);
+                    PostMessage(_currentWindowHandle, WM_KEYUP, (IntPtr)VK_ESCAPE, IntPtr.Zero);
+
+                    Logger.LogInfo($"Escape key sent successfully to window handle: {_currentWindowHandle}");
+                }
+                catch (Exception ex)
+                {
+                    Logger.LogError("Error sending Escape key to target window", ex);
+                }
+            });
+
+            escapeThread.IsBackground = true; // Поток не будет препятствовать завершению приложения
+            escapeThread.Start();
         }
 
         /// <summary>
@@ -736,7 +798,7 @@ namespace ScreenCaptureApp
                     
                     // Создаем детектор и строим мета-данные с отладочным изображением
                     var rectangleDetector = new RectangleBreakDetector();
-                    var metadata = rectangleDetector.BuildMetadata(trackingBitmap, metaDebugTrackingPath);
+                    var metadata = rectangleDetector.BuildMetadata(trackingBitmap, capture, metaDebugTrackingPath);
                     
                     Logger.LogDebug($"SimpleTradingOverlay: Created metadata for capture ID={capture.ID}, length={metadata.Length}");
                     
