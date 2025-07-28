@@ -3,6 +3,12 @@ using System.Collections.Generic;
 
 namespace ScreenCaptureApp.Models
 {
+    public enum DirectionType
+    {
+        Up,
+        Down
+    }
+
     public class CaptureData
     {
         public string ID { get; set; } = DateTime.Now.ToString("yyyyMMddHHmmssfff");
@@ -24,6 +30,7 @@ namespace ScreenCaptureApp.Models
         public string Model { get; set; } // "OHLC" или "MACD"
         public string Mt4Order { get; set; } // MT4 order information as JSON string
         public string Period { get; set; } // Период, парсится из заголовка окна
+        public string Direction { get; set; } // "Up" или "Down"
     }
 
     public class SymbolData

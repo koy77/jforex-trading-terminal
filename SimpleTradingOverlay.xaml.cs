@@ -239,7 +239,76 @@ namespace ScreenCaptureApp
             
             // Показываем желтую рамку вокруг области трейдинга
             ShowTradingPatternRectangle(_currentTradingPattern.FirstClick, _currentTradingPattern.SecondClick);
+
+            // --- Сохраняем CaptureData с направлением ---
+            var first = _currentTradingPattern.FirstClick;
+            var second = _currentTradingPattern.SecondClick;
+            var direction = second.Y < first.Y ? "Up" : "Down";
             
+            // Получаем размеры и позицию окна для конвертации координат
+            RECT windowRect;
+            if (!GetWindowRect(_currentWindowHandle, out windowRect))
+            {
+                Logger.LogError("Failed to get window rect for trading pattern capture");
+                return;
+            }
+            
+            // Конвертируем координаты из виртуального экрана в локальные координаты окна
+            var windowPoint1 = ConvertVirtualScreenToWindowCoordinates(first.X, first.Y, windowRect);
+            var windowPoint2 = ConvertVirtualScreenToWindowCoordinates(second.X, second.Y, windowRect);
+            
+            
+            // Вычисляем границы области с паддингом 20 пикселей в локальных координатах окна
+            int left = Math.Min(windowPoint1.X, windowPoint2.X) - 20;
+            int top = Math.Min(windowPoint1.Y, windowPoint2.Y) - 20;
+            int right = Math.Max(windowPoint1.X, windowPoint2.X) + 20;
+            int bottom = Math.Max(windowPoint1.Y, windowPoint2.Y) + 20;
+            int width = right - left;
+            int height = bottom - top;
+            
+            // Определяем монитор
+            int monitorIndex = 0;
+            for (int i = 0; i < System.Windows.Forms.Screen.AllScreens.Length; i++)
+            {
+                if (System.Windows.Forms.Screen.AllScreens[i].Bounds.Contains(first.X, first.Y))
+                {
+                    monitorIndex = i;
+                    break;
+                }
+            }
+            
+            var capture = new CaptureData
+            {
+                X = left,
+                Y = top,
+                Width = width,
+                Height = height,
+                Handle = _currentWindowHandle.ToInt64(),
+                Monitor = monitorIndex,
+                Timestamp = DateTime.Now.ToString("o"),
+                Symbol = _currentTradingPattern.Symbol,
+                Risk = _toolbarSettingsManager.GetSettings(_currentWindowHandle.ToInt64())?.Risk ?? 1,
+                Source = "trading_pattern",
+                Broker = _brokerState.CurrentBroker.ToString(),
+                Duration = _durationState.CurrentDuration,
+                Model = "Pattern",
+                Period = null,
+                Direction = direction
+            };
+            var db = ServiceContainer.Instance.GetService<DatabaseService>();
+            var screenshotService = ServiceContainer.Instance.GetService<ScreenshotService>();
+            
+            // Сохраняем CaptureData
+            db.SaveCapture(capture);
+            
+            // Делаем скриншот области в локальных координатах окна
+            var debugInfo = screenshotService.CaptureScreenAreaDebug(capture.X, capture.Y, capture.Width, capture.Height, capture.Monitor, capture.ID);
+            capture.ScreenshotPath = debugInfo.ScreenshotPath;
+            db.UpdateCapture(capture);
+            
+            Logger.LogInfo($"TradingPattern CaptureData saved: Symbol={capture.Symbol}, Direction={capture.Direction}, X={capture.X}, Y={capture.Y}, W={capture.Width}, H={capture.Height}, Screenshot={capture.ScreenshotPath}");
+            // --- конец блока сохранения ---
+
             Logger.LogInfo($"Trading pattern completed: FirstClick={_currentTradingPattern.FirstClick}, SecondClick={_currentTradingPattern.SecondClick}");
             
             _currentTradingPattern = null;
@@ -609,29 +678,15 @@ namespace ScreenCaptureApp
         /// </summary>
         private System.Drawing.Point ConvertVirtualScreenToWindowCoordinates(int virtualX, int virtualY, RECT windowRect)
         {
-            // Конвертируем X координату с учетом мультимониторной системы
-            int xVirtual = virtualX;
-            if (System.Windows.Forms.Screen.AllScreens.Length > 1)
-            {
-                int firstScreenWidth = System.Windows.Forms.Screen.AllScreens[0].Bounds.Width;
-                if (virtualX >= firstScreenWidth)
-                {
-                    xVirtual = virtualX - firstScreenWidth;
-                }
-            }
+            // Простая конвертация: вычитаем позицию окна из виртуальных координат
+            int windowX = virtualX - windowRect.Left;
+            int windowY = virtualY - windowRect.Top;
 
-            // Конвертируем Y координату с учетом виртуального экрана
-            int yVirtual = virtualY - System.Windows.Forms.Screen.AllScreens[0].Bounds.Top;
+            // Убеждаемся, что координаты не отрицательные
+            windowX = Math.Max(0, windowX);
+            windowY = Math.Max(0, windowY);
 
-            // Координаты окна относительно виртуального экрана
-            int windowLeft = windowRect.Left;
-            int windowTop = windowRect.Top;
-
-            // Конвертируем координаты в координаты окна
-            int windowX = xVirtual - windowLeft;
-            int windowY = yVirtual - windowTop;
-
-            Logger.LogDebug($"ConvertVirtualScreenToWindowCoordinates: virtualX={virtualX}, virtualY={virtualY}, xVirtual={xVirtual}, yVirtual={yVirtual}, windowLeft={windowLeft}, windowTop={windowTop}, windowX={windowX}, windowY={windowY}");
+            Logger.LogDebug($"ConvertVirtualScreenToWindowCoordinates: virtualX={virtualX}, virtualY={virtualY}, windowLeft={windowRect.Left}, windowTop={windowRect.Top}, windowX={windowX}, windowY={windowY}");
 
             return new System.Drawing.Point(windowX, windowY);
         }

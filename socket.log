@@ -160,3 +160,5 @@
 [2025-07-25 14:11:17.519] [SOCKET] PO OUT: {"cmd":"sell","symbol":"GBPJPY","risk":5,"duration":2,"broker":"Quotex"}
 [2025-07-25 14:11:47.106] [SOCKET] PO OUT: {"cmd":"sell","symbol":"GBPJPY","risk":1,"duration":2,"broker":"Pocket Option"}
 [2025-07-25 14:15:24.637] [SOCKET] PO OUT: {"cmd":"buy","symbol":"GBPJPY","risk":1,"duration":2,"broker":"Pocket Option"}
+[2025-07-28 12:14:48.076] [SOCKET] MT4 OUT: {"cmd":"breakout_down","symbol":"XAUUSD","risk":1,"id":"20250728121447020"}
+[2025-07-28 12:16:11.525] [SOCKET] MT4 OUT: {"cmd":"breakout_up","symbol":"XAUUSD","risk":1,"id":"20250728121226481"}
