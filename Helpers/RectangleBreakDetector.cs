@@ -61,7 +61,7 @@ namespace ScreenCaptureApp.Helpers
                             breakoutX > 0)
                         {
                             // Вычисляем левую границу поиска: правая линия минус координата пробоя
-                            searchLeftBoundary = rightVerticalLineX - breakoutX + 4;
+                            searchLeftBoundary = rightVerticalLineX - breakoutX + 8;
                             Logger.LogDebug($"RectangleBreakDetector: Using metadata breakoutX={breakoutX}, searchLeftBoundary={searchLeftBoundary} (rightX={rightVerticalLineX} - breakoutX={breakoutX})");
                         }
                         else
