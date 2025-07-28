@@ -4,6 +4,7 @@ using Emgu.CV;
 using Emgu.CV.Structure;
 using Emgu.CV.CvEnum;
 using ScreenCaptureApp.Services;
+using ScreenCaptureApp.Models;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -19,10 +20,10 @@ namespace ScreenCaptureApp.Helpers
 
     public class TrendlineBreakDetector
     {
-        public TrendlineBreakResult DetectBreakout(Bitmap cropped, string model = "OHLC", string saveDebugPath = null)
+        public TrendlineBreakResult DetectBreakout(Bitmap cropped, CaptureData capture, string saveDebugPath = null)
         {
             // Параметры по умолчанию для каждой модели
-            if (model == "MACD")
+            if (capture.Model == "MACD")
             {
                 // Можно задать другие параметры для MACD
                 int zoneWidth = 4;

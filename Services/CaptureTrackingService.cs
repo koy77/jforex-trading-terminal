@@ -157,42 +157,23 @@ namespace ScreenCaptureApp.Services
                         trackingBitmap.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
                         using (trackingBitmap)
                         {
-                            // find breakouts on trackingBitmap
-                            var detector = new TrendlineBreakDetector();
+                            // Выбираем детектор в зависимости от модели
                             string debugPath = Path.Combine(dir, "tracking_debug.png");
-                            var result = detector.DetectBreakout(trackingBitmap, capture.Model, debugPath);
-                            switch (result)
+                            
+                            if (capture.Model == "OHLC_rectangle")
                             {
-                                case TrendlineBreakResult.NoTrendline:
-                                    Logger.LogInfo($"CaptureTrackingService: [{filePath}] Trendline not detected.");
-                                    break;
-                                case TrendlineBreakResult.NoBreakout:
-                                    Logger.LogInfo($"CaptureTrackingService: [{filePath}] Trendline detected, breakout NOT found.");
-                                    break;
-                                case TrendlineBreakResult.BreakoutUp:
-                                    Logger.LogInfo($"CaptureTrackingService: [{filePath}] Breakout UP detected!");
-                                    _databaseService.UpdateCaptureIsFired(capture, true);
-                                    // Toast notification with trade counter
-                                    var toastUp = ServiceContainer.Instance.GetService<ToastNotifyService>();
-                                    var tradeCounterUp = ServiceContainer.Instance.GetService<TradeCounter>();
-                                    int tradeNumberUp = tradeCounterUp?.IncrementFiredTrades() ?? 0;
-                                    toastUp?.ShowToast($"BUY #{tradeNumberUp} {capture.Symbol} {capture.Risk}", ToastType.BreakoutUp);
-                                    
-                                    await OnBreakoutDetected(capture, TrendlineBreakResult.BreakoutUp);
-                                    break;
-                                case TrendlineBreakResult.BreakoutDown:
-                                    Logger.LogInfo($"CaptureTrackingService: [{filePath}] Breakout DOWN detected!");
-                                    _databaseService.UpdateCaptureIsFired(capture, true);
-                                    // Toast notification with trade counter
-                                    var toastDown = ServiceContainer.Instance.GetService<ToastNotifyService>();
-                                    var tradeCounterDown = ServiceContainer.Instance.GetService<TradeCounter>();
-                                    int tradeNumberDown = tradeCounterDown?.IncrementFiredTrades() ?? 0;
-                                    toastDown?.ShowToast($"SELL #{tradeNumberDown} {capture.Symbol} {capture.Risk}", ToastType.BreakoutDown);
-                                    
-                                    await OnBreakoutDetected(capture, TrendlineBreakResult.BreakoutDown);
-                                    break;
+                                // Используем RectangleBreakDetector для прямоугольных областей
+                                var rectangleDetector = new RectangleBreakDetector();
+                                var rectangleResult = rectangleDetector.DetectBreakout(trackingBitmap, capture, debugPath);
+                                await ProcessBreakoutResult(capture, rectangleResult, filePath, "RectangleBreakDetector");
                             }
-                            Logger.LogDebug($"CaptureTrackingService: TrendlineBreakDetector result for {filePath}: {result}");
+                            else
+                            {
+                                // Используем TrendlineBreakDetector для остальных моделей
+                                var detector = new TrendlineBreakDetector();
+                                var result = detector.DetectBreakout(trackingBitmap, capture, debugPath);
+                                await ProcessBreakoutResult(capture, result, filePath, "TrendlineBreakDetector");
+                            }
                         }
                     }
                     catch (Exception ex)
@@ -227,6 +208,85 @@ namespace ScreenCaptureApp.Services
         {
             if (CaptureTrackingIterationEnded != null)
                 await CaptureTrackingIterationEnded.Invoke();
+        }
+
+        /// <summary>
+        /// Обрабатывает результат детектора breakout'ов
+        /// </summary>
+        private async Task ProcessBreakoutResult(CaptureData capture, object result, string filePath, string detectorName)
+        {
+            if (result is TrendlineBreakResult trendlineResult)
+            {
+                switch (trendlineResult)
+                {
+                    case TrendlineBreakResult.NoTrendline:
+                        Logger.LogInfo($"CaptureTrackingService: [{filePath}] Trendline not detected.");
+                        break;
+                    case TrendlineBreakResult.NoBreakout:
+                        Logger.LogInfo($"CaptureTrackingService: [{filePath}] Trendline detected, breakout NOT found.");
+                        break;
+                    case TrendlineBreakResult.BreakoutUp:
+                        await HandleBreakoutUp(capture, filePath, detectorName);
+                        break;
+                    case TrendlineBreakResult.BreakoutDown:
+                        await HandleBreakoutDown(capture, filePath, detectorName);
+                        break;
+                }
+                Logger.LogDebug($"CaptureTrackingService: {detectorName} result for {filePath}: {trendlineResult}");
+            }
+            else if (result is RectangleBreakResult rectangleResult)
+            {
+                switch (rectangleResult)
+                {
+                    case RectangleBreakResult.NoRectangle:
+                        Logger.LogInfo($"CaptureTrackingService: [{filePath}] Rectangle not detected.");
+                        break;
+                    case RectangleBreakResult.NoBreakout:
+                        Logger.LogInfo($"CaptureTrackingService: [{filePath}] Rectangle detected, breakout NOT found.");
+                        break;
+                    case RectangleBreakResult.BreakoutUp:
+                        await HandleBreakoutUp(capture, filePath, detectorName);
+                        break;
+                    case RectangleBreakResult.BreakoutDown:
+                        await HandleBreakoutDown(capture, filePath, detectorName);
+                        break;
+                }
+                Logger.LogDebug($"CaptureTrackingService: {detectorName} result for {filePath}: {rectangleResult}");
+            }
+        }
+
+        /// <summary>
+        /// Обрабатывает UP breakout
+        /// </summary>
+        private async Task HandleBreakoutUp(CaptureData capture, string filePath, string detectorName)
+        {
+            Logger.LogInfo($"CaptureTrackingService: [{filePath}] {detectorName} Breakout UP detected!");
+            _databaseService.UpdateCaptureIsFired(capture, true);
+            
+            // Toast notification with trade counter
+            var toastUp = ServiceContainer.Instance.GetService<ToastNotifyService>();
+            var tradeCounterUp = ServiceContainer.Instance.GetService<TradeCounter>();
+            int tradeNumberUp = tradeCounterUp?.IncrementFiredTrades() ?? 0;
+            toastUp?.ShowToast($"BUY #{tradeNumberUp} {capture.Symbol} {capture.Risk}", ToastType.BreakoutUp);
+            
+            await OnBreakoutDetected(capture, TrendlineBreakResult.BreakoutUp);
+        }
+
+        /// <summary>
+        /// Обрабатывает DOWN breakout
+        /// </summary>
+        private async Task HandleBreakoutDown(CaptureData capture, string filePath, string detectorName)
+        {
+            Logger.LogInfo($"CaptureTrackingService: [{filePath}] {detectorName} Breakout DOWN detected!");
+            _databaseService.UpdateCaptureIsFired(capture, true);
+            
+            // Toast notification with trade counter
+            var toastDown = ServiceContainer.Instance.GetService<ToastNotifyService>();
+            var tradeCounterDown = ServiceContainer.Instance.GetService<TradeCounter>();
+            int tradeNumberDown = tradeCounterDown?.IncrementFiredTrades() ?? 0;
+            toastDown?.ShowToast($"SELL #{tradeNumberDown} {capture.Symbol} {capture.Risk}", ToastType.BreakoutDown);
+            
+            await OnBreakoutDetected(capture, TrendlineBreakResult.BreakoutDown);
         }
 
         /// <summary>
