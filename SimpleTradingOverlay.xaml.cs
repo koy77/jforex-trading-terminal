@@ -278,9 +278,9 @@ namespace ScreenCaptureApp
 
             // Вычисляем границы области с паддингом 20 пикселей в локальных координатах окна
             int left = Math.Min(windowPoint1.X, windowPoint2.X) - 20;
-            int top = Math.Min(windowPoint1.Y, windowPoint2.Y) - 20;
+            int top = Math.Min(windowPoint1.Y, windowPoint2.Y) - 60;
             int right = Math.Max(windowPoint1.X, windowPoint2.X) + 20;
-            int bottom = Math.Max(windowPoint1.Y, windowPoint2.Y) + 20;
+            int bottom = Math.Max(windowPoint1.Y, windowPoint2.Y) + 60;
             int width = right - left;
             int height = bottom - top;
             

@@ -263,3 +263,10 @@
 [2025-07-28 22:14:56.323] [SOCKET] MT4 OUT: {"cmd":"breakout_down","symbol":"XAUUSD","risk":1,"id":"20250728221452628"}
 [2025-07-28 22:15:58.062] [SOCKET] MT4 OUT: {"cmd":"breakout_down","symbol":"XAUUSD","risk":1,"id":"20250728221557578"}
 [2025-07-28 22:17:01.802] [SOCKET] MT4 OUT: {"cmd":"breakout_up","symbol":"USDJPY","risk":1,"id":"20250728221659222"}
+[2025-07-28 22:20:48.934] [SOCKET] MT4 OUT: {"cmd":"breakout_up","symbol":"XAUUSD","risk":1,"id":"20250728222045003"}
+[2025-07-28 22:21:08.559] [SOCKET] MT4 OUT: {"cmd":"breakout_up","symbol":"XAUUSD","risk":1,"id":"20250728222056323"}
+[2025-07-28 22:27:19.810] [SOCKET] MT4 OUT: {"cmd":"breakout_up","symbol":"XAUUSD","risk":1,"id":"20250728222536457"}
+[2025-07-28 22:35:00.903] [SOCKET] MT4 OUT: {"cmd":"close_positions","symbol":"USDJPY.s"}
+[2025-07-28 22:36:31.922] [SOCKET] MT4 OUT: {"cmd":"breakout_up","symbol":"XAUUSD","risk":1,"id":"20250728223526974"}
+[2025-07-28 22:37:14.323] [SOCKET] MT4 OUT: {"cmd":"breakout_up","symbol":"XAUUSD","risk":1,"id":"20250728223709310"}
+[2025-07-28 22:45:07.899] [SOCKET] MT4 OUT: {"cmd":"close_positions","symbol":"XAUUSD.s"}
