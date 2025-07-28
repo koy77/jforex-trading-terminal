@@ -103,6 +103,7 @@ namespace ScreenCaptureApp
             try
             {
                 simpleTradingOverlay = new SimpleTradingOverlay();
+                
                 Logger.LogInfo("SimpleTradingOverlay initialized successfully");
             }
             catch (Exception ex)
@@ -231,6 +232,13 @@ namespace ScreenCaptureApp
         private void OnEscapeKeyPressed()
         {
             Logger.LogDebug("Escape key pressed - starting cleanup");
+            
+            // Вызываем метод SimpleTradingOverlay для отмены паттерна
+            if (simpleTradingOverlay != null)
+            {
+                simpleTradingOverlay.OnEscapeKeyPressed();
+            }
+            
             Logger.LogDebug($"Before cleanup: isCapturing={isCapturing}, overlay={(overlay == null ? "null" : "not null")}");
             
             // Check if canvas window is open and close it
@@ -302,7 +310,18 @@ namespace ScreenCaptureApp
         
         private void OnSKeyPressed()
         {
-            Logger.LogDebug("S key pressed - shifting canvas down");
+            
+            // Вызываем метод SimpleTradingOverlay для паттерна трейдинга
+            if (simpleTradingOverlay != null)
+            {
+                simpleTradingOverlay.OnSKeyPressed();
+            }
+            else
+            {
+                Logger.LogWarning("SimpleTradingOverlay is null, cannot call OnSKeyPressed");
+            }
+            
+            // Также выполняем оригинальную логику для CanvasWindow
             if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
             {
                 currentCanvasWindow.ShiftCanvasDown();

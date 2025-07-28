@@ -196,7 +196,8 @@ namespace ScreenCaptureApp.Services
                 }
                 else if (vkCode == VK_S && IsEnabled)
                 {
-                    // S key detected, reserved for future use
+                    Logger.LogDebug("S key detected and service is enabled");
+                    OnSKeyPressed?.Invoke();
                 }
                 else if (vkCode == VK_D && IsEnabled)
                 {
@@ -235,7 +236,7 @@ namespace ScreenCaptureApp.Services
                 else if (vkCode == VK_DOWN && IsEnabled)
                 {
                     Logger.LogDebug("Down Arrow key detected and service is enabled");
-                    OnSKeyPressed?.Invoke();
+                    // Down arrow key detected, reserved for future use
                 }
                 else if (vkCode == VK_RIGHT && IsEnabled)
                 {

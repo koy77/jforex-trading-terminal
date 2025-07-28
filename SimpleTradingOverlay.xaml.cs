@@ -14,7 +14,7 @@ namespace ScreenCaptureApp
     public partial class SimpleTradingOverlay : Window
     {
         // Mouse hook related fields
-        private IntPtr mouseHook = IntPtr.Zero; a
+        private IntPtr mouseHook = IntPtr.Zero;
         private HwndSource source;
         private delegate IntPtr LowLevelMouseProc(int nCode, IntPtr wParam, IntPtr lParam);
         private LowLevelMouseProc mouseProc;
@@ -22,6 +22,8 @@ namespace ScreenCaptureApp
         // Mouse hook constants
         private const int WH_MOUSE_LL = 14;
         private const int WM_MOUSEMOVE = 0x0200;
+        private const int WM_LBUTTONDOWN = 0x0201;
+        private const int WM_LBUTTONUP = 0x0202;
 
         // Mouse hook DllImports
         [DllImport("user32.dll")]
@@ -78,12 +80,21 @@ namespace ScreenCaptureApp
         private readonly BrokerState _brokerState;
         private readonly DurationState _durationState;
         private readonly WindowManagementService _windowManagementService;
-        private readonly DispatcherTimer _updateTimer;
+        private readonly HotkeysService _hotkeysService;
         private IntPtr _currentWindowHandle = IntPtr.Zero;
         private bool _isEnabled = true;
+        private int _lastMouseX = 0;
+        private int _lastMouseY = 0;
         
-
-
+        // Паттерн создания объекта трейдинга
+        private bool _isTradingPatternActive = false;
+        private TradingPatternData _currentTradingPattern = null;
+        private int _clickCount = 0;
+        
+        // События для паттерна трейдинга
+        public event EventHandler<TradingPatternData> TradingPatternCompleted;
+        public event EventHandler<TradingPatternData> TradingPatternCancelled;
+        
         public SimpleTradingOverlay()
         {
             InitializeComponent();
@@ -92,6 +103,7 @@ namespace ScreenCaptureApp
             _brokerState = ServiceContainer.Instance.GetService<BrokerState>();
             _durationState = ServiceContainer.Instance.GetService<DurationState>();
             _windowManagementService = ServiceContainer.Instance.GetService<WindowManagementService>();
+            _hotkeysService = ServiceContainer.Instance.GetService<HotkeysService>();
 
             // Инициализация окна
             InitializeWindow();
@@ -99,11 +111,9 @@ namespace ScreenCaptureApp
             // Настройка событий TradingToolbar
             SetupTradingToolbarEvents();
             
-            // Таймер для обновления позиции
-            _updateTimer = new DispatcherTimer();
-            _updateTimer.Interval = TimeSpan.FromMilliseconds(100); // 100ms
-            _updateTimer.Tick += UpdateTimer_Tick;
-            _updateTimer.Start();
+            // Инициализация переменных для троттлинга мыши
+            _lastMouseX = 0;
+            _lastMouseY = 0;
 
             // Установка глобального хука мыши
             SetupMouseHook();
@@ -141,6 +151,122 @@ namespace ScreenCaptureApp
             };
         }
 
+
+
+        public void OnSKeyPressed()
+        {
+            Logger.LogDebug("SimpleTradingOverlay.OnSKeyPressed() called");
+            
+            if (!_isEnabled) 
+            {
+                Logger.LogWarning("SimpleTradingOverlay is disabled, ignoring S key press");
+                return;
+            }
+
+            Logger.LogInfo("S key pressed - starting trading pattern creation");
+            
+            // Начинаем паттерн создания объекта трейдинга
+            StartTradingPattern();
+        }
+
+        public void OnEscapeKeyPressed()
+        {
+            if (!_isEnabled) return;
+
+            if (_isTradingPatternActive)
+            {
+                Logger.LogInfo("Escape key pressed - cancelling trading pattern");
+                CancelTradingPattern();
+            }
+        }
+
+        private void StartTradingPattern()
+        {
+            if (_isTradingPatternActive)
+            {
+                Logger.LogWarning("Trading pattern already active, cancelling previous one");
+                CancelTradingPattern();
+            }
+
+            _isTradingPatternActive = true;
+            _clickCount = 0;
+            _currentTradingPattern = new TradingPatternData
+            {
+                WindowHandle = _currentWindowHandle,
+                Symbol = ExtractSymbolFromWindowTitle(_currentWindowHandle)
+            };
+
+            Logger.LogInfo($"Started trading pattern creation for window {_currentWindowHandle} (symbol: {_currentTradingPattern.Symbol})");
+        }
+
+        private void CancelTradingPattern()
+        {
+            if (!_isTradingPatternActive) return;
+
+            _isTradingPatternActive = false;
+            _clickCount = 0;
+            
+            if (_currentTradingPattern != null)
+            {
+                _currentTradingPattern.Status = TradingPatternStatus.Cancelled;
+                TradingPatternCancelled?.Invoke(this, _currentTradingPattern);
+                Logger.LogInfo("Trading pattern cancelled");
+            }
+            
+            _currentTradingPattern = null;
+        }
+
+        private void CompleteTradingPattern()
+        {
+            if (!_isTradingPatternActive || _currentTradingPattern == null) return;
+
+            _isTradingPatternActive = false;
+            _clickCount = 0;
+            
+            _currentTradingPattern.Status = TradingPatternStatus.Completed;
+            TradingPatternCompleted?.Invoke(this, _currentTradingPattern);
+            
+            Logger.LogInfo($"Trading pattern completed: FirstClick={_currentTradingPattern.FirstClick}, SecondClick={_currentTradingPattern.SecondClick}");
+            
+            _currentTradingPattern = null;
+        }
+
+        private void HandleMouseClickForTradingPattern(IntPtr lParam)
+        {
+            if (!_isTradingPatternActive || _currentTradingPattern == null) return;
+
+            try
+            {
+                MSLLHOOKSTRUCT hookStruct = (MSLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(MSLLHOOKSTRUCT));
+                var clickPoint = new TradingPoint(hookStruct.pt.X, hookStruct.pt.Y);
+                
+                _clickCount++;
+                
+                if (_clickCount == 1)
+                {
+                    // Первый клик
+                    _currentTradingPattern.FirstClick = clickPoint;
+                    Logger.LogInfo($"First click recorded at {clickPoint}");
+                }
+                else if (_clickCount == 2)
+                {
+                    // Второй клик - завершаем паттерн
+                    _currentTradingPattern.SecondClick = clickPoint;
+                    Logger.LogInfo($"Second click recorded at {clickPoint}");
+                    CompleteTradingPattern();
+                }
+                else
+                {
+                    // Больше двух кликов - игнорируем
+                    Logger.LogWarning($"Ignoring click {_clickCount} - pattern requires exactly 2 clicks");
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("Error handling mouse click for trading pattern", ex);
+            }
+        }
+
         private void UpdateTradingToolbarUiByBroker(BrokerType brokerType)
         {
             if (brokerType == BrokerType.Forex)
@@ -168,11 +294,11 @@ namespace ScreenCaptureApp
                 
                 if (string.IsNullOrEmpty(windowTitle))
                 {
-                    Logger.LogDebug($"Empty window title for handle {windowHandle}");
+                    // Logger.LogDebug($"Empty window title for handle {windowHandle}");
                     return null;
                 }
 
-                Logger.LogDebug($"Window title: {windowTitle}");
+                // Logger.LogDebug($"Window title: {windowTitle}");
 
                 // Используем словарь символов из WindowManagementService
                 var symbols = _windowManagementService.Symbols;
@@ -185,12 +311,12 @@ namespace ScreenCaptureApp
                     
                     if (windowTitle.Contains(symbolValue))
                     {
-                        Logger.LogInfo($"Found symbol {symbolKey} in window title: {windowTitle}");
+                        // Logger.LogInfo($"Found symbol {symbolKey} in window title: {windowTitle}");
                         return symbolKey;
                     }
                 }
 
-                Logger.LogDebug($"No known symbol found in window title: {windowTitle}");
+                // Logger.LogDebug($"No known symbol found in window title: {windowTitle}");
                 return null;
             }
             catch (Exception ex)
@@ -233,18 +359,34 @@ namespace ScreenCaptureApp
                 {
                     MSLLHOOKSTRUCT hookStruct = (MSLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(MSLLHOOKSTRUCT));
                     
-                    // Получаем окно под курсором
-                    IntPtr windowHandle = WindowFromPoint(new System.Drawing.Point(hookStruct.pt.X, hookStruct.pt.Y));
+                    // Троттлинг: проверяем, переместилась ли мышь на достаточное расстояние
+                    int deltaX = Math.Abs(hookStruct.pt.X - _lastMouseX);
+                    int deltaY = Math.Abs(hookStruct.pt.Y - _lastMouseY);
                     
-                    if (windowHandle != IntPtr.Zero && IsWindowVisible(windowHandle))
+                    // Обновляем позицию только если мышь переместилась на 100 пикселей или больше
+                    if (deltaX >= 100 || deltaY >= 100)
                     {
-                        // Проверяем, что это не наше окно
-                        if (windowHandle != new WindowInteropHelper(this).Handle)
+                        _lastMouseX = hookStruct.pt.X;
+                        _lastMouseY = hookStruct.pt.Y;
+                        
+                        // Получаем окно под курсором
+                        IntPtr windowHandle = WindowFromPoint(new System.Drawing.Point(hookStruct.pt.X, hookStruct.pt.Y));
+                        
+                        if (windowHandle != IntPtr.Zero && IsWindowVisible(windowHandle))
                         {
-                            // Обновляем позицию оверлея на новом окне
-                            UpdateOverlayPosition(windowHandle);
+                            // Проверяем, что это не наше окно
+                            if (windowHandle != new WindowInteropHelper(this).Handle)
+                            {
+                                // Обновляем позицию оверлея на новом окне
+                                UpdateOverlayPosition(windowHandle);
+                            }
                         }
                     }
+                }
+                else if (message == WM_LBUTTONDOWN && _isTradingPatternActive)
+                {
+                    // Обработка клика мыши для паттерна трейдинга
+                    HandleMouseClickForTradingPattern(lParam);
                 }
             }
             
@@ -269,7 +411,7 @@ namespace ScreenCaptureApp
                 
                 if (string.IsNullOrEmpty(symbol))
                 {
-                    Logger.LogDebug($"No symbol found in window {windowHandle}, keeping overlay on current window");
+                    // Logger.LogDebug($"No symbol found in window {windowHandle}, keeping overlay on current window");
                     return; // Не переключаем оверлей, если символ не найден
                 }
 
@@ -346,25 +488,7 @@ namespace ScreenCaptureApp
             }
         }
 
-        private void UpdateTimer_Tick(object sender, EventArgs e)
-        {
-            // Дополнительная проверка позиции курсора
-            if (_isEnabled)
-            {
-                var cursorPos = System.Windows.Forms.Cursor.Position;
-                IntPtr windowHandle = WindowFromPoint(new System.Drawing.Point(cursorPos.X, cursorPos.Y));
-                
-                if (windowHandle != IntPtr.Zero && windowHandle != _currentWindowHandle && IsWindowVisible(windowHandle))
-                {
-                    // Проверяем символ в заголовке окна перед обновлением позиции
-                    string symbol = ExtractSymbolFromWindowTitle(windowHandle);
-                    if (!string.IsNullOrEmpty(symbol))
-                    {
-                        UpdateOverlayPosition(windowHandle);
-                    }
-                }
-            }
-        }
+
 
         public void Enable()
         {
@@ -381,7 +505,11 @@ namespace ScreenCaptureApp
 
         protected override void OnClosed(EventArgs e)
         {
-            _updateTimer?.Stop();
+            // Отменяем активный паттерн если он есть
+            if (_isTradingPatternActive)
+            {
+                CancelTradingPattern();
+            }
             
             if (mouseHook != IntPtr.Zero)
             {
