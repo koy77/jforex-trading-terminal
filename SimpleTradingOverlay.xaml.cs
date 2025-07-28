@@ -725,7 +725,7 @@ namespace ScreenCaptureApp
                     // ShowWindow(_currentWindowHandle, SW_RESTORE);
 
                     // Небольшая задержка для активации окна
-                    System.Threading.Thread.Sleep(1000);
+                    System.Threading.Thread.Sleep(500);
 
                     // Отправляем нажатие клавиши Escape
                     PostMessage(_currentWindowHandle, WM_KEYDOWN, (IntPtr)VK_ESCAPE, IntPtr.Zero);
