@@ -903,26 +903,8 @@ namespace ScreenCaptureApp
                 
                 Logger.LogInfo($"CaptureData saved to database: ID={queueItem.CaptureData.ID}");
                 
-                // Если это Forex брокер, добавляем трендовую линию в GForex
-                if (brokerState.CurrentBroker == BrokerType.Forex)
-                {
-                    bool success = await AddTrendlineToGForexAsync(queueItem.Stroke);
-                    
-                    if (success)
-                    {
-                        Logger.LogInfo("Trendline successfully added to GForex");
-                    }
-                    else
-                    {
-                        Logger.LogError("Failed to add trendline to GForex");
-                    }
-                }
-                
-                // Удаляем штрих с экрана
-                RemoveStrokeFromCanvas(queueItem.Stroke);
-                
-                // Обновляем фоновое изображение
-                SetBackgroundImage();
+                // Закрываем CanvasWindow и выполняем действия с мышью в том же потоке
+                await ProcessTradingStrokeWithMouseActionsAsync(queueItem.Stroke);
                 
                 Logger.LogInfo($"Trading stroke processing completed: ID={queueItem.CaptureData.ID}");
             }
@@ -1232,7 +1214,157 @@ namespace ScreenCaptureApp
         }
 
         /// <summary>
-        /// Добавляет трендовую линию в GForex на основе штриха
+        /// Обрабатывает торговый штрих с действиями мыши в том же потоке
+        /// </summary>
+        private async Task ProcessTradingStrokeWithMouseActionsAsync(Stroke stroke)
+        {
+            try
+            {
+                if (jForexService == null)
+                {
+                    Logger.LogError("JForex service is not initialized");
+                    return;
+                }
+
+                // Получаем точки штриха
+                var points = stroke.StylusPoints;
+                if (points.Count < 2)
+                {
+                    Logger.LogError("Stroke has less than 2 points, cannot create trendline");
+                    return;
+                }
+
+                // Берем первую и последнюю точки штриха
+                var firstPoint = points[0];
+                var lastPoint = points[points.Count - 1];
+
+                // Конвертируем координаты из InkCanvas в экранные координаты
+                var firstScreenPoint = DrawingCanvas.PointToScreen(new System.Windows.Point(firstPoint.X, firstPoint.Y));
+                var lastScreenPoint = DrawingCanvas.PointToScreen(new System.Windows.Point(lastPoint.X, lastPoint.Y));
+
+                Logger.LogInfo($"Processing trading stroke: TargetWindowHandle={targetWindowHandle.ToInt64()}, Point1=({firstScreenPoint.X}, {firstScreenPoint.Y}), Point2=({lastScreenPoint.X}, {lastScreenPoint.Y})");
+
+                // Закрываем CanvasWindow
+                Logger.LogInfo("Closing CanvasWindow for trading mode");
+                this.Close();
+
+                // Небольшая задержка для закрытия окна
+                await Task.Delay(100);
+
+                // Активируем целевое окно и устанавливаем его в foreground
+                if (!jForexService.ActivateWindow(targetWindowHandle))
+                {
+                    Logger.LogError("Failed to activate target window");
+                    return;
+                }
+
+                // Небольшая задержка для стабилизации
+                await Task.Delay(200);
+
+                // Если это Forex брокер, добавляем трендовую линию
+                if (brokerState.CurrentBroker == BrokerType.Forex)
+                {
+                    await AddTrendlineToGForexDirectlyAsync(targetWindowHandle, firstScreenPoint, lastScreenPoint);
+                }
+                else
+                {
+                    // Для Binary брокеров можно добавить другую логику
+                    Logger.LogInfo("Binary broker detected - no specific action defined");
+                }
+
+                Logger.LogInfo("Trading stroke processing with mouse actions completed");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Error processing trading stroke with mouse actions: {ex.Message}", ex);
+            }
+        }
+
+        /// <summary>
+        /// Добавляет трендовую линию в GForex напрямую с действиями мыши
+        /// </summary>
+        private async Task AddTrendlineToGForexDirectlyAsync(IntPtr targetWindowHandle, System.Windows.Point firstScreenPoint, System.Windows.Point lastScreenPoint)
+        {
+            try
+            {
+                Logger.LogInfo("Adding trendline to GForex with direct mouse actions");
+
+                // Отправляем ESC для сброса предыдущих действий
+                jForexService.SendEscKey(targetWindowHandle);
+                await Task.Delay(100);
+
+                // Отправляем нажатие клавиши A для активации инструмента трендовой линии
+                if (!jForexService.SendKeyPress(targetWindowHandle, 'A'))
+                {
+                    Logger.LogError("Failed to send key A");
+                    return;
+                }
+
+                await Task.Delay(200);
+
+                // Конвертируем экранные координаты в координаты окна
+                var windowPoint1 = ConvertScreenToWindowCoordinates(firstScreenPoint, targetWindowHandle);
+                var windowPoint2 = ConvertScreenToWindowCoordinates(lastScreenPoint, targetWindowHandle);
+
+                Logger.LogInfo($"Converted coordinates: Point1=({windowPoint1.X}, {windowPoint1.Y}), Point2=({windowPoint2.X}, {windowPoint2.Y})");
+
+                // Кликаем на первую точку
+                if (!jForexService.ClickAtPosition(targetWindowHandle, windowPoint1.X, windowPoint1.Y))
+                {
+                    Logger.LogError("Failed to click on first point");
+                    return;
+                }
+
+                await Task.Delay(100);
+
+                // Кликаем на вторую точку
+                if (!jForexService.ClickAtPosition(targetWindowHandle, windowPoint2.X, windowPoint2.Y))
+                {
+                    Logger.LogError("Failed to click on second point");
+                    return;
+                }
+
+                // Отправляем ESC для завершения
+                jForexService.SendEscKey(targetWindowHandle);
+
+                Logger.LogInfo("Trendline successfully added to GForex with direct mouse actions");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Error adding trendline to GForex directly: {ex.Message}", ex);
+            }
+        }
+
+        /// <summary>
+        /// Конвертирует экранные координаты в координаты окна
+        /// </summary>
+        private System.Drawing.Point ConvertScreenToWindowCoordinates(System.Windows.Point screenPoint, IntPtr windowHandle)
+        {
+            try
+            {
+                // Получаем позицию окна на экране
+                JForexWindowsManagerService.RECT windowRect;
+                if (!JForexWindowsManagerService.GetWindowRect(windowHandle, out windowRect))
+                {
+                    Logger.LogError("Failed to get window position");
+                    return new System.Drawing.Point((int)screenPoint.X, (int)screenPoint.Y);
+                }
+
+                // Вычисляем относительные координаты в окне
+                int windowX = (int)screenPoint.X - windowRect.Left;
+                int windowY = (int)screenPoint.Y - windowRect.Top;
+
+                return new System.Drawing.Point(windowX, windowY);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Error converting screen coordinates to window coordinates: {ex.Message}", ex);
+                return new System.Drawing.Point((int)screenPoint.X, (int)screenPoint.Y);
+            }
+        }
+
+        /// <summary>
+        /// Добавляет трендовую линию в GForex на основе штриха (старый метод для совместимости)
         /// </summary>
         private async Task<bool> AddTrendlineToGForexAsync(Stroke stroke)
         {

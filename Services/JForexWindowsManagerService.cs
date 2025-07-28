@@ -156,7 +156,7 @@ namespace ScreenCaptureApp.Services
         /// <summary>
         /// Активирует окно GForex
         /// </summary>
-        private bool ActivateWindow(IntPtr windowHandle)
+        public bool ActivateWindow(IntPtr windowHandle)
         {
             try
             {
@@ -193,7 +193,7 @@ namespace ScreenCaptureApp.Services
         /// <summary>
         /// Отправляет нажатие клавиши в окно
         /// </summary>
-        private bool SendKeyPress(IntPtr windowHandle, char key)
+        public bool SendKeyPress(IntPtr windowHandle, char key)
         {
             try
             {
