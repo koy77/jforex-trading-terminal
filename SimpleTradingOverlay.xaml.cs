@@ -207,7 +207,11 @@ namespace ScreenCaptureApp
             if (!_isTradingPatternActive) return;
 
             _isTradingPatternActive = false;
+
             _clickCount = 0;
+            
+            // Скрываем рамку если она была показана
+            TradingPatternRectangle.Visibility = Visibility.Collapsed;
             
             if (_currentTradingPattern != null)
             {
@@ -228,6 +232,9 @@ namespace ScreenCaptureApp
             
             _currentTradingPattern.Status = TradingPatternStatus.Completed;
             TradingPatternCompleted?.Invoke(this, _currentTradingPattern);
+            
+            // Показываем желтую рамку вокруг области трейдинга
+            ShowTradingPatternRectangle(_currentTradingPattern.FirstClick, _currentTradingPattern.SecondClick);
             
             Logger.LogInfo($"Trading pattern completed: FirstClick={_currentTradingPattern.FirstClick}, SecondClick={_currentTradingPattern.SecondClick}");
             
@@ -521,6 +528,9 @@ namespace ScreenCaptureApp
                 CancelTradingPattern();
             }
             
+            // Скрываем рамку
+            TradingPatternRectangle.Visibility = Visibility.Collapsed;
+            
             if (mouseHook != IntPtr.Zero)
             {
                 UnhookWindowsHookEx(mouseHook);
@@ -534,6 +544,90 @@ namespace ScreenCaptureApp
         {
             base.OnSourceInitialized(e);
             source = HwndSource.FromHwnd(new WindowInteropHelper(this).Handle);
+        }
+
+        /// <summary>
+        /// Показывает желтую рамку вокруг области трейдинга
+        /// </summary>
+        private void ShowTradingPatternRectangle(TradingPoint firstClick, TradingPoint secondClick)
+        {
+            try
+            {
+                if (_currentWindowHandle == IntPtr.Zero)
+                {
+                    Logger.LogWarning("Cannot show trading pattern rectangle: no current window handle");
+                    return;
+                }
+
+                // Получаем размеры и позицию окна
+                RECT windowRect;
+                if (!GetWindowRect(_currentWindowHandle, out windowRect))
+                {
+                    Logger.LogError("Failed to get window rect for trading pattern rectangle");
+                    return;
+                }
+
+                // Конвертируем координаты из виртуального экрана в координаты окна
+                var windowPoint1 = ConvertVirtualScreenToWindowCoordinates(firstClick.X, firstClick.Y, windowRect);
+                var windowPoint2 = ConvertVirtualScreenToWindowCoordinates(secondClick.X, secondClick.Y, windowRect);
+
+                Logger.LogInfo($"Original clicks: FirstClick=({firstClick.X}, {firstClick.Y}), SecondClick=({secondClick.X}, {secondClick.Y})");
+                Logger.LogInfo($"Window points: Point1=({windowPoint1.X}, {windowPoint1.Y}), Point2=({windowPoint2.X}, {windowPoint2.Y})");
+
+                // Вычисляем границы области с паддингом 20 пикселей
+                int left = Math.Min(windowPoint1.X, windowPoint2.X) - 20;
+                int top = Math.Min(windowPoint1.Y, windowPoint2.Y) - 20;
+                int right = Math.Max(windowPoint1.X, windowPoint2.X) + 20;
+                int bottom = Math.Max(windowPoint1.Y, windowPoint2.Y) + 20;
+
+                // Устанавливаем размеры и позицию рамки
+                TradingPatternRectangle.Width = right - left;
+                TradingPatternRectangle.Height = bottom - top;
+                
+                // Позиционируем рамку относительно окна JForex
+                TradingPatternRectangle.Margin = new Thickness(left, top, 0, 0);
+                TradingPatternRectangle.Visibility = Visibility.Visible;
+
+                Logger.LogInfo($"Trading pattern rectangle shown: Left={left}, Top={top}, Width={TradingPatternRectangle.Width}, Height={TradingPatternRectangle.Height}");
+                Logger.LogInfo($"Window rect: Left={windowRect.Left}, Top={windowRect.Top}, Right={windowRect.Right}, Bottom={windowRect.Bottom}");
+
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("Error showing trading pattern rectangle", ex);
+            }
+        }
+
+        /// <summary>
+        /// Конвертирует координаты виртуального экрана в координаты окна
+        /// </summary>
+        private System.Drawing.Point ConvertVirtualScreenToWindowCoordinates(int virtualX, int virtualY, RECT windowRect)
+        {
+            // Конвертируем X координату с учетом мультимониторной системы
+            int xVirtual = virtualX;
+            if (System.Windows.Forms.Screen.AllScreens.Length > 1)
+            {
+                int firstScreenWidth = System.Windows.Forms.Screen.AllScreens[0].Bounds.Width;
+                if (virtualX >= firstScreenWidth)
+                {
+                    xVirtual = virtualX - firstScreenWidth;
+                }
+            }
+
+            // Конвертируем Y координату с учетом виртуального экрана
+            int yVirtual = virtualY - System.Windows.Forms.Screen.AllScreens[0].Bounds.Top;
+
+            // Координаты окна относительно виртуального экрана
+            int windowLeft = windowRect.Left;
+            int windowTop = windowRect.Top;
+
+            // Конвертируем координаты в координаты окна
+            int windowX = xVirtual - windowLeft;
+            int windowY = yVirtual - windowTop;
+
+            Logger.LogDebug($"ConvertVirtualScreenToWindowCoordinates: virtualX={virtualX}, virtualY={virtualY}, xVirtual={xVirtual}, yVirtual={yVirtual}, windowLeft={windowLeft}, windowTop={windowTop}, windowX={windowX}, windowY={windowY}");
+
+            return new System.Drawing.Point(windowX, windowY);
         }
     }
 } 

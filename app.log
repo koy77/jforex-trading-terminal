@@ -1,471 +1,67 @@
-[2025-07-28 11:00:23.671] [INFO] app.log file deleted successfully
-[2025-07-28 11:00:23.934] [INFO] Applied default toolbar settings for window 3998124
-[2025-07-28 11:00:23.935] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 11:00:25.099] [DEBUG] S key detected and service is enabled
-[2025-07-28 11:00:25.099] [DEBUG] SimpleTradingOverlay.OnSKeyPressed() called
-[2025-07-28 11:00:25.099] [INFO] S key pressed - starting trading pattern creation
-[2025-07-28 11:00:25.099] [INFO] Started trading pattern creation for window 3998124 (symbol: XAUUSD)
-[2025-07-28 11:00:25.261] [INFO] First click recorded at (2898, 249)
-[2025-07-28 11:00:25.629] [INFO] Second click recorded at (3102, 288)
-[2025-07-28 11:00:25.629] [INFO] Trading pattern completed: FirstClick=(2898, 249), SecondClick=(3102, 288)
-[2025-07-28 11:00:25.842] [DEBUG] Escape key detected and service is enabled
-[2025-07-28 11:00:25.843] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-28 11:00:25.843] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-07-28 11:00:25.843] [DEBUG] No overlay to close
-[2025-07-28 11:00:25.843] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-28 11:00:26.046] [INFO] Applied default toolbar settings for window 1837144
-[2025-07-28 11:00:26.046] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 11:00:44.766] [INFO] Applied default toolbar settings for window 3998124
-[2025-07-28 11:00:44.766] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 11:00:51.358] [INFO] Applied default toolbar settings for window 1837144
-[2025-07-28 11:00:51.358] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 11:00:53.005] [INFO] Applied default toolbar settings for window 3998124
-[2025-07-28 11:00:53.005] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 11:00:53.802] [DEBUG] Escape key detected and service is enabled
-[2025-07-28 11:00:53.802] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-28 11:00:53.803] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-07-28 11:00:53.803] [DEBUG] No overlay to close
-[2025-07-28 11:00:53.803] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-28 11:00:57.734] [INFO] Applied default toolbar settings for window 1837144
-[2025-07-28 11:00:57.734] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 11:00:59.431] [INFO] MainWindow closing - cleaning up resources
-[2025-07-28 11:00:59.439] [INFO] SimpleTradingOverlay closed
-[2025-07-28 11:00:59.442] [INFO] Disconnecting from MT4 socket
-[2025-07-28 11:00:59.444] [INFO] MT4 socket read operation cancelled
-[2025-07-28 11:00:59.444] [INFO] MT4 socket read loop ended
-[2025-07-28 11:00:59.445] [INFO] Disconnecting from Pocket Option socket
-[2025-07-28 11:00:59.445] [INFO] All services cleaned up
-[2025-07-28 11:00:59.445] [INFO] MainWindow cleanup completed
-[2025-07-28 11:00:59.446] [INFO] Pocket Option socket read operation cancelled
-[2025-07-28 11:00:59.446] [INFO] Disconnecting from MT4 socket
-[2025-07-28 11:00:59.446] [INFO] Pocket Option socket read loop ended
-[2025-07-28 11:00:59.447] [WARNING] Not connected to MT4 socket
-[2025-07-28 11:00:59.447] [INFO] Disconnecting from Pocket Option socket
-[2025-07-28 11:00:59.447] [WARNING] Not connected to Pocket Option socket
-[2025-07-28 11:00:59.447] [INFO] All services cleaned up
-[2025-07-28 11:00:59.463] [DEBUG] MT4 Connection: Disconnected
-[2025-07-28 11:00:59.464] [INFO] MT4 Connection status: Disconnected
-[2025-07-28 11:00:59.466] [INFO] Successfully disconnected from Pocket Option socket
-[2025-07-28 11:00:59.467] [INFO] Successfully disconnected from MT4 socket
-[2025-07-28 11:00:59.467] [DEBUG] MT4 Connection: Disconnected
-[2025-07-28 11:00:59.467] [INFO] MT4 Connection status: Disconnected
-[2025-07-28 11:03:04.047] [INFO] MT4 Socket Service initialized
-[2025-07-28 11:03:04.057] [INFO] Binary Options Socket Service initialized
-[2025-07-28 11:03:04.070] [INFO] All services registered in DI container
-[2025-07-28 11:03:04.075] [INFO] Attempting to connect to Pocket Option socket at 192.168.0.3:65300
-[2025-07-28 11:03:04.093] [INFO] Successfully connected to Pocket Option socket at 192.168.0.3:65300
-[2025-07-28 11:03:04.096] [INFO] Starting to read messages from Pocket Option socket
-[2025-07-28 11:03:04.098] [INFO] Received from Pocket Option socket: {"hello": "Binary API Server", "status": "connected", "version": "1.0.0"}
-[2025-07-28 11:03:04.280] [INFO] MT4 Socket Service initialized in MainWindow
-[2025-07-28 11:03:04.281] [INFO] MT4 Socket Service subscribed to CaptureTrackingService BreakoutDetected event
-[2025-07-28 11:03:04.282] [INFO] Binary Options Socket Service subscribed to CaptureTrackingService BreakoutDetected event
-[2025-07-28 11:03:04.336] [INFO] Mouse hook set successfully
-[2025-07-28 11:03:04.337] [INFO] SimpleTradingOverlay initialized successfully
-[2025-07-28 11:03:04.772] [INFO] Attempting to connect to MT4 socket at 127.0.0.1:23456
-[2025-07-28 11:03:04.777] [INFO] Successfully connected to MT4 socket at 127.0.0.1:23456
-[2025-07-28 11:03:04.777] [DEBUG] MT4 Connection: Connected
-[2025-07-28 11:03:04.777] [INFO] MT4 Connection status: Connected
-[2025-07-28 11:03:04.778] [INFO] MT4 Socket: Connection status indicator updated to Connected (Green)
-[2025-07-28 11:03:04.780] [INFO] Starting to read messages from MT4 socket
-[2025-07-28 11:03:04.781] [INFO] Received from MT4 socket: {"event":"welcome","version":"1.4.0","server_name":"RIPPER_MT4_SOCKET_SERVER","port":"23456","debug_mode":false,"symbol_suffix":".s","account":{"balance":6707.94000000,"equity":6707.94000000,"margin":0.00000000,"free_margin":6707.94000000,"currency":"USD","company":"PU Prime Ltd","server":"PUPrime-Demo"}}
-{"event":"watchlist_stats","data":{"XAUUSD.s":{"total":1,"buy":0,"sell":1,"tline_total":0,"tline_buy":0,"tline_sell":0,"shortline_total":1,"shortline_buy":0,"shortline_sell":1}}}
-[2025-07-28 11:03:04.799] [WARNING] MT4 Socket: Failed to parse JSON message: '{' is invalid after a single JSON value. Expected end of data. LineNumber: 1 | BytePositionInLine: 0.
-[2025-07-28 11:03:04.801] [DEBUG] MT4: {"event":"welcome","version":"1.4.0","server_name":"RIPPER_MT4_SOCKET_SERVER","port":"23456","debug_mode":false,"symbol_suffix":".s","account":{"balance":6707.94000000,"equity":6707.94000000,"margin":0.00000000,"free_margin":6707.94000000,"currency":"USD","company":"PU Prime Ltd","server":"PUPrime-Demo"}}
-{"event":"watchlist_stats","data":{"XAUUSD.s":{"total":1,"buy":0,"sell":1,"tline_total":0,"tline_buy":0,"tline_sell":0,"shortline_total":1,"shortline_buy":0,"shortline_sell":1}}}
-[2025-07-28 11:03:06.614] [INFO] Applied default toolbar settings for window 1837144
-[2025-07-28 11:03:06.658] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 11:03:07.908] [INFO] Applied default toolbar settings for window 3998124
-[2025-07-28 11:03:07.908] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 11:03:11.601] [DEBUG] S key detected and service is enabled
-[2025-07-28 11:03:11.602] [DEBUG] SimpleTradingOverlay.OnSKeyPressed() called
-[2025-07-28 11:03:11.602] [INFO] S key pressed - starting trading pattern creation
-[2025-07-28 11:03:11.603] [INFO] Started trading pattern creation for window 3998124 (symbol: XAUUSD)
-[2025-07-28 11:03:11.908] [INFO] First click recorded at (3164, 321)
-[2025-07-28 11:03:12.331] [INFO] Second click recorded at (3300, 330)
-[2025-07-28 11:03:12.332] [INFO] Trading pattern completed: FirstClick=(3164, 321), SecondClick=(3300, 330)
-[2025-07-28 11:03:12.537] [DEBUG] Escape key detected and service is enabled
-[2025-07-28 11:03:12.538] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-28 11:03:12.538] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-07-28 11:03:12.538] [DEBUG] No overlay to close
-[2025-07-28 11:03:12.538] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-28 11:03:12.948] [INFO] Applied default toolbar settings for window 1837144
-[2025-07-28 11:03:12.949] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 11:03:42.493] [INFO] Applied toolbar settings for window 3998124: Risk=10, Duration=0, Broker=Forex
-[2025-07-28 11:03:42.494] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 11:03:45.820] [INFO] Applied default toolbar settings for window 1837144
-[2025-07-28 11:03:45.820] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 11:03:46.139] [INFO] Applied toolbar settings for window 3998124: Risk=10, Duration=0, Broker=Forex
-[2025-07-28 11:03:46.139] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 11:03:48.707] [INFO] Applied default toolbar settings for window 1837144
-[2025-07-28 11:03:48.708] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 11:03:49.816] [DEBUG] Escape key detected and service is enabled
-[2025-07-28 11:03:49.816] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-28 11:03:49.817] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-07-28 11:03:49.817] [DEBUG] No overlay to close
-[2025-07-28 11:03:49.817] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-28 11:03:52.444] [INFO] MainWindow closing - cleaning up resources
-[2025-07-28 11:03:52.449] [INFO] SimpleTradingOverlay closed
-[2025-07-28 11:03:52.451] [INFO] Disconnecting from MT4 socket
-[2025-07-28 11:03:52.452] [INFO] MT4 socket read operation cancelled
-[2025-07-28 11:03:52.452] [INFO] MT4 socket read loop ended
-[2025-07-28 11:03:52.452] [INFO] Disconnecting from Pocket Option socket
-[2025-07-28 11:03:52.453] [INFO] All services cleaned up
-[2025-07-28 11:03:52.453] [INFO] MainWindow cleanup completed
-[2025-07-28 11:03:52.453] [INFO] Pocket Option socket read operation cancelled
-[2025-07-28 11:03:52.453] [INFO] Disconnecting from MT4 socket
-[2025-07-28 11:03:52.453] [WARNING] Not connected to MT4 socket
-[2025-07-28 11:03:52.453] [INFO] Pocket Option socket read loop ended
-[2025-07-28 11:03:52.454] [INFO] Disconnecting from Pocket Option socket
-[2025-07-28 11:03:52.454] [WARNING] Not connected to Pocket Option socket
-[2025-07-28 11:03:52.454] [INFO] All services cleaned up
-[2025-07-28 11:03:52.473] [DEBUG] MT4 Connection: Disconnected
-[2025-07-28 11:03:52.474] [INFO] MT4 Connection status: Disconnected
-[2025-07-28 11:03:52.475] [INFO] Successfully disconnected from Pocket Option socket
-[2025-07-28 11:03:52.476] [INFO] Successfully disconnected from MT4 socket
-[2025-07-28 11:03:52.476] [DEBUG] MT4 Connection: Disconnected
-[2025-07-28 11:03:52.477] [INFO] MT4 Connection status: Disconnected
-[2025-07-28 11:08:06.323] [INFO] MT4 Socket Service initialized
-[2025-07-28 11:08:06.333] [INFO] Binary Options Socket Service initialized
-[2025-07-28 11:08:06.338] [INFO] All services registered in DI container
-[2025-07-28 11:08:06.342] [INFO] Attempting to connect to Pocket Option socket at 192.168.0.3:65300
-[2025-07-28 11:08:06.358] [INFO] Successfully connected to Pocket Option socket at 192.168.0.3:65300
-[2025-07-28 11:08:06.360] [INFO] Starting to read messages from Pocket Option socket
-[2025-07-28 11:08:06.361] [INFO] Received from Pocket Option socket: {"hello": "Binary API Server", "status": "connected", "version": "1.0.0"}
-[2025-07-28 11:08:06.559] [INFO] MT4 Socket Service initialized in MainWindow
-[2025-07-28 11:08:06.561] [INFO] MT4 Socket Service subscribed to CaptureTrackingService BreakoutDetected event
-[2025-07-28 11:08:06.561] [INFO] Binary Options Socket Service subscribed to CaptureTrackingService BreakoutDetected event
-[2025-07-28 11:08:06.614] [INFO] Mouse hook set successfully
-[2025-07-28 11:08:06.614] [INFO] SimpleTradingOverlay initialized successfully
-[2025-07-28 11:08:07.087] [INFO] Attempting to connect to MT4 socket at 127.0.0.1:23456
-[2025-07-28 11:08:07.102] [INFO] Successfully connected to MT4 socket at 127.0.0.1:23456
-[2025-07-28 11:08:07.102] [DEBUG] MT4 Connection: Connected
-[2025-07-28 11:08:07.103] [INFO] MT4 Connection status: Connected
-[2025-07-28 11:08:07.103] [INFO] MT4 Socket: Connection status indicator updated to Connected (Green)
-[2025-07-28 11:08:07.106] [INFO] Starting to read messages from MT4 socket
-[2025-07-28 11:08:07.107] [INFO] Received from MT4 socket: {"event":"welcome","version":"1.4.0","server_name":"RIPPER_MT4_SOCKET_SERVER","port":"23456","debug_mode":false,"symbol_suffix":".s","account":{"balance":6707.94000000,"equity":6707.94000000,"margin":0.00000000,"free_margin":6707.94000000,"currency":"USD","company":"PU Prime Ltd","server":"PUPrime-Demo"}}
-{"event":"watchlist_stats","data":{"XAUUSD.s":{"total":1,"buy":0,"sell":1,"tline_total":0,"tline_buy":0,"tline_sell":0,"shortline_total":1,"shortline_buy":0,"shortline_sell":1}}}
-[2025-07-28 11:08:07.129] [WARNING] MT4 Socket: Failed to parse JSON message: '{' is invalid after a single JSON value. Expected end of data. LineNumber: 1 | BytePositionInLine: 0.
-[2025-07-28 11:08:07.130] [DEBUG] MT4: {"event":"welcome","version":"1.4.0","server_name":"RIPPER_MT4_SOCKET_SERVER","port":"23456","debug_mode":false,"symbol_suffix":".s","account":{"balance":6707.94000000,"equity":6707.94000000,"margin":0.00000000,"free_margin":6707.94000000,"currency":"USD","company":"PU Prime Ltd","server":"PUPrime-Demo"}}
-{"event":"watchlist_stats","data":{"XAUUSD.s":{"total":1,"buy":0,"sell":1,"tline_total":0,"tline_buy":0,"tline_sell":0,"shortline_total":1,"shortline_buy":0,"shortline_sell":1}}}
-[2025-07-28 11:08:08.538] [INFO] Applied default toolbar settings for window 3998124
-[2025-07-28 11:08:08.602] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 11:08:08.604] [INFO] Applied default toolbar settings for window 1837144
-[2025-07-28 11:08:08.604] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 11:08:11.761] [INFO] Applied default toolbar settings for window 3998124
-[2025-07-28 11:08:11.761] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 11:08:14.184] [INFO] Applied default toolbar settings for window 1837144
-[2025-07-28 11:08:14.185] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 11:08:14.608] [INFO] Applied default toolbar settings for window 3998124
-[2025-07-28 11:08:14.608] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 11:08:14.880] [INFO] Applied default toolbar settings for window 1837144
-[2025-07-28 11:08:14.880] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 11:08:16.456] [INFO] Applied default toolbar settings for window 3998124
-[2025-07-28 11:08:16.456] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 11:08:16.689] [INFO] Applied default toolbar settings for window 1837144
-[2025-07-28 11:08:16.689] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 11:08:23.433] [INFO] Applied default toolbar settings for window 3998124
-[2025-07-28 11:08:23.434] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 11:08:26.665] [INFO] Applied toolbar settings for window 1837144: Risk=10, Duration=3, Broker=PocketOption
-[2025-07-28 11:08:26.666] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 11:08:27.208] [INFO] Applied toolbar settings for window 3998124: Risk=10, Duration=0, Broker=Quotex
-[2025-07-28 11:08:27.209] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 11:08:27.512] [INFO] Applied toolbar settings for window 1837144: Risk=10, Duration=3, Broker=PocketOption
-[2025-07-28 11:08:27.513] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 11:08:27.841] [INFO] Applied toolbar settings for window 3998124: Risk=10, Duration=0, Broker=Quotex
-[2025-07-28 11:08:27.841] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 11:08:28.232] [INFO] Applied toolbar settings for window 1837144: Risk=10, Duration=3, Broker=PocketOption
-[2025-07-28 11:08:28.233] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 11:08:28.720] [INFO] Applied toolbar settings for window 3998124: Risk=10, Duration=0, Broker=Quotex
-[2025-07-28 11:08:28.721] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 11:08:28.992] [INFO] Applied toolbar settings for window 1837144: Risk=10, Duration=3, Broker=PocketOption
-[2025-07-28 11:08:28.993] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 11:08:29.297] [INFO] Applied toolbar settings for window 3998124: Risk=10, Duration=0, Broker=Quotex
-[2025-07-28 11:08:29.297] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 11:08:30.489] [INFO] Applied toolbar settings for window 1837144: Risk=10, Duration=3, Broker=PocketOption
-[2025-07-28 11:08:30.489] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 11:08:30.744] [INFO] Applied toolbar settings for window 3998124: Risk=10, Duration=0, Broker=Quotex
-[2025-07-28 11:08:30.744] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 11:08:31.864] [INFO] Applied toolbar settings for window 1837144: Risk=10, Duration=3, Broker=PocketOption
-[2025-07-28 11:08:31.865] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 11:08:32.112] [INFO] Applied toolbar settings for window 3998124: Risk=10, Duration=0, Broker=Quotex
-[2025-07-28 11:08:32.113] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 11:08:34.200] [INFO] Applied toolbar settings for window 1837144: Risk=10, Duration=3, Broker=PocketOption
-[2025-07-28 11:08:34.200] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 11:08:34.488] [INFO] Applied toolbar settings for window 3998124: Risk=10, Duration=0, Broker=Quotex
-[2025-07-28 11:08:34.488] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 11:08:51.337] [INFO] Applied toolbar settings for window 1837144: Risk=10, Duration=3, Broker=PocketOption
-[2025-07-28 11:08:51.338] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 11:08:51.616] [INFO] Applied toolbar settings for window 3998124: Risk=10, Duration=0, Broker=Quotex
-[2025-07-28 11:08:51.616] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 11:08:51.880] [INFO] Applied toolbar settings for window 1837144: Risk=10, Duration=3, Broker=PocketOption
-[2025-07-28 11:08:51.880] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 11:08:52.344] [INFO] Applied toolbar settings for window 3998124: Risk=10, Duration=0, Broker=Quotex
-[2025-07-28 11:08:52.345] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 11:08:52.648] [INFO] Applied toolbar settings for window 1837144: Risk=10, Duration=3, Broker=PocketOption
-[2025-07-28 11:08:52.648] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 11:08:53.016] [INFO] Applied toolbar settings for window 3998124: Risk=10, Duration=0, Broker=Quotex
-[2025-07-28 11:08:53.016] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 11:09:14.744] [INFO] Applied toolbar settings for window 1837144: Risk=10, Duration=3, Broker=PocketOption
-[2025-07-28 11:09:14.745] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 11:09:15.069] [DEBUG] Space key detected and service is enabled
-[2025-07-28 11:09:15.073] [DEBUG] Target window captured (Handle: 0x1C0858)
-[2025-07-28 11:09:15.108] [INFO] Applied toolbar settings for handle=1837144: Risk=10, Duration=3, Broker=PocketOption
-[2025-07-28 11:09:15.223] [INFO] Window activated - focus set to InkCanvas
-[2025-07-28 11:09:15.245] [INFO] Window loaded for handler 1837144
-[2025-07-28 11:09:15.388] [INFO] InkCanvas initialized successfully with Yellow brush
-[2025-07-28 11:09:15.389] [INFO] Canvas loaded: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\1837144.xaml
-[2025-07-28 11:09:15.390] [INFO] Brush mode updated: Simple mode
-[2025-07-28 11:09:15.390] [INFO] Active symbol display hidden - no active symbol
-[2025-07-28 11:09:15.440] [DEBUG] Canvas window opened
-[2025-07-28 11:09:15.440] [DEBUG] New CanvasWindow opened
-[2025-07-28 11:09:16.324] [INFO] Mouse move on InkCanvas at 918;361
-[2025-07-28 11:09:16.326] [INFO] Mouse move on InkCanvas at 945;361
-[2025-07-28 11:09:16.327] [INFO] Mouse move on InkCanvas at 974;364
-[2025-07-28 11:09:16.335] [INFO] Mouse move on InkCanvas at 994;367
-[2025-07-28 11:09:16.343] [INFO] Mouse move on InkCanvas at 1008;370
-[2025-07-28 11:09:16.351] [INFO] Mouse move on InkCanvas at 1017;372
-[2025-07-28 11:09:16.359] [INFO] Mouse move on InkCanvas at 1023;374
-[2025-07-28 11:09:16.367] [INFO] Mouse move on InkCanvas at 1025;376
-[2025-07-28 11:09:16.375] [INFO] Mouse move on InkCanvas at 1026;376
-[2025-07-28 11:09:16.383] [INFO] Mouse move on InkCanvas at 1025;377
-[2025-07-28 11:09:16.391] [INFO] Mouse move on InkCanvas at 1020;379
-[2025-07-28 11:09:16.399] [INFO] Mouse move on InkCanvas at 1011;381
-[2025-07-28 11:09:16.407] [INFO] Mouse move on InkCanvas at 997;385
-[2025-07-28 11:09:16.415] [INFO] Mouse move on InkCanvas at 982;388
-[2025-07-28 11:09:16.423] [INFO] Mouse move on InkCanvas at 965;393
-[2025-07-28 11:09:16.431] [INFO] Mouse move on InkCanvas at 953;398
-[2025-07-28 11:09:16.439] [INFO] Mouse move on InkCanvas at 944;402
-[2025-07-28 11:09:16.447] [INFO] Mouse move on InkCanvas at 941;406
-[2025-07-28 11:09:16.455] [INFO] Mouse move on InkCanvas at 940;409
-[2025-07-28 11:09:16.463] [INFO] Mouse move on InkCanvas at 940;411
-[2025-07-28 11:09:16.471] [INFO] Mouse move on InkCanvas at 946;415
-[2025-07-28 11:09:16.479] [INFO] Mouse move on InkCanvas at 956;419
-[2025-07-28 11:09:16.487] [INFO] Mouse move on InkCanvas at 969;424
-[2025-07-28 11:09:16.495] [INFO] Mouse move on InkCanvas at 986;429
-[2025-07-28 11:09:16.503] [INFO] Mouse move on InkCanvas at 1005;433
-[2025-07-28 11:09:16.511] [INFO] Mouse move on InkCanvas at 1019;437
-[2025-07-28 11:09:16.519] [INFO] Mouse move on InkCanvas at 1028;442
-[2025-07-28 11:09:16.527] [INFO] Mouse move on InkCanvas at 1032;445
-[2025-07-28 11:09:16.535] [INFO] Mouse move on InkCanvas at 1033;448
-[2025-07-28 11:09:16.543] [INFO] Mouse move on InkCanvas at 1032;452
-[2025-07-28 11:09:16.551] [INFO] Mouse move on InkCanvas at 1028;456
-[2025-07-28 11:09:16.559] [INFO] Mouse move on InkCanvas at 1023;463
-[2025-07-28 11:09:16.567] [INFO] Mouse move on InkCanvas at 1017;468
-[2025-07-28 11:09:16.575] [INFO] Mouse move on InkCanvas at 1011;474
-[2025-07-28 11:09:16.583] [INFO] Mouse move on InkCanvas at 1007;480
-[2025-07-28 11:09:16.591] [INFO] Mouse move on InkCanvas at 1005;486
-[2025-07-28 11:09:16.599] [INFO] Mouse move on InkCanvas at 1004;491
-[2025-07-28 11:09:16.607] [INFO] Mouse move on InkCanvas at 1004;497
-[2025-07-28 11:09:16.615] [INFO] Mouse move on InkCanvas at 1007;500
-[2025-07-28 11:09:16.624] [INFO] Mouse move on InkCanvas at 1010;504
-[2025-07-28 11:09:16.720] [INFO] Canvas saved: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\1837144.xaml, C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\1837144.png
-[2025-07-28 11:09:16.721] [INFO] Canvas saved properly
-[2025-07-28 11:09:16.722] [INFO] Mouse up on InkCanvas at 1010;504
-[2025-07-28 11:09:16.792] [INFO] Mouse move on InkCanvas at 974;521
-[2025-07-28 11:09:16.799] [INFO] Mouse move on InkCanvas at 976;521
-[2025-07-28 11:09:16.807] [INFO] Mouse move on InkCanvas at 979;520
-[2025-07-28 11:09:16.815] [INFO] Mouse move on InkCanvas at 984;518
-[2025-07-28 11:09:16.823] [INFO] Mouse move on InkCanvas at 991;514
-[2025-07-28 11:09:16.831] [INFO] Mouse move on InkCanvas at 998;509
-[2025-07-28 11:09:16.839] [INFO] Mouse move on InkCanvas at 1007;503
-[2025-07-28 11:09:16.847] [INFO] Mouse move on InkCanvas at 1017;494
-[2025-07-28 11:09:16.855] [INFO] Mouse move on InkCanvas at 1028;482
-[2025-07-28 11:09:16.863] [INFO] Mouse move on InkCanvas at 1039;463
-[2025-07-28 11:09:16.871] [INFO] Mouse move on InkCanvas at 1048;443
-[2025-07-28 11:09:16.879] [INFO] Mouse move on InkCanvas at 1052;425
-[2025-07-28 11:09:16.887] [INFO] Mouse move on InkCanvas at 1052;411
-[2025-07-28 11:09:16.895] [INFO] Mouse move on InkCanvas at 1046;393
-[2025-07-28 11:09:16.903] [INFO] Mouse move on InkCanvas at 1035;375
-[2025-07-28 11:09:16.968] [INFO] Canvas saved: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\1837144.xaml, C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\1837144.png
-[2025-07-28 11:09:16.968] [INFO] Canvas saved properly
-[2025-07-28 11:09:16.969] [INFO] Mouse up on InkCanvas at 1035;375
-[2025-07-28 11:09:17.312] [INFO] Mouse move on InkCanvas at 1101;401
-[2025-07-28 11:09:17.319] [INFO] Mouse move on InkCanvas at 1105;403
-[2025-07-28 11:09:17.327] [INFO] Mouse move on InkCanvas at 1113;405
-[2025-07-28 11:09:17.335] [INFO] Mouse move on InkCanvas at 1126;407
-[2025-07-28 11:09:17.343] [INFO] Mouse move on InkCanvas at 1141;411
-[2025-07-28 11:09:17.351] [INFO] Mouse move on InkCanvas at 1163;416
-[2025-07-28 11:09:17.359] [INFO] Mouse move on InkCanvas at 1185;424
-[2025-07-28 11:09:17.367] [INFO] Mouse move on InkCanvas at 1204;431
-[2025-07-28 11:09:17.375] [INFO] Mouse move on InkCanvas at 1222;437
-[2025-07-28 11:09:17.383] [INFO] Mouse move on InkCanvas at 1233;443
-[2025-07-28 11:09:17.391] [INFO] Mouse move on InkCanvas at 1241;449
-[2025-07-28 11:09:17.399] [INFO] Mouse move on InkCanvas at 1248;455
-[2025-07-28 11:09:17.407] [INFO] Mouse move on InkCanvas at 1251;460
-[2025-07-28 11:09:17.415] [INFO] Mouse move on InkCanvas at 1251;466
-[2025-07-28 11:09:17.423] [INFO] Mouse move on InkCanvas at 1251;470
-[2025-07-28 11:09:17.431] [INFO] Mouse move on InkCanvas at 1250;477
-[2025-07-28 11:09:17.439] [INFO] Mouse move on InkCanvas at 1249;483
-[2025-07-28 11:09:17.447] [INFO] Mouse move on InkCanvas at 1247;490
-[2025-07-28 11:09:17.455] [INFO] Mouse move on InkCanvas at 1245;496
-[2025-07-28 11:09:17.463] [INFO] Mouse move on InkCanvas at 1244;500
-[2025-07-28 11:09:17.471] [INFO] Mouse move on InkCanvas at 1244;503
-[2025-07-28 11:09:17.479] [INFO] Mouse move on InkCanvas at 1244;505
-[2025-07-28 11:09:17.487] [INFO] Mouse move on InkCanvas at 1247;508
-[2025-07-28 11:09:17.495] [INFO] Mouse move on InkCanvas at 1252;511
-[2025-07-28 11:09:17.503] [INFO] Mouse move on InkCanvas at 1260;514
-[2025-07-28 11:09:17.511] [INFO] Mouse move on InkCanvas at 1269;517
-[2025-07-28 11:09:17.519] [INFO] Mouse move on InkCanvas at 1278;519
-[2025-07-28 11:09:17.527] [INFO] Mouse move on InkCanvas at 1286;522
-[2025-07-28 11:09:17.535] [INFO] Mouse move on InkCanvas at 1292;524
-[2025-07-28 11:09:17.543] [INFO] Mouse move on InkCanvas at 1296;526
-[2025-07-28 11:09:17.551] [INFO] Mouse move on InkCanvas at 1300;527
-[2025-07-28 11:09:17.559] [INFO] Mouse move on InkCanvas at 1301;528
-[2025-07-28 11:09:17.567] [INFO] Mouse move on InkCanvas at 1302;530
-[2025-07-28 11:09:17.625] [INFO] Canvas saved: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\1837144.xaml, C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\1837144.png
-[2025-07-28 11:09:17.626] [INFO] Canvas saved properly
-[2025-07-28 11:09:17.626] [INFO] Mouse up on InkCanvas at 1302;530
-[2025-07-28 11:09:18.247] [INFO] Mouse move on InkCanvas at 1389;593
-[2025-07-28 11:09:18.279] [INFO] Mouse move on InkCanvas at 1390;593
-[2025-07-28 11:09:18.287] [INFO] Mouse move on InkCanvas at 1392;593
-[2025-07-28 11:09:18.295] [INFO] Mouse move on InkCanvas at 1396;593
-[2025-07-28 11:09:18.303] [INFO] Mouse move on InkCanvas at 1404;593
-[2025-07-28 11:09:18.311] [INFO] Mouse move on InkCanvas at 1411;591
-[2025-07-28 11:09:18.319] [INFO] Mouse move on InkCanvas at 1421;587
-[2025-07-28 11:09:18.327] [INFO] Mouse move on InkCanvas at 1431;581
-[2025-07-28 11:09:18.335] [INFO] Mouse move on InkCanvas at 1441;575
-[2025-07-28 11:09:18.343] [INFO] Mouse move on InkCanvas at 1451;568
-[2025-07-28 11:09:18.351] [INFO] Mouse move on InkCanvas at 1457;562
-[2025-07-28 11:09:18.359] [INFO] Mouse move on InkCanvas at 1461;556
-[2025-07-28 11:09:18.367] [INFO] Mouse move on InkCanvas at 1464;549
-[2025-07-28 11:09:18.375] [INFO] Mouse move on InkCanvas at 1465;542
-[2025-07-28 11:09:18.383] [INFO] Mouse move on InkCanvas at 1466;534
-[2025-07-28 11:09:18.391] [INFO] Mouse move on InkCanvas at 1466;528
-[2025-07-28 11:09:18.399] [INFO] Mouse move on InkCanvas at 1466;523
-[2025-07-28 11:09:18.407] [INFO] Mouse move on InkCanvas at 1466;519
-[2025-07-28 11:09:18.415] [INFO] Mouse move on InkCanvas at 1466;517
-[2025-07-28 11:09:18.431] [INFO] Mouse move on InkCanvas at 1466;516
-[2025-07-28 11:09:18.488] [INFO] Canvas saved: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\1837144.xaml, C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\1837144.png
-[2025-07-28 11:09:18.488] [INFO] Canvas saved properly
-[2025-07-28 11:09:18.489] [INFO] Mouse up on InkCanvas at 1466;516
-[2025-07-28 11:09:18.960] [INFO] Mouse move on InkCanvas at 1298;449
-[2025-07-28 11:09:18.967] [INFO] Mouse move on InkCanvas at 1298;452
-[2025-07-28 11:09:18.975] [INFO] Mouse move on InkCanvas at 1300;457
-[2025-07-28 11:09:18.983] [INFO] Mouse move on InkCanvas at 1301;461
-[2025-07-28 11:09:18.991] [INFO] Mouse move on InkCanvas at 1304;470
-[2025-07-28 11:09:18.999] [INFO] Mouse move on InkCanvas at 1309;480
-[2025-07-28 11:09:19.007] [INFO] Mouse move on InkCanvas at 1312;492
-[2025-07-28 11:09:19.015] [INFO] Mouse move on InkCanvas at 1315;504
-[2025-07-28 11:09:19.023] [INFO] Mouse move on InkCanvas at 1319;518
-[2025-07-28 11:09:19.031] [INFO] Mouse move on InkCanvas at 1320;530
-[2025-07-28 11:09:19.039] [INFO] Mouse move on InkCanvas at 1322;539
-[2025-07-28 11:09:19.047] [INFO] Mouse move on InkCanvas at 1324;549
-[2025-07-28 11:09:19.055] [INFO] Mouse move on InkCanvas at 1325;556
-[2025-07-28 11:09:19.063] [INFO] Mouse move on InkCanvas at 1326;561
-[2025-07-28 11:09:19.071] [INFO] Mouse move on InkCanvas at 1326;564
-[2025-07-28 11:09:19.079] [INFO] Mouse move on InkCanvas at 1326;566
-[2025-07-28 11:09:19.087] [INFO] Mouse move on InkCanvas at 1326;568
-[2025-07-28 11:09:19.095] [INFO] Mouse move on InkCanvas at 1326;570
-[2025-07-28 11:09:19.103] [INFO] Mouse move on InkCanvas at 1326;572
-[2025-07-28 11:09:19.119] [INFO] Mouse move on InkCanvas at 1326;573
-[2025-07-28 11:09:19.127] [INFO] Mouse move on InkCanvas at 1326;574
-[2025-07-28 11:09:19.135] [INFO] Mouse move on InkCanvas at 1326;575
-[2025-07-28 11:09:19.151] [INFO] Mouse move on InkCanvas at 1327;576
-[2025-07-28 11:09:19.175] [INFO] Mouse move on InkCanvas at 1328;576
-[2025-07-28 11:09:19.183] [INFO] Mouse move on InkCanvas at 1331;575
-[2025-07-28 11:09:19.191] [INFO] Mouse move on InkCanvas at 1333;573
-[2025-07-28 11:09:19.199] [INFO] Mouse move on InkCanvas at 1334;571
-[2025-07-28 11:09:19.258] [INFO] Canvas saved: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\1837144.xaml, C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\1837144.png
-[2025-07-28 11:09:19.258] [INFO] Canvas saved properly
-[2025-07-28 11:09:19.259] [INFO] Mouse up on InkCanvas at 1334;571
-[2025-07-28 11:09:19.504] [INFO] Mouse move on InkCanvas at 1339;569
-[2025-07-28 11:09:19.519] [INFO] Mouse move on InkCanvas at 1340;569
-[2025-07-28 11:09:19.527] [INFO] Mouse move on InkCanvas at 1341;568
-[2025-07-28 11:09:19.535] [INFO] Mouse move on InkCanvas at 1344;563
-[2025-07-28 11:09:19.543] [INFO] Mouse move on InkCanvas at 1348;557
-[2025-07-28 11:09:19.551] [INFO] Mouse move on InkCanvas at 1351;550
-[2025-07-28 11:09:19.559] [INFO] Mouse move on InkCanvas at 1354;542
-[2025-07-28 11:09:19.567] [INFO] Mouse move on InkCanvas at 1356;533
-[2025-07-28 11:09:19.575] [INFO] Mouse move on InkCanvas at 1358;526
-[2025-07-28 11:09:19.583] [INFO] Mouse move on InkCanvas at 1360;522
-[2025-07-28 11:09:19.591] [INFO] Mouse move on InkCanvas at 1361;519
-[2025-07-28 11:09:19.599] [INFO] Mouse move on InkCanvas at 1362;516
-[2025-07-28 11:09:19.607] [INFO] Mouse move on InkCanvas at 1364;513
-[2025-07-28 11:09:19.615] [INFO] Mouse move on InkCanvas at 1365;512
-[2025-07-28 11:09:19.623] [INFO] Mouse move on InkCanvas at 1366;510
-[2025-07-28 11:09:19.631] [INFO] Mouse move on InkCanvas at 1367;509
-[2025-07-28 11:09:19.823] [INFO] Mouse move on InkCanvas at 1367;508
-[2025-07-28 11:09:19.831] [INFO] Mouse move on InkCanvas at 1367;507
-[2025-07-28 11:09:19.847] [INFO] Mouse move on InkCanvas at 1368;507
-[2025-07-28 11:09:19.903] [INFO] Mouse move on InkCanvas at 1369;507
-[2025-07-28 11:09:19.911] [INFO] Mouse move on InkCanvas at 1370;509
-[2025-07-28 11:09:19.919] [INFO] Mouse move on InkCanvas at 1372;513
-[2025-07-28 11:09:19.927] [INFO] Mouse move on InkCanvas at 1373;520
-[2025-07-28 11:09:19.935] [INFO] Mouse move on InkCanvas at 1375;531
-[2025-07-28 11:09:19.943] [INFO] Mouse move on InkCanvas at 1376;543
-[2025-07-28 11:09:19.951] [INFO] Mouse move on InkCanvas at 1379;557
-[2025-07-28 11:09:19.959] [INFO] Mouse move on InkCanvas at 1381;569
-[2025-07-28 11:09:19.967] [INFO] Mouse move on InkCanvas at 1384;580
-[2025-07-28 11:09:19.975] [INFO] Mouse move on InkCanvas at 1387;588
-[2025-07-28 11:09:19.983] [INFO] Mouse move on InkCanvas at 1390;595
-[2025-07-28 11:09:19.991] [INFO] Mouse move on InkCanvas at 1392;598
-[2025-07-28 11:09:19.999] [INFO] Mouse move on InkCanvas at 1393;600
-[2025-07-28 11:09:20.063] [INFO] Mouse move on InkCanvas at 1393;601
-[2025-07-28 11:09:20.183] [INFO] Mouse move on InkCanvas at 1393;600
-[2025-07-28 11:09:20.191] [INFO] Mouse move on InkCanvas at 1393;599
-[2025-07-28 11:09:20.199] [INFO] Mouse move on InkCanvas at 1393;598
-[2025-07-28 11:09:20.215] [INFO] Mouse move on InkCanvas at 1393;597
-[2025-07-28 11:09:20.239] [INFO] Mouse move on InkCanvas at 1393;596
-[2025-07-28 11:09:20.247] [INFO] Mouse move on InkCanvas at 1393;594
-[2025-07-28 11:09:20.255] [INFO] Mouse move on InkCanvas at 1395;592
-[2025-07-28 11:09:20.263] [INFO] Mouse move on InkCanvas at 1397;589
-[2025-07-28 11:09:20.271] [INFO] Mouse move on InkCanvas at 1402;583
-[2025-07-28 11:09:20.279] [INFO] Mouse move on InkCanvas at 1407;575
-[2025-07-28 11:09:20.287] [INFO] Mouse move on InkCanvas at 1413;568
-[2025-07-28 11:09:20.295] [INFO] Mouse move on InkCanvas at 1420;559
-[2025-07-28 11:09:20.303] [INFO] Mouse move on InkCanvas at 1428;549
-[2025-07-28 11:09:20.311] [INFO] Mouse move on InkCanvas at 1437;538
-[2025-07-28 11:09:20.319] [INFO] Mouse move on InkCanvas at 1449;523
-[2025-07-28 11:09:20.327] [INFO] Mouse move on InkCanvas at 1464;503
-[2025-07-28 11:09:20.335] [INFO] Mouse move on InkCanvas at 1478;482
-[2025-07-28 11:09:20.343] [INFO] Mouse move on InkCanvas at 1494;457
-[2025-07-28 11:09:20.351] [INFO] Mouse move on InkCanvas at 1507;440
-[2025-07-28 11:09:20.359] [INFO] Mouse move on InkCanvas at 1514;432
-[2025-07-28 11:09:20.367] [INFO] Mouse move on InkCanvas at 1519;427
-[2025-07-28 11:09:20.375] [INFO] Mouse move on InkCanvas at 1522;425
-[2025-07-28 11:09:20.433] [INFO] Mouse move on InkCanvas at 1523;424
-[2025-07-28 11:09:20.493] [INFO] Canvas saved: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\1837144.xaml, C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\1837144.png
-[2025-07-28 11:09:20.493] [INFO] Canvas saved properly
-[2025-07-28 11:09:20.494] [INFO] Mouse up on InkCanvas at 1523;424
-[2025-07-28 11:09:21.520] [INFO] Mouse move on InkCanvas at 1179;642
-[2025-07-28 11:09:21.527] [INFO] Mouse move on InkCanvas at 1180;640
-[2025-07-28 11:09:21.535] [INFO] Mouse move on InkCanvas at 1180;639
-[2025-07-28 11:09:21.543] [INFO] Mouse move on InkCanvas at 1182;636
-[2025-07-28 11:09:21.551] [INFO] Mouse move on InkCanvas at 1185;631
-[2025-07-28 11:09:21.559] [INFO] Mouse move on InkCanvas at 1189;623
-[2025-07-28 11:09:21.567] [INFO] Mouse move on InkCanvas at 1194;613
-[2025-07-28 11:09:21.575] [INFO] Mouse move on InkCanvas at 1201;602
-[2025-07-28 11:09:21.583] [INFO] Mouse move on InkCanvas at 1210;587
-[2025-07-28 11:09:21.591] [INFO] Mouse move on InkCanvas at 1221;570
-[2025-07-28 11:09:21.599] [INFO] Mouse move on InkCanvas at 1231;552
-[2025-07-28 11:09:21.607] [INFO] Mouse move on InkCanvas at 1239;539
-[2025-07-28 11:09:21.615] [INFO] Mouse move on InkCanvas at 1246;526
-[2025-07-28 11:09:21.623] [INFO] Mouse move on InkCanvas at 1253;515
-[2025-07-28 11:09:21.631] [INFO] Mouse move on InkCanvas at 1260;505
-[2025-07-28 11:09:21.639] [INFO] Mouse move on InkCanvas at 1265;495
-[2025-07-28 11:09:21.647] [INFO] Mouse move on InkCanvas at 1269;485
-[2025-07-28 11:09:27.936] [INFO] Mouse move on InkCanvas at 1332;442
-[2025-07-28 11:09:29.251] [INFO] Canvas saved: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\1837144.xaml, C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\1837144.png
-[2025-07-28 11:09:29.252] [INFO] Canvas saved properly
-[2025-07-28 11:09:29.252] [INFO] Mouse up on InkCanvas at 1332;442
-[2025-07-28 11:09:29.252] [DEBUG] Escape key detected and service is enabled
-[2025-07-28 11:09:29.254] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-28 11:09:29.254] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-07-28 11:09:29.254] [DEBUG] Closing canvas window
-[2025-07-28 11:09:29.255] [INFO] Window closing: saving canvas
-[2025-07-28 11:09:29.335] [INFO] Canvas saved: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\1837144.xaml, C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\1837144.png
-[2025-07-28 11:09:29.335] [INFO] Canvas saved properly
-[2025-07-28 11:09:29.341] [DEBUG] Canvas window closed
-[2025-07-28 11:09:29.341] [DEBUG] No overlay to close
-[2025-07-28 11:09:29.341] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-28 11:09:29.343] [INFO] Applied toolbar settings for window 3998124: Risk=10, Duration=0, Broker=Forex
-[2025-07-28 11:09:29.343] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 11:09:29.344] [DEBUG] Escape key detected and service is enabled
-[2025-07-28 11:09:29.344] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-28 11:09:29.344] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-07-28 11:09:29.344] [DEBUG] No overlay to close
-[2025-07-28 11:09:29.344] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-28 11:09:29.368] [INFO] Applied toolbar settings for window 1837144: Risk=10, Duration=3, Broker=PocketOption
-[2025-07-28 11:09:29.369] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 11:09:38.703] [INFO] Applied toolbar settings for window 3998124: Risk=10, Duration=0, Broker=Forex
-[2025-07-28 11:09:38.704] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
+[2025-07-28 11:27:54.140] [INFO] app.log file deleted successfully
+[2025-07-28 11:27:55.112] [DEBUG] S key detected and service is enabled
+[2025-07-28 11:27:55.112] [DEBUG] SimpleTradingOverlay.OnSKeyPressed() called
+[2025-07-28 11:27:55.112] [INFO] S key pressed - starting trading pattern creation
+[2025-07-28 11:27:55.113] [INFO] Started trading pattern creation for window 1837144 (symbol: XAUUSD)
+[2025-07-28 11:27:55.314] [INFO] First click recorded at (98, 369)
+[2025-07-28 11:27:55.954] [INFO] Second click recorded at (179, 347)
+[2025-07-28 11:27:55.954] [DEBUG] ConvertVirtualScreenToWindowCoordinates: virtualX=98, virtualY=369, xVirtual=98, yVirtual=369, windowLeft=0, windowTop=0, windowX=98, windowY=369
+[2025-07-28 11:27:55.955] [DEBUG] ConvertVirtualScreenToWindowCoordinates: virtualX=179, virtualY=347, xVirtual=179, yVirtual=347, windowLeft=0, windowTop=0, windowX=179, windowY=347
+[2025-07-28 11:27:55.955] [INFO] Original clicks: FirstClick=(98, 369), SecondClick=(179, 347)
+[2025-07-28 11:27:55.955] [INFO] Window points: Point1=(98, 369), Point2=(179, 347)
+[2025-07-28 11:27:55.956] [INFO] Trading pattern rectangle shown: Left=78, Top=327, Width=121, Height=62
+[2025-07-28 11:27:55.956] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-28 11:27:55.956] [INFO] Trading pattern completed: FirstClick=(98, 369), SecondClick=(179, 347)
+[2025-07-28 11:27:57.176] [DEBUG] S key detected and service is enabled
+[2025-07-28 11:27:57.176] [DEBUG] SimpleTradingOverlay.OnSKeyPressed() called
+[2025-07-28 11:27:57.176] [INFO] S key pressed - starting trading pattern creation
+[2025-07-28 11:27:57.176] [INFO] Started trading pattern creation for window 1837144 (symbol: XAUUSD)
+[2025-07-28 11:27:57.538] [INFO] First click recorded at (198, 292)
+[2025-07-28 11:27:58.055] [DEBUG] Escape key detected and service is enabled
+[2025-07-28 11:27:58.056] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-28 11:27:58.056] [INFO] Escape key pressed - cancelling trading pattern
+[2025-07-28 11:27:58.056] [INFO] Trading pattern cancelled
+[2025-07-28 11:27:58.056] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-28 11:27:58.057] [DEBUG] No overlay to close
+[2025-07-28 11:27:58.057] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-28 11:27:58.200] [DEBUG] Escape key detected and service is enabled
+[2025-07-28 11:27:58.200] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-28 11:27:58.200] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-28 11:27:58.201] [DEBUG] No overlay to close
+[2025-07-28 11:27:58.201] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-28 11:27:58.712] [DEBUG] S key detected and service is enabled
+[2025-07-28 11:27:58.712] [DEBUG] SimpleTradingOverlay.OnSKeyPressed() called
+[2025-07-28 11:27:58.712] [INFO] S key pressed - starting trading pattern creation
+[2025-07-28 11:27:58.712] [INFO] Started trading pattern creation for window 1837144 (symbol: XAUUSD)
+[2025-07-28 11:27:58.954] [INFO] First click recorded at (460, 214)
+[2025-07-28 11:27:59.410] [INFO] Second click recorded at (616, 241)
+[2025-07-28 11:27:59.410] [DEBUG] ConvertVirtualScreenToWindowCoordinates: virtualX=460, virtualY=214, xVirtual=460, yVirtual=214, windowLeft=0, windowTop=0, windowX=460, windowY=214
+[2025-07-28 11:27:59.410] [DEBUG] ConvertVirtualScreenToWindowCoordinates: virtualX=616, virtualY=241, xVirtual=616, yVirtual=241, windowLeft=0, windowTop=0, windowX=616, windowY=241
+[2025-07-28 11:27:59.411] [INFO] Original clicks: FirstClick=(460, 214), SecondClick=(616, 241)
+[2025-07-28 11:27:59.411] [INFO] Window points: Point1=(460, 214), Point2=(616, 241)
+[2025-07-28 11:27:59.411] [INFO] Trading pattern rectangle shown: Left=440, Top=194, Width=196, Height=67
+[2025-07-28 11:27:59.412] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-28 11:27:59.412] [INFO] Trading pattern completed: FirstClick=(460, 214), SecondClick=(616, 241)
+[2025-07-28 11:28:00.200] [DEBUG] Escape key detected and service is enabled
+[2025-07-28 11:28:00.200] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-28 11:28:00.200] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-28 11:28:00.201] [DEBUG] No overlay to close
+[2025-07-28 11:28:00.201] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-28 11:28:00.343] [DEBUG] Escape key detected and service is enabled
+[2025-07-28 11:28:00.344] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-28 11:28:00.344] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-28 11:28:00.345] [DEBUG] No overlay to close
+[2025-07-28 11:28:00.345] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-28 11:28:24.951] [DEBUG] S key detected and service is enabled
+[2025-07-28 11:28:24.952] [DEBUG] SimpleTradingOverlay.OnSKeyPressed() called
+[2025-07-28 11:28:24.952] [INFO] S key pressed - starting trading pattern creation
+[2025-07-28 11:28:24.952] [INFO] Started trading pattern creation for window 1837144 (symbol: XAUUSD)
+[2025-07-28 11:28:25.209] [INFO] First click recorded at (2167, 189)
+[2025-07-28 11:28:26.665] [INFO] Second click recorded at (2853, 549)
+[2025-07-28 11:28:26.666] [DEBUG] ConvertVirtualScreenToWindowCoordinates: virtualX=2167, virtualY=189, xVirtual=247, yVirtual=189, windowLeft=0, windowTop=0, windowX=247, windowY=189
+[2025-07-28 11:28:26.666] [DEBUG] ConvertVirtualScreenToWindowCoordinates: virtualX=2853, virtualY=549, xVirtual=933, yVirtual=549, windowLeft=0, windowTop=0, windowX=933, windowY=549
+[2025-07-28 11:28:26.666] [INFO] Original clicks: FirstClick=(2167, 189), SecondClick=(2853, 549)
+[2025-07-28 11:28:26.667] [INFO] Window points: Point1=(247, 189), Point2=(933, 549)
+[2025-07-28 11:28:26.667] [INFO] Trading pattern rectangle shown: Left=227, Top=169, Width=726, Height=400
+[2025-07-28 11:28:26.668] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-28 11:28:26.668] [INFO] Trading pattern completed: FirstClick=(2167, 189), SecondClick=(2853, 549)

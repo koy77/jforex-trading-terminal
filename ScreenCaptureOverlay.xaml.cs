@@ -584,6 +584,7 @@ namespace ScreenCaptureApp
             });
         }
 
+
         private async void CompleteCapture()
         {
             double x = Canvas.GetLeft(SelectionRectangle);
