@@ -61,7 +61,7 @@ namespace ScreenCaptureApp.Helpers
                             breakoutX > 0)
                         {
                             // Вычисляем левую границу поиска: правая линия минус координата пробоя
-                            searchLeftBoundary = rightVerticalLineX - (breakoutX - 4);
+                            searchLeftBoundary = rightVerticalLineX - breakoutX + 4;
                             Logger.LogDebug($"RectangleBreakDetector: Using metadata breakoutX={breakoutX}, searchLeftBoundary={searchLeftBoundary} (rightX={rightVerticalLineX} - breakoutX={breakoutX})");
                         }
                         else
@@ -127,7 +127,7 @@ namespace ScreenCaptureApp.Helpers
                     // Сохраняем отладочное изображение
                     if (!string.IsNullOrEmpty(debugPath))
                     {
-                        SaveDebugVisualization(image, rightVerticalLineX, leftVerticalLineX, topY, bottomY, analysisStartY, analysisEndY, lookingForRedPixels, debugPath, result, clusterX, clusterStartY, clusterEndY);
+                        SaveDebugVisualization(image, rightVerticalLineX, leftVerticalLineX, searchLeftBoundary, topY, bottomY, analysisStartY, analysisEndY, lookingForRedPixels, debugPath, result, clusterX, clusterStartY, clusterEndY);
                     }
                     
                     return result;
@@ -139,7 +139,7 @@ namespace ScreenCaptureApp.Helpers
                     // Сохраняем отладочное изображение даже если пробой не найден
                     if (!string.IsNullOrEmpty(debugPath))
                     {
-                        SaveDebugVisualization(image, rightVerticalLineX, leftVerticalLineX, topY, bottomY, analysisStartY, analysisEndY, lookingForRedPixels, debugPath, RectangleBreakResult.NoBreakout, -1, -1, -1);
+                        SaveDebugVisualization(image, rightVerticalLineX, leftVerticalLineX, searchLeftBoundary, topY, bottomY, analysisStartY, analysisEndY, lookingForRedPixels, debugPath, RectangleBreakResult.NoBreakout, -1, -1, -1);
                     }
                     
                     return RectangleBreakResult.NoBreakout;
@@ -731,7 +731,7 @@ namespace ScreenCaptureApp.Helpers
         /// <summary>
         /// Создает отладочное изображение для визуализации процесса поиска пробоя
         /// </summary>
-        private void SaveDebugVisualization(Bitmap originalImage, int rightEdgeX, int leftEdgeX, int topY, int bottomY, int analysisStartY, int analysisEndY, bool lookingForRedPixels, string debugPath, RectangleBreakResult result, int clusterX = -1, int clusterStartY = -1, int clusterEndY = -1)
+        private void SaveDebugVisualization(Bitmap originalImage, int rightEdgeX, int leftEdgeX, int searchLeftBoundary, int topY, int bottomY, int analysisStartY, int analysisEndY, bool lookingForRedPixels, string debugPath, RectangleBreakResult result, int clusterX = -1, int clusterStartY = -1, int clusterEndY = -1)
         {
             try
             {
@@ -753,36 +753,45 @@ namespace ScreenCaptureApp.Helpers
                         g.DrawLine(greenPen, leftEdgeX, 0, leftEdgeX, originalImage.Height);
                     }
 
-                    // 3. Выделяем верхнюю и нижнюю горизонтальные линии (синие линии)
+                    // 3. Выделяем левую границу поиска (красная линия)
+                    if (searchLeftBoundary != leftEdgeX)
+                    {
+                        using (var redPen = new Pen(Color.Red, 2))
+                        {
+                            g.DrawLine(redPen, searchLeftBoundary, 0, searchLeftBoundary, originalImage.Height);
+                        }
+                    }
+
+                    // 4. Выделяем верхнюю и нижнюю горизонтальные линии (синие линии)
                     using (var bluePen = new Pen(Color.Blue, 2))
                     {
                         g.DrawLine(bluePen, leftEdgeX, topY, rightEdgeX, topY);
                         g.DrawLine(bluePen, leftEdgeX, bottomY, rightEdgeX, bottomY);
                     }
 
-                    // 4. Выделяем область прямоугольника между линиями (полупрозрачный желтый)
+                    // 5. Выделяем область прямоугольника между линиями (полупрозрачный желтый)
                     using (var yellowBrush = new SolidBrush(Color.FromArgb(80, Color.Yellow)))
                     {
                         g.FillRectangle(yellowBrush, leftEdgeX, topY, rightEdgeX - leftEdgeX, bottomY - topY);
                     }
 
-                    // 5. Выделяем область анализа пробоя (полупрозрачный оранжевый)
+                    // 6. Выделяем область анализа пробоя (полупрозрачный оранжевый)
                     using (var orangeBrush = new SolidBrush(Color.FromArgb(60, Color.Orange)))
                     {
-                        g.FillRectangle(orangeBrush, leftEdgeX, analysisStartY, rightEdgeX - leftEdgeX, analysisEndY - analysisStartY);
+                        g.FillRectangle(orangeBrush, searchLeftBoundary, analysisStartY, rightEdgeX - searchLeftBoundary, analysisEndY - analysisStartY);
                     }
 
-                    // 6. Рисуем границы области анализа (зеленая рамка)
+                    // 7. Рисуем границы области анализа (зеленая рамка)
                     using (var greenPen = new Pen(Color.Lime, 2))
                     {
-                        g.DrawRectangle(greenPen, leftEdgeX, analysisStartY, rightEdgeX - leftEdgeX, analysisEndY - analysisStartY);
+                        g.DrawRectangle(greenPen, searchLeftBoundary, analysisStartY, rightEdgeX - searchLeftBoundary, analysisEndY - analysisStartY);
                     }
 
-                    // 7. Показываем все найденные пиксели целевого цвета в области анализа
+                    // 8. Показываем все найденные пиксели целевого цвета в области анализа
                     var targetColor = lookingForRedPixels ? Color.Red : Color.Green;
                     var targetBrush = new SolidBrush(Color.FromArgb(120, targetColor));
                     
-                    for (int x = leftEdgeX; x <= rightEdgeX; x++)
+                    for (int x = searchLeftBoundary; x <= rightEdgeX; x++)
                     {
                         for (int y = analysisStartY; y <= analysisEndY; y++)
                         {
@@ -798,7 +807,7 @@ namespace ScreenCaptureApp.Helpers
                         }
                     }
 
-                    // 7. Выделяем жёлтым цветом найденный кластер, который спровоцировал пробой
+                    // 9. Выделяем жёлтым цветом найденный кластер, который спровоцировал пробой
                     if (clusterX >= 0 && clusterStartY >= 0 && clusterEndY >= 0)
                     {
                         using (var yellowBrush = new SolidBrush(Color.FromArgb(150, Color.Yellow)))
