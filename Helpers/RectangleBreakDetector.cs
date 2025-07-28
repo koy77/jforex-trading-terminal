@@ -7,6 +7,7 @@ using ScreenCaptureApp.Services;
 using ScreenCaptureApp.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 
 namespace ScreenCaptureApp.Helpers
 {
@@ -150,16 +151,6 @@ namespace ScreenCaptureApp.Helpers
                 
                 g.DrawString(resultText, font, textBrush, 20, 15);
                 
-                // Статистика
-                string stats = $"Red: {redPoints.Count}, Green: {greenPoints.Count}";
-                var statsSize = g.MeasureString(stats, font);
-                var statsRect = new Rectangle(10, 40, (int)statsSize.Width + 20, (int)statsSize.Height + 10);
-                
-                using (var bgBrush2 = new SolidBrush(Color.FromArgb(200, Color.Black)))
-                    g.FillRectangle(bgBrush2, statsRect);
-                
-                g.DrawString(stats, font, textBrush, 20, 45);
-
                 vis.Save(path);
             }
         }
@@ -172,6 +163,196 @@ namespace ScreenCaptureApp.Helpers
         private bool IsRed(System.Drawing.Color pixel)
         {
             return pixel.R > 130 && pixel.G < 100 && pixel.B < 100;
+        }
+
+        /// <summary>
+        /// Анализирует изображение и строит мета-данные о найденных прямоугольниках
+        /// Алгоритм: справа налево находит первую вертикальную белую линию,
+        /// затем горизонтальные линии сверху и снизу, анализирует содержимое внутри
+        /// </summary>
+        public string BuildMetadata(Bitmap image)
+        {
+            try
+            {
+                Logger.LogDebug($"RectangleBreakDetector: Building metadata for image {image.Width}x{image.Height}");
+                
+                // Простая тестовая версия для проверки сохранения
+                var testMetadata = new
+                {
+                    timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"),
+                    imageSize = new { width = image.Width, height = image.Height },
+                    testMessage = "Test metadata from RectangleBreakDetector",
+                    pixelCount = image.Width * image.Height
+                };
+
+                return JsonSerializer.Serialize(testMetadata, new JsonSerializerOptions { WriteIndented = true });
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"RectangleBreakDetector: Error building metadata", ex);
+                return "{}";
+            }
+        }
+
+        /// <summary>
+        /// Ищет первую вертикальную белую линию справа налево
+        /// </summary>
+        private int FindRightmostVerticalWhiteLine(Bitmap image)
+        {
+            int minWhitePixelsInLine = image.Height / 3; // Минимум белых пикселей для линии
+            
+            for (int x = image.Width - 1; x >= 0; x--)
+            {
+                int whitePixelsInColumn = 0;
+                for (int y = 0; y < image.Height; y++)
+                {
+                    var pixel = image.GetPixel(x, y);
+                    if (IsWhite(pixel))
+                    {
+                        whitePixelsInColumn++;
+                    }
+                }
+                
+                if (whitePixelsInColumn >= minWhitePixelsInLine)
+                {
+                    return x;
+                }
+            }
+            
+            return -1; // Линия не найдена
+        }
+
+        /// <summary>
+        /// Ищет горизонтальные линии сверху и снизу
+        /// </summary>
+        private (int topY, int bottomY) FindHorizontalLines(Bitmap image, int verticalLineX)
+        {
+            int minWhitePixelsInLine = image.Width / 4; // Минимум белых пикселей для линии
+            int topY = -1, bottomY = -1;
+            
+            // Ищем верхнюю горизонтальную линию
+            for (int y = 0; y < image.Height / 2; y++)
+            {
+                int whitePixelsInRow = 0;
+                for (int x = 0; x <= verticalLineX; x++)
+                {
+                    var pixel = image.GetPixel(x, y);
+                    if (IsWhite(pixel))
+                    {
+                        whitePixelsInRow++;
+                    }
+                }
+                
+                if (whitePixelsInRow >= minWhitePixelsInLine)
+                {
+                    topY = y;
+                    break;
+                }
+            }
+            
+            // Ищем нижнюю горизонтальную линию
+            for (int y = image.Height - 1; y >= image.Height / 2; y--)
+            {
+                int whitePixelsInRow = 0;
+                for (int x = 0; x <= verticalLineX; x++)
+                {
+                    var pixel = image.GetPixel(x, y);
+                    if (IsWhite(pixel))
+                    {
+                        whitePixelsInRow++;
+                    }
+                }
+                
+                if (whitePixelsInRow >= minWhitePixelsInLine)
+                {
+                    bottomY = y;
+                    break;
+                }
+            }
+            
+            return (topY, bottomY);
+        }
+
+        /// <summary>
+        /// Анализирует содержимое внутри прямоугольника
+        /// </summary>
+        private object AnalyzeRectangleContent(Bitmap image, int rightEdgeX, int topY, int bottomY)
+        {
+            int redCount = 0, greenCount = 0, totalPixels = 0;
+            var redPoints = new List<Point>();
+            var greenPoints = new List<Point>();
+            
+            // Анализируем область внутри прямоугольника
+            for (int y = topY + 1; y < bottomY; y++)
+            {
+                for (int x = 0; x < rightEdgeX; x++)
+                {
+                    var pixel = image.GetPixel(x, y);
+                    totalPixels++;
+                    
+                    if (IsRed(pixel))
+                    {
+                        redCount++;
+                        redPoints.Add(new Point(x, y));
+                    }
+                    else if (IsGreen(pixel))
+                    {
+                        greenCount++;
+                        greenPoints.Add(new Point(x, y));
+                    }
+                }
+            }
+            
+            return new
+            {
+                totalPixels = totalPixels,
+                redPixels = redCount,
+                greenPixels = greenCount,
+                redRatio = totalPixels > 0 ? (double)redCount / totalPixels : 0,
+                greenRatio = totalPixels > 0 ? (double)greenCount / totalPixels : 0,
+                redPoints = redPoints.Count,
+                greenPoints = greenPoints.Count
+            };
+        }
+
+        /// <summary>
+        /// Находит расстояние от правой линии до содержимого
+        /// </summary>
+        private int FindDistanceToContent(Bitmap image, int rightEdgeX, int topY, int bottomY)
+        {
+            // Ищем самый правый красный или зеленый пиксель внутри прямоугольника
+            int rightmostContentX = -1;
+            
+            for (int y = topY + 1; y < bottomY; y++)
+            {
+                for (int x = rightEdgeX - 1; x >= 0; x--)
+                {
+                    var pixel = image.GetPixel(x, y);
+                    if (IsRed(pixel) || IsGreen(pixel))
+                    {
+                        if (x > rightmostContentX)
+                        {
+                            rightmostContentX = x;
+                        }
+                        break; // Нашли первый пиксель в этой строке
+                    }
+                }
+            }
+            
+            if (rightmostContentX == -1)
+            {
+                return 0; // Содержимое не найдено
+            }
+            
+            // Расстояние от правой линии до содержимого
+            return rightEdgeX - rightmostContentX;
+        }
+
+
+
+        private bool IsWhite(System.Drawing.Color pixel)
+        {
+            return pixel.R > 180 && pixel.G > 180 && pixel.B > 180;
         }
     }
 } 

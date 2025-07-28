@@ -1,338 +1,996 @@
-[2025-07-28 12:18:20.227] [INFO] app.log file deleted successfully
-[2025-07-28 12:18:20.227] [INFO] Trade counter reset successfully
-[2025-07-28 12:18:20.228] [INFO] Initialized 6 symbols in database
-[2025-07-28 12:18:22.381] [DEBUG] S key detected and service is enabled
-[2025-07-28 12:18:22.381] [DEBUG] SimpleTradingOverlay.OnSKeyPressed() called
-[2025-07-28 12:18:22.381] [INFO] S key pressed - starting trading pattern creation
-[2025-07-28 12:18:22.382] [INFO] Started trading pattern creation for window 1837144 (symbol: XAUUSD)
-[2025-07-28 12:18:22.949] [INFO] First click recorded at (1355, 572)
-[2025-07-28 12:18:23.839] [INFO] Second click recorded at (1453, 608)
-[2025-07-28 12:18:23.839] [INFO] Current window handle: 1837144
-[2025-07-28 12:18:23.840] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
-[2025-07-28 12:18:23.840] [INFO] Original clicks: FirstClick=(1355, 572), SecondClick=(1453, 608)
-[2025-07-28 12:18:23.840] [INFO] Pattern area: Left=1335, Top=552, Width=138, Height=76
-[2025-07-28 12:18:23.850] [INFO] TradingPatternOverlay shown at (1335, 552) with size 138x76
-[2025-07-28 12:18:23.850] [DEBUG] ConvertVirtualScreenToWindowCoordinates: virtualX=1355, virtualY=572, windowLeft=0, windowTop=0, windowX=1355, windowY=572
-[2025-07-28 12:18:23.851] [DEBUG] ConvertVirtualScreenToWindowCoordinates: virtualX=1453, virtualY=608, windowLeft=0, windowTop=0, windowX=1453, windowY=608
-[2025-07-28 12:18:23.873] [INFO] TradingPattern CaptureData saved: Symbol=XAUUSD, Direction=Down, X=1335, Y=552, W=138, H=76, Screenshot=C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728121823851\screenshot.png
-[2025-07-28 12:18:23.873] [INFO] Trading pattern completed: FirstClick=(1355, 572), SecondClick=(1453, 608)
-[2025-07-28 12:18:23.941] [DEBUG] Escape key detected and service is enabled
-[2025-07-28 12:18:23.941] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-28 12:18:23.941] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-07-28 12:18:23.942] [DEBUG] No overlay to close
-[2025-07-28 12:18:23.942] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-28 12:18:24.093] [DEBUG] Escape key detected and service is enabled
-[2025-07-28 12:18:24.093] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-28 12:18:24.094] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-07-28 12:18:24.094] [DEBUG] No overlay to close
-[2025-07-28 12:18:24.094] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-28 12:18:24.693] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 12:18:24.694] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728121823851, Handle=1837144, X=1335, Y=552, W=138, H=76
-[2025-07-28 12:18:24.707] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 138x76
-[2025-07-28 12:18:24.712] [DEBUG] TrendlineBreakDetector: Found 0 white pixels
-[2025-07-28 12:18:24.712] [DEBUG] TrendlineBreakDetector: Found 0 clusters
-[2025-07-28 12:18:24.712] [INFO] TrendlineBreakDetector: No white line cluster detected
-[2025-07-28 12:18:24.713] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728121823851\tracking.png] Trendline not detected.
-[2025-07-28 12:18:24.714] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728121823851\tracking.png: NoTrendline
-[2025-07-28 12:18:25.189] [DEBUG] Escape key detected and service is enabled
-[2025-07-28 12:18:25.189] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-28 12:18:25.189] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-07-28 12:18:25.189] [DEBUG] No overlay to close
-[2025-07-28 12:18:25.189] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-28 12:18:25.349] [DEBUG] Escape key detected and service is enabled
-[2025-07-28 12:18:25.349] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-28 12:18:25.349] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-07-28 12:18:25.349] [DEBUG] No overlay to close
-[2025-07-28 12:18:25.349] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-28 12:18:25.501] [DEBUG] Escape key detected and service is enabled
-[2025-07-28 12:18:25.501] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-28 12:18:25.501] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-07-28 12:18:25.502] [DEBUG] No overlay to close
-[2025-07-28 12:18:25.502] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-28 12:18:25.735] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 12:18:25.735] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728121823851, Handle=1837144, X=1335, Y=552, W=138, H=76
-[2025-07-28 12:18:25.753] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 138x76
-[2025-07-28 12:18:25.761] [DEBUG] TrendlineBreakDetector: Found 0 white pixels
-[2025-07-28 12:18:25.761] [DEBUG] TrendlineBreakDetector: Found 0 clusters
-[2025-07-28 12:18:25.761] [INFO] TrendlineBreakDetector: No white line cluster detected
-[2025-07-28 12:18:25.762] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728121823851\tracking.png] Trendline not detected.
-[2025-07-28 12:18:25.762] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728121823851\tracking.png: NoTrendline
-[2025-07-28 12:18:26.133] [DEBUG] Escape key detected and service is enabled
-[2025-07-28 12:18:26.133] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-28 12:18:26.133] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-07-28 12:18:26.134] [DEBUG] No overlay to close
-[2025-07-28 12:18:26.134] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-28 12:18:26.277] [DEBUG] Escape key detected and service is enabled
-[2025-07-28 12:18:26.277] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-28 12:18:26.277] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-07-28 12:18:26.278] [DEBUG] No overlay to close
-[2025-07-28 12:18:26.278] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-28 12:18:26.774] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 12:18:26.775] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728121823851, Handle=1837144, X=1335, Y=552, W=138, H=76
-[2025-07-28 12:18:26.793] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 138x76
-[2025-07-28 12:18:26.801] [DEBUG] TrendlineBreakDetector: Found 0 white pixels
-[2025-07-28 12:18:26.801] [DEBUG] TrendlineBreakDetector: Found 0 clusters
-[2025-07-28 12:18:26.801] [INFO] TrendlineBreakDetector: No white line cluster detected
-[2025-07-28 12:18:26.803] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728121823851\tracking.png] Trendline not detected.
-[2025-07-28 12:18:26.804] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728121823851\tracking.png: NoTrendline
-[2025-07-28 12:18:26.805] [DEBUG] Z hotkey detected and service is enabled
-[2025-07-28 12:18:26.805] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
-[2025-07-28 12:18:27.850] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 12:18:27.850] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728121823851, Handle=1837144, X=1335, Y=552, W=138, H=76
-[2025-07-28 12:18:27.868] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 138x76
-[2025-07-28 12:18:27.872] [DEBUG] TrendlineBreakDetector: Found 0 white pixels
-[2025-07-28 12:18:27.872] [DEBUG] TrendlineBreakDetector: Found 0 clusters
-[2025-07-28 12:18:27.872] [INFO] TrendlineBreakDetector: No white line cluster detected
-[2025-07-28 12:18:27.873] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728121823851\tracking.png] Trendline not detected.
-[2025-07-28 12:18:27.873] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728121823851\tracking.png: NoTrendline
-[2025-07-28 12:18:27.981] [DEBUG] Z hotkey detected and service is enabled
-[2025-07-28 12:18:27.981] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
-[2025-07-28 12:18:28.381] [DEBUG] Z hotkey detected and service is enabled
-[2025-07-28 12:18:28.381] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
-[2025-07-28 12:18:28.890] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 12:18:28.891] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728121823851, Handle=1837144, X=1335, Y=552, W=138, H=76
-[2025-07-28 12:18:28.909] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 138x76
-[2025-07-28 12:18:28.914] [DEBUG] TrendlineBreakDetector: Found 0 white pixels
-[2025-07-28 12:18:28.914] [DEBUG] TrendlineBreakDetector: Found 0 clusters
-[2025-07-28 12:18:28.914] [INFO] TrendlineBreakDetector: No white line cluster detected
-[2025-07-28 12:18:28.915] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728121823851\tracking.png] Trendline not detected.
-[2025-07-28 12:18:28.915] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728121823851\tracking.png: NoTrendline
-[2025-07-28 12:18:29.778] [INFO] CaptureTrackingService: Updated IsSkipped=True for capture ID=20250728121823851, Handle=1837144
-[2025-07-28 12:18:30.293] [DEBUG] Z hotkey detected and service is enabled
-[2025-07-28 12:18:30.293] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
-[2025-07-28 12:18:36.727] [INFO] Applied default toolbar settings for window 3998124
-[2025-07-28 12:18:36.728] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 12:18:57.084] [DEBUG] Escape key detected and service is enabled
-[2025-07-28 12:18:57.085] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-28 12:18:57.085] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-07-28 12:18:57.085] [DEBUG] No overlay to close
-[2025-07-28 12:18:57.086] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-28 12:18:57.244] [DEBUG] Escape key detected and service is enabled
-[2025-07-28 12:18:57.245] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-28 12:18:57.245] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-07-28 12:18:57.245] [DEBUG] No overlay to close
-[2025-07-28 12:18:57.245] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-28 12:18:57.372] [DEBUG] Escape key detected and service is enabled
-[2025-07-28 12:18:57.373] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-28 12:18:57.373] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-07-28 12:18:57.373] [DEBUG] No overlay to close
-[2025-07-28 12:18:57.373] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-28 12:19:03.327] [INFO] Applied default toolbar settings for window 1837144
-[2025-07-28 12:19:03.328] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 12:19:23.679] [INFO] Applied default toolbar settings for window 3998124
-[2025-07-28 12:19:23.679] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 12:20:02.310] [INFO] Applied default toolbar settings for window 1837144
-[2025-07-28 12:20:02.311] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 12:20:03.439] [INFO] Applied default toolbar settings for window 3998124
-[2025-07-28 12:20:03.439] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 12:20:12.134] [INFO] Applied default toolbar settings for window 1837144
-[2025-07-28 12:20:12.135] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 12:20:14.846] [INFO] Applied default toolbar settings for window 3998124
-[2025-07-28 12:20:14.846] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 12:20:30.579] [DEBUG] C key detected and service is enabled
-[2025-07-28 12:20:30.580] [DEBUG] C key pressed - clearing canvas
-[2025-07-28 12:20:30.630] [INFO] Applied default toolbar settings for window 1837144
-[2025-07-28 12:20:30.630] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 12:20:33.011] [DEBUG] Space key detected and service is enabled
-[2025-07-28 12:20:33.019] [DEBUG] Target window captured (Handle: 0xED063A)
-[2025-07-28 12:20:33.080] [INFO] Window activated - focus set to InkCanvas
-[2025-07-28 12:20:33.082] [INFO] Window loaded for handler 15533626
-[2025-07-28 12:20:33.200] [INFO] InkCanvas initialized successfully with Yellow brush
-[2025-07-28 12:20:33.201] [INFO] Canvas loaded: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\15533626.xaml
-[2025-07-28 12:20:33.201] [INFO] Brush mode updated: Simple mode
-[2025-07-28 12:20:33.202] [INFO] Active symbol display hidden - no active symbol
-[2025-07-28 12:20:33.224] [DEBUG] Canvas window opened
-[2025-07-28 12:20:33.224] [DEBUG] New CanvasWindow opened
-[2025-07-28 12:20:34.027] [DEBUG] Escape key detected and service is enabled
-[2025-07-28 12:20:34.028] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-28 12:20:34.028] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-07-28 12:20:34.028] [DEBUG] Closing canvas window
-[2025-07-28 12:20:34.029] [INFO] Window closing: saving canvas
-[2025-07-28 12:20:34.112] [INFO] Canvas saved: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\15533626.xaml, C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\15533626.png
-[2025-07-28 12:20:34.112] [INFO] Canvas saved properly
-[2025-07-28 12:20:34.116] [DEBUG] Canvas window closed
-[2025-07-28 12:20:34.117] [DEBUG] No overlay to close
-[2025-07-28 12:20:34.117] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-28 12:20:36.851] [DEBUG] Space key detected but service is disabled
-[2025-07-28 12:20:38.966] [INFO] Applied default toolbar settings for window 3998124
-[2025-07-28 12:20:38.966] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 12:21:22.323] [DEBUG] Escape key detected but service is disabled
-[2025-07-28 12:21:37.230] [INFO] Applied default toolbar settings for window 1837144
-[2025-07-28 12:21:37.230] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 12:21:41.458] [DEBUG] Space key detected but service is disabled
-[2025-07-28 12:21:48.178] [DEBUG] Space key detected but service is disabled
-[2025-07-28 12:21:53.298] [DEBUG] Space key detected but service is disabled
-[2025-07-28 12:21:55.083] [DEBUG] Space key detected but service is disabled
-[2025-07-28 12:21:56.258] [DEBUG] Space key detected but service is disabled
-[2025-07-28 12:21:58.914] [DEBUG] Space key detected but service is disabled
-[2025-07-28 12:21:59.674] [DEBUG] Space key detected but service is disabled
-[2025-07-28 12:22:00.554] [DEBUG] Space key detected but service is disabled
-[2025-07-28 12:22:26.498] [DEBUG] Escape key detected but service is disabled
-[2025-07-28 12:22:26.618] [DEBUG] Escape key detected but service is disabled
-[2025-07-28 12:22:26.762] [DEBUG] Escape key detected but service is disabled
-[2025-07-28 12:22:31.813] [INFO] Applied default toolbar settings for window 3998124
-[2025-07-28 12:22:31.813] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 12:49:44.975] [DEBUG] Space key detected but service is disabled
-[2025-07-28 12:49:50.371] [INFO] Applied default toolbar settings for window 1837144
-[2025-07-28 12:49:50.371] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 12:49:51.862] [INFO] MainWindow closing - cleaning up resources
-[2025-07-28 12:49:51.865] [INFO] SimpleTradingOverlay closed
-[2025-07-28 12:49:51.867] [INFO] Disconnecting from MT4 socket
-[2025-07-28 12:49:51.869] [INFO] MT4 socket read operation cancelled
-[2025-07-28 12:49:51.869] [INFO] MT4 socket read loop ended
-[2025-07-28 12:49:51.869] [INFO] Disconnecting from Pocket Option socket
-[2025-07-28 12:49:51.869] [INFO] All services cleaned up
-[2025-07-28 12:49:51.870] [INFO] MainWindow cleanup completed
-[2025-07-28 12:49:51.870] [INFO] Pocket Option socket read operation cancelled
-[2025-07-28 12:49:51.870] [INFO] Pocket Option socket read loop ended
-[2025-07-28 12:49:51.870] [INFO] Disconnecting from MT4 socket
-[2025-07-28 12:49:51.870] [WARNING] Not connected to MT4 socket
-[2025-07-28 12:49:51.870] [INFO] Disconnecting from Pocket Option socket
-[2025-07-28 12:49:51.870] [WARNING] Not connected to Pocket Option socket
-[2025-07-28 12:49:51.870] [INFO] All services cleaned up
-[2025-07-28 12:49:51.903] [DEBUG] MT4 Connection: Disconnected
-[2025-07-28 12:49:51.903] [INFO] MT4 Connection status: Disconnected
-[2025-07-28 12:49:51.905] [INFO] Successfully disconnected from Pocket Option socket
-[2025-07-28 12:57:38.627] [INFO] MT4 Socket Service initialized
-[2025-07-28 12:57:38.637] [INFO] Binary Options Socket Service initialized
-[2025-07-28 12:57:38.640] [INFO] All services registered in DI container
-[2025-07-28 12:57:38.644] [INFO] Attempting to connect to Pocket Option socket at 192.168.0.3:65300
-[2025-07-28 12:57:38.659] [INFO] Successfully connected to Pocket Option socket at 192.168.0.3:65300
-[2025-07-28 12:57:38.661] [INFO] Starting to read messages from Pocket Option socket
-[2025-07-28 12:57:38.662] [INFO] Received from Pocket Option socket: {"hello": "Binary API Server", "status": "connected", "version": "1.0.0"}
-[2025-07-28 12:57:38.829] [INFO] MT4 Socket Service initialized in MainWindow
-[2025-07-28 12:57:38.830] [INFO] MT4 Socket Service subscribed to CaptureTrackingService BreakoutDetected event
-[2025-07-28 12:57:38.830] [INFO] Binary Options Socket Service subscribed to CaptureTrackingService BreakoutDetected event
-[2025-07-28 12:57:38.883] [INFO] Mouse hook set successfully
-[2025-07-28 12:57:38.883] [INFO] SimpleTradingOverlay initialized successfully
-[2025-07-28 12:57:39.266] [INFO] Attempting to connect to MT4 socket at 127.0.0.1:23456
-[2025-07-28 12:57:39.281] [INFO] Successfully connected to MT4 socket at 127.0.0.1:23456
-[2025-07-28 12:57:39.281] [DEBUG] MT4 Connection: Connected
-[2025-07-28 12:57:39.282] [INFO] MT4 Connection status: Connected
-[2025-07-28 12:57:39.282] [INFO] MT4 Socket: Connection status indicator updated to Connected (Green)
-[2025-07-28 12:57:39.286] [INFO] Starting to read messages from MT4 socket
-[2025-07-28 12:57:39.295] [INFO] Received from MT4 socket: {"event":"welcome","version":"1.4.0","server_name":"RIPPER_MT4_SOCKET_SERVER","port":"23456","debug_mode":false,"symbol_suffix":".s","account":{"balance":6689.13000000,"equity":6687.77000000,"margin":6.67748000,"free_margin":6681.09252000,"currency":"USD","company":"PU Prime Ltd","server":"PUPrime-Demo"}}
-
-[2025-07-28 12:57:39.318] [INFO] MT4 Socket: Received unknown event type: welcome
-[2025-07-28 12:57:39.319] [DEBUG] MT4: {"event":"welcome","version":"1.4.0","server_name":"RIPPER_MT4_SOCKET_SERVER","port":"23456","debug_mode":false,"symbol_suffix":".s","account":{"balance":6689.13000000,"equity":6687.77000000,"margin":6.67748000,"free_margin":6681.09252000,"currency":"USD","company":"PU Prime Ltd","server":"PUPrime-Demo"}}
-
-[2025-07-28 12:57:39.319] [INFO] Received from MT4 socket: {"event":"watchlist_stats","data":{"XAUUSD.s":{"total":1,"buy":0,"sell":1,"tline_total":0,"tline_buy":0,"tline_sell":0,"shortline_total":1,"shortline_buy":0,"shortline_sell":1}}}
-[2025-07-28 12:57:39.320] [INFO] MT4 Socket: Received unknown event type: watchlist_stats
-[2025-07-28 12:57:39.320] [DEBUG] MT4: {"event":"watchlist_stats","data":{"XAUUSD.s":{"total":1,"buy":0,"sell":1,"tline_total":0,"tline_buy":0,"tline_sell":0,"shortline_total":1,"shortline_buy":0,"shortline_sell":1}}}
-[2025-07-28 12:57:40.009] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.36000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-135}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:40.011] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 12:57:40.035] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.36000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-135}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:41.004] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.36000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-135}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:41.004] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 12:57:41.009] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.36000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-135}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:41.997] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.34000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-133}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:41.998] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 12:57:42.001] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.34000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-133}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:42.998] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.34000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-133}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:42.998] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 12:57:43.000] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.34000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-133}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:43.999] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.34000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-133}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:43.999] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 12:57:44.002] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.34000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-133}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:45.011] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.34000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-133}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:45.012] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 12:57:45.020] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.34000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-133}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:46.023] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.34000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-133}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:46.023] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 12:57:46.025] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.34000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-133}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:47.011] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.34000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-133}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:47.012] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 12:57:47.014] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.34000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-133}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:48.010] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.34000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-133}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:48.011] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 12:57:48.014] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.34000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-133}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:49.007] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.34000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-133}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:49.007] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 12:57:49.009] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.34000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-133}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:49.998] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.27000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-126}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:49.999] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 12:57:50.000] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.27000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-126}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:51.011] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.26000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:51.011] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 12:57:51.012] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.26000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:51.447] [INFO] Applied default toolbar settings for window 1837144
-[2025-07-28 12:57:51.500] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 12:57:52.011] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.26000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:52.011] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 12:57:52.014] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.26000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:52.180] [INFO] Applied default toolbar settings for window 3998124
-[2025-07-28 12:57:52.181] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 12:57:53.014] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.26000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:53.014] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 12:57:53.016] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.26000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:54.010] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.26000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:54.011] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 12:57:54.012] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.26000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:55.005] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.26000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:55.006] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 12:57:55.008] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.26000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:55.348] [INFO] Applied default toolbar settings for window 1837144
-[2025-07-28 12:57:55.348] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-28 12:57:55.693] [INFO] Applied default toolbar settings for window 3998124
-[2025-07-28 12:57:55.693] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-28 12:57:56.008] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.26000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:56.008] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 12:57:56.011] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.26000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:57.009] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.27000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-126}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:57.009] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 12:57:57.011] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.27000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-126}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:58.001] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.27000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-126}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:58.002] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 12:57:58.013] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.27000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-126}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:59.011] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.27000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-126}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:59.011] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 12:57:59.020] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.27000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-126}},"total_balance":6689.13000000}
-
-[2025-07-28 12:57:59.616] [INFO] Sent message to MT4 socket: {"cmd":"close_positions","symbol":"XAUUSD.s"}
-
-[2025-07-28 12:57:59.911] [INFO] Received from MT4 socket: {"event":"orders_summary","total_balance":6687.86000000}
-
-[2025-07-28 12:57:59.911] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 12:57:59.912] [DEBUG] MT4: {"event":"orders_summary","total_balance":6687.86000000}
-
-[2025-07-28 12:57:59.912] [INFO] Received from MT4 socket: {"closed_count":1,"all_closed":true,"completed":"1","cmd":"close_positions"}
-[2025-07-28 12:57:59.914] [DEBUG] MT4: {"closed_count":1,"all_closed":true,"completed":"1","cmd":"close_positions"}
+[2025-07-28 13:27:06.507] [INFO] app.log file deleted successfully
+[2025-07-28 13:27:06.507] [INFO] Trade counter reset successfully
+[2025-07-28 13:27:06.518] [INFO] Initialized 6 symbols in database
+[2025-07-28 13:27:07.115] [INFO] Applied default toolbar settings for window 3998124
+[2025-07-28 13:27:07.116] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
+[2025-07-28 13:27:08.654] [DEBUG] Escape key detected and service is enabled
+[2025-07-28 13:27:08.655] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-28 13:27:08.656] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-28 13:27:08.656] [DEBUG] No overlay to close
+[2025-07-28 13:27:08.656] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-28 13:27:08.797] [DEBUG] Escape key detected and service is enabled
+[2025-07-28 13:27:08.797] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-28 13:27:08.798] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-28 13:27:08.798] [DEBUG] No overlay to close
+[2025-07-28 13:27:08.798] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-28 13:27:09.371] [DEBUG] S key detected and service is enabled
+[2025-07-28 13:27:09.372] [DEBUG] SimpleTradingOverlay.OnSKeyPressed() called
+[2025-07-28 13:27:09.372] [INFO] S key pressed - starting trading pattern creation
+[2025-07-28 13:27:09.373] [INFO] Started trading pattern creation for window 3998124 (symbol: XAUUSD)
+[2025-07-28 13:27:09.826] [INFO] First click recorded at (3347, 566)
+[2025-07-28 13:27:10.615] [INFO] Second click recorded at (3515, 545)
+[2025-07-28 13:27:10.619] [INFO] Current window handle: 3998124
+[2025-07-28 13:27:10.620] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-28 13:27:10.620] [INFO] Original clicks: FirstClick=(3347, 566), SecondClick=(3515, 545)
+[2025-07-28 13:27:10.620] [INFO] Pattern area: Left=3327, Top=525, Width=208, Height=61
+[2025-07-28 13:27:10.644] [INFO] TradingPatternOverlay shown at (3327, 525) with size 208x61
+[2025-07-28 13:27:10.644] [DEBUG] ConvertVirtualScreenToWindowCoordinates: virtualX=3347, virtualY=566, windowLeft=1920, windowTop=0, windowX=1427, windowY=566
+[2025-07-28 13:27:10.644] [DEBUG] ConvertVirtualScreenToWindowCoordinates: virtualX=3515, virtualY=545, windowLeft=1920, windowTop=0, windowX=1595, windowY=545
+[2025-07-28 13:27:10.645] [DEBUG] SimpleTradingOverlay: Creating metadata for capture ID=20250728132710645
+[2025-07-28 13:27:10.655] [DEBUG] RectangleBreakDetector: Building metadata for image 208x61
+[2025-07-28 13:27:10.669] [DEBUG] SimpleTradingOverlay: Created metadata for capture ID=20250728132710645, length=194
+[2025-07-28 13:27:10.687] [INFO] TradingPattern CaptureData saved: Symbol=XAUUSD, Direction=Up, X=1407, Y=525, W=208, H=61, Screenshot=C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\screenshot.png
+[2025-07-28 13:27:10.687] [INFO] Trading pattern completed: FirstClick=(3347, 566), SecondClick=(3515, 545)
+[2025-07-28 13:27:11.580] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:11.580] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:11.595] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:11.595] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:11.600] [DEBUG] RectangleBreakDetector: Found 515 red pixels and 344 green pixels
+[2025-07-28 13:27:11.600] [DEBUG] RectangleBreakDetector: Red ratio: 0,041, Green ratio: 0,027
+[2025-07-28 13:27:11.601] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,041, Green: 0,027
+[2025-07-28 13:27:11.608] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:11.608] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:12.622] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:12.622] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:12.634] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:12.635] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:12.640] [DEBUG] RectangleBreakDetector: Found 422 red pixels and 425 green pixels
+[2025-07-28 13:27:12.640] [DEBUG] RectangleBreakDetector: Red ratio: 0,033, Green ratio: 0,033
+[2025-07-28 13:27:12.640] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,033, Green: 0,033
+[2025-07-28 13:27:12.645] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:12.646] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:13.655] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:13.655] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:13.673] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:13.673] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:13.683] [DEBUG] RectangleBreakDetector: Found 422 red pixels and 425 green pixels
+[2025-07-28 13:27:13.683] [DEBUG] RectangleBreakDetector: Red ratio: 0,033, Green ratio: 0,033
+[2025-07-28 13:27:13.683] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,033, Green: 0,033
+[2025-07-28 13:27:13.692] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:13.692] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:14.708] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:14.708] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:14.726] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:14.726] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:14.731] [DEBUG] RectangleBreakDetector: Found 422 red pixels and 366 green pixels
+[2025-07-28 13:27:14.731] [DEBUG] RectangleBreakDetector: Red ratio: 0,033, Green ratio: 0,029
+[2025-07-28 13:27:14.731] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,033, Green: 0,029
+[2025-07-28 13:27:14.736] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:14.736] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:15.745] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:15.746] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:15.764] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:15.764] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:15.772] [DEBUG] RectangleBreakDetector: Found 515 red pixels and 344 green pixels
+[2025-07-28 13:27:15.772] [DEBUG] RectangleBreakDetector: Red ratio: 0,041, Green ratio: 0,027
+[2025-07-28 13:27:15.772] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,041, Green: 0,027
+[2025-07-28 13:27:15.777] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:15.777] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:16.794] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:16.794] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:16.813] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:16.813] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:16.822] [DEBUG] RectangleBreakDetector: Found 422 red pixels and 366 green pixels
+[2025-07-28 13:27:16.822] [DEBUG] RectangleBreakDetector: Red ratio: 0,033, Green ratio: 0,029
+[2025-07-28 13:27:16.822] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,033, Green: 0,029
+[2025-07-28 13:27:16.827] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:16.827] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:17.845] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:17.845] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:17.863] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:17.863] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:17.873] [DEBUG] RectangleBreakDetector: Found 422 red pixels and 366 green pixels
+[2025-07-28 13:27:17.873] [DEBUG] RectangleBreakDetector: Red ratio: 0,033, Green ratio: 0,029
+[2025-07-28 13:27:17.874] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,033, Green: 0,029
+[2025-07-28 13:27:17.882] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:17.883] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:18.896] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:18.896] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:18.914] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:18.914] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:18.922] [DEBUG] RectangleBreakDetector: Found 422 red pixels and 366 green pixels
+[2025-07-28 13:27:18.922] [DEBUG] RectangleBreakDetector: Red ratio: 0,033, Green ratio: 0,029
+[2025-07-28 13:27:18.923] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,033, Green: 0,029
+[2025-07-28 13:27:18.927] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:18.927] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:19.944] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:19.944] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:19.956] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:19.957] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:19.962] [DEBUG] RectangleBreakDetector: Found 422 red pixels and 425 green pixels
+[2025-07-28 13:27:19.962] [DEBUG] RectangleBreakDetector: Red ratio: 0,033, Green ratio: 0,033
+[2025-07-28 13:27:19.962] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,033, Green: 0,033
+[2025-07-28 13:27:19.968] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:19.968] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:20.984] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:20.985] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:20.998] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:20.999] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:21.003] [DEBUG] RectangleBreakDetector: Found 422 red pixels and 366 green pixels
+[2025-07-28 13:27:21.003] [DEBUG] RectangleBreakDetector: Red ratio: 0,033, Green ratio: 0,029
+[2025-07-28 13:27:21.003] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,033, Green: 0,029
+[2025-07-28 13:27:21.007] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:21.008] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:22.013] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:22.014] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:22.032] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:22.032] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:22.041] [DEBUG] RectangleBreakDetector: Found 422 red pixels and 366 green pixels
+[2025-07-28 13:27:22.041] [DEBUG] RectangleBreakDetector: Red ratio: 0,033, Green ratio: 0,029
+[2025-07-28 13:27:22.041] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,033, Green: 0,029
+[2025-07-28 13:27:22.047] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:22.047] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:23.062] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:23.062] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:23.074] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:23.074] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:23.079] [DEBUG] RectangleBreakDetector: Found 422 red pixels and 366 green pixels
+[2025-07-28 13:27:23.080] [DEBUG] RectangleBreakDetector: Red ratio: 0,033, Green ratio: 0,029
+[2025-07-28 13:27:23.080] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,033, Green: 0,029
+[2025-07-28 13:27:23.085] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:23.085] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:24.097] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:24.097] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:24.115] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:24.116] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:24.125] [DEBUG] RectangleBreakDetector: Found 357 red pixels and 368 green pixels
+[2025-07-28 13:27:24.125] [DEBUG] RectangleBreakDetector: Red ratio: 0,028, Green ratio: 0,029
+[2025-07-28 13:27:24.125] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,028, Green: 0,029
+[2025-07-28 13:27:24.133] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:24.134] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:25.149] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:25.150] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:25.168] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:25.168] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:25.178] [DEBUG] RectangleBreakDetector: Found 442 red pixels and 355 green pixels
+[2025-07-28 13:27:25.178] [DEBUG] RectangleBreakDetector: Red ratio: 0,035, Green ratio: 0,028
+[2025-07-28 13:27:25.178] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,035, Green: 0,028
+[2025-07-28 13:27:25.197] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:25.198] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:25.496] [INFO] Applied default toolbar settings for window 1837144
+[2025-07-28 13:27:25.496] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
+[2025-07-28 13:27:25.696] [INFO] Applied default toolbar settings for window 3998124
+[2025-07-28 13:27:25.697] [INFO] Overlay positioned on window 3998124 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
+[2025-07-28 13:27:26.202] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:26.202] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:26.218] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:26.218] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:26.223] [DEBUG] RectangleBreakDetector: Found 357 red pixels and 368 green pixels
+[2025-07-28 13:27:26.223] [DEBUG] RectangleBreakDetector: Red ratio: 0,028, Green ratio: 0,029
+[2025-07-28 13:27:26.223] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,028, Green: 0,029
+[2025-07-28 13:27:26.227] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:26.227] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:27.237] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:27.237] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:27.249] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:27.249] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:27.253] [DEBUG] RectangleBreakDetector: Found 357 red pixels and 368 green pixels
+[2025-07-28 13:27:27.254] [DEBUG] RectangleBreakDetector: Red ratio: 0,028, Green ratio: 0,029
+[2025-07-28 13:27:27.254] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,028, Green: 0,029
+[2025-07-28 13:27:27.258] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:27.258] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:28.266] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:28.266] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:28.277] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:28.277] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:28.282] [DEBUG] RectangleBreakDetector: Found 357 red pixels and 368 green pixels
+[2025-07-28 13:27:28.282] [DEBUG] RectangleBreakDetector: Red ratio: 0,028, Green ratio: 0,029
+[2025-07-28 13:27:28.283] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,028, Green: 0,029
+[2025-07-28 13:27:28.287] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:28.287] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:29.296] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:29.296] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:29.307] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:29.307] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:29.312] [DEBUG] RectangleBreakDetector: Found 357 red pixels and 368 green pixels
+[2025-07-28 13:27:29.312] [DEBUG] RectangleBreakDetector: Red ratio: 0,028, Green ratio: 0,029
+[2025-07-28 13:27:29.313] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,028, Green: 0,029
+[2025-07-28 13:27:29.317] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:29.317] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:30.326] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:30.326] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:30.337] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:30.337] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:30.342] [DEBUG] RectangleBreakDetector: Found 357 red pixels and 368 green pixels
+[2025-07-28 13:27:30.342] [DEBUG] RectangleBreakDetector: Red ratio: 0,028, Green ratio: 0,029
+[2025-07-28 13:27:30.342] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,028, Green: 0,029
+[2025-07-28 13:27:30.347] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:30.347] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:31.363] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:31.363] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:31.374] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:31.374] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:31.379] [DEBUG] RectangleBreakDetector: Found 357 red pixels and 368 green pixels
+[2025-07-28 13:27:31.379] [DEBUG] RectangleBreakDetector: Red ratio: 0,028, Green ratio: 0,029
+[2025-07-28 13:27:31.380] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,028, Green: 0,029
+[2025-07-28 13:27:31.384] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:31.385] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:32.402] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:32.402] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:32.421] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:32.421] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:32.426] [DEBUG] RectangleBreakDetector: Found 444 red pixels and 355 green pixels
+[2025-07-28 13:27:32.426] [DEBUG] RectangleBreakDetector: Red ratio: 0,035, Green ratio: 0,028
+[2025-07-28 13:27:32.426] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,035, Green: 0,028
+[2025-07-28 13:27:32.431] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:32.431] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:33.447] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:33.448] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:33.458] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:33.459] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:33.463] [DEBUG] RectangleBreakDetector: Found 444 red pixels and 355 green pixels
+[2025-07-28 13:27:33.464] [DEBUG] RectangleBreakDetector: Red ratio: 0,035, Green ratio: 0,028
+[2025-07-28 13:27:33.464] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,035, Green: 0,028
+[2025-07-28 13:27:33.468] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:33.468] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:34.486] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:34.486] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:34.504] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:34.504] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:34.513] [DEBUG] RectangleBreakDetector: Found 444 red pixels and 355 green pixels
+[2025-07-28 13:27:34.514] [DEBUG] RectangleBreakDetector: Red ratio: 0,035, Green ratio: 0,028
+[2025-07-28 13:27:34.514] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,035, Green: 0,028
+[2025-07-28 13:27:34.522] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:34.522] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:35.532] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:35.532] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:35.550] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:35.550] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:35.559] [DEBUG] RectangleBreakDetector: Found 357 red pixels and 368 green pixels
+[2025-07-28 13:27:35.560] [DEBUG] RectangleBreakDetector: Red ratio: 0,028, Green ratio: 0,029
+[2025-07-28 13:27:35.560] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,028, Green: 0,029
+[2025-07-28 13:27:35.568] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:35.568] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:36.573] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:36.573] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:36.591] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:36.591] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:36.600] [DEBUG] RectangleBreakDetector: Found 357 red pixels and 368 green pixels
+[2025-07-28 13:27:36.601] [DEBUG] RectangleBreakDetector: Red ratio: 0,028, Green ratio: 0,029
+[2025-07-28 13:27:36.601] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,028, Green: 0,029
+[2025-07-28 13:27:36.609] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:36.609] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:37.615] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:37.616] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:37.635] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:37.635] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:37.643] [DEBUG] RectangleBreakDetector: Found 357 red pixels and 429 green pixels
+[2025-07-28 13:27:37.643] [DEBUG] RectangleBreakDetector: Red ratio: 0,028, Green ratio: 0,034
+[2025-07-28 13:27:37.644] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,028, Green: 0,034
+[2025-07-28 13:27:37.649] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:37.649] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:38.660] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:38.660] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:38.671] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:38.671] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:38.676] [DEBUG] RectangleBreakDetector: Found 357 red pixels and 429 green pixels
+[2025-07-28 13:27:38.676] [DEBUG] RectangleBreakDetector: Red ratio: 0,028, Green ratio: 0,034
+[2025-07-28 13:27:38.676] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,028, Green: 0,034
+[2025-07-28 13:27:38.681] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:38.681] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:39.685] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:39.685] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:39.696] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:39.696] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:39.700] [DEBUG] RectangleBreakDetector: Found 357 red pixels and 429 green pixels
+[2025-07-28 13:27:39.701] [DEBUG] RectangleBreakDetector: Red ratio: 0,028, Green ratio: 0,034
+[2025-07-28 13:27:39.701] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,028, Green: 0,034
+[2025-07-28 13:27:39.705] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:39.706] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:40.721] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:40.721] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:40.732] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:40.732] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:40.740] [DEBUG] RectangleBreakDetector: Found 357 red pixels and 376 green pixels
+[2025-07-28 13:27:40.741] [DEBUG] RectangleBreakDetector: Red ratio: 0,028, Green ratio: 0,030
+[2025-07-28 13:27:40.741] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,028, Green: 0,030
+[2025-07-28 13:27:40.745] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:40.746] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:41.752] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:41.752] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:41.763] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:41.763] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:41.768] [DEBUG] RectangleBreakDetector: Found 484 red pixels and 349 green pixels
+[2025-07-28 13:27:41.768] [DEBUG] RectangleBreakDetector: Red ratio: 0,038, Green ratio: 0,028
+[2025-07-28 13:27:41.768] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,038, Green: 0,028
+[2025-07-28 13:27:41.773] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:41.773] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:42.788] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:42.789] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:42.809] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:42.810] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:42.819] [DEBUG] RectangleBreakDetector: Found 474 red pixels and 354 green pixels
+[2025-07-28 13:27:42.819] [DEBUG] RectangleBreakDetector: Red ratio: 0,037, Green ratio: 0,028
+[2025-07-28 13:27:42.820] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,037, Green: 0,028
+[2025-07-28 13:27:42.828] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:42.828] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:43.832] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:43.832] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:43.851] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:43.852] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:43.857] [DEBUG] RectangleBreakDetector: Found 485 red pixels and 349 green pixels
+[2025-07-28 13:27:43.857] [DEBUG] RectangleBreakDetector: Red ratio: 0,038, Green ratio: 0,028
+[2025-07-28 13:27:43.857] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,038, Green: 0,028
+[2025-07-28 13:27:43.861] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:43.861] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:44.867] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:44.868] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:44.887] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:44.888] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:44.897] [DEBUG] RectangleBreakDetector: Found 511 red pixels and 350 green pixels
+[2025-07-28 13:27:44.898] [DEBUG] RectangleBreakDetector: Red ratio: 0,040, Green ratio: 0,028
+[2025-07-28 13:27:44.898] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,040, Green: 0,028
+[2025-07-28 13:27:44.905] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:44.905] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:45.910] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:45.910] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:45.929] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:45.929] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:45.939] [DEBUG] RectangleBreakDetector: Found 511 red pixels and 350 green pixels
+[2025-07-28 13:27:45.939] [DEBUG] RectangleBreakDetector: Red ratio: 0,040, Green ratio: 0,028
+[2025-07-28 13:27:45.939] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,040, Green: 0,028
+[2025-07-28 13:27:45.948] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:45.948] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:46.961] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:46.962] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:46.980] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:46.980] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:46.989] [DEBUG] RectangleBreakDetector: Found 515 red pixels and 350 green pixels
+[2025-07-28 13:27:46.989] [DEBUG] RectangleBreakDetector: Red ratio: 0,041, Green ratio: 0,028
+[2025-07-28 13:27:46.990] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,041, Green: 0,028
+[2025-07-28 13:27:46.998] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:46.998] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:48.003] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:48.003] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:48.021] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:48.021] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:48.031] [DEBUG] RectangleBreakDetector: Found 500 red pixels and 350 green pixels
+[2025-07-28 13:27:48.031] [DEBUG] RectangleBreakDetector: Red ratio: 0,039, Green ratio: 0,028
+[2025-07-28 13:27:48.031] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,039, Green: 0,028
+[2025-07-28 13:27:48.039] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:48.040] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:49.051] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:49.052] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:49.070] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:49.070] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:49.075] [DEBUG] RectangleBreakDetector: Found 496 red pixels and 349 green pixels
+[2025-07-28 13:27:49.075] [DEBUG] RectangleBreakDetector: Red ratio: 0,039, Green ratio: 0,028
+[2025-07-28 13:27:49.075] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,039, Green: 0,028
+[2025-07-28 13:27:49.080] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:49.080] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:50.090] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:50.090] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:50.101] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:50.101] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:50.106] [DEBUG] RectangleBreakDetector: Found 496 red pixels and 349 green pixels
+[2025-07-28 13:27:50.106] [DEBUG] RectangleBreakDetector: Red ratio: 0,039, Green ratio: 0,028
+[2025-07-28 13:27:50.106] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,039, Green: 0,028
+[2025-07-28 13:27:50.111] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:50.111] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:51.114] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:51.114] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:51.125] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:51.125] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:51.130] [DEBUG] RectangleBreakDetector: Found 537 red pixels and 351 green pixels
+[2025-07-28 13:27:51.130] [DEBUG] RectangleBreakDetector: Red ratio: 0,042, Green ratio: 0,028
+[2025-07-28 13:27:51.130] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,042, Green: 0,028
+[2025-07-28 13:27:51.135] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:51.135] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:52.150] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:52.151] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:52.161] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:52.161] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:52.166] [DEBUG] RectangleBreakDetector: Found 537 red pixels and 351 green pixels
+[2025-07-28 13:27:52.166] [DEBUG] RectangleBreakDetector: Red ratio: 0,042, Green ratio: 0,028
+[2025-07-28 13:27:52.166] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,042, Green: 0,028
+[2025-07-28 13:27:52.171] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:52.171] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:53.177] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:53.177] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:53.188] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:53.188] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:53.192] [DEBUG] RectangleBreakDetector: Found 549 red pixels and 350 green pixels
+[2025-07-28 13:27:53.193] [DEBUG] RectangleBreakDetector: Red ratio: 0,043, Green ratio: 0,028
+[2025-07-28 13:27:53.193] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,043, Green: 0,028
+[2025-07-28 13:27:53.198] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:53.198] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:54.212] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:54.212] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:54.225] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:54.225] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:54.230] [DEBUG] RectangleBreakDetector: Found 535 red pixels and 351 green pixels
+[2025-07-28 13:27:54.230] [DEBUG] RectangleBreakDetector: Red ratio: 0,042, Green ratio: 0,028
+[2025-07-28 13:27:54.231] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,042, Green: 0,028
+[2025-07-28 13:27:54.236] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:54.236] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:55.240] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:55.241] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:55.263] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:55.264] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:55.280] [DEBUG] RectangleBreakDetector: Found 531 red pixels and 351 green pixels
+[2025-07-28 13:27:55.280] [DEBUG] RectangleBreakDetector: Red ratio: 0,042, Green ratio: 0,028
+[2025-07-28 13:27:55.280] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,042, Green: 0,028
+[2025-07-28 13:27:55.289] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:55.289] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:56.301] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:56.301] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:56.313] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:56.313] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:56.317] [DEBUG] RectangleBreakDetector: Found 531 red pixels and 351 green pixels
+[2025-07-28 13:27:56.318] [DEBUG] RectangleBreakDetector: Red ratio: 0,042, Green ratio: 0,028
+[2025-07-28 13:27:56.318] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,042, Green: 0,028
+[2025-07-28 13:27:56.322] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:56.322] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:57.326] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:57.326] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:57.337] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:57.337] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:57.342] [DEBUG] RectangleBreakDetector: Found 531 red pixels and 351 green pixels
+[2025-07-28 13:27:57.342] [DEBUG] RectangleBreakDetector: Red ratio: 0,042, Green ratio: 0,028
+[2025-07-28 13:27:57.343] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,042, Green: 0,028
+[2025-07-28 13:27:57.347] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:57.347] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:58.362] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:58.362] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:58.374] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:58.374] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:58.379] [DEBUG] RectangleBreakDetector: Found 521 red pixels and 350 green pixels
+[2025-07-28 13:27:58.380] [DEBUG] RectangleBreakDetector: Red ratio: 0,041, Green ratio: 0,028
+[2025-07-28 13:27:58.380] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,041, Green: 0,028
+[2025-07-28 13:27:58.384] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:58.384] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:27:59.396] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:27:59.397] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:27:59.408] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:27:59.408] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:27:59.413] [DEBUG] RectangleBreakDetector: Found 519 red pixels and 350 green pixels
+[2025-07-28 13:27:59.413] [DEBUG] RectangleBreakDetector: Red ratio: 0,041, Green ratio: 0,028
+[2025-07-28 13:27:59.413] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,041, Green: 0,028
+[2025-07-28 13:27:59.418] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:27:59.418] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:00.427] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:00.427] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:00.439] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:00.439] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:00.444] [DEBUG] RectangleBreakDetector: Found 519 red pixels and 350 green pixels
+[2025-07-28 13:28:00.444] [DEBUG] RectangleBreakDetector: Red ratio: 0,041, Green ratio: 0,028
+[2025-07-28 13:28:00.445] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,041, Green: 0,028
+[2025-07-28 13:28:00.450] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:00.450] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:01.466] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:01.466] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:01.479] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:01.479] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:01.484] [DEBUG] RectangleBreakDetector: Found 515 red pixels and 350 green pixels
+[2025-07-28 13:28:01.484] [DEBUG] RectangleBreakDetector: Red ratio: 0,041, Green ratio: 0,028
+[2025-07-28 13:28:01.484] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,041, Green: 0,028
+[2025-07-28 13:28:01.489] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:01.489] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:02.496] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:02.496] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:02.508] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:02.508] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:02.513] [DEBUG] RectangleBreakDetector: Found 515 red pixels and 350 green pixels
+[2025-07-28 13:28:02.513] [DEBUG] RectangleBreakDetector: Red ratio: 0,041, Green ratio: 0,028
+[2025-07-28 13:28:02.513] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,041, Green: 0,028
+[2025-07-28 13:28:02.518] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:02.518] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:03.522] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:03.522] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:03.534] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:03.534] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:03.539] [DEBUG] RectangleBreakDetector: Found 527 red pixels and 351 green pixels
+[2025-07-28 13:28:03.539] [DEBUG] RectangleBreakDetector: Red ratio: 0,042, Green ratio: 0,028
+[2025-07-28 13:28:03.539] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,042, Green: 0,028
+[2025-07-28 13:28:03.544] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:03.544] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:04.551] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:04.551] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:04.564] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:04.564] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:04.569] [DEBUG] RectangleBreakDetector: Found 527 red pixels and 351 green pixels
+[2025-07-28 13:28:04.569] [DEBUG] RectangleBreakDetector: Red ratio: 0,042, Green ratio: 0,028
+[2025-07-28 13:28:04.569] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,042, Green: 0,028
+[2025-07-28 13:28:04.574] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:04.574] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:05.581] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:05.581] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:05.592] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:05.592] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:05.597] [DEBUG] RectangleBreakDetector: Found 519 red pixels and 350 green pixels
+[2025-07-28 13:28:05.597] [DEBUG] RectangleBreakDetector: Red ratio: 0,041, Green ratio: 0,028
+[2025-07-28 13:28:05.597] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,041, Green: 0,028
+[2025-07-28 13:28:05.602] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:05.602] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:06.609] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:06.609] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:06.627] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:06.628] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:06.637] [DEBUG] RectangleBreakDetector: Found 517 red pixels and 350 green pixels
+[2025-07-28 13:28:06.637] [DEBUG] RectangleBreakDetector: Red ratio: 0,041, Green ratio: 0,028
+[2025-07-28 13:28:06.637] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,041, Green: 0,028
+[2025-07-28 13:28:06.646] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:06.646] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:07.655] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:07.655] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:07.666] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:07.666] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:07.671] [DEBUG] RectangleBreakDetector: Found 519 red pixels and 350 green pixels
+[2025-07-28 13:28:07.671] [DEBUG] RectangleBreakDetector: Red ratio: 0,041, Green ratio: 0,028
+[2025-07-28 13:28:07.671] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,041, Green: 0,028
+[2025-07-28 13:28:07.676] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:07.676] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:08.679] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:08.679] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:08.697] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:08.697] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:08.707] [DEBUG] RectangleBreakDetector: Found 527 red pixels and 351 green pixels
+[2025-07-28 13:28:08.707] [DEBUG] RectangleBreakDetector: Red ratio: 0,042, Green ratio: 0,028
+[2025-07-28 13:28:08.707] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,042, Green: 0,028
+[2025-07-28 13:28:08.722] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:08.722] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:09.734] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:09.734] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:09.744] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:09.745] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:09.749] [DEBUG] RectangleBreakDetector: Found 453 red pixels and 421 green pixels
+[2025-07-28 13:28:09.750] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,033
+[2025-07-28 13:28:09.750] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,033
+[2025-07-28 13:28:09.754] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:09.754] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:10.762] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:10.762] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:10.777] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:10.777] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:10.782] [DEBUG] RectangleBreakDetector: Found 452 red pixels and 439 green pixels
+[2025-07-28 13:28:10.782] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,035
+[2025-07-28 13:28:10.782] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,035
+[2025-07-28 13:28:10.787] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:10.787] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:11.804] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:11.805] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:11.816] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:11.817] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:11.821] [DEBUG] RectangleBreakDetector: Found 457 red pixels and 390 green pixels
+[2025-07-28 13:28:11.822] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,031
+[2025-07-28 13:28:11.822] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,031
+[2025-07-28 13:28:11.826] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:11.826] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:12.840] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:12.840] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:12.851] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:12.852] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:12.856] [DEBUG] RectangleBreakDetector: Found 454 red pixels and 390 green pixels
+[2025-07-28 13:28:12.856] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,031
+[2025-07-28 13:28:12.857] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,031
+[2025-07-28 13:28:12.861] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:12.861] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:13.874] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:13.874] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:13.892] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:13.893] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:13.902] [DEBUG] RectangleBreakDetector: Found 453 red pixels and 390 green pixels
+[2025-07-28 13:28:13.902] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,031
+[2025-07-28 13:28:13.902] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,031
+[2025-07-28 13:28:13.911] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:13.911] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:14.920] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:14.921] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:14.933] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:14.933] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:14.938] [DEBUG] RectangleBreakDetector: Found 455 red pixels and 390 green pixels
+[2025-07-28 13:28:14.938] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,031
+[2025-07-28 13:28:14.938] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,031
+[2025-07-28 13:28:14.942] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:14.942] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:15.950] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:15.950] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:15.962] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:15.962] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:15.967] [DEBUG] RectangleBreakDetector: Found 455 red pixels and 390 green pixels
+[2025-07-28 13:28:15.967] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,031
+[2025-07-28 13:28:15.967] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,031
+[2025-07-28 13:28:15.972] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:15.972] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:16.980] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:16.981] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:16.993] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:16.993] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:16.997] [DEBUG] RectangleBreakDetector: Found 455 red pixels and 390 green pixels
+[2025-07-28 13:28:16.997] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,031
+[2025-07-28 13:28:16.997] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,031
+[2025-07-28 13:28:17.002] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:17.002] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:18.011] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:18.011] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:18.029] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:18.029] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:18.039] [DEBUG] RectangleBreakDetector: Found 455 red pixels and 390 green pixels
+[2025-07-28 13:28:18.039] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,031
+[2025-07-28 13:28:18.039] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,031
+[2025-07-28 13:28:18.047] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:18.047] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:19.062] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:19.062] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:19.073] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:19.073] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:19.078] [DEBUG] RectangleBreakDetector: Found 455 red pixels and 390 green pixels
+[2025-07-28 13:28:19.079] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,031
+[2025-07-28 13:28:19.079] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,031
+[2025-07-28 13:28:19.084] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:19.084] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:20.099] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:20.099] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:20.110] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:20.110] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:20.115] [DEBUG] RectangleBreakDetector: Found 455 red pixels and 390 green pixels
+[2025-07-28 13:28:20.115] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,031
+[2025-07-28 13:28:20.115] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,031
+[2025-07-28 13:28:20.120] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:20.120] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:21.126] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:21.126] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:21.138] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:21.138] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:21.143] [DEBUG] RectangleBreakDetector: Found 455 red pixels and 390 green pixels
+[2025-07-28 13:28:21.143] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,031
+[2025-07-28 13:28:21.143] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,031
+[2025-07-28 13:28:21.148] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:21.148] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:22.165] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:22.165] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:22.178] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:22.178] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:22.183] [DEBUG] RectangleBreakDetector: Found 456 red pixels and 391 green pixels
+[2025-07-28 13:28:22.183] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,031
+[2025-07-28 13:28:22.184] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,031
+[2025-07-28 13:28:22.189] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:22.189] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:23.201] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:23.202] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:23.216] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:23.216] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:23.222] [DEBUG] RectangleBreakDetector: Found 456 red pixels and 456 green pixels
+[2025-07-28 13:28:23.222] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,036
+[2025-07-28 13:28:23.222] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,036
+[2025-07-28 13:28:23.233] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:23.233] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:24.246] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:24.246] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:24.257] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:24.257] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:24.262] [DEBUG] RectangleBreakDetector: Found 456 red pixels and 456 green pixels
+[2025-07-28 13:28:24.262] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,036
+[2025-07-28 13:28:24.262] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,036
+[2025-07-28 13:28:24.267] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:24.267] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:25.270] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:25.270] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:25.288] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:25.288] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:25.297] [DEBUG] RectangleBreakDetector: Found 456 red pixels and 456 green pixels
+[2025-07-28 13:28:25.298] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,036
+[2025-07-28 13:28:25.298] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,036
+[2025-07-28 13:28:25.306] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:25.306] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:26.321] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:26.322] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:26.339] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:26.340] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:26.349] [DEBUG] RectangleBreakDetector: Found 456 red pixels and 456 green pixels
+[2025-07-28 13:28:26.349] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,036
+[2025-07-28 13:28:26.349] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,036
+[2025-07-28 13:28:26.358] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:26.358] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:27.364] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:27.364] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:27.375] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:27.375] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:27.380] [DEBUG] RectangleBreakDetector: Found 456 red pixels and 456 green pixels
+[2025-07-28 13:28:27.380] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,036
+[2025-07-28 13:28:27.380] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,036
+[2025-07-28 13:28:27.385] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:27.385] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:28.396] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:28.396] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:28.414] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:28.414] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:28.423] [DEBUG] RectangleBreakDetector: Found 456 red pixels and 456 green pixels
+[2025-07-28 13:28:28.423] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,036
+[2025-07-28 13:28:28.424] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,036
+[2025-07-28 13:28:28.432] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:28.432] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:29.449] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:29.449] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:29.467] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:29.467] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:29.476] [DEBUG] RectangleBreakDetector: Found 456 red pixels and 456 green pixels
+[2025-07-28 13:28:29.477] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,036
+[2025-07-28 13:28:29.477] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,036
+[2025-07-28 13:28:29.486] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:29.486] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:30.499] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:30.499] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:30.513] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:30.513] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:30.518] [DEBUG] RectangleBreakDetector: Found 455 red pixels and 472 green pixels
+[2025-07-28 13:28:30.518] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,037
+[2025-07-28 13:28:30.518] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,037
+[2025-07-28 13:28:30.523] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:30.523] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:31.540] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:31.540] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:31.558] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:31.558] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:31.567] [DEBUG] RectangleBreakDetector: Found 455 red pixels and 399 green pixels
+[2025-07-28 13:28:31.567] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,031
+[2025-07-28 13:28:31.568] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,031
+[2025-07-28 13:28:31.576] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:31.576] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:32.588] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:32.589] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:32.601] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:32.601] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:32.606] [DEBUG] RectangleBreakDetector: Found 456 red pixels and 455 green pixels
+[2025-07-28 13:28:32.606] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,036
+[2025-07-28 13:28:32.606] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,036
+[2025-07-28 13:28:32.611] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:32.611] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:33.621] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:33.622] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:33.639] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:33.640] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:33.649] [DEBUG] RectangleBreakDetector: Found 456 red pixels and 461 green pixels
+[2025-07-28 13:28:33.649] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,036
+[2025-07-28 13:28:33.649] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,036
+[2025-07-28 13:28:33.655] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:33.655] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:34.672] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:34.672] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:34.690] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:34.691] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:34.700] [DEBUG] RectangleBreakDetector: Found 456 red pixels and 461 green pixels
+[2025-07-28 13:28:34.700] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,036
+[2025-07-28 13:28:34.700] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,036
+[2025-07-28 13:28:34.706] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:34.706] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:35.716] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:35.716] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:35.731] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:35.731] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:35.736] [DEBUG] RectangleBreakDetector: Found 456 red pixels and 461 green pixels
+[2025-07-28 13:28:35.736] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,036
+[2025-07-28 13:28:35.736] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,036
+[2025-07-28 13:28:35.741] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:35.741] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:36.759] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:36.759] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:36.777] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:36.777] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:36.787] [DEBUG] RectangleBreakDetector: Found 456 red pixels and 461 green pixels
+[2025-07-28 13:28:36.787] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,036
+[2025-07-28 13:28:36.788] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,036
+[2025-07-28 13:28:36.797] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:36.797] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:37.808] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:37.808] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:37.821] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:37.821] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:37.826] [DEBUG] RectangleBreakDetector: Found 455 red pixels and 399 green pixels
+[2025-07-28 13:28:37.826] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,031
+[2025-07-28 13:28:37.827] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,031
+[2025-07-28 13:28:37.835] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:37.835] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:38.848] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:38.849] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:38.867] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:38.867] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:38.874] [DEBUG] RectangleBreakDetector: Found 455 red pixels and 399 green pixels
+[2025-07-28 13:28:38.874] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,031
+[2025-07-28 13:28:38.874] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,031
+[2025-07-28 13:28:38.879] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:38.879] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:39.887] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:39.887] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:39.907] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:39.907] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:39.912] [DEBUG] RectangleBreakDetector: Found 456 red pixels and 455 green pixels
+[2025-07-28 13:28:39.912] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,036
+[2025-07-28 13:28:39.912] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,036
+[2025-07-28 13:28:39.917] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:39.917] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:40.920] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:40.920] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:40.934] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:40.935] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:40.939] [DEBUG] RectangleBreakDetector: Found 455 red pixels and 465 green pixels
+[2025-07-28 13:28:40.940] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,037
+[2025-07-28 13:28:40.940] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,037
+[2025-07-28 13:28:40.944] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:40.944] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:41.164] [DEBUG] S key detected and service is enabled
+[2025-07-28 13:28:41.165] [DEBUG] SimpleTradingOverlay.OnSKeyPressed() called
+[2025-07-28 13:28:41.165] [INFO] S key pressed - starting trading pattern creation
+[2025-07-28 13:28:41.165] [INFO] Started trading pattern creation for window 3998124 (symbol: XAUUSD)
+[2025-07-28 13:28:41.959] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:41.959] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:41.970] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:41.970] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:41.975] [DEBUG] RectangleBreakDetector: Found 455 red pixels and 470 green pixels
+[2025-07-28 13:28:41.975] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,037
+[2025-07-28 13:28:41.975] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,037
+[2025-07-28 13:28:41.980] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:41.981] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:42.292] [DEBUG] S key detected and service is enabled
+[2025-07-28 13:28:42.293] [DEBUG] SimpleTradingOverlay.OnSKeyPressed() called
+[2025-07-28 13:28:42.293] [INFO] S key pressed - starting trading pattern creation
+[2025-07-28 13:28:42.293] [WARNING] Trading pattern already active, cancelling previous one
+[2025-07-28 13:28:42.294] [INFO] Trading pattern cancelled
+[2025-07-28 13:28:42.294] [INFO] Started trading pattern creation for window 3998124 (symbol: XAUUSD)
+[2025-07-28 13:28:42.992] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:42.993] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:43.003] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:43.004] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:43.008] [DEBUG] RectangleBreakDetector: Found 455 red pixels and 470 green pixels
+[2025-07-28 13:28:43.008] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,037
+[2025-07-28 13:28:43.008] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,037
+[2025-07-28 13:28:43.013] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:43.013] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:43.918] [INFO] First click recorded at (2907, 422)
+[2025-07-28 13:28:44.025] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:44.025] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:44.036] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:44.036] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:44.041] [DEBUG] RectangleBreakDetector: Found 455 red pixels and 470 green pixels
+[2025-07-28 13:28:44.041] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,037
+[2025-07-28 13:28:44.041] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,037
+[2025-07-28 13:28:44.046] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:44.046] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:45.065] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:45.065] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:45.086] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:45.086] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:45.091] [DEBUG] RectangleBreakDetector: Found 456 red pixels and 485 green pixels
+[2025-07-28 13:28:45.091] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,038
+[2025-07-28 13:28:45.091] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,038
+[2025-07-28 13:28:45.096] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:45.096] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:46.104] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:46.104] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:46.115] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:46.115] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:46.120] [DEBUG] RectangleBreakDetector: Found 456 red pixels and 485 green pixels
+[2025-07-28 13:28:46.120] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,038
+[2025-07-28 13:28:46.120] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,038
+[2025-07-28 13:28:46.125] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:46.125] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:47.142] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:47.142] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:47.155] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:47.156] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:47.160] [DEBUG] RectangleBreakDetector: Found 455 red pixels and 403 green pixels
+[2025-07-28 13:28:47.161] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,032
+[2025-07-28 13:28:47.161] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,032
+[2025-07-28 13:28:47.165] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:47.166] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:48.178] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:48.178] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:48.196] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:48.196] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:48.205] [DEBUG] RectangleBreakDetector: Found 455 red pixels and 403 green pixels
+[2025-07-28 13:28:48.205] [DEBUG] RectangleBreakDetector: Red ratio: 0,036, Green ratio: 0,032
+[2025-07-28 13:28:48.205] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,036, Green: 0,032
+[2025-07-28 13:28:48.214] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:48.214] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:49.231] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:49.232] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:49.250] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:49.250] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:49.259] [DEBUG] RectangleBreakDetector: Found 577 red pixels and 349 green pixels
+[2025-07-28 13:28:49.259] [DEBUG] RectangleBreakDetector: Red ratio: 0,045, Green ratio: 0,028
+[2025-07-28 13:28:49.260] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,045, Green: 0,028
+[2025-07-28 13:28:49.269] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:49.269] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:50.280] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:50.280] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:50.291] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:50.291] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:50.296] [DEBUG] RectangleBreakDetector: Found 539 red pixels and 355 green pixels
+[2025-07-28 13:28:50.296] [DEBUG] RectangleBreakDetector: Red ratio: 0,042, Green ratio: 0,028
+[2025-07-28 13:28:50.296] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,042, Green: 0,028
+[2025-07-28 13:28:50.301] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:50.302] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:51.305] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:51.306] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:51.317] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:51.317] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:51.322] [DEBUG] RectangleBreakDetector: Found 539 red pixels and 355 green pixels
+[2025-07-28 13:28:51.322] [DEBUG] RectangleBreakDetector: Red ratio: 0,042, Green ratio: 0,028
+[2025-07-28 13:28:51.322] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,042, Green: 0,028
+[2025-07-28 13:28:51.330] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:51.330] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:52.347] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:52.348] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:52.359] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:52.359] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:52.364] [DEBUG] RectangleBreakDetector: Found 539 red pixels and 355 green pixels
+[2025-07-28 13:28:52.365] [DEBUG] RectangleBreakDetector: Red ratio: 0,042, Green ratio: 0,028
+[2025-07-28 13:28:52.365] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,042, Green: 0,028
+[2025-07-28 13:28:52.370] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:52.370] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:52.390] [INFO] Second click recorded at (3263, 358)
+[2025-07-28 13:28:52.390] [INFO] Current window handle: 3998124
+[2025-07-28 13:28:52.391] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-28 13:28:52.391] [INFO] Original clicks: FirstClick=(2907, 422), SecondClick=(3263, 358)
+[2025-07-28 13:28:52.391] [INFO] Pattern area: Left=2887, Top=338, Width=396, Height=104
+[2025-07-28 13:28:52.413] [INFO] TradingPatternOverlay shown at (2887, 338) with size 396x104
+[2025-07-28 13:28:52.413] [DEBUG] ConvertVirtualScreenToWindowCoordinates: virtualX=2907, virtualY=422, windowLeft=1920, windowTop=0, windowX=987, windowY=422
+[2025-07-28 13:28:52.413] [DEBUG] ConvertVirtualScreenToWindowCoordinates: virtualX=3263, virtualY=358, windowLeft=1920, windowTop=0, windowX=1343, windowY=358
+[2025-07-28 13:28:52.414] [DEBUG] SimpleTradingOverlay: Creating metadata for capture ID=20250728132852414
+[2025-07-28 13:28:52.424] [DEBUG] RectangleBreakDetector: Building metadata for image 396x104
+[2025-07-28 13:28:52.424] [DEBUG] SimpleTradingOverlay: Created metadata for capture ID=20250728132852414, length=195
+[2025-07-28 13:28:52.441] [INFO] TradingPattern CaptureData saved: Symbol=XAUUSD, Direction=Up, X=967, Y=338, W=396, H=104, Screenshot=C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132852414\screenshot.png
+[2025-07-28 13:28:52.441] [INFO] Trading pattern completed: FirstClick=(2907, 422), SecondClick=(3263, 358)
+[2025-07-28 13:28:53.373] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:53.373] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:53.386] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:53.386] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:53.391] [DEBUG] RectangleBreakDetector: Found 539 red pixels and 355 green pixels
+[2025-07-28 13:28:53.391] [DEBUG] RectangleBreakDetector: Red ratio: 0,042, Green ratio: 0,028
+[2025-07-28 13:28:53.391] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,042, Green: 0,028
+[2025-07-28 13:28:53.396] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:53.396] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:53.397] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132852414, Handle=3998124, X=967, Y=338, W=396, H=104
+[2025-07-28 13:28:53.420] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132852414, Meta length=195
+[2025-07-28 13:28:53.420] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 396x104
+[2025-07-28 13:28:53.435] [DEBUG] RectangleBreakDetector: Found 108 red pixels and 25 green pixels
+[2025-07-28 13:28:53.435] [DEBUG] RectangleBreakDetector: Red ratio: 0,003, Green ratio: 0,001
+[2025-07-28 13:28:53.435] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,003, Green: 0,001
+[2025-07-28 13:28:53.439] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132852414\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:53.439] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132852414\tracking.png: NoBreakout
+[2025-07-28 13:28:53.695] [INFO] Applied default toolbar settings for window 1837144
+[2025-07-28 13:28:53.695] [INFO] Overlay positioned on window 1837144 (symbol: XAUUSD): Left=0, Top=0, Width=1920
+[2025-07-28 13:28:54.451] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 13:28:54.451] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132710645, Handle=3998124, X=1407, Y=525, W=208, H=61
+[2025-07-28 13:28:54.463] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132710645, Meta length=194
+[2025-07-28 13:28:54.463] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 208x61
+[2025-07-28 13:28:54.468] [DEBUG] RectangleBreakDetector: Found 539 red pixels and 355 green pixels
+[2025-07-28 13:28:54.468] [DEBUG] RectangleBreakDetector: Red ratio: 0,042, Green ratio: 0,028
+[2025-07-28 13:28:54.469] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,042, Green: 0,028
+[2025-07-28 13:28:54.473] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:54.474] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132710645\tracking.png: NoBreakout
+[2025-07-28 13:28:54.475] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728132852414, Handle=3998124, X=967, Y=338, W=396, H=104
+[2025-07-28 13:28:54.486] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728132852414, Meta length=195
+[2025-07-28 13:28:54.486] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 396x104
+[2025-07-28 13:28:54.501] [DEBUG] RectangleBreakDetector: Found 108 red pixels and 25 green pixels
+[2025-07-28 13:28:54.501] [DEBUG] RectangleBreakDetector: Red ratio: 0,003, Green ratio: 0,001
+[2025-07-28 13:28:54.502] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,003, Green: 0,001
+[2025-07-28 13:28:54.504] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132852414\tracking.png] Rectangle detected, breakout NOT found.
+[2025-07-28 13:28:54.504] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728132852414\tracking.png: NoBreakout
+[2025-07-28 13:28:55.175] [INFO] MainWindow closing - cleaning up resources
+[2025-07-28 13:28:55.185] [INFO] SimpleTradingOverlay closed
+[2025-07-28 13:28:55.189] [INFO] Disconnecting from MT4 socket
+[2025-07-28 13:28:55.191] [INFO] MT4 socket read operation cancelled
+[2025-07-28 13:28:55.191] [INFO] MT4 socket read loop ended
+[2025-07-28 13:28:55.191] [INFO] Disconnecting from Pocket Option socket
+[2025-07-28 13:28:55.191] [INFO] All services cleaned up
+[2025-07-28 13:28:55.191] [INFO] MainWindow cleanup completed
+[2025-07-28 13:28:55.192] [INFO] Disconnecting from MT4 socket
+[2025-07-28 13:28:55.192] [WARNING] Not connected to MT4 socket
+[2025-07-28 13:28:55.192] [INFO] Disconnecting from Pocket Option socket
+[2025-07-28 13:28:55.192] [WARNING] Not connected to Pocket Option socket
+[2025-07-28 13:28:55.192] [INFO] All services cleaned up
+[2025-07-28 13:28:55.218] [INFO] Pocket Option socket read operation cancelled
+[2025-07-28 13:28:55.234] [DEBUG] MT4 Connection: Disconnected
+[2025-07-28 13:28:55.234] [INFO] MT4 Connection status: Disconnected
+[2025-07-28 13:28:55.237] [INFO] Pocket Option socket read loop ended

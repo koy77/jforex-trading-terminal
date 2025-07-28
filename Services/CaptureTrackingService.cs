@@ -162,6 +162,8 @@ namespace ScreenCaptureApp.Services
                             
                             if (capture.Model == "OHLC_rectangle")
                             {
+                                Logger.LogDebug($"CaptureTrackingService: Processing OHLC_rectangle capture ID={capture.ID}, Meta length={capture.Meta?.Length ?? 0}");
+                                
                                 // Используем RectangleBreakDetector для прямоугольных областей
                                 var rectangleDetector = new RectangleBreakDetector();
                                 var rectangleResult = rectangleDetector.DetectBreakout(trackingBitmap, capture, debugPath);

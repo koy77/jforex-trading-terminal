@@ -31,6 +31,7 @@ namespace ScreenCaptureApp.Models
         public string Mt4Order { get; set; } // MT4 order information as JSON string
         public string Period { get; set; } // Период, парсится из заголовка окна
         public string Direction { get; set; } // "Up" или "Down"
+        public string Meta { get; set; } = ""; // JSON мета-данные
     }
 
     public class SymbolData

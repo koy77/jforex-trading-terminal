@@ -6,8 +6,11 @@ using System.Runtime.InteropServices;
 using System.Windows.Interop;
 using System.Threading.Tasks;
 using System.Windows.Threading;
+using System.Drawing;
+using System.IO;
 using ScreenCaptureApp.Services;
 using ScreenCaptureApp.Models;
+using ScreenCaptureApp.Helpers;
 
 namespace ScreenCaptureApp
 {
@@ -295,10 +298,14 @@ namespace ScreenCaptureApp
                 Period = null,
                 Direction = direction
             };
+            
+            // Создаем мета-данные для CaptureData
+            capture.Meta = CreateMetadataForCapture(capture);
+            
             var db = ServiceContainer.Instance.GetService<DatabaseService>();
             var screenshotService = ServiceContainer.Instance.GetService<ScreenshotService>();
             
-            // Сохраняем CaptureData
+            // Сохраняем CaptureData с мета-данными
             db.SaveCapture(capture);
             
             // Делаем скриншот области в локальных координатах окна
@@ -689,6 +696,73 @@ namespace ScreenCaptureApp
             Logger.LogDebug($"ConvertVirtualScreenToWindowCoordinates: virtualX={virtualX}, virtualY={virtualY}, windowLeft={windowRect.Left}, windowTop={windowRect.Top}, windowX={windowX}, windowY={windowY}");
 
             return new System.Drawing.Point(windowX, windowY);
+        }
+
+        /// <summary>
+        /// Создает мета-данные для CaptureData, используя те же методы, что и CaptureTrackingService
+        /// </summary>
+        private string CreateMetadataForCapture(CaptureData capture)
+        {
+            try
+            {
+                Logger.LogDebug($"SimpleTradingOverlay: Creating metadata for capture ID={capture.ID}");
+                
+                var screenshotService = ServiceContainer.Instance.GetService<ScreenshotService>();
+                
+                // Делаем скриншот окна
+                using var bmp = screenshotService.CaptureWindow((IntPtr)capture.Handle);
+                if (bmp == null)
+                {
+                    Logger.LogWarning($"SimpleTradingOverlay: Не удалось получить скриншот окна Handle={capture.Handle}");
+                    return "{}";
+                }
+
+                Bitmap trackingBitmap;
+            
+                Rectangle cropRect = new Rectangle(capture.X, capture.Y, capture.Width, capture.Height);
+                trackingBitmap = bmp.Clone(cropRect, bmp.PixelFormat);
+
+                using (trackingBitmap)
+                {
+                    // Создаем детектор и строим мета-данные
+                    var rectangleDetector = new RectangleBreakDetector();
+                    var metadata = rectangleDetector.BuildMetadata(trackingBitmap);
+                    
+                    Logger.LogDebug($"SimpleTradingOverlay: Created metadata for capture ID={capture.ID}, length={metadata.Length}");
+                    
+                    return metadata;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"SimpleTradingOverlay: Error creating metadata for capture ID={capture.ID}", ex);
+                return "{}";
+            }
+        }
+
+        /// <summary>
+        /// Мержит Canvas поверх скриншота окна и вырезает нужную область. Если Canvas не найден — возвращает null.
+        /// </summary>
+        private Bitmap MergeCanvasWithScreenshot(CaptureData capture, Bitmap bmp)
+        {
+            string canvasesDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Canvases");
+            string canvasFile = capture.Source == "trading_canvas"
+                ? Path.Combine(canvasesDir, $"trading_{capture.Handle}.png")
+                : Path.Combine(canvasesDir, capture.Handle + ".png");
+            if (!File.Exists(canvasFile))
+            {
+                Logger.LogError($"Canvas file not found for handle {capture.Handle}: {canvasFile}");
+                return null;
+            }
+            using var canvasBmp = new Bitmap(canvasFile);
+            using var merged = new Bitmap(bmp.Width, bmp.Height);
+            using (var g = Graphics.FromImage(merged))
+            {
+                g.DrawImage(bmp, 0, 0);
+                g.DrawImage(canvasBmp, 0, 0, canvasBmp.Width, canvasBmp.Height);
+            }
+            Rectangle cropRect = new Rectangle(capture.X, capture.Y, capture.Width, capture.Height);
+            return merged.Clone(cropRect, merged.PixelFormat);
         }
     }
 } 
