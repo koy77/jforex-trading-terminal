@@ -257,7 +257,7 @@ namespace ScreenCaptureApp
             var windowPoint1 = ConvertVirtualScreenToWindowCoordinates(first.X, first.Y, windowRect);
             var windowPoint2 = ConvertVirtualScreenToWindowCoordinates(second.X, second.Y, windowRect);
             
-            
+
             // Вычисляем границы области с паддингом 20 пикселей в локальных координатах окна
             int left = Math.Min(windowPoint1.X, windowPoint2.X) - 20;
             int top = Math.Min(windowPoint1.Y, windowPoint2.Y) - 20;
@@ -288,10 +288,10 @@ namespace ScreenCaptureApp
                 Timestamp = DateTime.Now.ToString("o"),
                 Symbol = _currentTradingPattern.Symbol,
                 Risk = _toolbarSettingsManager.GetSettings(_currentWindowHandle.ToInt64())?.Risk ?? 1,
-                Source = "trading_pattern",
+                Source = "window",
                 Broker = _brokerState.CurrentBroker.ToString(),
                 Duration = _durationState.CurrentDuration,
-                Model = "Pattern",
+                Model = "OHLC_rectangle",
                 Period = null,
                 Direction = direction
             };
