@@ -21,6 +21,7 @@ namespace ScreenCaptureApp
     public partial class MainWindow : Window
     {
         private ScreenCaptureOverlay overlay;
+        private SimpleTradingOverlay simpleTradingOverlay;
         private bool isCapturing = false;
         private IntPtr targetWindow = IntPtr.Zero; // Variable to store target window handle
         private CanvasWindow currentCanvasWindow = null;
@@ -73,6 +74,9 @@ namespace ScreenCaptureApp
             var databaseService = ServiceContainer.Instance.GetService<DatabaseService>();
             ((App)System.Windows.Application.Current).SubscribeToCaptureTrackingIteration(captureTrackingService, databaseService);
 
+            // Инициализация SimpleTradingOverlay
+            InitializeSimpleTradingOverlay();
+
             var hotkeysService = ServiceContainer.Instance.GetService<HotkeysService>();
             if (hotkeysService != null)
             {
@@ -91,6 +95,19 @@ namespace ScreenCaptureApp
                     Logger.LogInfo("[DEBUG] OnLeftShiftHotkey event in MainWindow");
                     ToggleTrackingViewer_Click(null, null);
                 };
+            }
+        }
+
+        private void InitializeSimpleTradingOverlay()
+        {
+            try
+            {
+                simpleTradingOverlay = new SimpleTradingOverlay();
+                Logger.LogInfo("SimpleTradingOverlay initialized successfully");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("Error initializing SimpleTradingOverlay", ex);
             }
         }
 
@@ -394,6 +411,14 @@ namespace ScreenCaptureApp
             
             // Stop auto tracking
             StopAutoTracking();
+            
+            // Закрытие SimpleTradingOverlay
+            if (simpleTradingOverlay != null)
+            {
+                simpleTradingOverlay.Close();
+                simpleTradingOverlay = null;
+                Logger.LogInfo("SimpleTradingOverlay closed");
+            }
             
             // Cleanup services
             ServiceInitializer.CleanupServices();

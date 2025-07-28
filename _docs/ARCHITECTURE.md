@@ -110,11 +110,12 @@ ScreenCaptureApp — это WPF-приложение для трекинга, а
 
 ## Основные окна
 ### MainWindow
-- **Назначение:** Главное окно приложения, панель управления, запуск CanvasWindow, ScreenCaptureOverlay, трекинг, логирование, переключение символов, управление сервисами.
-- **Поля:** overlay, isCapturing, targetWindow, currentCanvasWindow, activeSymbol, _autoTrackingCts, _autoTrackingTask, isAutoTrackingActive, isYellowBrush.
+- **Назначение:** Главное окно приложения, панель управления, запуск CanvasWindow, ScreenCaptureOverlay, SimpleTradingOverlay, трекинг, логирование, переключение символов, управление сервисами.
+- **Поля:** overlay, simpleTradingOverlay, isCapturing, targetWindow, currentCanvasWindow, activeSymbol, _autoTrackingCts, _autoTrackingTask, isAutoTrackingActive, isYellowBrush.
 - **Методы:**
   - Инициализация сервисов, обработка хоткеев, запуск/остановка автотрекинга, обработка событий Capture, обновление UI-индикаторов, логирование, ResetDB, переключение символов, обработка событий MT4 и Pocket Option.
-- **Связи:** Использует все сервисы через DI, взаимодействует с CanvasWindow, ScreenCaptureOverlay, CaptureTrackingViewer.
+  - `InitializeSimpleTradingOverlay()` — инициализация SimpleTradingOverlay при запуске приложения.
+- **Связи:** Использует все сервисы через DI, взаимодействует с CanvasWindow, ScreenCaptureOverlay, SimpleTradingOverlay, CaptureTrackingViewer.
 
 ### ScreenCaptureOverlay
 - **Назначение:** Окно для выделения области экрана, интеграция с CaptureService, поддержка хоткеев, рисование прямоугольника, отображение координат, выбор риска/длительности.
@@ -122,6 +123,24 @@ ScreenCaptureApp — это WPF-приложение для трекинга, а
 - **Методы:**
   - Захват области, обработка мыши, обновление координат, взаимодействие с CaptureService, завершение захвата, интеграция с TradingToolbar.
 - **События:** CaptureCompleted.
+
+### SimpleTradingOverlay
+- **Назначение:** Окно для автоматического отслеживания курсора мыши и показа TradingToolbar на окнах JForex с распознанными символами. Запускается вместе с приложением и работает в фоновом режиме.
+- **Поля:** mouseHook, mouseProc, source, _toolbarSettingsManager, _brokerState, _durationState, _windowManagementService, _updateTimer, _currentWindowHandle, _isEnabled.
+- **Методы:**
+  - `SetupMouseHook()` — установка глобального хука мыши для отслеживания перемещений курсора.
+  - `MouseHookCallback()` — обработка событий мыши, определение окна под курсором.
+  - `UpdateOverlayPosition()` — позиционирование оверлея на окне с проверкой символа в заголовке.
+  - `ExtractSymbolFromWindowTitle()` — извлечение символа из заголовка окна с использованием WindowManagementService.
+  - `ApplyToolbarSettings()` — применение настроек тулбара для конкретного окна.
+  - `Enable()/Disable()` — включение/отключение функциональности оверлея.
+- **Особенности:**
+  - Автоматически отслеживает перемещения курсора мыши через глобальный хук.
+  - Проверяет заголовок окна под курсором на наличие символов JForex (XAUUSD, GBPJPY, EURUSD и др.).
+  - Показывает TradingToolbar только на окнах с распознанными символами.
+  - Если символ не найден в заголовке, оверлей остается на предыдущем окне.
+  - Использует ToolbarSettingsManager для сохранения индивидуальных настроек по handle окна.
+  - Интегрируется с WindowManagementService для получения заголовков окон и словаря символов.
 
 ### CanvasWindow
 - **Назначение:** Окно для рисования трендовых линий, работы с паттернами, интеграция с JForex, сохранение CaptureData по штрихам, поддержка режимов (simple/trading), сдвиг canvas, обработка stroke queue.
@@ -145,6 +164,8 @@ ScreenCaptureApp — это WPF-приложение для трекинга, а
 - CaptureTrackingViewer отображает данные из DatabaseService, реагирует на события CaptureTrackingService.
 - HotkeysService генерирует события для MainWindow, CaptureService, CanvasWindow.
 - ToolbarSettingsManager обеспечивает хранение и доступ к настройкам TradingToolbar по handle окна (в памяти, на время работы приложения).
+- SimpleTradingOverlay использует WindowManagementService для получения заголовков окон и словаря символов JForex.
+- SimpleTradingOverlay интегрируется с ToolbarSettingsManager для сохранения индивидуальных настроек по окнам.
 - Helpers используются для утилит, парсинга, сброса базы, работы с окнами.
 
 ---
@@ -163,6 +184,12 @@ ScreenCaptureApp — это WPF-приложение для трекинга, а
    - Mt4SocketService и PocketOptionSocketService отправляют команды, получают историю, обновляют UI-индикаторы через Helpers.
 5. **Индивидуальные настройки TradingToolbar:**
    - Для каждого окна (handle) ToolbarSettingsManager хранит risk, broker, duration. При открытии окна настройки подгружаются из ToolbarSettingsManager, при изменении — обновляются там же.
+6. **Автоматическое отслеживание окон JForex:**
+   - SimpleTradingOverlay запускается вместе с приложением и работает в фоновом режиме.
+   - При перемещении курсора мыши окно отслеживает окно под курсором через глобальный хук.
+   - Проверяет заголовок окна на наличие символов JForex (XAUUSD, GBPJPY, EURUSD и др.).
+   - Если символ найден, позиционирует TradingToolbar в верхней части окна и применяет сохраненные настройки.
+   - Если символ не найден, оверлей остается на предыдущем окне.
 
 ---
 
@@ -177,3 +204,13 @@ _Документация подготовлена для Cursor.AI. Для ра
 - Вся логика хранения настроек TradingToolbar (risk, broker, duration) теперь реализована через ToolbarSettingsManager — singleton DI-сервис, который хранит настройки для каждого окна по handle (только в памяти, не сохраняется в базу).
 - CanvasWindow, ScreenCaptureOverlay и другие окна используют ToolbarSettingsManager для инициализации и сохранения индивидуальных настроек тулбара.
 - Документация обновлена: удалены устаревшие разделы, добавлено описание новой архитектуры ToolbarSettingsManager.
+
+## 2024-12-XX
+- Добавлено новое окно SimpleTradingOverlay для автоматического отслеживания курсора мыши и показа TradingToolbar на окнах JForex.
+- SimpleTradingOverlay использует глобальный хук мыши для отслеживания перемещений курсора.
+- Реализована проверка заголовков окон на наличие символов JForex (XAUUSD, GBPJPY, EURUSD, GBPUSD, USDJPY, EURJPY).
+- Оверлей показывается только на окнах с распознанными символами, если символ не найден — остается на предыдущем окне.
+- Интеграция с WindowManagementService для получения заголовков окон и словаря символов.
+- Интеграция с ToolbarSettingsManager для сохранения индивидуальных настроек по handle окна.
+- Автоматический запуск SimpleTradingOverlay вместе с приложением в MainWindow.
+- Документация обновлена: добавлено описание SimpleTradingOverlay, обновлены разделы архитектуры и примеры сценариев работы.
