@@ -724,9 +724,17 @@ namespace ScreenCaptureApp
 
                 using (trackingBitmap)
                 {
-                    // Создаем детектор и строим мета-данные
+                    // Сохраняем trackingBitmap для отладки
+                    string debugDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CAPTURES", capture.ID);
+                    if (!Directory.Exists(debugDir)) Directory.CreateDirectory(debugDir);
+                    string metaDebugPath = Path.Combine(debugDir, "MetaDebug.png");
+                    string metaDebugTrackingPath = Path.Combine(debugDir, "MetaDebugTracking.png");
+                    trackingBitmap.Save(metaDebugPath, System.Drawing.Imaging.ImageFormat.Png);
+                    Logger.LogDebug($"SimpleTradingOverlay: Saved MetaDebug image to {metaDebugPath}");
+                    
+                    // Создаем детектор и строим мета-данные с отладочным изображением
                     var rectangleDetector = new RectangleBreakDetector();
-                    var metadata = rectangleDetector.BuildMetadata(trackingBitmap);
+                    var metadata = rectangleDetector.BuildMetadata(trackingBitmap, metaDebugTrackingPath);
                     
                     Logger.LogDebug($"SimpleTradingOverlay: Created metadata for capture ID={capture.ID}, length={metadata.Length}");
                     
