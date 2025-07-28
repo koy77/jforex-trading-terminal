@@ -522,6 +522,8 @@ namespace ScreenCaptureApp
                     this.Left = left;
                     this.Top = top;
                     
+                    // TradingToolbar теперь позиционируется справа через Canvas.Right="0"
+                    
                     // Устанавливаем символ в тулбаре
                     TradingToolbar.SetSymbol(symbol);
                     
