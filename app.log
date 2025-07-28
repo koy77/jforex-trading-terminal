@@ -1,1078 +1,435 @@
-[2025-07-28 14:50:08.037] [INFO] app.log file deleted successfully
-[2025-07-28 14:50:08.037] [INFO] Trade counter reset successfully
-[2025-07-28 14:50:08.048] [INFO] Initialized 6 symbols in database
-[2025-07-28 14:50:08.633] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.04000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-103}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:08.634] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:08.638] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.04000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-103}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:09.643] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.03000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-103}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:09.643] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:09.645] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.03000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-103}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:10.633] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.04000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-103}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:10.633] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:10.637] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.04000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-103}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:11.072] [DEBUG] Status: Found and brought 1 window(s) to foreground: XAU/USD, T8
-[2025-07-28 14:50:11.657] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-0.99000000,"percent":-0.01000000,"lots":0.01000000,"profit_points":-99}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:11.658] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:11.667] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-0.99000000,"percent":-0.01000000,"lots":0.01000000,"profit_points":-99}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:12.202] [DEBUG] S key detected and service is enabled
-[2025-07-28 14:50:12.203] [DEBUG] SimpleTradingOverlay.OnSKeyPressed() called
-[2025-07-28 14:50:12.204] [INFO] S key pressed - starting trading pattern creation
-[2025-07-28 14:50:12.205] [INFO] Started trading pattern creation for window 393262 (symbol: XAUUSD)
-[2025-07-28 14:50:12.512] [DEBUG] Escape key detected and service is enabled
-[2025-07-28 14:50:12.514] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-28 14:50:12.514] [INFO] Escape key pressed - cancelling trading pattern
-[2025-07-28 14:50:12.515] [INFO] Trading pattern cancelled
-[2025-07-28 14:50:12.515] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-07-28 14:50:12.516] [DEBUG] No overlay to close
-[2025-07-28 14:50:12.516] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-28 14:50:12.640] [DEBUG] Escape key detected and service is enabled
-[2025-07-28 14:50:12.640] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-28 14:50:12.641] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-07-28 14:50:12.641] [DEBUG] No overlay to close
-[2025-07-28 14:50:12.641] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-28 14:50:12.648] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.05000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-105}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:12.649] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:12.652] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.05000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-105}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:12.768] [DEBUG] Escape key detected and service is enabled
-[2025-07-28 14:50:12.768] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-28 14:50:12.768] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-07-28 14:50:12.769] [DEBUG] No overlay to close
-[2025-07-28 14:50:12.769] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-28 14:50:13.200] [DEBUG] S key detected and service is enabled
-[2025-07-28 14:50:13.200] [DEBUG] SimpleTradingOverlay.OnSKeyPressed() called
-[2025-07-28 14:50:13.201] [INFO] S key pressed - starting trading pattern creation
-[2025-07-28 14:50:13.201] [INFO] Started trading pattern creation for window 393262 (symbol: XAUUSD)
-[2025-07-28 14:50:13.468] [INFO] First click recorded at (3446, 192)
-[2025-07-28 14:50:13.646] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.25000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:13.647] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:13.651] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.25000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:14.018] [INFO] Second click recorded at (3635, 224)
-[2025-07-28 14:50:14.022] [INFO] Current window handle: 393262
-[2025-07-28 14:50:14.023] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
-[2025-07-28 14:50:14.023] [INFO] Original clicks: FirstClick=(3446, 192), SecondClick=(3635, 224)
-[2025-07-28 14:50:14.023] [INFO] Pattern area: Left=3426, Top=172, Width=229, Height=72
-[2025-07-28 14:50:14.044] [INFO] TradingPatternOverlay shown at (3426, 172) with size 229x72
-[2025-07-28 14:50:14.045] [DEBUG] ConvertVirtualScreenToWindowCoordinates: virtualX=3446, virtualY=192, windowLeft=1920, windowTop=0, windowX=1526, windowY=192
-[2025-07-28 14:50:14.045] [DEBUG] ConvertVirtualScreenToWindowCoordinates: virtualX=3635, virtualY=224, windowLeft=1920, windowTop=0, windowX=1715, windowY=224
-[2025-07-28 14:50:14.047] [DEBUG] SimpleTradingOverlay: Creating metadata for capture ID=20250728145014045
-[2025-07-28 14:50:14.064] [DEBUG] SimpleTradingOverlay: Saved MetaDebug image to C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\MetaDebug.png
-[2025-07-28 14:50:14.065] [DEBUG] RectangleBreakDetector: Building metadata for image 229x72
-[2025-07-28 14:50:14.066] [DEBUG] RectangleBreakDetector: Searching for vertical line with minWhitePixels=18, minConsecutive=9
-[2025-07-28 14:50:14.066] [DEBUG] RectangleBreakDetector: Column X=228: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-07-28 14:50:14.066] [DEBUG] RectangleBreakDetector: Column X=227: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-07-28 14:50:14.066] [DEBUG] RectangleBreakDetector: Column X=226: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-07-28 14:50:14.066] [DEBUG] RectangleBreakDetector: Column X=225: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-07-28 14:50:14.067] [DEBUG] RectangleBreakDetector: Column X=224: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-07-28 14:50:14.067] [DEBUG] RectangleBreakDetector: Column X=223: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-07-28 14:50:14.067] [DEBUG] RectangleBreakDetector: Column X=222: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-07-28 14:50:14.067] [DEBUG] RectangleBreakDetector: Column X=221: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-07-28 14:50:14.067] [DEBUG] RectangleBreakDetector: Column X=220: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-07-28 14:50:14.067] [DEBUG] RectangleBreakDetector: Column X=219: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-07-28 14:50:14.068] [DEBUG] RectangleBreakDetector: Column X=218: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-07-28 14:50:14.074] [DEBUG] RectangleBreakDetector: Column X=217: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-07-28 14:50:14.074] [DEBUG] RectangleBreakDetector: Column X=216: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-07-28 14:50:14.075] [DEBUG] RectangleBreakDetector: Column X=215: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-07-28 14:50:14.075] [DEBUG] RectangleBreakDetector: Column X=214: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-07-28 14:50:14.075] [DEBUG] RectangleBreakDetector: Column X=213: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-07-28 14:50:14.075] [DEBUG] RectangleBreakDetector: Column X=212: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-07-28 14:50:14.075] [DEBUG] RectangleBreakDetector: Column X=211: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-07-28 14:50:14.075] [DEBUG] RectangleBreakDetector: Column X=210: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-07-28 14:50:14.076] [DEBUG] RectangleBreakDetector: Column X=209: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-07-28 14:50:14.076] [DEBUG] RectangleBreakDetector: Column X=208: whitePixels=26, maxConsecutive=13, gaps=2
-[2025-07-28 14:50:14.076] [DEBUG] RectangleBreakDetector: Found vertical line at X=208 (whitePixels=26, maxConsecutive=13, gaps=2)
-[2025-07-28 14:50:14.076] [DEBUG] RectangleBreakDetector: Found right vertical line at X=208
-[2025-07-28 14:50:14.079] [DEBUG] RectangleBreakDetector: Found horizontal lines at TopY=20, BottomY=52
-[2025-07-28 14:50:14.084] [DEBUG] RectangleBreakDetector: Rightmost content at X=128, distance to right edge=80
-[2025-07-28 14:50:14.084] [DEBUG] RectangleBreakDetector: Distance to content = 80 pixels
-[2025-07-28 14:50:14.088] [DEBUG] RectangleBreakDetector: Saved metadata debug image to C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\MetaDebugTracking.png
-[2025-07-28 14:50:14.105] [DEBUG] RectangleBreakDetector: Built metadata with distanceToContent=80
-[2025-07-28 14:50:14.105] [DEBUG] SimpleTradingOverlay: Created metadata for capture ID=20250728145014045, length=594
-[2025-07-28 14:50:14.129] [INFO] TradingPattern CaptureData saved: Symbol=XAUUSD, Direction=Down, X=1506, Y=172, W=229, H=72, Screenshot=C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\screenshot.png
-[2025-07-28 14:50:14.129] [INFO] Trading pattern completed: FirstClick=(3446, 192), SecondClick=(3635, 224)
-[2025-07-28 14:50:14.481] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:14.482] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:14.499] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:14.499] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:14.506] [DEBUG] RectangleBreakDetector: Found 1081 red pixels and 455 green pixels
-[2025-07-28 14:50:14.506] [DEBUG] RectangleBreakDetector: Red ratio: 0,066, Green ratio: 0,028
-[2025-07-28 14:50:14.506] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,066, Green: 0,028
-[2025-07-28 14:50:14.515] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:14.515] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:14.657] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.24000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-124}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:14.658] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:14.659] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.24000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-124}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:15.525] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:15.525] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:15.537] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:15.537] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:15.543] [DEBUG] RectangleBreakDetector: Found 1081 red pixels and 455 green pixels
-[2025-07-28 14:50:15.543] [DEBUG] RectangleBreakDetector: Red ratio: 0,066, Green ratio: 0,028
-[2025-07-28 14:50:15.544] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,066, Green: 0,028
-[2025-07-28 14:50:15.551] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:15.551] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:15.652] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.11000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-111}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:15.653] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:15.655] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.11000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-111}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:16.561] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:16.561] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:16.574] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:16.574] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:16.580] [DEBUG] RectangleBreakDetector: Found 1081 red pixels and 455 green pixels
-[2025-07-28 14:50:16.580] [DEBUG] RectangleBreakDetector: Red ratio: 0,066, Green ratio: 0,028
-[2025-07-28 14:50:16.580] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,066, Green: 0,028
-[2025-07-28 14:50:16.588] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:16.588] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:16.654] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.13000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-113}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:16.654] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:16.656] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.13000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-113}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:17.603] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:17.604] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:17.623] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:17.623] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:17.634] [DEBUG] RectangleBreakDetector: Found 1081 red pixels and 455 green pixels
-[2025-07-28 14:50:17.634] [DEBUG] RectangleBreakDetector: Red ratio: 0,066, Green ratio: 0,028
-[2025-07-28 14:50:17.634] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,066, Green: 0,028
-[2025-07-28 14:50:17.644] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:17.644] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:17.651] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.12000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-112}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:17.652] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:17.654] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.12000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-112}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:18.660] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:18.661] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.18000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-118}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:18.661] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:18.661] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:18.663] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.18000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-118}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:18.675] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:18.675] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:18.682] [DEBUG] RectangleBreakDetector: Found 1081 red pixels and 455 green pixels
-[2025-07-28 14:50:18.682] [DEBUG] RectangleBreakDetector: Red ratio: 0,066, Green ratio: 0,028
-[2025-07-28 14:50:18.682] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,066, Green: 0,028
-[2025-07-28 14:50:18.689] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:18.690] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:19.658] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.24000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-124}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:19.659] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:19.667] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.24000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-124}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:19.706] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:19.706] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:19.728] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:19.728] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:19.741] [DEBUG] RectangleBreakDetector: Found 1081 red pixels and 455 green pixels
-[2025-07-28 14:50:19.741] [DEBUG] RectangleBreakDetector: Red ratio: 0,066, Green ratio: 0,028
-[2025-07-28 14:50:19.741] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,066, Green: 0,028
-[2025-07-28 14:50:19.756] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:19.756] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:20.673] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.23000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-123}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:20.673] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:20.675] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.23000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-123}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:20.762] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:20.762] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:20.774] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:20.774] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:20.781] [DEBUG] RectangleBreakDetector: Found 1081 red pixels and 455 green pixels
-[2025-07-28 14:50:20.781] [DEBUG] RectangleBreakDetector: Red ratio: 0,066, Green ratio: 0,028
-[2025-07-28 14:50:20.781] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,066, Green: 0,028
-[2025-07-28 14:50:20.789] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:20.789] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:21.659] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.24000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-124}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:21.659] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:21.662] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.24000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-124}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:21.802] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:21.802] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:21.815] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:21.815] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:21.821] [DEBUG] RectangleBreakDetector: Found 1081 red pixels and 455 green pixels
-[2025-07-28 14:50:21.821] [DEBUG] RectangleBreakDetector: Red ratio: 0,066, Green ratio: 0,028
-[2025-07-28 14:50:21.822] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,066, Green: 0,028
-[2025-07-28 14:50:21.829] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:21.829] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:22.656] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.21000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-121}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:22.656] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:22.659] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.21000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-121}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:22.842] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:22.843] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:22.862] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:22.862] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:22.874] [DEBUG] RectangleBreakDetector: Found 1042 red pixels and 455 green pixels
-[2025-07-28 14:50:22.874] [DEBUG] RectangleBreakDetector: Red ratio: 0,063, Green ratio: 0,028
-[2025-07-28 14:50:22.875] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,063, Green: 0,028
-[2025-07-28 14:50:22.886] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:22.886] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:23.649] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.19000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-119}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:23.649] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:23.658] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.19000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-119}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:23.899] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:23.899] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:23.918] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:23.918] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:23.930] [DEBUG] RectangleBreakDetector: Found 1042 red pixels and 455 green pixels
-[2025-07-28 14:50:23.930] [DEBUG] RectangleBreakDetector: Red ratio: 0,063, Green ratio: 0,028
-[2025-07-28 14:50:23.930] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,063, Green: 0,028
-[2025-07-28 14:50:23.941] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:23.941] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:24.648] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.19000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-119}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:24.648] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:24.651] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.19000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-119}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:24.955] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:24.956] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:24.974] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:24.974] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:24.984] [DEBUG] RectangleBreakDetector: Found 1042 red pixels and 455 green pixels
-[2025-07-28 14:50:24.984] [DEBUG] RectangleBreakDetector: Red ratio: 0,063, Green ratio: 0,028
-[2025-07-28 14:50:24.985] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,063, Green: 0,028
-[2025-07-28 14:50:24.992] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:24.993] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:25.650] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.19000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-119}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:25.651] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:25.659] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.19000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-119}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:26.010] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:26.010] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:26.028] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:26.028] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:26.040] [DEBUG] RectangleBreakDetector: Found 1042 red pixels and 455 green pixels
-[2025-07-28 14:50:26.040] [DEBUG] RectangleBreakDetector: Red ratio: 0,063, Green ratio: 0,028
-[2025-07-28 14:50:26.041] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,063, Green: 0,028
-[2025-07-28 14:50:26.055] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:26.055] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:26.653] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.19000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-119}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:26.653] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:26.662] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.19000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-119}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:27.062] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:27.062] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:27.073] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:27.073] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:27.079] [DEBUG] RectangleBreakDetector: Found 1042 red pixels and 455 green pixels
-[2025-07-28 14:50:27.080] [DEBUG] RectangleBreakDetector: Red ratio: 0,063, Green ratio: 0,028
-[2025-07-28 14:50:27.080] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,063, Green: 0,028
-[2025-07-28 14:50:27.087] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:27.087] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:27.655] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.25000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:27.655] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:27.660] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.25000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:28.094] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:28.095] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:28.113] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:28.113] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:28.125] [DEBUG] RectangleBreakDetector: Found 1042 red pixels and 455 green pixels
-[2025-07-28 14:50:28.125] [DEBUG] RectangleBreakDetector: Red ratio: 0,063, Green ratio: 0,028
-[2025-07-28 14:50:28.126] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,063, Green: 0,028
-[2025-07-28 14:50:28.136] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:28.136] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:28.656] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.25000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:28.657] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:28.659] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.25000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:29.148] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:29.148] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:29.166] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:29.167] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:29.179] [DEBUG] RectangleBreakDetector: Found 1042 red pixels and 455 green pixels
-[2025-07-28 14:50:29.179] [DEBUG] RectangleBreakDetector: Red ratio: 0,063, Green ratio: 0,028
-[2025-07-28 14:50:29.179] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,063, Green: 0,028
-[2025-07-28 14:50:29.187] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:29.188] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:29.657] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.24000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-124}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:29.658] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:29.671] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.24000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-124}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:30.199] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:30.200] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:30.218] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:30.219] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:30.231] [DEBUG] RectangleBreakDetector: Found 1042 red pixels and 455 green pixels
-[2025-07-28 14:50:30.231] [DEBUG] RectangleBreakDetector: Red ratio: 0,063, Green ratio: 0,028
-[2025-07-28 14:50:30.231] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,063, Green: 0,028
-[2025-07-28 14:50:30.240] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:30.240] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:30.656] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.22000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-122}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:30.656] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:30.659] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.22000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-122}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:31.245] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:31.246] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:31.264] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:31.264] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:31.276] [DEBUG] RectangleBreakDetector: Found 1029 red pixels and 419 green pixels
-[2025-07-28 14:50:31.277] [DEBUG] RectangleBreakDetector: Red ratio: 0,062, Green ratio: 0,025
-[2025-07-28 14:50:31.277] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,062, Green: 0,025
-[2025-07-28 14:50:31.286] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:31.286] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:31.648] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.15000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-115}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:31.649] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:31.652] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.15000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-115}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:32.291] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:32.291] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:32.313] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:32.314] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:32.326] [DEBUG] RectangleBreakDetector: Found 1029 red pixels and 419 green pixels
-[2025-07-28 14:50:32.326] [DEBUG] RectangleBreakDetector: Red ratio: 0,062, Green ratio: 0,025
-[2025-07-28 14:50:32.327] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,062, Green: 0,025
-[2025-07-28 14:50:32.336] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:32.336] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:32.666] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.16000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-116}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:32.667] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:32.670] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.16000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-116}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:33.342] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:33.342] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:33.360] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:33.361] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:33.373] [DEBUG] RectangleBreakDetector: Found 1029 red pixels and 399 green pixels
-[2025-07-28 14:50:33.373] [DEBUG] RectangleBreakDetector: Red ratio: 0,062, Green ratio: 0,024
-[2025-07-28 14:50:33.373] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,062, Green: 0,024
-[2025-07-28 14:50:33.385] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:33.385] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:33.669] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.08000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-107}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:33.670] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:33.672] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.08000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-107}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:34.389] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:34.389] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:34.408] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:34.408] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:34.420] [DEBUG] RectangleBreakDetector: Found 1029 red pixels and 399 green pixels
-[2025-07-28 14:50:34.420] [DEBUG] RectangleBreakDetector: Red ratio: 0,062, Green ratio: 0,024
-[2025-07-28 14:50:34.420] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,062, Green: 0,024
-[2025-07-28 14:50:34.433] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:34.433] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:34.668] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.08000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-107}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:34.669] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:34.671] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.08000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-107}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:35.450] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:35.450] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:35.468] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:35.468] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:35.481] [DEBUG] RectangleBreakDetector: Found 1029 red pixels and 399 green pixels
-[2025-07-28 14:50:35.485] [DEBUG] RectangleBreakDetector: Red ratio: 0,062, Green ratio: 0,024
-[2025-07-28 14:50:35.485] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,062, Green: 0,024
-[2025-07-28 14:50:35.492] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:35.492] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:35.669] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.09000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-109}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:35.670] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:35.672] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.09000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-109}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:36.502] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:36.503] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:36.521] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:36.521] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:36.533] [DEBUG] RectangleBreakDetector: Found 1029 red pixels and 399 green pixels
-[2025-07-28 14:50:36.533] [DEBUG] RectangleBreakDetector: Red ratio: 0,062, Green ratio: 0,024
-[2025-07-28 14:50:36.534] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,062, Green: 0,024
-[2025-07-28 14:50:36.541] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:36.541] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:36.676] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.08000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-107}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:36.677] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:36.679] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.08000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-107}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:37.545] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:37.546] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:37.559] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:37.559] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:37.567] [DEBUG] RectangleBreakDetector: Found 1029 red pixels and 399 green pixels
-[2025-07-28 14:50:37.567] [DEBUG] RectangleBreakDetector: Red ratio: 0,062, Green ratio: 0,024
-[2025-07-28 14:50:37.568] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,062, Green: 0,024
-[2025-07-28 14:50:37.576] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:37.577] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:37.672] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.08000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-107}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:37.673] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:37.674] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.08000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-107}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:38.595] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:38.595] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:38.609] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:38.609] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:38.615] [DEBUG] RectangleBreakDetector: Found 1029 red pixels and 399 green pixels
-[2025-07-28 14:50:38.615] [DEBUG] RectangleBreakDetector: Red ratio: 0,062, Green ratio: 0,024
-[2025-07-28 14:50:38.615] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,062, Green: 0,024
-[2025-07-28 14:50:38.622] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:38.623] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:38.674] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.09000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-109}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:38.674] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:38.676] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.09000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-109}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:39.633] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:39.633] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:39.650] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:39.651] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:39.657] [DEBUG] RectangleBreakDetector: Found 1029 red pixels and 399 green pixels
-[2025-07-28 14:50:39.657] [DEBUG] RectangleBreakDetector: Red ratio: 0,062, Green ratio: 0,024
-[2025-07-28 14:50:39.657] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,062, Green: 0,024
-[2025-07-28 14:50:39.664] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:39.664] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:39.680] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.09000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-109}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:39.680] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:39.684] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.09000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-109}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:40.679] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-0.97000000,"percent":-0.01000000,"lots":0.01000000,"profit_points":-97}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:40.679] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:40.681] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-0.97000000,"percent":-0.01000000,"lots":0.01000000,"profit_points":-97}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:40.682] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:40.682] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:40.699] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:40.702] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:40.709] [DEBUG] RectangleBreakDetector: Found 1029 red pixels and 399 green pixels
-[2025-07-28 14:50:40.709] [DEBUG] RectangleBreakDetector: Red ratio: 0,062, Green ratio: 0,024
-[2025-07-28 14:50:40.709] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,062, Green: 0,024
-[2025-07-28 14:50:40.716] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:40.717] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:41.694] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-0.87000000,"percent":-0.01000000,"lots":0.01000000,"profit_points":-87}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:41.694] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:41.702] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-0.87000000,"percent":-0.01000000,"lots":0.01000000,"profit_points":-87}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:41.726] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:41.726] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:41.745] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:41.745] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:41.755] [DEBUG] RectangleBreakDetector: Found 1023 red pixels and 399 green pixels
-[2025-07-28 14:50:41.755] [DEBUG] RectangleBreakDetector: Red ratio: 0,062, Green ratio: 0,024
-[2025-07-28 14:50:41.755] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,062, Green: 0,024
-[2025-07-28 14:50:41.762] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:41.762] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:42.722] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-0.87000000,"percent":-0.01000000,"lots":0.01000000,"profit_points":-87}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:42.723] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:42.724] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-0.87000000,"percent":-0.01000000,"lots":0.01000000,"profit_points":-87}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:42.770] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:42.771] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:42.782] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:42.782] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:42.788] [DEBUG] RectangleBreakDetector: Found 1023 red pixels and 399 green pixels
-[2025-07-28 14:50:42.789] [DEBUG] RectangleBreakDetector: Red ratio: 0,062, Green ratio: 0,024
-[2025-07-28 14:50:42.789] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,062, Green: 0,024
-[2025-07-28 14:50:42.796] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:42.796] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:43.728] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-0.88000000,"percent":-0.01000000,"lots":0.01000000,"profit_points":-88}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:43.729] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:43.731] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-0.88000000,"percent":-0.01000000,"lots":0.01000000,"profit_points":-88}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:43.807] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:43.807] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:43.825] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:43.826] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:43.838] [DEBUG] RectangleBreakDetector: Found 1023 red pixels and 399 green pixels
-[2025-07-28 14:50:43.838] [DEBUG] RectangleBreakDetector: Red ratio: 0,062, Green ratio: 0,024
-[2025-07-28 14:50:43.839] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,062, Green: 0,024
-[2025-07-28 14:50:43.852] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:43.852] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:44.727] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-0.87000000,"percent":-0.01000000,"lots":0.01000000,"profit_points":-87}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:44.728] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:44.729] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-0.87000000,"percent":-0.01000000,"lots":0.01000000,"profit_points":-87}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:44.869] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:44.870] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:44.892] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:44.893] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:44.903] [DEBUG] RectangleBreakDetector: Found 1023 red pixels and 399 green pixels
-[2025-07-28 14:50:44.903] [DEBUG] RectangleBreakDetector: Red ratio: 0,062, Green ratio: 0,024
-[2025-07-28 14:50:44.903] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,062, Green: 0,024
-[2025-07-28 14:50:44.910] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:44.910] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:45.729] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-0.98000000,"percent":-0.01000000,"lots":0.01000000,"profit_points":-98}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:45.729] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:45.732] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-0.98000000,"percent":-0.01000000,"lots":0.01000000,"profit_points":-98}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:45.924] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:45.924] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:45.948] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:45.949] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:45.958] [DEBUG] RectangleBreakDetector: Found 1023 red pixels and 399 green pixels
-[2025-07-28 14:50:45.958] [DEBUG] RectangleBreakDetector: Red ratio: 0,062, Green ratio: 0,024
-[2025-07-28 14:50:45.958] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,062, Green: 0,024
-[2025-07-28 14:50:45.967] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:45.967] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:46.731] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-0.98000000,"percent":-0.01000000,"lots":0.01000000,"profit_points":-98}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:46.731] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:46.744] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-0.98000000,"percent":-0.01000000,"lots":0.01000000,"profit_points":-98}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:46.976] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:46.976] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:46.994] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:46.994] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:47.001] [DEBUG] RectangleBreakDetector: Found 1022 red pixels and 399 green pixels
-[2025-07-28 14:50:47.001] [DEBUG] RectangleBreakDetector: Red ratio: 0,062, Green ratio: 0,024
-[2025-07-28 14:50:47.001] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,062, Green: 0,024
-[2025-07-28 14:50:47.008] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:47.008] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:47.728] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.03000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-103}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:47.728] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:47.731] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.03000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-103}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:48.025] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:48.026] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:48.048] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:48.048] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:48.057] [DEBUG] RectangleBreakDetector: Found 1022 red pixels and 399 green pixels
-[2025-07-28 14:50:48.057] [DEBUG] RectangleBreakDetector: Red ratio: 0,062, Green ratio: 0,024
-[2025-07-28 14:50:48.057] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,062, Green: 0,024
-[2025-07-28 14:50:48.065] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:48.065] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:48.725] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.04000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-103}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:48.726] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:48.734] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.04000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-103}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:49.076] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:49.077] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:49.092] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:49.092] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:49.098] [DEBUG] RectangleBreakDetector: Found 1022 red pixels and 399 green pixels
-[2025-07-28 14:50:49.099] [DEBUG] RectangleBreakDetector: Red ratio: 0,062, Green ratio: 0,024
-[2025-07-28 14:50:49.099] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,062, Green: 0,024
-[2025-07-28 14:50:49.106] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:49.106] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:49.730] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.04000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-103}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:49.730] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:49.733] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.04000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-103}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:50.120] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:50.121] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:50.132] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:50.132] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:50.138] [DEBUG] RectangleBreakDetector: Found 1022 red pixels and 399 green pixels
-[2025-07-28 14:50:50.139] [DEBUG] RectangleBreakDetector: Red ratio: 0,062, Green ratio: 0,024
-[2025-07-28 14:50:50.139] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,062, Green: 0,024
-[2025-07-28 14:50:50.146] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:50.146] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:50.739] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.05000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-105}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:50.739] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:50.744] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.05000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-105}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:51.149] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:51.150] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:51.163] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:51.163] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:51.172] [DEBUG] RectangleBreakDetector: Found 1022 red pixels and 399 green pixels
-[2025-07-28 14:50:51.173] [DEBUG] RectangleBreakDetector: Red ratio: 0,062, Green ratio: 0,024
-[2025-07-28 14:50:51.173] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,062, Green: 0,024
-[2025-07-28 14:50:51.180] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:51.180] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:51.752] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.15000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-115}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:51.752] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:51.754] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.15000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-115}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:52.198] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:52.198] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:52.216] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:52.217] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:52.229] [DEBUG] RectangleBreakDetector: Found 1023 red pixels and 397 green pixels
-[2025-07-28 14:50:52.229] [DEBUG] RectangleBreakDetector: Red ratio: 0,062, Green ratio: 0,024
-[2025-07-28 14:50:52.229] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,062, Green: 0,024
-[2025-07-28 14:50:52.248] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:52.248] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:52.740] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.15000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-115}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:52.741] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:52.745] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.15000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-115}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:53.257] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:53.257] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:53.269] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:53.269] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:53.275] [DEBUG] RectangleBreakDetector: Found 1023 red pixels and 397 green pixels
-[2025-07-28 14:50:53.275] [DEBUG] RectangleBreakDetector: Red ratio: 0,062, Green ratio: 0,024
-[2025-07-28 14:50:53.275] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,062, Green: 0,024
-[2025-07-28 14:50:53.282] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:53.283] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:53.746] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.15000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-115}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:53.746] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:53.748] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.15000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-115}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:54.288] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:54.288] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:54.300] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:54.300] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:54.306] [DEBUG] RectangleBreakDetector: Found 1023 red pixels and 397 green pixels
-[2025-07-28 14:50:54.307] [DEBUG] RectangleBreakDetector: Red ratio: 0,062, Green ratio: 0,024
-[2025-07-28 14:50:54.307] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,062, Green: 0,024
-[2025-07-28 14:50:54.314] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:54.314] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:54.746] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.17000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-117}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:54.747] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:54.748] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.17000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-117}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:55.330] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:55.330] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:55.341] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:55.341] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:55.353] [DEBUG] RectangleBreakDetector: Found 1023 red pixels and 397 green pixels
-[2025-07-28 14:50:55.353] [DEBUG] RectangleBreakDetector: Red ratio: 0,062, Green ratio: 0,024
-[2025-07-28 14:50:55.353] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,062, Green: 0,024
-[2025-07-28 14:50:55.366] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:55.367] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:55.757] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.17000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-117}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:55.758] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:55.762] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.17000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-117}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:56.373] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:56.373] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:56.384] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:56.384] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:56.390] [DEBUG] RectangleBreakDetector: Found 1006 red pixels and 396 green pixels
-[2025-07-28 14:50:56.391] [DEBUG] RectangleBreakDetector: Red ratio: 0,061, Green ratio: 0,024
-[2025-07-28 14:50:56.391] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,061, Green: 0,024
-[2025-07-28 14:50:56.398] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:56.398] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:56.772] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.18000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-118}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:56.772] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:56.775] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.18000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-118}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:57.414] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:57.415] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:57.426] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:57.427] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:57.433] [DEBUG] RectangleBreakDetector: Found 1006 red pixels and 396 green pixels
-[2025-07-28 14:50:57.433] [DEBUG] RectangleBreakDetector: Red ratio: 0,061, Green ratio: 0,024
-[2025-07-28 14:50:57.433] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,061, Green: 0,024
-[2025-07-28 14:50:57.440] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:57.440] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:57.778] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.18000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-118}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:57.779] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:57.787] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.18000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-118}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:58.456] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:58.457] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:58.475] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:58.475] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:58.487] [DEBUG] RectangleBreakDetector: Found 1006 red pixels and 396 green pixels
-[2025-07-28 14:50:58.487] [DEBUG] RectangleBreakDetector: Red ratio: 0,061, Green ratio: 0,024
-[2025-07-28 14:50:58.488] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,061, Green: 0,024
-[2025-07-28 14:50:58.496] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:58.496] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:58.773] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.15000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-115}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:58.773] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:58.782] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.15000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-115}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:59.499] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:50:59.499] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:50:59.516] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:50:59.516] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:50:59.524] [DEBUG] RectangleBreakDetector: Found 1006 red pixels and 396 green pixels
-[2025-07-28 14:50:59.524] [DEBUG] RectangleBreakDetector: Red ratio: 0,061, Green ratio: 0,024
-[2025-07-28 14:50:59.524] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,061, Green: 0,024
-[2025-07-28 14:50:59.533] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:50:59.533] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:50:59.782] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.25000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6687.86000000}
-
-[2025-07-28 14:50:59.782] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:50:59.790] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.25000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:00.549] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:51:00.549] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:51:00.560] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:51:00.561] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:51:00.567] [DEBUG] RectangleBreakDetector: Found 1006 red pixels and 396 green pixels
-[2025-07-28 14:51:00.567] [DEBUG] RectangleBreakDetector: Red ratio: 0,061, Green ratio: 0,024
-[2025-07-28 14:51:00.567] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,061, Green: 0,024
-[2025-07-28 14:51:00.574] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:51:00.574] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:51:00.787] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.30000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-130}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:00.788] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:51:00.796] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.30000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-130}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:01.580] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:51:01.581] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:51:01.592] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:51:01.593] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:51:01.599] [DEBUG] RectangleBreakDetector: Found 1006 red pixels and 396 green pixels
-[2025-07-28 14:51:01.599] [DEBUG] RectangleBreakDetector: Red ratio: 0,061, Green ratio: 0,024
-[2025-07-28 14:51:01.599] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,061, Green: 0,024
-[2025-07-28 14:51:01.606] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:51:01.607] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:51:01.772] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.31000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-130}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:01.772] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:51:01.777] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.31000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-130}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:02.614] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:51:02.614] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:51:02.626] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:51:02.626] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:51:02.632] [DEBUG] RectangleBreakDetector: Found 1006 red pixels and 396 green pixels
-[2025-07-28 14:51:02.633] [DEBUG] RectangleBreakDetector: Red ratio: 0,061, Green ratio: 0,024
-[2025-07-28 14:51:02.633] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,061, Green: 0,024
-[2025-07-28 14:51:02.640] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:51:02.640] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:51:02.774] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.25000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:02.774] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:51:02.775] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.25000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:03.642] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:51:03.642] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:51:03.653] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:51:03.653] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:51:03.660] [DEBUG] RectangleBreakDetector: Found 955 red pixels and 396 green pixels
-[2025-07-28 14:51:03.660] [DEBUG] RectangleBreakDetector: Red ratio: 0,058, Green ratio: 0,024
-[2025-07-28 14:51:03.660] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,058, Green: 0,024
-[2025-07-28 14:51:03.666] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:51:03.666] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:51:03.786] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.08000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-107}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:03.786] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:51:03.794] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.08000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-107}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:04.683] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:51:04.683] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:51:04.696] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:51:04.696] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:51:04.703] [DEBUG] RectangleBreakDetector: Found 955 red pixels and 396 green pixels
-[2025-07-28 14:51:04.703] [DEBUG] RectangleBreakDetector: Red ratio: 0,058, Green ratio: 0,024
-[2025-07-28 14:51:04.703] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,058, Green: 0,024
-[2025-07-28 14:51:04.710] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:51:04.710] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:51:04.776] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.21000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-121}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:04.776] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:51:04.777] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.21000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-121}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:05.729] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:51:05.729] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:51:05.741] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:51:05.742] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:51:05.748] [DEBUG] RectangleBreakDetector: Found 955 red pixels and 396 green pixels
-[2025-07-28 14:51:05.748] [DEBUG] RectangleBreakDetector: Red ratio: 0,058, Green ratio: 0,024
-[2025-07-28 14:51:05.748] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,058, Green: 0,024
-[2025-07-28 14:51:05.755] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:51:05.755] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:51:05.777] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.28000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-128}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:05.777] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:51:05.778] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.28000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-128}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:06.375] [DEBUG] Right Arrow key detected and service is enabled
-[2025-07-28 14:51:06.376] [DEBUG] D key pressed - shifting canvas right
-[2025-07-28 14:51:06.761] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:51:06.762] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:51:06.777] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.25000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:06.778] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:51:06.780] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:51:06.780] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:51:06.786] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.25000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:06.793] [DEBUG] RectangleBreakDetector: Found 955 red pixels and 396 green pixels
-[2025-07-28 14:51:06.793] [DEBUG] RectangleBreakDetector: Red ratio: 0,058, Green ratio: 0,024
-[2025-07-28 14:51:06.793] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,058, Green: 0,024
-[2025-07-28 14:51:06.804] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:51:06.804] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:51:06.887] [DEBUG] Right Arrow key detected and service is enabled
-[2025-07-28 14:51:06.888] [DEBUG] D key pressed - shifting canvas right
-[2025-07-28 14:51:06.918] [DEBUG] Right Arrow key detected and service is enabled
-[2025-07-28 14:51:06.919] [DEBUG] D key pressed - shifting canvas right
-[2025-07-28 14:51:06.950] [DEBUG] Right Arrow key detected and service is enabled
-[2025-07-28 14:51:06.950] [DEBUG] D key pressed - shifting canvas right
-[2025-07-28 14:51:06.982] [DEBUG] Right Arrow key detected and service is enabled
-[2025-07-28 14:51:06.982] [DEBUG] D key pressed - shifting canvas right
-[2025-07-28 14:51:07.014] [DEBUG] Right Arrow key detected and service is enabled
-[2025-07-28 14:51:07.014] [DEBUG] D key pressed - shifting canvas right
-[2025-07-28 14:51:07.046] [DEBUG] Right Arrow key detected and service is enabled
-[2025-07-28 14:51:07.046] [DEBUG] D key pressed - shifting canvas right
-[2025-07-28 14:51:07.078] [DEBUG] Right Arrow key detected and service is enabled
-[2025-07-28 14:51:07.078] [DEBUG] D key pressed - shifting canvas right
-[2025-07-28 14:51:07.110] [DEBUG] Right Arrow key detected and service is enabled
-[2025-07-28 14:51:07.110] [DEBUG] D key pressed - shifting canvas right
-[2025-07-28 14:51:07.287] [DEBUG] Right Arrow key detected and service is enabled
-[2025-07-28 14:51:07.288] [DEBUG] D key pressed - shifting canvas right
-[2025-07-28 14:51:07.623] [DEBUG] Left Arrow key detected and service is enabled
-[2025-07-28 14:51:07.624] [DEBUG] A key pressed - shifting canvas left
-[2025-07-28 14:51:07.793] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.25000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:07.793] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:51:07.802] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.25000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:07.818] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:51:07.818] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:51:07.837] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:51:07.837] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:51:07.849] [DEBUG] RectangleBreakDetector: Found 955 red pixels and 396 green pixels
-[2025-07-28 14:51:07.850] [DEBUG] RectangleBreakDetector: Red ratio: 0,058, Green ratio: 0,024
-[2025-07-28 14:51:07.851] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,058, Green: 0,024
-[2025-07-28 14:51:07.858] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:51:07.858] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:51:08.055] [DEBUG] C key detected and service is enabled
-[2025-07-28 14:51:08.056] [DEBUG] C key pressed - clearing canvas
-[2025-07-28 14:51:08.795] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.25000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:08.796] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:51:08.801] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.25000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-125}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:08.875] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:51:08.876] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:51:08.893] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:51:08.893] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:51:08.900] [DEBUG] RectangleBreakDetector: Found 955 red pixels and 396 green pixels
-[2025-07-28 14:51:08.900] [DEBUG] RectangleBreakDetector: Red ratio: 0,058, Green ratio: 0,024
-[2025-07-28 14:51:08.900] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,058, Green: 0,024
-[2025-07-28 14:51:08.908] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:51:08.908] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:51:09.796] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.22000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-122}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:09.796] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:51:09.801] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.22000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-122}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:09.922] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:51:09.922] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:51:09.937] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:51:09.938] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:51:09.944] [DEBUG] RectangleBreakDetector: Found 955 red pixels and 396 green pixels
-[2025-07-28 14:51:09.945] [DEBUG] RectangleBreakDetector: Red ratio: 0,058, Green ratio: 0,024
-[2025-07-28 14:51:09.945] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,058, Green: 0,024
-[2025-07-28 14:51:09.952] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:51:09.952] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:51:10.809] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.23000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-123}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:10.810] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:51:10.811] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.23000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-123}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:10.967] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:51:10.967] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:51:10.979] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:51:10.979] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:51:10.985] [DEBUG] RectangleBreakDetector: Found 955 red pixels and 396 green pixels
-[2025-07-28 14:51:10.985] [DEBUG] RectangleBreakDetector: Red ratio: 0,058, Green ratio: 0,024
-[2025-07-28 14:51:10.985] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,058, Green: 0,024
-[2025-07-28 14:51:10.992] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:51:10.992] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:51:11.815] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.23000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-123}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:11.816] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:51:11.817] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.23000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-123}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:12.006] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:51:12.007] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:51:12.018] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:51:12.019] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:51:12.025] [DEBUG] RectangleBreakDetector: Found 955 red pixels and 396 green pixels
-[2025-07-28 14:51:12.025] [DEBUG] RectangleBreakDetector: Red ratio: 0,058, Green ratio: 0,024
-[2025-07-28 14:51:12.025] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,058, Green: 0,024
-[2025-07-28 14:51:12.032] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:51:12.032] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:51:12.805] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.15000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-115}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:12.806] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:51:12.807] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.15000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-115}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:13.049] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:51:13.049] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:51:13.061] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:51:13.062] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:51:13.068] [DEBUG] RectangleBreakDetector: Found 903 red pixels and 396 green pixels
-[2025-07-28 14:51:13.068] [DEBUG] RectangleBreakDetector: Red ratio: 0,055, Green ratio: 0,024
-[2025-07-28 14:51:13.068] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,055, Green: 0,024
-[2025-07-28 14:51:13.075] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:51:13.075] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:51:13.810] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.15000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-115}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:13.810] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:51:13.814] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.15000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-115}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:14.091] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:51:14.091] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:51:14.104] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:51:14.104] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:51:14.111] [DEBUG] RectangleBreakDetector: Found 903 red pixels and 396 green pixels
-[2025-07-28 14:51:14.112] [DEBUG] RectangleBreakDetector: Red ratio: 0,055, Green ratio: 0,024
-[2025-07-28 14:51:14.112] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,055, Green: 0,024
-[2025-07-28 14:51:14.118] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:51:14.118] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:51:14.827] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.15000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-115}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:14.828] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:51:14.841] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.15000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-115}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:15.071] [DEBUG] S key detected and service is enabled
-[2025-07-28 14:51:15.072] [DEBUG] SimpleTradingOverlay.OnSKeyPressed() called
-[2025-07-28 14:51:15.072] [INFO] S key pressed - starting trading pattern creation
-[2025-07-28 14:51:15.072] [INFO] Started trading pattern creation for window 393262 (symbol: XAUUSD)
-[2025-07-28 14:51:15.126] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:51:15.126] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:51:15.137] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:51:15.138] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:51:15.144] [DEBUG] RectangleBreakDetector: Found 903 red pixels and 396 green pixels
-[2025-07-28 14:51:15.144] [DEBUG] RectangleBreakDetector: Red ratio: 0,055, Green ratio: 0,024
-[2025-07-28 14:51:15.144] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,055, Green: 0,024
-[2025-07-28 14:51:15.151] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:51:15.151] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:51:15.575] [INFO] [DEBUG] OnWHotkey event in MainWindow
-[2025-07-28 14:51:15.693] [INFO] JForex: Клик успешно выполнен в позиции (280, 56)
-[2025-07-28 14:51:15.694] [INFO] Hotkey button index 1 clicked at (280,56) on window 131848
-[2025-07-28 14:51:15.694] [INFO] [DEBUG] Mouse returned to (593,158)
-[2025-07-28 14:51:15.821] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.15000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-115}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:15.822] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:51:15.830] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.15000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-115}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:16.168] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:51:16.168] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:51:16.181] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:51:16.181] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:51:16.189] [DEBUG] RectangleBreakDetector: Found 903 red pixels and 396 green pixels
-[2025-07-28 14:51:16.189] [DEBUG] RectangleBreakDetector: Red ratio: 0,055, Green ratio: 0,024
-[2025-07-28 14:51:16.189] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,055, Green: 0,024
-[2025-07-28 14:51:16.196] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:51:16.196] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:51:16.824] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.14000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-114}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:16.824] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:51:16.829] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.14000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-114}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:17.119] [DEBUG] S key detected and service is enabled
-[2025-07-28 14:51:17.119] [DEBUG] SimpleTradingOverlay.OnSKeyPressed() called
-[2025-07-28 14:51:17.120] [INFO] S key pressed - starting trading pattern creation
-[2025-07-28 14:51:17.120] [WARNING] Trading pattern already active, cancelling previous one
-[2025-07-28 14:51:17.120] [INFO] Trading pattern cancelled
-[2025-07-28 14:51:17.120] [INFO] Started trading pattern creation for window 393262 (symbol: XAUUSD)
-[2025-07-28 14:51:17.199] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:51:17.199] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:51:17.216] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:51:17.216] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:51:17.222] [DEBUG] RectangleBreakDetector: Found 903 red pixels and 396 green pixels
-[2025-07-28 14:51:17.222] [DEBUG] RectangleBreakDetector: Red ratio: 0,055, Green ratio: 0,024
-[2025-07-28 14:51:17.222] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,055, Green: 0,024
-[2025-07-28 14:51:17.229] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:51:17.229] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:51:17.591] [DEBUG] Space key detected and service is enabled
-[2025-07-28 14:51:17.594] [DEBUG] Target window captured (Handle: 0x20308)
-[2025-07-28 14:51:17.646] [INFO] Window activated - focus set to InkCanvas
-[2025-07-28 14:51:17.647] [INFO] Window loaded for handler 131848
-[2025-07-28 14:51:17.769] [INFO] InkCanvas initialized successfully with Yellow brush
-[2025-07-28 14:51:17.770] [INFO] Canvas loaded: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\131848.xaml
-[2025-07-28 14:51:17.771] [INFO] Brush mode updated: Simple mode
-[2025-07-28 14:51:17.771] [INFO] Active symbol display updated: XAUUSD
-[2025-07-28 14:51:17.808] [DEBUG] Canvas window opened
-[2025-07-28 14:51:17.808] [DEBUG] New CanvasWindow opened
-[2025-07-28 14:51:17.830] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.15000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-115}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:17.831] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:51:17.832] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.15000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-115}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:18.239] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:51:18.239] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:51:18.257] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:51:18.258] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:51:18.267] [DEBUG] RectangleBreakDetector: Found 903 red pixels and 396 green pixels
-[2025-07-28 14:51:18.267] [DEBUG] RectangleBreakDetector: Red ratio: 0,055, Green ratio: 0,024
-[2025-07-28 14:51:18.267] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,055, Green: 0,024
-[2025-07-28 14:51:18.274] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:51:18.274] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:51:18.415] [DEBUG] Escape key detected and service is enabled
-[2025-07-28 14:51:18.415] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-28 14:51:18.416] [INFO] Escape key pressed - cancelling trading pattern
-[2025-07-28 14:51:18.416] [INFO] Trading pattern cancelled
-[2025-07-28 14:51:18.416] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-07-28 14:51:18.417] [DEBUG] Closing canvas window
-[2025-07-28 14:51:18.418] [INFO] Window closing: saving canvas
-[2025-07-28 14:51:18.498] [INFO] Canvas saved: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\131848.xaml, C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\131848.png
-[2025-07-28 14:51:18.498] [INFO] Canvas saved properly
-[2025-07-28 14:51:18.503] [DEBUG] Canvas window closed
-[2025-07-28 14:51:18.503] [DEBUG] No overlay to close
-[2025-07-28 14:51:18.503] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-28 14:51:18.823] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.26000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-126}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:18.823] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:51:18.832] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.26000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-126}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:19.282] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-07-28 14:51:19.282] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728145014045, Handle=393262, X=1506, Y=172, W=229, H=72
-[2025-07-28 14:51:19.294] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728145014045, Meta length=594
-[2025-07-28 14:51:19.294] [DEBUG] RectangleBreakDetector: Start DetectBreakoutOHLC, bitmap size: 229x72
-[2025-07-28 14:51:19.300] [DEBUG] RectangleBreakDetector: Found 903 red pixels and 396 green pixels
-[2025-07-28 14:51:19.300] [DEBUG] RectangleBreakDetector: Red ratio: 0,055, Green ratio: 0,024
-[2025-07-28 14:51:19.300] [INFO] RectangleBreakDetector: No breakout detected. Red: 0,055, Green: 0,024
-[2025-07-28 14:51:19.307] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png] Rectangle detected, breakout NOT found.
-[2025-07-28 14:51:19.307] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728145014045\tracking.png: NoBreakout
-[2025-07-28 14:51:19.820] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.26000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-126}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:19.821] [INFO] MT4 Socket: Processing orders_summary event
-[2025-07-28 14:51:19.825] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.26000000,"percent":-0.02000000,"lots":0.01000000,"profit_points":-126}},"total_balance":6687.86000000}
-
-[2025-07-28 14:51:20.028] [INFO] MainWindow closing - cleaning up resources
-[2025-07-28 14:51:20.031] [INFO] SimpleTradingOverlay closed
-[2025-07-28 14:51:20.033] [INFO] Disconnecting from MT4 socket
-[2025-07-28 14:51:20.034] [INFO] MT4 socket read operation cancelled
-[2025-07-28 14:51:20.034] [INFO] MT4 socket read loop ended
-[2025-07-28 14:51:20.034] [INFO] Disconnecting from Pocket Option socket
-[2025-07-28 14:51:20.034] [INFO] All services cleaned up
-[2025-07-28 14:51:20.035] [INFO] MainWindow cleanup completed
-[2025-07-28 14:51:20.035] [INFO] Pocket Option socket read operation cancelled
-[2025-07-28 14:51:20.035] [INFO] Pocket Option socket read loop ended
-[2025-07-28 14:51:20.035] [INFO] Disconnecting from MT4 socket
-[2025-07-28 14:51:20.035] [WARNING] Not connected to MT4 socket
-[2025-07-28 14:51:20.035] [INFO] Disconnecting from Pocket Option socket
-[2025-07-28 14:51:20.035] [WARNING] Not connected to Pocket Option socket
-[2025-07-28 14:51:20.036] [INFO] All services cleaned up
-[2025-07-28 14:51:20.050] [DEBUG] MT4 Connection: Disconnected
-[2025-07-28 14:51:20.051] [INFO] MT4 Connection status: Disconnected
-[2025-07-28 14:51:20.054] [INFO] Successfully disconnected from Pocket Option socket
+[2025-07-28 16:03:30.436] [INFO] app.log file deleted successfully
+[2025-07-28 16:03:30.436] [INFO] Trade counter reset successfully
+[2025-07-28 16:03:30.453] [INFO] Initialized 6 symbols in database
+[2025-07-28 16:03:31.193] [DEBUG] Status: Found and brought 1 window(s) to foreground: XAU/USD, T89
+[2025-07-28 16:03:31.552] [INFO] Applied default toolbar settings for window 393262
+[2025-07-28 16:03:31.605] [INFO] Overlay positioned on window 393262 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
+[2025-07-28 16:03:35.299] [DEBUG] Escape key detected and service is enabled
+[2025-07-28 16:03:35.300] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-28 16:03:35.301] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-28 16:03:35.301] [DEBUG] No overlay to close
+[2025-07-28 16:03:35.301] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-28 16:03:35.451] [DEBUG] Escape key detected and service is enabled
+[2025-07-28 16:03:35.451] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-28 16:03:35.451] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-28 16:03:35.451] [DEBUG] No overlay to close
+[2025-07-28 16:03:35.451] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-28 16:03:35.579] [DEBUG] Escape key detected and service is enabled
+[2025-07-28 16:03:35.579] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-28 16:03:35.579] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-28 16:03:35.580] [DEBUG] No overlay to close
+[2025-07-28 16:03:35.580] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-28 16:03:36.403] [DEBUG] S key detected and service is enabled
+[2025-07-28 16:03:36.403] [DEBUG] SimpleTradingOverlay.OnSKeyPressed() called
+[2025-07-28 16:03:36.404] [INFO] S key pressed - starting trading pattern creation
+[2025-07-28 16:03:36.404] [INFO] Started trading pattern creation for window 393262 (symbol: XAUUSD)
+[2025-07-28 16:03:37.080] [INFO] First click recorded at (3318, 751)
+[2025-07-28 16:03:37.781] [INFO] Second click recorded at (3462, 730)
+[2025-07-28 16:03:37.785] [INFO] Current window handle: 393262
+[2025-07-28 16:03:37.786] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-28 16:03:37.786] [INFO] Original clicks: FirstClick=(3318, 751), SecondClick=(3462, 730)
+[2025-07-28 16:03:37.786] [INFO] Pattern area: Left=3298, Top=710, Width=184, Height=61
+[2025-07-28 16:03:37.824] [INFO] TradingPatternOverlay shown at (3298, 710) with size 184x61
+[2025-07-28 16:03:37.825] [DEBUG] ConvertVirtualScreenToWindowCoordinates: virtualX=3318, virtualY=751, windowLeft=1920, windowTop=0, windowX=1398, windowY=751
+[2025-07-28 16:03:37.825] [DEBUG] ConvertVirtualScreenToWindowCoordinates: virtualX=3462, virtualY=730, windowLeft=1920, windowTop=0, windowX=1542, windowY=730
+[2025-07-28 16:03:37.826] [DEBUG] SimpleTradingOverlay: Creating metadata for capture ID=20250728160337825
+[2025-07-28 16:03:37.850] [DEBUG] SimpleTradingOverlay: Saved MetaDebug image to C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728160337825\MetaDebug.png
+[2025-07-28 16:03:37.852] [DEBUG] RectangleBreakDetector: Building metadata for image 184x61
+[2025-07-28 16:03:37.852] [DEBUG] RectangleBreakDetector: Searching for vertical line with minWhitePixels=10, minConsecutive=6
+[2025-07-28 16:03:37.853] [DEBUG] RectangleBreakDetector: Column X=183: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:37.853] [DEBUG] RectangleBreakDetector: Column X=182: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:37.853] [DEBUG] RectangleBreakDetector: Column X=181: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:37.853] [DEBUG] RectangleBreakDetector: Column X=180: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:37.854] [DEBUG] RectangleBreakDetector: Column X=179: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:37.854] [DEBUG] RectangleBreakDetector: Column X=178: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:37.854] [DEBUG] RectangleBreakDetector: Column X=177: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:37.854] [DEBUG] RectangleBreakDetector: Column X=176: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:37.854] [DEBUG] RectangleBreakDetector: Column X=175: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:37.854] [DEBUG] RectangleBreakDetector: Column X=174: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:37.855] [DEBUG] RectangleBreakDetector: Column X=173: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:37.855] [DEBUG] RectangleBreakDetector: Column X=172: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:37.855] [DEBUG] RectangleBreakDetector: Column X=171: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:37.855] [DEBUG] RectangleBreakDetector: Column X=170: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:37.855] [DEBUG] RectangleBreakDetector: Column X=169: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:37.855] [DEBUG] RectangleBreakDetector: Column X=168: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:37.855] [DEBUG] RectangleBreakDetector: Column X=167: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:37.856] [DEBUG] RectangleBreakDetector: Column X=166: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:37.856] [DEBUG] RectangleBreakDetector: Column X=165: whitePixels=3, maxConsecutive=1, gaps=3
+[2025-07-28 16:03:37.856] [DEBUG] RectangleBreakDetector: Column X=164: whitePixels=9, maxConsecutive=3, gaps=3
+[2025-07-28 16:03:37.856] [DEBUG] RectangleBreakDetector: Column X=163: whitePixels=15, maxConsecutive=5, gaps=3
+[2025-07-28 16:03:37.856] [DEBUG] RectangleBreakDetector: Column X=162: whitePixels=24, maxConsecutive=24, gaps=1
+[2025-07-28 16:03:37.856] [DEBUG] RectangleBreakDetector: Found vertical line at X=162 (whitePixels=24, maxConsecutive=24, gaps=1)
+[2025-07-28 16:03:37.856] [DEBUG] RectangleBreakDetector: Found right vertical line at X=162
+[2025-07-28 16:03:37.859] [DEBUG] RectangleBreakDetector: Found horizontal lines at TopY=19, BottomY=42
+[2025-07-28 16:03:37.865] [DEBUG] RectangleBreakDetector: Rightmost content at X=102, distance to right edge=60
+[2025-07-28 16:03:37.865] [DEBUG] RectangleBreakDetector: Distance to content = 60 pixels
+[2025-07-28 16:03:37.870] [DEBUG] RectangleBreakDetector: Saved metadata debug image to C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728160337825\MetaDebugTracking.png
+[2025-07-28 16:03:37.888] [DEBUG] RectangleBreakDetector: Built metadata with distanceToContent=60
+[2025-07-28 16:03:37.888] [DEBUG] SimpleTradingOverlay: Created metadata for capture ID=20250728160337825, length=594
+[2025-07-28 16:03:37.915] [INFO] TradingPattern CaptureData saved: Symbol=XAUUSD, Direction=Up, X=1378, Y=710, W=184, H=61, Screenshot=C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728160337825\screenshot.png
+[2025-07-28 16:03:37.915] [INFO] Trading pattern completed: FirstClick=(3318, 751), SecondClick=(3462, 730)
+[2025-07-28 16:03:38.106] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 16:03:38.107] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728160337825, Handle=393262, X=1378, Y=710, W=184, H=61
+[2025-07-28 16:03:38.124] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728160337825, Meta length=594
+[2025-07-28 16:03:38.126] [DEBUG] RectangleBreakDetector: Starting breakout detection for capture ID=20250728160337825, Direction=Up
+[2025-07-28 16:03:38.126] [DEBUG] RectangleBreakDetector: Searching for vertical line with minWhitePixels=10, minConsecutive=6
+[2025-07-28 16:03:38.126] [DEBUG] RectangleBreakDetector: Column X=183: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:38.126] [DEBUG] RectangleBreakDetector: Column X=182: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:38.127] [DEBUG] RectangleBreakDetector: Column X=181: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:38.127] [DEBUG] RectangleBreakDetector: Column X=180: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:38.127] [DEBUG] RectangleBreakDetector: Column X=179: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:38.127] [DEBUG] RectangleBreakDetector: Column X=178: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:38.127] [DEBUG] RectangleBreakDetector: Column X=177: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:38.127] [DEBUG] RectangleBreakDetector: Column X=176: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:38.128] [DEBUG] RectangleBreakDetector: Column X=175: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:38.128] [DEBUG] RectangleBreakDetector: Column X=174: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:38.128] [DEBUG] RectangleBreakDetector: Column X=173: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:38.128] [DEBUG] RectangleBreakDetector: Column X=172: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:38.128] [DEBUG] RectangleBreakDetector: Column X=171: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:38.128] [DEBUG] RectangleBreakDetector: Column X=170: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:38.129] [DEBUG] RectangleBreakDetector: Column X=169: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:38.129] [DEBUG] RectangleBreakDetector: Column X=168: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:38.129] [DEBUG] RectangleBreakDetector: Column X=167: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:38.129] [DEBUG] RectangleBreakDetector: Column X=166: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:03:38.130] [DEBUG] RectangleBreakDetector: Column X=165: whitePixels=3, maxConsecutive=1, gaps=3
+[2025-07-28 16:03:38.130] [DEBUG] RectangleBreakDetector: Column X=164: whitePixels=6, maxConsecutive=3, gaps=2
+[2025-07-28 16:03:38.130] [DEBUG] RectangleBreakDetector: Column X=163: whitePixels=12, maxConsecutive=5, gaps=4
+[2025-07-28 16:03:38.130] [DEBUG] RectangleBreakDetector: Column X=162: whitePixels=22, maxConsecutive=22, gaps=1
+[2025-07-28 16:03:38.130] [DEBUG] RectangleBreakDetector: Found vertical line at X=162 (whitePixels=22, maxConsecutive=22, gaps=1)
+[2025-07-28 16:03:38.133] [DEBUG] RectangleBreakDetector: Rectangle boundaries - rightX=162, topY=19, bottomY=42, height=23
+[2025-07-28 16:03:38.133] [DEBUG] RectangleBreakDetector: Image size: 184x61
+[2025-07-28 16:03:38.133] [DEBUG] RectangleBreakDetector: Analyzing upper boundary for UP breakout (green pixels) from Y=0 to Y=19
+[2025-07-28 16:03:38.134] [DEBUG] RectangleBreakDetector: Searching for vertical clusters in area: X=0 to 162, Y=0 to 19, lookingForRed=False
+[2025-07-28 16:03:38.135] [DEBUG] RectangleBreakDetector: Found vertical cluster at X=114, height=19, startY=0, endY=18, color=green
+[2025-07-28 16:03:38.136] [INFO] RectangleBreakDetector: Breakout detected for capture ID=20250728160337825, result=BreakoutUp
+[2025-07-28 16:03:38.142] [DEBUG] RectangleBreakDetector: Saved breakout debug visualization to C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728160337825\tracking_debug.png
+[2025-07-28 16:03:38.145] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728160337825\tracking.png] RectangleBreakDetector Breakout UP detected!
+[2025-07-28 16:03:38.147] [INFO] CaptureTrackingService: Updated IsFired=True for capture ID=20250728160337825, Handle=393262
+[2025-07-28 16:03:38.158] [INFO] MT4 Socket: >>> OnBreakoutDetected handler CALLED <<< (type: BreakoutUp)
+[2025-07-28 16:03:38.159] [INFO] MT4 Socket: Sending to MT4: {"cmd":"breakout_up","symbol":"XAUUSD","risk":1,"id":"20250728160337825"} (with CRLF)
+[2025-07-28 16:03:38.161] [INFO] Sent message to MT4 socket: {"cmd":"breakout_up","symbol":"XAUUSD","risk":1,"id":"20250728160337825"}
+
+[2025-07-28 16:03:38.162] [INFO] MT4 Socket: Breakout processing completed for XAUUSD, type: BreakoutUp, ID: 20250728160337825
+[2025-07-28 16:03:38.163] [INFO] Binary Options Socket: >>> OnBreakoutDetected handler CALLED <<< (type: BreakoutUp)
+[2025-07-28 16:03:38.164] [INFO] Binary Options Socket: Skipping message - capture broker is Forex, not a binary broker
+[2025-07-28 16:03:38.164] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728160337825\tracking.png: BreakoutUp
+[2025-07-28 16:03:38.472] [INFO] Received from MT4 socket: {,"closed_count":0,"buy_result":{"success":true,"ticket":77777319,"symbol":"XAUUSD.s","direction":"BUY","lot_size":0.32000000,"price":3329.98000000,"sl_level":3327.98000000,"sl_pips":20,"risk":1,"debug_mode":false},"action":"opened_buy","completed":"1","cmd":"breakout_up"}
+[2025-07-28 16:03:38.473] [WARNING] MT4 Socket: Failed to parse JSON message: ',' is an invalid start of a property name. Expected a '"'. LineNumber: 0 | BytePositionInLine: 1.
+[2025-07-28 16:03:38.474] [DEBUG] MT4: {,"closed_count":0,"buy_result":{"success":true,"ticket":77777319,"symbol":"XAUUSD.s","direction":"BUY","lot_size":0.32000000,"price":3329.98000000,"sl_level":3327.98000000,"sl_pips":20,"risk":1,"debug_mode":false},"action":"opened_buy","completed":"1","cmd":"breakout_up"}
+[2025-07-28 16:03:38.787] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-8.64000000,"percent":-0.13000000,"lots":0.32000000,"profit_points":-26}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:38.798] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:03:38.806] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-8.64000000,"percent":-0.13000000,"lots":0.32000000,"profit_points":-26}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:39.786] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-7.68000000,"percent":-0.12000000,"lots":0.32000000,"profit_points":-24}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:39.786] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:03:39.788] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-7.68000000,"percent":-0.12000000,"lots":0.32000000,"profit_points":-24}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:40.779] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-8.32000000,"percent":-0.13000000,"lots":0.32000000,"profit_points":-26}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:40.779] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:03:40.781] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-8.32000000,"percent":-0.13000000,"lots":0.32000000,"profit_points":-26}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:41.781] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-8.32000000,"percent":-0.13000000,"lots":0.32000000,"profit_points":-26}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:41.781] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:03:41.783] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-8.32000000,"percent":-0.13000000,"lots":0.32000000,"profit_points":-26}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:42.773] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-6.72000000,"percent":-0.10000000,"lots":0.32000000,"profit_points":-21}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:42.773] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:03:42.776] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-6.72000000,"percent":-0.10000000,"lots":0.32000000,"profit_points":-21}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:43.773] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-5.76000000,"percent":-0.09000000,"lots":0.32000000,"profit_points":-17}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:43.773] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:03:43.775] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-5.76000000,"percent":-0.09000000,"lots":0.32000000,"profit_points":-17}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:44.788] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-2.88000000,"percent":-0.04000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:44.788] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:03:44.790] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-2.88000000,"percent":-0.04000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:45.802] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":4.48000000,"percent":0.07000000,"lots":0.32000000,"profit_points":13}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:45.803] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:03:45.806] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":4.48000000,"percent":0.07000000,"lots":0.32000000,"profit_points":13}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:46.790] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":0.96000000,"percent":0.01000000,"lots":0.32000000,"profit_points":3}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:46.791] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:03:46.793] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":0.96000000,"percent":0.01000000,"lots":0.32000000,"profit_points":3}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:47.803] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":1.60000000,"percent":0.02000000,"lots":0.32000000,"profit_points":5}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:47.804] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:03:47.812] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":1.60000000,"percent":0.02000000,"lots":0.32000000,"profit_points":5}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:48.823] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-0.96000000,"percent":-0.01000000,"lots":0.32000000,"profit_points":-3}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:48.823] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:03:48.825] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-0.96000000,"percent":-0.01000000,"lots":0.32000000,"profit_points":-3}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:49.824] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.92000000,"percent":-0.03000000,"lots":0.32000000,"profit_points":-5}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:49.825] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:03:49.827] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.92000000,"percent":-0.03000000,"lots":0.32000000,"profit_points":-5}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:50.827] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.28000000,"percent":-0.02000000,"lots":0.32000000,"profit_points":-3}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:50.828] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:03:50.831] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-1.28000000,"percent":-0.02000000,"lots":0.32000000,"profit_points":-3}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:51.833] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-3.20000000,"percent":-0.05000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:51.833] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:03:51.842] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-3.20000000,"percent":-0.05000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:52.829] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-2.88000000,"percent":-0.04000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:52.830] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:03:52.832] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-2.88000000,"percent":-0.04000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:53.835] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-2.88000000,"percent":-0.04000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:53.835] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:03:53.838] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-2.88000000,"percent":-0.04000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:54.840] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-2.88000000,"percent":-0.04000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:54.841] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:03:54.843] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-2.88000000,"percent":-0.04000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:55.860] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-3.20000000,"percent":-0.05000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:55.860] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:03:55.862] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-3.20000000,"percent":-0.05000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:56.862] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-3.20000000,"percent":-0.05000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:56.862] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:03:56.863] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-3.20000000,"percent":-0.05000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:57.866] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-3.20000000,"percent":-0.05000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:57.867] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:03:57.870] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-3.20000000,"percent":-0.05000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:58.886] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-2.88000000,"percent":-0.04000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:58.887] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:03:58.890] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-2.88000000,"percent":-0.04000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:59.892] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-3.20000000,"percent":-0.05000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:03:59.893] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:03:59.901] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-3.20000000,"percent":-0.05000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:04:00.918] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-2.88000000,"percent":-0.04000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:04:00.918] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:04:00.921] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-2.88000000,"percent":-0.04000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:04:01.902] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-2.88000000,"percent":-0.04000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:04:01.902] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:04:01.905] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-2.88000000,"percent":-0.04000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:04:02.908] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-3.20000000,"percent":-0.05000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:04:02.908] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:04:02.911] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-3.20000000,"percent":-0.05000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:04:03.900] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-2.88000000,"percent":-0.04000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:04:03.900] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:04:03.903] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-2.88000000,"percent":-0.04000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:04:04.904] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-2.88000000,"percent":-0.04000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:04:04.904] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:04:04.908] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-2.88000000,"percent":-0.04000000,"lots":0.32000000,"profit_points":-9}},"total_balance":6459.71000000}
+
+[2025-07-28 16:04:05.910] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-6.40000000,"percent":-0.10000000,"lots":0.32000000,"profit_points":-19}},"total_balance":6459.71000000}
+
+[2025-07-28 16:04:05.911] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:04:05.912] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-6.40000000,"percent":-0.10000000,"lots":0.32000000,"profit_points":-19}},"total_balance":6459.71000000}
+
+[2025-07-28 16:04:06.918] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-5.44000000,"percent":-0.08000000,"lots":0.32000000,"profit_points":-17}},"total_balance":6459.71000000}
+
+[2025-07-28 16:04:06.918] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:04:06.921] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-5.44000000,"percent":-0.08000000,"lots":0.32000000,"profit_points":-17}},"total_balance":6459.71000000}
+
+[2025-07-28 16:04:07.900] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-5.44000000,"percent":-0.08000000,"lots":0.32000000,"profit_points":-17}},"total_balance":6459.71000000}
+
+[2025-07-28 16:04:07.901] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:04:07.904] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-5.44000000,"percent":-0.08000000,"lots":0.32000000,"profit_points":-17}},"total_balance":6459.71000000}
+
+[2025-07-28 16:04:08.905] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-4.48000000,"percent":-0.07000000,"lots":0.32000000,"profit_points":-13}},"total_balance":6459.71000000}
+
+[2025-07-28 16:04:08.906] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:04:08.907] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-4.48000000,"percent":-0.07000000,"lots":0.32000000,"profit_points":-13}},"total_balance":6459.71000000}
+
+[2025-07-28 16:04:09.322] [DEBUG] Escape key detected and service is enabled
+[2025-07-28 16:04:09.322] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-28 16:04:09.323] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-28 16:04:09.323] [DEBUG] No overlay to close
+[2025-07-28 16:04:09.323] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-28 16:04:09.482] [DEBUG] Escape key detected and service is enabled
+[2025-07-28 16:04:09.483] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-28 16:04:09.483] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-28 16:04:09.483] [DEBUG] No overlay to close
+[2025-07-28 16:04:09.483] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-28 16:04:09.626] [DEBUG] Escape key detected and service is enabled
+[2025-07-28 16:04:09.627] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-28 16:04:09.627] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-28 16:04:09.627] [DEBUG] No overlay to close
+[2025-07-28 16:04:09.627] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-28 16:04:09.901] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-7.04000000,"percent":-0.11000000,"lots":0.32000000,"profit_points":-21}},"total_balance":6459.71000000}
+
+[2025-07-28 16:04:09.901] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:04:09.903] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-7.04000000,"percent":-0.11000000,"lots":0.32000000,"profit_points":-21}},"total_balance":6459.71000000}
+
+[2025-07-28 16:04:10.002] [DEBUG] S key detected and service is enabled
+[2025-07-28 16:04:10.003] [DEBUG] SimpleTradingOverlay.OnSKeyPressed() called
+[2025-07-28 16:04:10.003] [INFO] S key pressed - starting trading pattern creation
+[2025-07-28 16:04:10.003] [INFO] Started trading pattern creation for window 393262 (symbol: XAUUSD)
+[2025-07-28 16:04:10.852] [INFO] First click recorded at (3047, 530)
+[2025-07-28 16:04:10.903] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-6.72000000,"percent":-0.10000000,"lots":0.32000000,"profit_points":-21}},"total_balance":6459.71000000}
+
+[2025-07-28 16:04:10.904] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:04:10.906] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-6.72000000,"percent":-0.10000000,"lots":0.32000000,"profit_points":-21}},"total_balance":6459.71000000}
+
+[2025-07-28 16:04:11.644] [INFO] Second click recorded at (3192, 546)
+[2025-07-28 16:04:11.645] [INFO] Current window handle: 393262
+[2025-07-28 16:04:11.645] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-28 16:04:11.646] [INFO] Original clicks: FirstClick=(3047, 530), SecondClick=(3192, 546)
+[2025-07-28 16:04:11.646] [INFO] Pattern area: Left=3027, Top=510, Width=185, Height=56
+[2025-07-28 16:04:11.662] [INFO] TradingPatternOverlay shown at (3027, 510) with size 185x56
+[2025-07-28 16:04:11.662] [DEBUG] ConvertVirtualScreenToWindowCoordinates: virtualX=3047, virtualY=530, windowLeft=1920, windowTop=0, windowX=1127, windowY=530
+[2025-07-28 16:04:11.663] [DEBUG] ConvertVirtualScreenToWindowCoordinates: virtualX=3192, virtualY=546, windowLeft=1920, windowTop=0, windowX=1272, windowY=546
+[2025-07-28 16:04:11.663] [DEBUG] SimpleTradingOverlay: Creating metadata for capture ID=20250728160411663
+[2025-07-28 16:04:11.676] [DEBUG] SimpleTradingOverlay: Saved MetaDebug image to C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728160411663\MetaDebug.png
+[2025-07-28 16:04:11.676] [DEBUG] RectangleBreakDetector: Building metadata for image 185x56
+[2025-07-28 16:04:11.676] [DEBUG] RectangleBreakDetector: Searching for vertical line with minWhitePixels=9, minConsecutive=5
+[2025-07-28 16:04:11.677] [DEBUG] RectangleBreakDetector: Column X=184: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:11.677] [DEBUG] RectangleBreakDetector: Column X=183: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:11.677] [DEBUG] RectangleBreakDetector: Column X=182: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:11.677] [DEBUG] RectangleBreakDetector: Column X=181: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:11.677] [DEBUG] RectangleBreakDetector: Column X=180: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:11.678] [DEBUG] RectangleBreakDetector: Column X=179: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:11.678] [DEBUG] RectangleBreakDetector: Column X=178: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:11.678] [DEBUG] RectangleBreakDetector: Column X=177: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:11.678] [DEBUG] RectangleBreakDetector: Column X=176: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:11.678] [DEBUG] RectangleBreakDetector: Column X=175: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:11.679] [DEBUG] RectangleBreakDetector: Column X=174: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:11.679] [DEBUG] RectangleBreakDetector: Column X=173: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:11.679] [DEBUG] RectangleBreakDetector: Column X=172: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:11.679] [DEBUG] RectangleBreakDetector: Column X=171: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:11.680] [DEBUG] RectangleBreakDetector: Column X=170: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:11.680] [DEBUG] RectangleBreakDetector: Column X=169: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:11.680] [DEBUG] RectangleBreakDetector: Column X=168: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:11.680] [DEBUG] RectangleBreakDetector: Column X=167: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:11.680] [DEBUG] RectangleBreakDetector: Column X=166: whitePixels=3, maxConsecutive=1, gaps=3
+[2025-07-28 16:04:11.680] [DEBUG] RectangleBreakDetector: Column X=165: whitePixels=9, maxConsecutive=3, gaps=3
+[2025-07-28 16:04:11.681] [DEBUG] RectangleBreakDetector: Column X=164: whitePixels=21, maxConsecutive=21, gaps=1
+[2025-07-28 16:04:11.681] [DEBUG] RectangleBreakDetector: Found vertical line at X=164 (whitePixels=21, maxConsecutive=21, gaps=1)
+[2025-07-28 16:04:11.681] [DEBUG] RectangleBreakDetector: Found right vertical line at X=164
+[2025-07-28 16:04:11.684] [DEBUG] RectangleBreakDetector: Found horizontal lines at TopY=19, BottomY=37
+[2025-07-28 16:04:11.686] [DEBUG] RectangleBreakDetector: Rightmost content at X=72, distance to right edge=92
+[2025-07-28 16:04:11.686] [DEBUG] RectangleBreakDetector: Distance to content = 92 pixels
+[2025-07-28 16:04:11.687] [DEBUG] RectangleBreakDetector: Saved metadata debug image to C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728160411663\MetaDebugTracking.png
+[2025-07-28 16:04:11.688] [DEBUG] RectangleBreakDetector: Built metadata with distanceToContent=92
+[2025-07-28 16:04:11.688] [DEBUG] SimpleTradingOverlay: Created metadata for capture ID=20250728160411663, length=611
+[2025-07-28 16:04:11.705] [INFO] TradingPattern CaptureData saved: Symbol=XAUUSD, Direction=Down, X=1107, Y=510, W=185, H=56, Screenshot=C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728160411663\screenshot.png
+[2025-07-28 16:04:11.705] [INFO] Trading pattern completed: FirstClick=(3047, 530), SecondClick=(3192, 546)
+[2025-07-28 16:04:11.920] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-7.04000000,"percent":-0.11000000,"lots":0.32000000,"profit_points":-21}},"total_balance":6459.71000000}
+
+[2025-07-28 16:04:11.921] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:04:11.923] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-7.04000000,"percent":-0.11000000,"lots":0.32000000,"profit_points":-21}},"total_balance":6459.71000000}
+
+[2025-07-28 16:04:12.428] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-28 16:04:12.429] [DEBUG] CaptureTrackingService: Обработка capture ID=20250728160411663, Handle=393262, X=1107, Y=510, W=185, H=56
+[2025-07-28 16:04:12.443] [DEBUG] CaptureTrackingService: Processing OHLC_rectangle capture ID=20250728160411663, Meta length=611
+[2025-07-28 16:04:12.443] [DEBUG] RectangleBreakDetector: Starting breakout detection for capture ID=20250728160411663, Direction=Down
+[2025-07-28 16:04:12.443] [DEBUG] RectangleBreakDetector: Searching for vertical line with minWhitePixels=9, minConsecutive=5
+[2025-07-28 16:04:12.443] [DEBUG] RectangleBreakDetector: Column X=184: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:12.443] [DEBUG] RectangleBreakDetector: Column X=183: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:12.444] [DEBUG] RectangleBreakDetector: Column X=182: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:12.445] [DEBUG] RectangleBreakDetector: Column X=181: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:12.445] [DEBUG] RectangleBreakDetector: Column X=180: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:12.445] [DEBUG] RectangleBreakDetector: Column X=179: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:12.445] [DEBUG] RectangleBreakDetector: Column X=178: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:12.446] [DEBUG] RectangleBreakDetector: Column X=177: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:12.446] [DEBUG] RectangleBreakDetector: Column X=176: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:12.446] [DEBUG] RectangleBreakDetector: Column X=175: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:12.446] [DEBUG] RectangleBreakDetector: Column X=174: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:12.446] [DEBUG] RectangleBreakDetector: Column X=173: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:12.446] [DEBUG] RectangleBreakDetector: Column X=172: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:12.447] [DEBUG] RectangleBreakDetector: Column X=171: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:12.447] [DEBUG] RectangleBreakDetector: Column X=170: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:12.447] [DEBUG] RectangleBreakDetector: Column X=169: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:12.447] [DEBUG] RectangleBreakDetector: Column X=168: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:12.447] [DEBUG] RectangleBreakDetector: Column X=167: whitePixels=0, maxConsecutive=0, gaps=0
+[2025-07-28 16:04:12.447] [DEBUG] RectangleBreakDetector: Column X=166: whitePixels=3, maxConsecutive=1, gaps=3
+[2025-07-28 16:04:12.447] [DEBUG] RectangleBreakDetector: Column X=165: whitePixels=9, maxConsecutive=3, gaps=3
+[2025-07-28 16:04:12.448] [DEBUG] RectangleBreakDetector: Column X=164: whitePixels=21, maxConsecutive=21, gaps=1
+[2025-07-28 16:04:12.448] [DEBUG] RectangleBreakDetector: Found vertical line at X=164 (whitePixels=21, maxConsecutive=21, gaps=1)
+[2025-07-28 16:04:12.450] [DEBUG] RectangleBreakDetector: Rectangle boundaries - rightX=164, topY=19, bottomY=37, height=18
+[2025-07-28 16:04:12.450] [DEBUG] RectangleBreakDetector: Image size: 185x56
+[2025-07-28 16:04:12.450] [DEBUG] RectangleBreakDetector: Analyzing lower boundary for DOWN breakout (red pixels) from Y=37 to Y=55
+[2025-07-28 16:04:12.450] [DEBUG] RectangleBreakDetector: Searching for vertical clusters in area: X=0 to 164, Y=37 to 55, lookingForRed=True
+[2025-07-28 16:04:12.451] [DEBUG] RectangleBreakDetector: Found vertical cluster at X=76, height=3, startY=53, endY=55, color=red
+[2025-07-28 16:04:12.452] [INFO] RectangleBreakDetector: Breakout detected for capture ID=20250728160411663, result=BreakoutDown
+[2025-07-28 16:04:12.455] [DEBUG] RectangleBreakDetector: Saved breakout debug visualization to C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728160411663\tracking_debug.png
+[2025-07-28 16:04:12.456] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728160411663\tracking.png] RectangleBreakDetector Breakout DOWN detected!
+[2025-07-28 16:04:12.457] [INFO] CaptureTrackingService: Updated IsFired=True for capture ID=20250728160411663, Handle=393262
+[2025-07-28 16:04:12.465] [INFO] MT4 Socket: >>> OnBreakoutDetected handler CALLED <<< (type: BreakoutDown)
+[2025-07-28 16:04:12.466] [INFO] MT4 Socket: Sending to MT4: {"cmd":"breakout_down","symbol":"XAUUSD","risk":1,"id":"20250728160411663"} (with CRLF)
+[2025-07-28 16:04:12.466] [INFO] Sent message to MT4 socket: {"cmd":"breakout_down","symbol":"XAUUSD","risk":1,"id":"20250728160411663"}
+
+[2025-07-28 16:04:12.466] [INFO] MT4 Socket: Breakout processing completed for XAUUSD, type: BreakoutDown, ID: 20250728160411663
+[2025-07-28 16:04:12.466] [INFO] Binary Options Socket: >>> OnBreakoutDetected handler CALLED <<< (type: BreakoutDown)
+[2025-07-28 16:04:12.466] [INFO] Binary Options Socket: Skipping message - capture broker is Forex, not a binary broker
+[2025-07-28 16:04:12.467] [DEBUG] CaptureTrackingService: RectangleBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250728160411663\tracking.png: BreakoutDown
+[2025-07-28 16:04:12.713] [INFO] Received from MT4 socket: {"":[77777319],"closed_count":1,"action":"closed_buys_no_sell","completed":"1","cmd":"breakout_down"}
+[2025-07-28 16:04:12.718] [DEBUG] MT4: {"":[77777319],"closed_count":1,"action":"closed_buys_no_sell","completed":"1","cmd":"breakout_down"}
+[2025-07-28 16:04:12.915] [INFO] Received from MT4 socket: {"event":"orders_summary","total_balance":6452.67000000}
+
+[2025-07-28 16:04:12.915] [INFO] MT4 Socket: Processing orders_summary event
+[2025-07-28 16:04:12.918] [DEBUG] MT4: {"event":"orders_summary","total_balance":6452.67000000}
+
+[2025-07-28 16:04:33.978] [DEBUG] Escape key detected and service is enabled
+[2025-07-28 16:04:33.978] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-28 16:04:33.978] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-28 16:04:33.979] [DEBUG] No overlay to close
+[2025-07-28 16:04:33.979] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-28 16:04:34.106] [DEBUG] Escape key detected and service is enabled
+[2025-07-28 16:04:34.106] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-28 16:04:34.106] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-28 16:04:34.106] [DEBUG] No overlay to close
+[2025-07-28 16:04:34.107] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-28 16:04:34.266] [DEBUG] Escape key detected and service is enabled
+[2025-07-28 16:04:34.266] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-28 16:04:34.266] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-28 16:04:34.266] [DEBUG] No overlay to close
+[2025-07-28 16:04:34.267] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-28 16:04:36.865] [INFO] MainWindow closing - cleaning up resources
+[2025-07-28 16:04:36.868] [INFO] SimpleTradingOverlay closed
+[2025-07-28 16:04:36.870] [INFO] Disconnecting from MT4 socket
+[2025-07-28 16:04:36.871] [INFO] MT4 socket read operation cancelled
+[2025-07-28 16:04:36.871] [INFO] MT4 socket read loop ended
+[2025-07-28 16:04:36.872] [INFO] Disconnecting from Pocket Option socket
+[2025-07-28 16:04:36.872] [INFO] All services cleaned up
+[2025-07-28 16:04:36.872] [INFO] MainWindow cleanup completed
+[2025-07-28 16:04:36.872] [INFO] Pocket Option socket read operation cancelled
+[2025-07-28 16:04:36.872] [INFO] Pocket Option socket read loop ended
+[2025-07-28 16:04:36.872] [INFO] Disconnecting from MT4 socket
+[2025-07-28 16:04:36.873] [WARNING] Not connected to MT4 socket
+[2025-07-28 16:04:36.873] [INFO] Disconnecting from Pocket Option socket
+[2025-07-28 16:04:36.873] [WARNING] Not connected to Pocket Option socket
+[2025-07-28 16:04:36.873] [INFO] All services cleaned up
+[2025-07-28 16:04:36.888] [DEBUG] MT4 Connection: Disconnected
+[2025-07-28 16:04:36.888] [INFO] MT4 Connection status: Disconnected
+[2025-07-28 16:04:36.889] [INFO] Successfully disconnected from Pocket Option socket
