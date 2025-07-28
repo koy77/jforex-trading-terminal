@@ -48,6 +48,37 @@ namespace ScreenCaptureApp.Helpers
                     return RectangleBreakResult.NoBreakout;
                 }
                 
+                // Определяем левую границу поиска на основе метаданных
+                int searchLeftBoundary = leftVerticalLineX; // По умолчанию до левой вертикальной линии
+                
+                if (!string.IsNullOrEmpty(capture.Meta))
+                {
+                    try
+                    {
+                        var metadata = JsonSerializer.Deserialize<JsonElement>(capture.Meta);
+                        if (metadata.TryGetProperty("breakoutX", out var breakoutXElement) && 
+                            breakoutXElement.TryGetInt32(out int breakoutX) && 
+                            breakoutX > 0)
+                        {
+                            // Вычисляем левую границу поиска: правая линия минус координата пробоя
+                            searchLeftBoundary = rightVerticalLineX - (breakoutX - 4);
+                            Logger.LogDebug($"RectangleBreakDetector: Using metadata breakoutX={breakoutX}, searchLeftBoundary={searchLeftBoundary} (rightX={rightVerticalLineX} - breakoutX={breakoutX})");
+                        }
+                        else
+                        {
+                            Logger.LogDebug($"RectangleBreakDetector: No valid breakoutX in metadata or breakoutX=0, using leftVerticalLineX={leftVerticalLineX}");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Logger.LogWarning($"RectangleBreakDetector: Error parsing metadata for capture ID={capture.ID}, using leftVerticalLineX={leftVerticalLineX}. Exception: {ex.Message}");
+                    }
+                }
+                else
+                {
+                    Logger.LogDebug($"RectangleBreakDetector: No metadata available, using leftVerticalLineX={leftVerticalLineX}");
+                }
+                
                 var (topY, bottomY) = FindHorizontalLines(image, rightVerticalLineX);
                 if (topY == -1 || bottomY == -1)
                 {
@@ -85,8 +116,8 @@ namespace ScreenCaptureApp.Helpers
                     return RectangleBreakResult.NoBreakout;
                 }
                 
-                // Ищем вертикальные кластеры в области анализа между правой и левой линиями
-                var (breakoutDetected, clusterX, clusterStartY, clusterEndY) = DetectVerticalClustersInArea(image, rightVerticalLineX, leftVerticalLineX, analysisStartY, analysisEndY, lookingForRedPixels);
+                // Ищем вертикальные кластеры в области анализа между правой линией и левой границей поиска
+                var (breakoutDetected, clusterX, clusterStartY, clusterEndY) = DetectVerticalClustersInArea(image, rightVerticalLineX, searchLeftBoundary, analysisStartY, analysisEndY, lookingForRedPixels);
                 
                 if (breakoutDetected)
                 {
