@@ -30,6 +30,20 @@ namespace ScreenCaptureApp.Controls
             ModeLabel.Visibility = visible ? Visibility.Visible : Visibility.Collapsed;
         }
 
+        public void SetSymbol(string symbol)
+        {
+            if (!string.IsNullOrEmpty(symbol))
+            {
+                SymbolLabel.Text = symbol;
+                SymbolLabel.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                SymbolLabel.Text = "UNKNOWN";
+                SymbolLabel.Visibility = Visibility.Visible;
+            }
+        }
+
         public void ShowDurationPanel(bool show)
         {
             DurationPanel.Visibility = show ? Visibility.Visible : Visibility.Collapsed;

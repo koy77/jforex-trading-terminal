@@ -6,6 +6,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="80" d:DesignWidth="1200">
     <StackPanel x:Name="TopPanel" Orientation="Horizontal" Background="#AA222222" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0" Panel.ZIndex="1000">
+        <!-- Symbol Display -->
+        <TextBlock x:Name="SymbolLabel" Text="XAUUSD" Foreground="Cyan" FontWeight="Bold" FontSize="32" VerticalAlignment="Center" Margin="20,0,30,0" Background="#80000000" Padding="15,10" TextAlignment="Center" MinWidth="120"/>
         <!-- Broker ComboBox -->
         <ComboBox x:Name="BrokerComboBox" Width="180" Height="50" Margin="0,0,20,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18" Foreground="Black" SelectionChanged="BrokerComboBox_SelectionChanged">
             <ComboBoxItem Content="Forex" Tag="Forex"/>

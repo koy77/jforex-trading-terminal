@@ -115,6 +115,9 @@ namespace ScreenCaptureApp
             _lastMouseX = 0;
             _lastMouseY = 0;
 
+            // Установка символа по умолчанию
+            TradingToolbar.SetSymbol("UNKNOWN");
+
             // Установка глобального хука мыши
             SetupMouseHook();
         }
@@ -432,6 +435,9 @@ namespace ScreenCaptureApp
                     this.Left = left;
                     this.Top = top;
                     
+                    // Устанавливаем символ в тулбаре
+                    TradingToolbar.SetSymbol(symbol);
+                    
                     // Применяем настройки тулбара для этого окна
                     ApplyToolbarSettings(windowHandle);
                     
@@ -454,6 +460,10 @@ namespace ScreenCaptureApp
         {
             try
             {
+                // Устанавливаем символ для текущего окна
+                string symbol = ExtractSymbolFromWindowTitle(windowHandle);
+                TradingToolbar.SetSymbol(symbol);
+                
                 var toolbarSettings = _toolbarSettingsManager.GetSettings(windowHandle.ToInt64());
                 if (toolbarSettings != null)
                 {
