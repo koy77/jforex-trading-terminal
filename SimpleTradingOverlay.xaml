@@ -11,9 +11,12 @@
         ResizeMode="NoResize"
         WindowStartupLocation="Manual">
     
-    <Grid>
+    <Canvas x:Name="MainCanvas" Background="Transparent">
         <!-- Trading Toolbar -->
-        <controls:TradingToolbar x:Name="TradingToolbar" Panel.ZIndex="1000" />
+        <controls:TradingToolbar x:Name="TradingToolbar" 
+                                 Canvas.Left="0" 
+                                 Canvas.Top="0" 
+                                 Panel.ZIndex="1000" />
         
         <!-- Yellow Trading Pattern Rectangle -->
         <Rectangle x:Name="TradingPatternRectangle" 
@@ -23,5 +26,5 @@
                    Fill="Transparent"
                    Visibility="Collapsed"
                    Panel.ZIndex="999"/>
-    </Grid>
+    </Canvas>
 </Window> 

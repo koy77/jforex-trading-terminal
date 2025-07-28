@@ -1,0 +1,18 @@
+<Window x:Class="ScreenCaptureApp.TradingPatternOverlay"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Trading Pattern Overlay" 
+        WindowStyle="None" 
+        AllowsTransparency="True" 
+        Background="Transparent"
+        Topmost="True"
+        ShowInTaskbar="False"
+        ResizeMode="NoResize"
+        WindowStartupLocation="Manual">
+    
+    <Rectangle x:Name="TradingPatternRectangle" 
+               Stroke="Yellow" 
+               StrokeThickness="3" 
+               StrokeDashArray="4,2,1,2" 
+               Fill="Transparent"/>
+</Window> 

@@ -85,6 +85,7 @@ namespace ScreenCaptureApp
         private bool _isEnabled = true;
         private int _lastMouseX = 0;
         private int _lastMouseY = 0;
+        private TradingPatternOverlay _patternOverlay = null;
         
         // Паттерн создания объекта трейдинга
         private bool _isTradingPatternActive = false;
@@ -210,8 +211,11 @@ namespace ScreenCaptureApp
 
             _clickCount = 0;
             
-            // Скрываем рамку если она была показана
-            TradingPatternRectangle.Visibility = Visibility.Collapsed;
+            // Закрываем окно рамки если оно открыто
+            if (_patternOverlay != null && _patternOverlay.IsVisible)
+            {
+                _patternOverlay.Close();
+            }
             
             if (_currentTradingPattern != null)
             {
@@ -528,8 +532,11 @@ namespace ScreenCaptureApp
                 CancelTradingPattern();
             }
             
-            // Скрываем рамку
-            TradingPatternRectangle.Visibility = Visibility.Collapsed;
+            // Закрываем окно рамки
+            if (_patternOverlay != null && _patternOverlay.IsVisible)
+            {
+                _patternOverlay.Close();
+            }
             
             if (mouseHook != IntPtr.Zero)
             {
@@ -567,30 +574,29 @@ namespace ScreenCaptureApp
                     return;
                 }
 
-                // Конвертируем координаты из виртуального экрана в координаты окна
-                var windowPoint1 = ConvertVirtualScreenToWindowCoordinates(firstClick.X, firstClick.Y, windowRect);
-                var windowPoint2 = ConvertVirtualScreenToWindowCoordinates(secondClick.X, secondClick.Y, windowRect);
-
-                Logger.LogInfo($"Original clicks: FirstClick=({firstClick.X}, {firstClick.Y}), SecondClick=({secondClick.X}, {secondClick.Y})");
-                Logger.LogInfo($"Window points: Point1=({windowPoint1.X}, {windowPoint1.Y}), Point2=({windowPoint2.X}, {windowPoint2.Y})");
-
-                // Вычисляем границы области с паддингом 20 пикселей
-                int left = Math.Min(windowPoint1.X, windowPoint2.X) - 20;
-                int top = Math.Min(windowPoint1.Y, windowPoint2.Y) - 20;
-                int right = Math.Max(windowPoint1.X, windowPoint2.X) + 20;
-                int bottom = Math.Max(windowPoint1.Y, windowPoint2.Y) + 20;
-
-                // Устанавливаем размеры и позицию рамки
-                TradingPatternRectangle.Width = right - left;
-                TradingPatternRectangle.Height = bottom - top;
-                
-                // Позиционируем рамку относительно окна JForex
-                TradingPatternRectangle.Margin = new Thickness(left, top, 0, 0);
-                TradingPatternRectangle.Visibility = Visibility.Visible;
-
-                Logger.LogInfo($"Trading pattern rectangle shown: Left={left}, Top={top}, Width={TradingPatternRectangle.Width}, Height={TradingPatternRectangle.Height}");
+                Logger.LogInfo($"Current window handle: {_currentWindowHandle}");
                 Logger.LogInfo($"Window rect: Left={windowRect.Left}, Top={windowRect.Top}, Right={windowRect.Right}, Bottom={windowRect.Bottom}");
 
+                // Вычисляем границы области с паддингом 20 пикселей в виртуальных координатах экрана
+                int left = Math.Min(firstClick.X, secondClick.X) - 20;
+                int top = Math.Min(firstClick.Y, secondClick.Y) - 20;
+                int right = Math.Max(firstClick.X, secondClick.X) + 20;
+                int bottom = Math.Max(firstClick.Y, secondClick.Y) + 20;
+
+                int width = right - left;
+                int height = bottom - top;
+
+                Logger.LogInfo($"Original clicks: FirstClick=({firstClick.X}, {firstClick.Y}), SecondClick=({secondClick.X}, {secondClick.Y})");
+                Logger.LogInfo($"Pattern area: Left={left}, Top={top}, Width={width}, Height={height}");
+
+                // Создаем или переиспользуем окно для рамки
+                if (_patternOverlay == null || !_patternOverlay.IsVisible)
+                {
+                    _patternOverlay = new TradingPatternOverlay();
+                }
+
+                // Показываем рамку в абсолютных координатах экрана
+                _patternOverlay.ShowPattern(left, top, width, height);
             }
             catch (Exception ex)
             {
