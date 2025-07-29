@@ -82,6 +82,9 @@ namespace ScreenCaptureApp
         // Event for stroke completion
         public event EventHandler<StrokeCompletedEventArgs> StrokeCompleted;
 
+        // Event for triggering space hotkey after trendline drawing
+        public event Action OnTrendlineDrawn;
+
         private string activeSymbol;
         private double selectedRisk = 1.0; // по умолчанию
         private int selectedDuration = 2; // по умолчанию
@@ -1261,10 +1264,12 @@ namespace ScreenCaptureApp
                 // Небольшая задержка для стабилизации
                 await Task.Delay(200);
 
+                bool trendlineDrawn = false;
+
                 // Если это Forex брокер, добавляем трендовую линию
                 if (brokerState.CurrentBroker == BrokerType.Forex)
                 {
-                    await AddTrendlineToGForexDirectlyAsync(targetWindowHandle, firstScreenPoint, lastScreenPoint);
+                    trendlineDrawn = await AddTrendlineToGForexDirectlyAsync(targetWindowHandle, firstScreenPoint, lastScreenPoint);
                 }
                 else
                 {
@@ -1273,6 +1278,13 @@ namespace ScreenCaptureApp
                 }
 
                 Logger.LogInfo("Trading stroke processing with mouse actions completed");
+
+                // Если трендовая линия была успешно нарисована, запускаем callback для активации canvas window
+                if (trendlineDrawn)
+                {
+                    Logger.LogInfo("Trendline drawn successfully - triggering space hotkey callback");
+                    OnTrendlineDrawn?.Invoke();
+                }
             }
             catch (Exception ex)
             {
@@ -1283,7 +1295,7 @@ namespace ScreenCaptureApp
         /// <summary>
         /// Добавляет трендовую линию в GForex напрямую с действиями мыши
         /// </summary>
-        private async Task AddTrendlineToGForexDirectlyAsync(IntPtr targetWindowHandle, System.Windows.Point firstScreenPoint, System.Windows.Point lastScreenPoint)
+        private async Task<bool> AddTrendlineToGForexDirectlyAsync(IntPtr targetWindowHandle, System.Windows.Point firstScreenPoint, System.Windows.Point lastScreenPoint)
         {
             try
             {
@@ -1297,7 +1309,7 @@ namespace ScreenCaptureApp
                 if (!jForexService.SendKeyPress(targetWindowHandle, 'A'))
                 {
                     Logger.LogError("Failed to send key A");
-                    return;
+                    return false;
                 }
 
                 await Task.Delay(200);
@@ -1312,7 +1324,7 @@ namespace ScreenCaptureApp
                 if (!jForexService.ClickAtPosition(targetWindowHandle, windowPoint1.X, windowPoint1.Y))
                 {
                     Logger.LogError("Failed to click on first point");
-                    return;
+                    return false;
                 }
 
                 await Task.Delay(100);
@@ -1321,17 +1333,19 @@ namespace ScreenCaptureApp
                 if (!jForexService.ClickAtPosition(targetWindowHandle, windowPoint2.X, windowPoint2.Y))
                 {
                     Logger.LogError("Failed to click on second point");
-                    return;
+                    return false;
                 }
 
                 // Отправляем ESC для завершения
                 jForexService.SendEscKey(targetWindowHandle);
 
                 Logger.LogInfo("Trendline successfully added to GForex with direct mouse actions");
+                return true;
             }
             catch (Exception ex)
             {
                 Logger.LogError($"Error adding trendline to GForex directly: {ex.Message}", ex);
+                return false;
             }
         }
 
