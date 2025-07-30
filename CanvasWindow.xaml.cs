@@ -89,9 +89,7 @@ namespace ScreenCaptureApp
         private double selectedRisk = 1.0; // по умолчанию
         private int selectedDuration = 2; // по умолчанию
 
-        // Новая система очереди для Trading Mode
-        private Queue<TradingStrokeItem> tradingStrokeQueue = new Queue<TradingStrokeItem>();
-        private bool isProcessingTradingQueue = false;
+        // Убираем очередь для Trading Mode - упрощаем логику
         
         // Удаляем старую переменную tradingStrokes
         // private StrokeCollection tradingStrokes = new StrokeCollection();
@@ -105,13 +103,7 @@ namespace ScreenCaptureApp
         private double canvasOffsetY = 0;
         private const double SHIFT_STEP = 10.0; // 10 pixels for W/S, 5 pixels for A/D
 
-        // Класс для элементов очереди торговых штрихов
-        private class TradingStrokeItem
-        {
-            public Stroke Stroke { get; set; }
-            public CaptureData CaptureData { get; set; }
-            public DateTime CreatedAt { get; set; }
-        }
+
 
         private ToolbarSettingsManager _toolbarSettingsManager;
 
@@ -224,8 +216,7 @@ namespace ScreenCaptureApp
             {
                 Logger.LogInfo("Pressed C: clear canvas and delete files");
                 DrawingCanvas.Strokes.Clear();
-                // Очищаем очередь торговых штрихов
-                tradingStrokeQueue.Clear();
+                TradingCanvas.Strokes.Clear();
                 DeleteCanvasFiles();
 
                 // --- Mark all related captures as skipped ---
@@ -739,7 +730,6 @@ namespace ScreenCaptureApp
             UpdateActiveSymbolDisplay();
             DrawingCanvas.Strokes.Clear();
             TradingCanvas.Strokes.Clear();
-            tradingStrokeQueue.Clear();
             LoadCanvas();
             SetBackgroundImage();
             DrawingCanvas.Focus();
@@ -762,22 +752,13 @@ namespace ScreenCaptureApp
         
         private void TradingCanvas_StrokeCollected(object sender, System.Windows.Controls.InkCanvasStrokeCollectedEventArgs e)
         {
-            // Handle stroke completion for trading mode
-            var args = new StrokeCompletedEventArgs
-            {
-                Stroke = e.Stroke,
-                IsTradingMode = true,
-                Bounds = e.Stroke.GetBounds()
-            };
+            Logger.LogInfo("Trading stroke collected - processing immediately");
             
-            StrokeCompleted?.Invoke(this, args);
-            
-            Logger.LogInfo($"Trading stroke collected. Strokes count: {TradingCanvas.Strokes.Count}");
-            AddStrokeToTradingQueue(e.Stroke, args);
-            
-            // Удаляем штрих с TradingCanvas после обработки
+            // Удаляем штрих с TradingCanvas сразу
             TradingCanvas.Strokes.Remove(e.Stroke);
-            Logger.LogInfo($"Trading stroke removed from canvas. Strokes count after: {TradingCanvas.Strokes.Count}");
+            
+            // Обрабатываем штрих напрямую
+            ProcessTradingStrokeDirectly(e.Stroke);
         }
         
         private void DrawingCanvas_StrokeErasing(object sender, System.Windows.Controls.InkCanvasStrokeErasingEventArgs e)
@@ -791,48 +772,14 @@ namespace ScreenCaptureApp
         }
         
         /// <summary>
-        /// Добавляет штрих в очередь обработки торговых штрихов
-        /// </summary>
-        private void AddStrokeToTradingQueue(Stroke stroke, StrokeCompletedEventArgs args)
-        {
-            try
-            {
-                // Создаем CaptureData для штриха
-                var captureData = CreateCaptureDataFromStroke(args);
-                
-                // Создаем элемент очереди
-                var queueItem = new TradingStrokeItem
-                {
-                    Stroke = stroke,
-                    CaptureData = captureData,
-                    CreatedAt = DateTime.Now
-                };
-                
-                // Добавляем в очередь
-                tradingStrokeQueue.Enqueue(queueItem);
-                Logger.LogInfo($"Stroke added to trading queue. Queue size: {tradingStrokeQueue.Count}");
-                
-                // Запускаем обработку очереди, если она еще не запущена
-                if (!isProcessingTradingQueue)
-                {
-                    ProcessTradingQueueAsync();
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError($"Error adding stroke to trading queue: {ex.Message}", ex);
-            }
-        }
-        
-        /// <summary>
         /// Создает CaptureData из штриха
         /// </summary>
-        private CaptureData CreateCaptureDataFromStroke(StrokeCompletedEventArgs args)
+        private CaptureData CreateCaptureDataFromStroke(Stroke stroke)
         {
             try
             {
                 // Get stroke bounds with margin
-                var bounds = args.Bounds;
+                var bounds = stroke.GetBounds();
                 int margin = 20;
                 int x = (int)(bounds.Left - margin);
                 int y = (int)(bounds.Top - margin);
@@ -878,14 +825,14 @@ namespace ScreenCaptureApp
                     Timestamp = DateTime.Now.ToString("o"),
                     Symbol = activeSymbol,
                     Risk = selectedRisk,
-                    Source = "window", // Изменено с "trading_canvas" на "window"
+                    Source = "window",
                     Broker = brokerState.GetDisplayName(),
                     Duration = duration,
                     Model = model,
                     Period = period
                 };
                 
-                Logger.LogInfo($"CaptureData created for trading queue: ID={captureEntry.ID}, Symbol={captureEntry.Symbol}, Risk={captureEntry.Risk}, Duration={captureEntry.Duration}, Broker={captureEntry.Broker}, Source={captureEntry.Source}");
+                Logger.LogInfo($"CaptureData created: ID={captureEntry.ID}, Symbol={captureEntry.Symbol}, Risk={captureEntry.Risk}, Duration={captureEntry.Duration}, Broker={captureEntry.Broker}, Source={captureEntry.Source}");
                 
                 return captureEntry;
             }
@@ -893,86 +840,6 @@ namespace ScreenCaptureApp
             {
                 Logger.LogError($"Error creating CaptureData from stroke: {ex.Message}", ex);
                 return null;
-            }
-        }
-        
-        /// <summary>
-        /// Асинхронно обрабатывает очередь торговых штрихов
-        /// </summary>
-        private async void ProcessTradingQueueAsync()
-        {
-            if (isProcessingTradingQueue)
-            {
-                Logger.LogInfo("Trading queue processing already in progress");
-                return;
-            }
-            
-            isProcessingTradingQueue = true;
-            Logger.LogInfo("Starting trading queue processing");
-            
-            try
-            {
-                while (tradingStrokeQueue.Count > 0)
-                {
-                    var queueItem = tradingStrokeQueue.Dequeue();
-                    Logger.LogInfo($"Processing stroke from queue. Remaining items: {tradingStrokeQueue.Count}");
-                    
-                    // Обрабатываем штрих
-                    await ProcessTradingStrokeAsync(queueItem);
-                    
-                    // Небольшая задержка между обработкой штрихов
-                    await Task.Delay(100);
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError($"Error processing trading queue: {ex.Message}", ex);
-            }
-            finally
-            {
-                isProcessingTradingQueue = false;
-                Logger.LogInfo("Trading queue processing completed");
-            }
-        }
-        
-        /// <summary>
-        /// Обрабатывает один торговый штрих
-        /// </summary>
-        private async Task ProcessTradingStrokeAsync(TradingStrokeItem queueItem)
-        {
-            try
-            {
-                // Сохраняем CaptureData в базу данных
-                var databaseService = ServiceContainer.Instance.GetService<DatabaseService>();
-                var screenshotService = ServiceContainer.Instance.GetService<ScreenshotService>();
-                
-                databaseService.SaveCapture(queueItem.CaptureData);
-                
-                // Capture screenshot
-                var debugInfo = screenshotService.CaptureScreenAreaDebug(
-                    queueItem.CaptureData.X, 
-                    queueItem.CaptureData.Y, 
-                    queueItem.CaptureData.Width, 
-                    queueItem.CaptureData.Height, 
-                    queueItem.CaptureData.Monitor, 
-                    queueItem.CaptureData.ID
-                );
-                queueItem.CaptureData.ScreenshotPath = debugInfo.ScreenshotPath;
-                databaseService.UpdateCapture(queueItem.CaptureData);
-                
-                // Обновляем настройки символа и брокера
-                UpdateSettingsFromCapture(queueItem.CaptureData);
-                
-                Logger.LogInfo($"CaptureData saved to database: ID={queueItem.CaptureData.ID}");
-                
-                // Закрываем CanvasWindow и выполняем действия с мышью в том же потоке
-                await ProcessTradingStrokeWithMouseActionsAsync(queueItem.Stroke);
-                
-                Logger.LogInfo($"Trading stroke processing completed: ID={queueItem.CaptureData.ID}");
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError($"Error processing trading stroke: {ex.Message}", ex);
             }
         }
         
@@ -988,7 +855,6 @@ namespace ScreenCaptureApp
                     var databaseService = ServiceContainer.Instance.GetService<DatabaseService>();
                     databaseService.UpdateSymbolRisk(activeSymbol, selectedRisk);
                 }
-                // (Удалено: SymbolSettingsManager и BrokerSettingsManager)
                 Logger.LogInfo("Settings updated from capture");
             }
             catch (Exception ex)
@@ -996,6 +862,117 @@ namespace ScreenCaptureApp
                 Logger.LogError($"Error updating settings from capture: {ex.Message}", ex);
             }
         }
+        
+        /// <summary>
+        /// Упрощенная обработка торгового штриха - без очереди, но с сохранением CaptureData
+        /// </summary>
+        private async void ProcessTradingStrokeDirectly(Stroke stroke)
+        {
+            try
+            {
+                if (jForexService == null)
+                {
+                    Logger.LogError("JForex service is not initialized");
+                    return;
+                }
+
+                // Получаем точки штриха
+                var points = stroke.StylusPoints;
+                if (points.Count < 2)
+                {
+                    Logger.LogError("Stroke has less than 2 points, cannot create trendline");
+                    return;
+                }
+
+                // Берем первую и последнюю точки штриха
+                var firstPoint = points[0];
+                var lastPoint = points[points.Count - 1];
+
+                // Конвертируем координаты из TradingCanvas в экранные координаты
+                var firstScreenPoint = TradingCanvas.PointToScreen(new System.Windows.Point(firstPoint.X, firstPoint.Y));
+                var lastScreenPoint = TradingCanvas.PointToScreen(new System.Windows.Point(lastPoint.X, lastPoint.Y));
+
+                Logger.LogInfo($"Processing trading stroke directly: Point1=({firstScreenPoint.X}, {firstScreenPoint.Y}), Point2=({lastScreenPoint.X}, {lastScreenPoint.Y})");
+
+                // Создаем и сохраняем CaptureData
+                var captureData = CreateCaptureDataFromStroke(stroke);
+                if (captureData != null)
+                {
+                    var databaseService = ServiceContainer.Instance.GetService<DatabaseService>();
+                    var screenshotService = ServiceContainer.Instance.GetService<ScreenshotService>();
+                    
+                    databaseService.SaveCapture(captureData);
+                    
+                    // Capture screenshot
+                    var debugInfo = screenshotService.CaptureScreenAreaDebug(
+                        captureData.X, 
+                        captureData.Y, 
+                        captureData.Width, 
+                        captureData.Height, 
+                        captureData.Monitor, 
+                        captureData.ID
+                    );
+                    captureData.ScreenshotPath = debugInfo.ScreenshotPath;
+                    databaseService.UpdateCapture(captureData);
+                    
+                    // Обновляем настройки символа и брокера
+                    UpdateSettingsFromCapture(captureData);
+                    
+                    Logger.LogInfo($"CaptureData saved to database: ID={captureData.ID}");
+                }
+
+                // Закрываем CanvasWindow
+                Logger.LogInfo("Closing CanvasWindow for trading mode");
+                this.Close();
+
+                // Небольшая задержка для закрытия окна
+                await Task.Delay(100);
+
+                // Активируем целевое окно и устанавливаем его в foreground
+                if (!jForexService.ActivateWindow(targetWindowHandle))
+                {
+                    Logger.LogError("Failed to activate target window");
+                    return;
+                }
+
+                // Небольшая задержка для стабилизации
+                await Task.Delay(200);
+
+                bool trendlineDrawn = false;
+
+                // Если это Forex брокер, добавляем трендовую линию
+                if (brokerState.CurrentBroker == BrokerType.Forex)
+                {
+                    trendlineDrawn = await AddTrendlineToGForexDirectlyAsync(targetWindowHandle, firstScreenPoint, lastScreenPoint);
+                }
+                else
+                {
+                    // Для Binary брокеров можно добавить другую логику
+                    Logger.LogInfo("Binary broker detected - no specific action defined");
+                }
+
+                Logger.LogInfo("Trading stroke processing completed");
+
+                // Если трендовая линия была успешно нарисована, запускаем callback для активации canvas window
+                if (trendlineDrawn)
+                {
+                    Logger.LogInfo("Trendline drawn successfully - triggering space hotkey callback");
+                    OnTrendlineDrawn?.Invoke();
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Error processing trading stroke directly: {ex.Message}", ex);
+            }
+        }
+        
+
+        
+
+        
+
+        
+
         
 
 
@@ -1184,8 +1161,6 @@ namespace ScreenCaptureApp
             Logger.LogInfo("Clearing canvas and deleting files");
             DrawingCanvas.Strokes.Clear();
             TradingCanvas.Strokes.Clear();
-            // Очищаем очередь торговых штрихов
-            tradingStrokeQueue.Clear();
             DeleteCanvasFiles();
             
             // Сбрасываем позицию
@@ -1215,7 +1190,6 @@ namespace ScreenCaptureApp
             // Очищаем canvas и загружаем новый
             DrawingCanvas.Strokes.Clear();
             TradingCanvas.Strokes.Clear();
-            tradingStrokeQueue.Clear();
             LoadCanvas();
             SetBackgroundImage();
             DrawingCanvas.Focus();
@@ -1237,81 +1211,7 @@ namespace ScreenCaptureApp
             }
         }
 
-        /// <summary>
-        /// Обрабатывает торговый штрих с действиями мыши в том же потоке
-        /// </summary>
-        private async Task ProcessTradingStrokeWithMouseActionsAsync(Stroke stroke)
-        {
-            try
-            {
-                if (jForexService == null)
-                {
-                    Logger.LogError("JForex service is not initialized");
-                    return;
-                }
 
-                // Получаем точки штриха
-                var points = stroke.StylusPoints;
-                if (points.Count < 2)
-                {
-                    Logger.LogError("Stroke has less than 2 points, cannot create trendline");
-                    return;
-                }
-
-                // Берем первую и последнюю точки штриха
-                var firstPoint = points[0];
-                var lastPoint = points[points.Count - 1];
-
-                // Конвертируем координаты из TradingCanvas в экранные координаты
-                var firstScreenPoint = TradingCanvas.PointToScreen(new System.Windows.Point(firstPoint.X, firstPoint.Y));
-                var lastScreenPoint = TradingCanvas.PointToScreen(new System.Windows.Point(lastPoint.X, lastPoint.Y));
-
-                Logger.LogInfo($"Processing trading stroke: TargetWindowHandle={targetWindowHandle.ToInt64()}, Point1=({firstScreenPoint.X}, {firstScreenPoint.Y}), Point2=({lastScreenPoint.X}, {lastScreenPoint.Y})");
-
-                // Закрываем CanvasWindow
-                Logger.LogInfo("Closing CanvasWindow for trading mode");
-                this.Close();
-
-                // Небольшая задержка для закрытия окна
-                await Task.Delay(100);
-
-                // Активируем целевое окно и устанавливаем его в foreground
-                if (!jForexService.ActivateWindow(targetWindowHandle))
-                {
-                    Logger.LogError("Failed to activate target window");
-                    return;
-                }
-
-                // Небольшая задержка для стабилизации
-                await Task.Delay(200);
-
-                bool trendlineDrawn = false;
-
-                // Если это Forex брокер, добавляем трендовую линию
-                if (brokerState.CurrentBroker == BrokerType.Forex)
-                {
-                    trendlineDrawn = await AddTrendlineToGForexDirectlyAsync(targetWindowHandle, firstScreenPoint, lastScreenPoint);
-                }
-                else
-                {
-                    // Для Binary брокеров можно добавить другую логику
-                    Logger.LogInfo("Binary broker detected - no specific action defined");
-                }
-
-                Logger.LogInfo("Trading stroke processing with mouse actions completed");
-
-                // Если трендовая линия была успешно нарисована, запускаем callback для активации canvas window
-                if (trendlineDrawn)
-                {
-                    Logger.LogInfo("Trendline drawn successfully - triggering space hotkey callback");
-                    OnTrendlineDrawn?.Invoke();
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError($"Error processing trading stroke with mouse actions: {ex.Message}", ex);
-            }
-        }
 
         /// <summary>
         /// Добавляет трендовую линию в GForex напрямую с действиями мыши
