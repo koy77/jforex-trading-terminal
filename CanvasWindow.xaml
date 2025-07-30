@@ -24,12 +24,20 @@
                Panel.ZIndex="0"
                IsHitTestVisible="False"/>
         
-        <!-- InkCanvas для рисования -->
+        <!-- InkCanvas для обычного рисования -->
         <InkCanvas x:Name="DrawingCanvas" 
                    Background="Transparent"
                    Panel.ZIndex="1"
                    IsHitTestVisible="True"
                    EditingMode="Ink"/>
+        
+        <!-- InkCanvas для торгового режима -->
+        <InkCanvas x:Name="TradingCanvas" 
+                   Background="Transparent"
+                   Panel.ZIndex="1"
+                   IsHitTestVisible="True"
+                   EditingMode="Ink"
+                   Visibility="Collapsed"/>
         
         <Rectangle x:Name="CanvasBorder"
                    IsHitTestVisible="False"
