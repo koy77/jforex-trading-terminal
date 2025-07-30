@@ -951,7 +951,7 @@ namespace ScreenCaptureApp
                 // Если это Forex брокер, добавляем трендовую линию
                 if (brokerState.CurrentBroker == BrokerType.Forex)
                 {
-                    trendlineDrawn = await AddTrendlineToGForexDirectlyAsync(targetWindowHandle, firstScreenPoint, lastScreenPoint);
+                    trendlineDrawn = await jForexService.AddTrendlineToGForexDirectlyAsync(targetWindowHandle, firstScreenPoint, lastScreenPoint);
                 }
                 else
                 {
@@ -1221,90 +1221,7 @@ namespace ScreenCaptureApp
 
 
 
-        /// <summary>
-        /// Добавляет трендовую линию в GForex напрямую с действиями мыши
-        /// </summary>
-        private async Task<bool> AddTrendlineToGForexDirectlyAsync(IntPtr targetWindowHandle, System.Windows.Point firstScreenPoint, System.Windows.Point lastScreenPoint)
-        {
-            try
-            {
-                Logger.LogTagInfo("JForex", "Adding trendline to GForex with direct mouse actions");
 
-                // Отправляем ESC для сброса предыдущих действий
-                jForexService.SendEscKey(targetWindowHandle);
-                await Task.Delay(100);
-
-                // Отправляем нажатие клавиши A для активации инструмента трендовой линии
-                if (!jForexService.SendKeyPress(targetWindowHandle, 'A'))
-                {
-                    Logger.LogTagError("JForex", "Failed to send key A");
-                    return false;
-                }
-
-                await Task.Delay(200);
-
-                // Конвертируем экранные координаты в координаты окна
-                var windowPoint1 = ConvertScreenToWindowCoordinates(firstScreenPoint, targetWindowHandle);
-                var windowPoint2 = ConvertScreenToWindowCoordinates(lastScreenPoint, targetWindowHandle);
-
-                Logger.LogTagInfo("JForex", $"Converted coordinates: Point1=({windowPoint1.X}, {windowPoint1.Y}), Point2=({windowPoint2.X}, {windowPoint2.Y})");
-
-                // Кликаем на первую точку
-                if (!jForexService.ClickAtPosition(targetWindowHandle, windowPoint1.X, windowPoint1.Y))
-                {
-                    Logger.LogTagError("JForex", "Failed to click on first point");
-                    return false;
-                }
-
-                await Task.Delay(100);
-
-                // Кликаем на вторую точку
-                if (!jForexService.ClickAtPosition(targetWindowHandle, windowPoint2.X, windowPoint2.Y))
-                {
-                    Logger.LogTagError("JForex", "Failed to click on second point");
-                    return false;
-                }
-
-                // Отправляем ESC для завершения
-                jForexService.SendEscKey(targetWindowHandle);
-
-                Logger.LogTagInfo("JForex", "Trendline successfully added to GForex with direct mouse actions");
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Logger.LogTagError("JForex", $"Error adding trendline to GForex directly: {ex.Message}", ex);
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// Конвертирует экранные координаты в координаты окна
-        /// </summary>
-        private System.Drawing.Point ConvertScreenToWindowCoordinates(System.Windows.Point screenPoint, IntPtr windowHandle)
-        {
-            try
-            {
-                // Получаем позицию окна на экране
-                JForexWindowsManagerService.RECT windowRect;
-                if (!JForexWindowsManagerService.GetWindowRect(windowHandle, out windowRect))
-                {
-                    Logger.LogTagError("JForex", "Failed to get window position");
-                    return new System.Drawing.Point((int)screenPoint.X, (int)screenPoint.Y);
-                }
-
-                // Вычисляем относительные координаты в окне
-                int windowX = (int)screenPoint.X - windowRect.Left;
-                int windowY = (int)screenPoint.Y - windowRect.Top;
-
-                return new System.Drawing.Point(windowX, windowY);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogTagError("JForex", $"Error converting screen coordinates to window coordinates: {ex.Message}", ex);
-                return new System.Drawing.Point((int)screenPoint.X, (int)screenPoint.Y);
-            }
-        }
     }
     
     public class StrokeCompletedEventArgs : EventArgs

@@ -693,3 +693,337 @@ StackTrace:    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowE
 [2025-07-30 21:52:50.313] [INFO] Disconnecting from Pocket Option socket
 [2025-07-30 21:52:50.313] [WARNING] Not connected to Pocket Option socket
 [2025-07-30 21:52:50.313] [INFO] All services cleaned up
+[2025-07-30 21:57:28.279] [INFO] MT4 Socket Service initialized
+[2025-07-30 21:57:28.290] [INFO] Binary Options Socket Service initialized
+[2025-07-30 21:57:28.294] [INFO] All services registered in DI container
+[2025-07-30 21:57:28.302] [INFO] Attempting to connect to Pocket Option socket at 192.168.0.3:65300
+[2025-07-30 21:57:28.561] [INFO] MT4 Socket Service initialized in MainWindow
+[2025-07-30 21:57:28.563] [INFO] MT4 Socket Service subscribed to CaptureTrackingService BreakoutDetected event
+[2025-07-30 21:57:28.565] [INFO] Binary Options Socket Service subscribed to CaptureTrackingService BreakoutDetected event
+[2025-07-30 21:57:28.651] [INFO] Mouse hook set successfully
+[2025-07-30 21:57:28.652] [INFO] SimpleTradingOverlay initialized successfully
+[2025-07-30 21:57:29.107] [INFO] === MONITOR INFORMATION ===
+[2025-07-30 21:57:29.107] [INFO] Total monitors detected: 2
+[2025-07-30 21:57:29.108] [INFO] Monitor 0:
+[2025-07-30 21:57:29.108] [INFO]   - Primary: True
+[2025-07-30 21:57:29.108] [INFO]   - Device Name: \\.\DISPLAY1
+[2025-07-30 21:57:29.109] [INFO]   - Bounds: X=0, Y=0, Width=1920, Height=1080
+[2025-07-30 21:57:29.109] [INFO]   - Working Area: X=0, Y=0, Width=1920, Height=1040
+[2025-07-30 21:57:29.109] [INFO]   - Left Boundary: 0
+[2025-07-30 21:57:29.109] [INFO]   - Top Boundary: 0
+[2025-07-30 21:57:29.110] [INFO]   - Right Boundary: 1920
+[2025-07-30 21:57:29.110] [INFO]   - Bottom Boundary: 1080
+[2025-07-30 21:57:29.110] [INFO] Monitor 1:
+[2025-07-30 21:57:29.110] [INFO]   - Primary: False
+[2025-07-30 21:57:29.110] [INFO]   - Device Name: \\.\DISPLAY2
+[2025-07-30 21:57:29.110] [INFO]   - Bounds: X=1920, Y=0, Width=1920, Height=1080
+[2025-07-30 21:57:29.111] [INFO]   - Working Area: X=1920, Y=0, Width=1920, Height=1040
+[2025-07-30 21:57:29.111] [INFO]   - Left Boundary: 1920
+[2025-07-30 21:57:29.111] [INFO]   - Top Boundary: 0
+[2025-07-30 21:57:29.111] [INFO]   - Right Boundary: 3840
+[2025-07-30 21:57:29.111] [INFO]   - Bottom Boundary: 1080
+[2025-07-30 21:57:29.111] [INFO] === END MONITOR INFORMATION ===
+[2025-07-30 21:57:29.253] [INFO] Attempting to connect to MT4 socket at 127.0.0.1:23456
+[2025-07-30 21:57:29.968] [INFO] Applied default toolbar settings for window 458778
+[2025-07-30 21:57:30.023] [INFO] Overlay positioned on window 458778 (symbol: XAUUSD): Left=0, Top=0, Width=1920
+[2025-07-30 21:57:31.306] [ERROR] Failed to connect to MT4 socket at 127.0.0.1:23456
+Exception: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+StackTrace:    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Net.Sockets.TcpClient.CompleteConnectAsync(Task task)
+   at ScreenCaptureApp.Services.Mt4SocketService.ConnectAsync() in C:\apps\jforex-trading-terminal-win10\Services\Mt4SocketService.cs:line 167
+[2025-07-30 21:57:31.307] [DEBUG] MT4 Connection: Connection failed: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+[2025-07-30 21:57:31.307] [INFO] MT4 Connection status: Connection failed: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+[2025-07-30 21:57:31.508] [DEBUG] Space key detected and service is enabled
+[2025-07-30 21:57:31.512] [DEBUG] Target window captured (Handle: 0x7001A)
+[2025-07-30 21:57:31.566] [INFO] Window activated - focus set to InkCanvas
+[2025-07-30 21:57:31.569] [INFO] Window loaded for handler 458778
+[2025-07-30 21:57:31.724] [INFO] InkCanvas initialized successfully with Yellow brush for DrawingCanvas and White for TradingCanvas
+[2025-07-30 21:57:31.731] [INFO] Canvas loaded: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\458778.xaml
+[2025-07-30 21:57:31.732] [INFO] Brush mode updated: Simple mode
+[2025-07-30 21:57:31.733] [INFO] Active symbol display hidden - no active symbol
+[2025-07-30 21:57:31.765] [DEBUG] Canvas window opened
+[2025-07-30 21:57:31.766] [DEBUG] New CanvasWindow opened
+[2025-07-30 21:57:32.315] [DEBUG] Space key detected and service is enabled
+[2025-07-30 21:57:32.316] [INFO] Brush mode updated: Trading mode
+[2025-07-30 21:57:32.317] [DEBUG] Space pressed over CanvasWindow: toggled trading mode
+[2025-07-30 21:57:32.859] [INFO] Mouse move on InkCanvas at 687;286
+[2025-07-30 21:57:32.869] [INFO] Mouse move on InkCanvas at 687;286
+[2025-07-30 21:57:32.872] [INFO] Mouse move on InkCanvas at 696;284
+[2025-07-30 21:57:32.874] [INFO] Mouse move on InkCanvas at 723;280
+[2025-07-30 21:57:32.878] [INFO] Mouse move on InkCanvas at 742;279
+[2025-07-30 21:57:32.885] [INFO] Mouse move on InkCanvas at 761;279
+[2025-07-30 21:57:32.893] [INFO] Mouse move on InkCanvas at 783;279
+[2025-07-30 21:57:32.901] [INFO] Mouse move on InkCanvas at 805;279
+[2025-07-30 21:57:32.909] [INFO] Mouse move on InkCanvas at 824;279
+[2025-07-30 21:57:32.917] [INFO] Mouse move on InkCanvas at 843;279
+[2025-07-30 21:57:32.925] [INFO] Mouse move on InkCanvas at 862;279
+[2025-07-30 21:57:32.934] [INFO] Mouse move on InkCanvas at 879;279
+[2025-07-30 21:57:32.941] [INFO] Mouse move on InkCanvas at 893;279
+[2025-07-30 21:57:32.950] [INFO] Mouse move on InkCanvas at 905;279
+[2025-07-30 21:57:32.957] [INFO] Mouse move on InkCanvas at 916;279
+[2025-07-30 21:57:32.965] [INFO] Mouse move on InkCanvas at 923;279
+[2025-07-30 21:57:32.973] [INFO] Mouse move on InkCanvas at 925;279
+[2025-07-30 21:57:32.981] [INFO] Mouse move on InkCanvas at 927;279
+[2025-07-30 21:57:32.998] [INFO] Mouse move on InkCanvas at 928;279
+[2025-07-30 21:57:33.002] [INFO] Trading stroke collected - processing immediately
+[2025-07-30 21:57:33.006] [INFO] CaptureData created: ID=20250730215733006, Symbol=, Risk=1, Duration=2, Broker=Forex, Source=window
+[2025-07-30 21:57:33.074] [INFO] Settings updated from capture
+[2025-07-30 21:57:33.075] [INFO] Window closing: saving canvas
+[2025-07-30 21:57:33.083] [ERROR] Error saving canvas: Значение параметра должно быть больше 0. (Parameter 'pixelWidth')
+Exception: Значение параметра должно быть больше 0. (Parameter 'pixelWidth')
+StackTrace:    at System.Windows.Media.Imaging.RenderTargetBitmap..ctor(Int32 pixelWidth, Int32 pixelHeight, Double dpiX, Double dpiY, PixelFormat pixelFormat)
+   at ScreenCaptureApp.CanvasWindow.SaveCanvas() in C:\apps\jforex-trading-terminal-win10\CanvasWindow.xaml.cs:line 543
+[2025-07-30 21:57:33.084] [INFO] Canvas saved properly
+[2025-07-30 21:57:33.095] [INFO] Mouse up on InkCanvas at 0;0
+[2025-07-30 21:57:33.349] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-30 21:57:33.350] [DEBUG] CaptureTrackingService: Обработка capture ID=20250730215733006, Handle=458778, X=666, Y=257, W=282, H=49
+[2025-07-30 21:57:33.381] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 282x49
+[2025-07-30 21:57:33.394] [DEBUG] TrendlineBreakDetector: Found 0 white pixels
+[2025-07-30 21:57:33.394] [DEBUG] TrendlineBreakDetector: Found 0 clusters
+[2025-07-30 21:57:33.394] [INFO] TrendlineBreakDetector: No white line cluster detected
+[2025-07-30 21:57:33.400] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250730215733006\tracking.png] Trendline not detected.
+[2025-07-30 21:57:33.401] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250730215733006\tracking.png: NoTrendline
+[2025-07-30 21:57:34.414] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-30 21:57:34.414] [DEBUG] CaptureTrackingService: Обработка capture ID=20250730215733006, Handle=458778, X=666, Y=257, W=282, H=49
+[2025-07-30 21:57:34.425] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 282x49
+[2025-07-30 21:57:34.431] [DEBUG] TrendlineBreakDetector: Found 394 white pixels
+[2025-07-30 21:57:34.433] [DEBUG] TrendlineBreakDetector: Found 7 clusters
+[2025-07-30 21:57:34.434] [DEBUG] Cluster: size=65, len=45,0, center=(237,5,22,0), score=2,143
+[2025-07-30 21:57:34.434] [DEBUG] Cluster: size=55, len=42,0, center=(202,0,23,0), score=1,451
+[2025-07-30 21:57:34.435] [DEBUG] Cluster: size=57, len=43,0, center=(167,5,24,0), score=0,616
+[2025-07-30 21:57:34.435] [DEBUG] Cluster: size=55, len=42,0, center=(133,0,25,0), score=0,192
+[2025-07-30 21:57:34.435] [DEBUG] Cluster: size=57, len=43,0, center=(98,5,26,0), score=0,988
+[2025-07-30 21:57:34.435] [DEBUG] Cluster: size=58, len=43,0, center=(63,5,27,0), score=1,802
+[2025-07-30 21:57:34.436] [DEBUG] Cluster: size=47, len=30,0, center=(35,0,27,5), score=3,533
+[2025-07-30 21:57:34.436] [DEBUG] TrendlineBreakDetector: Selected white line from (112,26) to (154,24)
+[2025-07-30 21:57:34.436] [DEBUG] TrendlineBreakDetector: Trendline direction: Upward (SELL), searching for SELL breakout
+[2025-07-30 21:57:34.438] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: SELL
+[2025-07-30 21:57:34.441] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250730215733006\tracking.png] Trendline detected, breakout NOT found.
+[2025-07-30 21:57:34.441] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250730215733006\tracking.png: NoBreakout
+[2025-07-30 21:57:35.227] [DEBUG] Escape key detected and service is enabled
+[2025-07-30 21:57:35.228] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-30 21:57:35.228] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:57:35.228] [DEBUG] No overlay to close
+[2025-07-30 21:57:35.229] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:57:35.445] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-30 21:57:35.445] [DEBUG] CaptureTrackingService: Обработка capture ID=20250730215733006, Handle=458778, X=666, Y=257, W=282, H=49
+[2025-07-30 21:57:35.461] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 282x49
+[2025-07-30 21:57:35.467] [DEBUG] TrendlineBreakDetector: Found 447 white pixels
+[2025-07-30 21:57:35.469] [DEBUG] TrendlineBreakDetector: Found 10 clusters
+[2025-07-30 21:57:35.469] [DEBUG] Cluster: size=58, len=43,0, center=(236,5,22,0), score=2,219
+[2025-07-30 21:57:35.470] [DEBUG] Cluster: size=55, len=42,0, center=(202,0,23,0), score=1,451
+[2025-07-30 21:57:35.470] [DEBUG] Cluster: size=57, len=43,0, center=(167,5,24,0), score=0,616
+[2025-07-30 21:57:35.470] [DEBUG] Cluster: size=45, len=42,0, center=(133,0,25,0), score=0,192
+[2025-07-30 21:57:35.470] [DEBUG] Cluster: size=57, len=43,0, center=(98,5,26,0), score=0,988
+[2025-07-30 21:57:35.470] [DEBUG] Cluster: size=58, len=43,0, center=(63,5,27,0), score=1,802
+[2025-07-30 21:57:35.470] [DEBUG] Cluster: size=45, len=28,0, center=(36,0,28,0), score=3,753
+[2025-07-30 21:57:35.470] [DEBUG] Cluster: size=14, len=19,2, center=(131,5,40,5), score=0,990
+[2025-07-30 21:57:35.471] [DEBUG] Cluster: size=49, len=45,2, center=(166,5,41,0), score=0,678
+[2025-07-30 21:57:35.471] [DEBUG] TrendlineBreakDetector: Selected white line from (112,26) to (154,24)
+[2025-07-30 21:57:35.471] [DEBUG] TrendlineBreakDetector: Trendline direction: Upward (SELL), searching for SELL breakout
+[2025-07-30 21:57:35.472] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: SELL
+[2025-07-30 21:57:35.474] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250730215733006\tracking.png] Trendline detected, breakout NOT found.
+[2025-07-30 21:57:35.475] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250730215733006\tracking.png: NoBreakout
+[2025-07-30 21:57:36.488] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-30 21:57:36.488] [DEBUG] CaptureTrackingService: Обработка capture ID=20250730215733006, Handle=458778, X=666, Y=257, W=282, H=49
+[2025-07-30 21:57:36.502] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 282x49
+[2025-07-30 21:57:36.507] [DEBUG] TrendlineBreakDetector: Found 394 white pixels
+[2025-07-30 21:57:36.509] [DEBUG] TrendlineBreakDetector: Found 7 clusters
+[2025-07-30 21:57:36.509] [DEBUG] Cluster: size=65, len=45,0, center=(237,5,22,0), score=2,143
+[2025-07-30 21:57:36.509] [DEBUG] Cluster: size=55, len=42,0, center=(202,0,23,0), score=1,451
+[2025-07-30 21:57:36.509] [DEBUG] Cluster: size=57, len=43,0, center=(167,5,24,0), score=0,616
+[2025-07-30 21:57:36.510] [DEBUG] Cluster: size=55, len=42,0, center=(133,0,25,0), score=0,192
+[2025-07-30 21:57:36.510] [DEBUG] Cluster: size=57, len=43,0, center=(98,5,26,0), score=0,988
+[2025-07-30 21:57:36.510] [DEBUG] Cluster: size=58, len=43,0, center=(63,5,27,0), score=1,802
+[2025-07-30 21:57:36.510] [DEBUG] Cluster: size=47, len=30,0, center=(35,0,27,5), score=3,533
+[2025-07-30 21:57:36.510] [DEBUG] TrendlineBreakDetector: Selected white line from (112,26) to (154,24)
+[2025-07-30 21:57:36.511] [DEBUG] TrendlineBreakDetector: Trendline direction: Upward (SELL), searching for SELL breakout
+[2025-07-30 21:57:36.512] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: SELL
+[2025-07-30 21:57:36.514] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250730215733006\tracking.png] Trendline detected, breakout NOT found.
+[2025-07-30 21:57:36.514] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250730215733006\tracking.png: NoBreakout
+[2025-07-30 21:57:37.522] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-30 21:57:37.522] [DEBUG] CaptureTrackingService: Обработка capture ID=20250730215733006, Handle=458778, X=666, Y=257, W=282, H=49
+[2025-07-30 21:57:37.541] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 282x49
+[2025-07-30 21:57:37.551] [DEBUG] TrendlineBreakDetector: Found 394 white pixels
+[2025-07-30 21:57:37.554] [DEBUG] TrendlineBreakDetector: Found 7 clusters
+[2025-07-30 21:57:37.554] [DEBUG] Cluster: size=65, len=45,0, center=(237,5,22,0), score=2,143
+[2025-07-30 21:57:37.554] [DEBUG] Cluster: size=55, len=42,0, center=(202,0,23,0), score=1,451
+[2025-07-30 21:57:37.555] [DEBUG] Cluster: size=57, len=43,0, center=(167,5,24,0), score=0,616
+[2025-07-30 21:57:37.555] [DEBUG] Cluster: size=55, len=42,0, center=(133,0,25,0), score=0,192
+[2025-07-30 21:57:37.556] [DEBUG] Cluster: size=57, len=43,0, center=(98,5,26,0), score=0,988
+[2025-07-30 21:57:37.556] [DEBUG] Cluster: size=58, len=43,0, center=(63,5,27,0), score=1,802
+[2025-07-30 21:57:37.556] [DEBUG] Cluster: size=47, len=30,0, center=(35,0,27,5), score=3,533
+[2025-07-30 21:57:37.557] [DEBUG] TrendlineBreakDetector: Selected white line from (112,26) to (154,24)
+[2025-07-30 21:57:37.557] [DEBUG] TrendlineBreakDetector: Trendline direction: Upward (SELL), searching for SELL breakout
+[2025-07-30 21:57:37.559] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: SELL
+[2025-07-30 21:57:37.562] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250730215733006\tracking.png] Trendline detected, breakout NOT found.
+[2025-07-30 21:57:37.562] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250730215733006\tracking.png: NoBreakout
+[2025-07-30 21:57:37.827] [DEBUG] Z hotkey detected and service is enabled
+[2025-07-30 21:57:37.827] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-30 21:57:38.573] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-30 21:57:38.573] [DEBUG] CaptureTrackingService: Обработка capture ID=20250730215733006, Handle=458778, X=666, Y=257, W=282, H=49
+[2025-07-30 21:57:38.592] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 282x49
+[2025-07-30 21:57:38.602] [DEBUG] TrendlineBreakDetector: Found 394 white pixels
+[2025-07-30 21:57:38.605] [DEBUG] TrendlineBreakDetector: Found 7 clusters
+[2025-07-30 21:57:38.606] [DEBUG] Cluster: size=65, len=45,0, center=(237,5,22,0), score=2,143
+[2025-07-30 21:57:38.606] [DEBUG] Cluster: size=55, len=42,0, center=(202,0,23,0), score=1,451
+[2025-07-30 21:57:38.607] [DEBUG] Cluster: size=57, len=43,0, center=(167,5,24,0), score=0,616
+[2025-07-30 21:57:38.607] [DEBUG] Cluster: size=55, len=42,0, center=(133,0,25,0), score=0,192
+[2025-07-30 21:57:38.607] [DEBUG] Cluster: size=57, len=43,0, center=(98,5,26,0), score=0,988
+[2025-07-30 21:57:38.607] [DEBUG] Cluster: size=58, len=43,0, center=(63,5,27,0), score=1,802
+[2025-07-30 21:57:38.608] [DEBUG] Cluster: size=47, len=30,0, center=(35,0,27,5), score=3,533
+[2025-07-30 21:57:38.608] [DEBUG] TrendlineBreakDetector: Selected white line from (112,26) to (154,24)
+[2025-07-30 21:57:38.609] [DEBUG] TrendlineBreakDetector: Trendline direction: Upward (SELL), searching for SELL breakout
+[2025-07-30 21:57:38.610] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: SELL
+[2025-07-30 21:57:38.613] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250730215733006\tracking.png] Trendline detected, breakout NOT found.
+[2025-07-30 21:57:38.613] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250730215733006\tracking.png: NoBreakout
+[2025-07-30 21:57:39.326] [INFO] CaptureTrackingService: Updated IsSkipped=True for capture ID=20250730215733006, Handle=458778
+[2025-07-30 21:57:39.763] [DEBUG] Escape key detected and service is enabled
+[2025-07-30 21:57:39.763] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-30 21:57:39.764] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:57:39.764] [DEBUG] No overlay to close
+[2025-07-30 21:57:39.765] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:57:40.835] [DEBUG] Z hotkey detected and service is enabled
+[2025-07-30 21:57:40.835] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-30 21:57:49.367] [ERROR] Failed to connect to Pocket Option socket at 192.168.0.3:65300
+Exception: Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера.
+StackTrace:    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Net.Sockets.TcpClient.CompleteConnectAsync(Task task)
+   at ScreenCaptureApp.Services.BinaryOptionsSocketService.ConnectAsync() in C:\apps\jforex-trading-terminal-win10\Services\BinaryOptionsSocketService.cs:line 146
+[2025-07-30 21:57:57.618] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-30 21:57:57.746] [INFO] Hotkey button index 1 clicked at (280,56) on window 458778
+[2025-07-30 21:57:57.747] [INFO] [DEBUG] Mouse returned to (1055,400)
+[2025-07-30 21:57:58.162] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-30 21:57:58.282] [INFO] Hotkey button index 1 clicked at (280,56) on window 458778
+[2025-07-30 21:57:58.282] [INFO] [DEBUG] Mouse returned to (1159,442)
+[2025-07-30 21:57:58.362] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-30 21:57:58.488] [INFO] Hotkey button index 1 clicked at (280,56) on window 458778
+[2025-07-30 21:57:58.488] [INFO] [DEBUG] Mouse returned to (1159,442)
+[2025-07-30 21:57:58.538] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-30 21:57:58.663] [INFO] Hotkey button index 1 clicked at (280,56) on window 458778
+[2025-07-30 21:57:58.664] [INFO] [DEBUG] Mouse returned to (1159,442)
+[2025-07-30 21:57:58.666] [DEBUG] Q hotkey detected and service is enabled
+[2025-07-30 21:57:58.667] [INFO] [DEBUG] OnQHotkey event in MainWindow
+[2025-07-30 21:57:58.788] [INFO] Hotkey button index 0 clicked at (80,56) on window 458778
+[2025-07-30 21:57:58.788] [INFO] [DEBUG] Mouse returned to (1159,442)
+[2025-07-30 21:58:06.882] [DEBUG] Q hotkey detected and service is enabled
+[2025-07-30 21:58:06.883] [INFO] [DEBUG] OnQHotkey event in MainWindow
+[2025-07-30 21:58:07.012] [INFO] Hotkey button index 0 clicked at (80,56) on window 458778
+[2025-07-30 21:58:07.012] [INFO] [DEBUG] Mouse returned to (1402,536)
+[2025-07-30 21:58:07.042] [DEBUG] Q hotkey detected and service is enabled
+[2025-07-30 21:58:07.042] [INFO] [DEBUG] OnQHotkey event in MainWindow
+[2025-07-30 21:58:07.170] [INFO] Hotkey button index 0 clicked at (80,56) on window 458778
+[2025-07-30 21:58:07.171] [INFO] [DEBUG] Mouse returned to (1402,536)
+[2025-07-30 21:58:07.738] [DEBUG] Symbol hotkey 1 pressed
+[2025-07-30 21:58:07.964] [DEBUG] Status: Found and brought 2 window(s) to foreground: XAU/USD, T610, XAU/USD, T8
+[2025-07-30 21:58:08.525] [INFO] Applied default toolbar settings for window 459708
+[2025-07-30 21:58:08.526] [INFO] Overlay positioned on window 459708 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
+[2025-07-30 21:58:09.762] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-30 21:58:09.880] [INFO] Hotkey button index 1 clicked at (280,56) on window 459708
+[2025-07-30 21:58:09.880] [INFO] [DEBUG] Mouse returned to (2875,490)
+[2025-07-30 21:58:10.098] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-30 21:58:10.228] [INFO] Hotkey button index 1 clicked at (280,56) on window 459708
+[2025-07-30 21:58:10.228] [INFO] [DEBUG] Mouse returned to (2875,489)
+[2025-07-30 21:58:10.266] [DEBUG] Q hotkey detected and service is enabled
+[2025-07-30 21:58:10.267] [INFO] [DEBUG] OnQHotkey event in MainWindow
+[2025-07-30 21:58:10.385] [INFO] Hotkey button index 0 clicked at (80,56) on window 459708
+[2025-07-30 21:58:10.386] [INFO] [DEBUG] Mouse returned to (2875,489)
+[2025-07-30 21:58:10.666] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-30 21:58:10.792] [INFO] Hotkey button index 1 clicked at (280,56) on window 459708
+[2025-07-30 21:58:10.792] [INFO] [DEBUG] Mouse returned to (2875,489)
+[2025-07-30 21:58:21.165] [INFO] Applied default toolbar settings for window 458778
+[2025-07-30 21:58:21.165] [INFO] Overlay positioned on window 458778 (symbol: XAUUSD): Left=0, Top=0, Width=1920
+[2025-07-30 21:58:28.282] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-30 21:58:28.408] [INFO] Hotkey button index 1 clicked at (280,56) on window 458778
+[2025-07-30 21:58:28.408] [INFO] [DEBUG] Mouse returned to (1543,548)
+[2025-07-30 21:58:28.898] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-30 21:58:29.027] [INFO] Hotkey button index 1 clicked at (280,56) on window 458778
+[2025-07-30 21:58:29.039] [INFO] [DEBUG] Mouse returned to (361,82)
+[2025-07-30 21:58:29.082] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-30 21:58:29.202] [INFO] Hotkey button index 1 clicked at (280,56) on window 458778
+[2025-07-30 21:58:29.202] [INFO] [DEBUG] Mouse returned to (361,82)
+[2025-07-30 21:58:29.266] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-30 21:58:29.392] [INFO] Hotkey button index 1 clicked at (280,56) on window 458778
+[2025-07-30 21:58:29.392] [INFO] [DEBUG] Mouse returned to (361,82)
+[2025-07-30 21:58:49.986] [DEBUG] S key detected and service is enabled
+[2025-07-30 21:58:51.450] [DEBUG] Escape key detected and service is enabled
+[2025-07-30 21:58:51.450] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-30 21:58:51.450] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:58:51.450] [DEBUG] No overlay to close
+[2025-07-30 21:58:51.451] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:58:52.306] [DEBUG] S key detected and service is enabled
+[2025-07-30 21:58:53.642] [DEBUG] Escape key detected and service is enabled
+[2025-07-30 21:58:53.642] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-30 21:58:53.642] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:58:53.642] [DEBUG] No overlay to close
+[2025-07-30 21:58:53.643] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:58:55.002] [DEBUG] S key detected and service is enabled
+[2025-07-30 21:58:56.778] [DEBUG] Escape key detected and service is enabled
+[2025-07-30 21:58:56.778] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-30 21:58:56.778] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:58:56.778] [DEBUG] No overlay to close
+[2025-07-30 21:58:56.779] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:58:58.618] [DEBUG] S key detected and service is enabled
+[2025-07-30 21:59:00.322] [DEBUG] Escape key detected and service is enabled
+[2025-07-30 21:59:00.322] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-30 21:59:00.322] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:59:00.323] [DEBUG] No overlay to close
+[2025-07-30 21:59:00.323] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:59:01.538] [DEBUG] S key detected and service is enabled
+[2025-07-30 21:59:02.890] [DEBUG] Escape key detected and service is enabled
+[2025-07-30 21:59:02.890] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-30 21:59:02.890] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:59:02.890] [DEBUG] No overlay to close
+[2025-07-30 21:59:02.891] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:59:13.353] [DEBUG] S key detected and service is enabled
+[2025-07-30 21:59:14.521] [DEBUG] Escape key detected and service is enabled
+[2025-07-30 21:59:14.522] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-30 21:59:14.522] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:59:14.522] [DEBUG] No overlay to close
+[2025-07-30 21:59:14.523] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:59:14.633] [DEBUG] Escape key detected and service is enabled
+[2025-07-30 21:59:14.634] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-30 21:59:14.634] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:59:14.634] [DEBUG] No overlay to close
+[2025-07-30 21:59:14.635] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:59:15.009] [DEBUG] S key detected and service is enabled
+[2025-07-30 21:59:16.273] [DEBUG] Escape key detected and service is enabled
+[2025-07-30 21:59:16.274] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-30 21:59:16.274] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:59:16.274] [DEBUG] No overlay to close
+[2025-07-30 21:59:16.274] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:59:16.401] [DEBUG] Escape key detected and service is enabled
+[2025-07-30 21:59:16.402] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-30 21:59:16.402] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:59:16.402] [DEBUG] No overlay to close
+[2025-07-30 21:59:16.402] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:59:17.161] [DEBUG] S key detected and service is enabled
+[2025-07-30 21:59:18.593] [DEBUG] Escape key detected and service is enabled
+[2025-07-30 21:59:18.594] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-30 21:59:18.594] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:59:18.595] [DEBUG] No overlay to close
+[2025-07-30 21:59:18.595] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:59:18.721] [DEBUG] Escape key detected and service is enabled
+[2025-07-30 21:59:18.722] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-30 21:59:18.722] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:59:18.722] [DEBUG] No overlay to close
+[2025-07-30 21:59:18.723] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:59:19.748] [INFO] Applied default toolbar settings for window 459708
+[2025-07-30 21:59:19.749] [INFO] Overlay positioned on window 459708 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
+[2025-07-30 21:59:29.641] [DEBUG] Escape key detected and service is enabled
+[2025-07-30 21:59:29.642] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-30 21:59:29.642] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:59:29.642] [DEBUG] No overlay to close
+[2025-07-30 21:59:29.642] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:59:29.785] [DEBUG] Escape key detected and service is enabled
+[2025-07-30 21:59:29.785] [DEBUG] Escape key pressed - starting cleanup
+[2025-07-30 21:59:29.786] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:59:29.786] [DEBUG] No overlay to close
+[2025-07-30 21:59:29.786] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-07-30 21:59:31.617] [DEBUG] S key detected and service is enabled
