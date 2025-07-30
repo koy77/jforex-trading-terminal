@@ -2,6 +2,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Forms;
 using ScreenCaptureApp.Services;
 
 namespace ScreenCaptureApp.Services
@@ -32,6 +33,12 @@ namespace ScreenCaptureApp.Services
         [DllImport("user32.dll")]
         private static extern bool SetCursorPos(int x, int y);
 
+        [DllImport("user32.dll")]
+        private static extern IntPtr MonitorFromWindow(IntPtr hwnd, uint dwFlags);
+
+        [DllImport("user32.dll")]
+        private static extern bool GetMonitorInfo(IntPtr hMonitor, ref MONITORINFO lpmi);
+
         #endregion
 
         #region Windows API Constants
@@ -41,6 +48,7 @@ namespace ScreenCaptureApp.Services
         private const uint WM_KEYUP = 0x0101;
         private const uint WM_LBUTTONDOWN = 0x0201;
         private const uint WM_LBUTTONUP = 0x0202;
+        private const uint MONITOR_DEFAULTTONEAREST = 0x00000002;
 
 
         #endregion
@@ -61,6 +69,15 @@ namespace ScreenCaptureApp.Services
         {
             public int X;
             public int Y;
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        private struct MONITORINFO
+        {
+            public int cbSize;
+            public RECT rcMonitor;
+            public RECT rcWork;
+            public uint dwFlags;
         }
 
         #endregion
@@ -336,9 +353,14 @@ namespace ScreenCaptureApp.Services
                     return new System.Drawing.Point((int)screenPoint.X, (int)screenPoint.Y);
                 }
 
-                // Вычисляем относительные координаты в окне
-                int windowX = (int)screenPoint.X - windowRect.Left;
-                int windowY = (int)screenPoint.Y - windowRect.Top;
+                // Используем подход из MainWindow для получения границ монитора
+                int monitorLeftBoundary = GetMonitorLeftBoundaryForWindow(windowHandle);
+                
+                // Вычисляем координаты: X = левая граница монитора + X, Y остается как есть
+                int windowX = monitorLeftBoundary + (int)screenPoint.X;
+                int windowY = (int)screenPoint.Y;
+
+                Logger.LogTagInfo("JForex", $"ConvertScreenToWindowCoordinates: screenPoint=({screenPoint.X}, {screenPoint.Y}), monitorLeftBoundary={monitorLeftBoundary}, result=({windowX}, {windowY})");
 
                 return new System.Drawing.Point(windowX, windowY);
             }
@@ -346,6 +368,49 @@ namespace ScreenCaptureApp.Services
             {
                 Logger.LogTagError("JForex", $"Error converting screen coordinates to window coordinates: {ex.Message}", ex);
                 return new System.Drawing.Point((int)screenPoint.X, (int)screenPoint.Y);
+            }
+        }
+
+        /// <summary>
+        /// Получает левую границу монитора для указанного окна, используя подход из MainWindow
+        /// </summary>
+        private int GetMonitorLeftBoundaryForWindow(IntPtr windowHandle)
+        {
+            try
+            {
+                // Получаем позицию окна
+                RECT windowRect;
+                if (!GetWindowRect(windowHandle, out windowRect))
+                {
+                    Logger.LogTagError("JForex", "Failed to get window position for monitor detection");
+                    return 0;
+                }
+
+                // Используем System.Windows.Forms.Screen для получения информации о мониторах
+                var screens = System.Windows.Forms.Screen.AllScreens;
+                
+                // Находим монитор, на котором находится окно
+                for (int i = 0; i < screens.Length; i++)
+                {
+                    var screen = screens[i];
+                    var bounds = screen.Bounds;
+                    
+                    // Проверяем, находится ли окно на этом мониторе
+                    if (bounds.Contains(windowRect.Left, windowRect.Top))
+                    {
+                        Logger.LogTagInfo("JForex", $"Window found on monitor {i}: LeftBoundary={bounds.Left}, Bounds=({bounds.X}, {bounds.Y}, {bounds.Width}, {bounds.Height})");
+                        return bounds.Left;
+                    }
+                }
+                
+                // Если не найден, возвращаем 0 (основной монитор)
+                Logger.LogTagWarning("JForex", "Window not found on any monitor, using primary monitor (LeftBoundary=0)");
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("JForex", $"Error getting monitor left boundary: {ex.Message}", ex);
+                return 0;
             }
         }
        
