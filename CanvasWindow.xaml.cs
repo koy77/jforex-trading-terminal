@@ -880,7 +880,7 @@ namespace ScreenCaptureApp
             {
                 if (jForexService == null)
                 {
-                    Logger.LogError("JForex service is not initialized");
+                    Logger.LogTagError("JForex", "JForex service is not initialized");
                     return;
                 }
 
@@ -888,7 +888,7 @@ namespace ScreenCaptureApp
                 var points = stroke.StylusPoints;
                 if (points.Count < 2)
                 {
-                    Logger.LogError("Stroke has less than 2 points, cannot create trendline");
+                    Logger.LogTagError("JForex", "Stroke has less than 2 points, cannot create trendline");
                     return;
                 }
 
@@ -900,7 +900,7 @@ namespace ScreenCaptureApp
                 var firstScreenPoint = TradingCanvas.PointToScreen(new System.Windows.Point(firstPoint.X, firstPoint.Y));
                 var lastScreenPoint = TradingCanvas.PointToScreen(new System.Windows.Point(lastPoint.X, lastPoint.Y));
 
-                Logger.LogInfo($"Processing trading stroke directly: Point1=({firstScreenPoint.X}, {firstScreenPoint.Y}), Point2=({lastScreenPoint.X}, {lastScreenPoint.Y})");
+                Logger.LogTagInfo("JForex", $"Processing trading stroke directly: Point1=({firstScreenPoint.X}, {firstScreenPoint.Y}), Point2=({lastScreenPoint.X}, {lastScreenPoint.Y})");
 
                 // Создаем и сохраняем CaptureData
                 var captureData = CreateCaptureDataFromStroke(stroke);
@@ -926,11 +926,11 @@ namespace ScreenCaptureApp
                     // Обновляем настройки символа и брокера
                     UpdateSettingsFromCapture(captureData);
                     
-                    Logger.LogInfo($"CaptureData saved to database: ID={captureData.ID}");
+                    Logger.LogTagInfo("JForex", $"CaptureData saved to database: ID={captureData.ID}");
                 }
 
                 // Закрываем CanvasWindow
-                Logger.LogInfo("Closing CanvasWindow for trading mode");
+                Logger.LogTagInfo("JForex", "Closing CanvasWindow for trading mode");
                 this.Close();
 
                 // Небольшая задержка для закрытия окна
@@ -939,7 +939,7 @@ namespace ScreenCaptureApp
                 // Активируем целевое окно и устанавливаем его в foreground
                 if (!jForexService.ActivateWindow(targetWindowHandle))
                 {
-                    Logger.LogError("Failed to activate target window");
+                    Logger.LogTagError("JForex", "Failed to activate target window");
                     return;
                 }
 
@@ -956,21 +956,21 @@ namespace ScreenCaptureApp
                 else
                 {
                     // Для Binary брокеров можно добавить другую логику
-                    Logger.LogInfo("Binary broker detected - no specific action defined");
+                    Logger.LogTagInfo("JForex", "Binary broker detected - no specific action defined");
                 }
 
-                Logger.LogInfo("Trading stroke processing completed");
+                Logger.LogTagInfo("JForex", "Trading stroke processing completed");
 
                 // Если трендовая линия была успешно нарисована, запускаем callback для активации canvas window
                 if (trendlineDrawn)
                 {
-                    Logger.LogInfo("Trendline drawn successfully - triggering space hotkey callback");
+                    Logger.LogTagInfo("JForex", "Trendline drawn successfully - triggering space hotkey callback");
                     OnTrendlineDrawn?.Invoke();
                 }
             }
             catch (Exception ex)
             {
-                Logger.LogError($"Error processing trading stroke directly: {ex.Message}", ex);
+                Logger.LogTagError("JForex", $"Error processing trading stroke directly: {ex.Message}", ex);
             }
         }
         
@@ -1228,7 +1228,7 @@ namespace ScreenCaptureApp
         {
             try
             {
-                Logger.LogInfo("Adding trendline to GForex with direct mouse actions");
+                Logger.LogTagInfo("JForex", "Adding trendline to GForex with direct mouse actions");
 
                 // Отправляем ESC для сброса предыдущих действий
                 jForexService.SendEscKey(targetWindowHandle);
@@ -1237,7 +1237,7 @@ namespace ScreenCaptureApp
                 // Отправляем нажатие клавиши A для активации инструмента трендовой линии
                 if (!jForexService.SendKeyPress(targetWindowHandle, 'A'))
                 {
-                    Logger.LogError("Failed to send key A");
+                    Logger.LogTagError("JForex", "Failed to send key A");
                     return false;
                 }
 
@@ -1247,12 +1247,12 @@ namespace ScreenCaptureApp
                 var windowPoint1 = ConvertScreenToWindowCoordinates(firstScreenPoint, targetWindowHandle);
                 var windowPoint2 = ConvertScreenToWindowCoordinates(lastScreenPoint, targetWindowHandle);
 
-                Logger.LogInfo($"Converted coordinates: Point1=({windowPoint1.X}, {windowPoint1.Y}), Point2=({windowPoint2.X}, {windowPoint2.Y})");
+                Logger.LogTagInfo("JForex", $"Converted coordinates: Point1=({windowPoint1.X}, {windowPoint1.Y}), Point2=({windowPoint2.X}, {windowPoint2.Y})");
 
                 // Кликаем на первую точку
                 if (!jForexService.ClickAtPosition(targetWindowHandle, windowPoint1.X, windowPoint1.Y))
                 {
-                    Logger.LogError("Failed to click on first point");
+                    Logger.LogTagError("JForex", "Failed to click on first point");
                     return false;
                 }
 
@@ -1261,19 +1261,19 @@ namespace ScreenCaptureApp
                 // Кликаем на вторую точку
                 if (!jForexService.ClickAtPosition(targetWindowHandle, windowPoint2.X, windowPoint2.Y))
                 {
-                    Logger.LogError("Failed to click on second point");
+                    Logger.LogTagError("JForex", "Failed to click on second point");
                     return false;
                 }
 
                 // Отправляем ESC для завершения
                 jForexService.SendEscKey(targetWindowHandle);
 
-                Logger.LogInfo("Trendline successfully added to GForex with direct mouse actions");
+                Logger.LogTagInfo("JForex", "Trendline successfully added to GForex with direct mouse actions");
                 return true;
             }
             catch (Exception ex)
             {
-                Logger.LogError($"Error adding trendline to GForex directly: {ex.Message}", ex);
+                Logger.LogTagError("JForex", $"Error adding trendline to GForex directly: {ex.Message}", ex);
                 return false;
             }
         }
@@ -1289,7 +1289,7 @@ namespace ScreenCaptureApp
                 JForexWindowsManagerService.RECT windowRect;
                 if (!JForexWindowsManagerService.GetWindowRect(windowHandle, out windowRect))
                 {
-                    Logger.LogError("Failed to get window position");
+                    Logger.LogTagError("JForex", "Failed to get window position");
                     return new System.Drawing.Point((int)screenPoint.X, (int)screenPoint.Y);
                 }
 
@@ -1301,70 +1301,8 @@ namespace ScreenCaptureApp
             }
             catch (Exception ex)
             {
-                Logger.LogError($"Error converting screen coordinates to window coordinates: {ex.Message}", ex);
+                Logger.LogTagError("JForex", $"Error converting screen coordinates to window coordinates: {ex.Message}", ex);
                 return new System.Drawing.Point((int)screenPoint.X, (int)screenPoint.Y);
-            }
-        }
-
-        /// <summary>
-        /// Добавляет трендовую линию в GForex на основе штриха (старый метод для совместимости)
-        /// </summary>
-        private async Task<bool> AddTrendlineToGForexAsync(Stroke stroke)
-        {
-            try
-            {
-                if (jForexService == null)
-                {
-                    Logger.LogError("JForex service is not initialized");
-                    return false;
-                }
-
-                // Получаем точки штриха
-                var points = stroke.StylusPoints;
-                if (points.Count < 2)
-                {
-                    Logger.LogError("Stroke has less than 2 points, cannot create trendline");
-                    return false;
-                }
-
-                // Берем первую и последнюю точки штриха
-                var firstPoint = points[0];
-                var lastPoint = points[points.Count - 1];
-
-                // Конвертируем координаты из TradingCanvas в экранные координаты
-                var firstScreenPoint = TradingCanvas.PointToScreen(new System.Windows.Point(firstPoint.X, firstPoint.Y));
-                var lastScreenPoint = TradingCanvas.PointToScreen(new System.Windows.Point(lastPoint.X, lastPoint.Y));
-
-                // Получаем размеры окна GForex
-                int windowWidth = (int)this.ActualWidth;
-
-                Logger.LogInfo($"Adding trendline to GForex: TargetWindowHandle={targetWindowHandle.ToInt64()}, Point1=({firstScreenPoint.X}, {firstScreenPoint.Y}), Point2=({lastScreenPoint.X}, {lastScreenPoint.Y}), WindowWidth={windowWidth}");
-
-                // Вызываем сервис для добавления трендовой линии
-                bool success = await jForexService.AddTrendlineAsync(
-                    targetWindowHandle,
-                    windowWidth,
-                    firstScreenPoint.X,
-                    firstScreenPoint.Y,
-                    lastScreenPoint.X,
-                    lastScreenPoint.Y
-                );
-
-                if (success)
-                {
-                    Logger.LogInfo("Trendline successfully added to GForex");
-                }
-                else
-                {
-                    Logger.LogError("Failed to add trendline to GForex");
-                }
-                
-                return success;
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError($"Error adding trendline to GForex: {ex.Message}", ex);
-                return false;
             }
         }
     }

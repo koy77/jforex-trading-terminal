@@ -24,9 +24,6 @@ namespace ScreenCaptureApp.Services
         public static extern bool GetWindowRect(IntPtr hWnd, out RECT lpRect);
 
         [DllImport("user32.dll")]
-        private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
-
-        [DllImport("user32.dll")]
         private static extern bool PostMessage(IntPtr hWnd, uint Msg, IntPtr wParam, IntPtr lParam);
 
         [DllImport("user32.dll")]
@@ -34,18 +31,6 @@ namespace ScreenCaptureApp.Services
 
         [DllImport("user32.dll")]
         private static extern bool SetCursorPos(int x, int y);
-
-        [DllImport("user32.dll")]
-        private static extern void mouse_event(uint dwFlags, uint dx, uint dy, uint dwData, UIntPtr dwExtraInfo);
-
-        [DllImport("user32.dll")]
-        private static extern bool GetCursorPos(out POINT lpPoint);
-
-        [DllImport("user32.dll")]
-        private static extern bool ScreenToClient(IntPtr hWnd, ref POINT lpPoint);
-
-        [DllImport("user32.dll")]
-        private static extern bool ClientToScreen(IntPtr hWnd, ref POINT lpPoint);
 
         #endregion
 
@@ -56,10 +41,7 @@ namespace ScreenCaptureApp.Services
         private const uint WM_KEYUP = 0x0101;
         private const uint WM_LBUTTONDOWN = 0x0201;
         private const uint WM_LBUTTONUP = 0x0202;
-        private const uint WM_MOUSEMOVE = 0x0200;
-        private const uint MOUSEEVENTF_LEFTDOWN = 0x0002;
-        private const uint MOUSEEVENTF_LEFTUP = 0x0004;
-        private const uint MOUSEEVENTF_MOVE = 0x0001;
+
 
         #endregion
 
@@ -98,12 +80,15 @@ namespace ScreenCaptureApp.Services
         {
             try
             {
-                Logger.Log($"JForex: Начинаем добавление трендовой линии. Точка 1: ({point1X}, {point1Y}), Точка 2: ({point2X}, {point2Y})");
+                Logger.LogTagInfo("JForex", $"=== TRENDLINE ADDITION START ===");
+                Logger.LogTagInfo("JForex", $"Input coordinates - Point1: ({point1X}, {point1Y}), Point2: ({point2X}, {point2Y})");
+                Logger.LogTagInfo("JForex", $"Target window handle: {targetWindowHandle.ToInt64()}");
+                Logger.LogTagInfo("JForex", $"Target window width: {targetWindowHandleWidth}");
 
                 // Активируем окно GForex
                 if (!ActivateWindow(targetWindowHandle))
                 {
-                    Logger.Log("JForex: Ошибка активации окна GForex");
+                    Logger.LogTagError("JForex", "Ошибка активации окна GForex");
                     return false;
                 }
 
@@ -113,22 +98,25 @@ namespace ScreenCaptureApp.Services
                 // Отправляем нажатие клавиши A для активации инструмента трендовой линии
                 if (!SendKeyPress(targetWindowHandle, 'A'))
                 {
-                    Logger.Log("JForex: Ошибка отправки клавиши A");
+                    Logger.LogTagError("JForex", "Ошибка отправки клавиши A");
                     return false;
                 }
 
                 await Task.Delay(200);
 
                 // Конвертируем координаты Canvas в координаты окна GForex
-                var windowPoint1 = ConvertCanvasToWindowCoordinates(point1X, point1Y, targetWindowHandleWidth);
-                var windowPoint2 = ConvertCanvasToWindowCoordinates(point2X, point2Y, targetWindowHandleWidth);
+                var windowPoint1 = ConvertCanvasToWindowCoordinates(point1X, point1Y, targetWindowHandle);
+                var windowPoint2 = ConvertCanvasToWindowCoordinates(point2X, point2Y, targetWindowHandle);
 
-                Logger.Log($"JForex: Конвертированные координаты. Точка 1: ({windowPoint1.X}, {windowPoint1.Y}), Точка 2: ({windowPoint2.X}, {windowPoint2.Y})");
+                Logger.LogTagInfo("JForex", $"=== CONVERTED COORDINATES ===");
+                Logger.LogTagInfo("JForex", $"windowPoint1: ({windowPoint1.X}, {windowPoint1.Y})");
+                Logger.LogTagInfo("JForex", $"windowPoint2: ({windowPoint2.X}, {windowPoint2.Y})");
+                Logger.LogTagInfo("JForex", $"=== END CONVERTED COORDINATES ===");
 
                 // Кликаем на первую точку
                 if (!ClickAtPosition(targetWindowHandle, windowPoint1.X, windowPoint1.Y))
                 {
-                    Logger.Log("JForex: Ошибка клика на первой точке");
+                    Logger.LogTagError("JForex", $"Ошибка клика на первой точке: ({windowPoint1.X}, {windowPoint1.Y})");
                     return false;
                 }
 
@@ -137,18 +125,19 @@ namespace ScreenCaptureApp.Services
                 // Кликаем на вторую точку
                 if (!ClickAtPosition(targetWindowHandle, windowPoint2.X, windowPoint2.Y))
                 {
-                    Logger.Log("JForex: Ошибка клика на второй точке");
+                    Logger.LogTagError("JForex", $"Ошибка клика на второй точке: ({windowPoint2.X}, {windowPoint2.Y})");
                     return false;
                 }
 
                 SendEscKey(targetWindowHandle);
 
-                Logger.Log("JForex: Треховая линия успешно добавлена");
+                Logger.LogTagInfo("JForex", "Треховая линия успешно добавлена");
+                Logger.LogTagInfo("JForex", "=== TRENDLINE ADDITION END ===");
                 return true;
             }
             catch (Exception ex)
             {
-                Logger.Log($"JForex: Ошибка при добавлении трендовой линии: {ex.Message}");
+                Logger.LogTagError("JForex", $"Ошибка при добавлении трендовой линии: {ex.Message}", ex);
                 return false;
             }
         }
@@ -162,7 +151,7 @@ namespace ScreenCaptureApp.Services
             {
                 if (windowHandle == IntPtr.Zero)
                 {
-                    Logger.Log("JForex: Некорректный handle окна");
+                    Logger.LogTagError("JForex", "Некорректный handle окна");
                     return false;
                 }
 
@@ -174,18 +163,18 @@ namespace ScreenCaptureApp.Services
                 
                 if (result)
                 {
-                    Logger.Log("JForex: Окно успешно активировано");
+                    Logger.LogTagInfo("JForex", $"Окно успешно активировано. Handle: {windowHandle.ToInt64()}");
                 }
                 else
                 {
-                    Logger.Log("JForex: Ошибка активации окна");
+                    Logger.LogTagError("JForex", $"Ошибка активации окна. Handle: {windowHandle.ToInt64()}");
                 }
 
                 return result;
             }
             catch (Exception ex)
             {
-                Logger.Log($"JForex: Ошибка при активации окна: {ex.Message}");
+                Logger.LogTagError("JForex", $"Ошибка при активации окна: {ex.Message}", ex);
                 return false;
             }
         }
@@ -210,18 +199,18 @@ namespace ScreenCaptureApp.Services
 
                 if (keyDownResult && keyUpResult)
                 {
-                    Logger.Log($"JForex: Клавиша '{key}' успешно отправлена");
+                    Logger.LogTagInfo("JForex", $"Клавиша '{key}' успешно отправлена в окно {windowHandle.ToInt64()}");
                     return true;
                 }
                 else
                 {
-                    Logger.Log($"JForex: Ошибка отправки клавиши '{key}'");
+                    Logger.LogTagError("JForex", $"Ошибка отправки клавиши '{key}' в окно {windowHandle.ToInt64()}");
                     return false;
                 }
             }
             catch (Exception ex)
             {
-                Logger.Log($"JForex: Ошибка при отправке клавиши: {ex.Message}");
+                Logger.LogTagError("JForex", $"Ошибка при отправке клавиши '{key}': {ex.Message}", ex);
                 return false;
             }
         }
@@ -233,17 +222,24 @@ namespace ScreenCaptureApp.Services
         {
             try
             {
+                Logger.LogTagInfo("JForex", $"=== MOUSE CLICK START ===");
+                Logger.LogTagInfo("JForex", $"Click coordinates: ({x}, {y})");
+                Logger.LogTagInfo("JForex", $"Window handle: {windowHandle.ToInt64()}");
+
                 // Получаем позицию окна на экране
                 RECT windowRect;
                 if (!GetWindowRect(windowHandle, out windowRect))
                 {
-                    Logger.Log("JForex: Ошибка получения позиции окна");
+                    Logger.LogTagError("JForex", "Ошибка получения позиции окна");
                     return false;
                 }
 
                 // Вычисляем абсолютные координаты на экране
                 int screenX = windowRect.Left + x;
                 int screenY = windowRect.Top + y;
+
+                Logger.LogTagInfo("JForex", $"Window rect: Left={windowRect.Left}, Top={windowRect.Top}, Right={windowRect.Right}, Bottom={windowRect.Bottom}");
+                Logger.LogTagInfo("JForex", $"Calculated screen coordinates: ({screenX}, {screenY})");
 
                 // Устанавливаем позицию курсора
                 SetCursorPos(screenX, screenY);
@@ -262,18 +258,19 @@ namespace ScreenCaptureApp.Services
 
                 if (mouseDownResult && mouseUpResult)
                 {
-                    Logger.Log($"JForex: Клик успешно выполнен в позиции ({x}, {y})");
+                    Logger.LogTagInfo("JForex", $"Клик успешно выполнен в позиции ({x}, {y}) -> screen ({screenX}, {screenY})");
+                    Logger.LogTagInfo("JForex", "=== MOUSE CLICK END ===");
                     return true;
                 }
                 else
                 {
-                    Logger.Log($"JForex: Ошибка клика в позиции ({x}, {y})");
+                    Logger.LogTagError("JForex", $"Ошибка клика в позиции ({x}, {y}) -> screen ({screenX}, {screenY})");
                     return false;
                 }
             }
             catch (Exception ex)
             {
-                Logger.Log($"JForex: Ошибка при клике: {ex.Message}");
+                Logger.LogTagError("JForex", $"Ошибка при клике: {ex.Message}", ex);
                 return false;
             }
         }
@@ -281,62 +278,56 @@ namespace ScreenCaptureApp.Services
         /// <summary>
         /// Конвертирует координаты Canvas в координаты окна GForex
         /// </summary>
-        private POINT ConvertCanvasToWindowCoordinates(double canvasX, double canvasY, int windowWidth)
-        {
-            // Здесь можно добавить логику масштабирования координат
-            // Пока используем простое преобразование
-            return new POINT
-            {
-                X = (int)canvasX,
-                Y = (int)canvasY
-            };
-        }
-
-        /// <summary>
-        /// Получает две случайные точки в окне для рисования трендовой линии
-        /// </summary>
-        /// <param name="windowHandle">Handle окна</param>
-        /// <returns>Кортеж с двумя точками (point1X, point1Y, point2X, point2Y)</returns>
-        public (int point1X, int point1Y, int point2X, int point2Y) GetRandomPointsInWindow(IntPtr windowHandle)
+        private POINT ConvertCanvasToWindowCoordinates(double canvasX, double canvasY, IntPtr windowHandle)
         {
             try
             {
-                // Получаем размеры окна
+                // Получаем позицию окна на экране
                 RECT windowRect;
                 if (!GetWindowRect(windowHandle, out windowRect))
                 {
-                    Logger.Log("JForex: Ошибка получения размеров окна");
-                    return (0, 0, 0, 0);
+                    Logger.LogTagError("JForex", $"Ошибка получения позиции окна для handle={windowHandle.ToInt64()}");
+                    return new POINT { X = (int)canvasX, Y = (int)canvasY };
                 }
 
-                int windowWidth = windowRect.Right - windowRect.Left;
-                int windowHeight = windowRect.Bottom - windowRect.Top;
+                // Определяем индекс монитора по координатам окна
+                int monitorIndex = ScreenCaptureApp.Helpers.MainHelper.GetMonitorIndexByCoordinates(windowRect.Left+200, windowRect.Top+200);
+                
+                // Получаем левую границу монитора
+                int monitorLeftBoundary = ScreenCaptureApp.Helpers.MainHelper.GetMonitorLeftBoundary(monitorIndex);
 
-                // Генерируем случайные точки, избегая краев окна
-                var random = new Random();
-                int margin = 50; // Отступ от краев
-
-                int point1X = random.Next(margin, windowWidth - margin);
-                int point1Y = random.Next(margin, windowHeight - margin);
-                int point2X = random.Next(margin, windowWidth - margin);
-                int point2Y = random.Next(margin, windowHeight - margin);
-
-                // Убеждаемся, что точки не слишком близко друг к другу
-                while (Math.Abs(point2X - point1X) < 100 && Math.Abs(point2Y - point1Y) < 100)
+                // Вычисляем абсолютные экранные координаты
+                // Если это не основной монитор (индекс > 0), добавляем левую границу монитора
+                int screenX = (int)canvasX;
+                if (monitorIndex > 0)
                 {
-                    point2X = random.Next(margin, windowWidth - margin);
-                    point2Y = random.Next(margin, windowHeight - margin);
+                    screenX = monitorLeftBoundary + (int)canvasX;
                 }
+                int screenY = (int)canvasY;
 
-                Logger.Log($"JForex: Сгенерированы случайные точки: ({point1X}, {point1Y}) и ({point2X}, {point2Y})");
-                return (point1X, point1Y, point2X, point2Y);
+                Logger.LogTagInfo("JForex", $"=== COORDINATE CONVERSION ===");
+                Logger.LogTagInfo("JForex", $"Input canvas coordinates: ({canvasX}, {canvasY})");
+                Logger.LogTagInfo("JForex", $"Window handle: {windowHandle.ToInt64()}");
+                Logger.LogTagInfo("JForex", $"Window rect: Left={windowRect.Left}, Top={windowRect.Top}, Right={windowRect.Right}, Bottom={windowRect.Bottom}");
+                Logger.LogTagInfo("JForex", $"Monitor index: {monitorIndex}");
+                Logger.LogTagInfo("JForex", $"Monitor left boundary: {monitorLeftBoundary}");
+                Logger.LogTagInfo("JForex", $"Calculated screen coordinates: ({screenX}, {screenY})");
+                Logger.LogTagInfo("JForex", $"=== END COORDINATE CONVERSION ===");
+
+                return new POINT
+                {
+                    X = screenX,
+                    Y = screenY
+                };
             }
             catch (Exception ex)
             {
-                Logger.Log($"JForex: Ошибка при генерации случайных точек: {ex.Message}");
-                return (0, 0, 0, 0);
+                Logger.LogTagError("JForex", $"Ошибка конвертации координат: {ex.Message}", ex);
+                return new POINT { X = (int)canvasX, Y = (int)canvasY };
             }
         }
+
+
 
         public void SendEscKey(IntPtr hwnd)
         {
@@ -346,7 +337,7 @@ namespace ScreenCaptureApp.Services
             if (hwnd == IntPtr.Zero) return;
             SendMessage(hwnd, WM_KEYDOWN, (IntPtr)VK_ESCAPE, IntPtr.Zero);
             SendMessage(hwnd, WM_KEYUP, (IntPtr)VK_ESCAPE, IntPtr.Zero);
-            Logger.Log($"JForex: Sent ESC key to hwnd=0x{hwnd.ToInt64():X}");
+            Logger.LogTagInfo("JForex", $"Sent ESC key to hwnd=0x{hwnd.ToInt64():X}");
         }
        
     }
