@@ -408,20 +408,6 @@ namespace ScreenCaptureApp
                 currentCanvasWindow = new CanvasWindow(targetWindow, activeSymbol);
                 currentCanvasWindow.Closed += (s, args) => currentCanvasWindow = null;
                 
-                // Subscribe to the trendline drawn event to trigger space hotkey functionality
-                currentCanvasWindow.OnTrendlineDrawn += () =>
-                {
-                    Logger.LogInfo("Trendline drawn event received - triggering space hotkey functionality");
-                    // Add a small delay to ensure the JForex window is stable
-                    Task.Delay(500).ContinueWith(_ =>
-                    {
-                        Dispatcher.Invoke(() =>
-                        {
-                            OnSpaceKeyPressed();
-                        });
-                    });
-                };
-                
                 currentCanvasWindow.Show();
                 
                 // Обновляем позиции тостов после создания CanvasWindow
