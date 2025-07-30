@@ -359,5 +359,64 @@ namespace ScreenCaptureApp.Helpers
             }
             return null;
         }
+
+        /// <summary>
+        /// Определяет индекс монитора по координатам X, Y
+        /// </summary>
+        /// <param name="x">X координата</param>
+        /// <param name="y">Y координата</param>
+        /// <returns>Индекс монитора (0 для основного монитора)</returns>
+        public static int GetMonitorIndexByCoordinates(int x, int y)
+        {
+            try
+            {
+                // Determine monitor index
+                int monitorIndex = 0;
+                for (int i = 0; i < Screen.AllScreens.Length; i++)
+                {
+                    if (Screen.AllScreens[i].Bounds.Contains(x, y))
+                    {
+                        monitorIndex = i;
+                        break;
+                    }
+                }
+                
+                Logger.LogInfo($"Monitor index for coordinates ({x}, {y}): {monitorIndex}");
+                return monitorIndex;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Error getting monitor index for coordinates ({x}, {y}): {ex.Message}", ex);
+                return 0; // Default to primary monitor
+            }
+        }
+
+        /// <summary>
+        /// Получает левую границу монитора по его индексу
+        /// </summary>
+        /// <param name="monitorIndex">Индекс монитора</param>
+        /// <returns>Левая граница монитора в пикселях</returns>
+        public static int GetMonitorLeftBoundary(int monitorIndex)
+        {
+            try
+            {
+                if (monitorIndex >= 0 && monitorIndex < Screen.AllScreens.Length)
+                {
+                    int leftBoundary = Screen.AllScreens[monitorIndex].Bounds.Left;
+                    Logger.LogInfo($"Monitor {monitorIndex} left boundary: {leftBoundary}");
+                    return leftBoundary;
+                }
+                else
+                {
+                    Logger.LogWarning($"Invalid monitor index: {monitorIndex}, using primary monitor");
+                    return Screen.AllScreens[0].Bounds.Left;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Error getting monitor left boundary for index {monitorIndex}: {ex.Message}", ex);
+                return 0; // Default to 0 for primary monitor
+            }
+        }
     }
 } 

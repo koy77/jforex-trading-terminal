@@ -455,6 +455,9 @@ namespace ScreenCaptureApp
         {
             LoadLog();
             
+            // Логируем информацию о мониторах при старте приложения
+            LogMonitorInformation();
+            
             // Get screen positioning using helper
             var (left, top, width, height) = MainHelper.GetScreenPositioning();
 
@@ -475,6 +478,42 @@ namespace ScreenCaptureApp
             
             // Инициализируем индикаторы кистей
             UpdateBrushColorIndicators();
+        }
+
+        /// <summary>
+        /// Логирует информацию о количестве мониторов и их координатах
+        /// </summary>
+        private void LogMonitorInformation()
+        {
+            try
+            {
+                int monitorCount = Screen.AllScreens.Length;
+                Logger.LogInfo($"=== MONITOR INFORMATION ===");
+                Logger.LogInfo($"Total monitors detected: {monitorCount}");
+                
+                for (int i = 0; i < monitorCount; i++)
+                {
+                    var screen = Screen.AllScreens[i];
+                    var bounds = screen.Bounds;
+                    var workingArea = screen.WorkingArea;
+                    
+                    Logger.LogInfo($"Monitor {i}:");
+                    Logger.LogInfo($"  - Primary: {screen.Primary}");
+                    Logger.LogInfo($"  - Device Name: {screen.DeviceName}");
+                    Logger.LogInfo($"  - Bounds: X={bounds.X}, Y={bounds.Y}, Width={bounds.Width}, Height={bounds.Height}");
+                    Logger.LogInfo($"  - Working Area: X={workingArea.X}, Y={workingArea.Y}, Width={workingArea.Width}, Height={workingArea.Height}");
+                    Logger.LogInfo($"  - Left Boundary: {bounds.Left}");
+                    Logger.LogInfo($"  - Top Boundary: {bounds.Top}");
+                    Logger.LogInfo($"  - Right Boundary: {bounds.Right}");
+                    Logger.LogInfo($"  - Bottom Boundary: {bounds.Bottom}");
+                }
+                
+                Logger.LogInfo($"=== END MONITOR INFORMATION ===");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Error logging monitor information: {ex.Message}", ex);
+            }
         }
 
         private void LoadLog()
