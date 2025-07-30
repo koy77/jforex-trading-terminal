@@ -307,6 +307,10 @@ namespace ScreenCaptureApp
             
             // Устанавливаем фокус на InkCanvas
             DrawingCanvas.Focus();
+            
+            // Обновляем позиции тостов после загрузки CanvasWindow
+            var toastService = ServiceContainer.Instance.GetService<ToastNotifyService>();
+            toastService?.RefreshToastPositions();
         }
 
         private void InitializeInkCanvas()
@@ -695,6 +699,10 @@ namespace ScreenCaptureApp
             UpdateBrushMode();
             UpdateTradingMode();
             UpdateTradingToolbarVisibility();
+            
+            // Обновляем позиции тостов после переключения режима
+            var toastService = ServiceContainer.Instance.GetService<ToastNotifyService>();
+            toastService?.RefreshToastPositions();
         }
 
         public void UpdateSimpleBrushColor(bool isYellow)

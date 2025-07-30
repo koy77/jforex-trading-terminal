@@ -54,6 +54,23 @@ namespace ScreenCaptureApp.Services
                 }
             });
         }
+        
+        /// <summary>
+        /// Принудительно обновляет позиции всех активных тостов
+        /// </summary>
+        public void RefreshToastPositions()
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                lock (_lockObject)
+                {
+                    if (_activeToasts.Count > 0)
+                    {
+                        RecalculateToastPositions();
+                    }
+                }
+            });
+        }
 
         private void RemoveExpiredToasts()
         {
@@ -137,6 +154,9 @@ namespace ScreenCaptureApp.Services
                 ShowActivated = false,
                 Focusable = false
             };
+            
+            // Устанавливаем максимальный Z-индекс для тостов
+            window.SetValue(Panel.ZIndexProperty, int.MaxValue);
 
             var border = new Border
             {

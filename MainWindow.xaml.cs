@@ -423,6 +423,11 @@ namespace ScreenCaptureApp
                 };
                 
                 currentCanvasWindow.Show();
+                
+                // Обновляем позиции тостов после создания CanvasWindow
+                var toastService = ServiceContainer.Instance.GetService<ToastNotifyService>();
+                toastService?.RefreshToastPositions();
+                
                 Logger.LogDebug("Canvas window opened");
             }
             catch (Exception ex)
