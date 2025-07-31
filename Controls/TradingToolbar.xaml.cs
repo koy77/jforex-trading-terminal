@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using ScreenCaptureApp.Models;
+using ScreenCaptureApp.Services;
 
 namespace ScreenCaptureApp.Controls
 {
@@ -56,6 +57,9 @@ namespace ScreenCaptureApp.Controls
                 SelectedRisk = val;
                 HighlightSelectedRiskButton(val);
                 RiskChanged?.Invoke(val);
+                
+                // Отправляем команду в binary-сокет для binary-брокеров
+                SendRiskCommandToBinarySocket(val);
             }
         }
 
@@ -66,6 +70,9 @@ namespace ScreenCaptureApp.Controls
                 SelectedDuration = val;
                 HighlightSelectedDurationButton(val);
                 DurationChanged?.Invoke(val);
+                
+                // Отправляем команду в binary-сокет для binary-брокеров
+                SendDurationCommandToBinarySocket(val);
             }
         }
 
@@ -83,6 +90,76 @@ namespace ScreenCaptureApp.Controls
                 }
                 SelectedBroker = newType;
                 BrokerChanged?.Invoke(newType);
+            }
+        }
+
+        /// <summary>
+        /// Отправляет команду установки риска в binary-сокет для binary-брокеров
+        /// </summary>
+        private async void SendRiskCommandToBinarySocket(double risk)
+        {
+            // Проверяем, что выбран binary-брокер (не Forex)
+            if (SelectedBroker == BrokerType.Forex)
+            {
+                return;
+            }
+
+            try
+            {
+                var jforexService = ServiceContainer.Instance.GetService<JForexWindowsManagerService>();
+                if (jforexService != null)
+                {
+                    string brokerName = SelectedBroker.ToString();
+                    bool success = await jforexService.SetRisk(brokerName, risk);
+                    
+                    if (!success)
+                    {
+                        Logger.LogWarning($"Failed to set risk {risk} for broker {brokerName}");
+                    }
+                }
+                else
+                {
+                    Logger.LogWarning("JForex service not available for risk command");
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Error setting risk via JForex service: {ex.Message}", ex);
+            }
+        }
+
+        /// <summary>
+        /// Отправляет команду установки duration в binary-сокет для binary-брокеров
+        /// </summary>
+        private async void SendDurationCommandToBinarySocket(int duration)
+        {
+            // Проверяем, что выбран binary-брокер (не Forex)
+            if (SelectedBroker == BrokerType.Forex)
+            {
+                return;
+            }
+
+            try
+            {
+                var jforexService = ServiceContainer.Instance.GetService<JForexWindowsManagerService>();
+                if (jforexService != null)
+                {
+                    string brokerName = SelectedBroker.ToString();
+                    bool success = await jforexService.SetDuration(brokerName, duration);
+                    
+                    if (!success)
+                    {
+                        Logger.LogWarning($"Failed to set duration {duration} for broker {brokerName}");
+                    }
+                }
+                else
+                {
+                    Logger.LogWarning("JForex service not available for duration command");
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Error setting duration via JForex service: {ex.Message}", ex);
             }
         }
 

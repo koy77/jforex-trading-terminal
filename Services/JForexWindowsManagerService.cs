@@ -413,6 +413,80 @@ namespace ScreenCaptureApp.Services
                 return 0;
             }
         }
+
+        /// <summary>
+        /// Устанавливает риск для binary-брокера через binary-сокет
+        /// </summary>
+        public async Task<bool> SetRisk(string brokerName, double risk)
+        {
+            try
+            {
+                var binarySocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
+                if (binarySocketService != null && binarySocketService.IsConnected)
+                {
+                    string command = $"{{\"cmd\":\"set_risk\",\"broker\":\"{brokerName}\",\"risk\":\"{risk}\"}}";
+                    
+                    bool sent = await binarySocketService.WriteAsync(command);
+                    if (sent)
+                    {
+                        Logger.LogTagInfo("JForex", $"Risk command sent to binary socket: {command}");
+                        return true;
+                    }
+                    else
+                    {
+                        Logger.LogTagError("JForex", $"Failed to send risk command to binary socket: {command}");
+                        return false;
+                    }
+                }
+                else
+                {
+                    Logger.LogTagWarning("JForex", "Binary socket service not available or not connected for risk command");
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("JForex", $"Error sending risk command to binary socket: {ex.Message}", ex);
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Устанавливает duration для binary-брокера через binary-сокет
+        /// </summary>
+        public async Task<bool> SetDuration(string brokerName, int duration)
+        {
+            try
+            {
+                var binarySocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
+                if (binarySocketService != null && binarySocketService.IsConnected)
+                {
+                    string command = $"{{\"cmd\":\"set_duration\",\"broker\":\"{brokerName}\",\"duration\":\"{duration}\"}}";
+                    
+                    bool sent = await binarySocketService.WriteAsync(command);
+                    if (sent)
+                    {
+                        Logger.LogTagInfo("JForex", $"Duration command sent to binary socket: {command}");
+                        return true;
+                    }
+                    else
+                    {
+                        Logger.LogTagError("JForex", $"Failed to send duration command to binary socket: {command}");
+                        return false;
+                    }
+                }
+                else
+                {
+                    Logger.LogTagWarning("JForex", "Binary socket service not available or not connected for duration command");
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("JForex", $"Error sending duration command to binary socket: {ex.Message}", ex);
+                return false;
+            }
+        }
        
     }
 }
