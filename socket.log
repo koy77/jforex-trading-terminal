@@ -1,7 +1,0 @@
-[2025-07-31 17:02:00.930] [SOCKET] PO OUT: {"cmd":"set_risk","broker":"PocketOption","risk":"5"}
-[2025-07-31 17:02:11.823] [SOCKET] PO OUT: {"cmd":"set_duration","broker":"PocketOption","duration":"3"}
-[2025-07-31 17:02:25.757] [SOCKET] PO OUT: {"cmd":"set_duration","broker":"PocketOption","duration":"1"}
-[2025-07-31 17:02:29.661] [SOCKET] PO OUT: {"cmd":"set_duration","broker":"PocketOption","duration":"3"}
-[2025-07-31 17:02:39.837] [SOCKET] PO OUT: {"cmd":"set_duration","broker":"PocketOption","duration":"3"}
-[2025-07-31 17:02:48.013] [SOCKET] PO OUT: {"cmd":"set_duration","broker":"PocketOption","duration":"5"}
-[2025-07-31 17:02:57.540] [SOCKET] PO OUT: {"cmd":"set_duration","broker":"PocketOption","duration":"5"}
