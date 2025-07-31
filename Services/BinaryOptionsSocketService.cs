@@ -21,6 +21,7 @@ namespace ScreenCaptureApp.Services
         private CancellationTokenSource _cancellationTokenSource;
         private Task _readTask;
         private readonly ConcurrentQueue<string> _messageQueue = new ConcurrentQueue<string>();
+        private readonly SemaphoreSlim _writeSemaphore = new SemaphoreSlim(1, 1); // Для атомарной отправки команд
 
         // Ссылка на CaptureTrackingService для подписки на события
         private CaptureTrackingService _captureTrackingService;
@@ -114,7 +115,17 @@ namespace ScreenCaptureApp.Services
                 {
                     json += "\r\n";
                     Logger.LogInfo($"Binary Options Socket: Sending to Pocket Option: {json.Trim()} (with CRLF)");
-                    await WriteAsync(json);
+                    
+                    // Отправляем команду атомарно
+                    bool success = await WriteAsync(json);
+                    if (!success)
+                    {
+                        Logger.LogError($"Binary Options Socket: Failed to send command: {json.Trim()}");
+                    }
+                    else
+                    {
+                        Logger.LogInfo($"Binary Options Socket: Successfully sent command: {json.Trim()}");
+                    }
                 }
 
                 Logger.LogInfo($"Binary Options Socket: Breakout processing completed for {capture.Symbol}, type: {result}");
@@ -223,13 +234,26 @@ namespace ScreenCaptureApp.Services
                     return false;
                 }
 
-                Logger.LogSocket($"PO OUT: {message.Trim()}");
-                byte[] data = Encoding.UTF8.GetBytes(message);
-                await _networkStream.WriteAsync(data, 0, data.Length);
-                await _networkStream.FlushAsync();
-                
-                Logger.LogInfo($"Sent message to Pocket Option socket: {message}");
-                return true;
+                // Используем семафор для атомарной отправки команд
+                await _writeSemaphore.WaitAsync();
+                try
+                {
+                    Logger.LogSocket($"PO OUT: {message.Trim()}");
+                    byte[] data = Encoding.UTF8.GetBytes(message);
+                    await _networkStream.WriteAsync(data, 0, data.Length);
+                    await _networkStream.FlushAsync();
+                    
+                    Logger.LogInfo($"Sent message to Pocket Option socket: {message}");
+                    
+                    // Добавляем небольшую задержку между командами для стабильности
+                    await Task.Delay(50);
+                    
+                    return true;
+                }
+                finally
+                {
+                    _writeSemaphore.Release();
+                }
             }
             catch (Exception ex)
             {
@@ -260,11 +284,24 @@ namespace ScreenCaptureApp.Services
                     return false;
                 }
 
-                await _networkStream.WriteAsync(data, 0, data.Length);
-                await _networkStream.FlushAsync();
-                
-                Logger.LogInfo($"Sent {data.Length} bytes to Pocket Option socket");
-                return true;
+                // Используем семафор для атомарной отправки данных
+                await _writeSemaphore.WaitAsync();
+                try
+                {
+                    await _networkStream.WriteAsync(data, 0, data.Length);
+                    await _networkStream.FlushAsync();
+                    
+                    Logger.LogInfo($"Sent {data.Length} bytes to Pocket Option socket");
+                    
+                    // Добавляем небольшую задержку между отправками для стабильности
+                    await Task.Delay(50);
+                    
+                    return true;
+                }
+                finally
+                {
+                    _writeSemaphore.Release();
+                }
             }
             catch (Exception ex)
             {
@@ -450,6 +487,7 @@ namespace ScreenCaptureApp.Services
                 _networkStream?.Dispose();
                 _tcpClient?.Dispose();
                 _cancellationTokenSource?.Dispose();
+                _writeSemaphore?.Dispose();
             }
             catch (Exception ex)
             {
