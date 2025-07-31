@@ -5,6 +5,16 @@
 ## [Unreleased] - 2024-12-XX
 
 ### Added
+- **TradingToolbar OrderSummary Integration** - интеграция с MT4 сокетом для отображения информации об ордерах
+  - Подписка на событие `Mt4SocketService.OrdersSummaryReceived`
+  - Отображение панели с информацией об ордере справа от символа
+  - Кнопки Close, BE, TP1, TP2 для управления ордерами
+  - Автоматическое скрытие панели при смене символа
+  - Отправка команды `close_positions` при нажатии кнопки Close
+  - Стилизация панели в соответствии с дизайном TradingToolbar
+  - **Исправление**: Добавлена поддержка символов с суффиксами (сравнение по первым 6 символам)
+  - **Исправление**: Добавлено логирование для отладки отображения панели OrderSummary
+  - **Исправление**: Использование правильного символа (с суффиксом) при отправке команды Close
 - **SimpleTradingOverlay** - новое окно для автоматического отслеживания курсора мыши
   - Глобальный хук мыши для отслеживания перемещений курсора
   - Автоматическое распознавание окон JForex по символам в заголовке
@@ -28,6 +38,14 @@
   - Обработка ошибок и проверка подключения к binary-сокету
 
 ### Changed
+- **TradingToolbar** - добавлена интеграция с MT4 сокетом для отображения ордеров
+  - Добавлена панель `OrderSummaryPanel` в XAML с кнопками Close, BE, TP1, TP2
+  - Добавлены методы `ShowOrderSummary()`, `HideOrderSummary()`, `UpdateOrderSummaryUI()`
+  - Добавлены обработчики событий для кнопок управления ордерами
+  - Добавлен метод `CloseSymbolOrder()` для отправки команды закрытия позиций
+  - Обновлен метод `SetSymbol()` для скрытия панели при смене символа
+  - Добавлена подписка на `Mt4SocketService.OrdersSummaryReceived` в конструкторе
+
 - **MainWindow** - добавлена инициализация SimpleTradingOverlay
   - Добавлено поле `simpleTradingOverlay`
   - Добавлен метод `InitializeSimpleTradingOverlay()`
@@ -57,8 +75,9 @@
 - `SimpleTradingOverlay.xaml.cs` - код-behind с логикой отслеживания
 
 ### Files Modified
+- `Controls/TradingToolbar.xaml` - добавлена панель OrderSummaryPanel
+- `Controls/TradingToolbar.xaml.cs` - добавлена интеграция с MT4 сокетом и binary-брокерами
 - `MainWindow.xaml.cs` - добавлена интеграция с SimpleTradingOverlay
-- `Controls/TradingToolbar.xaml.cs` - добавлена интеграция с binary-брокерами
 - `Services/JForexWindowsManagerService.cs` - добавлены методы для binary-команд
 - `ARCHITECTURE.md` - обновлена документация архитектуры
 

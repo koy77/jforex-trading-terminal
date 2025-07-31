@@ -1006,7 +1006,7 @@ namespace ScreenCaptureApp
 
         private void UpdateTradingToolbarUiByBroker(BrokerType brokerType)
         {
-            TradingToolbar.SetModeLabel(brokerType == BrokerType.Forex ? "TRADING!!" : "BINARY!!", true);
+            // Mode label functionality removed - no longer needed
         }
 
         private void DurationButton_Click(object sender, RoutedEventArgs e)

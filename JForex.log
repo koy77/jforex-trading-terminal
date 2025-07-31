@@ -356,3 +356,2174 @@
 [2025-07-31 19:23:24.125] [INFO] Trendline successfully added to GForex with direct mouse actions
 [2025-07-31 19:23:24.125] [INFO] Trading stroke processing completed
 [2025-07-31 19:23:24.125] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 19:25:36.731] [INFO] Processing trading stroke directly: Point1=(1102, 416), Point2=(1248, 472)
+[2025-07-31 19:25:36.749] [INFO] CaptureData saved to database: ID=20250731192536731
+[2025-07-31 19:25:36.750] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 19:25:36.872] [INFO] Окно успешно активировано. Handle: 197446
+[2025-07-31 19:25:37.284] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 19:25:37.284] [INFO] Sent ESC key to hwnd=0x30346
+[2025-07-31 19:25:37.456] [INFO] Клавиша 'A' успешно отправлена в окно 197446
+[2025-07-31 19:25:37.663] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 19:25:37.664] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1102, 416), monitorLeftBoundary=1920, result=(3022, 416)
+[2025-07-31 19:25:37.664] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 19:25:37.664] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1248, 472), monitorLeftBoundary=1920, result=(3168, 472)
+[2025-07-31 19:25:37.664] [INFO] Converted coordinates: Point1=(3022, 416), Point2=(3168, 472)
+[2025-07-31 19:25:37.664] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:25:37.665] [INFO] Click coordinates: (3022, 416)
+[2025-07-31 19:25:37.665] [INFO] Window handle: 197446
+[2025-07-31 19:25:37.665] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 19:25:37.665] [INFO] Calculated screen coordinates: (3022, 416)
+[2025-07-31 19:25:37.790] [INFO] Клик успешно выполнен в позиции (3022, 416) -> screen (3022, 416)
+[2025-07-31 19:25:37.790] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:25:37.901] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:25:37.902] [INFO] Click coordinates: (3168, 472)
+[2025-07-31 19:25:37.902] [INFO] Window handle: 197446
+[2025-07-31 19:25:37.902] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 19:25:37.902] [INFO] Calculated screen coordinates: (3168, 472)
+[2025-07-31 19:25:38.028] [INFO] Клик успешно выполнен в позиции (3168, 472) -> screen (3168, 472)
+[2025-07-31 19:25:38.028] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:25:38.029] [INFO] Sent ESC key to hwnd=0x30346
+[2025-07-31 19:25:38.029] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 19:25:38.029] [INFO] Trading stroke processing completed
+[2025-07-31 19:25:38.030] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 19:25:41.432] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
+[2025-07-31 19:25:41.433] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
+[2025-07-31 19:25:43.721] [INFO] Processing trading stroke directly: Point1=(1099, 374), Point2=(1235, 403)
+[2025-07-31 19:25:43.741] [INFO] CaptureData saved to database: ID=20250731192543722
+[2025-07-31 19:25:43.741] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 19:25:43.855] [INFO] Окно успешно активировано. Handle: 131920
+[2025-07-31 19:25:44.267] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 19:25:44.268] [INFO] Sent ESC key to hwnd=0x20350
+[2025-07-31 19:25:44.426] [INFO] Клавиша 'A' успешно отправлена в окно 131920
+[2025-07-31 19:25:44.631] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 19:25:44.632] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1099, 374), monitorLeftBoundary=0, result=(1099, 374)
+[2025-07-31 19:25:44.632] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 19:25:44.632] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1235, 403), monitorLeftBoundary=0, result=(1235, 403)
+[2025-07-31 19:25:44.632] [INFO] Converted coordinates: Point1=(1099, 374), Point2=(1235, 403)
+[2025-07-31 19:25:44.632] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:25:44.632] [INFO] Click coordinates: (1099, 374)
+[2025-07-31 19:25:44.632] [INFO] Window handle: 131920
+[2025-07-31 19:25:44.632] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:25:44.633] [INFO] Calculated screen coordinates: (1099, 374)
+[2025-07-31 19:25:44.756] [INFO] Клик успешно выполнен в позиции (1099, 374) -> screen (1099, 374)
+[2025-07-31 19:25:44.756] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:25:44.866] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:25:44.866] [INFO] Click coordinates: (1235, 403)
+[2025-07-31 19:25:44.866] [INFO] Window handle: 131920
+[2025-07-31 19:25:44.868] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:25:44.868] [INFO] Calculated screen coordinates: (1235, 403)
+[2025-07-31 19:25:44.993] [INFO] Клик успешно выполнен в позиции (1235, 403) -> screen (1235, 403)
+[2025-07-31 19:25:44.993] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:25:44.994] [INFO] Sent ESC key to hwnd=0x20350
+[2025-07-31 19:25:44.994] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 19:25:44.994] [INFO] Trading stroke processing completed
+[2025-07-31 19:25:44.994] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 19:25:51.296] [INFO] Processing trading stroke directly: Point1=(1233, 659), Point2=(1362, 570)
+[2025-07-31 19:25:51.314] [INFO] CaptureData saved to database: ID=20250731192551296
+[2025-07-31 19:25:51.314] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 19:25:51.436] [INFO] Окно успешно активировано. Handle: 131920
+[2025-07-31 19:25:51.849] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 19:25:51.849] [INFO] Sent ESC key to hwnd=0x20350
+[2025-07-31 19:25:52.024] [INFO] Клавиша 'A' успешно отправлена в окно 131920
+[2025-07-31 19:25:52.232] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 19:25:52.232] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1233, 659), monitorLeftBoundary=0, result=(1233, 659)
+[2025-07-31 19:25:52.232] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 19:25:52.232] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1362, 570), monitorLeftBoundary=0, result=(1362, 570)
+[2025-07-31 19:25:52.233] [INFO] Converted coordinates: Point1=(1233, 659), Point2=(1362, 570)
+[2025-07-31 19:25:52.233] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:25:52.233] [INFO] Click coordinates: (1233, 659)
+[2025-07-31 19:25:52.233] [INFO] Window handle: 131920
+[2025-07-31 19:25:52.233] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:25:52.233] [INFO] Calculated screen coordinates: (1233, 659)
+[2025-07-31 19:25:52.358] [INFO] Клик успешно выполнен в позиции (1233, 659) -> screen (1233, 659)
+[2025-07-31 19:25:52.358] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:25:52.470] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:25:52.470] [INFO] Click coordinates: (1362, 570)
+[2025-07-31 19:25:52.470] [INFO] Window handle: 131920
+[2025-07-31 19:25:52.471] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:25:52.471] [INFO] Calculated screen coordinates: (1362, 570)
+[2025-07-31 19:25:52.597] [INFO] Клик успешно выполнен в позиции (1362, 570) -> screen (1362, 570)
+[2025-07-31 19:25:52.597] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:25:52.598] [INFO] Sent ESC key to hwnd=0x20350
+[2025-07-31 19:25:52.598] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 19:25:52.598] [INFO] Trading stroke processing completed
+[2025-07-31 19:25:52.598] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 19:25:59.189] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
+[2025-07-31 19:25:59.190] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
+[2025-07-31 19:25:59.509] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
+[2025-07-31 19:25:59.509] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
+[2025-07-31 19:25:59.621] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
+[2025-07-31 19:25:59.622] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
+[2025-07-31 19:26:50.028] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
+[2025-07-31 19:26:50.029] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
+[2025-07-31 19:26:52.980] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:26:52.980] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:26:55.738] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:26:55.738] [INFO] Click coordinates: (280, 56)
+[2025-07-31 19:26:55.738] [INFO] Window handle: 196846
+[2025-07-31 19:26:55.739] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:26:55.739] [INFO] Calculated screen coordinates: (280, 56)
+[2025-07-31 19:26:55.865] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-07-31 19:26:55.865] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:27:02.129] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:27:02.130] [INFO] Click coordinates: (280, 56)
+[2025-07-31 19:27:02.130] [INFO] Window handle: 196846
+[2025-07-31 19:27:02.130] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:27:02.130] [INFO] Calculated screen coordinates: (280, 56)
+[2025-07-31 19:27:02.252] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-07-31 19:27:02.253] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:27:02.322] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:27:02.322] [INFO] Click coordinates: (280, 56)
+[2025-07-31 19:27:02.322] [INFO] Window handle: 196846
+[2025-07-31 19:27:02.322] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:27:02.322] [INFO] Calculated screen coordinates: (280, 56)
+[2025-07-31 19:27:02.442] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-07-31 19:27:02.442] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:27:02.546] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:27:02.546] [INFO] Click coordinates: (80, 56)
+[2025-07-31 19:27:02.546] [INFO] Window handle: 196846
+[2025-07-31 19:27:02.546] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:27:02.546] [INFO] Calculated screen coordinates: (80, 56)
+[2025-07-31 19:27:02.664] [INFO] Клик успешно выполнен в позиции (80, 56) -> screen (80, 56)
+[2025-07-31 19:27:02.665] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:27:34.004] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:27:34.005] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:27:35.348] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:27:35.349] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:27:40.796] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:27:40.796] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:27:42.341] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:27:42.341] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:27:47.771] [INFO] Processing trading stroke directly: Point1=(867, 336), Point2=(937, 381)
+[2025-07-31 19:27:47.783] [INFO] CaptureData saved to database: ID=20250731192747772
+[2025-07-31 19:27:47.784] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 19:27:47.900] [INFO] Окно успешно активировано. Handle: 196846
+[2025-07-31 19:27:48.312] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 19:27:48.313] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 19:27:48.484] [INFO] Клавиша 'A' успешно отправлена в окно 196846
+[2025-07-31 19:27:48.691] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 19:27:48.692] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(867, 336), monitorLeftBoundary=0, result=(867, 336)
+[2025-07-31 19:27:48.692] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 19:27:48.692] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(937, 381), monitorLeftBoundary=0, result=(937, 381)
+[2025-07-31 19:27:48.692] [INFO] Converted coordinates: Point1=(867, 336), Point2=(937, 381)
+[2025-07-31 19:27:48.692] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:27:48.693] [INFO] Click coordinates: (867, 336)
+[2025-07-31 19:27:48.693] [INFO] Window handle: 196846
+[2025-07-31 19:27:48.693] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:27:48.693] [INFO] Calculated screen coordinates: (867, 336)
+[2025-07-31 19:27:48.816] [INFO] Клик успешно выполнен в позиции (867, 336) -> screen (867, 336)
+[2025-07-31 19:27:48.816] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:27:48.927] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:27:48.927] [INFO] Click coordinates: (937, 381)
+[2025-07-31 19:27:48.928] [INFO] Window handle: 196846
+[2025-07-31 19:27:48.928] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:27:48.928] [INFO] Calculated screen coordinates: (937, 381)
+[2025-07-31 19:27:49.054] [INFO] Клик успешно выполнен в позиции (937, 381) -> screen (937, 381)
+[2025-07-31 19:27:49.054] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:27:49.055] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 19:27:49.055] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 19:27:49.055] [INFO] Trading stroke processing completed
+[2025-07-31 19:27:49.055] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 19:27:52.740] [INFO] Processing trading stroke directly: Point1=(833, 319), Point2=(942, 365)
+[2025-07-31 19:27:52.758] [INFO] CaptureData saved to database: ID=20250731192752740
+[2025-07-31 19:27:52.758] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 19:27:52.893] [INFO] Окно успешно активировано. Handle: 196846
+[2025-07-31 19:27:53.303] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 19:27:53.304] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 19:27:53.477] [INFO] Клавиша 'A' успешно отправлена в окно 196846
+[2025-07-31 19:27:53.683] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 19:27:53.684] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(833, 319), monitorLeftBoundary=0, result=(833, 319)
+[2025-07-31 19:27:53.684] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 19:27:53.684] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(942, 365), monitorLeftBoundary=0, result=(942, 365)
+[2025-07-31 19:27:53.684] [INFO] Converted coordinates: Point1=(833, 319), Point2=(942, 365)
+[2025-07-31 19:27:53.684] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:27:53.684] [INFO] Click coordinates: (833, 319)
+[2025-07-31 19:27:53.684] [INFO] Window handle: 196846
+[2025-07-31 19:27:53.685] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:27:53.685] [INFO] Calculated screen coordinates: (833, 319)
+[2025-07-31 19:27:53.810] [INFO] Клик успешно выполнен в позиции (833, 319) -> screen (833, 319)
+[2025-07-31 19:27:53.810] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:27:53.920] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:27:53.920] [INFO] Click coordinates: (942, 365)
+[2025-07-31 19:27:53.921] [INFO] Window handle: 196846
+[2025-07-31 19:27:53.921] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:27:53.921] [INFO] Calculated screen coordinates: (942, 365)
+[2025-07-31 19:27:54.048] [INFO] Клик успешно выполнен в позиции (942, 365) -> screen (942, 365)
+[2025-07-31 19:27:54.048] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:27:54.049] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 19:27:54.049] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 19:27:54.049] [INFO] Trading stroke processing completed
+[2025-07-31 19:27:54.049] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 19:28:13.393] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:28:13.393] [INFO] Click coordinates: (280, 56)
+[2025-07-31 19:28:13.393] [INFO] Window handle: 196846
+[2025-07-31 19:28:13.393] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:28:13.394] [INFO] Calculated screen coordinates: (280, 56)
+[2025-07-31 19:28:13.508] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-07-31 19:28:13.508] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:28:13.538] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:28:13.538] [INFO] Click coordinates: (280, 56)
+[2025-07-31 19:28:13.538] [INFO] Window handle: 196846
+[2025-07-31 19:28:13.539] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:28:13.539] [INFO] Calculated screen coordinates: (280, 56)
+[2025-07-31 19:28:13.667] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-07-31 19:28:13.667] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:28:13.745] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:28:13.745] [INFO] Click coordinates: (280, 56)
+[2025-07-31 19:28:13.745] [INFO] Window handle: 196846
+[2025-07-31 19:28:13.745] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:28:13.745] [INFO] Calculated screen coordinates: (280, 56)
+[2025-07-31 19:28:13.874] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-07-31 19:28:13.874] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:28:14.041] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:28:14.041] [INFO] Click coordinates: (480, 56)
+[2025-07-31 19:28:14.042] [INFO] Window handle: 196846
+[2025-07-31 19:28:14.042] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:28:14.042] [INFO] Calculated screen coordinates: (480, 56)
+[2025-07-31 19:28:14.158] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-07-31 19:28:14.159] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:28:14.617] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:28:14.617] [INFO] Click coordinates: (280, 56)
+[2025-07-31 19:28:14.617] [INFO] Window handle: 196846
+[2025-07-31 19:28:14.618] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:28:14.618] [INFO] Calculated screen coordinates: (280, 56)
+[2025-07-31 19:28:14.741] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-07-31 19:28:14.741] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:28:14.905] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:28:14.905] [INFO] Click coordinates: (480, 56)
+[2025-07-31 19:28:14.906] [INFO] Window handle: 196846
+[2025-07-31 19:28:14.906] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:28:14.906] [INFO] Calculated screen coordinates: (480, 56)
+[2025-07-31 19:28:15.027] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-07-31 19:28:15.027] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:28:15.145] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:28:15.145] [INFO] Click coordinates: (280, 56)
+[2025-07-31 19:28:15.145] [INFO] Window handle: 196846
+[2025-07-31 19:28:15.145] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:28:15.145] [INFO] Calculated screen coordinates: (280, 56)
+[2025-07-31 19:28:15.262] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-07-31 19:28:15.262] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:28:15.449] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:28:15.449] [INFO] Click coordinates: (280, 56)
+[2025-07-31 19:28:15.449] [INFO] Window handle: 196846
+[2025-07-31 19:28:15.449] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:28:15.450] [INFO] Calculated screen coordinates: (280, 56)
+[2025-07-31 19:28:15.577] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-07-31 19:28:15.577] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:28:15.729] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:28:15.729] [INFO] Click coordinates: (280, 56)
+[2025-07-31 19:28:15.729] [INFO] Window handle: 196846
+[2025-07-31 19:28:15.729] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:28:15.730] [INFO] Calculated screen coordinates: (280, 56)
+[2025-07-31 19:28:15.848] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-07-31 19:28:15.849] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:28:15.913] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:28:15.913] [INFO] Click coordinates: (480, 56)
+[2025-07-31 19:28:15.914] [INFO] Window handle: 196846
+[2025-07-31 19:28:15.914] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:28:15.914] [INFO] Calculated screen coordinates: (480, 56)
+[2025-07-31 19:28:16.039] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-07-31 19:28:16.040] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:28:49.044] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:28:49.045] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:28:49.547] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:28:49.548] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:29:19.339] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:29:19.340] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:29:22.129] [INFO] Processing trading stroke directly: Point1=(1159, 272), Point2=(1251, 230)
+[2025-07-31 19:29:22.151] [INFO] CaptureData saved to database: ID=20250731192922129
+[2025-07-31 19:29:22.151] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 19:29:22.265] [INFO] Окно успешно активировано. Handle: 262950
+[2025-07-31 19:29:22.674] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 19:29:22.674] [INFO] Sent ESC key to hwnd=0x40326
+[2025-07-31 19:29:22.845] [INFO] Клавиша 'A' успешно отправлена в окно 262950
+[2025-07-31 19:29:23.053] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 19:29:23.054] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1159, 272), monitorLeftBoundary=1920, result=(3079, 272)
+[2025-07-31 19:29:23.054] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 19:29:23.054] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1251, 230), monitorLeftBoundary=1920, result=(3171, 230)
+[2025-07-31 19:29:23.054] [INFO] Converted coordinates: Point1=(3079, 272), Point2=(3171, 230)
+[2025-07-31 19:29:23.055] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:29:23.055] [INFO] Click coordinates: (3079, 272)
+[2025-07-31 19:29:23.055] [INFO] Window handle: 262950
+[2025-07-31 19:29:23.055] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 19:29:23.056] [INFO] Calculated screen coordinates: (3079, 272)
+[2025-07-31 19:29:23.180] [INFO] Клик успешно выполнен в позиции (3079, 272) -> screen (3079, 272)
+[2025-07-31 19:29:23.180] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:29:23.289] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:29:23.289] [INFO] Click coordinates: (3171, 230)
+[2025-07-31 19:29:23.290] [INFO] Window handle: 262950
+[2025-07-31 19:29:23.290] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 19:29:23.290] [INFO] Calculated screen coordinates: (3171, 230)
+[2025-07-31 19:29:23.414] [INFO] Клик успешно выполнен в позиции (3171, 230) -> screen (3171, 230)
+[2025-07-31 19:29:23.415] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:29:23.415] [INFO] Sent ESC key to hwnd=0x40326
+[2025-07-31 19:29:23.415] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 19:29:23.427] [INFO] Trading stroke processing completed
+[2025-07-31 19:29:23.427] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 19:29:50.886] [INFO] Processing trading stroke directly: Point1=(1353, 348), Point2=(1435, 317)
+[2025-07-31 19:29:50.895] [INFO] CaptureData saved to database: ID=20250731192950886
+[2025-07-31 19:29:50.895] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 19:29:51.012] [INFO] Окно успешно активировано. Handle: 262950
+[2025-07-31 19:29:51.419] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 19:29:51.419] [INFO] Sent ESC key to hwnd=0x40326
+[2025-07-31 19:29:51.594] [INFO] Клавиша 'A' успешно отправлена в окно 262950
+[2025-07-31 19:29:51.800] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 19:29:51.800] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1353, 348), monitorLeftBoundary=1920, result=(3273, 348)
+[2025-07-31 19:29:51.800] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 19:29:51.800] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1435, 317), monitorLeftBoundary=1920, result=(3355, 317)
+[2025-07-31 19:29:51.800] [INFO] Converted coordinates: Point1=(3273, 348), Point2=(3355, 317)
+[2025-07-31 19:29:51.801] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:29:51.801] [INFO] Click coordinates: (3273, 348)
+[2025-07-31 19:29:51.801] [INFO] Window handle: 262950
+[2025-07-31 19:29:51.801] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 19:29:51.801] [INFO] Calculated screen coordinates: (3273, 348)
+[2025-07-31 19:29:51.927] [INFO] Клик успешно выполнен в позиции (3273, 348) -> screen (3273, 348)
+[2025-07-31 19:29:51.928] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:29:52.038] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:29:52.038] [INFO] Click coordinates: (3355, 317)
+[2025-07-31 19:29:52.038] [INFO] Window handle: 262950
+[2025-07-31 19:29:52.038] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 19:29:52.039] [INFO] Calculated screen coordinates: (3355, 317)
+[2025-07-31 19:29:52.164] [INFO] Клик успешно выполнен в позиции (3355, 317) -> screen (3355, 317)
+[2025-07-31 19:29:52.165] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:29:52.165] [INFO] Sent ESC key to hwnd=0x40326
+[2025-07-31 19:29:52.165] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 19:29:52.166] [INFO] Trading stroke processing completed
+[2025-07-31 19:29:52.166] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 19:30:14.899] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:30:14.899] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:30:21.907] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:30:21.907] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:30:29.595] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:30:29.595] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:30:41.600] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:30:41.600] [INFO] Click coordinates: (680, 56)
+[2025-07-31 19:30:41.600] [INFO] Window handle: 66458
+[2025-07-31 19:30:41.600] [INFO] Window rect: Left=1920, Top=0, Right=3841, Bottom=1041
+[2025-07-31 19:30:41.600] [INFO] Calculated screen coordinates: (680, 56)
+[2025-07-31 19:30:41.730] [INFO] Клик успешно выполнен в позиции (680, 56) -> screen (680, 56)
+[2025-07-31 19:30:41.730] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:35:35.079] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
+[2025-07-31 19:35:35.080] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
+[2025-07-31 19:35:43.636] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:35:43.636] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:36:00.824] [INFO] Processing trading stroke directly: Point1=(1539, 270), Point2=(1632, 210)
+[2025-07-31 19:36:00.847] [INFO] CaptureData saved to database: ID=20250731193600824
+[2025-07-31 19:36:00.848] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 19:36:00.960] [INFO] Окно успешно активировано. Handle: 196846
+[2025-07-31 19:36:01.368] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 19:36:01.369] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 19:36:01.542] [INFO] Клавиша 'A' успешно отправлена в окно 196846
+[2025-07-31 19:36:01.749] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 19:36:01.749] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1539, 270), monitorLeftBoundary=0, result=(1539, 270)
+[2025-07-31 19:36:01.750] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 19:36:01.750] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1632, 210), monitorLeftBoundary=0, result=(1632, 210)
+[2025-07-31 19:36:01.750] [INFO] Converted coordinates: Point1=(1539, 270), Point2=(1632, 210)
+[2025-07-31 19:36:01.750] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:36:01.750] [INFO] Click coordinates: (1539, 270)
+[2025-07-31 19:36:01.750] [INFO] Window handle: 196846
+[2025-07-31 19:36:01.751] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:36:01.751] [INFO] Calculated screen coordinates: (1539, 270)
+[2025-07-31 19:36:01.877] [INFO] Клик успешно выполнен в позиции (1539, 270) -> screen (1539, 270)
+[2025-07-31 19:36:01.877] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:36:01.988] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:36:01.988] [INFO] Click coordinates: (1632, 210)
+[2025-07-31 19:36:01.988] [INFO] Window handle: 196846
+[2025-07-31 19:36:01.989] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:36:01.989] [INFO] Calculated screen coordinates: (1632, 210)
+[2025-07-31 19:36:02.115] [INFO] Клик успешно выполнен в позиции (1632, 210) -> screen (1632, 210)
+[2025-07-31 19:36:02.115] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:36:02.116] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 19:36:02.116] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 19:36:02.116] [INFO] Trading stroke processing completed
+[2025-07-31 19:36:02.116] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 19:43:15.635] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 19:43:15.635] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 19:43:30.963] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 19:43:30.963] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 19:44:21.803] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 19:44:21.803] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 19:44:22.962] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 19:44:22.962] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 19:44:26.397] [WARNING] Binary socket service not available or not connected for risk command
+[2025-07-31 19:44:31.013] [WARNING] Binary socket service not available or not connected for duration command
+[2025-07-31 19:44:45.100] [INFO] Processing trading stroke directly: Point1=(1512, 254), Point2=(1554, 308)
+[2025-07-31 19:44:45.109] [INFO] CaptureData saved to database: ID=20250731194445100
+[2025-07-31 19:44:45.110] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 19:44:45.230] [INFO] Окно успешно активировано. Handle: 196846
+[2025-07-31 19:44:45.638] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 19:44:45.638] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 19:44:45.812] [INFO] Клавиша 'A' успешно отправлена в окно 196846
+[2025-07-31 19:44:46.019] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 19:44:46.019] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1512, 254), monitorLeftBoundary=0, result=(1512, 254)
+[2025-07-31 19:44:46.019] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 19:44:46.019] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1554, 308), monitorLeftBoundary=0, result=(1554, 308)
+[2025-07-31 19:44:46.020] [INFO] Converted coordinates: Point1=(1512, 254), Point2=(1554, 308)
+[2025-07-31 19:44:46.020] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:44:46.020] [INFO] Click coordinates: (1512, 254)
+[2025-07-31 19:44:46.020] [INFO] Window handle: 196846
+[2025-07-31 19:44:46.020] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:44:46.020] [INFO] Calculated screen coordinates: (1512, 254)
+[2025-07-31 19:44:46.145] [INFO] Клик успешно выполнен в позиции (1512, 254) -> screen (1512, 254)
+[2025-07-31 19:44:46.146] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:44:46.256] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:44:46.257] [INFO] Click coordinates: (1554, 308)
+[2025-07-31 19:44:46.257] [INFO] Window handle: 196846
+[2025-07-31 19:44:46.257] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:44:46.257] [INFO] Calculated screen coordinates: (1554, 308)
+[2025-07-31 19:44:46.383] [INFO] Клик успешно выполнен в позиции (1554, 308) -> screen (1554, 308)
+[2025-07-31 19:44:46.383] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:44:46.384] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 19:44:46.384] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 19:44:46.384] [INFO] Trading stroke processing completed
+[2025-07-31 19:44:46.384] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 19:47:10.553] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:47:10.554] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:47:15.235] [INFO] Processing trading stroke directly: Point1=(1392, 482), Point2=(1472, 527)
+[2025-07-31 19:47:15.254] [INFO] CaptureData saved to database: ID=20250731194715235
+[2025-07-31 19:47:15.254] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 19:47:15.363] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:47:15.364] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:47:15.382] [INFO] Окно успешно активировано. Handle: 262950
+[2025-07-31 19:47:15.807] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 19:47:15.808] [INFO] Sent ESC key to hwnd=0x40326
+[2025-07-31 19:47:15.989] [INFO] Клавиша 'A' успешно отправлена в окно 262950
+[2025-07-31 19:47:16.194] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 19:47:16.194] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1392, 482), monitorLeftBoundary=1920, result=(3312, 482)
+[2025-07-31 19:47:16.194] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 19:47:16.195] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1472, 527), monitorLeftBoundary=1920, result=(3392, 527)
+[2025-07-31 19:47:16.195] [INFO] Converted coordinates: Point1=(3312, 482), Point2=(3392, 527)
+[2025-07-31 19:47:16.195] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:47:16.195] [INFO] Click coordinates: (3312, 482)
+[2025-07-31 19:47:16.195] [INFO] Window handle: 262950
+[2025-07-31 19:47:16.195] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 19:47:16.196] [INFO] Calculated screen coordinates: (3312, 482)
+[2025-07-31 19:47:16.320] [INFO] Клик успешно выполнен в позиции (3312, 482) -> screen (3312, 482)
+[2025-07-31 19:47:16.321] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:47:16.431] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:47:16.431] [INFO] Click coordinates: (3392, 527)
+[2025-07-31 19:47:16.431] [INFO] Window handle: 262950
+[2025-07-31 19:47:16.431] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 19:47:16.431] [INFO] Calculated screen coordinates: (3392, 527)
+[2025-07-31 19:47:16.556] [INFO] Клик успешно выполнен в позиции (3392, 527) -> screen (3392, 527)
+[2025-07-31 19:47:16.557] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:47:16.557] [INFO] Sent ESC key to hwnd=0x40326
+[2025-07-31 19:47:16.557] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 19:47:16.557] [INFO] Trading stroke processing completed
+[2025-07-31 19:47:16.558] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 19:52:18.263] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:52:18.263] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:52:18.583] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:52:18.583] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 19:52:19.950] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
+[2025-07-31 19:52:19.950] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
+[2025-07-31 19:52:22.567] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
+[2025-07-31 19:52:22.568] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
+[2025-07-31 19:53:10.254] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 19:53:10.255] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 19:53:11.533] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 19:53:11.534] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 19:53:18.238] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 19:53:18.238] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 19:53:21.398] [INFO] Processing trading stroke directly: Point1=(1349, 603), Point2=(1439, 696)
+[2025-07-31 19:53:21.406] [INFO] CaptureData saved to database: ID=20250731195321398
+[2025-07-31 19:53:21.406] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 19:53:21.510] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 19:53:21.510] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 19:53:21.528] [INFO] Окно успешно активировано. Handle: 262950
+[2025-07-31 19:53:21.935] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 19:53:21.936] [INFO] Sent ESC key to hwnd=0x40326
+[2025-07-31 19:53:22.109] [INFO] Клавиша 'A' успешно отправлена в окно 262950
+[2025-07-31 19:53:22.315] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 19:53:22.315] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1349, 603), monitorLeftBoundary=1920, result=(3269, 603)
+[2025-07-31 19:53:22.315] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 19:53:22.315] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1439, 696), monitorLeftBoundary=1920, result=(3359, 696)
+[2025-07-31 19:53:22.316] [INFO] Converted coordinates: Point1=(3269, 603), Point2=(3359, 696)
+[2025-07-31 19:53:22.316] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:53:22.316] [INFO] Click coordinates: (3269, 603)
+[2025-07-31 19:53:22.317] [INFO] Window handle: 262950
+[2025-07-31 19:53:22.317] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 19:53:22.317] [INFO] Calculated screen coordinates: (3269, 603)
+[2025-07-31 19:53:22.441] [INFO] Клик успешно выполнен в позиции (3269, 603) -> screen (3269, 603)
+[2025-07-31 19:53:22.441] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:53:22.552] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:53:22.552] [INFO] Click coordinates: (3359, 696)
+[2025-07-31 19:53:22.552] [INFO] Window handle: 262950
+[2025-07-31 19:53:22.552] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 19:53:22.552] [INFO] Calculated screen coordinates: (3359, 696)
+[2025-07-31 19:53:22.679] [INFO] Клик успешно выполнен в позиции (3359, 696) -> screen (3359, 696)
+[2025-07-31 19:53:22.680] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:53:22.680] [INFO] Sent ESC key to hwnd=0x40326
+[2025-07-31 19:53:22.681] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 19:53:22.681] [INFO] Trading stroke processing completed
+[2025-07-31 19:53:22.681] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 19:53:25.166] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 19:53:25.166] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 19:53:26.870] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 19:53:26.870] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 19:53:32.046] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 19:53:32.046] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 19:53:35.774] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 19:53:35.774] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 19:53:39.781] [INFO] Processing trading stroke directly: Point1=(1550, 263), Point2=(1580, 304)
+[2025-07-31 19:53:39.795] [INFO] CaptureData saved to database: ID=20250731195339781
+[2025-07-31 19:53:39.795] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 19:53:39.913] [INFO] Окно успешно активировано. Handle: 196846
+[2025-07-31 19:53:40.338] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 19:53:40.338] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 19:53:40.512] [INFO] Клавиша 'A' успешно отправлена в окно 196846
+[2025-07-31 19:53:40.719] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 19:53:40.719] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1550, 263), monitorLeftBoundary=0, result=(1550, 263)
+[2025-07-31 19:53:40.719] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 19:53:40.719] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1580, 304), monitorLeftBoundary=0, result=(1580, 304)
+[2025-07-31 19:53:40.719] [INFO] Converted coordinates: Point1=(1550, 263), Point2=(1580, 304)
+[2025-07-31 19:53:40.720] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:53:40.720] [INFO] Click coordinates: (1550, 263)
+[2025-07-31 19:53:40.720] [INFO] Window handle: 196846
+[2025-07-31 19:53:40.720] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:53:40.720] [INFO] Calculated screen coordinates: (1550, 263)
+[2025-07-31 19:53:40.846] [INFO] Клик успешно выполнен в позиции (1550, 263) -> screen (1550, 263)
+[2025-07-31 19:53:40.846] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:53:40.957] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:53:40.957] [INFO] Click coordinates: (1580, 304)
+[2025-07-31 19:53:40.958] [INFO] Window handle: 196846
+[2025-07-31 19:53:40.958] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:53:40.958] [INFO] Calculated screen coordinates: (1580, 304)
+[2025-07-31 19:53:41.084] [INFO] Клик успешно выполнен в позиции (1580, 304) -> screen (1580, 304)
+[2025-07-31 19:53:41.084] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:53:41.085] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 19:53:41.085] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 19:53:41.085] [INFO] Trading stroke processing completed
+[2025-07-31 19:53:41.085] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 19:54:00.510] [INFO] Processing trading stroke directly: Point1=(1541, 259), Point2=(1581, 278)
+[2025-07-31 19:54:00.518] [INFO] CaptureData saved to database: ID=20250731195400510
+[2025-07-31 19:54:00.518] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 19:54:00.638] [INFO] Окно успешно активировано. Handle: 196846
+[2025-07-31 19:54:01.047] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 19:54:01.047] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 19:54:01.219] [INFO] Клавиша 'A' успешно отправлена в окно 196846
+[2025-07-31 19:54:01.426] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 19:54:01.426] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1541, 259), monitorLeftBoundary=0, result=(1541, 259)
+[2025-07-31 19:54:01.426] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 19:54:01.426] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1581, 278), monitorLeftBoundary=0, result=(1581, 278)
+[2025-07-31 19:54:01.426] [INFO] Converted coordinates: Point1=(1541, 259), Point2=(1581, 278)
+[2025-07-31 19:54:01.427] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:54:01.427] [INFO] Click coordinates: (1541, 259)
+[2025-07-31 19:54:01.427] [INFO] Window handle: 196846
+[2025-07-31 19:54:01.427] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:54:01.427] [INFO] Calculated screen coordinates: (1541, 259)
+[2025-07-31 19:54:01.553] [INFO] Клик успешно выполнен в позиции (1541, 259) -> screen (1541, 259)
+[2025-07-31 19:54:01.554] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:54:01.664] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:54:01.665] [INFO] Click coordinates: (1581, 278)
+[2025-07-31 19:54:01.665] [INFO] Window handle: 196846
+[2025-07-31 19:54:01.665] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:54:01.665] [INFO] Calculated screen coordinates: (1581, 278)
+[2025-07-31 19:54:01.791] [INFO] Клик успешно выполнен в позиции (1581, 278) -> screen (1581, 278)
+[2025-07-31 19:54:01.791] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:54:01.792] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 19:54:01.792] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 19:54:01.792] [INFO] Trading stroke processing completed
+[2025-07-31 19:54:01.793] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 19:54:44.189] [INFO] Processing trading stroke directly: Point1=(1524, 238), Point2=(1626, 296)
+[2025-07-31 19:54:44.203] [INFO] CaptureData saved to database: ID=20250731195444190
+[2025-07-31 19:54:44.203] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 19:54:44.322] [INFO] Окно успешно активировано. Handle: 196846
+[2025-07-31 19:54:44.726] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 19:54:44.727] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 19:54:44.910] [INFO] Клавиша 'A' успешно отправлена в окно 196846
+[2025-07-31 19:54:45.125] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 19:54:45.126] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1524, 238), monitorLeftBoundary=0, result=(1524, 238)
+[2025-07-31 19:54:45.126] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 19:54:45.127] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1626, 296), monitorLeftBoundary=0, result=(1626, 296)
+[2025-07-31 19:54:45.127] [INFO] Converted coordinates: Point1=(1524, 238), Point2=(1626, 296)
+[2025-07-31 19:54:45.127] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:54:45.128] [INFO] Click coordinates: (1524, 238)
+[2025-07-31 19:54:45.128] [INFO] Window handle: 196846
+[2025-07-31 19:54:45.129] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:54:45.129] [INFO] Calculated screen coordinates: (1524, 238)
+[2025-07-31 19:54:45.249] [INFO] Клик успешно выполнен в позиции (1524, 238) -> screen (1524, 238)
+[2025-07-31 19:54:45.249] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:54:45.357] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:54:45.358] [INFO] Click coordinates: (1626, 296)
+[2025-07-31 19:54:45.358] [INFO] Window handle: 196846
+[2025-07-31 19:54:45.358] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:54:45.359] [INFO] Calculated screen coordinates: (1626, 296)
+[2025-07-31 19:54:45.481] [INFO] Клик успешно выполнен в позиции (1626, 296) -> screen (1626, 296)
+[2025-07-31 19:54:45.481] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:54:45.483] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 19:54:45.483] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 19:54:45.483] [INFO] Trading stroke processing completed
+[2025-07-31 19:54:45.484] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 19:55:10.429] [INFO] Processing trading stroke directly: Point1=(1518, 242), Point2=(1620, 303)
+[2025-07-31 19:55:10.447] [INFO] CaptureData saved to database: ID=20250731195510430
+[2025-07-31 19:55:10.447] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 19:55:10.573] [INFO] Окно успешно активировано. Handle: 196846
+[2025-07-31 19:55:10.980] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 19:55:10.981] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 19:55:11.153] [INFO] Клавиша 'A' успешно отправлена в окно 196846
+[2025-07-31 19:55:11.356] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 19:55:11.356] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1518, 242), monitorLeftBoundary=0, result=(1518, 242)
+[2025-07-31 19:55:11.357] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 19:55:11.357] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1620, 303), monitorLeftBoundary=0, result=(1620, 303)
+[2025-07-31 19:55:11.358] [INFO] Converted coordinates: Point1=(1518, 242), Point2=(1620, 303)
+[2025-07-31 19:55:11.358] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:55:11.358] [INFO] Click coordinates: (1518, 242)
+[2025-07-31 19:55:11.359] [INFO] Window handle: 196846
+[2025-07-31 19:55:11.359] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:55:11.359] [INFO] Calculated screen coordinates: (1518, 242)
+[2025-07-31 19:55:11.480] [INFO] Клик успешно выполнен в позиции (1518, 242) -> screen (1518, 242)
+[2025-07-31 19:55:11.480] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:55:11.588] [INFO] === MOUSE CLICK START ===
+[2025-07-31 19:55:11.589] [INFO] Click coordinates: (1620, 303)
+[2025-07-31 19:55:11.589] [INFO] Window handle: 196846
+[2025-07-31 19:55:11.589] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 19:55:11.589] [INFO] Calculated screen coordinates: (1620, 303)
+[2025-07-31 19:55:11.712] [INFO] Клик успешно выполнен в позиции (1620, 303) -> screen (1620, 303)
+[2025-07-31 19:55:11.712] [INFO] === MOUSE CLICK END ===
+[2025-07-31 19:55:11.713] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 19:55:11.714] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 19:55:11.714] [INFO] Trading stroke processing completed
+[2025-07-31 19:55:11.714] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 20:36:09.400] [INFO] Processing trading stroke directly: Point1=(1496, 326), Point2=(1606, 361)
+[2025-07-31 20:36:09.409] [INFO] CaptureData saved to database: ID=20250731203609400
+[2025-07-31 20:36:09.409] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 20:36:09.535] [INFO] Окно успешно активировано. Handle: 196846
+[2025-07-31 20:36:09.940] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 20:36:09.941] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 20:36:10.112] [INFO] Клавиша 'A' успешно отправлена в окно 196846
+[2025-07-31 20:36:10.317] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 20:36:10.318] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1496, 326), monitorLeftBoundary=0, result=(1496, 326)
+[2025-07-31 20:36:10.318] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 20:36:10.319] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1606, 361), monitorLeftBoundary=0, result=(1606, 361)
+[2025-07-31 20:36:10.319] [INFO] Converted coordinates: Point1=(1496, 326), Point2=(1606, 361)
+[2025-07-31 20:36:10.319] [INFO] === MOUSE CLICK START ===
+[2025-07-31 20:36:10.319] [INFO] Click coordinates: (1496, 326)
+[2025-07-31 20:36:10.320] [INFO] Window handle: 196846
+[2025-07-31 20:36:10.320] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 20:36:10.320] [INFO] Calculated screen coordinates: (1496, 326)
+[2025-07-31 20:36:10.442] [INFO] Клик успешно выполнен в позиции (1496, 326) -> screen (1496, 326)
+[2025-07-31 20:36:10.442] [INFO] === MOUSE CLICK END ===
+[2025-07-31 20:36:10.553] [INFO] === MOUSE CLICK START ===
+[2025-07-31 20:36:10.553] [INFO] Click coordinates: (1606, 361)
+[2025-07-31 20:36:10.553] [INFO] Window handle: 196846
+[2025-07-31 20:36:10.553] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 20:36:10.554] [INFO] Calculated screen coordinates: (1606, 361)
+[2025-07-31 20:36:10.679] [INFO] Клик успешно выполнен в позиции (1606, 361) -> screen (1606, 361)
+[2025-07-31 20:36:10.679] [INFO] === MOUSE CLICK END ===
+[2025-07-31 20:36:10.681] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 20:36:10.681] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 20:36:10.681] [INFO] Trading stroke processing completed
+[2025-07-31 20:36:10.682] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 20:36:44.191] [INFO] Processing trading stroke directly: Point1=(1400, 297), Point2=(1511, 398)
+[2025-07-31 20:36:44.201] [INFO] CaptureData saved to database: ID=20250731203644191
+[2025-07-31 20:36:44.201] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 20:36:44.324] [INFO] Окно успешно активировано. Handle: 196846
+[2025-07-31 20:36:44.725] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 20:36:44.726] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 20:36:44.910] [INFO] Клавиша 'A' успешно отправлена в окно 196846
+[2025-07-31 20:36:45.126] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 20:36:45.126] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1400, 297), monitorLeftBoundary=0, result=(1400, 297)
+[2025-07-31 20:36:45.127] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 20:36:45.127] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1511, 398), monitorLeftBoundary=0, result=(1511, 398)
+[2025-07-31 20:36:45.127] [INFO] Converted coordinates: Point1=(1400, 297), Point2=(1511, 398)
+[2025-07-31 20:36:45.128] [INFO] === MOUSE CLICK START ===
+[2025-07-31 20:36:45.128] [INFO] Click coordinates: (1400, 297)
+[2025-07-31 20:36:45.129] [INFO] Window handle: 196846
+[2025-07-31 20:36:45.129] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 20:36:45.129] [INFO] Calculated screen coordinates: (1400, 297)
+[2025-07-31 20:36:45.250] [INFO] Клик успешно выполнен в позиции (1400, 297) -> screen (1400, 297)
+[2025-07-31 20:36:45.250] [INFO] === MOUSE CLICK END ===
+[2025-07-31 20:36:45.358] [INFO] === MOUSE CLICK START ===
+[2025-07-31 20:36:45.358] [INFO] Click coordinates: (1511, 398)
+[2025-07-31 20:36:45.359] [INFO] Window handle: 196846
+[2025-07-31 20:36:45.359] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 20:36:45.359] [INFO] Calculated screen coordinates: (1511, 398)
+[2025-07-31 20:36:45.482] [INFO] Клик успешно выполнен в позиции (1511, 398) -> screen (1511, 398)
+[2025-07-31 20:36:45.483] [INFO] === MOUSE CLICK END ===
+[2025-07-31 20:36:45.483] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 20:36:45.483] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 20:36:45.484] [INFO] Trading stroke processing completed
+[2025-07-31 20:36:45.484] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 20:40:17.501] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 20:40:17.501] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 20:40:17.652] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 20:40:17.653] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 20:40:19.918] [INFO] Processing trading stroke directly: Point1=(1409, 288), Point2=(1522, 351)
+[2025-07-31 20:40:19.943] [INFO] CaptureData saved to database: ID=20250731204019918
+[2025-07-31 20:40:19.943] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 20:40:20.062] [INFO] Окно успешно активировано. Handle: 196846
+[2025-07-31 20:40:20.468] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 20:40:20.468] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 20:40:20.626] [INFO] Клавиша 'A' успешно отправлена в окно 196846
+[2025-07-31 20:40:20.827] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 20:40:20.828] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1409, 288), monitorLeftBoundary=0, result=(1409, 288)
+[2025-07-31 20:40:20.828] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 20:40:20.828] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1522, 351), monitorLeftBoundary=0, result=(1522, 351)
+[2025-07-31 20:40:20.828] [INFO] Converted coordinates: Point1=(1409, 288), Point2=(1522, 351)
+[2025-07-31 20:40:20.828] [INFO] === MOUSE CLICK START ===
+[2025-07-31 20:40:20.829] [INFO] Click coordinates: (1409, 288)
+[2025-07-31 20:40:20.829] [INFO] Window handle: 196846
+[2025-07-31 20:40:20.829] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 20:40:20.829] [INFO] Calculated screen coordinates: (1409, 288)
+[2025-07-31 20:40:20.931] [INFO] Клик успешно выполнен в позиции (1409, 288) -> screen (1409, 288)
+[2025-07-31 20:40:20.932] [INFO] === MOUSE CLICK END ===
+[2025-07-31 20:40:21.050] [INFO] === MOUSE CLICK START ===
+[2025-07-31 20:40:21.050] [INFO] Click coordinates: (1522, 351)
+[2025-07-31 20:40:21.050] [INFO] Window handle: 196846
+[2025-07-31 20:40:21.051] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 20:40:21.051] [INFO] Calculated screen coordinates: (1522, 351)
+[2025-07-31 20:40:21.175] [INFO] Клик успешно выполнен в позиции (1522, 351) -> screen (1522, 351)
+[2025-07-31 20:40:21.175] [INFO] === MOUSE CLICK END ===
+[2025-07-31 20:40:21.175] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 20:40:21.175] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 20:40:21.176] [INFO] Trading stroke processing completed
+[2025-07-31 20:40:21.176] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 20:40:38.253] [INFO] Processing trading stroke directly: Point1=(1388, 291), Point2=(1559, 371)
+[2025-07-31 20:40:38.273] [INFO] CaptureData saved to database: ID=20250731204038253
+[2025-07-31 20:40:38.273] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 20:40:38.397] [INFO] Окно успешно активировано. Handle: 196846
+[2025-07-31 20:40:38.813] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 20:40:38.814] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 20:40:38.987] [INFO] Клавиша 'A' успешно отправлена в окно 196846
+[2025-07-31 20:40:39.190] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 20:40:39.190] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1388, 291), monitorLeftBoundary=0, result=(1388, 291)
+[2025-07-31 20:40:39.191] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 20:40:39.191] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1559, 371), monitorLeftBoundary=0, result=(1559, 371)
+[2025-07-31 20:40:39.191] [INFO] Converted coordinates: Point1=(1388, 291), Point2=(1559, 371)
+[2025-07-31 20:40:39.191] [INFO] === MOUSE CLICK START ===
+[2025-07-31 20:40:39.192] [INFO] Click coordinates: (1388, 291)
+[2025-07-31 20:40:39.192] [INFO] Window handle: 196846
+[2025-07-31 20:40:39.192] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 20:40:39.193] [INFO] Calculated screen coordinates: (1388, 291)
+[2025-07-31 20:40:39.314] [INFO] Клик успешно выполнен в позиции (1388, 291) -> screen (1388, 291)
+[2025-07-31 20:40:39.314] [INFO] === MOUSE CLICK END ===
+[2025-07-31 20:40:39.425] [INFO] === MOUSE CLICK START ===
+[2025-07-31 20:40:39.425] [INFO] Click coordinates: (1559, 371)
+[2025-07-31 20:40:39.425] [INFO] Window handle: 196846
+[2025-07-31 20:40:39.426] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 20:40:39.426] [INFO] Calculated screen coordinates: (1559, 371)
+[2025-07-31 20:40:39.553] [INFO] Клик успешно выполнен в позиции (1559, 371) -> screen (1559, 371)
+[2025-07-31 20:40:39.553] [INFO] === MOUSE CLICK END ===
+[2025-07-31 20:40:39.553] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 20:40:39.553] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 20:40:39.554] [INFO] Trading stroke processing completed
+[2025-07-31 20:40:39.554] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 20:46:33.137] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
+[2025-07-31 20:46:33.138] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
+[2025-07-31 20:46:38.577] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:46:38.578] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:46:39.570] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:46:39.570] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:46:43.593] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:46:43.594] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:46:50.658] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:46:50.658] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:46:50.993] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:46:50.994] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:46:55.377] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:46:55.378] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:46:55.730] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:46:55.730] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:47:13.186] [INFO] Risk command sent to binary socket: {"cmd":"set_risk","broker":"PocketOption","risk":"10"}
+[2025-07-31 20:49:22.794] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:49:22.795] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:49:22.968] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:49:22.968] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:49:24.705] [INFO] Processing trading stroke directly: Point1=(1335, 305), Point2=(1407, 356)
+[2025-07-31 20:49:24.719] [INFO] CaptureData saved to database: ID=20250731204924705
+[2025-07-31 20:49:24.719] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 20:49:24.843] [INFO] Окно успешно активировано. Handle: 196846
+[2025-07-31 20:49:25.258] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 20:49:25.258] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 20:49:25.434] [INFO] Клавиша 'A' успешно отправлена в окно 196846
+[2025-07-31 20:49:25.639] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 20:49:25.639] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1335, 305), monitorLeftBoundary=0, result=(1335, 305)
+[2025-07-31 20:49:25.640] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 20:49:25.640] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1407, 356), monitorLeftBoundary=0, result=(1407, 356)
+[2025-07-31 20:49:25.640] [INFO] Converted coordinates: Point1=(1335, 305), Point2=(1407, 356)
+[2025-07-31 20:49:25.640] [INFO] === MOUSE CLICK START ===
+[2025-07-31 20:49:25.640] [INFO] Click coordinates: (1335, 305)
+[2025-07-31 20:49:25.640] [INFO] Window handle: 196846
+[2025-07-31 20:49:25.640] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 20:49:25.641] [INFO] Calculated screen coordinates: (1335, 305)
+[2025-07-31 20:49:25.766] [INFO] Клик успешно выполнен в позиции (1335, 305) -> screen (1335, 305)
+[2025-07-31 20:49:25.767] [INFO] === MOUSE CLICK END ===
+[2025-07-31 20:49:25.878] [INFO] === MOUSE CLICK START ===
+[2025-07-31 20:49:25.878] [INFO] Click coordinates: (1407, 356)
+[2025-07-31 20:49:25.878] [INFO] Window handle: 196846
+[2025-07-31 20:49:25.879] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 20:49:25.879] [INFO] Calculated screen coordinates: (1407, 356)
+[2025-07-31 20:49:26.005] [INFO] Клик успешно выполнен в позиции (1407, 356) -> screen (1407, 356)
+[2025-07-31 20:49:26.006] [INFO] === MOUSE CLICK END ===
+[2025-07-31 20:49:26.006] [INFO] Sent ESC key to hwnd=0x300EE
+[2025-07-31 20:49:26.006] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 20:49:26.007] [INFO] Trading stroke processing completed
+[2025-07-31 20:49:26.007] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 20:51:36.671] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:51:36.672] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:51:37.023] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:51:37.023] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:52:07.327] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:52:07.327] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:52:09.735] [INFO] Processing trading stroke directly: Point1=(1283, 531), Point2=(1503, 443)
+[2025-07-31 20:52:09.765] [INFO] CaptureData saved to database: ID=20250731205209735
+[2025-07-31 20:52:09.765] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 20:52:09.889] [INFO] Окно успешно активировано. Handle: 262950
+[2025-07-31 20:52:10.300] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 20:52:10.300] [INFO] Sent ESC key to hwnd=0x40326
+[2025-07-31 20:52:10.471] [INFO] Клавиша 'A' успешно отправлена в окно 262950
+[2025-07-31 20:52:10.678] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 20:52:10.679] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1283, 531), monitorLeftBoundary=1920, result=(3203, 531)
+[2025-07-31 20:52:10.679] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 20:52:10.679] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1503, 443), monitorLeftBoundary=1920, result=(3423, 443)
+[2025-07-31 20:52:10.679] [INFO] Converted coordinates: Point1=(3203, 531), Point2=(3423, 443)
+[2025-07-31 20:52:10.679] [INFO] === MOUSE CLICK START ===
+[2025-07-31 20:52:10.679] [INFO] Click coordinates: (3203, 531)
+[2025-07-31 20:52:10.680] [INFO] Window handle: 262950
+[2025-07-31 20:52:10.680] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 20:52:10.680] [INFO] Calculated screen coordinates: (3203, 531)
+[2025-07-31 20:52:10.804] [INFO] Клик успешно выполнен в позиции (3203, 531) -> screen (3203, 531)
+[2025-07-31 20:52:10.804] [INFO] === MOUSE CLICK END ===
+[2025-07-31 20:52:10.914] [INFO] === MOUSE CLICK START ===
+[2025-07-31 20:52:10.914] [INFO] Click coordinates: (3423, 443)
+[2025-07-31 20:52:10.914] [INFO] Window handle: 262950
+[2025-07-31 20:52:10.914] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 20:52:10.915] [INFO] Calculated screen coordinates: (3423, 443)
+[2025-07-31 20:52:11.041] [INFO] Клик успешно выполнен в позиции (3423, 443) -> screen (3423, 443)
+[2025-07-31 20:52:11.042] [INFO] === MOUSE CLICK END ===
+[2025-07-31 20:52:11.042] [INFO] Sent ESC key to hwnd=0x40326
+[2025-07-31 20:52:11.043] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 20:52:11.043] [INFO] Trading stroke processing completed
+[2025-07-31 20:52:11.043] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 20:52:45.526] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:52:45.527] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:55:48.301] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 20:55:48.301] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 20:55:48.540] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 20:55:48.541] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-07-31 20:55:52.837] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:55:52.837] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:55:53.125] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:55:53.125] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:56:03.965] [INFO] Risk command sent to binary socket: {"cmd":"set_risk","broker":"PocketOption","risk":"5"}
+[2025-07-31 20:56:07.165] [INFO] Risk command sent to binary socket: {"cmd":"set_risk","broker":"PocketOption","risk":"10"}
+[2025-07-31 20:56:13.597] [INFO] Duration command sent to binary socket: {"cmd":"set_duration","broker":"PocketOption","duration":"3"}
+[2025-07-31 20:56:18.829] [INFO] Duration command sent to binary socket: {"cmd":"set_duration","broker":"PocketOption","duration":"2"}
+[2025-07-31 20:56:28.374] [INFO] Duration command sent to binary socket: {"cmd":"set_duration","broker":"PocketOption","duration":"2"}
+[2025-07-31 20:56:42.541] [INFO] Duration command sent to binary socket: {"cmd":"set_duration","broker":"PocketOption","duration":"3"}
+[2025-07-31 20:56:44.973] [INFO] Duration command sent to binary socket: {"cmd":"set_duration","broker":"PocketOption","duration":"2"}
+[2025-07-31 20:57:00.196] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:57:00.197] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:57:03.765] [INFO] Processing trading stroke directly: Point1=(1302, 380), Point2=(1444, 474)
+[2025-07-31 20:57:03.781] [INFO] CaptureData saved to database: ID=20250731205703765
+[2025-07-31 20:57:03.781] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 20:57:03.906] [INFO] Окно успешно активировано. Handle: 262950
+[2025-07-31 20:57:04.320] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 20:57:04.321] [INFO] Sent ESC key to hwnd=0x40326
+[2025-07-31 20:57:04.490] [INFO] Клавиша 'A' успешно отправлена в окно 262950
+[2025-07-31 20:57:04.694] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 20:57:04.694] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1302, 380), monitorLeftBoundary=1920, result=(3222, 380)
+[2025-07-31 20:57:04.694] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 20:57:04.695] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1444, 474), monitorLeftBoundary=1920, result=(3364, 474)
+[2025-07-31 20:57:04.695] [INFO] Converted coordinates: Point1=(3222, 380), Point2=(3364, 474)
+[2025-07-31 20:57:04.696] [INFO] === MOUSE CLICK START ===
+[2025-07-31 20:57:04.696] [INFO] Click coordinates: (3222, 380)
+[2025-07-31 20:57:04.697] [INFO] Window handle: 262950
+[2025-07-31 20:57:04.697] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 20:57:04.697] [INFO] Calculated screen coordinates: (3222, 380)
+[2025-07-31 20:57:04.818] [INFO] Клик успешно выполнен в позиции (3222, 380) -> screen (3222, 380)
+[2025-07-31 20:57:04.818] [INFO] === MOUSE CLICK END ===
+[2025-07-31 20:57:04.942] [INFO] === MOUSE CLICK START ===
+[2025-07-31 20:57:04.943] [INFO] Click coordinates: (3364, 474)
+[2025-07-31 20:57:04.943] [INFO] Window handle: 262950
+[2025-07-31 20:57:04.944] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 20:57:04.944] [INFO] Calculated screen coordinates: (3364, 474)
+[2025-07-31 20:57:05.067] [INFO] Клик успешно выполнен в позиции (3364, 474) -> screen (3364, 474)
+[2025-07-31 20:57:05.067] [INFO] === MOUSE CLICK END ===
+[2025-07-31 20:57:05.070] [INFO] Sent ESC key to hwnd=0x40326
+[2025-07-31 20:57:05.070] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 20:57:05.071] [INFO] Trading stroke processing completed
+[2025-07-31 20:57:05.071] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 20:57:19.620] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:57:19.620] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:57:21.028] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:57:21.028] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:57:22.692] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:57:22.692] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:57:23.828] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:57:23.828] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:57:33.996] [INFO] Processing trading stroke directly: Point1=(1071, 583), Point2=(1190, 628)
+[2025-07-31 20:57:34.011] [INFO] CaptureData saved to database: ID=20250731205733996
+[2025-07-31 20:57:34.011] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 20:57:34.145] [INFO] Окно успешно активировано. Handle: 262950
+[2025-07-31 20:57:34.550] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 20:57:34.551] [INFO] Sent ESC key to hwnd=0x40326
+[2025-07-31 20:57:34.722] [INFO] Клавиша 'A' успешно отправлена в окно 262950
+[2025-07-31 20:57:34.929] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 20:57:34.929] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1071, 583), monitorLeftBoundary=1920, result=(2991, 583)
+[2025-07-31 20:57:34.929] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 20:57:34.929] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1190, 628), monitorLeftBoundary=1920, result=(3110, 628)
+[2025-07-31 20:57:34.930] [INFO] Converted coordinates: Point1=(2991, 583), Point2=(3110, 628)
+[2025-07-31 20:57:34.930] [INFO] === MOUSE CLICK START ===
+[2025-07-31 20:57:34.931] [INFO] Click coordinates: (2991, 583)
+[2025-07-31 20:57:34.931] [INFO] Window handle: 262950
+[2025-07-31 20:57:34.932] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 20:57:34.932] [INFO] Calculated screen coordinates: (2991, 583)
+[2025-07-31 20:57:35.052] [INFO] Клик успешно выполнен в позиции (2991, 583) -> screen (2991, 583)
+[2025-07-31 20:57:35.053] [INFO] === MOUSE CLICK END ===
+[2025-07-31 20:57:35.175] [INFO] === MOUSE CLICK START ===
+[2025-07-31 20:57:35.176] [INFO] Click coordinates: (3110, 628)
+[2025-07-31 20:57:35.176] [INFO] Window handle: 262950
+[2025-07-31 20:57:35.177] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 20:57:35.177] [INFO] Calculated screen coordinates: (3110, 628)
+[2025-07-31 20:57:35.300] [INFO] Клик успешно выполнен в позиции (3110, 628) -> screen (3110, 628)
+[2025-07-31 20:57:35.300] [INFO] === MOUSE CLICK END ===
+[2025-07-31 20:57:35.302] [INFO] Sent ESC key to hwnd=0x40326
+[2025-07-31 20:57:35.302] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 20:57:35.303] [INFO] Trading stroke processing completed
+[2025-07-31 20:57:35.303] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 20:57:43.716] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:57:43.716] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:57:45.236] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:57:45.237] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:57:45.532] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:57:45.532] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:57:45.811] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:57:45.812] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:57:50.540] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 20:57:50.540] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:03:15.222] [INFO] Processing trading stroke directly: Point1=(1512, 355), Point2=(1648, 392)
+[2025-07-31 21:03:15.295] [INFO] CaptureData saved to database: ID=20250731210315224
+[2025-07-31 21:03:15.295] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:03:15.432] [INFO] Окно успешно активировано. Handle: 197046
+[2025-07-31 21:03:15.844] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:03:15.847] [INFO] Sent ESC key to hwnd=0x301B6
+[2025-07-31 21:03:16.016] [INFO] Клавиша 'A' успешно отправлена в окно 197046
+[2025-07-31 21:03:16.224] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:03:16.224] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1512, 355), monitorLeftBoundary=0, result=(1512, 355)
+[2025-07-31 21:03:16.224] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:03:16.224] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1648, 392), monitorLeftBoundary=0, result=(1648, 392)
+[2025-07-31 21:03:16.224] [INFO] Converted coordinates: Point1=(1512, 355), Point2=(1648, 392)
+[2025-07-31 21:03:16.225] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:03:16.225] [INFO] Click coordinates: (1512, 355)
+[2025-07-31 21:03:16.225] [INFO] Window handle: 197046
+[2025-07-31 21:03:16.226] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:03:16.226] [INFO] Calculated screen coordinates: (1512, 355)
+[2025-07-31 21:03:16.348] [INFO] Клик успешно выполнен в позиции (1512, 355) -> screen (1512, 355)
+[2025-07-31 21:03:16.349] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:03:16.460] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:03:16.460] [INFO] Click coordinates: (1648, 392)
+[2025-07-31 21:03:16.461] [INFO] Window handle: 197046
+[2025-07-31 21:03:16.461] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:03:16.461] [INFO] Calculated screen coordinates: (1648, 392)
+[2025-07-31 21:03:16.587] [INFO] Клик успешно выполнен в позиции (1648, 392) -> screen (1648, 392)
+[2025-07-31 21:03:16.587] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:03:16.588] [INFO] Sent ESC key to hwnd=0x301B6
+[2025-07-31 21:03:16.588] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:03:16.588] [INFO] Trading stroke processing completed
+[2025-07-31 21:03:16.588] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:04:03.812] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:04:03.812] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:05:21.345] [INFO] Risk command sent to binary socket: {"cmd":"set_risk","broker":"PocketOption","risk":"20"}
+[2025-07-31 21:05:30.912] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:05:30.912] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:05:33.904] [INFO] Risk command sent to binary socket: {"cmd":"set_risk","broker":"PocketOption","risk":"10"}
+[2025-07-31 21:05:37.976] [INFO] Risk command sent to binary socket: {"cmd":"set_risk","broker":"PocketOption","risk":"5"}
+[2025-07-31 21:05:40.856] [INFO] Risk command sent to binary socket: {"cmd":"set_risk","broker":"PocketOption","risk":"30"}
+[2025-07-31 21:05:44.136] [INFO] Risk command sent to binary socket: {"cmd":"set_risk","broker":"PocketOption","risk":"10"}
+[2025-07-31 21:05:48.139] [INFO] Duration command sent to binary socket: {"cmd":"set_duration","broker":"PocketOption","duration":"2"}
+[2025-07-31 21:05:51.248] [INFO] Duration command sent to binary socket: {"cmd":"set_duration","broker":"PocketOption","duration":"2"}
+[2025-07-31 21:05:58.823] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:05:58.824] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:06:07.767] [INFO] Processing trading stroke directly: Point1=(1578, 328), Point2=(1624, 290)
+[2025-07-31 21:06:07.788] [INFO] CaptureData saved to database: ID=20250731210607768
+[2025-07-31 21:06:07.788] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:06:07.903] [INFO] Окно успешно активировано. Handle: 197046
+[2025-07-31 21:06:08.310] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:06:08.310] [INFO] Sent ESC key to hwnd=0x301B6
+[2025-07-31 21:06:08.483] [INFO] Клавиша 'A' успешно отправлена в окно 197046
+[2025-07-31 21:06:08.688] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:06:08.688] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1578, 328), monitorLeftBoundary=0, result=(1578, 328)
+[2025-07-31 21:06:08.688] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:06:08.688] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1624, 290), monitorLeftBoundary=0, result=(1624, 290)
+[2025-07-31 21:06:08.688] [INFO] Converted coordinates: Point1=(1578, 328), Point2=(1624, 290)
+[2025-07-31 21:06:08.690] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:06:08.690] [INFO] Click coordinates: (1578, 328)
+[2025-07-31 21:06:08.691] [INFO] Window handle: 197046
+[2025-07-31 21:06:08.691] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:06:08.691] [INFO] Calculated screen coordinates: (1578, 328)
+[2025-07-31 21:06:08.815] [INFO] Клик успешно выполнен в позиции (1578, 328) -> screen (1578, 328)
+[2025-07-31 21:06:08.815] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:06:08.925] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:06:08.926] [INFO] Click coordinates: (1624, 290)
+[2025-07-31 21:06:08.926] [INFO] Window handle: 197046
+[2025-07-31 21:06:08.926] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:06:08.926] [INFO] Calculated screen coordinates: (1624, 290)
+[2025-07-31 21:06:09.050] [INFO] Клик успешно выполнен в позиции (1624, 290) -> screen (1624, 290)
+[2025-07-31 21:06:09.050] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:06:09.051] [INFO] Sent ESC key to hwnd=0x301B6
+[2025-07-31 21:06:09.051] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:06:09.051] [INFO] Trading stroke processing completed
+[2025-07-31 21:06:09.051] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:06:45.927] [INFO] Processing trading stroke directly: Point1=(1554, 354), Point2=(1623, 287)
+[2025-07-31 21:06:45.940] [INFO] CaptureData saved to database: ID=20250731210645927
+[2025-07-31 21:06:45.940] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:06:46.063] [INFO] Окно успешно активировано. Handle: 197046
+[2025-07-31 21:06:46.473] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:06:46.473] [INFO] Sent ESC key to hwnd=0x301B6
+[2025-07-31 21:06:46.648] [INFO] Клавиша 'A' успешно отправлена в окно 197046
+[2025-07-31 21:06:46.857] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:06:46.857] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1554, 354), monitorLeftBoundary=0, result=(1554, 354)
+[2025-07-31 21:06:46.857] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:06:46.857] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1623, 287), monitorLeftBoundary=0, result=(1623, 287)
+[2025-07-31 21:06:46.857] [INFO] Converted coordinates: Point1=(1554, 354), Point2=(1623, 287)
+[2025-07-31 21:06:46.857] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:06:46.858] [INFO] Click coordinates: (1554, 354)
+[2025-07-31 21:06:46.858] [INFO] Window handle: 197046
+[2025-07-31 21:06:46.858] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:06:46.858] [INFO] Calculated screen coordinates: (1554, 354)
+[2025-07-31 21:06:46.984] [INFO] Клик успешно выполнен в позиции (1554, 354) -> screen (1554, 354)
+[2025-07-31 21:06:46.985] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:06:47.094] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:06:47.095] [INFO] Click coordinates: (1623, 287)
+[2025-07-31 21:06:47.095] [INFO] Window handle: 197046
+[2025-07-31 21:06:47.095] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:06:47.095] [INFO] Calculated screen coordinates: (1623, 287)
+[2025-07-31 21:06:47.221] [INFO] Клик успешно выполнен в позиции (1623, 287) -> screen (1623, 287)
+[2025-07-31 21:06:47.221] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:06:47.222] [INFO] Sent ESC key to hwnd=0x301B6
+[2025-07-31 21:06:47.222] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:06:47.222] [INFO] Trading stroke processing completed
+[2025-07-31 21:06:47.223] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:07:32.439] [INFO] Processing trading stroke directly: Point1=(1422, 328), Point2=(1512, 397)
+[2025-07-31 21:07:32.452] [INFO] CaptureData saved to database: ID=20250731210732439
+[2025-07-31 21:07:32.452] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:07:32.575] [INFO] Окно успешно активировано. Handle: 132134
+[2025-07-31 21:07:32.976] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:07:32.976] [INFO] Sent ESC key to hwnd=0x20426
+[2025-07-31 21:07:33.149] [INFO] Клавиша 'A' успешно отправлена в окно 132134
+[2025-07-31 21:07:33.353] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:07:33.354] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1422, 328), monitorLeftBoundary=1920, result=(3342, 328)
+[2025-07-31 21:07:33.354] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:07:33.354] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1512, 397), monitorLeftBoundary=1920, result=(3432, 397)
+[2025-07-31 21:07:33.354] [INFO] Converted coordinates: Point1=(3342, 328), Point2=(3432, 397)
+[2025-07-31 21:07:33.354] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:07:33.354] [INFO] Click coordinates: (3342, 328)
+[2025-07-31 21:07:33.354] [INFO] Window handle: 132134
+[2025-07-31 21:07:33.354] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:07:33.355] [INFO] Calculated screen coordinates: (3342, 328)
+[2025-07-31 21:07:33.481] [INFO] Клик успешно выполнен в позиции (3342, 328) -> screen (3342, 328)
+[2025-07-31 21:07:33.481] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:07:33.593] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:07:33.593] [INFO] Click coordinates: (3432, 397)
+[2025-07-31 21:07:33.593] [INFO] Window handle: 132134
+[2025-07-31 21:07:33.594] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:07:33.594] [INFO] Calculated screen coordinates: (3432, 397)
+[2025-07-31 21:07:33.719] [INFO] Клик успешно выполнен в позиции (3432, 397) -> screen (3432, 397)
+[2025-07-31 21:07:33.719] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:07:33.720] [INFO] Sent ESC key to hwnd=0x20426
+[2025-07-31 21:07:33.720] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:07:33.720] [INFO] Trading stroke processing completed
+[2025-07-31 21:07:33.720] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:08:27.540] [INFO] Processing trading stroke directly: Point1=(1427, 295), Point2=(1480, 320)
+[2025-07-31 21:08:27.554] [INFO] CaptureData saved to database: ID=20250731210827540
+[2025-07-31 21:08:27.554] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:08:27.667] [INFO] Окно успешно активировано. Handle: 132134
+[2025-07-31 21:08:28.078] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:08:28.078] [INFO] Sent ESC key to hwnd=0x20426
+[2025-07-31 21:08:28.250] [INFO] Клавиша 'A' успешно отправлена в окно 132134
+[2025-07-31 21:08:28.456] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:08:28.457] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1427, 295), monitorLeftBoundary=1920, result=(3347, 295)
+[2025-07-31 21:08:28.457] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:08:28.457] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1480, 320), monitorLeftBoundary=1920, result=(3400, 320)
+[2025-07-31 21:08:28.457] [INFO] Converted coordinates: Point1=(3347, 295), Point2=(3400, 320)
+[2025-07-31 21:08:28.457] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:08:28.457] [INFO] Click coordinates: (3347, 295)
+[2025-07-31 21:08:28.457] [INFO] Window handle: 132134
+[2025-07-31 21:08:28.457] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:08:28.458] [INFO] Calculated screen coordinates: (3347, 295)
+[2025-07-31 21:08:28.584] [INFO] Клик успешно выполнен в позиции (3347, 295) -> screen (3347, 295)
+[2025-07-31 21:08:28.584] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:08:28.696] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:08:28.696] [INFO] Click coordinates: (3400, 320)
+[2025-07-31 21:08:28.697] [INFO] Window handle: 132134
+[2025-07-31 21:08:28.697] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:08:28.697] [INFO] Calculated screen coordinates: (3400, 320)
+[2025-07-31 21:08:28.820] [INFO] Клик успешно выполнен в позиции (3400, 320) -> screen (3400, 320)
+[2025-07-31 21:08:28.820] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:08:28.821] [INFO] Sent ESC key to hwnd=0x20426
+[2025-07-31 21:08:28.821] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:08:28.821] [INFO] Trading stroke processing completed
+[2025-07-31 21:08:28.821] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:09:36.612] [INFO] Processing trading stroke directly: Point1=(1406, 346), Point2=(1477, 318)
+[2025-07-31 21:09:36.629] [INFO] CaptureData saved to database: ID=20250731210936612
+[2025-07-31 21:09:36.629] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:09:36.753] [INFO] Окно успешно активировано. Handle: 132134
+[2025-07-31 21:09:37.158] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:09:37.159] [INFO] Sent ESC key to hwnd=0x20426
+[2025-07-31 21:09:37.333] [INFO] Клавиша 'A' успешно отправлена в окно 132134
+[2025-07-31 21:09:37.603] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:09:37.603] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1406, 346), monitorLeftBoundary=1920, result=(3326, 346)
+[2025-07-31 21:09:37.603] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:09:37.603] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1477, 318), monitorLeftBoundary=1920, result=(3397, 318)
+[2025-07-31 21:09:37.603] [INFO] Converted coordinates: Point1=(3326, 346), Point2=(3397, 318)
+[2025-07-31 21:09:37.604] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:09:37.604] [INFO] Click coordinates: (3326, 346)
+[2025-07-31 21:09:37.604] [INFO] Window handle: 132134
+[2025-07-31 21:09:37.604] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:09:37.604] [INFO] Calculated screen coordinates: (3326, 346)
+[2025-07-31 21:09:37.706] [INFO] Клик успешно выполнен в позиции (3326, 346) -> screen (3326, 346)
+[2025-07-31 21:09:37.706] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:09:37.895] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:09:37.895] [INFO] Click coordinates: (3397, 318)
+[2025-07-31 21:09:37.896] [INFO] Window handle: 132134
+[2025-07-31 21:09:37.896] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:09:37.896] [INFO] Calculated screen coordinates: (3397, 318)
+[2025-07-31 21:09:37.997] [INFO] Клик успешно выполнен в позиции (3397, 318) -> screen (3397, 318)
+[2025-07-31 21:09:37.998] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:09:37.998] [INFO] Sent ESC key to hwnd=0x20426
+[2025-07-31 21:09:37.998] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:09:38.031] [INFO] Trading stroke processing completed
+[2025-07-31 21:09:38.032] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:10:26.848] [INFO] Processing trading stroke directly: Point1=(1503, 367), Point2=(1547, 409)
+[2025-07-31 21:10:26.875] [INFO] CaptureData saved to database: ID=20250731211026848
+[2025-07-31 21:10:26.875] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:10:27.013] [INFO] Окно успешно активировано. Handle: 197046
+[2025-07-31 21:10:27.423] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:10:27.424] [INFO] Sent ESC key to hwnd=0x301B6
+[2025-07-31 21:10:27.599] [INFO] Клавиша 'A' успешно отправлена в окно 197046
+[2025-07-31 21:10:27.805] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:10:27.805] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1503, 367), monitorLeftBoundary=0, result=(1503, 367)
+[2025-07-31 21:10:27.806] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:10:27.806] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1547, 409), monitorLeftBoundary=0, result=(1547, 409)
+[2025-07-31 21:10:27.806] [INFO] Converted coordinates: Point1=(1503, 367), Point2=(1547, 409)
+[2025-07-31 21:10:27.806] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:10:27.806] [INFO] Click coordinates: (1503, 367)
+[2025-07-31 21:10:27.806] [INFO] Window handle: 197046
+[2025-07-31 21:10:27.806] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:10:27.806] [INFO] Calculated screen coordinates: (1503, 367)
+[2025-07-31 21:10:27.930] [INFO] Клик успешно выполнен в позиции (1503, 367) -> screen (1503, 367)
+[2025-07-31 21:10:27.930] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:10:28.041] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:10:28.041] [INFO] Click coordinates: (1547, 409)
+[2025-07-31 21:10:28.041] [INFO] Window handle: 197046
+[2025-07-31 21:10:28.042] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:10:28.042] [INFO] Calculated screen coordinates: (1547, 409)
+[2025-07-31 21:10:28.166] [INFO] Клик успешно выполнен в позиции (1547, 409) -> screen (1547, 409)
+[2025-07-31 21:10:28.167] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:10:28.168] [INFO] Sent ESC key to hwnd=0x301B6
+[2025-07-31 21:10:28.168] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:10:28.168] [INFO] Trading stroke processing completed
+[2025-07-31 21:10:28.168] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:10:52.277] [INFO] Processing trading stroke directly: Point1=(1396, 448), Point2=(1450, 487)
+[2025-07-31 21:10:52.295] [INFO] CaptureData saved to database: ID=20250731211052277
+[2025-07-31 21:10:52.295] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:10:52.421] [INFO] Окно успешно активировано. Handle: 197046
+[2025-07-31 21:10:52.831] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:10:52.832] [INFO] Sent ESC key to hwnd=0x301B6
+[2025-07-31 21:10:53.001] [INFO] Клавиша 'A' успешно отправлена в окно 197046
+[2025-07-31 21:10:53.216] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:10:53.216] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1396, 448), monitorLeftBoundary=0, result=(1396, 448)
+[2025-07-31 21:10:53.216] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:10:53.217] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1450, 487), monitorLeftBoundary=0, result=(1450, 487)
+[2025-07-31 21:10:53.217] [INFO] Converted coordinates: Point1=(1396, 448), Point2=(1450, 487)
+[2025-07-31 21:10:53.217] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:10:53.217] [INFO] Click coordinates: (1396, 448)
+[2025-07-31 21:10:53.217] [INFO] Window handle: 197046
+[2025-07-31 21:10:53.217] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:10:53.217] [INFO] Calculated screen coordinates: (1396, 448)
+[2025-07-31 21:10:53.341] [INFO] Клик успешно выполнен в позиции (1396, 448) -> screen (1396, 448)
+[2025-07-31 21:10:53.341] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:10:53.452] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:10:53.452] [INFO] Click coordinates: (1450, 487)
+[2025-07-31 21:10:53.452] [INFO] Window handle: 197046
+[2025-07-31 21:10:53.453] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:10:53.453] [INFO] Calculated screen coordinates: (1450, 487)
+[2025-07-31 21:10:53.577] [INFO] Клик успешно выполнен в позиции (1450, 487) -> screen (1450, 487)
+[2025-07-31 21:10:53.578] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:10:53.578] [INFO] Sent ESC key to hwnd=0x301B6
+[2025-07-31 21:10:53.579] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:10:53.579] [INFO] Trading stroke processing completed
+[2025-07-31 21:10:53.579] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:11:38.867] [INFO] Processing trading stroke directly: Point1=(1262, 257), Point2=(1379, 306)
+[2025-07-31 21:11:38.886] [INFO] CaptureData saved to database: ID=20250731211138868
+[2025-07-31 21:11:38.886] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:11:38.996] [INFO] Окно успешно активировано. Handle: 132134
+[2025-07-31 21:11:39.401] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:11:39.402] [INFO] Sent ESC key to hwnd=0x20426
+[2025-07-31 21:11:39.576] [INFO] Клавиша 'A' успешно отправлена в окно 132134
+[2025-07-31 21:11:39.777] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:11:39.777] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1262, 257), monitorLeftBoundary=1920, result=(3182, 257)
+[2025-07-31 21:11:39.777] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:11:39.778] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1379, 306), monitorLeftBoundary=1920, result=(3299, 306)
+[2025-07-31 21:11:39.778] [INFO] Converted coordinates: Point1=(3182, 257), Point2=(3299, 306)
+[2025-07-31 21:11:39.778] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:11:39.778] [INFO] Click coordinates: (3182, 257)
+[2025-07-31 21:11:39.778] [INFO] Window handle: 132134
+[2025-07-31 21:11:39.778] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:11:39.778] [INFO] Calculated screen coordinates: (3182, 257)
+[2025-07-31 21:11:39.905] [INFO] Клик успешно выполнен в позиции (3182, 257) -> screen (3182, 257)
+[2025-07-31 21:11:39.905] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:11:40.016] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:11:40.016] [INFO] Click coordinates: (3299, 306)
+[2025-07-31 21:11:40.016] [INFO] Window handle: 132134
+[2025-07-31 21:11:40.016] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:11:40.016] [INFO] Calculated screen coordinates: (3299, 306)
+[2025-07-31 21:11:40.143] [INFO] Клик успешно выполнен в позиции (3299, 306) -> screen (3299, 306)
+[2025-07-31 21:11:40.143] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:11:40.143] [INFO] Sent ESC key to hwnd=0x20426
+[2025-07-31 21:11:40.144] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:11:40.144] [INFO] Trading stroke processing completed
+[2025-07-31 21:11:40.144] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:11:55.242] [INFO] Processing trading stroke directly: Point1=(1275, 213), Point2=(1333, 236)
+[2025-07-31 21:11:55.264] [INFO] CaptureData saved to database: ID=20250731211155242
+[2025-07-31 21:11:55.264] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:11:55.381] [INFO] Окно успешно активировано. Handle: 132134
+[2025-07-31 21:11:55.793] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:11:55.794] [INFO] Sent ESC key to hwnd=0x20426
+[2025-07-31 21:11:55.966] [INFO] Клавиша 'A' успешно отправлена в окно 132134
+[2025-07-31 21:11:56.171] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:11:56.171] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1275, 213), monitorLeftBoundary=1920, result=(3195, 213)
+[2025-07-31 21:11:56.171] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:11:56.171] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1333, 236), monitorLeftBoundary=1920, result=(3253, 236)
+[2025-07-31 21:11:56.172] [INFO] Converted coordinates: Point1=(3195, 213), Point2=(3253, 236)
+[2025-07-31 21:11:56.172] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:11:56.172] [INFO] Click coordinates: (3195, 213)
+[2025-07-31 21:11:56.172] [INFO] Window handle: 132134
+[2025-07-31 21:11:56.172] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:11:56.172] [INFO] Calculated screen coordinates: (3195, 213)
+[2025-07-31 21:11:56.295] [INFO] Клик успешно выполнен в позиции (3195, 213) -> screen (3195, 213)
+[2025-07-31 21:11:56.295] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:11:56.406] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:11:56.406] [INFO] Click coordinates: (3253, 236)
+[2025-07-31 21:11:56.406] [INFO] Window handle: 132134
+[2025-07-31 21:11:56.406] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:11:56.406] [INFO] Calculated screen coordinates: (3253, 236)
+[2025-07-31 21:11:56.530] [INFO] Клик успешно выполнен в позиции (3253, 236) -> screen (3253, 236)
+[2025-07-31 21:11:56.531] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:11:56.531] [INFO] Sent ESC key to hwnd=0x20426
+[2025-07-31 21:11:56.531] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:11:56.532] [INFO] Trading stroke processing completed
+[2025-07-31 21:11:56.532] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:12:51.988] [INFO] Risk command sent to binary socket: {"cmd":"set_risk","broker":"PocketOption","risk":"20"}
+[2025-07-31 21:12:56.204] [INFO] Risk command sent to binary socket: {"cmd":"set_risk","broker":"PocketOption","risk":"10"}
+[2025-07-31 21:13:03.652] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:13:03.653] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:13:04.881] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:13:04.882] [INFO] Click coordinates: (280, 56)
+[2025-07-31 21:13:04.882] [INFO] Window handle: 197046
+[2025-07-31 21:13:04.882] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:13:04.882] [INFO] Calculated screen coordinates: (280, 56)
+[2025-07-31 21:13:05.001] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-07-31 21:13:05.001] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:13:05.137] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:13:05.137] [INFO] Click coordinates: (480, 56)
+[2025-07-31 21:13:05.137] [INFO] Window handle: 197046
+[2025-07-31 21:13:05.137] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:13:05.137] [INFO] Calculated screen coordinates: (480, 56)
+[2025-07-31 21:13:05.264] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-07-31 21:13:05.264] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:13:05.641] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:13:05.641] [INFO] Click coordinates: (480, 56)
+[2025-07-31 21:13:05.641] [INFO] Window handle: 197046
+[2025-07-31 21:13:05.641] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:13:05.641] [INFO] Calculated screen coordinates: (480, 56)
+[2025-07-31 21:13:05.768] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-07-31 21:13:05.768] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:13:06.065] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:13:06.065] [INFO] Click coordinates: (480, 56)
+[2025-07-31 21:13:06.065] [INFO] Window handle: 197046
+[2025-07-31 21:13:06.065] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:13:06.065] [INFO] Calculated screen coordinates: (480, 56)
+[2025-07-31 21:13:06.189] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-07-31 21:13:06.189] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:13:14.276] [INFO] Duration command sent to binary socket: {"cmd":"set_duration","broker":"PocketOption","duration":"2"}
+[2025-07-31 21:13:16.994] [INFO] Processing trading stroke directly: Point1=(1275, 174), Point2=(1367, 205)
+[2025-07-31 21:13:17.019] [INFO] CaptureData saved to database: ID=20250731211316994
+[2025-07-31 21:13:17.019] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:13:17.133] [INFO] Окно успешно активировано. Handle: 197046
+[2025-07-31 21:13:17.542] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:13:17.543] [INFO] Sent ESC key to hwnd=0x301B6
+[2025-07-31 21:13:17.718] [INFO] Клавиша 'A' успешно отправлена в окно 197046
+[2025-07-31 21:13:17.924] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:13:17.925] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1275, 174), monitorLeftBoundary=0, result=(1275, 174)
+[2025-07-31 21:13:17.925] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:13:17.925] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1367, 205), monitorLeftBoundary=0, result=(1367, 205)
+[2025-07-31 21:13:17.925] [INFO] Converted coordinates: Point1=(1275, 174), Point2=(1367, 205)
+[2025-07-31 21:13:17.925] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:13:17.925] [INFO] Click coordinates: (1275, 174)
+[2025-07-31 21:13:17.926] [INFO] Window handle: 197046
+[2025-07-31 21:13:17.926] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:13:17.926] [INFO] Calculated screen coordinates: (1275, 174)
+[2025-07-31 21:13:18.052] [INFO] Клик успешно выполнен в позиции (1275, 174) -> screen (1275, 174)
+[2025-07-31 21:13:18.052] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:13:18.162] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:13:18.162] [INFO] Click coordinates: (1367, 205)
+[2025-07-31 21:13:18.162] [INFO] Window handle: 197046
+[2025-07-31 21:13:18.163] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:13:18.163] [INFO] Calculated screen coordinates: (1367, 205)
+[2025-07-31 21:13:18.290] [INFO] Клик успешно выполнен в позиции (1367, 205) -> screen (1367, 205)
+[2025-07-31 21:13:18.290] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:13:18.291] [INFO] Sent ESC key to hwnd=0x301B6
+[2025-07-31 21:13:18.291] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:13:18.292] [INFO] Trading stroke processing completed
+[2025-07-31 21:13:18.292] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:13:47.099] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:13:47.100] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:14:09.923] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:14:09.924] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:14:14.107] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:14:14.107] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:14:29.570] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:14:29.571] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:15:19.298] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:15:19.299] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:15:23.714] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:15:23.714] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:15:24.754] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:15:24.754] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:15:25.338] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:15:25.338] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:15:31.014] [INFO] Processing trading stroke directly: Point1=(1290, 140), Point2=(1400, 185)
+[2025-07-31 21:15:31.025] [INFO] CaptureData saved to database: ID=20250731211531015
+[2025-07-31 21:15:31.025] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:15:31.150] [INFO] Окно успешно активировано. Handle: 197046
+[2025-07-31 21:15:31.562] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:15:31.563] [INFO] Sent ESC key to hwnd=0x301B6
+[2025-07-31 21:15:31.735] [INFO] Клавиша 'A' успешно отправлена в окно 197046
+[2025-07-31 21:15:31.940] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:15:31.940] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1290, 140), monitorLeftBoundary=0, result=(1290, 140)
+[2025-07-31 21:15:31.940] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:15:31.940] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1400, 185), monitorLeftBoundary=0, result=(1400, 185)
+[2025-07-31 21:15:31.941] [INFO] Converted coordinates: Point1=(1290, 140), Point2=(1400, 185)
+[2025-07-31 21:15:31.941] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:15:31.941] [INFO] Click coordinates: (1290, 140)
+[2025-07-31 21:15:31.941] [INFO] Window handle: 197046
+[2025-07-31 21:15:31.941] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:15:31.941] [INFO] Calculated screen coordinates: (1290, 140)
+[2025-07-31 21:15:32.067] [INFO] Клик успешно выполнен в позиции (1290, 140) -> screen (1290, 140)
+[2025-07-31 21:15:32.068] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:15:32.178] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:15:32.178] [INFO] Click coordinates: (1400, 185)
+[2025-07-31 21:15:32.178] [INFO] Window handle: 197046
+[2025-07-31 21:15:32.178] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:15:32.178] [INFO] Calculated screen coordinates: (1400, 185)
+[2025-07-31 21:15:32.302] [INFO] Клик успешно выполнен в позиции (1400, 185) -> screen (1400, 185)
+[2025-07-31 21:15:32.302] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:15:32.302] [INFO] Sent ESC key to hwnd=0x301B6
+[2025-07-31 21:15:32.303] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:15:32.303] [INFO] Trading stroke processing completed
+[2025-07-31 21:15:32.303] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:16:21.107] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:16:21.108] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:16:22.992] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:16:22.992] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:16:24.988] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:16:24.989] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:16:37.978] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:16:37.978] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:16:38.186] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:16:38.186] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:16:52.880] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:16:52.881] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:17:03.913] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:17:03.914] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:17:03.978] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:17:03.979] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:17:04.752] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:17:04.753] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:17:04.844] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:17:04.845] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:17:07.183] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:17:07.183] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:17:08.817] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:17:08.818] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:17:10.912] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:17:10.913] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:17:36.129] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:17:36.130] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:17:39.705] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:17:39.705] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:17:42.090] [INFO] Processing trading stroke directly: Point1=(1341, 165), Point2=(1522, 313)
+[2025-07-31 21:17:42.110] [INFO] CaptureData saved to database: ID=20250731211742090
+[2025-07-31 21:17:42.110] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:17:42.239] [INFO] Окно успешно активировано. Handle: 197046
+[2025-07-31 21:17:42.644] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:17:42.644] [INFO] Sent ESC key to hwnd=0x301B6
+[2025-07-31 21:17:42.815] [INFO] Клавиша 'A' успешно отправлена в окно 197046
+[2025-07-31 21:17:43.017] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:17:43.018] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1341, 165), monitorLeftBoundary=0, result=(1341, 165)
+[2025-07-31 21:17:43.018] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:17:43.018] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1522, 313), monitorLeftBoundary=0, result=(1522, 313)
+[2025-07-31 21:17:43.018] [INFO] Converted coordinates: Point1=(1341, 165), Point2=(1522, 313)
+[2025-07-31 21:17:43.019] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:17:43.019] [INFO] Click coordinates: (1341, 165)
+[2025-07-31 21:17:43.019] [INFO] Window handle: 197046
+[2025-07-31 21:17:43.019] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:17:43.019] [INFO] Calculated screen coordinates: (1341, 165)
+[2025-07-31 21:17:43.142] [INFO] Клик успешно выполнен в позиции (1341, 165) -> screen (1341, 165)
+[2025-07-31 21:17:43.143] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:17:43.251] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:17:43.251] [INFO] Click coordinates: (1522, 313)
+[2025-07-31 21:17:43.252] [INFO] Window handle: 197046
+[2025-07-31 21:17:43.252] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:17:43.252] [INFO] Calculated screen coordinates: (1522, 313)
+[2025-07-31 21:17:43.376] [INFO] Клик успешно выполнен в позиции (1522, 313) -> screen (1522, 313)
+[2025-07-31 21:17:43.377] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:17:43.377] [INFO] Sent ESC key to hwnd=0x301B6
+[2025-07-31 21:17:43.377] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:17:43.378] [INFO] Trading stroke processing completed
+[2025-07-31 21:17:43.378] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:18:15.238] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:18:15.238] [INFO] Click coordinates: (280, 56)
+[2025-07-31 21:18:15.238] [INFO] Window handle: 197046
+[2025-07-31 21:18:15.238] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:18:15.239] [INFO] Calculated screen coordinates: (280, 56)
+[2025-07-31 21:18:15.363] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-07-31 21:18:15.363] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:18:15.894] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:18:15.894] [INFO] Click coordinates: (480, 56)
+[2025-07-31 21:18:15.894] [INFO] Window handle: 197046
+[2025-07-31 21:18:15.894] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:18:15.895] [INFO] Calculated screen coordinates: (480, 56)
+[2025-07-31 21:18:16.017] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-07-31 21:18:16.017] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:18:16.823] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:18:16.823] [INFO] Click coordinates: (480, 56)
+[2025-07-31 21:18:16.823] [INFO] Window handle: 197046
+[2025-07-31 21:18:16.824] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:18:16.824] [INFO] Calculated screen coordinates: (480, 56)
+[2025-07-31 21:18:16.951] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-07-31 21:18:16.951] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:18:17.110] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:18:17.110] [INFO] Click coordinates: (280, 56)
+[2025-07-31 21:18:17.110] [INFO] Window handle: 197046
+[2025-07-31 21:18:17.110] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:18:17.111] [INFO] Calculated screen coordinates: (280, 56)
+[2025-07-31 21:18:17.236] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-07-31 21:18:17.237] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:18:17.614] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:18:17.614] [INFO] Click coordinates: (280, 56)
+[2025-07-31 21:18:17.614] [INFO] Window handle: 197046
+[2025-07-31 21:18:17.614] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:18:17.614] [INFO] Calculated screen coordinates: (280, 56)
+[2025-07-31 21:18:17.739] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-07-31 21:18:17.739] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:18:17.903] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:18:17.903] [INFO] Click coordinates: (80, 56)
+[2025-07-31 21:18:17.903] [INFO] Window handle: 197046
+[2025-07-31 21:18:17.904] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:18:17.904] [INFO] Calculated screen coordinates: (80, 56)
+[2025-07-31 21:18:18.021] [INFO] Клик успешно выполнен в позиции (80, 56) -> screen (80, 56)
+[2025-07-31 21:18:18.022] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:18:35.194] [INFO] Processing trading stroke directly: Point1=(1317, 211), Point2=(1369, 275)
+[2025-07-31 21:18:35.209] [INFO] CaptureData saved to database: ID=20250731211835194
+[2025-07-31 21:18:35.209] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:18:35.333] [INFO] Окно успешно активировано. Handle: 132134
+[2025-07-31 21:18:35.740] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:18:35.740] [INFO] Sent ESC key to hwnd=0x20426
+[2025-07-31 21:18:35.927] [INFO] Клавиша 'A' успешно отправлена в окно 132134
+[2025-07-31 21:18:36.143] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:18:36.144] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1317, 211), monitorLeftBoundary=1920, result=(3237, 211)
+[2025-07-31 21:18:36.144] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:18:36.145] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1369, 275), monitorLeftBoundary=1920, result=(3289, 275)
+[2025-07-31 21:18:36.145] [INFO] Converted coordinates: Point1=(3237, 211), Point2=(3289, 275)
+[2025-07-31 21:18:36.145] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:18:36.146] [INFO] Click coordinates: (3237, 211)
+[2025-07-31 21:18:36.146] [INFO] Window handle: 132134
+[2025-07-31 21:18:36.146] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:18:36.147] [INFO] Calculated screen coordinates: (3237, 211)
+[2025-07-31 21:18:36.266] [INFO] Клик успешно выполнен в позиции (3237, 211) -> screen (3237, 211)
+[2025-07-31 21:18:36.267] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:18:36.376] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:18:36.376] [INFO] Click coordinates: (3289, 275)
+[2025-07-31 21:18:36.377] [INFO] Window handle: 132134
+[2025-07-31 21:18:36.377] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:18:36.377] [INFO] Calculated screen coordinates: (3289, 275)
+[2025-07-31 21:18:36.500] [INFO] Клик успешно выполнен в позиции (3289, 275) -> screen (3289, 275)
+[2025-07-31 21:18:36.501] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:18:36.502] [INFO] Sent ESC key to hwnd=0x20426
+[2025-07-31 21:18:36.502] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:18:36.503] [INFO] Trading stroke processing completed
+[2025-07-31 21:18:36.503] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:19:13.977] [INFO] Risk command sent to binary socket: {"cmd":"set_risk","broker":"PocketOption","risk":"10"}
+[2025-07-31 21:19:15.720] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:19:15.721] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:19:16.144] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:19:16.145] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:19:18.865] [INFO] Processing trading stroke directly: Point1=(1470, 239), Point2=(1540, 316)
+[2025-07-31 21:19:18.882] [INFO] CaptureData saved to database: ID=20250731211918865
+[2025-07-31 21:19:18.882] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:19:19.004] [INFO] Окно успешно активировано. Handle: 67076
+[2025-07-31 21:19:19.057] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:19:19.057] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:19:19.411] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:19:19.412] [INFO] Sent ESC key to hwnd=0x10604
+[2025-07-31 21:19:19.600] [INFO] Клавиша 'A' успешно отправлена в окно 67076
+[2025-07-31 21:19:19.818] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:19:19.818] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1470, 239), monitorLeftBoundary=1920, result=(3390, 239)
+[2025-07-31 21:19:19.818] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:19:19.819] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1540, 316), monitorLeftBoundary=1920, result=(3460, 316)
+[2025-07-31 21:19:19.819] [INFO] Converted coordinates: Point1=(3390, 239), Point2=(3460, 316)
+[2025-07-31 21:19:19.819] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:19:19.820] [INFO] Click coordinates: (3390, 239)
+[2025-07-31 21:19:19.820] [INFO] Window handle: 67076
+[2025-07-31 21:19:19.820] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:19:19.820] [INFO] Calculated screen coordinates: (3390, 239)
+[2025-07-31 21:19:19.940] [INFO] Клик успешно выполнен в позиции (3390, 239) -> screen (3390, 239)
+[2025-07-31 21:19:19.940] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:19:20.049] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:19:20.049] [INFO] Click coordinates: (3460, 316)
+[2025-07-31 21:19:20.050] [INFO] Window handle: 67076
+[2025-07-31 21:19:20.050] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:19:20.051] [INFO] Calculated screen coordinates: (3460, 316)
+[2025-07-31 21:19:20.174] [INFO] Клик успешно выполнен в позиции (3460, 316) -> screen (3460, 316)
+[2025-07-31 21:19:20.175] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:19:20.175] [INFO] Sent ESC key to hwnd=0x10604
+[2025-07-31 21:19:20.176] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:19:20.176] [INFO] Trading stroke processing completed
+[2025-07-31 21:19:20.176] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:19:44.800] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:19:44.801] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:19:45.825] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:19:45.825] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:19:46.945] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:19:46.946] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:19:47.472] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:19:47.472] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:19:51.190] [INFO] Processing trading stroke directly: Point1=(1378, 162), Point2=(1442, 213)
+[2025-07-31 21:19:51.207] [INFO] CaptureData saved to database: ID=20250731211951190
+[2025-07-31 21:19:51.207] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:19:51.330] [INFO] Окно успешно активировано. Handle: 132134
+[2025-07-31 21:19:51.746] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:19:51.747] [INFO] Sent ESC key to hwnd=0x20426
+[2025-07-31 21:19:51.916] [INFO] Клавиша 'A' успешно отправлена в окно 132134
+[2025-07-31 21:19:52.133] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:19:52.133] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1378, 162), monitorLeftBoundary=1920, result=(3298, 162)
+[2025-07-31 21:19:52.134] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:19:52.134] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1442, 213), monitorLeftBoundary=1920, result=(3362, 213)
+[2025-07-31 21:19:52.134] [INFO] Converted coordinates: Point1=(3298, 162), Point2=(3362, 213)
+[2025-07-31 21:19:52.134] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:19:52.135] [INFO] Click coordinates: (3298, 162)
+[2025-07-31 21:19:52.135] [INFO] Window handle: 132134
+[2025-07-31 21:19:52.135] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:19:52.136] [INFO] Calculated screen coordinates: (3298, 162)
+[2025-07-31 21:19:52.255] [INFO] Клик успешно выполнен в позиции (3298, 162) -> screen (3298, 162)
+[2025-07-31 21:19:52.256] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:19:52.380] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:19:52.380] [INFO] Click coordinates: (3362, 213)
+[2025-07-31 21:19:52.380] [INFO] Window handle: 132134
+[2025-07-31 21:19:52.381] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:19:52.381] [INFO] Calculated screen coordinates: (3362, 213)
+[2025-07-31 21:19:52.503] [INFO] Клик успешно выполнен в позиции (3362, 213) -> screen (3362, 213)
+[2025-07-31 21:19:52.503] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:19:52.504] [INFO] Sent ESC key to hwnd=0x20426
+[2025-07-31 21:19:52.505] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:19:52.505] [INFO] Trading stroke processing completed
+[2025-07-31 21:19:52.505] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:20:54.391] [INFO] Processing trading stroke directly: Point1=(1388, 169), Point2=(1429, 222)
+[2025-07-31 21:20:54.401] [INFO] CaptureData saved to database: ID=20250731212054391
+[2025-07-31 21:20:54.402] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:20:54.522] [INFO] Окно успешно активировано. Handle: 132134
+[2025-07-31 21:20:54.938] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:20:54.939] [INFO] Sent ESC key to hwnd=0x20426
+[2025-07-31 21:20:55.110] [INFO] Клавиша 'A' успешно отправлена в окно 132134
+[2025-07-31 21:20:55.335] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:20:55.336] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1388, 169), monitorLeftBoundary=1920, result=(3308, 169)
+[2025-07-31 21:20:55.336] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:20:55.336] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1429, 222), monitorLeftBoundary=1920, result=(3349, 222)
+[2025-07-31 21:20:55.337] [INFO] Converted coordinates: Point1=(3308, 169), Point2=(3349, 222)
+[2025-07-31 21:20:55.337] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:20:55.337] [INFO] Click coordinates: (3308, 169)
+[2025-07-31 21:20:55.338] [INFO] Window handle: 132134
+[2025-07-31 21:20:55.338] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:20:55.338] [INFO] Calculated screen coordinates: (3308, 169)
+[2025-07-31 21:20:55.440] [INFO] Клик успешно выполнен в позиции (3308, 169) -> screen (3308, 169)
+[2025-07-31 21:20:55.440] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:20:55.549] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:20:55.549] [INFO] Click coordinates: (3349, 222)
+[2025-07-31 21:20:55.550] [INFO] Window handle: 132134
+[2025-07-31 21:20:55.550] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:20:55.551] [INFO] Calculated screen coordinates: (3349, 222)
+[2025-07-31 21:20:55.653] [INFO] Клик успешно выполнен в позиции (3349, 222) -> screen (3349, 222)
+[2025-07-31 21:20:55.653] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:20:55.654] [INFO] Sent ESC key to hwnd=0x20426
+[2025-07-31 21:20:55.654] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:20:55.654] [INFO] Trading stroke processing completed
+[2025-07-31 21:20:55.654] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:21:15.807] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:21:15.808] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:21:16.735] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:21:16.735] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:21:17.087] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:21:17.087] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:21:34.688] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:21:34.689] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:21:35.159] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:21:35.159] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:21:37.505] [INFO] Processing trading stroke directly: Point1=(1439, 229), Point2=(1530, 288)
+[2025-07-31 21:21:37.528] [INFO] CaptureData saved to database: ID=20250731212137505
+[2025-07-31 21:21:37.528] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:21:37.642] [INFO] Окно успешно активировано. Handle: 67076
+[2025-07-31 21:21:38.044] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:21:38.045] [INFO] Sent ESC key to hwnd=0x10604
+[2025-07-31 21:21:38.215] [INFO] Клавиша 'A' успешно отправлена в окно 67076
+[2025-07-31 21:21:38.420] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:21:38.420] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1439, 229), monitorLeftBoundary=1920, result=(3359, 229)
+[2025-07-31 21:21:38.420] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:21:38.420] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1530, 288), monitorLeftBoundary=1920, result=(3450, 288)
+[2025-07-31 21:21:38.421] [INFO] Converted coordinates: Point1=(3359, 229), Point2=(3450, 288)
+[2025-07-31 21:21:38.421] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:21:38.421] [INFO] Click coordinates: (3359, 229)
+[2025-07-31 21:21:38.421] [INFO] Window handle: 67076
+[2025-07-31 21:21:38.421] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:21:38.422] [INFO] Calculated screen coordinates: (3359, 229)
+[2025-07-31 21:21:38.544] [INFO] Клик успешно выполнен в позиции (3359, 229) -> screen (3359, 229)
+[2025-07-31 21:21:38.544] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:21:38.653] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:21:38.653] [INFO] Click coordinates: (3450, 288)
+[2025-07-31 21:21:38.653] [INFO] Window handle: 67076
+[2025-07-31 21:21:38.653] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:21:38.654] [INFO] Calculated screen coordinates: (3450, 288)
+[2025-07-31 21:21:38.776] [INFO] Клик успешно выполнен в позиции (3450, 288) -> screen (3450, 288)
+[2025-07-31 21:21:38.776] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:21:38.777] [INFO] Sent ESC key to hwnd=0x10604
+[2025-07-31 21:21:38.778] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:21:38.778] [INFO] Trading stroke processing completed
+[2025-07-31 21:21:38.779] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:21:49.328] [INFO] Duration command sent to binary socket: {"cmd":"set_duration","broker":"PocketOption","duration":"2"}
+[2025-07-31 21:21:54.927] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:21:54.927] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:21:58.795] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:21:58.796] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:21:59.830] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:21:59.831] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:22:04.359] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:22:04.359] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:22:08.159] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:22:08.159] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:22:08.526] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:22:08.527] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:22:19.143] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:22:19.144] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:22:21.350] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:22:21.351] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:22:24.103] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:22:24.103] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:22:26.756] [INFO] Processing trading stroke directly: Point1=(1387, 232), Point2=(1447, 211)
+[2025-07-31 21:22:26.776] [INFO] CaptureData saved to database: ID=20250731212226757
+[2025-07-31 21:22:26.776] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:22:26.890] [INFO] Окно успешно активировано. Handle: 132134
+[2025-07-31 21:22:27.298] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:22:27.299] [INFO] Sent ESC key to hwnd=0x20426
+[2025-07-31 21:22:27.471] [INFO] Клавиша 'A' успешно отправлена в окно 132134
+[2025-07-31 21:22:27.674] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:22:27.674] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1387, 232), monitorLeftBoundary=1920, result=(3307, 232)
+[2025-07-31 21:22:27.675] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:22:27.675] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1447, 211), monitorLeftBoundary=1920, result=(3367, 211)
+[2025-07-31 21:22:27.675] [INFO] Converted coordinates: Point1=(3307, 232), Point2=(3367, 211)
+[2025-07-31 21:22:27.676] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:22:27.676] [INFO] Click coordinates: (3307, 232)
+[2025-07-31 21:22:27.677] [INFO] Window handle: 132134
+[2025-07-31 21:22:27.677] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:22:27.678] [INFO] Calculated screen coordinates: (3307, 232)
+[2025-07-31 21:22:27.798] [INFO] Клик успешно выполнен в позиции (3307, 232) -> screen (3307, 232)
+[2025-07-31 21:22:27.798] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:22:27.908] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:22:27.908] [INFO] Click coordinates: (3367, 211)
+[2025-07-31 21:22:27.908] [INFO] Window handle: 132134
+[2025-07-31 21:22:27.909] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:22:27.909] [INFO] Calculated screen coordinates: (3367, 211)
+[2025-07-31 21:22:28.035] [INFO] Клик успешно выполнен в позиции (3367, 211) -> screen (3367, 211)
+[2025-07-31 21:22:28.036] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:22:28.036] [INFO] Sent ESC key to hwnd=0x20426
+[2025-07-31 21:22:28.036] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:22:28.037] [INFO] Trading stroke processing completed
+[2025-07-31 21:22:28.037] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:22:37.560] [INFO] Risk command sent to binary socket: {"cmd":"set_risk","broker":"PocketOption","risk":"20"}
+[2025-07-31 21:22:41.471] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:22:41.472] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:22:42.895] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:22:42.895] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:22:45.865] [INFO] Processing trading stroke directly: Point1=(1374, 248), Point2=(1448, 222)
+[2025-07-31 21:22:45.884] [INFO] CaptureData saved to database: ID=20250731212245865
+[2025-07-31 21:22:45.884] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:22:46.016] [INFO] Окно успешно активировано. Handle: 132134
+[2025-07-31 21:22:46.643] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:22:46.644] [INFO] Sent ESC key to hwnd=0x20426
+[2025-07-31 21:22:46.988] [INFO] Клавиша 'A' успешно отправлена в окно 132134
+[2025-07-31 21:22:47.218] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:22:47.218] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1374, 248), monitorLeftBoundary=1920, result=(3294, 248)
+[2025-07-31 21:22:47.219] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:22:47.219] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1448, 222), monitorLeftBoundary=1920, result=(3368, 222)
+[2025-07-31 21:22:47.220] [INFO] Converted coordinates: Point1=(3294, 248), Point2=(3368, 222)
+[2025-07-31 21:22:47.220] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:22:47.221] [INFO] Click coordinates: (3294, 248)
+[2025-07-31 21:22:47.221] [INFO] Window handle: 132134
+[2025-07-31 21:22:47.221] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:22:47.222] [INFO] Calculated screen coordinates: (3294, 248)
+[2025-07-31 21:22:47.344] [INFO] Клик успешно выполнен в позиции (3294, 248) -> screen (3294, 248)
+[2025-07-31 21:22:47.344] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:22:47.454] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:22:47.454] [INFO] Click coordinates: (3368, 222)
+[2025-07-31 21:22:47.454] [INFO] Window handle: 132134
+[2025-07-31 21:22:47.455] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:22:47.455] [INFO] Calculated screen coordinates: (3368, 222)
+[2025-07-31 21:22:47.579] [INFO] Клик успешно выполнен в позиции (3368, 222) -> screen (3368, 222)
+[2025-07-31 21:22:47.580] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:22:47.581] [INFO] Sent ESC key to hwnd=0x20426
+[2025-07-31 21:22:47.581] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:22:47.581] [INFO] Trading stroke processing completed
+[2025-07-31 21:22:47.581] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:23:13.046] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:23:13.047] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:23:14.406] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:23:14.406] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:23:28.982] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:23:28.982] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:23:42.432] [INFO] Processing trading stroke directly: Point1=(1497, 761), Point2=(1526, 790)
+[2025-07-31 21:23:42.451] [INFO] CaptureData saved to database: ID=20250731212342432
+[2025-07-31 21:23:42.451] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:23:42.581] [INFO] Окно успешно активировано. Handle: 67076
+[2025-07-31 21:23:42.987] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:23:42.988] [INFO] Sent ESC key to hwnd=0x10604
+[2025-07-31 21:23:43.160] [INFO] Клавиша 'A' успешно отправлена в окно 67076
+[2025-07-31 21:23:43.366] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:23:43.366] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1497, 761), monitorLeftBoundary=1920, result=(3417, 761)
+[2025-07-31 21:23:43.366] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:23:43.367] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1526, 790), monitorLeftBoundary=1920, result=(3446, 790)
+[2025-07-31 21:23:43.367] [INFO] Converted coordinates: Point1=(3417, 761), Point2=(3446, 790)
+[2025-07-31 21:23:43.368] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:23:43.368] [INFO] Click coordinates: (3417, 761)
+[2025-07-31 21:23:43.369] [INFO] Window handle: 67076
+[2025-07-31 21:23:43.369] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:23:43.369] [INFO] Calculated screen coordinates: (3417, 761)
+[2025-07-31 21:23:43.489] [INFO] Клик успешно выполнен в позиции (3417, 761) -> screen (3417, 761)
+[2025-07-31 21:23:43.490] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:23:43.598] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:23:43.599] [INFO] Click coordinates: (3446, 790)
+[2025-07-31 21:23:43.599] [INFO] Window handle: 67076
+[2025-07-31 21:23:43.600] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:23:43.600] [INFO] Calculated screen coordinates: (3446, 790)
+[2025-07-31 21:23:43.722] [INFO] Клик успешно выполнен в позиции (3446, 790) -> screen (3446, 790)
+[2025-07-31 21:23:43.723] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:23:43.724] [INFO] Sent ESC key to hwnd=0x10604
+[2025-07-31 21:23:43.724] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:23:43.725] [INFO] Trading stroke processing completed
+[2025-07-31 21:23:43.725] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:23:59.628] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:23:59.628] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:24:01.918] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:24:01.919] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:24:04.333] [INFO] Processing trading stroke directly: Point1=(1474, 172), Point2=(1568, 147)
+[2025-07-31 21:24:04.348] [INFO] CaptureData saved to database: ID=20250731212404333
+[2025-07-31 21:24:04.348] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:24:04.465] [INFO] Окно успешно активировано. Handle: 67076
+[2025-07-31 21:24:04.867] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:24:04.869] [INFO] Sent ESC key to hwnd=0x10604
+[2025-07-31 21:24:05.037] [INFO] Клавиша 'A' успешно отправлена в окно 67076
+[2025-07-31 21:24:05.240] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:24:05.240] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1474, 172), monitorLeftBoundary=1920, result=(3394, 172)
+[2025-07-31 21:24:05.241] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:24:05.241] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1568, 147), monitorLeftBoundary=1920, result=(3488, 147)
+[2025-07-31 21:24:05.241] [INFO] Converted coordinates: Point1=(3394, 172), Point2=(3488, 147)
+[2025-07-31 21:24:05.241] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:24:05.242] [INFO] Click coordinates: (3394, 172)
+[2025-07-31 21:24:05.242] [INFO] Window handle: 67076
+[2025-07-31 21:24:05.242] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:24:05.242] [INFO] Calculated screen coordinates: (3394, 172)
+[2025-07-31 21:24:05.365] [INFO] Клик успешно выполнен в позиции (3394, 172) -> screen (3394, 172)
+[2025-07-31 21:24:05.365] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:24:05.475] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:24:05.475] [INFO] Click coordinates: (3488, 147)
+[2025-07-31 21:24:05.475] [INFO] Window handle: 67076
+[2025-07-31 21:24:05.476] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:24:05.476] [INFO] Calculated screen coordinates: (3488, 147)
+[2025-07-31 21:24:05.598] [INFO] Клик успешно выполнен в позиции (3488, 147) -> screen (3488, 147)
+[2025-07-31 21:24:05.599] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:24:05.599] [INFO] Sent ESC key to hwnd=0x10604
+[2025-07-31 21:24:05.599] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:24:05.600] [INFO] Trading stroke processing completed
+[2025-07-31 21:24:05.600] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:24:12.702] [INFO] Risk command sent to binary socket: {"cmd":"set_risk","broker":"PocketOption","risk":"20"}
+[2025-07-31 21:24:18.145] [INFO] Processing trading stroke directly: Point1=(1465, 190), Point2=(1557, 179)
+[2025-07-31 21:24:18.163] [INFO] CaptureData saved to database: ID=20250731212418145
+[2025-07-31 21:24:18.163] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:24:18.290] [INFO] Окно успешно активировано. Handle: 67076
+[2025-07-31 21:24:18.976] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:24:18.977] [INFO] Sent ESC key to hwnd=0x10604
+[2025-07-31 21:24:19.136] [INFO] Клавиша 'A' успешно отправлена в окно 67076
+[2025-07-31 21:24:19.337] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:24:19.337] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1465, 190), monitorLeftBoundary=1920, result=(3385, 190)
+[2025-07-31 21:24:19.338] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:24:19.338] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1557, 179), monitorLeftBoundary=1920, result=(3477, 179)
+[2025-07-31 21:24:19.339] [INFO] Converted coordinates: Point1=(3385, 190), Point2=(3477, 179)
+[2025-07-31 21:24:19.339] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:24:19.340] [INFO] Click coordinates: (3385, 190)
+[2025-07-31 21:24:19.340] [INFO] Window handle: 67076
+[2025-07-31 21:24:19.341] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:24:19.341] [INFO] Calculated screen coordinates: (3385, 190)
+[2025-07-31 21:24:19.466] [INFO] Клик успешно выполнен в позиции (3385, 190) -> screen (3385, 190)
+[2025-07-31 21:24:19.467] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:24:19.577] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:24:19.577] [INFO] Click coordinates: (3477, 179)
+[2025-07-31 21:24:19.577] [INFO] Window handle: 67076
+[2025-07-31 21:24:19.577] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:24:19.578] [INFO] Calculated screen coordinates: (3477, 179)
+[2025-07-31 21:24:19.702] [INFO] Клик успешно выполнен в позиции (3477, 179) -> screen (3477, 179)
+[2025-07-31 21:24:19.703] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:24:19.704] [INFO] Sent ESC key to hwnd=0x10604
+[2025-07-31 21:24:19.704] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:24:19.705] [INFO] Trading stroke processing completed
+[2025-07-31 21:24:19.705] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:24:42.302] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:24:42.302] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:24:42.589] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:24:42.590] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:24:42.997] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:24:42.998] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:24:54.189] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:24:54.190] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:25:22.085] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:25:22.085] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:25:23.781] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:25:23.782] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:25:24.205] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:25:24.205] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:25:35.696] [INFO] Processing trading stroke directly: Point1=(1374, 216), Point2=(1458, 286)
+[2025-07-31 21:25:35.719] [INFO] CaptureData saved to database: ID=20250731212535696
+[2025-07-31 21:25:35.719] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:25:35.847] [INFO] Окно успешно активировано. Handle: 132134
+[2025-07-31 21:25:36.252] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:25:36.253] [INFO] Sent ESC key to hwnd=0x20426
+[2025-07-31 21:25:36.423] [INFO] Клавиша 'A' успешно отправлена в окно 132134
+[2025-07-31 21:25:36.627] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:25:36.627] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1374, 216), monitorLeftBoundary=1920, result=(3294, 216)
+[2025-07-31 21:25:36.628] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:25:36.628] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1458, 286), monitorLeftBoundary=1920, result=(3378, 286)
+[2025-07-31 21:25:36.629] [INFO] Converted coordinates: Point1=(3294, 216), Point2=(3378, 286)
+[2025-07-31 21:25:36.629] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:25:36.630] [INFO] Click coordinates: (3294, 216)
+[2025-07-31 21:25:36.630] [INFO] Window handle: 132134
+[2025-07-31 21:25:36.630] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:25:36.631] [INFO] Calculated screen coordinates: (3294, 216)
+[2025-07-31 21:25:36.754] [INFO] Клик успешно выполнен в позиции (3294, 216) -> screen (3294, 216)
+[2025-07-31 21:25:36.755] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:25:36.863] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:25:36.864] [INFO] Click coordinates: (3378, 286)
+[2025-07-31 21:25:36.864] [INFO] Window handle: 132134
+[2025-07-31 21:25:36.864] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:25:36.865] [INFO] Calculated screen coordinates: (3378, 286)
+[2025-07-31 21:25:36.990] [INFO] Клик успешно выполнен в позиции (3378, 286) -> screen (3378, 286)
+[2025-07-31 21:25:36.991] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:25:36.992] [INFO] Sent ESC key to hwnd=0x20426
+[2025-07-31 21:25:36.992] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:25:36.993] [INFO] Trading stroke processing completed
+[2025-07-31 21:25:36.993] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:25:45.549] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:25:45.549] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:25:49.538] [INFO] Processing trading stroke directly: Point1=(1400, 271), Point2=(1465, 314)
+[2025-07-31 21:25:49.550] [INFO] CaptureData saved to database: ID=20250731212549538
+[2025-07-31 21:25:49.550] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:25:49.669] [INFO] Окно успешно активировано. Handle: 197046
+[2025-07-31 21:25:50.077] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:25:50.078] [INFO] Sent ESC key to hwnd=0x301B6
+[2025-07-31 21:25:50.249] [INFO] Клавиша 'A' успешно отправлена в окно 197046
+[2025-07-31 21:25:50.453] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:25:50.453] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1400, 271), monitorLeftBoundary=0, result=(1400, 271)
+[2025-07-31 21:25:50.454] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:25:50.454] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1465, 314), monitorLeftBoundary=0, result=(1465, 314)
+[2025-07-31 21:25:50.454] [INFO] Converted coordinates: Point1=(1400, 271), Point2=(1465, 314)
+[2025-07-31 21:25:50.455] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:25:50.455] [INFO] Click coordinates: (1400, 271)
+[2025-07-31 21:25:50.456] [INFO] Window handle: 197046
+[2025-07-31 21:25:50.456] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:25:50.457] [INFO] Calculated screen coordinates: (1400, 271)
+[2025-07-31 21:25:50.578] [INFO] Клик успешно выполнен в позиции (1400, 271) -> screen (1400, 271)
+[2025-07-31 21:25:50.578] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:25:50.687] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:25:50.688] [INFO] Click coordinates: (1465, 314)
+[2025-07-31 21:25:50.688] [INFO] Window handle: 197046
+[2025-07-31 21:25:50.689] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:25:50.689] [INFO] Calculated screen coordinates: (1465, 314)
+[2025-07-31 21:25:50.811] [INFO] Клик успешно выполнен в позиции (1465, 314) -> screen (1465, 314)
+[2025-07-31 21:25:50.811] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:25:50.813] [INFO] Sent ESC key to hwnd=0x301B6
+[2025-07-31 21:25:50.813] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:25:50.814] [INFO] Trading stroke processing completed
+[2025-07-31 21:25:50.814] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:26:00.237] [INFO] Processing trading stroke directly: Point1=(1402, 266), Point2=(1455, 309)
+[2025-07-31 21:26:00.260] [INFO] CaptureData saved to database: ID=20250731212600237
+[2025-07-31 21:26:00.260] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:26:00.386] [INFO] Окно успешно активировано. Handle: 197046
+[2025-07-31 21:26:00.807] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:26:00.808] [INFO] Sent ESC key to hwnd=0x301B6
+[2025-07-31 21:26:00.974] [INFO] Клавиша 'A' успешно отправлена в окно 197046
+[2025-07-31 21:26:01.178] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:26:01.178] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1402, 266), monitorLeftBoundary=0, result=(1402, 266)
+[2025-07-31 21:26:01.178] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:26:01.179] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1455, 309), monitorLeftBoundary=0, result=(1455, 309)
+[2025-07-31 21:26:01.179] [INFO] Converted coordinates: Point1=(1402, 266), Point2=(1455, 309)
+[2025-07-31 21:26:01.180] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:26:01.180] [INFO] Click coordinates: (1402, 266)
+[2025-07-31 21:26:01.180] [INFO] Window handle: 197046
+[2025-07-31 21:26:01.181] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:26:01.181] [INFO] Calculated screen coordinates: (1402, 266)
+[2025-07-31 21:26:01.282] [INFO] Клик успешно выполнен в позиции (1402, 266) -> screen (1402, 266)
+[2025-07-31 21:26:01.283] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:26:01.384] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:26:01.384] [INFO] Click coordinates: (1455, 309)
+[2025-07-31 21:26:01.384] [INFO] Window handle: 197046
+[2025-07-31 21:26:01.385] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:26:01.385] [INFO] Calculated screen coordinates: (1455, 309)
+[2025-07-31 21:26:01.486] [INFO] Клик успешно выполнен в позиции (1455, 309) -> screen (1455, 309)
+[2025-07-31 21:26:01.487] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:26:01.487] [INFO] Sent ESC key to hwnd=0x301B6
+[2025-07-31 21:26:01.487] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:26:01.487] [INFO] Trading stroke processing completed
+[2025-07-31 21:26:01.488] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:26:09.676] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:26:09.677] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:26:11.116] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:26:11.117] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:26:11.420] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:26:11.421] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:26:11.796] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:26:11.797] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:26:15.453] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:26:15.453] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:27:47.228] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:27:47.228] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:29:00.530] [INFO] Processing trading stroke directly: Point1=(1262, 229), Point2=(1439, 257)
+[2025-07-31 21:29:00.561] [INFO] CaptureData saved to database: ID=20250731212900530
+[2025-07-31 21:29:00.561] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:29:00.748] [INFO] Окно успешно активировано. Handle: 197046
+[2025-07-31 21:29:01.150] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:29:01.151] [INFO] Sent ESC key to hwnd=0x301B6
+[2025-07-31 21:29:01.309] [INFO] Клавиша 'A' успешно отправлена в окно 197046
+[2025-07-31 21:29:01.510] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:29:01.510] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1262, 229), monitorLeftBoundary=0, result=(1262, 229)
+[2025-07-31 21:29:01.510] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:29:01.511] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1439, 257), monitorLeftBoundary=0, result=(1439, 257)
+[2025-07-31 21:29:01.511] [INFO] Converted coordinates: Point1=(1262, 229), Point2=(1439, 257)
+[2025-07-31 21:29:01.511] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:29:01.511] [INFO] Click coordinates: (1262, 229)
+[2025-07-31 21:29:01.511] [INFO] Window handle: 197046
+[2025-07-31 21:29:01.511] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:29:01.512] [INFO] Calculated screen coordinates: (1262, 229)
+[2025-07-31 21:29:01.637] [INFO] Клик успешно выполнен в позиции (1262, 229) -> screen (1262, 229)
+[2025-07-31 21:29:01.637] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:29:01.744] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:29:01.744] [INFO] Click coordinates: (1439, 257)
+[2025-07-31 21:29:01.745] [INFO] Window handle: 197046
+[2025-07-31 21:29:01.745] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:29:01.745] [INFO] Calculated screen coordinates: (1439, 257)
+[2025-07-31 21:29:01.869] [INFO] Клик успешно выполнен в позиции (1439, 257) -> screen (1439, 257)
+[2025-07-31 21:29:01.870] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:29:01.870] [INFO] Sent ESC key to hwnd=0x301B6
+[2025-07-31 21:29:01.870] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:29:01.871] [INFO] Trading stroke processing completed
+[2025-07-31 21:29:01.871] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:29:23.247] [INFO] Processing trading stroke directly: Point1=(1233, 223), Point2=(1440, 257)
+[2025-07-31 21:29:23.258] [INFO] CaptureData saved to database: ID=20250731212923248
+[2025-07-31 21:29:23.259] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:29:23.381] [INFO] Окно успешно активировано. Handle: 197046
+[2025-07-31 21:29:23.802] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:29:23.803] [INFO] Sent ESC key to hwnd=0x301B6
+[2025-07-31 21:29:23.975] [INFO] Клавиша 'A' успешно отправлена в окно 197046
+[2025-07-31 21:29:24.194] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:29:24.194] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1233, 223), monitorLeftBoundary=0, result=(1233, 223)
+[2025-07-31 21:29:24.195] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:29:24.195] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1440, 257), monitorLeftBoundary=0, result=(1440, 257)
+[2025-07-31 21:29:24.195] [INFO] Converted coordinates: Point1=(1233, 223), Point2=(1440, 257)
+[2025-07-31 21:29:24.195] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:29:24.195] [INFO] Click coordinates: (1233, 223)
+[2025-07-31 21:29:24.195] [INFO] Window handle: 197046
+[2025-07-31 21:29:24.196] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:29:24.196] [INFO] Calculated screen coordinates: (1233, 223)
+[2025-07-31 21:29:24.320] [INFO] Клик успешно выполнен в позиции (1233, 223) -> screen (1233, 223)
+[2025-07-31 21:29:24.320] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:29:24.429] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:29:24.429] [INFO] Click coordinates: (1440, 257)
+[2025-07-31 21:29:24.429] [INFO] Window handle: 197046
+[2025-07-31 21:29:24.429] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:29:24.430] [INFO] Calculated screen coordinates: (1440, 257)
+[2025-07-31 21:29:24.552] [INFO] Клик успешно выполнен в позиции (1440, 257) -> screen (1440, 257)
+[2025-07-31 21:29:24.552] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:29:24.552] [INFO] Sent ESC key to hwnd=0x301B6
+[2025-07-31 21:29:24.553] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:29:24.553] [INFO] Trading stroke processing completed
+[2025-07-31 21:29:24.553] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:29:59.162] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:29:59.163] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:30:20.618] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:30:20.618] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:30:21.475] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:30:21.475] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:30:30.002] [INFO] Processing trading stroke directly: Point1=(1495, 163), Point2=(1576, 178)
+[2025-07-31 21:30:30.021] [INFO] CaptureData saved to database: ID=20250731213030002
+[2025-07-31 21:30:30.021] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:30:30.163] [INFO] Окно успешно активировано. Handle: 132134
+[2025-07-31 21:30:30.571] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:30:30.571] [INFO] Sent ESC key to hwnd=0x20426
+[2025-07-31 21:30:30.742] [INFO] Клавиша 'A' успешно отправлена в окно 132134
+[2025-07-31 21:30:30.950] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:30:30.950] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1495, 163), monitorLeftBoundary=1920, result=(3415, 163)
+[2025-07-31 21:30:30.950] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:30:30.951] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1576, 178), monitorLeftBoundary=1920, result=(3496, 178)
+[2025-07-31 21:30:30.951] [INFO] Converted coordinates: Point1=(3415, 163), Point2=(3496, 178)
+[2025-07-31 21:30:30.951] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:30:30.951] [INFO] Click coordinates: (3415, 163)
+[2025-07-31 21:30:30.951] [INFO] Window handle: 132134
+[2025-07-31 21:30:30.951] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:30:30.951] [INFO] Calculated screen coordinates: (3415, 163)
+[2025-07-31 21:30:31.071] [INFO] Клик успешно выполнен в позиции (3415, 163) -> screen (3415, 163)
+[2025-07-31 21:30:31.072] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:30:31.197] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:30:31.197] [INFO] Click coordinates: (3496, 178)
+[2025-07-31 21:30:31.198] [INFO] Window handle: 132134
+[2025-07-31 21:30:31.198] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:30:31.198] [INFO] Calculated screen coordinates: (3496, 178)
+[2025-07-31 21:30:31.326] [INFO] Клик успешно выполнен в позиции (3496, 178) -> screen (3496, 178)
+[2025-07-31 21:30:31.327] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:30:31.327] [INFO] Sent ESC key to hwnd=0x20426
+[2025-07-31 21:30:31.327] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:30:31.327] [INFO] Trading stroke processing completed
+[2025-07-31 21:30:31.328] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:31:01.986] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:31:01.987] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:31:20.434] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:31:20.434] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:31:45.994] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:31:45.995] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 21:31:47.361] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:31:47.362] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:31:49.233] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:31:49.234] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:31:51.501] [INFO] Processing trading stroke directly: Point1=(1465, 146), Point2=(1508, 213)
+[2025-07-31 21:31:51.520] [INFO] CaptureData saved to database: ID=20250731213151502
+[2025-07-31 21:31:51.520] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:31:51.638] [INFO] Окно успешно активировано. Handle: 67076
+[2025-07-31 21:31:52.047] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:31:52.048] [INFO] Sent ESC key to hwnd=0x10604
+[2025-07-31 21:31:52.220] [INFO] Клавиша 'A' успешно отправлена в окно 67076
+[2025-07-31 21:31:52.435] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:31:52.435] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1465, 146), monitorLeftBoundary=1920, result=(3385, 146)
+[2025-07-31 21:31:52.435] [INFO] Window found on monitor 1: LeftBoundary=1920, Bounds=(1920, 0, 1920, 1080)
+[2025-07-31 21:31:52.436] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1508, 213), monitorLeftBoundary=1920, result=(3428, 213)
+[2025-07-31 21:31:52.436] [INFO] Converted coordinates: Point1=(3385, 146), Point2=(3428, 213)
+[2025-07-31 21:31:52.436] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:31:52.436] [INFO] Click coordinates: (3385, 146)
+[2025-07-31 21:31:52.436] [INFO] Window handle: 67076
+[2025-07-31 21:31:52.437] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:31:52.437] [INFO] Calculated screen coordinates: (3385, 146)
+[2025-07-31 21:31:52.562] [INFO] Клик успешно выполнен в позиции (3385, 146) -> screen (3385, 146)
+[2025-07-31 21:31:52.562] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:31:52.670] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:31:52.670] [INFO] Click coordinates: (3428, 213)
+[2025-07-31 21:31:52.671] [INFO] Window handle: 67076
+[2025-07-31 21:31:52.671] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-07-31 21:31:52.672] [INFO] Calculated screen coordinates: (3428, 213)
+[2025-07-31 21:31:52.796] [INFO] Клик успешно выполнен в позиции (3428, 213) -> screen (3428, 213)
+[2025-07-31 21:31:52.796] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:31:52.797] [INFO] Sent ESC key to hwnd=0x10604
+[2025-07-31 21:31:52.797] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:31:52.797] [INFO] Trading stroke processing completed
+[2025-07-31 21:31:52.797] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:32:46.257] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:32:46.258] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:32:47.337] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:32:47.338] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:33:13.377] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:33:13.377] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-07-31 21:33:30.733] [INFO] Processing trading stroke directly: Point1=(1445, 512), Point2=(1575, 578)
+[2025-07-31 21:33:30.792] [INFO] CaptureData saved to database: ID=20250731213330735
+[2025-07-31 21:33:30.792] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:33:30.936] [INFO] Окно успешно активировано. Handle: 329208
+[2025-07-31 21:33:31.352] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:33:31.355] [INFO] Sent ESC key to hwnd=0x505F8
+[2025-07-31 21:33:31.527] [INFO] Клавиша 'A' успешно отправлена в окно 329208
+[2025-07-31 21:33:31.735] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:33:31.735] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1445, 512), monitorLeftBoundary=0, result=(1445, 512)
+[2025-07-31 21:33:31.736] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:33:31.736] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1575, 578), monitorLeftBoundary=0, result=(1575, 578)
+[2025-07-31 21:33:31.736] [INFO] Converted coordinates: Point1=(1445, 512), Point2=(1575, 578)
+[2025-07-31 21:33:31.737] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:33:31.737] [INFO] Click coordinates: (1445, 512)
+[2025-07-31 21:33:31.737] [INFO] Window handle: 329208
+[2025-07-31 21:33:31.737] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:33:31.737] [INFO] Calculated screen coordinates: (1445, 512)
+[2025-07-31 21:33:31.861] [INFO] Клик успешно выполнен в позиции (1445, 512) -> screen (1445, 512)
+[2025-07-31 21:33:31.861] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:33:31.970] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:33:31.970] [INFO] Click coordinates: (1575, 578)
+[2025-07-31 21:33:31.970] [INFO] Window handle: 329208
+[2025-07-31 21:33:31.971] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:33:31.974] [INFO] Calculated screen coordinates: (1575, 578)
+[2025-07-31 21:33:32.095] [INFO] Клик успешно выполнен в позиции (1575, 578) -> screen (1575, 578)
+[2025-07-31 21:33:32.095] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:33:32.095] [INFO] Sent ESC key to hwnd=0x505F8
+[2025-07-31 21:33:32.096] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:33:32.096] [INFO] Trading stroke processing completed
+[2025-07-31 21:33:32.096] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:33:45.377] [INFO] Processing trading stroke directly: Point1=(1454, 518), Point2=(1623, 607)
+[2025-07-31 21:33:45.387] [INFO] CaptureData saved to database: ID=20250731213345377
+[2025-07-31 21:33:45.387] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:33:45.515] [INFO] Окно успешно активировано. Handle: 329208
+[2025-07-31 21:33:45.920] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:33:45.921] [INFO] Sent ESC key to hwnd=0x505F8
+[2025-07-31 21:33:46.091] [INFO] Клавиша 'A' успешно отправлена в окно 329208
+[2025-07-31 21:33:46.294] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:33:46.295] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1454, 518), monitorLeftBoundary=0, result=(1454, 518)
+[2025-07-31 21:33:46.295] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:33:46.296] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1623, 607), monitorLeftBoundary=0, result=(1623, 607)
+[2025-07-31 21:33:46.296] [INFO] Converted coordinates: Point1=(1454, 518), Point2=(1623, 607)
+[2025-07-31 21:33:46.296] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:33:46.297] [INFO] Click coordinates: (1454, 518)
+[2025-07-31 21:33:46.297] [INFO] Window handle: 329208
+[2025-07-31 21:33:46.297] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:33:46.298] [INFO] Calculated screen coordinates: (1454, 518)
+[2025-07-31 21:33:46.417] [INFO] Клик успешно выполнен в позиции (1454, 518) -> screen (1454, 518)
+[2025-07-31 21:33:46.417] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:33:46.526] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:33:46.526] [INFO] Click coordinates: (1623, 607)
+[2025-07-31 21:33:46.527] [INFO] Window handle: 329208
+[2025-07-31 21:33:46.527] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:33:46.527] [INFO] Calculated screen coordinates: (1623, 607)
+[2025-07-31 21:33:46.650] [INFO] Клик успешно выполнен в позиции (1623, 607) -> screen (1623, 607)
+[2025-07-31 21:33:46.651] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:33:46.651] [INFO] Sent ESC key to hwnd=0x505F8
+[2025-07-31 21:33:46.651] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:33:46.652] [INFO] Trading stroke processing completed
+[2025-07-31 21:33:46.652] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-07-31 21:34:16.096] [INFO] Processing trading stroke directly: Point1=(1449, 611), Point2=(1549, 664)
+[2025-07-31 21:34:16.112] [INFO] CaptureData saved to database: ID=20250731213416097
+[2025-07-31 21:34:16.112] [INFO] Closing CanvasWindow for trading mode
+[2025-07-31 21:34:16.226] [INFO] Окно успешно активировано. Handle: 329208
+[2025-07-31 21:34:16.641] [INFO] Adding trendline to GForex with direct mouse actions
+[2025-07-31 21:34:16.642] [INFO] Sent ESC key to hwnd=0x505F8
+[2025-07-31 21:34:16.812] [INFO] Клавиша 'A' успешно отправлена в окно 329208
+[2025-07-31 21:34:17.016] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:34:17.016] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1449, 611), monitorLeftBoundary=0, result=(1449, 611)
+[2025-07-31 21:34:17.017] [INFO] Window found on monitor 0: LeftBoundary=0, Bounds=(0, 0, 1920, 1080)
+[2025-07-31 21:34:17.017] [INFO] ConvertScreenToWindowCoordinates: screenPoint=(1549, 664), monitorLeftBoundary=0, result=(1549, 664)
+[2025-07-31 21:34:17.018] [INFO] Converted coordinates: Point1=(1449, 611), Point2=(1549, 664)
+[2025-07-31 21:34:17.018] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:34:17.018] [INFO] Click coordinates: (1449, 611)
+[2025-07-31 21:34:17.019] [INFO] Window handle: 329208
+[2025-07-31 21:34:17.019] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:34:17.020] [INFO] Calculated screen coordinates: (1449, 611)
+[2025-07-31 21:34:17.139] [INFO] Клик успешно выполнен в позиции (1449, 611) -> screen (1449, 611)
+[2025-07-31 21:34:17.140] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:34:17.247] [INFO] === MOUSE CLICK START ===
+[2025-07-31 21:34:17.247] [INFO] Click coordinates: (1549, 664)
+[2025-07-31 21:34:17.248] [INFO] Window handle: 329208
+[2025-07-31 21:34:17.248] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-07-31 21:34:17.249] [INFO] Calculated screen coordinates: (1549, 664)
+[2025-07-31 21:34:17.371] [INFO] Клик успешно выполнен в позиции (1549, 664) -> screen (1549, 664)
+[2025-07-31 21:34:17.371] [INFO] === MOUSE CLICK END ===
+[2025-07-31 21:34:17.372] [INFO] Sent ESC key to hwnd=0x505F8
+[2025-07-31 21:34:17.372] [INFO] Trendline successfully added to GForex with direct mouse actions
+[2025-07-31 21:34:17.372] [INFO] Trading stroke processing completed
+[2025-07-31 21:34:17.372] [INFO] Trendline drawn successfully - triggering space hotkey callback

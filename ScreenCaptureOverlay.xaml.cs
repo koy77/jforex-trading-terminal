@@ -173,12 +173,10 @@ namespace ScreenCaptureApp
         {
             if (brokerType == BrokerType.Forex)
             {
-                TradingToolbar.SetModeLabel("TRADING!!", true);
                 TradingToolbar.ShowDurationPanel(false);
             }
             else
             {
-                TradingToolbar.SetModeLabel("BINARY!!", true);
                 TradingToolbar.ShowDurationPanel(true);
             }
         }
