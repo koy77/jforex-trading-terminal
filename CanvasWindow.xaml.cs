@@ -944,20 +944,11 @@ namespace ScreenCaptureApp
                 }
 
                 // Небольшая задержка для стабилизации
-                await Task.Delay(200);
+                await Task.Delay(400);
 
                 bool trendlineDrawn = false;
 
-                // Если это Forex брокер, добавляем трендовую линию
-                if (brokerState.CurrentBroker == BrokerType.Forex)
-                {
-                    trendlineDrawn = await jForexService.AddTrendlineToGForexDirectlyAsync(targetWindowHandle, firstScreenPoint, lastScreenPoint);
-                }
-                else
-                {
-                    // Для Binary брокеров можно добавить другую логику
-                    Logger.LogTagInfo("JForex", "Binary broker detected - no specific action defined");
-                }
+                trendlineDrawn = await jForexService.AddTrendlineToGForexDirectlyAsync(targetWindowHandle, firstScreenPoint, lastScreenPoint);
 
                 Logger.LogTagInfo("JForex", "Trading stroke processing completed");
 
