@@ -176,8 +176,8 @@ namespace ScreenCaptureApp.Services
                 }
 
                 // Вычисляем абсолютные координаты на экране
-                int screenX = windowRect.Left + x;
-                int screenY = windowRect.Top + y;
+                int screenX = x;
+                int screenY = y;
 
                 Logger.LogTagInfo("JForex", $"Window rect: Left={windowRect.Left}, Top={windowRect.Top}, Right={windowRect.Right}, Bottom={windowRect.Bottom}");
                 Logger.LogTagInfo("JForex", $"Calculated screen coordinates: ({screenX}, {screenY})");
