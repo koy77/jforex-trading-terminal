@@ -37,6 +37,9 @@ namespace ScreenCaptureApp.Controls
             {
                 SymbolLabel.Text = symbol;
                 SymbolLabel.Visibility = Visibility.Visible;
+                
+                // Отправляем команду открытия символа для binary-брокеров
+                SendOpenSymbolCommand(symbol);
             }
             else
             {
@@ -160,6 +163,41 @@ namespace ScreenCaptureApp.Controls
             catch (Exception ex)
             {
                 Logger.LogError($"Error setting duration via JForex service: {ex.Message}", ex);
+            }
+        }
+
+        /// <summary>
+        /// Отправляет команду открытия символа в binary-сокет для binary-брокеров
+        /// </summary>
+        private async void SendOpenSymbolCommand(string symbolName)
+        {
+            // Проверяем, что выбран binary-брокер (не Forex)
+            if (SelectedBroker == BrokerType.Forex)
+            {
+                return;
+            }
+
+            try
+            {
+                var jforexService = ServiceContainer.Instance.GetService<JForexWindowsManagerService>();
+                if (jforexService != null)
+                {
+                    string brokerName = SelectedBroker.ToString();
+                    bool success = await jforexService.OpenSymbol(brokerName, symbolName);
+                    
+                    if (!success)
+                    {
+                        Logger.LogWarning($"Failed to open symbol {symbolName} for broker {brokerName}");
+                    }
+                }
+                else
+                {
+                    Logger.LogWarning("JForex service not available for open symbol command");
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Error opening symbol via JForex service: {ex.Message}", ex);
             }
         }
 

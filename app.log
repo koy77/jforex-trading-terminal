@@ -1,202 +1,709 @@
-[2025-07-31 12:45:26.293] [INFO] app.log file deleted successfully
-[2025-07-31 12:45:26.693] [INFO] Applied default toolbar settings for window 590036
-[2025-07-31 12:45:26.693] [INFO] Overlay positioned on window 590036 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-31 12:45:26.806] [INFO] Applied toolbar settings for window 591280: Risk=5, Duration=0, Broker=PocketOption
-[2025-07-31 12:45:26.807] [INFO] Overlay positioned on window 591280 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-31 12:45:28.108] [WARNING] Binary socket service not available or not connected for risk command
-[2025-07-31 12:45:28.524] [INFO] Applied toolbar settings for window 590036: Risk=0, Duration=0, Broker=Forex
-[2025-07-31 12:45:28.525] [INFO] Overlay positioned on window 590036 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-31 12:45:36.382] [ERROR] Failed to connect to Pocket Option socket at 192.168.0.3:65300
-Exception: Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера.
-StackTrace:    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
-   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
-   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
---- End of stack trace from previous location ---
-   at System.Net.Sockets.TcpClient.CompleteConnectAsync(Task task)
-   at ScreenCaptureApp.Services.BinaryOptionsSocketService.ConnectAsync() in C:\apps\jforex-trading-terminal-win10\Services\BinaryOptionsSocketService.cs:line 146
-[2025-07-31 12:45:36.540] [INFO] Applied toolbar settings for window 591280: Risk=10, Duration=0, Broker=PocketOption
-[2025-07-31 12:45:36.540] [INFO] Overlay positioned on window 591280 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-07-31 12:45:37.756] [WARNING] Binary socket service not available or not connected for risk command
-[2025-07-31 12:55:22.582] [INFO] Applied toolbar settings for window 590036: Risk=0, Duration=0, Broker=Forex
-[2025-07-31 12:55:22.582] [INFO] Overlay positioned on window 590036 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-31 12:56:17.467] [DEBUG] Escape key detected and service is enabled
-[2025-07-31 12:56:17.468] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-31 12:56:17.469] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-07-31 12:56:17.469] [DEBUG] No overlay to close
-[2025-07-31 12:56:17.469] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-31 12:56:17.610] [DEBUG] Escape key detected and service is enabled
-[2025-07-31 12:56:17.610] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-31 12:56:17.610] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-07-31 12:56:17.610] [DEBUG] No overlay to close
-[2025-07-31 12:56:17.610] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-31 12:57:06.481] [DEBUG] C key detected and service is enabled
-[2025-07-31 12:57:06.482] [DEBUG] C key pressed - clearing canvas
-[2025-07-31 12:58:52.664] [DEBUG] F key detected and service is enabled
-[2025-07-31 12:58:52.667] [DEBUG] Target window captured (Handle: 0x10304)
-[2025-07-31 12:58:52.667] [DEBUG] T key pressed - starting capture
-[2025-07-31 12:58:52.668] [DEBUG] StartCapture_Click called. isCapturing: False, overlay: null
-[2025-07-31 12:58:52.668] [DEBUG] Starting capture...
-[2025-07-31 12:58:52.669] [DEBUG] StartCapture method called
-[2025-07-31 12:58:52.669] [DEBUG] Starting capture... Press hotkey again to stop
-[2025-07-31 12:58:52.681] [DEBUG] Overlay created: ScreenCaptureApp.ScreenCaptureOverlay
-[2025-07-31 12:58:52.681] [DEBUG] Event handler subscribed
-[2025-07-31 12:58:52.772] [DEBUG] Overlay shown
-[2025-07-31 12:58:53.024] [DEBUG] Space key detected and service is enabled
-[2025-07-31 12:58:53.025] [DEBUG] Target window captured (Handle: 0x30060A)
-[2025-07-31 12:58:53.069] [INFO] Window activated - focus set to InkCanvas
-[2025-07-31 12:58:53.073] [INFO] Window loaded for handler 3147274
-[2025-07-31 12:58:53.260] [INFO] InkCanvas initialized successfully with Yellow brush for DrawingCanvas and White for TradingCanvas
-[2025-07-31 12:58:53.261] [INFO] Canvas loaded: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\3147274.xaml
-[2025-07-31 12:58:53.262] [INFO] Brush mode updated: Simple mode
-[2025-07-31 12:58:53.263] [INFO] Active symbol display updated: XAUUSD
-[2025-07-31 12:58:53.313] [DEBUG] Canvas window opened
-[2025-07-31 12:58:53.314] [DEBUG] New CanvasWindow opened
-[2025-07-31 12:58:53.314] [DEBUG] E hotkey detected and service is enabled
-[2025-07-31 12:58:53.315] [INFO] [DEBUG] OnEHotkey event in MainWindow
-[2025-07-31 12:58:53.435] [INFO] Hotkey button index 2 clicked at (480,56) on window 3147274
-[2025-07-31 12:58:53.435] [INFO] [DEBUG] Mouse returned to (3536,930)
-[2025-07-31 12:58:53.436] [DEBUG] R hotkey detected and service is enabled
-[2025-07-31 12:58:53.436] [INFO] [DEBUG] OnRHotkey event in MainWindow
-[2025-07-31 12:58:53.561] [INFO] Hotkey button index 3 clicked at (680,56) on window 3147274
-[2025-07-31 12:58:53.561] [INFO] [DEBUG] Mouse returned to (3536,930)
-[2025-07-31 12:58:53.562] [DEBUG] R hotkey detected and service is enabled
-[2025-07-31 12:58:53.562] [INFO] [DEBUG] OnRHotkey event in MainWindow
-[2025-07-31 12:58:53.689] [INFO] Hotkey button index 3 clicked at (680,56) on window 3147274
-[2025-07-31 12:58:53.689] [INFO] [DEBUG] Mouse returned to (3536,930)
-[2025-07-31 12:58:54.584] [DEBUG] R hotkey detected and service is enabled
-[2025-07-31 12:58:54.584] [INFO] [DEBUG] OnRHotkey event in MainWindow
-[2025-07-31 12:58:54.712] [INFO] Hotkey button index 3 clicked at (680,56) on window 3147274
-[2025-07-31 12:58:54.713] [INFO] [DEBUG] Mouse returned to (3536,930)
-[2025-07-31 12:58:54.714] [DEBUG] S key detected and service is enabled
-[2025-07-31 12:58:57.962] [INFO] Mouse move on InkCanvas at 216;381
-[2025-07-31 12:58:58.016] [DEBUG] Escape key detected and service is enabled
-[2025-07-31 12:58:58.016] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-31 12:58:58.016] [DEBUG] Before cleanup: isCapturing=True, overlay=not null
-[2025-07-31 12:58:58.016] [DEBUG] Closing canvas window
-[2025-07-31 12:58:58.017] [INFO] Window closing: saving canvas
-[2025-07-31 12:58:58.102] [INFO] Canvas saved: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\3147274.xaml, C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\3147274.png
-[2025-07-31 12:58:58.102] [INFO] Canvas saved properly
-[2025-07-31 12:58:58.183] [INFO] Canvas saved: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\3147274.xaml, C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\3147274.png
-[2025-07-31 12:58:58.183] [INFO] Canvas saved properly
-[2025-07-31 12:58:58.186] [DEBUG] Canvas window closed
-[2025-07-31 12:58:58.186] [DEBUG] Overlay exists, IsVisible=True
-[2025-07-31 12:58:58.190] [DEBUG] Overlay closed and state reset
-[2025-07-31 12:58:58.190] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-31 12:59:04.821] [INFO] MainWindow closing - cleaning up resources
-[2025-07-31 12:59:04.824] [INFO] SimpleTradingOverlay closed
-[2025-07-31 12:59:04.826] [INFO] Disconnecting from MT4 socket
-[2025-07-31 12:59:04.827] [INFO] MT4 socket read operation cancelled
-[2025-07-31 12:59:04.827] [INFO] MT4 socket read loop ended
-[2025-07-31 12:59:04.828] [INFO] Disconnecting from Pocket Option socket
-[2025-07-31 12:59:04.828] [WARNING] Not connected to Pocket Option socket
-[2025-07-31 12:59:04.828] [INFO] All services cleaned up
-[2025-07-31 12:59:04.828] [INFO] MainWindow cleanup completed
-[2025-07-31 12:59:04.828] [INFO] Disconnecting from MT4 socket
-[2025-07-31 12:59:04.828] [WARNING] Not connected to MT4 socket
-[2025-07-31 12:59:04.829] [INFO] Disconnecting from Pocket Option socket
-[2025-07-31 12:59:04.829] [WARNING] Not connected to Pocket Option socket
-[2025-07-31 12:59:04.829] [INFO] All services cleaned up
-[2025-07-31 12:59:04.882] [DEBUG] MT4 Connection: Disconnected
-[2025-07-31 12:59:04.882] [INFO] MT4 Connection status: Disconnected
-[2025-07-31 12:59:40.376] [INFO] MT4 Socket Service initialized
-[2025-07-31 12:59:40.386] [INFO] Binary Options Socket Service initialized
-[2025-07-31 12:59:40.390] [INFO] All services registered in DI container
-[2025-07-31 12:59:40.394] [INFO] Attempting to connect to Pocket Option socket at 192.168.0.3:65300
-[2025-07-31 12:59:40.409] [INFO] Successfully connected to Pocket Option socket at 192.168.0.3:65300
-[2025-07-31 12:59:40.412] [INFO] Starting to read messages from Pocket Option socket
-[2025-07-31 12:59:40.413] [INFO] Received from Pocket Option socket: {"hello": "Binary API Server", "status": "connected", "version": "1.0.0"}
-[2025-07-31 12:59:40.587] [INFO] MT4 Socket Service initialized in MainWindow
-[2025-07-31 12:59:40.588] [INFO] MT4 Socket Service subscribed to CaptureTrackingService BreakoutDetected event
-[2025-07-31 12:59:40.589] [INFO] Binary Options Socket Service subscribed to CaptureTrackingService BreakoutDetected event
-[2025-07-31 12:59:40.647] [INFO] Mouse hook set successfully
-[2025-07-31 12:59:40.648] [INFO] SimpleTradingOverlay initialized successfully
-[2025-07-31 12:59:40.954] [INFO] === MONITOR INFORMATION ===
-[2025-07-31 12:59:40.955] [INFO] Total monitors detected: 2
-[2025-07-31 12:59:40.959] [INFO] Monitor 0:
-[2025-07-31 12:59:40.960] [INFO]   - Primary: True
-[2025-07-31 12:59:40.960] [INFO]   - Device Name: \\.\DISPLAY1
-[2025-07-31 12:59:40.960] [INFO]   - Bounds: X=0, Y=0, Width=1920, Height=1080
-[2025-07-31 12:59:40.960] [INFO]   - Working Area: X=0, Y=0, Width=1920, Height=1040
-[2025-07-31 12:59:40.960] [INFO]   - Left Boundary: 0
-[2025-07-31 12:59:40.960] [INFO]   - Top Boundary: 0
-[2025-07-31 12:59:40.960] [INFO]   - Right Boundary: 1920
-[2025-07-31 12:59:40.961] [INFO]   - Bottom Boundary: 1080
-[2025-07-31 12:59:40.961] [INFO] Monitor 1:
-[2025-07-31 12:59:40.961] [INFO]   - Primary: False
-[2025-07-31 12:59:40.961] [INFO]   - Device Name: \\.\DISPLAY2
-[2025-07-31 12:59:40.961] [INFO]   - Bounds: X=1920, Y=0, Width=1920, Height=1080
-[2025-07-31 12:59:40.961] [INFO]   - Working Area: X=1920, Y=0, Width=1920, Height=1040
-[2025-07-31 12:59:40.961] [INFO]   - Left Boundary: 1920
-[2025-07-31 12:59:40.961] [INFO]   - Top Boundary: 0
-[2025-07-31 12:59:40.962] [INFO]   - Right Boundary: 3840
-[2025-07-31 12:59:40.962] [INFO]   - Bottom Boundary: 1080
-[2025-07-31 12:59:40.962] [INFO] === END MONITOR INFORMATION ===
-[2025-07-31 12:59:41.048] [INFO] Attempting to connect to MT4 socket at 127.0.0.1:23456
-[2025-07-31 12:59:41.055] [INFO] Successfully connected to MT4 socket at 127.0.0.1:23456
-[2025-07-31 12:59:41.056] [DEBUG] MT4 Connection: Connected
-[2025-07-31 12:59:41.056] [INFO] MT4 Connection status: Connected
-[2025-07-31 12:59:41.057] [INFO] MT4 Socket: Connection status indicator updated to Connected (Green)
-[2025-07-31 12:59:41.061] [INFO] Starting to read messages from MT4 socket
-[2025-07-31 12:59:41.134] [INFO] Received from MT4 socket: {"event":"welcome","version":"1.4.0","server_name":"RIPPER_MT4_SOCKET_SERVER","port":"23456","debug_mode":false,"symbol_suffix":".s","account":{"balance":27.65000000,"equity":27.65000000,"margin":0.00000000,"free_margin":27.65000000,"currency":"USD","company":"PU Prime Ltd","server":"PUPrime-Live 7"}}
+[2025-07-31 15:46:38.795] [INFO] app.log file deleted successfully
+[2025-07-31 15:46:38.795] [INFO] Trade counter reset successfully
+[2025-07-31 15:46:38.797] [INFO] Initialized 6 symbols in database
+[2025-07-31 15:46:41.003] [INFO] MainWindow closing - cleaning up resources
+[2025-07-31 15:46:41.006] [INFO] SimpleTradingOverlay closed
+[2025-07-31 15:46:41.008] [INFO] Disconnecting from MT4 socket
+[2025-07-31 15:46:41.009] [INFO] MT4 socket read operation cancelled
+[2025-07-31 15:46:41.009] [INFO] MT4 socket read loop ended
+[2025-07-31 15:46:41.009] [INFO] Disconnecting from Pocket Option socket
+[2025-07-31 15:46:41.010] [INFO] All services cleaned up
+[2025-07-31 15:46:41.010] [INFO] MainWindow cleanup completed
+[2025-07-31 15:46:41.010] [INFO] Pocket Option socket read operation cancelled
+[2025-07-31 15:46:41.010] [INFO] Disconnecting from MT4 socket
+[2025-07-31 15:46:41.010] [WARNING] Not connected to MT4 socket
+[2025-07-31 15:46:41.011] [INFO] Pocket Option socket read loop ended
+[2025-07-31 15:46:41.011] [INFO] Disconnecting from Pocket Option socket
+[2025-07-31 15:46:41.011] [WARNING] Not connected to Pocket Option socket
+[2025-07-31 15:46:41.011] [INFO] All services cleaned up
+[2025-07-31 15:46:41.020] [DEBUG] MT4 Connection: Disconnected
+[2025-07-31 15:46:41.020] [INFO] MT4 Connection status: Disconnected
+[2025-07-31 15:46:41.022] [INFO] Successfully disconnected from Pocket Option socket
+[2025-07-31 15:46:41.023] [INFO] Successfully disconnected from MT4 socket
+[2025-07-31 15:46:41.023] [DEBUG] MT4 Connection: Disconnected
+[2025-07-31 15:46:41.023] [INFO] MT4 Connection status: Disconnected
+[2025-07-31 16:03:45.607] [INFO] MT4 Socket Service initialized
+[2025-07-31 16:03:45.618] [INFO] Binary Options Socket Service initialized
+[2025-07-31 16:03:45.625] [INFO] All services registered in DI container
+[2025-07-31 16:03:45.632] [INFO] Attempting to connect to Pocket Option socket at 192.168.0.3:65300
+[2025-07-31 16:03:45.660] [INFO] Successfully connected to Pocket Option socket at 192.168.0.3:65300
+[2025-07-31 16:03:45.663] [INFO] Starting to read messages from Pocket Option socket
+[2025-07-31 16:03:45.964] [INFO] MT4 Socket Service initialized in MainWindow
+[2025-07-31 16:03:45.966] [INFO] MT4 Socket Service subscribed to CaptureTrackingService BreakoutDetected event
+[2025-07-31 16:03:45.967] [INFO] Binary Options Socket Service subscribed to CaptureTrackingService BreakoutDetected event
+[2025-07-31 16:03:46.071] [INFO] Mouse hook set successfully
+[2025-07-31 16:03:46.071] [INFO] SimpleTradingOverlay initialized successfully
+[2025-07-31 16:03:46.667] [INFO] === MONITOR INFORMATION ===
+[2025-07-31 16:03:46.668] [INFO] Total monitors detected: 2
+[2025-07-31 16:03:46.669] [INFO] Monitor 0:
+[2025-07-31 16:03:46.669] [INFO]   - Primary: True
+[2025-07-31 16:03:46.669] [INFO]   - Device Name: \\.\DISPLAY1
+[2025-07-31 16:03:46.669] [INFO]   - Bounds: X=0, Y=0, Width=1920, Height=1080
+[2025-07-31 16:03:46.670] [INFO]   - Working Area: X=0, Y=0, Width=1920, Height=1040
+[2025-07-31 16:03:46.670] [INFO]   - Left Boundary: 0
+[2025-07-31 16:03:46.670] [INFO]   - Top Boundary: 0
+[2025-07-31 16:03:46.670] [INFO]   - Right Boundary: 1920
+[2025-07-31 16:03:46.670] [INFO]   - Bottom Boundary: 1080
+[2025-07-31 16:03:46.670] [INFO] Monitor 1:
+[2025-07-31 16:03:46.670] [INFO]   - Primary: False
+[2025-07-31 16:03:46.670] [INFO]   - Device Name: \\.\DISPLAY2
+[2025-07-31 16:03:46.671] [INFO]   - Bounds: X=1920, Y=0, Width=1920, Height=1080
+[2025-07-31 16:03:46.671] [INFO]   - Working Area: X=1920, Y=0, Width=1920, Height=1040
+[2025-07-31 16:03:46.671] [INFO]   - Left Boundary: 1920
+[2025-07-31 16:03:46.671] [INFO]   - Top Boundary: 0
+[2025-07-31 16:03:46.671] [INFO]   - Right Boundary: 3840
+[2025-07-31 16:03:46.671] [INFO]   - Bottom Boundary: 1080
+[2025-07-31 16:03:46.671] [INFO] === END MONITOR INFORMATION ===
+[2025-07-31 16:03:46.751] [INFO] Pocket Option Socket: Connection status indicator updated to Connected (Green)
+[2025-07-31 16:03:46.755] [INFO] Attempting to connect to MT4 socket at 127.0.0.1:23456
+[2025-07-31 16:03:46.761] [INFO] Successfully connected to MT4 socket at 127.0.0.1:23456
+[2025-07-31 16:03:46.762] [DEBUG] MT4 Connection: Connected
+[2025-07-31 16:03:46.762] [INFO] MT4 Connection status: Connected
+[2025-07-31 16:03:46.763] [INFO] MT4 Socket: Connection status indicator updated to Connected (Green)
+[2025-07-31 16:03:46.796] [INFO] Starting to read messages from MT4 socket
+[2025-07-31 16:03:49.803] [INFO] Received from MT4 socket: {"event":"welcome","version":"1.4.0","server_name":"RIPPER_MT4_SOCKET_SERVER","port":"23456","debug_mode":false,"symbol_suffix":".s","account":{"balance":27.65000000,"equity":27.65000000,"margin":0.00000000,"free_margin":27.65000000,"currency":"USD","company":"PU Prime Ltd","server":"PUPrime-Live 7"}}
 
-[2025-07-31 12:59:41.158] [INFO] MT4 Socket: Received unknown event type: welcome
-[2025-07-31 12:59:41.159] [DEBUG] MT4: {"event":"welcome","version":"1.4.0","server_name":"RIPPER_MT4_SOCKET_SERVER","port":"23456","debug_mode":false,"symbol_suffix":".s","account":{"balance":27.65000000,"equity":27.65000000,"margin":0.00000000,"free_margin":27.65000000,"currency":"USD","company":"PU Prime Ltd","server":"PUPrime-Live 7"}}
+[2025-07-31 16:03:49.827] [INFO] MT4 Socket: Received unknown event type: welcome
+[2025-07-31 16:03:49.828] [DEBUG] MT4: {"event":"welcome","version":"1.4.0","server_name":"RIPPER_MT4_SOCKET_SERVER","port":"23456","debug_mode":false,"symbol_suffix":".s","account":{"balance":27.65000000,"equity":27.65000000,"margin":0.00000000,"free_margin":27.65000000,"currency":"USD","company":"PU Prime Ltd","server":"PUPrime-Live 7"}}
 
-[2025-07-31 12:59:41.159] [INFO] Received from MT4 socket: {"event":"watchlist_stats","data":{"XAUUSD.s":{"total":3,"buy":2,"sell":1,"tline_total":0,"tline_buy":0,"tline_sell":0,"shortline_total":3,"shortline_buy":2,"shortline_sell":1}}}
-[2025-07-31 12:59:41.160] [INFO] MT4 Socket: Received unknown event type: watchlist_stats
-[2025-07-31 12:59:41.160] [DEBUG] MT4: {"event":"watchlist_stats","data":{"XAUUSD.s":{"total":3,"buy":2,"sell":1,"tline_total":0,"tline_buy":0,"tline_sell":0,"shortline_total":3,"shortline_buy":2,"shortline_sell":1}}}
-[2025-07-31 13:01:10.650] [ERROR] Error reading from Pocket Option socket
+[2025-07-31 16:03:49.828] [INFO] Received from MT4 socket: {"event":"watchlist_stats","data":{"XAUUSD.s":{"total":3,"buy":2,"sell":1,"tline_total":0,"tline_buy":0,"tline_sell":0,"shortline_total":3,"shortline_buy":2,"shortline_sell":1}}}
+[2025-07-31 16:03:49.829] [INFO] MT4 Socket: Received unknown event type: watchlist_stats
+[2025-07-31 16:03:49.829] [DEBUG] MT4: {"event":"watchlist_stats","data":{"XAUUSD.s":{"total":3,"buy":2,"sell":1,"tline_total":0,"tline_buy":0,"tline_sell":0,"shortline_total":3,"shortline_buy":2,"shortline_sell":1}}}
+[2025-07-31 16:04:37.328] [INFO] Applied default toolbar settings for window 22939094
+[2025-07-31 16:04:37.393] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
+[2025-07-31 16:04:45.926] [INFO] Applied default toolbar settings for window 591280
+[2025-07-31 16:04:45.926] [INFO] Overlay positioned on window 591280 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
+[2025-07-31 16:04:58.486] [INFO] Applied default toolbar settings for window 22939094
+[2025-07-31 16:04:58.486] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
+[2025-07-31 16:04:58.749] [INFO] Applied default toolbar settings for window 591280
+[2025-07-31 16:04:58.750] [INFO] Overlay positioned on window 591280 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
+[2025-07-31 16:05:09.085] [INFO] Applied default toolbar settings for window 22939094
+[2025-07-31 16:05:09.086] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
+[2025-07-31 16:05:12.808] [INFO] Pocket Option Socket: Manual reconnect initiated
+[2025-07-31 16:05:12.808] [INFO] Pocket Option Socket: Disconnecting before reconnect
+[2025-07-31 16:05:12.810] [INFO] Disconnecting from Pocket Option socket
+[2025-07-31 16:05:12.812] [INFO] Pocket Option socket read operation cancelled
+[2025-07-31 16:05:12.812] [INFO] Pocket Option socket read loop ended
+[2025-07-31 16:05:12.813] [INFO] Successfully disconnected from Pocket Option socket
+[2025-07-31 16:05:12.814] [INFO] Attempting to connect to Pocket Option socket at 192.168.0.3:65300
+[2025-07-31 16:05:12.816] [INFO] Successfully connected to Pocket Option socket at 192.168.0.3:65300
+[2025-07-31 16:05:12.816] [INFO] Starting to read messages from Pocket Option socket
+[2025-07-31 16:05:12.816] [INFO] Pocket Option Socket: Manual reconnect successful
+[2025-07-31 16:05:12.817] [INFO] Pocket Option Socket: Connection status indicator updated to Connected (Green)
+[2025-07-31 16:05:47.014] [DEBUG] Status: Found and brought 2 window(s) to foreground: USD/JPY, T34, USD/JPY, T8
+[2025-07-31 16:05:47.517] [INFO] Applied default toolbar settings for window 13305324
+[2025-07-31 16:05:47.517] [INFO] Overlay positioned on window 13305324 (symbol: USDJPY): Left=1920, Top=0, Width=1920
+[2025-07-31 16:05:54.154] [INFO] Sent message to Pocket Option socket: {"cmd":"set_risk","broker":"PocketOption","risk":"5"}
+[2025-07-31 16:05:57.454] [INFO] Sent message to Pocket Option socket: {"cmd":"set_risk","broker":"PocketOption","risk":"10"}
+[2025-07-31 16:06:03.166] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 16:06:03.167] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 16:06:03.168] [INFO] Applied default toolbar settings for window 22939094
+[2025-07-31 16:06:03.168] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
+[2025-07-31 16:06:38.095] [INFO] Applied toolbar settings for window 13305324: Risk=10, Duration=0, Broker=PocketOption
+[2025-07-31 16:06:38.095] [INFO] Overlay positioned on window 13305324 (symbol: USDJPY): Left=1920, Top=0, Width=1920
+[2025-07-31 16:06:39.429] [INFO] Sent message to Pocket Option socket: {"cmd":"set_risk","broker":"PocketOption","risk":"20"}
+[2025-07-31 16:06:51.031] [INFO] Received from Pocket Option socket: {"hello": "Binary API Server", "status": "connected", "version": "1.0.0"}
+[2025-07-31 16:06:51.084] [INFO] Received from Pocket Option socket: {"error": "Invalid JSON"}
+[2025-07-31 16:08:11.251] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 16:08:11.252] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 16:08:11.253] [INFO] Applied toolbar settings for window 22939094: Risk=0, Duration=0, Broker=Forex
+[2025-07-31 16:08:11.253] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
+[2025-07-31 16:08:15.653] [INFO] Received from Pocket Option socket: {"cmd": "open_symbol", "result": "Open symbol command executed for USDJPY in PocketOption", "symbol": "USDJPY", "broker": "PocketOption"}
+[2025-07-31 16:08:19.811] [INFO] Received from Pocket Option socket: {"cmd": "open_symbol", "result": "Open symbol command executed for USDJPY in PocketOption", "symbol": "USDJPY", "broker": "PocketOption"}
+[2025-07-31 16:11:12.172] [DEBUG] Status: Found and brought 2 window(s) to foreground: XAU/USD, T13, XAU/USD, T8
+[2025-07-31 16:11:12.248] [INFO] Applied default toolbar settings for window 590036
+[2025-07-31 16:11:12.249] [INFO] Overlay positioned on window 590036 (symbol: XAUUSD): Left=0, Top=0, Width=1920
+[2025-07-31 16:11:16.313] [INFO] Applied default toolbar settings for window 591280
+[2025-07-31 16:11:16.313] [INFO] Overlay positioned on window 591280 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
+[2025-07-31 16:11:17.393] [INFO] Applied default toolbar settings for window 590036
+[2025-07-31 16:11:17.393] [INFO] Overlay positioned on window 590036 (symbol: XAUUSD): Left=0, Top=0, Width=1920
+[2025-07-31 16:11:21.186] [INFO] Applied default toolbar settings for window 591280
+[2025-07-31 16:11:21.186] [INFO] Overlay positioned on window 591280 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
+[2025-07-31 16:13:08.556] [ERROR] Error reading from Pocket Option socket
 Exception: Unable to read data from the transport connection: Удаленный хост принудительно разорвал существующее подключение..
 StackTrace:    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
    at System.Threading.Tasks.ValueTask`1.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
 --- End of stack trace from previous location ---
    at ScreenCaptureApp.Services.BinaryOptionsSocketService.ReadMessagesAsync(CancellationToken cancellationToken) in C:\apps\jforex-trading-terminal-win10\Services\BinaryOptionsSocketService.cs:line 293
-[2025-07-31 13:01:10.650] [INFO] Pocket Option socket read loop ended
-[2025-07-31 13:13:02.991] [DEBUG] Status: Found and brought 2 window(s) to foreground: XAU/USD, T610, XAU/USD, T13
-[2025-07-31 13:13:03.083] [INFO] Applied default toolbar settings for window 590036
-[2025-07-31 13:13:03.135] [INFO] Overlay positioned on window 590036 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-07-31 13:13:05.562] [DEBUG] Status: Found and brought 2 window(s) to foreground: USD/JPY, T610, USD/JPY, T8
-[2025-07-31 13:13:05.616] [INFO] Applied default toolbar settings for window 22939094
-[2025-07-31 13:13:05.616] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
-[2025-07-31 13:13:06.193] [INFO] Applied default toolbar settings for window 13305324
-[2025-07-31 13:13:06.193] [INFO] Overlay positioned on window 13305324 (symbol: USDJPY): Left=1920, Top=0, Width=1920
-[2025-07-31 13:24:39.405] [DEBUG] S key detected and service is enabled
-[2025-07-31 13:24:39.477] [DEBUG] E hotkey detected and service is enabled
-[2025-07-31 13:24:39.478] [INFO] [DEBUG] OnEHotkey event in MainWindow
-[2025-07-31 13:24:39.596] [INFO] Hotkey button index 2 clicked at (480,56) on window 1442020
-[2025-07-31 13:24:39.596] [INFO] [DEBUG] Mouse returned to (3286,634)
-[2025-07-31 13:24:40.253] [DEBUG] Space key detected and service is enabled
-[2025-07-31 13:24:40.257] [DEBUG] Target window captured (Handle: 0x1600E4)
-[2025-07-31 13:24:40.305] [INFO] Window activated - focus set to InkCanvas
-[2025-07-31 13:24:40.307] [INFO] Window loaded for handler 1442020
-[2025-07-31 13:24:40.461] [INFO] InkCanvas initialized successfully with Yellow brush for DrawingCanvas and White for TradingCanvas
-[2025-07-31 13:24:40.462] [INFO] Canvas loaded: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\1442020.xaml
-[2025-07-31 13:24:40.462] [INFO] Brush mode updated: Simple mode
-[2025-07-31 13:24:40.463] [INFO] Active symbol display updated: USDJPY
-[2025-07-31 13:24:40.494] [DEBUG] Canvas window opened
-[2025-07-31 13:24:40.494] [DEBUG] New CanvasWindow opened
-[2025-07-31 13:24:40.509] [DEBUG] C key detected and service is enabled
-[2025-07-31 13:24:40.510] [DEBUG] C key pressed - clearing canvas
-[2025-07-31 13:24:40.511] [INFO] Clearing canvas and deleting files
-[2025-07-31 13:24:41.701] [DEBUG] Escape key detected and service is enabled
-[2025-07-31 13:24:41.703] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-31 13:24:41.703] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-07-31 13:24:41.703] [DEBUG] Closing canvas window
-[2025-07-31 13:24:41.704] [INFO] Window closing: saving canvas
-[2025-07-31 13:24:41.784] [INFO] Canvas saved: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\1442020.xaml, C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\1442020.png
-[2025-07-31 13:24:41.784] [INFO] Canvas saved properly
-[2025-07-31 13:24:41.790] [DEBUG] Canvas window closed
-[2025-07-31 13:24:41.790] [DEBUG] No overlay to close
-[2025-07-31 13:24:41.790] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-31 13:24:41.869] [DEBUG] Escape key detected and service is enabled
-[2025-07-31 13:24:41.869] [DEBUG] Escape key pressed - starting cleanup
-[2025-07-31 13:24:41.870] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-07-31 13:24:41.870] [DEBUG] No overlay to close
-[2025-07-31 13:24:41.870] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-07-31 13:24:42.592] [INFO] Applied default toolbar settings for window 22939094
-[2025-07-31 13:24:42.592] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
-[2025-07-31 13:24:52.397] [DEBUG] Space key detected but service is disabled
-[2025-07-31 13:24:54.029] [DEBUG] Space key detected but service is disabled
-[2025-07-31 13:24:58.453] [DEBUG] Space key detected but service is disabled
-[2025-07-31 13:25:00.013] [DEBUG] Space key detected but service is disabled
+[2025-07-31 16:13:08.557] [INFO] Pocket Option socket read loop ended
+[2025-07-31 16:21:40.154] [INFO] Applied default toolbar settings for window 590036
+[2025-07-31 16:21:40.154] [INFO] Overlay positioned on window 590036 (symbol: XAUUSD): Left=0, Top=0, Width=1920
+[2025-07-31 16:21:53.274] [DEBUG] Status: Found and brought 2 window(s) to foreground: USD/JPY, T34, USD/JPY, T8
+[2025-07-31 16:21:53.275] [INFO] Applied toolbar settings for window 22939094: Risk=0, Duration=0, Broker=Forex
+[2025-07-31 16:21:53.275] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
+[2025-07-31 16:23:02.889] [INFO] Pocket Option Socket: Manual reconnect initiated
+[2025-07-31 16:23:02.890] [INFO] Attempting to connect to Pocket Option socket at 192.168.0.3:65300
+[2025-07-31 16:23:02.892] [INFO] Successfully connected to Pocket Option socket at 192.168.0.3:65300
+[2025-07-31 16:23:02.893] [INFO] Pocket Option Socket: Manual reconnect successful
+[2025-07-31 16:23:02.893] [INFO] Pocket Option Socket: Connection status indicator updated to Connected (Green)
+[2025-07-31 16:23:02.893] [INFO] Starting to read messages from Pocket Option socket
+[2025-07-31 16:23:04.754] [INFO] Pocket Option Socket: Manual reconnect initiated
+[2025-07-31 16:23:04.754] [INFO] Pocket Option Socket: Disconnecting before reconnect
+[2025-07-31 16:23:04.754] [INFO] Disconnecting from Pocket Option socket
+[2025-07-31 16:23:04.755] [INFO] Pocket Option socket read operation cancelled
+[2025-07-31 16:23:04.755] [INFO] Pocket Option socket read loop ended
+[2025-07-31 16:23:04.756] [INFO] Successfully disconnected from Pocket Option socket
+[2025-07-31 16:23:04.756] [INFO] Attempting to connect to Pocket Option socket at 192.168.0.3:65300
+[2025-07-31 16:23:04.757] [INFO] Successfully connected to Pocket Option socket at 192.168.0.3:65300
+[2025-07-31 16:23:04.757] [INFO] Starting to read messages from Pocket Option socket
+[2025-07-31 16:23:04.757] [INFO] Pocket Option Socket: Manual reconnect successful
+[2025-07-31 16:23:04.757] [INFO] Pocket Option Socket: Connection status indicator updated to Connected (Green)
+[2025-07-31 16:23:07.652] [DEBUG] Status: Found and brought 2 window(s) to foreground: XAU/USD, T144, XAU/USD, T13
+[2025-07-31 16:23:08.358] [DEBUG] Status: Found and brought 2 window(s) to foreground: USD/JPY, T144, USD/JPY, T8
+[2025-07-31 16:23:08.577] [INFO] Applied toolbar settings for window 13305324: Risk=20, Duration=0, Broker=PocketOption
+[2025-07-31 16:23:08.577] [INFO] Overlay positioned on window 13305324 (symbol: USDJPY): Left=1920, Top=0, Width=1920
+[2025-07-31 16:23:13.713] [INFO] Sent message to Pocket Option socket: {"cmd":"set_risk","broker":"PocketOption","risk":"10"}
+[2025-07-31 16:23:26.057] [INFO] Sent message to Pocket Option socket: {"cmd":"set_risk","broker":"PocketOption","risk":"5"}
+[2025-07-31 16:23:27.673] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 16:23:27.673] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 16:23:27.674] [INFO] Applied toolbar settings for window 22939094: Risk=0, Duration=0, Broker=Forex
+[2025-07-31 16:23:27.674] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
+[2025-07-31 16:23:49.327] [DEBUG] Status: Found and brought 2 window(s) to foreground: USD/JPY, T144, USD/JPY, T8
+[2025-07-31 16:23:49.901] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-31 16:23:50.030] [INFO] Hotkey button index 1 clicked at (280,56) on window 22939094
+[2025-07-31 16:23:50.031] [INFO] [DEBUG] Mouse returned to (903,381)
+[2025-07-31 16:23:50.613] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-31 16:23:50.732] [INFO] Hotkey button index 1 clicked at (280,56) on window 22939094
+[2025-07-31 16:23:50.732] [INFO] [DEBUG] Mouse returned to (726,333)
+[2025-07-31 16:23:50.773] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-31 16:23:50.888] [INFO] Hotkey button index 1 clicked at (280,56) on window 22939094
+[2025-07-31 16:23:50.888] [INFO] [DEBUG] Mouse returned to (300,61)
+[2025-07-31 16:23:50.933] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-31 16:23:51.059] [INFO] Hotkey button index 1 clicked at (280,56) on window 22939094
+[2025-07-31 16:23:51.059] [INFO] [DEBUG] Mouse returned to (300,66)
+[2025-07-31 16:23:51.189] [DEBUG] Q hotkey detected and service is enabled
+[2025-07-31 16:23:51.190] [INFO] [DEBUG] OnQHotkey event in MainWindow
+[2025-07-31 16:23:51.309] [INFO] Hotkey button index 0 clicked at (80,56) on window 22939094
+[2025-07-31 16:23:51.309] [INFO] [DEBUG] Mouse returned to (300,66)
+[2025-07-31 16:24:06.781] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-31 16:24:06.909] [INFO] Hotkey button index 1 clicked at (280,56) on window 22939094
+[2025-07-31 16:24:06.909] [INFO] [DEBUG] Mouse returned to (960,621)
+[2025-07-31 16:24:07.293] [DEBUG] Symbol hotkey 1 pressed
+[2025-07-31 16:24:07.520] [DEBUG] Status: Found and brought 2 window(s) to foreground: XAU/USD, T13, XAU/USD, T144
+[2025-07-31 16:24:08.024] [INFO] Applied default toolbar settings for window 590036
+[2025-07-31 16:24:08.024] [INFO] Overlay positioned on window 590036 (symbol: XAUUSD): Left=0, Top=0, Width=1920
+[2025-07-31 16:24:10.109] [DEBUG] Symbol hotkey 4 pressed
+[2025-07-31 16:24:10.333] [DEBUG] Status: Found and brought 2 window(s) to foreground: USD/JPY, T144, USD/JPY, T8
+[2025-07-31 16:24:10.831] [INFO] Applied toolbar settings for window 22939094: Risk=0, Duration=0, Broker=Forex
+[2025-07-31 16:24:10.831] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
+[2025-07-31 16:24:24.242] [INFO] Received from Pocket Option socket: {"hello": "Binary API Server", "status": "connected", "version": "1.0.0"}
+[2025-07-31 16:24:24.288] [INFO] Received from Pocket Option socket: {"error": "Invalid JSON"}
+[2025-07-31 16:24:25.747] [ERROR] Error reading from Pocket Option socket
+Exception: Unable to read data from the transport connection: Удаленный хост принудительно разорвал существующее подключение..
+StackTrace:    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask`1.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at ScreenCaptureApp.Services.BinaryOptionsSocketService.ReadMessagesAsync(CancellationToken cancellationToken) in C:\apps\jforex-trading-terminal-win10\Services\BinaryOptionsSocketService.cs:line 293
+[2025-07-31 16:24:25.747] [INFO] Pocket Option socket read loop ended
+[2025-07-31 16:25:36.063] [INFO] Applied toolbar settings for window 13305324: Risk=5, Duration=0, Broker=PocketOption
+[2025-07-31 16:25:36.064] [INFO] Overlay positioned on window 13305324 (symbol: USDJPY): Left=1920, Top=0, Width=1920
+[2025-07-31 16:25:36.135] [WARNING] Failed to open symbol USDJPY for broker PocketOption
+[2025-07-31 16:25:36.135] [WARNING] Failed to open symbol USDJPY for broker PocketOption
+[2025-07-31 16:25:36.136] [INFO] Applied toolbar settings for window 22939094: Risk=0, Duration=0, Broker=Forex
+[2025-07-31 16:25:36.136] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
+[2025-07-31 16:25:37.479] [DEBUG] Status: Found and brought 2 window(s) to foreground: XAU/USD, T144, XAU/USD, T13
+[2025-07-31 16:25:37.710] [INFO] Applied default toolbar settings for window 590036
+[2025-07-31 16:25:37.710] [INFO] Overlay positioned on window 590036 (symbol: XAUUSD): Left=0, Top=0, Width=1920
+[2025-07-31 16:25:38.993] [DEBUG] Status: Found and brought 2 window(s) to foreground: USD/JPY, T144, USD/JPY, T8
+[2025-07-31 16:25:39.046] [INFO] Applied toolbar settings for window 22939094: Risk=0, Duration=0, Broker=Forex
+[2025-07-31 16:25:39.046] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
+[2025-07-31 16:25:42.420] [DEBUG] Symbol hotkey 1 pressed
+[2025-07-31 16:25:42.630] [DEBUG] Status: Found and brought 2 window(s) to foreground: XAU/USD, T13, XAU/USD, T144
+[2025-07-31 16:25:43.022] [INFO] Applied default toolbar settings for window 590036
+[2025-07-31 16:25:43.022] [INFO] Overlay positioned on window 590036 (symbol: XAUUSD): Left=0, Top=0, Width=1920
+[2025-07-31 16:25:43.423] [INFO] Applied default toolbar settings for window 591280
+[2025-07-31 16:25:43.423] [INFO] Overlay positioned on window 591280 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
+[2025-07-31 16:25:44.967] [INFO] Applied default toolbar settings for window 590036
+[2025-07-31 16:25:44.967] [INFO] Overlay positioned on window 590036 (symbol: XAUUSD): Left=0, Top=0, Width=1920
+[2025-07-31 16:25:45.588] [DEBUG] Symbol hotkey 3 pressed
+[2025-07-31 16:25:45.589] [DEBUG] Status: No windows found containing 'EUR/USD' in title
+[2025-07-31 16:25:46.036] [DEBUG] Symbol hotkey 4 pressed
+[2025-07-31 16:25:46.247] [DEBUG] Status: Found and brought 2 window(s) to foreground: USD/JPY, T144, USD/JPY, T8
+[2025-07-31 16:25:46.286] [INFO] Applied toolbar settings for window 22939094: Risk=0, Duration=0, Broker=Forex
+[2025-07-31 16:25:46.287] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
+[2025-07-31 16:32:55.938] [DEBUG] Status: Found and brought 2 window(s) to foreground: USD/JPY, T144, USD/JPY, T8
+[2025-07-31 16:32:56.474] [INFO] Applied toolbar settings for window 13305324: Risk=5, Duration=0, Broker=PocketOption
+[2025-07-31 16:32:56.474] [INFO] Overlay positioned on window 13305324 (symbol: USDJPY): Left=1920, Top=0, Width=1920
+[2025-07-31 16:32:59.138] [WARNING] Failed to set risk 1 for broker PocketOption
+[2025-07-31 16:33:02.506] [WARNING] Failed to open symbol USDJPY for broker PocketOption
+[2025-07-31 16:33:02.507] [WARNING] Failed to open symbol USDJPY for broker PocketOption
+[2025-07-31 16:33:02.508] [INFO] Applied toolbar settings for window 22939094: Risk=0, Duration=0, Broker=Forex
+[2025-07-31 16:33:02.508] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
+[2025-07-31 16:33:04.563] [INFO] Pocket Option Socket: Manual reconnect initiated
+[2025-07-31 16:33:04.563] [INFO] Attempting to connect to Pocket Option socket at 192.168.0.3:65300
+[2025-07-31 16:33:04.564] [INFO] Successfully connected to Pocket Option socket at 192.168.0.3:65300
+[2025-07-31 16:33:04.565] [INFO] Pocket Option Socket: Manual reconnect successful
+[2025-07-31 16:33:04.565] [INFO] Starting to read messages from Pocket Option socket
+[2025-07-31 16:33:04.565] [INFO] Pocket Option Socket: Connection status indicator updated to Connected (Green)
+[2025-07-31 16:33:04.565] [INFO] Received from Pocket Option socket: {"hello": "Binary API Server", "status": "connected", "version": "1.0.0"}
+[2025-07-31 16:33:05.506] [INFO] Pocket Option Socket: Manual reconnect initiated
+[2025-07-31 16:33:05.507] [INFO] Pocket Option Socket: Disconnecting before reconnect
+[2025-07-31 16:33:05.507] [INFO] Disconnecting from Pocket Option socket
+[2025-07-31 16:33:05.507] [INFO] Pocket Option socket read operation cancelled
+[2025-07-31 16:33:05.507] [INFO] Pocket Option socket read loop ended
+[2025-07-31 16:33:05.508] [INFO] Successfully disconnected from Pocket Option socket
+[2025-07-31 16:33:05.509] [INFO] Attempting to connect to Pocket Option socket at 192.168.0.3:65300
+[2025-07-31 16:33:05.510] [INFO] Successfully connected to Pocket Option socket at 192.168.0.3:65300
+[2025-07-31 16:33:05.510] [INFO] Starting to read messages from Pocket Option socket
+[2025-07-31 16:33:05.510] [INFO] Pocket Option Socket: Manual reconnect successful
+[2025-07-31 16:33:05.510] [INFO] Pocket Option Socket: Connection status indicator updated to Connected (Green)
+[2025-07-31 16:33:05.510] [INFO] Received from Pocket Option socket: {"hello": "Binary API Server", "status": "connected", "version": "1.0.0"}
+[2025-07-31 16:33:10.566] [DEBUG] Status: Found and brought 2 window(s) to foreground: USD/JPY, T8, USD/JPY, T144
+[2025-07-31 16:33:10.706] [INFO] Applied toolbar settings for window 13305324: Risk=1, Duration=0, Broker=PocketOption
+[2025-07-31 16:33:10.707] [INFO] Overlay positioned on window 13305324 (symbol: USDJPY): Left=1920, Top=0, Width=1920
+[2025-07-31 16:33:11.962] [INFO] Sent message to Pocket Option socket: {"cmd":"set_risk","broker":"PocketOption","risk":"5"}
+[2025-07-31 16:33:16.212] [INFO] Received from Pocket Option socket: {"cmd": "set_risk", "result": "Risk set to 5", "risk": "5", "broker": "PocketOption"}
+[2025-07-31 16:33:21.124] [INFO] Sent message to Pocket Option socket: {"cmd":"set_duration","broker":"PocketOption","duration":"3"}
+[2025-07-31 16:33:22.666] [INFO] Received from Pocket Option socket: {"cmd": "set_duration", "result": "Duration set to 3", "duration": "3", "broker": "PocketOption"}
+[2025-07-31 16:33:28.386] [INFO] Sent message to Pocket Option socket: {"cmd":"set_duration","broker":"PocketOption","duration":"4"}
+[2025-07-31 16:33:30.438] [INFO] Received from Pocket Option socket: {"cmd": "set_duration", "result": "Duration set to 4", "duration": "4", "broker": "PocketOption"}
+[2025-07-31 16:33:39.002] [INFO] Sent message to Pocket Option socket: {"cmd":"set_duration","broker":"PocketOption","duration":"5"}
+[2025-07-31 16:33:40.725] [INFO] Received from Pocket Option socket: {"cmd": "set_duration", "result": "Duration set to 5", "duration": "5", "broker": "PocketOption"}
+[2025-07-31 16:33:43.729] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 16:33:43.730] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 16:33:43.730] [INFO] Applied toolbar settings for window 22939094: Risk=0, Duration=0, Broker=Forex
+[2025-07-31 16:33:43.731] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
+[2025-07-31 16:33:44.162] [INFO] Applied toolbar settings for window 13305324: Risk=5, Duration=5, Broker=PocketOption
+[2025-07-31 16:33:44.163] [INFO] Overlay positioned on window 13305324 (symbol: USDJPY): Left=1920, Top=0, Width=1920
+[2025-07-31 16:33:48.803] [INFO] Received from Pocket Option socket: {"cmd": "open_symbol", "result": "Open symbol command executed for USDJPY in PocketOption", "symbol": "USDJPY", "broker": "PocketOption"}
+[2025-07-31 16:33:52.433] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 16:33:52.434] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 16:33:52.435] [INFO] Applied toolbar settings for window 22939094: Risk=0, Duration=0, Broker=Forex
+[2025-07-31 16:33:52.435] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
+[2025-07-31 16:33:53.562] [INFO] Applied toolbar settings for window 13305324: Risk=5, Duration=5, Broker=PocketOption
+[2025-07-31 16:33:53.562] [INFO] Overlay positioned on window 13305324 (symbol: USDJPY): Left=1920, Top=0, Width=1920
+[2025-07-31 16:33:54.421] [INFO] Received from Pocket Option socket: {"cmd": "open_symbol", "result": "Open symbol command executed for USDJPY in PocketOption", "symbol": "USDJPY", "broker": "PocketOption"}
+[2025-07-31 16:33:54.470] [INFO] Received from Pocket Option socket: {"error": "Invalid JSON"}
+[2025-07-31 16:33:56.969] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 16:33:56.970] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 16:33:56.970] [INFO] Applied toolbar settings for window 22939094: Risk=0, Duration=0, Broker=Forex
+[2025-07-31 16:33:56.971] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
+[2025-07-31 16:33:57.273] [INFO] Applied toolbar settings for window 13305324: Risk=5, Duration=5, Broker=PocketOption
+[2025-07-31 16:33:57.273] [INFO] Overlay positioned on window 13305324 (symbol: USDJPY): Left=1920, Top=0, Width=1920
+[2025-07-31 16:33:57.934] [DEBUG] Space key detected and service is enabled
+[2025-07-31 16:33:57.938] [DEBUG] Target window captured (Handle: 0xCB05EC)
+[2025-07-31 16:33:57.966] [INFO] Applied toolbar settings for handle=13305324: Risk=5, Duration=5, Broker=PocketOption
+[2025-07-31 16:33:57.990] [INFO] Window activated - focus set to InkCanvas
+[2025-07-31 16:33:57.993] [INFO] Window loaded for handler 13305324
+[2025-07-31 16:33:58.144] [INFO] InkCanvas initialized successfully with Yellow brush for DrawingCanvas and White for TradingCanvas
+[2025-07-31 16:33:58.146] [INFO] Canvas loaded: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\13305324.xaml
+[2025-07-31 16:33:58.147] [INFO] Brush mode updated: Simple mode
+[2025-07-31 16:33:58.148] [INFO] Active symbol display updated: USDJPY
+[2025-07-31 16:33:58.186] [DEBUG] Canvas window opened
+[2025-07-31 16:33:58.186] [DEBUG] New CanvasWindow opened
+[2025-07-31 16:33:59.006] [DEBUG] Space key detected and service is enabled
+[2025-07-31 16:33:59.008] [INFO] Brush mode updated: Trading mode
+[2025-07-31 16:33:59.008] [DEBUG] Space pressed over CanvasWindow: toggled trading mode
+[2025-07-31 16:33:59.401] [INFO] Mouse move on InkCanvas at 1470;192
+[2025-07-31 16:33:59.402] [INFO] Mouse move on InkCanvas at 1479;195
+[2025-07-31 16:33:59.409] [INFO] Mouse move on InkCanvas at 1490;200
+[2025-07-31 16:33:59.416] [INFO] Mouse move on InkCanvas at 1501;203
+[2025-07-31 16:33:59.424] [INFO] Mouse move on InkCanvas at 1514;208
+[2025-07-31 16:33:59.432] [INFO] Mouse move on InkCanvas at 1528;213
+[2025-07-31 16:33:59.440] [INFO] Mouse move on InkCanvas at 1543;220
+[2025-07-31 16:33:59.449] [INFO] Mouse move on InkCanvas at 1557;226
+[2025-07-31 16:33:59.456] [INFO] Mouse move on InkCanvas at 1568;230
+[2025-07-31 16:33:59.465] [INFO] Mouse move on InkCanvas at 1578;235
+[2025-07-31 16:33:59.472] [INFO] Mouse move on InkCanvas at 1585;237
+[2025-07-31 16:33:59.480] [INFO] Mouse move on InkCanvas at 1590;238
+[2025-07-31 16:33:59.488] [INFO] Mouse move on InkCanvas at 1592;239
+[2025-07-31 16:33:59.496] [INFO] Mouse move on InkCanvas at 1593;239
+[2025-07-31 16:33:59.505] [INFO] Mouse move on InkCanvas at 1594;240
+[2025-07-31 16:33:59.520] [INFO] Mouse move on InkCanvas at 1596;240
+[2025-07-31 16:33:59.528] [INFO] Mouse move on InkCanvas at 1596;241
+[2025-07-31 16:33:59.536] [INFO] Mouse move on InkCanvas at 1597;241
+[2025-07-31 16:33:59.544] [INFO] Mouse move on InkCanvas at 1598;242
+[2025-07-31 16:33:59.552] [INFO] Mouse move on InkCanvas at 1600;244
+[2025-07-31 16:33:59.561] [INFO] Mouse move on InkCanvas at 1603;245
+[2025-07-31 16:33:59.569] [INFO] Mouse move on InkCanvas at 1608;247
+[2025-07-31 16:33:59.574] [INFO] Trading stroke collected - processing immediately
+[2025-07-31 16:33:59.580] [INFO] CaptureData created: ID=20250731163359578, Symbol=USDJPY, Risk=5, Duration=5, Broker=Pocket Option, Source=window
+[2025-07-31 16:33:59.651] [INFO] Settings updated from capture
+[2025-07-31 16:33:59.652] [INFO] Window closing: saving canvas
+[2025-07-31 16:33:59.663] [ERROR] Error saving canvas: Значение параметра должно быть больше 0. (Parameter 'pixelWidth')
+Exception: Значение параметра должно быть больше 0. (Parameter 'pixelWidth')
+StackTrace:    at System.Windows.Media.Imaging.RenderTargetBitmap..ctor(Int32 pixelWidth, Int32 pixelHeight, Double dpiX, Double dpiY, PixelFormat pixelFormat)
+   at ScreenCaptureApp.CanvasWindow.SaveCanvas() in C:\apps\jforex-trading-terminal-win10\CanvasWindow.xaml.cs:line 543
+[2025-07-31 16:33:59.663] [INFO] Canvas saved properly
+[2025-07-31 16:33:59.669] [INFO] Mouse up on InkCanvas at 0;0
+[2025-07-31 16:34:00.225] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-31 16:34:00.225] [DEBUG] CaptureTrackingService: Обработка capture ID=20250731163359578, Handle=13305324, X=1449, Y=171, W=180, H=96
+[2025-07-31 16:34:00.245] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 180x96
+[2025-07-31 16:34:00.254] [DEBUG] TrendlineBreakDetector: Found 0 white pixels
+[2025-07-31 16:34:00.255] [DEBUG] TrendlineBreakDetector: Found 0 clusters
+[2025-07-31 16:34:00.255] [INFO] TrendlineBreakDetector: No white line cluster detected
+[2025-07-31 16:34:00.268] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163359578\tracking.png] Trendline not detected.
+[2025-07-31 16:34:00.269] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163359578\tracking.png: NoTrendline
+[2025-07-31 16:34:01.275] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-31 16:34:01.275] [DEBUG] CaptureTrackingService: Обработка capture ID=20250731163359578, Handle=13305324, X=1449, Y=171, W=180, H=96
+[2025-07-31 16:34:01.286] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 180x96
+[2025-07-31 16:34:01.293] [DEBUG] TrendlineBreakDetector: Found 0 white pixels
+[2025-07-31 16:34:01.293] [DEBUG] TrendlineBreakDetector: Found 0 clusters
+[2025-07-31 16:34:01.293] [INFO] TrendlineBreakDetector: No white line cluster detected
+[2025-07-31 16:34:01.294] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163359578\tracking.png] Trendline not detected.
+[2025-07-31 16:34:01.295] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163359578\tracking.png: NoTrendline
+[2025-07-31 16:34:01.569] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 16:34:01.569] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 16:34:01.570] [INFO] Applied toolbar settings for window 22939094: Risk=0, Duration=0, Broker=Forex
+[2025-07-31 16:34:01.571] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
+[2025-07-31 16:34:01.602] [INFO] Applied toolbar settings for window 13305324: Risk=5, Duration=5, Broker=PocketOption
+[2025-07-31 16:34:01.602] [INFO] Overlay positioned on window 13305324 (symbol: USDJPY): Left=1920, Top=0, Width=1920
+[2025-07-31 16:34:02.310] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-31 16:34:02.311] [DEBUG] CaptureTrackingService: Обработка capture ID=20250731163359578, Handle=13305324, X=1449, Y=171, W=180, H=96
+[2025-07-31 16:34:02.326] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 180x96
+[2025-07-31 16:34:02.332] [DEBUG] TrendlineBreakDetector: Found 0 white pixels
+[2025-07-31 16:34:02.333] [DEBUG] TrendlineBreakDetector: Found 0 clusters
+[2025-07-31 16:34:02.333] [INFO] TrendlineBreakDetector: No white line cluster detected
+[2025-07-31 16:34:02.335] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163359578\tracking.png] Trendline not detected.
+[2025-07-31 16:34:02.335] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163359578\tracking.png: NoTrendline
+[2025-07-31 16:34:03.358] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-31 16:34:03.358] [DEBUG] CaptureTrackingService: Обработка capture ID=20250731163359578, Handle=13305324, X=1449, Y=171, W=180, H=96
+[2025-07-31 16:34:03.370] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 180x96
+[2025-07-31 16:34:03.377] [DEBUG] TrendlineBreakDetector: Found 0 white pixels
+[2025-07-31 16:34:03.377] [DEBUG] TrendlineBreakDetector: Found 0 clusters
+[2025-07-31 16:34:03.377] [INFO] TrendlineBreakDetector: No white line cluster detected
+[2025-07-31 16:34:03.378] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163359578\tracking.png] Trendline not detected.
+[2025-07-31 16:34:03.379] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163359578\tracking.png: NoTrendline
+[2025-07-31 16:34:04.395] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-31 16:34:04.396] [DEBUG] CaptureTrackingService: Обработка capture ID=20250731163359578, Handle=13305324, X=1449, Y=171, W=180, H=96
+[2025-07-31 16:34:04.411] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 180x96
+[2025-07-31 16:34:04.418] [DEBUG] TrendlineBreakDetector: Found 0 white pixels
+[2025-07-31 16:34:04.418] [DEBUG] TrendlineBreakDetector: Found 0 clusters
+[2025-07-31 16:34:04.418] [INFO] TrendlineBreakDetector: No white line cluster detected
+[2025-07-31 16:34:04.420] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163359578\tracking.png] Trendline not detected.
+[2025-07-31 16:34:04.420] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163359578\tracking.png: NoTrendline
+[2025-07-31 16:34:04.494] [DEBUG] Space key detected and service is enabled
+[2025-07-31 16:34:04.494] [DEBUG] Target window captured (Handle: 0xCB05EC)
+[2025-07-31 16:34:04.503] [INFO] Applied toolbar settings for handle=13305324: Risk=5, Duration=5, Broker=PocketOption
+[2025-07-31 16:34:04.514] [INFO] Window activated - focus set to InkCanvas
+[2025-07-31 16:34:04.517] [INFO] Window loaded for handler 13305324
+[2025-07-31 16:34:04.648] [INFO] InkCanvas initialized successfully with Yellow brush for DrawingCanvas and White for TradingCanvas
+[2025-07-31 16:34:04.656] [INFO] Canvas loaded: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\13305324.xaml
+[2025-07-31 16:34:04.657] [INFO] Brush mode updated: Simple mode
+[2025-07-31 16:34:04.657] [INFO] Active symbol display updated: USDJPY
+[2025-07-31 16:34:04.686] [DEBUG] Canvas window opened
+[2025-07-31 16:34:04.686] [DEBUG] New CanvasWindow opened
+[2025-07-31 16:34:04.690] [INFO] Pressed Space: force focus to InkCanvas
+[2025-07-31 16:34:05.434] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-31 16:34:05.434] [DEBUG] CaptureTrackingService: Обработка capture ID=20250731163359578, Handle=13305324, X=1449, Y=171, W=180, H=96
+[2025-07-31 16:34:05.449] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 180x96
+[2025-07-31 16:34:05.456] [DEBUG] TrendlineBreakDetector: Found 0 white pixels
+[2025-07-31 16:34:05.456] [DEBUG] TrendlineBreakDetector: Found 0 clusters
+[2025-07-31 16:34:05.456] [INFO] TrendlineBreakDetector: No white line cluster detected
+[2025-07-31 16:34:05.458] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163359578\tracking.png] Trendline not detected.
+[2025-07-31 16:34:05.458] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163359578\tracking.png: NoTrendline
+[2025-07-31 16:34:05.614] [DEBUG] Space key detected and service is enabled
+[2025-07-31 16:34:05.615] [INFO] Brush mode updated: Trading mode
+[2025-07-31 16:34:05.615] [DEBUG] Space pressed over CanvasWindow: toggled trading mode
+[2025-07-31 16:34:05.629] [INFO] Pressed Space: force focus to InkCanvas
+[2025-07-31 16:34:06.042] [INFO] Mouse move on InkCanvas at 1474;210
+[2025-07-31 16:34:06.057] [INFO] Mouse move on InkCanvas at 1476;210
+[2025-07-31 16:34:06.064] [INFO] Mouse move on InkCanvas at 1479;211
+[2025-07-31 16:34:06.073] [INFO] Mouse move on InkCanvas at 1484;213
+[2025-07-31 16:34:06.080] [INFO] Mouse move on InkCanvas at 1491;217
+[2025-07-31 16:34:06.088] [INFO] Mouse move on InkCanvas at 1501;222
+[2025-07-31 16:34:06.096] [INFO] Mouse move on InkCanvas at 1513;229
+[2025-07-31 16:34:06.105] [INFO] Mouse move on InkCanvas at 1531;237
+[2025-07-31 16:34:06.112] [INFO] Mouse move on InkCanvas at 1551;246
+[2025-07-31 16:34:06.120] [INFO] Mouse move on InkCanvas at 1572;255
+[2025-07-31 16:34:06.128] [INFO] Mouse move on InkCanvas at 1589;261
+[2025-07-31 16:34:06.136] [INFO] Mouse move on InkCanvas at 1605;265
+[2025-07-31 16:34:06.144] [INFO] Mouse move on InkCanvas at 1617;268
+[2025-07-31 16:34:06.153] [INFO] Mouse move on InkCanvas at 1628;270
+[2025-07-31 16:34:06.161] [INFO] Mouse move on InkCanvas at 1635;272
+[2025-07-31 16:34:06.168] [INFO] Mouse move on InkCanvas at 1639;273
+[2025-07-31 16:34:06.177] [INFO] Mouse move on InkCanvas at 1640;273
+[2025-07-31 16:34:06.177] [INFO] Trading stroke collected - processing immediately
+[2025-07-31 16:34:06.178] [INFO] CaptureData created: ID=20250731163406178, Symbol=USDJPY, Risk=5, Duration=5, Broker=Pocket Option, Source=window
+[2025-07-31 16:34:06.193] [INFO] Settings updated from capture
+[2025-07-31 16:34:06.193] [INFO] Window closing: saving canvas
+[2025-07-31 16:34:06.194] [ERROR] Error saving canvas: Значение параметра должно быть больше 0. (Parameter 'pixelWidth')
+Exception: Значение параметра должно быть больше 0. (Parameter 'pixelWidth')
+StackTrace:    at System.Windows.Media.Imaging.RenderTargetBitmap..ctor(Int32 pixelWidth, Int32 pixelHeight, Double dpiX, Double dpiY, PixelFormat pixelFormat)
+   at ScreenCaptureApp.CanvasWindow.SaveCanvas() in C:\apps\jforex-trading-terminal-win10\CanvasWindow.xaml.cs:line 543
+[2025-07-31 16:34:06.194] [INFO] Canvas saved properly
+[2025-07-31 16:34:06.200] [INFO] Mouse up on InkCanvas at 0;0
+[2025-07-31 16:34:06.481] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-31 16:34:06.481] [DEBUG] CaptureTrackingService: Обработка capture ID=20250731163359578, Handle=13305324, X=1449, Y=171, W=180, H=96
+[2025-07-31 16:34:06.496] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 180x96
+[2025-07-31 16:34:06.502] [DEBUG] TrendlineBreakDetector: Found 0 white pixels
+[2025-07-31 16:34:06.503] [DEBUG] TrendlineBreakDetector: Found 0 clusters
+[2025-07-31 16:34:06.503] [INFO] TrendlineBreakDetector: No white line cluster detected
+[2025-07-31 16:34:06.505] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163359578\tracking.png] Trendline not detected.
+[2025-07-31 16:34:06.505] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163359578\tracking.png: NoTrendline
+[2025-07-31 16:34:06.506] [DEBUG] CaptureTrackingService: Обработка capture ID=20250731163406178, Handle=13305324, X=1452, Y=189, W=207, H=104
+[2025-07-31 16:34:06.525] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 207x104
+[2025-07-31 16:34:06.532] [DEBUG] TrendlineBreakDetector: Found 0 white pixels
+[2025-07-31 16:34:06.532] [DEBUG] TrendlineBreakDetector: Found 0 clusters
+[2025-07-31 16:34:06.533] [INFO] TrendlineBreakDetector: No white line cluster detected
+[2025-07-31 16:34:06.535] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163406178\tracking.png] Trendline not detected.
+[2025-07-31 16:34:06.535] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163406178\tracking.png: NoTrendline
+[2025-07-31 16:34:07.544] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-31 16:34:07.544] [DEBUG] CaptureTrackingService: Обработка capture ID=20250731163359578, Handle=13305324, X=1449, Y=171, W=180, H=96
+[2025-07-31 16:34:07.555] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 180x96
+[2025-07-31 16:34:07.561] [DEBUG] TrendlineBreakDetector: Found 0 white pixels
+[2025-07-31 16:34:07.562] [DEBUG] TrendlineBreakDetector: Found 0 clusters
+[2025-07-31 16:34:07.562] [INFO] TrendlineBreakDetector: No white line cluster detected
+[2025-07-31 16:34:07.563] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163359578\tracking.png] Trendline not detected.
+[2025-07-31 16:34:07.564] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163359578\tracking.png: NoTrendline
+[2025-07-31 16:34:07.565] [DEBUG] CaptureTrackingService: Обработка capture ID=20250731163406178, Handle=13305324, X=1452, Y=189, W=207, H=104
+[2025-07-31 16:34:07.582] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 207x104
+[2025-07-31 16:34:07.589] [DEBUG] TrendlineBreakDetector: Found 0 white pixels
+[2025-07-31 16:34:07.590] [DEBUG] TrendlineBreakDetector: Found 0 clusters
+[2025-07-31 16:34:07.590] [INFO] TrendlineBreakDetector: No white line cluster detected
+[2025-07-31 16:34:07.592] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163406178\tracking.png] Trendline not detected.
+[2025-07-31 16:34:07.592] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163406178\tracking.png: NoTrendline
+[2025-07-31 16:34:07.962] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 16:34:07.962] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 16:34:07.963] [INFO] Applied toolbar settings for window 22939094: Risk=0, Duration=0, Broker=Forex
+[2025-07-31 16:34:07.963] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
+[2025-07-31 16:34:08.608] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-31 16:34:08.608] [DEBUG] CaptureTrackingService: Обработка capture ID=20250731163359578, Handle=13305324, X=1449, Y=171, W=180, H=96
+[2025-07-31 16:34:08.619] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 180x96
+[2025-07-31 16:34:08.626] [DEBUG] TrendlineBreakDetector: Found 0 white pixels
+[2025-07-31 16:34:08.626] [DEBUG] TrendlineBreakDetector: Found 0 clusters
+[2025-07-31 16:34:08.626] [INFO] TrendlineBreakDetector: No white line cluster detected
+[2025-07-31 16:34:08.627] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163359578\tracking.png] Trendline not detected.
+[2025-07-31 16:34:08.628] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163359578\tracking.png: NoTrendline
+[2025-07-31 16:34:08.629] [DEBUG] CaptureTrackingService: Обработка capture ID=20250731163406178, Handle=13305324, X=1452, Y=189, W=207, H=104
+[2025-07-31 16:34:08.643] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 207x104
+[2025-07-31 16:34:08.651] [DEBUG] TrendlineBreakDetector: Found 0 white pixels
+[2025-07-31 16:34:08.651] [DEBUG] TrendlineBreakDetector: Found 0 clusters
+[2025-07-31 16:34:08.651] [INFO] TrendlineBreakDetector: No white line cluster detected
+[2025-07-31 16:34:08.653] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163406178\tracking.png] Trendline not detected.
+[2025-07-31 16:34:08.653] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163406178\tracking.png: NoTrendline
+[2025-07-31 16:34:08.726] [DEBUG] Z hotkey detected and service is enabled
+[2025-07-31 16:34:08.727] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-31 16:34:09.656] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
+[2025-07-31 16:34:09.657] [DEBUG] CaptureTrackingService: Обработка capture ID=20250731163359578, Handle=13305324, X=1449, Y=171, W=180, H=96
+[2025-07-31 16:34:09.669] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 180x96
+[2025-07-31 16:34:09.675] [DEBUG] TrendlineBreakDetector: Found 0 white pixels
+[2025-07-31 16:34:09.675] [DEBUG] TrendlineBreakDetector: Found 0 clusters
+[2025-07-31 16:34:09.675] [INFO] TrendlineBreakDetector: No white line cluster detected
+[2025-07-31 16:34:09.677] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163359578\tracking.png] Trendline not detected.
+[2025-07-31 16:34:09.677] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163359578\tracking.png: NoTrendline
+[2025-07-31 16:34:09.679] [DEBUG] CaptureTrackingService: Обработка capture ID=20250731163406178, Handle=13305324, X=1452, Y=189, W=207, H=104
+[2025-07-31 16:34:09.698] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 207x104
+[2025-07-31 16:34:09.705] [DEBUG] TrendlineBreakDetector: Found 0 white pixels
+[2025-07-31 16:34:09.706] [DEBUG] TrendlineBreakDetector: Found 0 clusters
+[2025-07-31 16:34:09.706] [INFO] TrendlineBreakDetector: No white line cluster detected
+[2025-07-31 16:34:09.708] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163406178\tracking.png] Trendline not detected.
+[2025-07-31 16:34:09.708] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250731163406178\tracking.png: NoTrendline
+[2025-07-31 16:34:10.060] [INFO] CaptureTrackingService: Updated IsSkipped=True for capture ID=20250731163406178, Handle=13305324
+[2025-07-31 16:34:10.426] [INFO] CaptureTrackingService: Updated IsSkipped=True for capture ID=20250731163359578, Handle=13305324
+[2025-07-31 16:34:23.728] [INFO] Received from Pocket Option socket: {"cmd": "open_symbol", "result": "Open symbol command executed for USDJPY in PocketOption", "symbol": "USDJPY", "broker": "PocketOption"}
+[2025-07-31 16:34:23.770] [INFO] Received from Pocket Option socket: {"error": "Invalid JSON"}
+[2025-07-31 16:34:35.409] [INFO] Applied toolbar settings for window 13305324: Risk=5, Duration=5, Broker=PocketOption
+[2025-07-31 16:34:35.409] [INFO] Overlay positioned on window 13305324 (symbol: USDJPY): Left=1920, Top=0, Width=1920
+[2025-07-31 16:34:47.760] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 16:34:47.761] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 16:34:47.762] [INFO] Applied toolbar settings for window 22939094: Risk=0, Duration=0, Broker=Forex
+[2025-07-31 16:34:47.762] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
+[2025-07-31 16:35:01.880] [INFO] Received from Pocket Option socket: {"cmd": "open_symbol", "result": "Open symbol command executed for USDJPY in PocketOption", "symbol": "USDJPY", "broker": "PocketOption"}
+[2025-07-31 16:35:02.097] [INFO] Applied toolbar settings for window 13305324: Risk=5, Duration=5, Broker=PocketOption
+[2025-07-31 16:35:02.098] [INFO] Overlay positioned on window 13305324 (symbol: USDJPY): Left=1920, Top=0, Width=1920
+[2025-07-31 16:35:09.614] [INFO] Received from Pocket Option socket: {"cmd": "open_symbol", "result": "Open symbol command executed for USDJPY in PocketOption", "symbol": "USDJPY", "broker": "PocketOption"}
+[2025-07-31 16:37:55.179] [DEBUG] Z hotkey detected and service is enabled
+[2025-07-31 16:37:55.180] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-07-31 16:37:55.638] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 16:37:55.638] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-07-31 16:37:55.639] [INFO] Applied toolbar settings for window 22939094: Risk=0, Duration=0, Broker=Forex
+[2025-07-31 16:37:55.639] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
+[2025-07-31 16:37:59.030] [DEBUG] Status: Found and brought 2 window(s) to foreground: XAU/USD, T144, XAU/USD, T13
+[2025-07-31 16:37:59.101] [INFO] Applied default toolbar settings for window 590036
+[2025-07-31 16:37:59.102] [INFO] Overlay positioned on window 590036 (symbol: XAUUSD): Left=0, Top=0, Width=1920
+[2025-07-31 16:38:02.032] [INFO] MainWindow closing - cleaning up resources
+[2025-07-31 16:38:02.036] [INFO] SimpleTradingOverlay closed
+[2025-07-31 16:38:02.037] [INFO] Disconnecting from MT4 socket
+[2025-07-31 16:38:02.038] [INFO] Disconnecting from Pocket Option socket
+[2025-07-31 16:38:02.038] [INFO] All services cleaned up
+[2025-07-31 16:38:02.038] [INFO] MainWindow cleanup completed
+[2025-07-31 16:38:02.038] [INFO] MT4 socket read operation cancelled
+[2025-07-31 16:38:02.038] [INFO] Pocket Option socket read operation cancelled
+[2025-07-31 16:38:02.039] [INFO] MT4 socket read loop ended
+[2025-07-31 16:38:02.039] [INFO] Disconnecting from MT4 socket
+[2025-07-31 16:38:02.039] [WARNING] Not connected to MT4 socket
+[2025-07-31 16:38:02.039] [INFO] Pocket Option socket read loop ended
+[2025-07-31 16:38:02.039] [INFO] Disconnecting from Pocket Option socket
+[2025-07-31 16:38:02.039] [WARNING] Not connected to Pocket Option socket
+[2025-07-31 16:38:02.039] [INFO] All services cleaned up
+[2025-07-31 16:38:02.058] [DEBUG] MT4 Connection: Disconnected
+[2025-07-31 16:38:02.059] [INFO] MT4 Connection status: Disconnected
+[2025-07-31 16:38:02.059] [INFO] Successfully disconnected from Pocket Option socket
+[2025-07-31 16:42:52.888] [INFO] MT4 Socket Service initialized
+[2025-07-31 16:42:52.899] [INFO] Binary Options Socket Service initialized
+[2025-07-31 16:42:52.903] [INFO] All services registered in DI container
+[2025-07-31 16:42:52.909] [INFO] Attempting to connect to Pocket Option socket at 192.168.0.3:65300
+[2025-07-31 16:42:52.940] [INFO] Successfully connected to Pocket Option socket at 192.168.0.3:65300
+[2025-07-31 16:42:52.942] [INFO] Starting to read messages from Pocket Option socket
+[2025-07-31 16:42:52.944] [INFO] Received from Pocket Option socket: {"hello": "Binary API Server", "status": "connected", "version": "1.0.0"}
+[2025-07-31 16:42:53.120] [INFO] MT4 Socket Service initialized in MainWindow
+[2025-07-31 16:42:53.121] [INFO] MT4 Socket Service subscribed to CaptureTrackingService BreakoutDetected event
+[2025-07-31 16:42:53.122] [INFO] Binary Options Socket Service subscribed to CaptureTrackingService BreakoutDetected event
+[2025-07-31 16:42:53.189] [INFO] Mouse hook set successfully
+[2025-07-31 16:42:53.189] [INFO] SimpleTradingOverlay initialized successfully
+[2025-07-31 16:42:53.536] [INFO] === MONITOR INFORMATION ===
+[2025-07-31 16:42:53.537] [INFO] Total monitors detected: 2
+[2025-07-31 16:42:53.537] [INFO] Monitor 0:
+[2025-07-31 16:42:53.537] [INFO]   - Primary: True
+[2025-07-31 16:42:53.537] [INFO]   - Device Name: \\.\DISPLAY1
+[2025-07-31 16:42:53.538] [INFO]   - Bounds: X=0, Y=0, Width=1920, Height=1080
+[2025-07-31 16:42:53.538] [INFO]   - Working Area: X=0, Y=0, Width=1920, Height=1040
+[2025-07-31 16:42:53.538] [INFO]   - Left Boundary: 0
+[2025-07-31 16:42:53.538] [INFO]   - Top Boundary: 0
+[2025-07-31 16:42:53.538] [INFO]   - Right Boundary: 1920
+[2025-07-31 16:42:53.538] [INFO]   - Bottom Boundary: 1080
+[2025-07-31 16:42:53.538] [INFO] Monitor 1:
+[2025-07-31 16:42:53.539] [INFO]   - Primary: False
+[2025-07-31 16:42:53.539] [INFO]   - Device Name: \\.\DISPLAY2
+[2025-07-31 16:42:53.539] [INFO]   - Bounds: X=1920, Y=0, Width=1920, Height=1080
+[2025-07-31 16:42:53.539] [INFO]   - Working Area: X=1920, Y=0, Width=1920, Height=1040
+[2025-07-31 16:42:53.539] [INFO]   - Left Boundary: 1920
+[2025-07-31 16:42:53.539] [INFO]   - Top Boundary: 0
+[2025-07-31 16:42:53.540] [INFO]   - Right Boundary: 3840
+[2025-07-31 16:42:53.540] [INFO]   - Bottom Boundary: 1080
+[2025-07-31 16:42:53.540] [INFO] === END MONITOR INFORMATION ===
+[2025-07-31 16:42:53.651] [INFO] Pocket Option Socket: Connection status indicator updated to Connected (Green)
+[2025-07-31 16:42:53.655] [INFO] Attempting to connect to MT4 socket at 127.0.0.1:23456
+[2025-07-31 16:42:53.664] [INFO] Successfully connected to MT4 socket at 127.0.0.1:23456
+[2025-07-31 16:42:53.664] [DEBUG] MT4 Connection: Connected
+[2025-07-31 16:42:53.665] [INFO] MT4 Connection status: Connected
+[2025-07-31 16:42:53.665] [INFO] MT4 Socket: Connection status indicator updated to Connected (Green)
+[2025-07-31 16:42:53.669] [INFO] Starting to read messages from MT4 socket
+[2025-07-31 16:42:53.715] [INFO] Received from MT4 socket: {"event":"welcome","version":"1.4.0","server_name":"RIPPER_MT4_SOCKET_SERVER","port":"23456","debug_mode":false,"symbol_suffix":".s","account":{"balance":27.65000000,"equity":27.65000000,"margin":0.00000000,"free_margin":27.65000000,"currency":"USD","company":"PU Prime Ltd","server":"PUPrime-Live 7"}}
+
+[2025-07-31 16:42:53.739] [INFO] MT4 Socket: Received unknown event type: welcome
+[2025-07-31 16:42:53.740] [DEBUG] MT4: {"event":"welcome","version":"1.4.0","server_name":"RIPPER_MT4_SOCKET_SERVER","port":"23456","debug_mode":false,"symbol_suffix":".s","account":{"balance":27.65000000,"equity":27.65000000,"margin":0.00000000,"free_margin":27.65000000,"currency":"USD","company":"PU Prime Ltd","server":"PUPrime-Live 7"}}
+
+[2025-07-31 16:42:53.770] [INFO] Received from MT4 socket: {"event":"watchlist_stats","data":{"XAUUSD.s":{"total":3,"buy":2,"sell":1,"tline_total":0,"tline_buy":0,"tline_sell":0,"shortline_total":3,"shortline_buy":2,"shortline_sell":1}}}
+[2025-07-31 16:42:53.770] [INFO] MT4 Socket: Received unknown event type: watchlist_stats
+[2025-07-31 16:42:53.770] [DEBUG] MT4: {"event":"watchlist_stats","data":{"XAUUSD.s":{"total":3,"buy":2,"sell":1,"tline_total":0,"tline_buy":0,"tline_sell":0,"shortline_total":3,"shortline_buy":2,"shortline_sell":1}}}
+[2025-07-31 16:43:00.150] [INFO] Applied default toolbar settings for window 22939094
+[2025-07-31 16:43:00.212] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
+[2025-07-31 16:43:01.385] [DEBUG] E hotkey detected and service is enabled
+[2025-07-31 16:43:01.385] [INFO] [DEBUG] OnEHotkey event in MainWindow
+[2025-07-31 16:43:01.518] [INFO] Hotkey button index 2 clicked at (480,56) on window 22939094
+[2025-07-31 16:43:01.519] [INFO] [DEBUG] Mouse returned to (946,634)
+[2025-07-31 16:43:02.104] [DEBUG] E hotkey detected and service is enabled
+[2025-07-31 16:43:02.104] [INFO] [DEBUG] OnEHotkey event in MainWindow
+[2025-07-31 16:43:02.227] [INFO] Hotkey button index 2 clicked at (480,56) on window 22939094
+[2025-07-31 16:43:02.227] [INFO] [DEBUG] Mouse returned to (944,634)
+[2025-07-31 16:43:02.919] [DEBUG] E hotkey detected and service is enabled
+[2025-07-31 16:43:02.920] [INFO] [DEBUG] OnEHotkey event in MainWindow
+[2025-07-31 16:43:03.050] [INFO] Hotkey button index 2 clicked at (480,56) on window 22939094
+[2025-07-31 16:43:03.051] [INFO] [DEBUG] Mouse returned to (944,634)
+[2025-07-31 16:43:04.912] [DEBUG] Symbol hotkey 1 pressed
+[2025-07-31 16:43:05.133] [DEBUG] Status: Found and brought 2 window(s) to foreground: XAU/USD, T144, XAU/USD, T13
+[2025-07-31 16:43:05.338] [INFO] Applied default toolbar settings for window 590036
+[2025-07-31 16:43:05.338] [INFO] Overlay positioned on window 590036 (symbol: XAUUSD): Left=0, Top=0, Width=1920
+[2025-07-31 16:43:05.863] [DEBUG] Symbol hotkey 4 pressed
+[2025-07-31 16:43:06.087] [DEBUG] Status: Found and brought 2 window(s) to foreground: USD/JPY, T34, USD/JPY, T8
+[2025-07-31 16:43:06.089] [INFO] Applied default toolbar settings for window 22939094
+[2025-07-31 16:43:06.089] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
+[2025-07-31 16:43:06.775] [DEBUG] Symbol hotkey 1 pressed
+[2025-07-31 16:43:06.988] [DEBUG] Status: Found and brought 2 window(s) to foreground: XAU/USD, T13, XAU/USD, T144
+[2025-07-31 16:43:08.016] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-31 16:43:08.139] [INFO] Hotkey button index 1 clicked at (280,56) on window 590036
+[2025-07-31 16:43:08.140] [INFO] [DEBUG] Mouse returned to (1202,452)
+[2025-07-31 16:43:08.511] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-31 16:43:08.641] [INFO] Hotkey button index 1 clicked at (280,56) on window 590036
+[2025-07-31 16:43:08.641] [INFO] [DEBUG] Mouse returned to (1202,452)
+[2025-07-31 16:43:08.695] [DEBUG] E hotkey detected and service is enabled
+[2025-07-31 16:43:08.696] [INFO] [DEBUG] OnEHotkey event in MainWindow
+[2025-07-31 16:43:08.860] [INFO] Hotkey button index 2 clicked at (480,56) on window 590036
+[2025-07-31 16:43:08.860] [INFO] [DEBUG] Mouse returned to (1202,452)
+[2025-07-31 16:43:09.839] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-31 16:43:09.972] [INFO] Hotkey button index 1 clicked at (280,56) on window 590036
+[2025-07-31 16:43:09.972] [INFO] [DEBUG] Mouse returned to (1213,456)
+[2025-07-31 16:43:10.458] [INFO] Applied default toolbar settings for window 590036
+[2025-07-31 16:43:10.458] [INFO] Overlay positioned on window 590036 (symbol: XAUUSD): Left=0, Top=0, Width=1920
+[2025-07-31 16:45:33.209] [ERROR] Error reading from Pocket Option socket
+Exception: Unable to read data from the transport connection: Удаленный хост принудительно разорвал существующее подключение..
+StackTrace:    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask`1.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at ScreenCaptureApp.Services.BinaryOptionsSocketService.ReadMessagesAsync(CancellationToken cancellationToken) in C:\apps\jforex-trading-terminal-win10\Services\BinaryOptionsSocketService.cs:line 293
+[2025-07-31 16:45:33.210] [INFO] Pocket Option socket read loop ended
+[2025-07-31 16:50:51.083] [DEBUG] Status: Found and brought 2 window(s) to foreground: XAU/USD, T144, XAU/USD, T13
+[2025-07-31 16:50:54.307] [DEBUG] Status: Found and brought 2 window(s) to foreground: USD/JPY, T8, USD/JPY, T34
+[2025-07-31 16:50:54.508] [INFO] Applied default toolbar settings for window 22939094
+[2025-07-31 16:50:54.508] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
+[2025-07-31 16:50:55.429] [INFO] Applied default toolbar settings for window 13305324
+[2025-07-31 16:50:55.429] [INFO] Overlay positioned on window 13305324 (symbol: USDJPY): Left=1920, Top=0, Width=1920
+[2025-07-31 16:50:56.677] [INFO] Applied default toolbar settings for window 22939094
+[2025-07-31 16:50:56.677] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
+[2025-07-31 16:51:02.096] [INFO] Pocket Option Socket: Manual reconnect initiated
+[2025-07-31 16:51:02.096] [INFO] Attempting to connect to Pocket Option socket at 192.168.0.3:65300
+[2025-07-31 16:51:03.266] [INFO] Pocket Option Socket: Manual reconnect initiated
+[2025-07-31 16:51:03.267] [INFO] Attempting to connect to Pocket Option socket at 192.168.0.3:65300
+[2025-07-31 16:51:17.831] [ERROR] Failed to connect to Pocket Option socket at 192.168.0.3:65300
+Exception: Сделана попытка выполнить операцию на сокете при отключенной сети.
+StackTrace:    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Net.Sockets.TcpClient.CompleteConnectAsync(Task task)
+   at ScreenCaptureApp.Services.BinaryOptionsSocketService.ConnectAsync() in C:\apps\jforex-trading-terminal-win10\Services\BinaryOptionsSocketService.cs:line 146
+[2025-07-31 16:51:17.832] [ERROR] Failed to connect to Pocket Option socket at 192.168.0.3:65300
+Exception: Сделана попытка выполнить операцию на сокете при отключенной сети.
+StackTrace:    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Net.Sockets.TcpClient.CompleteConnectAsync(Task task)
+   at ScreenCaptureApp.Services.BinaryOptionsSocketService.ConnectAsync() in C:\apps\jforex-trading-terminal-win10\Services\BinaryOptionsSocketService.cs:line 146
+[2025-07-31 16:51:17.832] [ERROR] Pocket Option Socket: Manual reconnect failed
+[2025-07-31 16:51:17.832] [ERROR] Pocket Option Socket: Manual reconnect failed
+[2025-07-31 16:58:45.180] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-31 16:58:45.306] [INFO] Hotkey button index 1 clicked at (280,56) on window 22939094
+[2025-07-31 16:58:45.307] [INFO] [DEBUG] Mouse returned to (1223,508)
+[2025-07-31 16:58:46.173] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-31 16:58:46.299] [INFO] Hotkey button index 1 clicked at (280,56) on window 22939094
+[2025-07-31 16:58:46.300] [INFO] [DEBUG] Mouse returned to (1311,561)
+[2025-07-31 16:58:46.700] [INFO] [DEBUG] OnWHotkey event in MainWindow
+[2025-07-31 16:58:46.820] [INFO] Hotkey button index 1 clicked at (280,56) on window 22939094
+[2025-07-31 16:58:46.820] [INFO] [DEBUG] Mouse returned to (1310,560)
+[2025-07-31 17:01:53.166] [INFO] Pocket Option Socket: Manual reconnect initiated
+[2025-07-31 17:01:53.166] [INFO] Attempting to connect to Pocket Option socket at 192.168.0.3:65300
+[2025-07-31 17:01:53.168] [INFO] Successfully connected to Pocket Option socket at 192.168.0.3:65300
+[2025-07-31 17:01:53.168] [INFO] Starting to read messages from Pocket Option socket
+[2025-07-31 17:01:53.168] [INFO] Pocket Option Socket: Manual reconnect successful
+[2025-07-31 17:01:53.168] [INFO] Pocket Option Socket: Connection status indicator updated to Connected (Green)
+[2025-07-31 17:01:53.169] [INFO] Received from Pocket Option socket: {"hello": "Binary API Server", "status": "connected", "version": "1.0.0"}
+[2025-07-31 17:01:56.116] [DEBUG] Status: Found and brought 2 window(s) to foreground: USD/JPY, T144, USD/JPY, T8
+[2025-07-31 17:01:56.501] [INFO] Applied default toolbar settings for window 13305324
+[2025-07-31 17:01:56.501] [INFO] Overlay positioned on window 13305324 (symbol: USDJPY): Left=1920, Top=0, Width=1920
+[2025-07-31 17:02:00.932] [INFO] Sent message to Pocket Option socket: {"cmd":"set_risk","broker":"PocketOption","risk":"5"}
+[2025-07-31 17:02:02.919] [INFO] Received from Pocket Option socket: {"cmd": "set_risk", "result": "Risk set to 5", "risk": "5", "broker": "PocketOption"}
+[2025-07-31 17:02:11.824] [INFO] Sent message to Pocket Option socket: {"cmd":"set_duration","broker":"PocketOption","duration":"3"}
+[2025-07-31 17:02:13.327] [INFO] Received from Pocket Option socket: {"cmd": "set_duration", "result": "Duration set to 3", "duration": "3", "broker": "PocketOption"}
+[2025-07-31 17:02:25.758] [INFO] Sent message to Pocket Option socket: {"cmd":"set_duration","broker":"PocketOption","duration":"1"}
+[2025-07-31 17:02:27.278] [INFO] Received from Pocket Option socket: {"cmd": "set_duration", "result": "Duration set to 1", "duration": "1", "broker": "PocketOption"}
+[2025-07-31 17:02:29.661] [INFO] Sent message to Pocket Option socket: {"cmd":"set_duration","broker":"PocketOption","duration":"3"}
+[2025-07-31 17:02:37.065] [INFO] Received from Pocket Option socket: {"cmd": "set_duration", "result": "Duration set to 3", "duration": "3", "broker": "PocketOption"}
+[2025-07-31 17:02:39.837] [INFO] Sent message to Pocket Option socket: {"cmd":"set_duration","broker":"PocketOption","duration":"3"}
+[2025-07-31 17:02:46.509] [INFO] Received from Pocket Option socket: {"cmd": "set_duration", "result": "Duration set to 3", "duration": "3", "broker": "PocketOption"}
+[2025-07-31 17:02:48.013] [INFO] Sent message to Pocket Option socket: {"cmd":"set_duration","broker":"PocketOption","duration":"5"}
+[2025-07-31 17:02:55.217] [INFO] Received from Pocket Option socket: {"cmd": "set_duration", "result": "Duration set to 5", "duration": "5", "broker": "PocketOption"}
+[2025-07-31 17:02:57.541] [INFO] Sent message to Pocket Option socket: {"cmd":"set_duration","broker":"PocketOption","duration":"5"}
+[2025-07-31 17:03:03.817] [INFO] Received from Pocket Option socket: {"cmd": "set_duration", "result": "Duration set to 5", "duration": "5", "broker": "PocketOption"}
+[2025-07-31 17:03:19.263] [ERROR] Error reading from Pocket Option socket
+Exception: Unable to read data from the transport connection: Удаленный хост принудительно разорвал существующее подключение..
+StackTrace:    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask`1.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at ScreenCaptureApp.Services.BinaryOptionsSocketService.ReadMessagesAsync(CancellationToken cancellationToken) in C:\apps\jforex-trading-terminal-win10\Services\BinaryOptionsSocketService.cs:line 293
+[2025-07-31 17:03:19.264] [INFO] Pocket Option socket read loop ended
+[2025-07-31 17:03:49.046] [WARNING] Failed to open symbol USDJPY for broker PocketOption
+[2025-07-31 17:03:49.046] [WARNING] Failed to open symbol USDJPY for broker PocketOption
+[2025-07-31 17:03:49.047] [INFO] Applied default toolbar settings for window 22939094
+[2025-07-31 17:03:49.047] [INFO] Overlay positioned on window 22939094 (symbol: USDJPY): Left=0, Top=0, Width=1920
+[2025-07-31 17:04:10.429] [DEBUG] Status: Found and brought 2 window(s) to foreground: XAU/USD, T13, XAU/USD, T144
+[2025-07-31 17:04:10.531] [INFO] Applied default toolbar settings for window 590036
+[2025-07-31 17:04:10.531] [INFO] Overlay positioned on window 590036 (symbol: XAUUSD): Left=0, Top=0, Width=1920
+[2025-07-31 17:04:17.099] [INFO] Applied default toolbar settings for window 591280
+[2025-07-31 17:04:17.099] [INFO] Overlay positioned on window 591280 (symbol: XAUUSD): Left=1920, Top=0, Width=1920

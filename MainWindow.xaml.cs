@@ -473,6 +473,13 @@ namespace ScreenCaptureApp
             HotkeyToggleButton.IsChecked = true;
             EnableHotkeys();
             
+            // Инициализируем статус Binary Options
+            var binaryOptionsSocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
+            if (binaryOptionsSocketService != null)
+            {
+                PocketOptionHelper.CheckPocketOptionConnectionStatusWithUi(this, BinaryOptionsStatusIndicator, binaryOptionsSocketService);
+            }
+            
             // Обновляем заголовок окна с начальными статусами
             UpdateWindowTitle();
             
@@ -698,7 +705,7 @@ namespace ScreenCaptureApp
             var binaryOptionsSocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
             if (binaryOptionsSocketService != null)
             {
-                await binaryOptionsSocketService.ConnectAsync();
+                await PocketOptionHelper.ReconnectPocketOptionWithUiAsync(this, BinaryOptionsStatusIndicator, binaryOptionsSocketService);
             }
             UpdateWindowTitle();
         }
@@ -709,6 +716,7 @@ namespace ScreenCaptureApp
         private void UpdateWindowTitle()
         {
             var mt4SocketService = ServiceContainer.Instance.GetService<Mt4SocketService>();
+            var binaryOptionsSocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
             
             string mt4Status = "⚫";
             string binaryOptionsStatus = "⚫";
@@ -717,6 +725,11 @@ namespace ScreenCaptureApp
                 mt4Status = "🟢";
             else if (mt4SocketService != null)
                 mt4Status = "🔴";
+                
+            if (binaryOptionsSocketService != null && binaryOptionsSocketService.IsConnected)
+                binaryOptionsStatus = "🟢";
+            else if (binaryOptionsSocketService != null)
+                binaryOptionsStatus = "🔴";
                 
             this.Title = $"Screen Capture Tool [MT4: {mt4Status}] [Binary Options: {binaryOptionsStatus}]";
         }

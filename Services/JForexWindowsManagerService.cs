@@ -487,6 +487,43 @@ namespace ScreenCaptureApp.Services
                 return false;
             }
         }
+
+        /// <summary>
+        /// Отправляет команду открытия символа для binary-брокера через binary-сокет
+        /// </summary>
+        public async Task<bool> OpenSymbol(string brokerName, string symbolName)
+        {
+            try
+            {
+                var binarySocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
+                if (binarySocketService != null && binarySocketService.IsConnected)
+                {
+                    string command = $"{{\"cmd\":\"open_symbol\",\"symbol\":\"{symbolName}\",\"broker\":\"{brokerName}\"}}";
+                    
+                    bool sent = await binarySocketService.WriteAsync(command);
+                    if (sent)
+                    {
+                        Logger.LogTagInfo("JForex", $"Open symbol command sent to binary socket: {command}");
+                        return true;
+                    }
+                    else
+                    {
+                        Logger.LogTagError("JForex", $"Failed to send open symbol command to binary socket: {command}");
+                        return false;
+                    }
+                }
+                else
+                {
+                    Logger.LogTagWarning("JForex", "Binary socket service not available or not connected for open symbol command");
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("JForex", $"Error sending open symbol command to binary socket: {ex.Message}", ex);
+                return false;
+            }
+        }
        
     }
 }
