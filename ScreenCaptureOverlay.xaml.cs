@@ -138,6 +138,12 @@ namespace ScreenCaptureApp
             TradingToolbar.HighlightSelectedBroker(brokerState.CurrentBroker);
             TradingToolbar.HighlightSelectedRiskButton(selectedRisk);
             TradingToolbar.HighlightSelectedDurationButton(selectedDuration);
+            
+            // Устанавливаем HandleID
+            if (_windowHandle != IntPtr.Zero)
+            {
+                TradingToolbar.SetHandleID(_windowHandle.ToInt64());
+            }
             if (_hotkeysService != null)
                 _hotkeysService.OnEnterKeyPressed += HotkeysService_OnEnterKeyPressed;
         }

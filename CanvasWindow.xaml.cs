@@ -1210,6 +1210,13 @@ namespace ScreenCaptureApp
             {
                 ActiveSymbolText.Text = activeSymbol;
                 ActiveSymbolText.Visibility = Visibility.Visible;
+                
+                // Устанавливаем HandleID в TradingToolbar
+                if (targetWindowHandle != IntPtr.Zero)
+                {
+                    TradingToolbar.SetHandleID(targetWindowHandle.ToInt64());
+                }
+                
                 Logger.LogInfo($"Active symbol display updated: {activeSymbol}");
             }
             else

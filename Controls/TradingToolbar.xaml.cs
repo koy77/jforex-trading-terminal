@@ -20,15 +20,14 @@ namespace ScreenCaptureApp.Controls
         public TradingToolbar()
         {
             InitializeComponent();
-            BrokerComboBox.SelectedIndex = 0;
+            HighlightSelectedBroker(SelectedBroker);
             HighlightSelectedRiskButton(SelectedRisk);
             HighlightSelectedDurationButton(SelectedDuration);
         }
 
         public void SetModeLabel(string text, bool visible)
         {
-            ModeLabel.Text = text;
-            ModeLabel.Visibility = visible ? Visibility.Visible : Visibility.Collapsed;
+            // Этот метод больше не используется, так как убрали ModeLabel
         }
 
         public void SetSymbol(string symbol)
@@ -46,6 +45,11 @@ namespace ScreenCaptureApp.Controls
                 SymbolLabel.Text = "UNKNOWN";
                 SymbolLabel.Visibility = Visibility.Visible;
             }
+        }
+
+        public void SetHandleID(long handleID)
+        {
+            HandleIDLabel.Text = $"HandleID: {handleID}";
         }
 
         public void ShowDurationPanel(bool show)
@@ -79,12 +83,12 @@ namespace ScreenCaptureApp.Controls
             }
         }
 
-        private void BrokerComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void BrokerButton_Click(object sender, RoutedEventArgs e)
         {
-            if (BrokerComboBox.SelectedItem is ComboBoxItem item)
+            if (sender is Button btn && btn.Tag != null)
             {
                 BrokerType newType = BrokerType.Forex;
-                switch (item.Tag?.ToString())
+                switch (btn.Tag.ToString())
                 {
                     case "Forex": newType = BrokerType.Forex; break;
                     case "PocketOption": newType = BrokerType.PocketOption; break;
@@ -92,6 +96,7 @@ namespace ScreenCaptureApp.Controls
                     case "Quotex": newType = BrokerType.Quotex; break;
                 }
                 SelectedBroker = newType;
+                HighlightSelectedBroker(newType);
                 BrokerChanged?.Invoke(newType);
             }
         }
@@ -225,13 +230,27 @@ namespace ScreenCaptureApp.Controls
 
         public void HighlightSelectedBroker(BrokerType broker)
         {
-            for (int i = 0; i < BrokerComboBox.Items.Count; i++)
+            // Сбрасываем все кнопки
+            FXButton.Background = Brushes.White;
+            POButton.Background = Brushes.White;
+            BINButton.Background = Brushes.White;
+            QOButton.Background = Brushes.White;
+
+            // Выделяем выбранную кнопку
+            switch (broker)
             {
-                if (BrokerComboBox.Items[i] is ComboBoxItem item && item.Tag?.ToString() == broker.ToString())
-                {
-                    BrokerComboBox.SelectedIndex = i;
+                case BrokerType.Forex:
+                    FXButton.Background = Brushes.Orange;
                     break;
-                }
+                case BrokerType.PocketOption:
+                    POButton.Background = Brushes.Orange;
+                    break;
+                case BrokerType.Binarium:
+                    BINButton.Background = Brushes.Orange;
+                    break;
+                case BrokerType.Quotex:
+                    QOButton.Background = Brushes.Orange;
+                    break;
             }
         }
     }

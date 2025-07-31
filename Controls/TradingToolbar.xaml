@@ -6,17 +6,20 @@
              mc:Ignorable="d" 
              d:DesignHeight="80" d:DesignWidth="1200">
     <StackPanel x:Name="TopPanel" Orientation="Horizontal" Background="#AA222222" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0" Panel.ZIndex="1000">
-        <!-- Symbol Display -->
-        <TextBlock x:Name="SymbolLabel" Text="XAUUSD" Foreground="Cyan" FontWeight="Bold" FontSize="32" VerticalAlignment="Center" Margin="20,0,30,0" Background="#80000000" Padding="15,10" TextAlignment="Center" MinWidth="120"/>
-        <!-- Broker ComboBox -->
-        <ComboBox x:Name="BrokerComboBox" Width="180" Height="50" Margin="0,0,20,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18" Foreground="Black" SelectionChanged="BrokerComboBox_SelectionChanged">
-            <ComboBoxItem Content="Forex" Tag="Forex"/>
-            <ComboBoxItem Content="Pocket Option" Tag="PocketOption"/>
-            <ComboBoxItem Content="Binarium" Tag="Binarium"/>
-            <ComboBoxItem Content="Quotex" Tag="Quotex"/>
-        </ComboBox>
-        <!-- Надпись TRADING!!/BINARY!! -->
-        <TextBlock x:Name="ModeLabel" Text="TRADING!!" Foreground="Red" FontWeight="Bold" FontSize="64" VerticalAlignment="Center" Margin="0,0,30,0" Background="#AA000000" Padding="10,10" TextAlignment="Center"/>
+        <!-- Symbol Display with HandleID -->
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="20,0,30,0">
+            <TextBlock x:Name="SymbolLabel" Text="XAUUSD" Foreground="Cyan" FontWeight="Bold" FontSize="32" Background="#80000000" Padding="15,10" TextAlignment="Center" MinWidth="120"/>
+            <TextBlock x:Name="HandleIDLabel" Text="HandleID: 0" Foreground="Aqua" FontSize="10" TextAlignment="Center" Margin="0,2,0,0"/>
+        </StackPanel>
+        
+        <!-- Broker Buttons -->
+        <StackPanel x:Name="BrokerPanel" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,20,0">
+            <Button x:Name="FXButton" Content="FX" Tag="Forex" Width="60" Height="40" Margin="3,0" Background="Orange" Foreground="Black" FontSize="16" FontWeight="Bold" Click="BrokerButton_Click"/>
+            <Button x:Name="POButton" Content="PO" Tag="PocketOption" Width="60" Height="40" Margin="3,0" Background="White" Foreground="Black" FontSize="16" FontWeight="Bold" Click="BrokerButton_Click"/>
+            <Button x:Name="BINButton" Content="BIN" Tag="Binarium" Width="60" Height="40" Margin="3,0" Background="White" Foreground="Black" FontSize="16" FontWeight="Bold" Click="BrokerButton_Click"/>
+            <Button x:Name="QOButton" Content="QO" Tag="Quotex" Width="60" Height="40" Margin="3,0" Background="White" Foreground="Black" FontSize="16" FontWeight="Bold" Click="BrokerButton_Click"/>
+        </StackPanel>
+        
         <!-- RISK -->
         <StackPanel x:Name="RiskPanelTop" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,0,0">
             <TextBlock Text="RISK" Foreground="Yellow" FontWeight="Bold" FontSize="24" Margin="0,0,10,0" VerticalAlignment="Center" Background="#80000000" Padding="8,4"/>
@@ -26,9 +29,10 @@
             <Button Content="20" Tag="20" Width="50" Height="50" Margin="5,0" Background="White" Foreground="Black" FontSize="24" Click="RiskButton_Click"/>
             <Button Content="30" Tag="30" Width="50" Height="50" Margin="5,0" Background="White" Foreground="Black" FontSize="24" Click="RiskButton_Click"/>
         </StackPanel>
+        
         <!-- Duration -->
         <StackPanel x:Name="DurationPanel" Orientation="Horizontal" VerticalAlignment="Center" Margin="30,0,0,0" Visibility="Collapsed">
-            <TextBlock Text="DURATION" Foreground="Yellow" FontWeight="Bold" FontSize="24" Margin="0,0,10,0" VerticalAlignment="Center" Background="#80000000" Padding="8,4"/>
+            <TextBlock Text="TIME" Foreground="Yellow" FontWeight="Bold" FontSize="24" Margin="0,0,10,0" VerticalAlignment="Center" Background="#80000000" Padding="8,4"/>
             <Button Content="1" Tag="1" Width="50" Height="50" Margin="5,0" Background="LightGray" Foreground="Black" FontSize="24" Click="DurationButton_Click"/>
             <Button Content="2" Tag="2" Width="50" Height="50" Margin="5,0" Background="LightGray" Foreground="Black" FontSize="24" Click="DurationButton_Click"/>
             <Button Content="3" Tag="3" Width="50" Height="50" Margin="5,0" Background="LightGray" Foreground="Black" FontSize="24" Click="DurationButton_Click"/>

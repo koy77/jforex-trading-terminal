@@ -542,6 +542,9 @@ namespace ScreenCaptureApp
                     // Устанавливаем символ в тулбаре
                     TradingToolbar.SetSymbol(symbol);
                     
+                    // Устанавливаем HandleID
+                    TradingToolbar.SetHandleID(windowHandle.ToInt64());
+                    
                     // Применяем настройки тулбара для этого окна
                     ApplyToolbarSettings(windowHandle);
                     
@@ -567,6 +570,9 @@ namespace ScreenCaptureApp
                 // Устанавливаем символ для текущего окна
                 string symbol = ExtractSymbolFromWindowTitle(windowHandle);
                 TradingToolbar.SetSymbol(symbol);
+                
+                // Устанавливаем HandleID
+                TradingToolbar.SetHandleID(windowHandle.ToInt64());
                 
                 var toolbarSettings = _toolbarSettingsManager.GetSettings(windowHandle.ToInt64());
                 if (toolbarSettings != null)
