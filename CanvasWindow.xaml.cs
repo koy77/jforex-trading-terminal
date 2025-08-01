@@ -179,6 +179,12 @@ namespace ScreenCaptureApp
                     brokerState.CurrentBroker = toolbarSettings.Broker;
                     Logger.LogInfo($"Applied toolbar settings for handle={targetWindowHandle.ToInt64()}: Risk={selectedRisk}, Duration={selectedDuration}, Broker={toolbarSettings.Broker}");
                 }
+                else
+                {
+                    // Если настроек нет, создаем их с дефолтными значениями
+                    _toolbarSettingsManager.UpdateSettings(targetWindowHandle.ToInt64(), selectedRisk, selectedDuration, brokerState.CurrentBroker);
+                    Logger.LogInfo($"Created default toolbar settings for handle={targetWindowHandle.ToInt64()}: Risk={selectedRisk}, Duration={selectedDuration}, Broker={brokerState.CurrentBroker}");
+                }
             }
             // Подписка на события TradingToolbar
             TradingToolbar.RiskChanged += (risk) => {

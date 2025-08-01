@@ -100,6 +100,13 @@ namespace ScreenCaptureApp.Services
             {
                 var durationState = ServiceContainer.Instance.GetService<DurationState>();
                 duration = durationState.CurrentDuration;
+                
+                // Если DurationState тоже равен 0, используем дефолтное значение 2
+                if (duration == 0)
+                {
+                    duration = 2;
+                    Logger.LogInfo($"Duration was 0, using default value: {duration}");
+                }
             }
             
             // Определяем модель по координатам Y

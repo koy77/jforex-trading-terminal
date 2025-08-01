@@ -597,7 +597,10 @@ namespace ScreenCaptureApp
                     TradingToolbar.HighlightSelectedBroker(BrokerType.Forex);
                     UpdateTradingToolbarUiByBroker(BrokerType.Forex);
                     
-                    Logger.LogInfo($"Applied default toolbar settings for window {windowHandle}");
+                    // Создаем настройки с дефолтными значениями
+                    _toolbarSettingsManager.UpdateSettings(windowHandle.ToInt64(), 1, 2, BrokerType.Forex);
+                    
+                    Logger.LogInfo($"Applied and created default toolbar settings for window {windowHandle}");
                 }
             }
             catch (Exception ex)

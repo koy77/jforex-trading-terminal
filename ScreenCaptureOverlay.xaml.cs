@@ -113,6 +113,12 @@ namespace ScreenCaptureApp
                     brokerState.CurrentBroker = toolbarSettings.Broker;
                     Logger.LogInfo($"Applied toolbar settings for handle={_windowHandle.ToInt64()}: Risk={selectedRisk}, Duration={selectedDuration}, Broker={toolbarSettings.Broker}");
                 }
+                else
+                {
+                    // Если настроек нет, создаем их с дефолтными значениями
+                    _toolbarSettingsManager.UpdateSettings(_windowHandle.ToInt64(), selectedRisk, selectedDuration, brokerState.CurrentBroker);
+                    Logger.LogInfo($"Created default toolbar settings for handle={_windowHandle.ToInt64()}: Risk={selectedRisk}, Duration={selectedDuration}, Broker={brokerState.CurrentBroker}");
+                }
             }
             
             InitializeWindow();
@@ -610,7 +616,8 @@ namespace ScreenCaptureApp
             Logger.LogInfo($"ScreenCaptureOverlay calling CaptureAreaWithSymbolAndRisk: SelectedRisk={TradingToolbar.SelectedRisk}, SelectedDuration={TradingToolbar.SelectedDuration}, activeSymbol={activeSymbol}");
             Logger.LogInfo($"ScreenCaptureOverlay local values: selectedRisk={selectedRisk}, selectedDuration={selectedDuration}");
             
-            _captureService.CaptureAreaWithSymbolAndRisk(xVirtual, y, width, height, this, activeSymbol, _windowHandle, TradingToolbar.SelectedRisk, TradingToolbar.SelectedDuration);
+            // Используем локальные переменные для обеспечения правильных значений
+            _captureService.CaptureAreaWithSymbolAndRisk(xVirtual, y, width, height, this, activeSymbol, _windowHandle, selectedRisk, selectedDuration);
             // Запуск трекинга сразу после захвата
             var mainWindow = System.Windows.Application.Current.MainWindow as MainWindow;
             if (mainWindow != null)

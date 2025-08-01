@@ -46,9 +46,9 @@ namespace ScreenCaptureApp.Models
     public class ToolbarSettings
     {
         public long Handle { get; set; }
-        public double Risk { get; set; }
-        public int Duration { get; set; }
-        public BrokerType Broker { get; set; }
+        public double Risk { get; set; } = 1.0;
+        public int Duration { get; set; } = 2;
+        public BrokerType Broker { get; set; } = BrokerType.Forex;
     }
 
     public class CaptureDbRoot

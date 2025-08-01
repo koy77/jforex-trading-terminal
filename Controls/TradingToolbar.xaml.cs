@@ -26,7 +26,6 @@ namespace ScreenCaptureApp.Controls
             InitializeComponent();
             HighlightSelectedBroker(SelectedBroker);
             HighlightSelectedRiskButton(SelectedRisk);
-            HighlightSelectedDurationButton(SelectedDuration);
             
             // Subscribe to MT4 socket service events
             SubscribeToMt4SocketEvents();
@@ -36,6 +35,18 @@ namespace ScreenCaptureApp.Controls
             OrderBEButton.Click += (s, e) => OnOrderBEClicked();
             OrderTP1Button.Click += (s, e) => OnOrderTP1Clicked();
             OrderTP2Button.Click += (s, e) => OnOrderTP2Clicked();
+            
+            // Ensure default duration is properly highlighted when panel becomes visible
+            DurationPanel.IsVisibleChanged += (s, e) => 
+            {
+                if (DurationPanel.Visibility == Visibility.Visible)
+                {
+                    HighlightSelectedDurationButton(SelectedDuration);
+                }
+            };
+            
+            // Initial highlight for duration (in case panel is visible)
+            HighlightSelectedDurationButton(SelectedDuration);
         }
 
         private void SubscribeToMt4SocketEvents()
@@ -227,6 +238,12 @@ namespace ScreenCaptureApp.Controls
         public void ShowDurationPanel(bool show)
         {
             DurationPanel.Visibility = show ? Visibility.Visible : Visibility.Collapsed;
+            
+            // Ensure proper highlighting when showing the panel
+            if (show)
+            {
+                HighlightSelectedDurationButton(SelectedDuration);
+            }
         }
 
         private void RiskButton_Click(object sender, RoutedEventArgs e)

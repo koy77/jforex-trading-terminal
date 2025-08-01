@@ -33,6 +33,16 @@ namespace ScreenCaptureApp.Services
             if (broker.HasValue) settings.Broker = broker.Value;
         }
 
+        public ToolbarSettings GetOrCreateSettings(long handle)
+        {
+            if (!_settingsByHandle.TryGetValue(handle, out var settings))
+            {
+                settings = new ToolbarSettings { Handle = handle };
+                _settingsByHandle[handle] = settings;
+            }
+            return settings;
+        }
+
         public void RemoveSettings(long handle)
         {
             _settingsByHandle.Remove(handle);
