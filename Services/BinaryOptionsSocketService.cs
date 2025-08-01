@@ -3,7 +3,6 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Collections.Concurrent;
 using ScreenCaptureApp.Models;
 using ScreenCaptureApp.Helpers;
 
@@ -20,7 +19,6 @@ namespace ScreenCaptureApp.Services
         private readonly object _lockObject = new object();
         private CancellationTokenSource _cancellationTokenSource;
         private Task _readTask;
-        private readonly ConcurrentQueue<string> _messageQueue = new ConcurrentQueue<string>();
         private readonly SemaphoreSlim _writeSemaphore = new SemaphoreSlim(1, 1); // Для атомарной отправки команд
 
         // Ссылка на CaptureTrackingService для подписки на события
@@ -116,11 +114,11 @@ namespace ScreenCaptureApp.Services
                     json += "\r\n";
                     Logger.LogInfo($"Binary Options Socket: Sending to Pocket Option: {json.Trim()} (with CRLF)");
                     
-                    // Отправляем команду атомарно
+                    // Отправляем команду атомарно - если не отправилась, то теряется
                     bool success = await WriteAsync(json);
                     if (!success)
                     {
-                        Logger.LogError($"Binary Options Socket: Failed to send command: {json.Trim()}");
+                        Logger.LogWarning($"Binary Options Socket: Failed to send command, dropping it: {json.Trim()}");
                     }
                     else
                     {
@@ -234,7 +232,7 @@ namespace ScreenCaptureApp.Services
                     return false;
                 }
 
-                // Используем семафор для атомарной отправки команд
+                // Используем семафор для атомарной отправки команд - только одна команда за раз
                 await _writeSemaphore.WaitAsync();
                 try
                 {
@@ -245,8 +243,8 @@ namespace ScreenCaptureApp.Services
                     
                     Logger.LogInfo($"Sent message to Pocket Option socket: {message}");
                     
-                    // Добавляем небольшую задержку между командами для стабильности
-                    await Task.Delay(50);
+                    // Добавляем задержку между командами для стабильности
+                    await Task.Delay(100);
                     
                     return true;
                 }
@@ -284,7 +282,7 @@ namespace ScreenCaptureApp.Services
                     return false;
                 }
 
-                // Используем семафор для атомарной отправки данных
+                // Используем семафор для атомарной отправки данных - только одна команда за раз
                 await _writeSemaphore.WaitAsync();
                 try
                 {
@@ -293,8 +291,8 @@ namespace ScreenCaptureApp.Services
                     
                     Logger.LogInfo($"Sent {data.Length} bytes to Pocket Option socket");
                     
-                    // Добавляем небольшую задержку между отправками для стабильности
-                    await Task.Delay(50);
+                    // Добавляем задержку между отправками для стабильности
+                    await Task.Delay(100);
                     
                     return true;
                 }

@@ -1086,3 +1086,16 @@
 [2025-08-01 21:31:56.604] [SOCKET] PO OUT: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
 [2025-08-01 21:31:57.715] [SOCKET] PO OUT: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
 [2025-08-01 21:31:57.772] [SOCKET] PO OUT: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-08-01 21:34:02.498] [SOCKET] PO OUT: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-08-01 21:34:02.568] [SOCKET] PO OUT: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-08-01 21:37:16.652] [SOCKET] PO OUT: {"cmd":"set_risk","broker":"PocketOption","risk":"10"}
+[2025-08-01 21:37:19.777] [SOCKET] PO OUT: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-08-01 21:37:19.895] [SOCKET] PO OUT: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-08-01 21:37:45.047] [SOCKET] PO OUT: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-08-01 21:37:45.155] [SOCKET] PO OUT: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-08-01 21:37:48.960] [SOCKET] PO OUT: {"cmd":"set_risk","broker":"PocketOption","risk":"20"}
+[2025-08-01 21:38:00.960] [SOCKET] PO OUT: {"cmd":"set_risk","broker":"PocketOption","risk":"30"}
+[2025-08-01 21:38:07.872] [SOCKET] PO OUT: {"cmd":"set_risk","broker":"PocketOption","risk":"10"}
+[2025-08-01 21:38:18.182] [SOCKET] PO OUT: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-08-01 21:38:18.301] [SOCKET] PO OUT: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-08-01 21:38:26.736] [SOCKET] PO OUT: {"cmd":"set_risk","broker":"PocketOption","risk":"10"}

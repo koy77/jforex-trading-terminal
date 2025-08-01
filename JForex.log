@@ -12060,3 +12060,37 @@
 [2025-08-01 21:31:56.667] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
 [2025-08-01 21:31:57.773] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
 [2025-08-01 21:31:57.836] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-08-01 21:34:02.568] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-08-01 21:34:02.644] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-08-01 21:37:16.759] [INFO] Risk command sent to binary socket: {"cmd":"set_risk","broker":"PocketOption","risk":"10"}
+[2025-08-01 21:37:19.896] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-08-01 21:37:19.999] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-08-01 21:37:45.155] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-08-01 21:37:45.264] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-08-01 21:37:49.074] [INFO] Risk command sent to binary socket: {"cmd":"set_risk","broker":"PocketOption","risk":"20"}
+[2025-08-01 21:38:01.069] [INFO] Risk command sent to binary socket: {"cmd":"set_risk","broker":"PocketOption","risk":"30"}
+[2025-08-01 21:38:07.981] [INFO] Risk command sent to binary socket: {"cmd":"set_risk","broker":"PocketOption","risk":"10"}
+[2025-08-01 21:38:14.952] [INFO] === MOUSE CLICK START ===
+[2025-08-01 21:38:14.952] [INFO] Click coordinates: (80, 56)
+[2025-08-01 21:38:14.953] [INFO] Window handle: 2034370
+[2025-08-01 21:38:14.954] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-08-01 21:38:14.954] [INFO] Calculated screen coordinates: (80, 56)
+[2025-08-01 21:38:15.082] [INFO] Клик успешно выполнен в позиции (80, 56) -> screen (80, 56)
+[2025-08-01 21:38:15.083] [INFO] === MOUSE CLICK END ===
+[2025-08-01 21:38:15.181] [INFO] === MOUSE CLICK START ===
+[2025-08-01 21:38:15.181] [INFO] Click coordinates: (280, 56)
+[2025-08-01 21:38:15.182] [INFO] Window handle: 2034370
+[2025-08-01 21:38:15.182] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-08-01 21:38:15.183] [INFO] Calculated screen coordinates: (280, 56)
+[2025-08-01 21:38:15.303] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-08-01 21:38:15.304] [INFO] === MOUSE CLICK END ===
+[2025-08-01 21:38:15.793] [INFO] === MOUSE CLICK START ===
+[2025-08-01 21:38:15.793] [INFO] Click coordinates: (480, 56)
+[2025-08-01 21:38:15.794] [INFO] Window handle: 2034370
+[2025-08-01 21:38:15.794] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-08-01 21:38:15.794] [INFO] Calculated screen coordinates: (480, 56)
+[2025-08-01 21:38:15.922] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-08-01 21:38:15.922] [INFO] === MOUSE CLICK END ===
+[2025-08-01 21:38:18.302] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-08-01 21:38:18.413] [INFO] Open symbol command sent to binary socket: {"cmd":"open_symbol","symbol":"EURUSD","broker":"PocketOption"}
+[2025-08-01 21:38:26.841] [INFO] Risk command sent to binary socket: {"cmd":"set_risk","broker":"PocketOption","risk":"10"}
