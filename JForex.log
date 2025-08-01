@@ -5403,3 +5403,167 @@
 [2025-08-01 11:22:08.713] [WARNING] Binary socket service not available or not connected for open symbol command
 [2025-08-01 11:24:29.406] [WARNING] Binary socket service not available or not connected for open symbol command
 [2025-08-01 11:24:29.407] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-08-01 12:03:56.889] [INFO] === MOUSE CLICK START ===
+[2025-08-01 12:03:56.889] [INFO] Click coordinates: (480, 56)
+[2025-08-01 12:03:56.889] [INFO] Window handle: 852876
+[2025-08-01 12:03:56.890] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-01 12:03:56.890] [INFO] Calculated screen coordinates: (480, 56)
+[2025-08-01 12:03:57.009] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-08-01 12:03:57.010] [INFO] === MOUSE CLICK END ===
+[2025-08-01 12:03:59.998] [INFO] === MOUSE CLICK START ===
+[2025-08-01 12:03:59.998] [INFO] Click coordinates: (680, 56)
+[2025-08-01 12:03:59.998] [INFO] Window handle: 852876
+[2025-08-01 12:03:59.998] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-01 12:03:59.998] [INFO] Calculated screen coordinates: (680, 56)
+[2025-08-01 12:04:00.112] [INFO] Клик успешно выполнен в позиции (680, 56) -> screen (680, 56)
+[2025-08-01 12:04:00.112] [INFO] === MOUSE CLICK END ===
+[2025-08-01 12:04:01.085] [INFO] === MOUSE CLICK START ===
+[2025-08-01 12:04:01.085] [INFO] Click coordinates: (480, 56)
+[2025-08-01 12:04:01.086] [INFO] Window handle: 852876
+[2025-08-01 12:04:01.086] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-01 12:04:01.086] [INFO] Calculated screen coordinates: (480, 56)
+[2025-08-01 12:04:01.214] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-08-01 12:04:01.214] [INFO] === MOUSE CLICK END ===
+[2025-08-01 12:04:40.304] [INFO] === MOUSE CLICK START ===
+[2025-08-01 12:04:40.304] [INFO] Click coordinates: (280, 56)
+[2025-08-01 12:04:40.305] [INFO] Window handle: 852876
+[2025-08-01 12:04:40.305] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-01 12:04:40.305] [INFO] Calculated screen coordinates: (280, 56)
+[2025-08-01 12:04:40.423] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-08-01 12:04:40.423] [INFO] === MOUSE CLICK END ===
+[2025-08-01 12:09:00.453] [INFO] === MOUSE CLICK START ===
+[2025-08-01 12:09:00.453] [INFO] Click coordinates: (280, 56)
+[2025-08-01 12:09:00.453] [INFO] Window handle: 852876
+[2025-08-01 12:09:00.453] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-01 12:09:00.454] [INFO] Calculated screen coordinates: (280, 56)
+[2025-08-01 12:09:00.583] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-08-01 12:09:00.583] [INFO] === MOUSE CLICK END ===
+[2025-08-01 12:09:00.778] [INFO] === MOUSE CLICK START ===
+[2025-08-01 12:09:00.779] [INFO] Click coordinates: (480, 56)
+[2025-08-01 12:09:00.779] [INFO] Window handle: 852876
+[2025-08-01 12:09:00.779] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-01 12:09:00.779] [INFO] Calculated screen coordinates: (480, 56)
+[2025-08-01 12:09:00.903] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-08-01 12:09:00.903] [INFO] === MOUSE CLICK END ===
+[2025-08-01 12:09:01.794] [INFO] === MOUSE CLICK START ===
+[2025-08-01 12:09:01.794] [INFO] Click coordinates: (480, 56)
+[2025-08-01 12:09:01.794] [INFO] Window handle: 852876
+[2025-08-01 12:09:01.794] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-01 12:09:01.795] [INFO] Calculated screen coordinates: (480, 56)
+[2025-08-01 12:09:01.919] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-08-01 12:09:01.919] [INFO] === MOUSE CLICK END ===
+[2025-08-01 12:09:04.186] [INFO] === MOUSE CLICK START ===
+[2025-08-01 12:09:04.186] [INFO] Click coordinates: (280, 56)
+[2025-08-01 12:09:04.187] [INFO] Window handle: 852876
+[2025-08-01 12:09:04.187] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-01 12:09:04.187] [INFO] Calculated screen coordinates: (280, 56)
+[2025-08-01 12:09:04.315] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-08-01 12:09:04.315] [INFO] === MOUSE CLICK END ===
+[2025-08-01 12:09:04.770] [INFO] === MOUSE CLICK START ===
+[2025-08-01 12:09:04.770] [INFO] Click coordinates: (280, 56)
+[2025-08-01 12:09:04.770] [INFO] Window handle: 852876
+[2025-08-01 12:09:04.770] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-01 12:09:04.770] [INFO] Calculated screen coordinates: (280, 56)
+[2025-08-01 12:09:04.899] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-08-01 12:09:04.899] [INFO] === MOUSE CLICK END ===
+[2025-08-01 12:09:05.099] [INFO] === MOUSE CLICK START ===
+[2025-08-01 12:09:05.099] [INFO] Click coordinates: (80, 56)
+[2025-08-01 12:09:05.099] [INFO] Window handle: 852876
+[2025-08-01 12:09:05.099] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-01 12:09:05.099] [INFO] Calculated screen coordinates: (80, 56)
+[2025-08-01 12:09:05.214] [INFO] Клик успешно выполнен в позиции (80, 56) -> screen (80, 56)
+[2025-08-01 12:09:05.214] [INFO] === MOUSE CLICK END ===
+[2025-08-01 12:09:06.602] [INFO] === MOUSE CLICK START ===
+[2025-08-01 12:09:06.602] [INFO] Click coordinates: (80, 56)
+[2025-08-01 12:09:06.602] [INFO] Window handle: 852876
+[2025-08-01 12:09:06.602] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-01 12:09:06.602] [INFO] Calculated screen coordinates: (80, 56)
+[2025-08-01 12:09:06.730] [INFO] Клик успешно выполнен в позиции (80, 56) -> screen (80, 56)
+[2025-08-01 12:09:06.730] [INFO] === MOUSE CLICK END ===
+[2025-08-01 12:09:07.106] [INFO] === MOUSE CLICK START ===
+[2025-08-01 12:09:07.106] [INFO] Click coordinates: (80, 56)
+[2025-08-01 12:09:07.106] [INFO] Window handle: 198118
+[2025-08-01 12:09:07.107] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=55
+[2025-08-01 12:09:07.107] [INFO] Calculated screen coordinates: (80, 56)
+[2025-08-01 12:09:07.222] [INFO] Клик успешно выполнен в позиции (80, 56) -> screen (80, 56)
+[2025-08-01 12:09:07.222] [INFO] === MOUSE CLICK END ===
+[2025-08-01 12:09:07.682] [INFO] === MOUSE CLICK START ===
+[2025-08-01 12:09:07.682] [INFO] Click coordinates: (80, 56)
+[2025-08-01 12:09:07.682] [INFO] Window handle: 852876
+[2025-08-01 12:09:07.682] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-01 12:09:07.683] [INFO] Calculated screen coordinates: (80, 56)
+[2025-08-01 12:09:07.810] [INFO] Клик успешно выполнен в позиции (80, 56) -> screen (80, 56)
+[2025-08-01 12:09:07.811] [INFO] === MOUSE CLICK END ===
+[2025-08-01 12:09:08.522] [INFO] === MOUSE CLICK START ===
+[2025-08-01 12:09:08.522] [INFO] Click coordinates: (80, 56)
+[2025-08-01 12:09:08.522] [INFO] Window handle: 852876
+[2025-08-01 12:09:08.522] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-01 12:09:08.522] [INFO] Calculated screen coordinates: (80, 56)
+[2025-08-01 12:09:08.651] [INFO] Клик успешно выполнен в позиции (80, 56) -> screen (80, 56)
+[2025-08-01 12:09:08.651] [INFO] === MOUSE CLICK END ===
+[2025-08-01 12:09:25.930] [INFO] === MOUSE CLICK START ===
+[2025-08-01 12:09:25.930] [INFO] Click coordinates: (280, 56)
+[2025-08-01 12:09:25.930] [INFO] Window handle: 852876
+[2025-08-01 12:09:25.930] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-01 12:09:25.930] [INFO] Calculated screen coordinates: (280, 56)
+[2025-08-01 12:09:26.064] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-08-01 12:09:26.064] [INFO] === MOUSE CLICK END ===
+[2025-08-01 12:09:26.546] [INFO] === MOUSE CLICK START ===
+[2025-08-01 12:09:26.546] [INFO] Click coordinates: (280, 56)
+[2025-08-01 12:09:26.546] [INFO] Window handle: 852876
+[2025-08-01 12:09:26.546] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-01 12:09:26.546] [INFO] Calculated screen coordinates: (280, 56)
+[2025-08-01 12:09:26.667] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-08-01 12:09:26.667] [INFO] === MOUSE CLICK END ===
+[2025-08-01 12:10:06.817] [INFO] === MOUSE CLICK START ===
+[2025-08-01 12:10:06.817] [INFO] Click coordinates: (280, 56)
+[2025-08-01 12:10:06.817] [INFO] Window handle: 918002
+[2025-08-01 12:10:06.818] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-01 12:10:06.818] [INFO] Calculated screen coordinates: (280, 56)
+[2025-08-01 12:10:06.946] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-08-01 12:10:06.946] [INFO] === MOUSE CLICK END ===
+[2025-08-01 12:10:07.681] [INFO] === MOUSE CLICK START ===
+[2025-08-01 12:10:07.681] [INFO] Click coordinates: (280, 56)
+[2025-08-01 12:10:07.681] [INFO] Window handle: 918002
+[2025-08-01 12:10:07.681] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-01 12:10:07.682] [INFO] Calculated screen coordinates: (280, 56)
+[2025-08-01 12:10:07.804] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-08-01 12:10:07.804] [INFO] === MOUSE CLICK END ===
+[2025-08-01 12:10:08.129] [INFO] === MOUSE CLICK START ===
+[2025-08-01 12:10:08.129] [INFO] Click coordinates: (280, 56)
+[2025-08-01 12:10:08.130] [INFO] Window handle: 918002
+[2025-08-01 12:10:08.130] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-01 12:10:08.130] [INFO] Calculated screen coordinates: (280, 56)
+[2025-08-01 12:10:08.251] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-08-01 12:10:08.251] [INFO] === MOUSE CLICK END ===
+[2025-08-01 12:10:08.586] [INFO] === MOUSE CLICK START ===
+[2025-08-01 12:10:08.586] [INFO] Click coordinates: (480, 56)
+[2025-08-01 12:10:08.586] [INFO] Window handle: 918002
+[2025-08-01 12:10:08.586] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-01 12:10:08.586] [INFO] Calculated screen coordinates: (480, 56)
+[2025-08-01 12:10:08.709] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-08-01 12:10:08.709] [INFO] === MOUSE CLICK END ===
+[2025-08-01 12:10:10.145] [INFO] === MOUSE CLICK START ===
+[2025-08-01 12:10:10.145] [INFO] Click coordinates: (280, 56)
+[2025-08-01 12:10:10.145] [INFO] Window handle: 918002
+[2025-08-01 12:10:10.146] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-01 12:10:10.146] [INFO] Calculated screen coordinates: (280, 56)
+[2025-08-01 12:10:10.275] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-08-01 12:10:10.275] [INFO] === MOUSE CLICK END ===
+[2025-08-01 12:10:11.385] [INFO] === MOUSE CLICK START ===
+[2025-08-01 12:10:11.385] [INFO] Click coordinates: (480, 56)
+[2025-08-01 12:10:11.386] [INFO] Window handle: 918002
+[2025-08-01 12:10:11.386] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-01 12:10:11.386] [INFO] Calculated screen coordinates: (480, 56)
+[2025-08-01 12:10:11.511] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-08-01 12:10:11.511] [INFO] === MOUSE CLICK END ===
+[2025-08-01 12:10:43.036] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-08-01 12:10:43.037] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-08-01 12:10:47.147] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-08-01 12:10:47.148] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-08-01 12:11:00.003] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-08-01 12:11:00.004] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-08-01 12:16:39.583] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-08-01 12:16:39.584] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-08-01 12:16:40.167] [WARNING] Binary socket service not available or not connected for open symbol command
+[2025-08-01 12:16:40.168] [WARNING] Binary socket service not available or not connected for open symbol command
