@@ -1,1256 +1,242 @@
-[2025-08-01 15:35:22.111] [INFO] app.log file deleted successfully
-[2025-08-01 15:35:22.112] [INFO] Trade counter reset successfully
-[2025-08-01 15:35:22.113] [INFO] Initialized 6 symbols in database
-[2025-08-01 15:35:22.276] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":12.46000000,"percent":0.82000000,"lots":0.07000000,"profit_points":178}},"total_balance":1511.88000000}
+[2025-08-01 17:15:36.763] [INFO] app.log file deleted successfully
+[2025-08-01 17:15:36.764] [INFO] Trade counter reset successfully
+[2025-08-01 17:15:36.765] [INFO] Initialized 6 symbols in database
+[2025-08-01 17:15:36.993] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-79.18000000,"percent":-6.91000000,"lots":1.15000000,"profit_points":-120}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:22.276] [INFO] MT4 Socket: Processing orders_summary event
-[2025-08-01 15:35:22.283] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
-[2025-08-01 15:35:22.305] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,07, Percent: 0,82, Points: 178
-[2025-08-01 15:35:22.305] [INFO] OrderSummary panel hidden
-[2025-08-01 15:35:22.306] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":12.46000000,"percent":0.82000000,"lots":0.07000000,"profit_points":178}},"total_balance":1511.88000000}
+[2025-08-01 17:15:36.993] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:15:36.997] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:15:37.015] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: -6,91, Points: -120
+[2025-08-01 17:15:37.016] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-79.18000000,"percent":-6.91000000,"lots":1.15000000,"profit_points":-120}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:22.696] [DEBUG] Z hotkey detected and service is enabled
-[2025-08-01 15:35:22.696] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
-[2025-08-01 15:35:23.179] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
-[2025-08-01 15:35:23.179] [INFO] OrderSummary panel hidden
-[2025-08-01 15:35:23.179] [INFO] OrderSummary panel hidden
-[2025-08-01 15:35:23.179] [INFO] Applied toolbar settings for window 394142: Risk=1, Duration=2, Broker=Forex
-[2025-08-01 15:35:23.179] [INFO] Overlay positioned on window 394142 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-08-01 15:35:23.244] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
-[2025-08-01 15:35:23.260] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":13.51000000,"percent":0.89000000,"lots":0.07000000,"profit_points":193}},"total_balance":1511.88000000}
+[2025-08-01 17:15:37.160] [INFO] Escape key sent successfully to window handle: 852876
+[2025-08-01 17:15:37.971] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-80.33000000,"percent":-7.01000000,"lots":1.15000000,"profit_points":-121}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:23.260] [INFO] MT4 Socket: Processing orders_summary event
-[2025-08-01 15:35:23.262] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
-[2025-08-01 15:35:23.269] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,07, Percent: 0,89, Points: 193
-[2025-08-01 15:35:23.269] [INFO] OrderSummary panel hidden
-[2025-08-01 15:35:23.270] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":13.51000000,"percent":0.89000000,"lots":0.07000000,"profit_points":193}},"total_balance":1511.88000000}
+[2025-08-01 17:15:37.972] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:15:37.974] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:15:37.981] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: -7,01, Points: -121
+[2025-08-01 17:15:37.981] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-80.33000000,"percent":-7.01000000,"lots":1.15000000,"profit_points":-121}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:24.278] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":12.25000000,"percent":0.81000000,"lots":0.07000000,"profit_points":175}},"total_balance":1511.88000000}
+[2025-08-01 17:15:38.970] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-42.38000000,"percent":-3.70000000,"lots":1.15000000,"profit_points":-55}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:24.278] [INFO] MT4 Socket: Processing orders_summary event
-[2025-08-01 15:35:24.280] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
-[2025-08-01 15:35:24.291] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,07, Percent: 0,81, Points: 175
-[2025-08-01 15:35:24.292] [INFO] OrderSummary panel hidden
-[2025-08-01 15:35:24.292] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":12.25000000,"percent":0.81000000,"lots":0.07000000,"profit_points":175}},"total_balance":1511.88000000}
+[2025-08-01 17:15:38.970] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:15:38.972] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:15:38.978] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: -3,7, Points: -55
+[2025-08-01 17:15:38.978] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-42.38000000,"percent":-3.70000000,"lots":1.15000000,"profit_points":-55}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:24.520] [DEBUG] A key detected and service is enabled
-[2025-08-01 15:35:24.520] [DEBUG] A key pressed - starting inclined pattern capture
-[2025-08-01 15:35:24.520] [DEBUG] SimpleTradingOverlay.OnAKeyPressed() called
-[2025-08-01 15:35:24.520] [INFO] A key pressed - starting inclined trading pattern creation
-[2025-08-01 15:35:24.520] [INFO] Started inclined trading pattern creation for window 394142 (symbol: XAUUSD)
-[2025-08-01 15:35:25.000] [INFO] First click recorded at (3275, 229)
-[2025-08-01 15:35:25.273] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":10.64000000,"percent":0.70000000,"lots":0.07000000,"profit_points":151}},"total_balance":1511.88000000}
+[2025-08-01 17:15:39.961] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-37.78000000,"percent":-3.30000000,"lots":1.15000000,"profit_points":-47}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:25.274] [INFO] MT4 Socket: Processing orders_summary event
-[2025-08-01 15:35:25.275] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
-[2025-08-01 15:35:25.287] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,07, Percent: 0,7, Points: 151
-[2025-08-01 15:35:25.288] [INFO] OrderSummary panel hidden
-[2025-08-01 15:35:25.294] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":10.64000000,"percent":0.70000000,"lots":0.07000000,"profit_points":151}},"total_balance":1511.88000000}
+[2025-08-01 17:15:39.962] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:15:39.963] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:15:39.970] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: -3,3, Points: -47
+[2025-08-01 17:15:39.970] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-37.78000000,"percent":-3.30000000,"lots":1.15000000,"profit_points":-47}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:25.584] [DEBUG] Escape key detected and service is enabled
-[2025-08-01 15:35:25.584] [DEBUG] Escape key pressed - starting cleanup
-[2025-08-01 15:35:25.584] [INFO] Escape key pressed - cancelling trading pattern
-[2025-08-01 15:35:25.585] [INFO] Trading pattern cancelled
-[2025-08-01 15:35:25.585] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-08-01 15:35:25.585] [DEBUG] No overlay to close
-[2025-08-01 15:35:25.585] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-08-01 15:35:25.880] [DEBUG] Escape key detected and service is enabled
-[2025-08-01 15:35:25.880] [DEBUG] Escape key pressed - starting cleanup
-[2025-08-01 15:35:25.880] [DEBUG] Before cleanup: isCapturing=False, overlay=null
-[2025-08-01 15:35:25.880] [DEBUG] No overlay to close
-[2025-08-01 15:35:25.880] [DEBUG] After cleanup: isCapturing=False, overlay=null
-[2025-08-01 15:35:26.283] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":11.48000000,"percent":0.76000000,"lots":0.07000000,"profit_points":164}},"total_balance":1511.88000000}
+[2025-08-01 17:15:40.966] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-49.28000000,"percent":-4.30000000,"lots":1.15000000,"profit_points":-67}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:26.284] [INFO] MT4 Socket: Processing orders_summary event
-[2025-08-01 15:35:26.285] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
-[2025-08-01 15:35:26.292] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,07, Percent: 0,76, Points: 164
-[2025-08-01 15:35:26.292] [INFO] OrderSummary panel hidden
-[2025-08-01 15:35:26.292] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":11.48000000,"percent":0.76000000,"lots":0.07000000,"profit_points":164}},"total_balance":1511.88000000}
+[2025-08-01 17:15:40.966] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:15:40.968] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:15:40.976] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: -4,3, Points: -67
+[2025-08-01 17:15:40.976] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-49.28000000,"percent":-4.30000000,"lots":1.15000000,"profit_points":-67}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:27.280] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":13.30000000,"percent":0.88000000,"lots":0.07000000,"profit_points":190}},"total_balance":1511.88000000}
+[2025-08-01 17:15:41.972] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-63.08000000,"percent":-5.50000000,"lots":1.15000000,"profit_points":-91}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:27.280] [INFO] MT4 Socket: Processing orders_summary event
-[2025-08-01 15:35:27.282] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
-[2025-08-01 15:35:27.289] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,07, Percent: 0,88, Points: 190
-[2025-08-01 15:35:27.289] [INFO] OrderSummary panel hidden
-[2025-08-01 15:35:27.289] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":13.30000000,"percent":0.88000000,"lots":0.07000000,"profit_points":190}},"total_balance":1511.88000000}
+[2025-08-01 17:15:41.972] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:15:41.974] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:15:41.980] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: -5,5, Points: -91
+[2025-08-01 17:15:41.980] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-63.08000000,"percent":-5.50000000,"lots":1.15000000,"profit_points":-91}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:28.278] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":11.97000000,"percent":0.79000000,"lots":0.07000000,"profit_points":171}},"total_balance":1511.88000000}
+[2025-08-01 17:15:42.967] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-50.43000000,"percent":-4.40000000,"lots":1.15000000,"profit_points":-70}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:28.278] [INFO] MT4 Socket: Processing orders_summary event
-[2025-08-01 15:35:28.280] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
-[2025-08-01 15:35:28.286] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,07, Percent: 0,79, Points: 171
-[2025-08-01 15:35:28.287] [INFO] OrderSummary panel hidden
-[2025-08-01 15:35:28.288] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":11.97000000,"percent":0.79000000,"lots":0.07000000,"profit_points":171}},"total_balance":1511.88000000}
+[2025-08-01 17:15:42.968] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:15:42.970] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:15:42.976] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: -4,4, Points: -70
+[2025-08-01 17:15:42.976] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-50.43000000,"percent":-4.40000000,"lots":1.15000000,"profit_points":-70}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:29.290] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":13.37000000,"percent":0.88000000,"lots":0.07000000,"profit_points":191}},"total_balance":1511.88000000}
+[2025-08-01 17:15:43.970] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-42.38000000,"percent":-3.70000000,"lots":1.15000000,"profit_points":-55}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:29.291] [INFO] MT4 Socket: Processing orders_summary event
-[2025-08-01 15:35:29.292] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
-[2025-08-01 15:35:29.299] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,07, Percent: 0,88, Points: 191
-[2025-08-01 15:35:29.300] [INFO] OrderSummary panel hidden
-[2025-08-01 15:35:29.300] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":13.37000000,"percent":0.88000000,"lots":0.07000000,"profit_points":191}},"total_balance":1511.88000000}
+[2025-08-01 17:15:43.970] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:15:43.971] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:15:43.979] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: -3,7, Points: -55
+[2025-08-01 17:15:43.979] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-42.38000000,"percent":-3.70000000,"lots":1.15000000,"profit_points":-55}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:29.519] [DEBUG] A key detected and service is enabled
-[2025-08-01 15:35:29.520] [DEBUG] A key pressed - starting inclined pattern capture
-[2025-08-01 15:35:29.520] [DEBUG] SimpleTradingOverlay.OnAKeyPressed() called
-[2025-08-01 15:35:29.520] [INFO] A key pressed - starting inclined trading pattern creation
-[2025-08-01 15:35:29.520] [INFO] Started inclined trading pattern creation for window 394142 (symbol: XAUUSD)
-[2025-08-01 15:35:29.850] [INFO] First click recorded at (3269, 242)
-[2025-08-01 15:35:30.299] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":13.93000000,"percent":0.92000000,"lots":0.07000000,"profit_points":199}},"total_balance":1511.88000000}
+[2025-08-01 17:15:44.962] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-63.08000000,"percent":-5.50000000,"lots":1.15000000,"profit_points":-91}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:30.299] [INFO] MT4 Socket: Processing orders_summary event
-[2025-08-01 15:35:30.301] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
-[2025-08-01 15:35:30.308] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,07, Percent: 0,92, Points: 199
-[2025-08-01 15:35:30.308] [INFO] OrderSummary panel hidden
-[2025-08-01 15:35:30.308] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":13.93000000,"percent":0.92000000,"lots":0.07000000,"profit_points":199}},"total_balance":1511.88000000}
+[2025-08-01 17:15:44.962] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:15:44.963] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:15:44.970] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: -5,5, Points: -91
+[2025-08-01 17:15:44.970] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-63.08000000,"percent":-5.50000000,"lots":1.15000000,"profit_points":-91}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:30.658] [INFO] Second click recorded at (3352, 120)
-[2025-08-01 15:35:30.658] [INFO] Current window handle: 394142
-[2025-08-01 15:35:30.658] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
-[2025-08-01 15:35:30.658] [INFO] Original clicks: FirstClick=(3269, 242), SecondClick=(3352, 120)
-[2025-08-01 15:35:30.658] [INFO] Pattern area: Left=3249, Top=100, Width=123, Height=162
-[2025-08-01 15:35:30.674] [INFO] TradingPatternOverlay shown at (3249, 100) with size 123x162
-[2025-08-01 15:35:30.674] [INFO] Scheduling Escape key send to window handle: 394142
-[2025-08-01 15:35:30.675] [DEBUG] ConvertVirtualScreenToWindowCoordinates: virtualX=3269, virtualY=242, windowLeft=1920, windowTop=0, windowX=1349, windowY=242
-[2025-08-01 15:35:30.675] [INFO] Escape thread started for window handle: 394142
-[2025-08-01 15:35:30.675] [DEBUG] ConvertVirtualScreenToWindowCoordinates: virtualX=3352, virtualY=120, windowLeft=1920, windowTop=0, windowX=1432, windowY=120
-[2025-08-01 15:35:30.675] [DEBUG] SimpleTradingOverlay: Creating metadata for capture ID=20250801153530675
-[2025-08-01 15:35:30.692] [DEBUG] SimpleTradingOverlay: Saved MetaDebug image to C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153530675\MetaDebug.png
-[2025-08-01 15:35:30.692] [DEBUG] RectangleBreakDetector: Building metadata for image 123x242
-[2025-08-01 15:35:30.692] [DEBUG] RectangleBreakDetector: Starting breakout detection for capture ID=20250801153530675, Direction=Up
-[2025-08-01 15:35:30.692] [DEBUG] RectangleBreakDetector: Searching for vertical line with minWhitePixels=40, minConsecutive=24
-[2025-08-01 15:35:30.693] [DEBUG] RectangleBreakDetector: Column X=122: whitePixels=5, maxConsecutive=3, gaps=3
-[2025-08-01 15:35:30.693] [DEBUG] RectangleBreakDetector: Column X=121: whitePixels=6, maxConsecutive=2, gaps=4
-[2025-08-01 15:35:30.693] [DEBUG] RectangleBreakDetector: Column X=120: whitePixels=4, maxConsecutive=2, gaps=3
-[2025-08-01 15:35:30.693] [DEBUG] RectangleBreakDetector: Column X=119: whitePixels=4, maxConsecutive=2, gaps=3
-[2025-08-01 15:35:30.693] [DEBUG] RectangleBreakDetector: Column X=118: whitePixels=8, maxConsecutive=4, gaps=3
-[2025-08-01 15:35:30.694] [DEBUG] RectangleBreakDetector: Column X=117: whitePixels=5, maxConsecutive=5, gaps=1
-[2025-08-01 15:35:30.694] [DEBUG] RectangleBreakDetector: Column X=116: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:35:30.694] [DEBUG] RectangleBreakDetector: Column X=115: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:35:30.694] [DEBUG] RectangleBreakDetector: Column X=114: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:35:30.695] [DEBUG] RectangleBreakDetector: Column X=113: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:35:30.695] [DEBUG] RectangleBreakDetector: Column X=112: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:35:30.695] [DEBUG] RectangleBreakDetector: Column X=111: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:35:30.695] [DEBUG] RectangleBreakDetector: Column X=110: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:35:30.696] [DEBUG] RectangleBreakDetector: Column X=109: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:35:30.696] [DEBUG] RectangleBreakDetector: Column X=108: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:35:30.696] [DEBUG] RectangleBreakDetector: Column X=107: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:35:30.696] [DEBUG] RectangleBreakDetector: Column X=106: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:35:30.696] [DEBUG] RectangleBreakDetector: Column X=105: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:35:30.697] [DEBUG] RectangleBreakDetector: Column X=104: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:35:30.697] [DEBUG] RectangleBreakDetector: Column X=103: whitePixels=1, maxConsecutive=1, gaps=1
-[2025-08-01 15:35:30.697] [DEBUG] RectangleBreakDetector: Column X=102: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:35:30.697] [DEBUG] RectangleBreakDetector: Column X=101: whitePixels=5, maxConsecutive=5, gaps=1
-[2025-08-01 15:35:30.697] [DEBUG] RectangleBreakDetector: Column X=100: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.698] [DEBUG] RectangleBreakDetector: Column X=99: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.698] [DEBUG] RectangleBreakDetector: Column X=98: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:35:30.698] [DEBUG] RectangleBreakDetector: Column X=97: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.698] [DEBUG] RectangleBreakDetector: Column X=96: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:35:30.699] [DEBUG] RectangleBreakDetector: Column X=95: whitePixels=7, maxConsecutive=4, gaps=4
-[2025-08-01 15:35:30.699] [DEBUG] RectangleBreakDetector: Column X=94: whitePixels=11, maxConsecutive=3, gaps=4
-[2025-08-01 15:35:30.699] [DEBUG] RectangleBreakDetector: Column X=93: whitePixels=11, maxConsecutive=4, gaps=5
-[2025-08-01 15:35:30.699] [DEBUG] RectangleBreakDetector: Column X=92: whitePixels=7, maxConsecutive=4, gaps=4
-[2025-08-01 15:35:30.700] [DEBUG] RectangleBreakDetector: Column X=91: whitePixels=9, maxConsecutive=4, gaps=5
-[2025-08-01 15:35:30.700] [DEBUG] RectangleBreakDetector: Column X=90: whitePixels=7, maxConsecutive=4, gaps=4
-[2025-08-01 15:35:30.700] [DEBUG] RectangleBreakDetector: Column X=89: whitePixels=9, maxConsecutive=4, gaps=5
-[2025-08-01 15:35:30.700] [DEBUG] RectangleBreakDetector: Column X=88: whitePixels=7, maxConsecutive=4, gaps=4
-[2025-08-01 15:35:30.701] [DEBUG] RectangleBreakDetector: Column X=87: whitePixels=7, maxConsecutive=4, gaps=4
-[2025-08-01 15:35:30.701] [DEBUG] RectangleBreakDetector: Column X=86: whitePixels=9, maxConsecutive=4, gaps=5
-[2025-08-01 15:35:30.701] [DEBUG] RectangleBreakDetector: Column X=85: whitePixels=7, maxConsecutive=4, gaps=4
-[2025-08-01 15:35:30.701] [DEBUG] RectangleBreakDetector: Column X=84: whitePixels=9, maxConsecutive=4, gaps=5
-[2025-08-01 15:35:30.701] [DEBUG] RectangleBreakDetector: Column X=83: whitePixels=8, maxConsecutive=4, gaps=5
-[2025-08-01 15:35:30.702] [DEBUG] RectangleBreakDetector: Column X=82: whitePixels=11, maxConsecutive=4, gaps=5
-[2025-08-01 15:35:30.703] [DEBUG] RectangleBreakDetector: Column X=81: whitePixels=12, maxConsecutive=4, gaps=4
-[2025-08-01 15:35:30.703] [DEBUG] RectangleBreakDetector: Column X=80: whitePixels=7, maxConsecutive=4, gaps=4
-[2025-08-01 15:35:30.704] [DEBUG] RectangleBreakDetector: Column X=79: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.704] [DEBUG] RectangleBreakDetector: Column X=78: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.704] [DEBUG] RectangleBreakDetector: Column X=77: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.705] [DEBUG] RectangleBreakDetector: Column X=76: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.705] [DEBUG] RectangleBreakDetector: Column X=75: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.705] [DEBUG] RectangleBreakDetector: Column X=74: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.705] [DEBUG] RectangleBreakDetector: Column X=73: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.706] [DEBUG] RectangleBreakDetector: Column X=72: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.706] [DEBUG] RectangleBreakDetector: Column X=71: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.706] [DEBUG] RectangleBreakDetector: Column X=70: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.706] [DEBUG] RectangleBreakDetector: Column X=69: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.706] [DEBUG] RectangleBreakDetector: Column X=68: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.707] [DEBUG] RectangleBreakDetector: Column X=67: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.707] [DEBUG] RectangleBreakDetector: Column X=66: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.707] [DEBUG] RectangleBreakDetector: Column X=65: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:35:30.707] [DEBUG] RectangleBreakDetector: Column X=64: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.708] [DEBUG] RectangleBreakDetector: Column X=63: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:35:30.708] [DEBUG] RectangleBreakDetector: Column X=62: whitePixels=5, maxConsecutive=4, gaps=2
-[2025-08-01 15:35:30.708] [DEBUG] RectangleBreakDetector: Column X=61: whitePixels=6, maxConsecutive=6, gaps=1
-[2025-08-01 15:35:30.708] [DEBUG] RectangleBreakDetector: Column X=60: whitePixels=6, maxConsecutive=6, gaps=1
-[2025-08-01 15:35:30.708] [DEBUG] RectangleBreakDetector: Column X=59: whitePixels=5, maxConsecutive=5, gaps=1
-[2025-08-01 15:35:30.709] [DEBUG] RectangleBreakDetector: Column X=58: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.709] [DEBUG] RectangleBreakDetector: Column X=57: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:35:30.709] [DEBUG] RectangleBreakDetector: Column X=56: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.709] [DEBUG] RectangleBreakDetector: Column X=55: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:35:30.709] [DEBUG] RectangleBreakDetector: Column X=54: whitePixels=6, maxConsecutive=4, gaps=2
-[2025-08-01 15:35:30.710] [DEBUG] RectangleBreakDetector: Column X=53: whitePixels=5, maxConsecutive=3, gaps=3
-[2025-08-01 15:35:30.710] [DEBUG] RectangleBreakDetector: Column X=52: whitePixels=5, maxConsecutive=4, gaps=2
-[2025-08-01 15:35:30.710] [DEBUG] RectangleBreakDetector: Column X=51: whitePixels=6, maxConsecutive=4, gaps=3
-[2025-08-01 15:35:30.710] [DEBUG] RectangleBreakDetector: Column X=50: whitePixels=6, maxConsecutive=4, gaps=3
-[2025-08-01 15:35:30.710] [DEBUG] RectangleBreakDetector: Column X=49: whitePixels=6, maxConsecutive=4, gaps=3
-[2025-08-01 15:35:30.711] [DEBUG] RectangleBreakDetector: Column X=48: whitePixels=5, maxConsecutive=4, gaps=2
-[2025-08-01 15:35:30.711] [DEBUG] RectangleBreakDetector: Column X=47: whitePixels=5, maxConsecutive=4, gaps=2
-[2025-08-01 15:35:30.711] [DEBUG] RectangleBreakDetector: Column X=46: whitePixels=5, maxConsecutive=4, gaps=2
-[2025-08-01 15:35:30.711] [DEBUG] RectangleBreakDetector: Column X=45: whitePixels=6, maxConsecutive=4, gaps=3
-[2025-08-01 15:35:30.711] [DEBUG] RectangleBreakDetector: Column X=44: whitePixels=5, maxConsecutive=4, gaps=2
-[2025-08-01 15:35:30.712] [DEBUG] RectangleBreakDetector: Column X=43: whitePixels=5, maxConsecutive=4, gaps=2
-[2025-08-01 15:35:30.712] [DEBUG] RectangleBreakDetector: Column X=42: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.712] [DEBUG] RectangleBreakDetector: Column X=41: whitePixels=6, maxConsecutive=4, gaps=3
-[2025-08-01 15:35:30.712] [DEBUG] RectangleBreakDetector: Column X=40: whitePixels=6, maxConsecutive=4, gaps=3
-[2025-08-01 15:35:30.713] [DEBUG] RectangleBreakDetector: Column X=39: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.713] [DEBUG] RectangleBreakDetector: Column X=38: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.713] [DEBUG] RectangleBreakDetector: Column X=37: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.714] [DEBUG] RectangleBreakDetector: Column X=36: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.714] [DEBUG] RectangleBreakDetector: Column X=35: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.714] [DEBUG] RectangleBreakDetector: Column X=34: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.714] [DEBUG] RectangleBreakDetector: Column X=33: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.715] [DEBUG] RectangleBreakDetector: Column X=32: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.715] [DEBUG] RectangleBreakDetector: Column X=31: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.715] [DEBUG] RectangleBreakDetector: Column X=30: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.715] [DEBUG] RectangleBreakDetector: Column X=29: whitePixels=20, maxConsecutive=4, gaps=17
-[2025-08-01 15:35:30.715] [DEBUG] RectangleBreakDetector: Column X=28: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.716] [DEBUG] RectangleBreakDetector: Column X=27: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.716] [DEBUG] RectangleBreakDetector: Column X=26: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.716] [DEBUG] RectangleBreakDetector: Column X=25: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.716] [DEBUG] RectangleBreakDetector: Column X=24: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:35:30.717] [DEBUG] RectangleBreakDetector: Column X=23: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.717] [DEBUG] RectangleBreakDetector: Column X=22: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:35:30.717] [DEBUG] RectangleBreakDetector: Column X=21: whitePixels=5, maxConsecutive=4, gaps=2
-[2025-08-01 15:35:30.717] [DEBUG] RectangleBreakDetector: Column X=20: whitePixels=6, maxConsecutive=6, gaps=1
-[2025-08-01 15:35:30.717] [DEBUG] RectangleBreakDetector: Column X=19: whitePixels=6, maxConsecutive=6, gaps=1
-[2025-08-01 15:35:30.718] [DEBUG] RectangleBreakDetector: Column X=18: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:35:30.718] [DEBUG] RectangleBreakDetector: Column X=17: whitePixels=1, maxConsecutive=1, gaps=1
-[2025-08-01 15:35:30.718] [DEBUG] RectangleBreakDetector: Column X=16: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:35:30.718] [DEBUG] RectangleBreakDetector: Column X=15: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:35:30.718] [DEBUG] RectangleBreakDetector: Column X=14: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:35:30.719] [DEBUG] RectangleBreakDetector: Column X=13: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:35:30.719] [DEBUG] RectangleBreakDetector: Column X=12: whitePixels=12, maxConsecutive=4, gaps=3
-[2025-08-01 15:35:30.719] [DEBUG] RectangleBreakDetector: Column X=11: whitePixels=6, maxConsecutive=1, gaps=6
-[2025-08-01 15:35:30.719] [DEBUG] RectangleBreakDetector: Column X=10: whitePixels=6, maxConsecutive=1, gaps=6
-[2025-08-01 15:35:30.719] [DEBUG] RectangleBreakDetector: Column X=9: whitePixels=6, maxConsecutive=1, gaps=6
-[2025-08-01 15:35:30.720] [DEBUG] RectangleBreakDetector: Column X=8: whitePixels=6, maxConsecutive=1, gaps=6
-[2025-08-01 15:35:30.720] [DEBUG] RectangleBreakDetector: Column X=7: whitePixels=6, maxConsecutive=1, gaps=6
-[2025-08-01 15:35:30.720] [DEBUG] RectangleBreakDetector: Column X=6: whitePixels=6, maxConsecutive=1, gaps=6
-[2025-08-01 15:35:30.720] [DEBUG] RectangleBreakDetector: Column X=5: whitePixels=6, maxConsecutive=1, gaps=6
-[2025-08-01 15:35:30.721] [DEBUG] RectangleBreakDetector: Column X=4: whitePixels=6, maxConsecutive=1, gaps=6
-[2025-08-01 15:35:30.721] [DEBUG] RectangleBreakDetector: Column X=3: whitePixels=12, maxConsecutive=4, gaps=3
-[2025-08-01 15:35:30.721] [DEBUG] RectangleBreakDetector: Column X=2: whitePixels=3, maxConsecutive=1, gaps=3
-[2025-08-01 15:35:30.721] [DEBUG] RectangleBreakDetector: Column X=1: whitePixels=3, maxConsecutive=1, gaps=3
-[2025-08-01 15:35:30.721] [DEBUG] RectangleBreakDetector: Column X=0: whitePixels=3, maxConsecutive=1, gaps=3
-[2025-08-01 15:35:30.722] [WARNING] RectangleBreakDetector: No vertical line found with current parameters
-[2025-08-01 15:35:30.722] [DEBUG] RectangleBreakDetector: Primary method failed, trying alternative for capture ID=20250801153530675
-[2025-08-01 15:35:30.722] [DEBUG] RectangleBreakDetector: Using alternative method to find vertical line
-[2025-08-01 15:35:30.722] [DEBUG] RectangleBreakDetector: Alternative - Column X=122: whitePixels=5, whiteSegments=3
-[2025-08-01 15:35:30.722] [DEBUG] RectangleBreakDetector: Alternative - Column X=121: whitePixels=6, whiteSegments=4
-[2025-08-01 15:35:30.722] [DEBUG] RectangleBreakDetector: Alternative - Column X=120: whitePixels=4, whiteSegments=3
-[2025-08-01 15:35:30.723] [DEBUG] RectangleBreakDetector: Alternative - Column X=119: whitePixels=4, whiteSegments=3
-[2025-08-01 15:35:30.723] [DEBUG] RectangleBreakDetector: Alternative - Column X=118: whitePixels=8, whiteSegments=3
-[2025-08-01 15:35:30.723] [DEBUG] RectangleBreakDetector: Alternative - Column X=117: whitePixels=5, whiteSegments=1
-[2025-08-01 15:35:30.723] [DEBUG] RectangleBreakDetector: Alternative - Column X=116: whitePixels=0, whiteSegments=0
-[2025-08-01 15:35:30.723] [DEBUG] RectangleBreakDetector: Alternative - Column X=115: whitePixels=0, whiteSegments=0
-[2025-08-01 15:35:30.724] [DEBUG] RectangleBreakDetector: Alternative - Column X=114: whitePixels=0, whiteSegments=0
-[2025-08-01 15:35:30.724] [DEBUG] RectangleBreakDetector: Alternative - Column X=113: whitePixels=0, whiteSegments=0
-[2025-08-01 15:35:30.724] [DEBUG] RectangleBreakDetector: Alternative - Column X=112: whitePixels=0, whiteSegments=0
-[2025-08-01 15:35:30.724] [DEBUG] RectangleBreakDetector: Alternative - Column X=111: whitePixels=0, whiteSegments=0
-[2025-08-01 15:35:30.724] [DEBUG] RectangleBreakDetector: Alternative - Column X=110: whitePixels=0, whiteSegments=0
-[2025-08-01 15:35:30.725] [DEBUG] RectangleBreakDetector: Alternative - Column X=109: whitePixels=0, whiteSegments=0
-[2025-08-01 15:35:30.725] [DEBUG] RectangleBreakDetector: Alternative - Column X=108: whitePixels=0, whiteSegments=0
-[2025-08-01 15:35:30.725] [DEBUG] RectangleBreakDetector: Alternative - Column X=107: whitePixels=0, whiteSegments=0
-[2025-08-01 15:35:30.725] [DEBUG] RectangleBreakDetector: Alternative - Column X=106: whitePixels=0, whiteSegments=0
-[2025-08-01 15:35:30.726] [DEBUG] RectangleBreakDetector: Alternative - Column X=105: whitePixels=0, whiteSegments=0
-[2025-08-01 15:35:30.726] [DEBUG] RectangleBreakDetector: Alternative - Column X=104: whitePixels=0, whiteSegments=0
-[2025-08-01 15:35:30.726] [DEBUG] RectangleBreakDetector: Alternative - Column X=103: whitePixels=1, whiteSegments=1
-[2025-08-01 15:35:30.726] [DEBUG] RectangleBreakDetector: Alternative - Column X=102: whitePixels=3, whiteSegments=1
-[2025-08-01 15:35:30.726] [DEBUG] RectangleBreakDetector: Alternative - Column X=101: whitePixels=5, whiteSegments=1
-[2025-08-01 15:35:30.727] [DEBUG] RectangleBreakDetector: Alternative - Column X=100: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.727] [DEBUG] RectangleBreakDetector: Alternative - Column X=99: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.727] [DEBUG] RectangleBreakDetector: Alternative - Column X=98: whitePixels=3, whiteSegments=1
-[2025-08-01 15:35:30.727] [DEBUG] RectangleBreakDetector: Alternative - Column X=97: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.727] [DEBUG] RectangleBreakDetector: Alternative - Column X=96: whitePixels=3, whiteSegments=1
-[2025-08-01 15:35:30.728] [DEBUG] RectangleBreakDetector: Alternative - Column X=95: whitePixels=7, whiteSegments=4
-[2025-08-01 15:35:30.728] [DEBUG] RectangleBreakDetector: Alternative - Column X=94: whitePixels=11, whiteSegments=4
-[2025-08-01 15:35:30.728] [DEBUG] RectangleBreakDetector: Alternative - Column X=93: whitePixels=11, whiteSegments=5
-[2025-08-01 15:35:30.728] [DEBUG] RectangleBreakDetector: Alternative - Column X=92: whitePixels=7, whiteSegments=4
-[2025-08-01 15:35:30.729] [DEBUG] RectangleBreakDetector: Alternative - Column X=91: whitePixels=9, whiteSegments=5
-[2025-08-01 15:35:30.729] [DEBUG] RectangleBreakDetector: Alternative - Column X=90: whitePixels=7, whiteSegments=4
-[2025-08-01 15:35:30.729] [DEBUG] RectangleBreakDetector: Alternative - Column X=89: whitePixels=9, whiteSegments=5
-[2025-08-01 15:35:30.729] [DEBUG] RectangleBreakDetector: Alternative - Column X=88: whitePixels=7, whiteSegments=4
-[2025-08-01 15:35:30.729] [DEBUG] RectangleBreakDetector: Alternative - Column X=87: whitePixels=7, whiteSegments=4
-[2025-08-01 15:35:30.730] [DEBUG] RectangleBreakDetector: Alternative - Column X=86: whitePixels=9, whiteSegments=5
-[2025-08-01 15:35:30.730] [DEBUG] RectangleBreakDetector: Alternative - Column X=85: whitePixels=7, whiteSegments=4
-[2025-08-01 15:35:30.730] [DEBUG] RectangleBreakDetector: Alternative - Column X=84: whitePixels=9, whiteSegments=5
-[2025-08-01 15:35:30.730] [DEBUG] RectangleBreakDetector: Alternative - Column X=83: whitePixels=8, whiteSegments=5
-[2025-08-01 15:35:30.730] [DEBUG] RectangleBreakDetector: Alternative - Column X=82: whitePixels=11, whiteSegments=5
-[2025-08-01 15:35:30.731] [DEBUG] RectangleBreakDetector: Alternative - Column X=81: whitePixels=12, whiteSegments=4
-[2025-08-01 15:35:30.731] [DEBUG] RectangleBreakDetector: Alternative - Column X=80: whitePixels=7, whiteSegments=4
-[2025-08-01 15:35:30.731] [DEBUG] RectangleBreakDetector: Alternative - Column X=79: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.731] [DEBUG] RectangleBreakDetector: Alternative - Column X=78: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.731] [DEBUG] RectangleBreakDetector: Alternative - Column X=77: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.732] [DEBUG] RectangleBreakDetector: Alternative - Column X=76: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.732] [DEBUG] RectangleBreakDetector: Alternative - Column X=75: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.732] [DEBUG] RectangleBreakDetector: Alternative - Column X=74: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.732] [DEBUG] RectangleBreakDetector: Alternative - Column X=73: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.733] [DEBUG] RectangleBreakDetector: Alternative - Column X=72: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.733] [DEBUG] RectangleBreakDetector: Alternative - Column X=71: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.733] [DEBUG] RectangleBreakDetector: Alternative - Column X=70: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.733] [DEBUG] RectangleBreakDetector: Alternative - Column X=69: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.733] [DEBUG] RectangleBreakDetector: Alternative - Column X=68: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.734] [DEBUG] RectangleBreakDetector: Alternative - Column X=67: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.734] [DEBUG] RectangleBreakDetector: Alternative - Column X=66: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.734] [DEBUG] RectangleBreakDetector: Alternative - Column X=65: whitePixels=3, whiteSegments=1
-[2025-08-01 15:35:30.734] [DEBUG] RectangleBreakDetector: Alternative - Column X=64: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.734] [DEBUG] RectangleBreakDetector: Alternative - Column X=63: whitePixels=3, whiteSegments=1
-[2025-08-01 15:35:30.735] [DEBUG] RectangleBreakDetector: Alternative - Column X=62: whitePixels=5, whiteSegments=2
-[2025-08-01 15:35:30.735] [DEBUG] RectangleBreakDetector: Alternative - Column X=61: whitePixels=6, whiteSegments=1
-[2025-08-01 15:35:30.735] [DEBUG] RectangleBreakDetector: Alternative - Column X=60: whitePixels=6, whiteSegments=1
-[2025-08-01 15:35:30.735] [DEBUG] RectangleBreakDetector: Alternative - Column X=59: whitePixels=5, whiteSegments=1
-[2025-08-01 15:35:30.735] [DEBUG] RectangleBreakDetector: Alternative - Column X=58: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.736] [DEBUG] RectangleBreakDetector: Alternative - Column X=57: whitePixels=3, whiteSegments=1
-[2025-08-01 15:35:30.736] [DEBUG] RectangleBreakDetector: Alternative - Column X=56: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.736] [DEBUG] RectangleBreakDetector: Alternative - Column X=55: whitePixels=3, whiteSegments=1
-[2025-08-01 15:35:30.736] [DEBUG] RectangleBreakDetector: Alternative - Column X=54: whitePixels=6, whiteSegments=2
-[2025-08-01 15:35:30.736] [DEBUG] RectangleBreakDetector: Alternative - Column X=53: whitePixels=5, whiteSegments=3
-[2025-08-01 15:35:30.737] [DEBUG] RectangleBreakDetector: Alternative - Column X=52: whitePixels=5, whiteSegments=2
-[2025-08-01 15:35:30.737] [DEBUG] RectangleBreakDetector: Alternative - Column X=51: whitePixels=6, whiteSegments=3
-[2025-08-01 15:35:30.737] [DEBUG] RectangleBreakDetector: Alternative - Column X=50: whitePixels=6, whiteSegments=3
-[2025-08-01 15:35:30.737] [DEBUG] RectangleBreakDetector: Alternative - Column X=49: whitePixels=6, whiteSegments=3
-[2025-08-01 15:35:30.737] [DEBUG] RectangleBreakDetector: Alternative - Column X=48: whitePixels=5, whiteSegments=2
-[2025-08-01 15:35:30.738] [DEBUG] RectangleBreakDetector: Alternative - Column X=47: whitePixels=5, whiteSegments=2
-[2025-08-01 15:35:30.738] [DEBUG] RectangleBreakDetector: Alternative - Column X=46: whitePixels=5, whiteSegments=2
-[2025-08-01 15:35:30.738] [DEBUG] RectangleBreakDetector: Alternative - Column X=45: whitePixels=6, whiteSegments=3
-[2025-08-01 15:35:30.738] [DEBUG] RectangleBreakDetector: Alternative - Column X=44: whitePixels=5, whiteSegments=2
-[2025-08-01 15:35:30.738] [DEBUG] RectangleBreakDetector: Alternative - Column X=43: whitePixels=5, whiteSegments=2
-[2025-08-01 15:35:30.739] [DEBUG] RectangleBreakDetector: Alternative - Column X=42: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.739] [DEBUG] RectangleBreakDetector: Alternative - Column X=41: whitePixels=6, whiteSegments=3
-[2025-08-01 15:35:30.739] [DEBUG] RectangleBreakDetector: Alternative - Column X=40: whitePixels=6, whiteSegments=3
-[2025-08-01 15:35:30.739] [DEBUG] RectangleBreakDetector: Alternative - Column X=39: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.739] [DEBUG] RectangleBreakDetector: Alternative - Column X=38: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.740] [DEBUG] RectangleBreakDetector: Alternative - Column X=37: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.740] [DEBUG] RectangleBreakDetector: Alternative - Column X=36: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.740] [DEBUG] RectangleBreakDetector: Alternative - Column X=35: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.740] [DEBUG] RectangleBreakDetector: Alternative - Column X=34: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.740] [DEBUG] RectangleBreakDetector: Alternative - Column X=33: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.741] [DEBUG] RectangleBreakDetector: Alternative - Column X=32: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.741] [DEBUG] RectangleBreakDetector: Alternative - Column X=31: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.741] [DEBUG] RectangleBreakDetector: Alternative - Column X=30: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.741] [DEBUG] RectangleBreakDetector: Alternative - Column X=29: whitePixels=20, whiteSegments=17
-[2025-08-01 15:35:30.741] [DEBUG] RectangleBreakDetector: Alternative - Column X=28: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.742] [DEBUG] RectangleBreakDetector: Alternative - Column X=27: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.742] [DEBUG] RectangleBreakDetector: Alternative - Column X=26: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.742] [DEBUG] RectangleBreakDetector: Alternative - Column X=25: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.742] [DEBUG] RectangleBreakDetector: Alternative - Column X=24: whitePixels=3, whiteSegments=1
-[2025-08-01 15:35:30.743] [DEBUG] RectangleBreakDetector: Alternative - Column X=23: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.743] [DEBUG] RectangleBreakDetector: Alternative - Column X=22: whitePixels=3, whiteSegments=1
-[2025-08-01 15:35:30.743] [DEBUG] RectangleBreakDetector: Alternative - Column X=21: whitePixels=5, whiteSegments=2
-[2025-08-01 15:35:30.743] [DEBUG] RectangleBreakDetector: Alternative - Column X=20: whitePixels=6, whiteSegments=1
-[2025-08-01 15:35:30.743] [DEBUG] RectangleBreakDetector: Alternative - Column X=19: whitePixels=6, whiteSegments=1
-[2025-08-01 15:35:30.744] [DEBUG] RectangleBreakDetector: Alternative - Column X=18: whitePixels=4, whiteSegments=1
-[2025-08-01 15:35:30.744] [DEBUG] RectangleBreakDetector: Alternative - Column X=17: whitePixels=1, whiteSegments=1
-[2025-08-01 15:35:30.744] [DEBUG] RectangleBreakDetector: Alternative - Column X=16: whitePixels=0, whiteSegments=0
-[2025-08-01 15:35:30.744] [DEBUG] RectangleBreakDetector: Alternative - Column X=15: whitePixels=0, whiteSegments=0
-[2025-08-01 15:35:30.745] [DEBUG] RectangleBreakDetector: Alternative - Column X=14: whitePixels=0, whiteSegments=0
-[2025-08-01 15:35:30.745] [DEBUG] RectangleBreakDetector: Alternative - Column X=13: whitePixels=0, whiteSegments=0
-[2025-08-01 15:35:30.745] [DEBUG] RectangleBreakDetector: Alternative - Column X=12: whitePixels=12, whiteSegments=3
-[2025-08-01 15:35:30.745] [DEBUG] RectangleBreakDetector: Alternative - Column X=11: whitePixels=6, whiteSegments=6
-[2025-08-01 15:35:30.745] [DEBUG] RectangleBreakDetector: Alternative - Column X=10: whitePixels=6, whiteSegments=6
-[2025-08-01 15:35:30.746] [DEBUG] RectangleBreakDetector: Alternative - Column X=9: whitePixels=6, whiteSegments=6
-[2025-08-01 15:35:30.746] [DEBUG] RectangleBreakDetector: Alternative - Column X=8: whitePixels=6, whiteSegments=6
-[2025-08-01 15:35:30.746] [DEBUG] RectangleBreakDetector: Alternative - Column X=7: whitePixels=6, whiteSegments=6
-[2025-08-01 15:35:30.746] [DEBUG] RectangleBreakDetector: Alternative - Column X=6: whitePixels=6, whiteSegments=6
-[2025-08-01 15:35:30.746] [DEBUG] RectangleBreakDetector: Alternative - Column X=5: whitePixels=6, whiteSegments=6
-[2025-08-01 15:35:30.747] [DEBUG] RectangleBreakDetector: Alternative - Column X=4: whitePixels=6, whiteSegments=6
-[2025-08-01 15:35:30.747] [DEBUG] RectangleBreakDetector: Alternative - Column X=3: whitePixels=12, whiteSegments=3
-[2025-08-01 15:35:30.747] [DEBUG] RectangleBreakDetector: Alternative - Column X=2: whitePixels=3, whiteSegments=3
-[2025-08-01 15:35:30.747] [DEBUG] RectangleBreakDetector: Alternative - Column X=1: whitePixels=3, whiteSegments=3
-[2025-08-01 15:35:30.747] [DEBUG] RectangleBreakDetector: Alternative - Column X=0: whitePixels=3, whiteSegments=3
-[2025-08-01 15:35:30.748] [WARNING] RectangleBreakDetector: Alternative method also failed to find vertical line
-[2025-08-01 15:35:30.748] [DEBUG] RectangleBreakDetector: Both methods failed to find right vertical line for capture ID=20250801153530675
-[2025-08-01 15:35:30.748] [DEBUG] RectangleBreakDetector: Built metadata with breakoutX=0, result=NoBreakout
-[2025-08-01 15:35:30.748] [DEBUG] SimpleTradingOverlay: Created metadata for capture ID=20250801153530675, length=22
-[2025-08-01 15:35:30.761] [INFO] TradingPattern CaptureData saved: Symbol=XAUUSD, Direction=Up, Model=OHLС, X=1329, Y=60, W=123, H=242, Screenshot=C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153530675\screenshot.png
-[2025-08-01 15:35:30.761] [INFO] Trading pattern completed: FirstClick=(3269, 242), SecondClick=(3352, 120), IsInclined=True
-[2025-08-01 15:35:30.872] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:35:30.872] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153530675, Handle=394142, X=1329, Y=60, W=123, H=242
-[2025-08-01 15:35:30.886] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 123x242
-[2025-08-01 15:35:30.897] [DEBUG] TrendlineBreakDetector: Found 445 white pixels
-[2025-08-01 15:35:30.899] [DEBUG] TrendlineBreakDetector: Found 8 clusters
-[2025-08-01 15:35:30.899] [DEBUG] Cluster: size=72, len=9,0, center=(7,5,29,0), score=11,825
-[2025-08-01 15:35:30.900] [DEBUG] Cluster: size=15, len=15,0, center=(87,5,32,5), score=6,145
-[2025-08-01 15:35:30.900] [DEBUG] Cluster: size=232, len=143,4, center=(59,0,120,5), score=0,014
-[2025-08-01 15:35:30.900] [DEBUG] Cluster: size=17, len=0,0, center=(122,0,231,0), score=125781556,677
-[2025-08-01 15:35:30.900] [DEBUG] Cluster: size=17, len=15,0, center=(93,5,233,5), score=7,789
-[2025-08-01 15:35:30.900] [DEBUG] Cluster: size=82, len=15,0, center=(57,5,234,5), score=7,553
-[2025-08-01 15:35:30.900] [DEBUG] TrendlineBreakDetector: Selected white line from (19,180) to (99,61)
-[2025-08-01 15:35:30.901] [DEBUG] TrendlineBreakDetector: Trendline direction: Upward (SELL), searching for SELL breakout
-[2025-08-01 15:35:30.954] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: SELL
-[2025-08-01 15:35:30.956] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153530675\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:35:30.956] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153530675\tracking.png: NoBreakout
-[2025-08-01 15:35:31.205] [INFO] Escape key sent successfully to window handle: 394142
-[2025-08-01 15:35:31.224] [INFO] Received from Pocket Option socket: {"cmd": "open_symbol", "result": "Open symbol command executed for XAUUSD in PocketOption", "symbol": "XAUUSD", "broker": "PocketOption", "action_performed": "open_symbol"}
-[2025-08-01 15:35:31.267] [INFO] Received from Pocket Option socket: {"error": "Invalid JSON"}
-[2025-08-01 15:35:31.284] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":13.37000000,"percent":0.88000000,"lots":0.07000000,"profit_points":191}},"total_balance":1511.88000000}
+[2025-08-01 17:15:45.995] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-69.98000000,"percent":-6.11000000,"lots":1.15000000,"profit_points":-105}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:31.285] [INFO] MT4 Socket: Processing orders_summary event
-[2025-08-01 15:35:31.287] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
-[2025-08-01 15:35:31.294] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,07, Percent: 0,88, Points: 191
-[2025-08-01 15:35:31.294] [INFO] OrderSummary panel hidden
-[2025-08-01 15:35:31.294] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":13.37000000,"percent":0.88000000,"lots":0.07000000,"profit_points":191}},"total_balance":1511.88000000}
+[2025-08-01 17:15:45.996] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:15:45.997] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:15:46.004] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: -6,11, Points: -105
+[2025-08-01 17:15:46.005] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-69.98000000,"percent":-6.11000000,"lots":1.15000000,"profit_points":-105}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:31.964] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:35:31.964] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153530675, Handle=394142, X=1329, Y=60, W=123, H=242
-[2025-08-01 15:35:31.978] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 123x242
-[2025-08-01 15:35:31.989] [DEBUG] TrendlineBreakDetector: Found 350 white pixels
-[2025-08-01 15:35:31.991] [DEBUG] TrendlineBreakDetector: Found 5 clusters
-[2025-08-01 15:35:31.991] [DEBUG] Cluster: size=72, len=9,0, center=(7,5,29,0), score=11,825
-[2025-08-01 15:35:31.991] [DEBUG] Cluster: size=15, len=15,0, center=(87,5,32,5), score=6,145
-[2025-08-01 15:35:31.991] [DEBUG] Cluster: size=253, len=150,1, center=(57,0,120,5), score=0,027
-[2025-08-01 15:35:31.991] [DEBUG] TrendlineBreakDetector: Selected white line from (14,182) to (100,59)
-[2025-08-01 15:35:31.991] [DEBUG] TrendlineBreakDetector: Trendline direction: Upward (SELL), searching for SELL breakout
-[2025-08-01 15:35:32.047] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: SELL
-[2025-08-01 15:35:32.049] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153530675\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:35:32.050] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153530675\tracking.png: NoBreakout
-[2025-08-01 15:35:32.282] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":14.70000000,"percent":0.97000000,"lots":0.07000000,"profit_points":210}},"total_balance":1511.88000000}
+[2025-08-01 17:15:46.966] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-82.63000000,"percent":-7.21000000,"lots":1.15000000,"profit_points":-125}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:32.282] [INFO] MT4 Socket: Processing orders_summary event
-[2025-08-01 15:35:32.284] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
-[2025-08-01 15:35:32.291] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,07, Percent: 0,97, Points: 210
-[2025-08-01 15:35:32.291] [INFO] OrderSummary panel hidden
-[2025-08-01 15:35:32.291] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":14.70000000,"percent":0.97000000,"lots":0.07000000,"profit_points":210}},"total_balance":1511.88000000}
+[2025-08-01 17:15:46.966] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:15:46.968] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:15:46.974] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: -7,21, Points: -125
+[2025-08-01 17:15:46.974] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-82.63000000,"percent":-7.21000000,"lots":1.15000000,"profit_points":-125}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:33.056] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:35:33.056] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153530675, Handle=394142, X=1329, Y=60, W=123, H=242
-[2025-08-01 15:35:33.070] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 123x242
-[2025-08-01 15:35:33.081] [DEBUG] TrendlineBreakDetector: Found 350 white pixels
-[2025-08-01 15:35:33.083] [DEBUG] TrendlineBreakDetector: Found 5 clusters
-[2025-08-01 15:35:33.083] [DEBUG] Cluster: size=72, len=9,0, center=(7,5,29,0), score=11,825
-[2025-08-01 15:35:33.083] [DEBUG] Cluster: size=15, len=15,0, center=(87,5,32,5), score=6,145
-[2025-08-01 15:35:33.083] [DEBUG] Cluster: size=253, len=150,1, center=(57,0,120,5), score=0,027
-[2025-08-01 15:35:33.084] [DEBUG] TrendlineBreakDetector: Selected white line from (14,182) to (100,59)
-[2025-08-01 15:35:33.084] [DEBUG] TrendlineBreakDetector: Trendline direction: Upward (SELL), searching for SELL breakout
-[2025-08-01 15:35:33.137] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: SELL
-[2025-08-01 15:35:33.139] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153530675\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:35:33.139] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153530675\tracking.png: NoBreakout
-[2025-08-01 15:35:33.279] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":11.55000000,"percent":0.76000000,"lots":0.07000000,"profit_points":165}},"total_balance":1511.88000000}
+[2025-08-01 17:15:48.017] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-44.68000000,"percent":-3.90000000,"lots":1.15000000,"profit_points":-59}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:33.279] [INFO] MT4 Socket: Processing orders_summary event
-[2025-08-01 15:35:33.281] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
-[2025-08-01 15:35:33.289] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,07, Percent: 0,76, Points: 165
-[2025-08-01 15:35:33.290] [INFO] OrderSummary panel hidden
-[2025-08-01 15:35:33.291] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":11.55000000,"percent":0.76000000,"lots":0.07000000,"profit_points":165}},"total_balance":1511.88000000}
+[2025-08-01 17:15:48.017] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:15:48.019] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:15:48.029] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: -3,9, Points: -59
+[2025-08-01 17:15:48.029] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-44.68000000,"percent":-3.90000000,"lots":1.15000000,"profit_points":-59}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:34.177] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:35:34.178] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153530675, Handle=394142, X=1329, Y=60, W=123, H=242
-[2025-08-01 15:35:34.191] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 123x242
-[2025-08-01 15:35:34.203] [DEBUG] TrendlineBreakDetector: Found 355 white pixels
-[2025-08-01 15:35:34.204] [DEBUG] TrendlineBreakDetector: Found 5 clusters
-[2025-08-01 15:35:34.205] [DEBUG] Cluster: size=72, len=9,0, center=(7,5,29,0), score=11,825
-[2025-08-01 15:35:34.205] [DEBUG] Cluster: size=15, len=15,0, center=(87,5,32,5), score=6,145
-[2025-08-01 15:35:34.205] [DEBUG] Cluster: size=258, len=152,4, center=(55,0,120,5), score=0,040
-[2025-08-01 15:35:34.205] [DEBUG] TrendlineBreakDetector: Selected white line from (10,182) to (100,59)
-[2025-08-01 15:35:34.205] [DEBUG] TrendlineBreakDetector: Trendline direction: Upward (SELL), searching for SELL breakout
-[2025-08-01 15:35:34.224] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153530675\tracking.png] TrendlineBreakDetector Breakout DOWN detected!
-[2025-08-01 15:35:34.227] [INFO] CaptureTrackingService: Updated IsFired=True for capture ID=20250801153530675, Handle=394142
-[2025-08-01 15:35:34.238] [INFO] MT4 Socket: >>> OnBreakoutDetected handler CALLED <<< (type: BreakoutDown)
-[2025-08-01 15:35:34.238] [INFO] MT4 Socket: Sending to MT4: {"cmd":"breakout_down","symbol":"XAUUSD","risk":1,"id":"20250801153530675"} (with CRLF)
-[2025-08-01 15:35:34.239] [INFO] Sent message to MT4 socket: {"cmd":"breakout_down","symbol":"XAUUSD","risk":1,"id":"20250801153530675"}
+[2025-08-01 17:15:49.038] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-40.08000000,"percent":-3.50000000,"lots":1.15000000,"profit_points":-51}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:34.239] [INFO] MT4 Socket: Breakout processing completed for XAUUSD, type: BreakoutDown, ID: 20250801153530675
-[2025-08-01 15:35:34.239] [INFO] Binary Options Socket: >>> OnBreakoutDetected handler CALLED <<< (type: BreakoutDown)
-[2025-08-01 15:35:34.239] [INFO] Binary Options Socket: Skipping message - capture broker is Forex, not a binary broker
-[2025-08-01 15:35:34.240] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153530675\tracking.png: BreakoutDown
-[2025-08-01 15:35:34.528] [INFO] Received from MT4 socket: {"":[78113222],"closed_count":1,"action":"closed_buys_no_sell","completed":"1","cmd":"breakout_down"}
-[2025-08-01 15:35:34.540] [DEBUG] MT4: {"":[78113222],"closed_count":1,"action":"closed_buys_no_sell","completed":"1","cmd":"breakout_down"}
-[2025-08-01 15:35:34.541] [INFO] Received from MT4 socket: {"event":"orders_summary","total_balance":1523.85000000}
+[2025-08-01 17:15:49.039] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:15:49.040] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:15:49.046] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: -3,5, Points: -51
+[2025-08-01 17:15:49.046] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-40.08000000,"percent":-3.50000000,"lots":1.15000000,"profit_points":-51}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:34.541] [INFO] MT4 Socket: Processing orders_summary event
-[2025-08-01 15:35:34.550] [INFO] No matching symbol found for XAUUSD
-[2025-08-01 15:35:34.568] [INFO] OrderSummary panel hidden
-[2025-08-01 15:35:34.569] [INFO] OrderSummary panel hidden
-[2025-08-01 15:35:34.569] [DEBUG] MT4: {"event":"orders_summary","total_balance":1523.85000000}
+[2025-08-01 17:15:50.009] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-29.73000000,"percent":-2.59000000,"lots":1.15000000,"profit_points":-33}},"total_balance":1146.13000000}
 
-[2025-08-01 15:35:36.307] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
-[2025-08-01 15:35:36.307] [INFO] OrderSummary panel hidden
-[2025-08-01 15:35:36.307] [INFO] OrderSummary panel hidden
-[2025-08-01 15:35:36.307] [INFO] Applied toolbar settings for window 852876: Risk=1, Duration=2, Broker=Forex
-[2025-08-01 15:35:36.308] [INFO] Overlay positioned on window 852876 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-08-01 15:35:36.376] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
-[2025-08-01 15:35:36.968] [DEBUG] Z hotkey detected and service is enabled
-[2025-08-01 15:35:36.968] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
-[2025-08-01 15:35:38.378] [INFO] Received from Pocket Option socket: {"cmd": "open_symbol", "result": "Open symbol command executed for XAUUSD in PocketOption", "symbol": "XAUUSD", "broker": "PocketOption", "action_performed": "open_symbol"}
-[2025-08-01 15:35:40.061] [INFO] Received from Pocket Option socket: {"cmd": "open_symbol", "result": "Open symbol command executed for XAUUSD in PocketOption", "symbol": "XAUUSD", "broker": "PocketOption", "action_performed": "open_symbol"}
-[2025-08-01 15:36:12.002] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
-[2025-08-01 15:36:12.002] [INFO] OrderSummary panel hidden
-[2025-08-01 15:36:12.002] [INFO] OrderSummary panel hidden
-[2025-08-01 15:36:12.003] [INFO] Applied toolbar settings for window 394142: Risk=1, Duration=2, Broker=Forex
-[2025-08-01 15:36:12.003] [INFO] Overlay positioned on window 394142 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-08-01 15:36:12.061] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
-[2025-08-01 15:36:14.123] [INFO] Received from Pocket Option socket: {"cmd": "open_symbol", "result": "Open symbol command executed for XAUUSD in PocketOption", "symbol": "XAUUSD", "broker": "PocketOption", "action_performed": "open_symbol"}
-[2025-08-01 15:36:15.714] [INFO] Received from Pocket Option socket: {"cmd": "open_symbol", "result": "Open symbol command executed for XAUUSD in PocketOption", "symbol": "XAUUSD", "broker": "PocketOption", "action_performed": "open_symbol"}
-[2025-08-01 15:36:16.299] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
-[2025-08-01 15:36:16.299] [INFO] OrderSummary panel hidden
-[2025-08-01 15:36:16.299] [INFO] OrderSummary panel hidden
-[2025-08-01 15:36:16.300] [INFO] Applied toolbar settings for window 852876: Risk=1, Duration=2, Broker=Forex
-[2025-08-01 15:36:16.300] [INFO] Overlay positioned on window 852876 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-08-01 15:36:16.351] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
-[2025-08-01 15:36:17.799] [DEBUG] Z hotkey detected and service is enabled
-[2025-08-01 15:36:17.799] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
-[2025-08-01 15:36:18.068] [INFO] Received from Pocket Option socket: {"cmd": "open_symbol", "result": "Open symbol command executed for XAUUSD in PocketOption", "symbol": "XAUUSD", "broker": "PocketOption", "action_performed": "open_symbol"}
-[2025-08-01 15:36:19.626] [INFO] Received from Pocket Option socket: {"cmd": "open_symbol", "result": "Open symbol command executed for XAUUSD in PocketOption", "symbol": "XAUUSD", "broker": "PocketOption", "action_performed": "open_symbol"}
-[2025-08-01 15:36:19.738] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
-[2025-08-01 15:36:19.739] [INFO] OrderSummary panel hidden
-[2025-08-01 15:36:19.739] [INFO] OrderSummary panel hidden
-[2025-08-01 15:36:19.739] [INFO] Applied toolbar settings for window 394142: Risk=1, Duration=2, Broker=Forex
-[2025-08-01 15:36:19.739] [INFO] Overlay positioned on window 394142 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-08-01 15:36:19.790] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
-[2025-08-01 15:36:20.122] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
-[2025-08-01 15:36:20.123] [INFO] OrderSummary panel hidden
-[2025-08-01 15:36:20.123] [INFO] OrderSummary panel hidden
-[2025-08-01 15:36:20.123] [INFO] Applied toolbar settings for window 852876: Risk=1, Duration=2, Broker=Forex
-[2025-08-01 15:36:20.123] [INFO] Overlay positioned on window 852876 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-08-01 15:36:20.189] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
-[2025-08-01 15:36:21.386] [INFO] Received from Pocket Option socket: {"cmd": "open_symbol", "result": "Open symbol command executed for XAUUSD in PocketOption", "symbol": "XAUUSD", "broker": "PocketOption", "action_performed": "open_symbol"}
-[2025-08-01 15:36:21.441] [INFO] Received from Pocket Option socket: {"error": "Invalid JSON"}
-[2025-08-01 15:36:22.991] [DEBUG] A key detected and service is enabled
-[2025-08-01 15:36:22.992] [DEBUG] A key pressed - starting inclined pattern capture
-[2025-08-01 15:36:22.992] [DEBUG] SimpleTradingOverlay.OnAKeyPressed() called
-[2025-08-01 15:36:22.992] [INFO] A key pressed - starting inclined trading pattern creation
-[2025-08-01 15:36:22.992] [INFO] Started inclined trading pattern creation for window 852876 (symbol: XAUUSD)
-[2025-08-01 15:36:23.505] [INFO] First click recorded at (1352, 215)
-[2025-08-01 15:36:24.209] [INFO] Second click recorded at (1431, 234)
-[2025-08-01 15:36:24.209] [INFO] Current window handle: 852876
-[2025-08-01 15:36:24.209] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
-[2025-08-01 15:36:24.210] [INFO] Original clicks: FirstClick=(1352, 215), SecondClick=(1431, 234)
-[2025-08-01 15:36:24.210] [INFO] Pattern area: Left=1332, Top=195, Width=119, Height=59
-[2025-08-01 15:36:24.222] [INFO] TradingPatternOverlay shown at (1332, 195) with size 119x59
-[2025-08-01 15:36:24.222] [INFO] Scheduling Escape key send to window handle: 852876
-[2025-08-01 15:36:24.223] [INFO] Escape thread started for window handle: 852876
-[2025-08-01 15:36:24.223] [DEBUG] ConvertVirtualScreenToWindowCoordinates: virtualX=1352, virtualY=215, windowLeft=0, windowTop=0, windowX=1352, windowY=215
-[2025-08-01 15:36:24.223] [DEBUG] ConvertVirtualScreenToWindowCoordinates: virtualX=1431, virtualY=234, windowLeft=0, windowTop=0, windowX=1431, windowY=234
-[2025-08-01 15:36:24.223] [DEBUG] SimpleTradingOverlay: Creating metadata for capture ID=20250801153624223
-[2025-08-01 15:36:24.236] [DEBUG] SimpleTradingOverlay: Saved MetaDebug image to C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\MetaDebug.png
-[2025-08-01 15:36:24.236] [DEBUG] RectangleBreakDetector: Building metadata for image 119x139
-[2025-08-01 15:36:24.236] [DEBUG] RectangleBreakDetector: Starting breakout detection for capture ID=20250801153624223, Direction=Down
-[2025-08-01 15:36:24.236] [DEBUG] RectangleBreakDetector: Searching for vertical line with minWhitePixels=23, minConsecutive=13
-[2025-08-01 15:36:24.237] [DEBUG] RectangleBreakDetector: Column X=118: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.237] [DEBUG] RectangleBreakDetector: Column X=117: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.237] [DEBUG] RectangleBreakDetector: Column X=116: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.237] [DEBUG] RectangleBreakDetector: Column X=115: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.237] [DEBUG] RectangleBreakDetector: Column X=114: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.238] [DEBUG] RectangleBreakDetector: Column X=113: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.238] [DEBUG] RectangleBreakDetector: Column X=112: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.238] [DEBUG] RectangleBreakDetector: Column X=111: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.238] [DEBUG] RectangleBreakDetector: Column X=110: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.238] [DEBUG] RectangleBreakDetector: Column X=109: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.239] [DEBUG] RectangleBreakDetector: Column X=108: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.239] [DEBUG] RectangleBreakDetector: Column X=107: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.239] [DEBUG] RectangleBreakDetector: Column X=106: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.239] [DEBUG] RectangleBreakDetector: Column X=105: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.239] [DEBUG] RectangleBreakDetector: Column X=104: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.240] [DEBUG] RectangleBreakDetector: Column X=103: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.240] [DEBUG] RectangleBreakDetector: Column X=102: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.240] [DEBUG] RectangleBreakDetector: Column X=101: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.240] [DEBUG] RectangleBreakDetector: Column X=100: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.240] [DEBUG] RectangleBreakDetector: Column X=99: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.241] [DEBUG] RectangleBreakDetector: Column X=98: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.241] [DEBUG] RectangleBreakDetector: Column X=97: whitePixels=1, maxConsecutive=1, gaps=1
-[2025-08-01 15:36:24.241] [DEBUG] RectangleBreakDetector: Column X=96: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:36:24.241] [DEBUG] RectangleBreakDetector: Column X=95: whitePixels=5, maxConsecutive=5, gaps=1
-[2025-08-01 15:36:24.241] [DEBUG] RectangleBreakDetector: Column X=94: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:36:24.242] [DEBUG] RectangleBreakDetector: Column X=93: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.242] [DEBUG] RectangleBreakDetector: Column X=92: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.242] [DEBUG] RectangleBreakDetector: Column X=91: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:36:24.242] [DEBUG] RectangleBreakDetector: Column X=90: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.242] [DEBUG] RectangleBreakDetector: Column X=89: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.243] [DEBUG] RectangleBreakDetector: Column X=88: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.243] [DEBUG] RectangleBreakDetector: Column X=87: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:36:24.243] [DEBUG] RectangleBreakDetector: Column X=86: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.243] [DEBUG] RectangleBreakDetector: Column X=85: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.243] [DEBUG] RectangleBreakDetector: Column X=84: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.244] [DEBUG] RectangleBreakDetector: Column X=83: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:36:24.244] [DEBUG] RectangleBreakDetector: Column X=82: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.244] [DEBUG] RectangleBreakDetector: Column X=81: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.244] [DEBUG] RectangleBreakDetector: Column X=80: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.244] [DEBUG] RectangleBreakDetector: Column X=79: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:36:24.245] [DEBUG] RectangleBreakDetector: Column X=78: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.245] [DEBUG] RectangleBreakDetector: Column X=77: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.245] [DEBUG] RectangleBreakDetector: Column X=76: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.245] [DEBUG] RectangleBreakDetector: Column X=75: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:36:24.245] [DEBUG] RectangleBreakDetector: Column X=74: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.245] [DEBUG] RectangleBreakDetector: Column X=73: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.246] [DEBUG] RectangleBreakDetector: Column X=72: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.246] [DEBUG] RectangleBreakDetector: Column X=71: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:36:24.246] [DEBUG] RectangleBreakDetector: Column X=70: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.246] [DEBUG] RectangleBreakDetector: Column X=69: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.246] [DEBUG] RectangleBreakDetector: Column X=68: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.247] [DEBUG] RectangleBreakDetector: Column X=67: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:36:24.247] [DEBUG] RectangleBreakDetector: Column X=66: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.247] [DEBUG] RectangleBreakDetector: Column X=65: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.247] [DEBUG] RectangleBreakDetector: Column X=64: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.247] [DEBUG] RectangleBreakDetector: Column X=63: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:36:24.248] [DEBUG] RectangleBreakDetector: Column X=62: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.248] [DEBUG] RectangleBreakDetector: Column X=61: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.248] [DEBUG] RectangleBreakDetector: Column X=60: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.248] [DEBUG] RectangleBreakDetector: Column X=59: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:36:24.248] [DEBUG] RectangleBreakDetector: Column X=58: whitePixels=4, maxConsecutive=4, gaps=1
-[2025-08-01 15:36:24.248] [DEBUG] RectangleBreakDetector: Column X=57: whitePixels=5, maxConsecutive=5, gaps=1
-[2025-08-01 15:36:24.249] [DEBUG] RectangleBreakDetector: Column X=56: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:36:24.249] [DEBUG] RectangleBreakDetector: Column X=55: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:36:24.249] [DEBUG] RectangleBreakDetector: Column X=54: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:36:24.249] [DEBUG] RectangleBreakDetector: Column X=53: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.249] [DEBUG] RectangleBreakDetector: Column X=52: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.250] [DEBUG] RectangleBreakDetector: Column X=51: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.250] [DEBUG] RectangleBreakDetector: Column X=50: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:36:24.250] [DEBUG] RectangleBreakDetector: Column X=49: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.250] [DEBUG] RectangleBreakDetector: Column X=48: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.250] [DEBUG] RectangleBreakDetector: Column X=47: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.251] [DEBUG] RectangleBreakDetector: Column X=46: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:36:24.251] [DEBUG] RectangleBreakDetector: Column X=45: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.251] [DEBUG] RectangleBreakDetector: Column X=44: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.251] [DEBUG] RectangleBreakDetector: Column X=43: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.251] [DEBUG] RectangleBreakDetector: Column X=42: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:36:24.252] [DEBUG] RectangleBreakDetector: Column X=41: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.252] [DEBUG] RectangleBreakDetector: Column X=40: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.252] [DEBUG] RectangleBreakDetector: Column X=39: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.252] [DEBUG] RectangleBreakDetector: Column X=38: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:36:24.252] [DEBUG] RectangleBreakDetector: Column X=37: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.253] [DEBUG] RectangleBreakDetector: Column X=36: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.253] [DEBUG] RectangleBreakDetector: Column X=35: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.253] [DEBUG] RectangleBreakDetector: Column X=34: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:36:24.253] [DEBUG] RectangleBreakDetector: Column X=33: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.253] [DEBUG] RectangleBreakDetector: Column X=32: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.253] [DEBUG] RectangleBreakDetector: Column X=31: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.254] [DEBUG] RectangleBreakDetector: Column X=30: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:36:24.254] [DEBUG] RectangleBreakDetector: Column X=29: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.254] [DEBUG] RectangleBreakDetector: Column X=28: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.254] [DEBUG] RectangleBreakDetector: Column X=27: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.254] [DEBUG] RectangleBreakDetector: Column X=26: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:36:24.255] [DEBUG] RectangleBreakDetector: Column X=25: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.255] [DEBUG] RectangleBreakDetector: Column X=24: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.255] [DEBUG] RectangleBreakDetector: Column X=23: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.255] [DEBUG] RectangleBreakDetector: Column X=22: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:36:24.255] [DEBUG] RectangleBreakDetector: Column X=21: whitePixels=2, maxConsecutive=2, gaps=1
-[2025-08-01 15:36:24.255] [DEBUG] RectangleBreakDetector: Column X=20: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:36:24.256] [DEBUG] RectangleBreakDetector: Column X=19: whitePixels=5, maxConsecutive=5, gaps=1
-[2025-08-01 15:36:24.256] [DEBUG] RectangleBreakDetector: Column X=18: whitePixels=3, maxConsecutive=3, gaps=1
-[2025-08-01 15:36:24.256] [DEBUG] RectangleBreakDetector: Column X=17: whitePixels=1, maxConsecutive=1, gaps=1
-[2025-08-01 15:36:24.256] [DEBUG] RectangleBreakDetector: Column X=16: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.256] [DEBUG] RectangleBreakDetector: Column X=15: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.256] [DEBUG] RectangleBreakDetector: Column X=14: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.257] [DEBUG] RectangleBreakDetector: Column X=13: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.257] [DEBUG] RectangleBreakDetector: Column X=12: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.257] [DEBUG] RectangleBreakDetector: Column X=11: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.257] [DEBUG] RectangleBreakDetector: Column X=10: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.257] [DEBUG] RectangleBreakDetector: Column X=9: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.258] [DEBUG] RectangleBreakDetector: Column X=8: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.258] [DEBUG] RectangleBreakDetector: Column X=7: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.258] [DEBUG] RectangleBreakDetector: Column X=6: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.258] [DEBUG] RectangleBreakDetector: Column X=5: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.259] [DEBUG] RectangleBreakDetector: Column X=4: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.259] [DEBUG] RectangleBreakDetector: Column X=3: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.259] [DEBUG] RectangleBreakDetector: Column X=2: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.259] [DEBUG] RectangleBreakDetector: Column X=1: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.261] [DEBUG] RectangleBreakDetector: Column X=0: whitePixels=0, maxConsecutive=0, gaps=0
-[2025-08-01 15:36:24.261] [WARNING] RectangleBreakDetector: No vertical line found with current parameters
-[2025-08-01 15:36:24.261] [DEBUG] RectangleBreakDetector: Primary method failed, trying alternative for capture ID=20250801153624223
-[2025-08-01 15:36:24.261] [DEBUG] RectangleBreakDetector: Using alternative method to find vertical line
-[2025-08-01 15:36:24.262] [DEBUG] RectangleBreakDetector: Alternative - Column X=118: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.262] [DEBUG] RectangleBreakDetector: Alternative - Column X=117: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.262] [DEBUG] RectangleBreakDetector: Alternative - Column X=116: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.262] [DEBUG] RectangleBreakDetector: Alternative - Column X=115: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.262] [DEBUG] RectangleBreakDetector: Alternative - Column X=114: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.263] [DEBUG] RectangleBreakDetector: Alternative - Column X=113: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.263] [DEBUG] RectangleBreakDetector: Alternative - Column X=112: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.263] [DEBUG] RectangleBreakDetector: Alternative - Column X=111: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.263] [DEBUG] RectangleBreakDetector: Alternative - Column X=110: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.264] [DEBUG] RectangleBreakDetector: Alternative - Column X=109: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.264] [DEBUG] RectangleBreakDetector: Alternative - Column X=108: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.264] [DEBUG] RectangleBreakDetector: Alternative - Column X=107: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.264] [DEBUG] RectangleBreakDetector: Alternative - Column X=106: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.264] [DEBUG] RectangleBreakDetector: Alternative - Column X=105: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.265] [DEBUG] RectangleBreakDetector: Alternative - Column X=104: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.265] [DEBUG] RectangleBreakDetector: Alternative - Column X=103: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.265] [DEBUG] RectangleBreakDetector: Alternative - Column X=102: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.265] [DEBUG] RectangleBreakDetector: Alternative - Column X=101: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.265] [DEBUG] RectangleBreakDetector: Alternative - Column X=100: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.266] [DEBUG] RectangleBreakDetector: Alternative - Column X=99: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.266] [DEBUG] RectangleBreakDetector: Alternative - Column X=98: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.266] [DEBUG] RectangleBreakDetector: Alternative - Column X=97: whitePixels=1, whiteSegments=1
-[2025-08-01 15:36:24.266] [DEBUG] RectangleBreakDetector: Alternative - Column X=96: whitePixels=3, whiteSegments=1
-[2025-08-01 15:36:24.266] [DEBUG] RectangleBreakDetector: Alternative - Column X=95: whitePixels=5, whiteSegments=1
-[2025-08-01 15:36:24.266] [DEBUG] RectangleBreakDetector: Alternative - Column X=94: whitePixels=3, whiteSegments=1
-[2025-08-01 15:36:24.267] [DEBUG] RectangleBreakDetector: Alternative - Column X=93: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.267] [DEBUG] RectangleBreakDetector: Alternative - Column X=92: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.267] [DEBUG] RectangleBreakDetector: Alternative - Column X=91: whitePixels=3, whiteSegments=1
-[2025-08-01 15:36:24.267] [DEBUG] RectangleBreakDetector: Alternative - Column X=90: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.267] [DEBUG] RectangleBreakDetector: Alternative - Column X=89: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.267] [DEBUG] RectangleBreakDetector: Alternative - Column X=88: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.268] [DEBUG] RectangleBreakDetector: Alternative - Column X=87: whitePixels=3, whiteSegments=1
-[2025-08-01 15:36:24.268] [DEBUG] RectangleBreakDetector: Alternative - Column X=86: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.268] [DEBUG] RectangleBreakDetector: Alternative - Column X=85: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.268] [DEBUG] RectangleBreakDetector: Alternative - Column X=84: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.268] [DEBUG] RectangleBreakDetector: Alternative - Column X=83: whitePixels=3, whiteSegments=1
-[2025-08-01 15:36:24.268] [DEBUG] RectangleBreakDetector: Alternative - Column X=82: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.268] [DEBUG] RectangleBreakDetector: Alternative - Column X=81: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.269] [DEBUG] RectangleBreakDetector: Alternative - Column X=80: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.269] [DEBUG] RectangleBreakDetector: Alternative - Column X=79: whitePixels=3, whiteSegments=1
-[2025-08-01 15:36:24.269] [DEBUG] RectangleBreakDetector: Alternative - Column X=78: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.269] [DEBUG] RectangleBreakDetector: Alternative - Column X=77: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.269] [DEBUG] RectangleBreakDetector: Alternative - Column X=76: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.269] [DEBUG] RectangleBreakDetector: Alternative - Column X=75: whitePixels=3, whiteSegments=1
-[2025-08-01 15:36:24.270] [DEBUG] RectangleBreakDetector: Alternative - Column X=74: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.270] [DEBUG] RectangleBreakDetector: Alternative - Column X=73: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.270] [DEBUG] RectangleBreakDetector: Alternative - Column X=72: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.270] [DEBUG] RectangleBreakDetector: Alternative - Column X=71: whitePixels=3, whiteSegments=1
-[2025-08-01 15:36:24.270] [DEBUG] RectangleBreakDetector: Alternative - Column X=70: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.271] [DEBUG] RectangleBreakDetector: Alternative - Column X=69: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.271] [DEBUG] RectangleBreakDetector: Alternative - Column X=68: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.271] [DEBUG] RectangleBreakDetector: Alternative - Column X=67: whitePixels=3, whiteSegments=1
-[2025-08-01 15:36:24.271] [DEBUG] RectangleBreakDetector: Alternative - Column X=66: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.271] [DEBUG] RectangleBreakDetector: Alternative - Column X=65: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.271] [DEBUG] RectangleBreakDetector: Alternative - Column X=64: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.272] [DEBUG] RectangleBreakDetector: Alternative - Column X=63: whitePixels=3, whiteSegments=1
-[2025-08-01 15:36:24.272] [DEBUG] RectangleBreakDetector: Alternative - Column X=62: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.272] [DEBUG] RectangleBreakDetector: Alternative - Column X=61: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.272] [DEBUG] RectangleBreakDetector: Alternative - Column X=60: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.272] [DEBUG] RectangleBreakDetector: Alternative - Column X=59: whitePixels=3, whiteSegments=1
-[2025-08-01 15:36:24.272] [DEBUG] RectangleBreakDetector: Alternative - Column X=58: whitePixels=4, whiteSegments=1
-[2025-08-01 15:36:24.273] [DEBUG] RectangleBreakDetector: Alternative - Column X=57: whitePixels=5, whiteSegments=1
-[2025-08-01 15:36:24.273] [DEBUG] RectangleBreakDetector: Alternative - Column X=56: whitePixels=3, whiteSegments=1
-[2025-08-01 15:36:24.273] [DEBUG] RectangleBreakDetector: Alternative - Column X=55: whitePixels=3, whiteSegments=1
-[2025-08-01 15:36:24.273] [DEBUG] RectangleBreakDetector: Alternative - Column X=54: whitePixels=3, whiteSegments=1
-[2025-08-01 15:36:24.273] [DEBUG] RectangleBreakDetector: Alternative - Column X=53: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.273] [DEBUG] RectangleBreakDetector: Alternative - Column X=52: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.274] [DEBUG] RectangleBreakDetector: Alternative - Column X=51: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.274] [DEBUG] RectangleBreakDetector: Alternative - Column X=50: whitePixels=3, whiteSegments=1
-[2025-08-01 15:36:24.274] [DEBUG] RectangleBreakDetector: Alternative - Column X=49: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.274] [DEBUG] RectangleBreakDetector: Alternative - Column X=48: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.274] [DEBUG] RectangleBreakDetector: Alternative - Column X=47: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.274] [DEBUG] RectangleBreakDetector: Alternative - Column X=46: whitePixels=3, whiteSegments=1
-[2025-08-01 15:36:24.275] [DEBUG] RectangleBreakDetector: Alternative - Column X=45: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.275] [DEBUG] RectangleBreakDetector: Alternative - Column X=44: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.275] [DEBUG] RectangleBreakDetector: Alternative - Column X=43: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.275] [DEBUG] RectangleBreakDetector: Alternative - Column X=42: whitePixels=3, whiteSegments=1
-[2025-08-01 15:36:24.275] [DEBUG] RectangleBreakDetector: Alternative - Column X=41: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.276] [DEBUG] RectangleBreakDetector: Alternative - Column X=40: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.276] [DEBUG] RectangleBreakDetector: Alternative - Column X=39: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.276] [DEBUG] RectangleBreakDetector: Alternative - Column X=38: whitePixels=3, whiteSegments=1
-[2025-08-01 15:36:24.276] [DEBUG] RectangleBreakDetector: Alternative - Column X=37: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.276] [DEBUG] RectangleBreakDetector: Alternative - Column X=36: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.276] [DEBUG] RectangleBreakDetector: Alternative - Column X=35: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.277] [DEBUG] RectangleBreakDetector: Alternative - Column X=34: whitePixels=3, whiteSegments=1
-[2025-08-01 15:36:24.277] [DEBUG] RectangleBreakDetector: Alternative - Column X=33: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.277] [DEBUG] RectangleBreakDetector: Alternative - Column X=32: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.277] [DEBUG] RectangleBreakDetector: Alternative - Column X=31: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.277] [DEBUG] RectangleBreakDetector: Alternative - Column X=30: whitePixels=3, whiteSegments=1
-[2025-08-01 15:36:24.278] [DEBUG] RectangleBreakDetector: Alternative - Column X=29: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.278] [DEBUG] RectangleBreakDetector: Alternative - Column X=28: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.278] [DEBUG] RectangleBreakDetector: Alternative - Column X=27: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.278] [DEBUG] RectangleBreakDetector: Alternative - Column X=26: whitePixels=3, whiteSegments=1
-[2025-08-01 15:36:24.278] [DEBUG] RectangleBreakDetector: Alternative - Column X=25: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.279] [DEBUG] RectangleBreakDetector: Alternative - Column X=24: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.279] [DEBUG] RectangleBreakDetector: Alternative - Column X=23: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.279] [DEBUG] RectangleBreakDetector: Alternative - Column X=22: whitePixels=3, whiteSegments=1
-[2025-08-01 15:36:24.279] [DEBUG] RectangleBreakDetector: Alternative - Column X=21: whitePixels=2, whiteSegments=1
-[2025-08-01 15:36:24.279] [DEBUG] RectangleBreakDetector: Alternative - Column X=20: whitePixels=3, whiteSegments=1
-[2025-08-01 15:36:24.279] [DEBUG] RectangleBreakDetector: Alternative - Column X=19: whitePixels=5, whiteSegments=1
-[2025-08-01 15:36:24.280] [DEBUG] RectangleBreakDetector: Alternative - Column X=18: whitePixels=3, whiteSegments=1
-[2025-08-01 15:36:24.280] [DEBUG] RectangleBreakDetector: Alternative - Column X=17: whitePixels=1, whiteSegments=1
-[2025-08-01 15:36:24.280] [DEBUG] RectangleBreakDetector: Alternative - Column X=16: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.280] [DEBUG] RectangleBreakDetector: Alternative - Column X=15: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.280] [DEBUG] RectangleBreakDetector: Alternative - Column X=14: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.281] [DEBUG] RectangleBreakDetector: Alternative - Column X=13: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.281] [DEBUG] RectangleBreakDetector: Alternative - Column X=12: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.281] [DEBUG] RectangleBreakDetector: Alternative - Column X=11: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.281] [DEBUG] RectangleBreakDetector: Alternative - Column X=10: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.281] [DEBUG] RectangleBreakDetector: Alternative - Column X=9: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.282] [DEBUG] RectangleBreakDetector: Alternative - Column X=8: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.282] [DEBUG] RectangleBreakDetector: Alternative - Column X=7: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.282] [DEBUG] RectangleBreakDetector: Alternative - Column X=6: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.282] [DEBUG] RectangleBreakDetector: Alternative - Column X=5: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.282] [DEBUG] RectangleBreakDetector: Alternative - Column X=4: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.282] [DEBUG] RectangleBreakDetector: Alternative - Column X=3: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.283] [DEBUG] RectangleBreakDetector: Alternative - Column X=2: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.283] [DEBUG] RectangleBreakDetector: Alternative - Column X=1: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.283] [DEBUG] RectangleBreakDetector: Alternative - Column X=0: whitePixels=0, whiteSegments=0
-[2025-08-01 15:36:24.283] [WARNING] RectangleBreakDetector: Alternative method also failed to find vertical line
-[2025-08-01 15:36:24.283] [DEBUG] RectangleBreakDetector: Both methods failed to find right vertical line for capture ID=20250801153624223
-[2025-08-01 15:36:24.283] [DEBUG] RectangleBreakDetector: Built metadata with breakoutX=0, result=NoBreakout
-[2025-08-01 15:36:24.284] [DEBUG] SimpleTradingOverlay: Created metadata for capture ID=20250801153624223, length=22
-[2025-08-01 15:36:24.307] [INFO] TradingPattern CaptureData saved: Symbol=XAUUSD, Direction=Down, Model=OHLС, X=1332, Y=155, W=119, H=139, Screenshot=C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\screenshot.png
-[2025-08-01 15:36:24.307] [INFO] Trading pattern completed: FirstClick=(1352, 215), SecondClick=(1431, 234), IsInclined=True
-[2025-08-01 15:36:24.739] [INFO] Escape key sent successfully to window handle: 852876
-[2025-08-01 15:36:24.787] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:24.787] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:24.803] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:24.809] [DEBUG] TrendlineBreakDetector: Found 212 white pixels
-[2025-08-01 15:36:24.810] [DEBUG] TrendlineBreakDetector: Found 3 clusters
-[2025-08-01 15:36:24.810] [DEBUG] Cluster: size=17, len=15,0, center=(93,5,10,5), score=4,518
-[2025-08-01 15:36:24.810] [DEBUG] Cluster: size=82, len=15,0, center=(57,5,11,5), score=3,826
-[2025-08-01 15:36:24.810] [DEBUG] Cluster: size=113, len=72,0, center=(57,0,69,5), score=0,029
-[2025-08-01 15:36:24.811] [DEBUG] TrendlineBreakDetector: Selected white line from (22,61) to (92,78)
-[2025-08-01 15:36:24.811] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:24.865] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:24.867] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:24.867] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:25.898] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:25.898] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:25.909] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:25.916] [DEBUG] TrendlineBreakDetector: Found 130 white pixels
-[2025-08-01 15:36:25.916] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:25.917] [DEBUG] Cluster: size=130, len=77,1, center=(56,5,69,0), score=0,032
-[2025-08-01 15:36:25.917] [DEBUG] TrendlineBreakDetector: Selected white line from (19,60) to (94,78)
-[2025-08-01 15:36:25.917] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:25.943] [DEBUG] Z hotkey detected and service is enabled
-[2025-08-01 15:36:25.943] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
-[2025-08-01 15:36:25.969] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:25.970] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:25.970] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:27.005] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:27.005] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:27.022] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:27.028] [DEBUG] TrendlineBreakDetector: Found 130 white pixels
-[2025-08-01 15:36:27.028] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:27.028] [DEBUG] Cluster: size=130, len=77,1, center=(56,5,69,0), score=0,032
-[2025-08-01 15:36:27.029] [DEBUG] TrendlineBreakDetector: Selected white line from (19,60) to (94,78)
-[2025-08-01 15:36:27.029] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:27.081] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:27.082] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:27.083] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:28.093] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:28.094] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:28.107] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:28.113] [DEBUG] TrendlineBreakDetector: Found 130 white pixels
-[2025-08-01 15:36:28.114] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:28.114] [DEBUG] Cluster: size=130, len=77,1, center=(56,5,69,0), score=0,032
-[2025-08-01 15:36:28.114] [DEBUG] TrendlineBreakDetector: Selected white line from (19,60) to (94,78)
-[2025-08-01 15:36:28.114] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:28.168] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:28.170] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:28.170] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:29.186] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:29.187] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:29.204] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:29.211] [DEBUG] TrendlineBreakDetector: Found 130 white pixels
-[2025-08-01 15:36:29.212] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:29.212] [DEBUG] Cluster: size=130, len=77,1, center=(56,5,69,0), score=0,032
-[2025-08-01 15:36:29.212] [DEBUG] TrendlineBreakDetector: Selected white line from (19,60) to (94,78)
-[2025-08-01 15:36:29.212] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:29.268] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:29.270] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:29.270] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:30.279] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:30.280] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:30.298] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:30.310] [DEBUG] TrendlineBreakDetector: Found 130 white pixels
-[2025-08-01 15:36:30.311] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:30.311] [DEBUG] Cluster: size=130, len=77,1, center=(56,5,69,0), score=0,032
-[2025-08-01 15:36:30.311] [DEBUG] TrendlineBreakDetector: Selected white line from (19,60) to (94,78)
-[2025-08-01 15:36:30.311] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:30.364] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:30.365] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:30.366] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:30.815] [DEBUG] Z hotkey detected and service is enabled
-[2025-08-01 15:36:30.815] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
-[2025-08-01 15:36:31.383] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:31.384] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:31.397] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:31.403] [DEBUG] TrendlineBreakDetector: Found 130 white pixels
-[2025-08-01 15:36:31.404] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:31.404] [DEBUG] Cluster: size=130, len=77,1, center=(56,5,69,0), score=0,032
-[2025-08-01 15:36:31.404] [DEBUG] TrendlineBreakDetector: Selected white line from (19,60) to (94,78)
-[2025-08-01 15:36:31.404] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:31.457] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:31.459] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:31.459] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:31.679] [DEBUG] Z hotkey detected and service is enabled
-[2025-08-01 15:36:31.679] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
-[2025-08-01 15:36:32.473] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:32.473] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:32.479] [DEBUG] Z hotkey detected and service is enabled
-[2025-08-01 15:36:32.479] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
-[2025-08-01 15:36:32.488] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:32.494] [DEBUG] TrendlineBreakDetector: Found 138 white pixels
-[2025-08-01 15:36:32.495] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:32.495] [DEBUG] Cluster: size=138, len=81,0, center=(54,5,69,0), score=0,056
-[2025-08-01 15:36:32.495] [DEBUG] TrendlineBreakDetector: Selected white line from (15,60) to (94,78)
-[2025-08-01 15:36:32.495] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:32.548] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:32.550] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:32.550] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:33.418] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
-[2025-08-01 15:36:33.418] [INFO] OrderSummary panel hidden
-[2025-08-01 15:36:33.418] [INFO] OrderSummary panel hidden
-[2025-08-01 15:36:33.418] [INFO] Applied toolbar settings for window 394142: Risk=1, Duration=2, Broker=Forex
-[2025-08-01 15:36:33.419] [INFO] Overlay positioned on window 394142 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-08-01 15:36:33.487] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
-[2025-08-01 15:36:33.559] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:33.559] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:33.571] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:33.578] [DEBUG] TrendlineBreakDetector: Found 138 white pixels
-[2025-08-01 15:36:33.578] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:33.578] [DEBUG] Cluster: size=138, len=81,0, center=(54,5,69,0), score=0,056
-[2025-08-01 15:36:33.578] [DEBUG] TrendlineBreakDetector: Selected white line from (15,60) to (94,78)
-[2025-08-01 15:36:33.578] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:33.632] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:33.634] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:33.634] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:34.673] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:34.673] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:34.688] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:34.694] [DEBUG] TrendlineBreakDetector: Found 138 white pixels
-[2025-08-01 15:36:34.695] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:34.695] [DEBUG] Cluster: size=138, len=81,0, center=(54,5,69,0), score=0,056
-[2025-08-01 15:36:34.695] [DEBUG] TrendlineBreakDetector: Selected white line from (15,60) to (94,78)
-[2025-08-01 15:36:34.695] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:34.752] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:34.753] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:34.754] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:35.725] [INFO] Received from Pocket Option socket: {"cmd": "open_symbol", "result": "Open symbol command executed for XAUUSD in PocketOption", "symbol": "XAUUSD", "broker": "PocketOption", "action_performed": "open_symbol"}
-[2025-08-01 15:36:35.763] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:35.763] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:35.777] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:35.783] [DEBUG] TrendlineBreakDetector: Found 138 white pixels
-[2025-08-01 15:36:35.784] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:35.784] [DEBUG] Cluster: size=138, len=81,0, center=(54,5,69,0), score=0,056
-[2025-08-01 15:36:35.784] [DEBUG] TrendlineBreakDetector: Selected white line from (15,60) to (94,78)
-[2025-08-01 15:36:35.784] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:35.840] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:35.841] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:35.841] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:36.856] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:36.856] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:36.868] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:36.874] [DEBUG] TrendlineBreakDetector: Found 138 white pixels
-[2025-08-01 15:36:36.875] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:36.875] [DEBUG] Cluster: size=138, len=81,0, center=(54,5,69,0), score=0,056
-[2025-08-01 15:36:36.875] [DEBUG] TrendlineBreakDetector: Selected white line from (15,60) to (94,78)
-[2025-08-01 15:36:36.875] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:36.926] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:36.928] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:36.928] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:37.540] [INFO] Received from Pocket Option socket: {"cmd": "open_symbol", "result": "Open symbol command executed for XAUUSD in PocketOption", "symbol": "XAUUSD", "broker": "PocketOption", "action_performed": "open_symbol"}
-[2025-08-01 15:36:37.939] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:37.939] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:37.952] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:37.958] [DEBUG] TrendlineBreakDetector: Found 138 white pixels
-[2025-08-01 15:36:37.958] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:37.958] [DEBUG] Cluster: size=138, len=81,0, center=(54,5,69,0), score=0,056
-[2025-08-01 15:36:37.958] [DEBUG] TrendlineBreakDetector: Selected white line from (15,60) to (94,78)
-[2025-08-01 15:36:37.959] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:38.014] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:38.016] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:38.016] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:39.059] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:39.060] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:39.075] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:39.082] [DEBUG] TrendlineBreakDetector: Found 138 white pixels
-[2025-08-01 15:36:39.082] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:39.083] [DEBUG] Cluster: size=138, len=81,0, center=(54,5,69,0), score=0,056
-[2025-08-01 15:36:39.083] [DEBUG] TrendlineBreakDetector: Selected white line from (15,60) to (94,78)
-[2025-08-01 15:36:39.083] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:39.138] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:39.140] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:39.140] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:40.162] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:40.163] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:40.174] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:40.180] [DEBUG] TrendlineBreakDetector: Found 138 white pixels
-[2025-08-01 15:36:40.181] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:40.181] [DEBUG] Cluster: size=138, len=81,0, center=(54,5,69,0), score=0,056
-[2025-08-01 15:36:40.181] [DEBUG] TrendlineBreakDetector: Selected white line from (15,60) to (94,78)
-[2025-08-01 15:36:40.181] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:40.235] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:40.236] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:40.236] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:40.431] [DEBUG] S key detected and service is enabled
-[2025-08-01 15:36:40.431] [DEBUG] SimpleTradingOverlay.OnSKeyPressed() called
-[2025-08-01 15:36:40.432] [INFO] S key pressed - starting trading pattern creation
-[2025-08-01 15:36:40.432] [INFO] Started trading pattern creation for window 394142 (symbol: XAUUSD)
-[2025-08-01 15:36:41.328] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:41.328] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:41.344] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:41.350] [DEBUG] TrendlineBreakDetector: Found 138 white pixels
-[2025-08-01 15:36:41.351] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:41.351] [DEBUG] Cluster: size=138, len=81,0, center=(54,5,69,0), score=0,056
-[2025-08-01 15:36:41.351] [DEBUG] TrendlineBreakDetector: Selected white line from (15,60) to (94,78)
-[2025-08-01 15:36:41.351] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:41.406] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:41.408] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:41.409] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:41.623] [DEBUG] R hotkey detected and service is enabled
-[2025-08-01 15:36:41.623] [INFO] [DEBUG] OnRHotkey event in MainWindow
-[2025-08-01 15:36:41.755] [INFO] Hotkey button index 3 clicked at (680,56) on window 262238
-[2025-08-01 15:36:41.756] [INFO] [DEBUG] Mouse returned to (2025,133)
-[2025-08-01 15:36:41.756] [DEBUG] E hotkey detected and service is enabled
-[2025-08-01 15:36:41.757] [INFO] [DEBUG] OnEHotkey event in MainWindow
-[2025-08-01 15:36:41.882] [INFO] Hotkey button index 2 clicked at (480,56) on window 262238
-[2025-08-01 15:36:41.883] [INFO] [DEBUG] Mouse returned to (2025,133)
-[2025-08-01 15:36:42.111] [DEBUG] E hotkey detected and service is enabled
-[2025-08-01 15:36:42.111] [INFO] [DEBUG] OnEHotkey event in MainWindow
-[2025-08-01 15:36:42.229] [INFO] Hotkey button index 2 clicked at (480,56) on window 262238
-[2025-08-01 15:36:42.229] [INFO] [DEBUG] Mouse returned to (2025,133)
-[2025-08-01 15:36:42.448] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:42.448] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:42.460] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:42.467] [DEBUG] TrendlineBreakDetector: Found 138 white pixels
-[2025-08-01 15:36:42.467] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:42.468] [DEBUG] Cluster: size=138, len=81,0, center=(54,5,69,0), score=0,056
-[2025-08-01 15:36:42.468] [DEBUG] TrendlineBreakDetector: Selected white line from (15,60) to (94,78)
-[2025-08-01 15:36:42.468] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:42.525] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:42.526] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:42.526] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:43.314] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
-[2025-08-01 15:36:43.315] [INFO] OrderSummary panel hidden
-[2025-08-01 15:36:43.315] [INFO] OrderSummary panel hidden
-[2025-08-01 15:36:43.315] [INFO] Applied toolbar settings for window 852876: Risk=1, Duration=2, Broker=Forex
-[2025-08-01 15:36:43.315] [INFO] Overlay positioned on window 852876 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-08-01 15:36:43.384] [INFO] Sent message to Pocket Option socket: {"cmd":"open_symbol","symbol":"XAUUSD","broker":"PocketOption"}
-[2025-08-01 15:36:43.683] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:43.683] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:43.706] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:43.712] [DEBUG] TrendlineBreakDetector: Found 138 white pixels
-[2025-08-01 15:36:43.713] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:43.713] [DEBUG] Cluster: size=138, len=81,0, center=(54,5,69,0), score=0,056
-[2025-08-01 15:36:43.713] [DEBUG] TrendlineBreakDetector: Selected white line from (15,60) to (94,78)
-[2025-08-01 15:36:43.713] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:43.766] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:43.768] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:43.768] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:44.281] [INFO] First click recorded at (217, 9)
-[2025-08-01 15:36:44.800] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:44.800] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:44.814] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:44.821] [DEBUG] TrendlineBreakDetector: Found 138 white pixels
-[2025-08-01 15:36:44.821] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:44.822] [DEBUG] Cluster: size=138, len=81,0, center=(54,5,69,0), score=0,056
-[2025-08-01 15:36:44.822] [DEBUG] TrendlineBreakDetector: Selected white line from (15,60) to (94,78)
-[2025-08-01 15:36:44.822] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:44.874] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:44.876] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:44.876] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:45.745] [INFO] Second click recorded at (2052, 137)
-[2025-08-01 15:36:45.745] [INFO] Current window handle: 852876
-[2025-08-01 15:36:45.745] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
-[2025-08-01 15:36:45.745] [INFO] Original clicks: FirstClick=(217, 9), SecondClick=(2052, 137)
-[2025-08-01 15:36:45.745] [INFO] Pattern area: Left=197, Top=-11, Width=1875, Height=168
-[2025-08-01 15:36:45.777] [INFO] TradingPatternOverlay shown at (197, -11) with size 1875x168
-[2025-08-01 15:36:45.777] [INFO] Scheduling Escape key send to window handle: 852876
-[2025-08-01 15:36:45.780] [INFO] Escape thread started for window handle: 852876
-[2025-08-01 15:36:45.780] [DEBUG] ConvertVirtualScreenToWindowCoordinates: virtualX=217, virtualY=9, windowLeft=0, windowTop=0, windowX=217, windowY=9
-[2025-08-01 15:36:45.788] [DEBUG] ConvertVirtualScreenToWindowCoordinates: virtualX=2052, virtualY=137, windowLeft=0, windowTop=0, windowX=2052, windowY=137
-[2025-08-01 15:36:45.788] [DEBUG] SimpleTradingOverlay: Creating metadata for capture ID=20250801153645788
-[2025-08-01 15:36:45.804] [ERROR] SimpleTradingOverlay: Error creating metadata for capture ID=20250801153645788
-Exception: Out of memory.
-StackTrace:    at System.Drawing.Bitmap.Clone(Rectangle rect, PixelFormat format)
-   at ScreenCaptureApp.SimpleTradingOverlay.CreateMetadataForCapture(CaptureData capture) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 830
-[2025-08-01 15:36:45.831] [INFO] TradingPattern CaptureData saved: Symbol=XAUUSD, Direction=Down, Model=OHLC_rectangle, X=197, Y=-51, W=1875, H=248, Screenshot=C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153645788\screenshot.png
-[2025-08-01 15:36:45.831] [INFO] Trading pattern completed: FirstClick=(217, 9), SecondClick=(2052, 137), IsInclined=False
-[2025-08-01 15:36:45.928] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:45.928] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:45.941] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:45.947] [DEBUG] TrendlineBreakDetector: Found 144 white pixels
-[2025-08-01 15:36:45.948] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:45.948] [DEBUG] Cluster: size=144, len=84,9, center=(52,5,69,0), score=0,077
-[2025-08-01 15:36:45.948] [DEBUG] TrendlineBreakDetector: Selected white line from (11,60) to (94,78)
-[2025-08-01 15:36:45.948] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:46.002] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:46.004] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:46.004] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:46.005] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153645788, Handle=852876, X=197, Y=-51, W=1875, H=248
-[2025-08-01 15:36:46.022] [ERROR] CaptureTrackingService: Ошибка при обработке capture ID=20250801153645788, Handle=852876
-Exception: Out of memory.
-StackTrace:    at System.Drawing.Bitmap.Clone(Rectangle rect, PixelFormat format)
-   at ScreenCaptureApp.Services.CaptureTrackingService.ProcessCapturesAsync() in C:\apps\jforex-trading-terminal-win10\Services\CaptureTrackingService.cs:line 152
-[2025-08-01 15:36:46.309] [INFO] Escape key sent successfully to window handle: 852876
-[2025-08-01 15:36:46.495] [DEBUG] Escape key detected but service is disabled
-[2025-08-01 15:36:46.647] [DEBUG] Escape key detected but service is disabled
-[2025-08-01 15:36:47.037] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:47.037] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:47.051] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:47.057] [DEBUG] TrendlineBreakDetector: Found 144 white pixels
-[2025-08-01 15:36:47.058] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:47.058] [DEBUG] Cluster: size=144, len=84,9, center=(52,5,69,0), score=0,077
-[2025-08-01 15:36:47.058] [DEBUG] TrendlineBreakDetector: Selected white line from (11,60) to (94,78)
-[2025-08-01 15:36:47.058] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:47.113] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:47.114] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:47.114] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:47.115] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153645788, Handle=852876, X=197, Y=-51, W=1875, H=248
-[2025-08-01 15:36:47.128] [ERROR] CaptureTrackingService: Ошибка при обработке capture ID=20250801153645788, Handle=852876
-Exception: Out of memory.
-StackTrace:    at System.Drawing.Bitmap.Clone(Rectangle rect, PixelFormat format)
-   at ScreenCaptureApp.Services.CaptureTrackingService.ProcessCapturesAsync() in C:\apps\jforex-trading-terminal-win10\Services\CaptureTrackingService.cs:line 152
-[2025-08-01 15:36:47.873] [INFO] Received from Pocket Option socket: {"cmd": "open_symbol", "result": "Open symbol command executed for XAUUSD in PocketOption", "symbol": "XAUUSD", "broker": "PocketOption", "action_performed": "open_symbol"}
-[2025-08-01 15:36:48.132] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:48.132] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:48.146] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:48.153] [DEBUG] TrendlineBreakDetector: Found 144 white pixels
-[2025-08-01 15:36:48.153] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:48.154] [DEBUG] Cluster: size=144, len=84,9, center=(52,5,69,0), score=0,077
-[2025-08-01 15:36:48.154] [DEBUG] TrendlineBreakDetector: Selected white line from (11,60) to (94,78)
-[2025-08-01 15:36:48.154] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:48.210] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:48.212] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:48.212] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:48.213] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153645788, Handle=852876, X=197, Y=-51, W=1875, H=248
-[2025-08-01 15:36:48.226] [ERROR] CaptureTrackingService: Ошибка при обработке capture ID=20250801153645788, Handle=852876
-Exception: Out of memory.
-StackTrace:    at System.Drawing.Bitmap.Clone(Rectangle rect, PixelFormat format)
-   at ScreenCaptureApp.Services.CaptureTrackingService.ProcessCapturesAsync() in C:\apps\jforex-trading-terminal-win10\Services\CaptureTrackingService.cs:line 152
-[2025-08-01 15:36:48.639] [DEBUG] Escape key detected but service is disabled
-[2025-08-01 15:36:48.759] [DEBUG] Escape key detected but service is disabled
-[2025-08-01 15:36:48.903] [DEBUG] Escape key detected but service is disabled
-[2025-08-01 15:36:49.242] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:49.242] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:49.255] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:49.262] [DEBUG] TrendlineBreakDetector: Found 144 white pixels
-[2025-08-01 15:36:49.263] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:49.263] [DEBUG] Cluster: size=144, len=84,9, center=(52,5,69,0), score=0,077
-[2025-08-01 15:36:49.264] [DEBUG] TrendlineBreakDetector: Selected white line from (11,60) to (94,78)
-[2025-08-01 15:36:49.264] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:49.319] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:49.321] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:49.321] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:49.322] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153645788, Handle=852876, X=197, Y=-51, W=1875, H=248
-[2025-08-01 15:36:49.336] [ERROR] CaptureTrackingService: Ошибка при обработке capture ID=20250801153645788, Handle=852876
-Exception: Out of memory.
-StackTrace:    at System.Drawing.Bitmap.Clone(Rectangle rect, PixelFormat format)
-   at ScreenCaptureApp.Services.CaptureTrackingService.ProcessCapturesAsync() in C:\apps\jforex-trading-terminal-win10\Services\CaptureTrackingService.cs:line 152
-[2025-08-01 15:36:49.527] [INFO] Received from Pocket Option socket: {"cmd": "open_symbol", "result": "Open symbol command executed for XAUUSD in PocketOption", "symbol": "XAUUSD", "broker": "PocketOption", "action_performed": "open_symbol"}
-[2025-08-01 15:36:50.357] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:50.357] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:50.370] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:50.376] [DEBUG] TrendlineBreakDetector: Found 144 white pixels
-[2025-08-01 15:36:50.377] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:50.377] [DEBUG] Cluster: size=144, len=84,9, center=(52,5,69,0), score=0,077
-[2025-08-01 15:36:50.377] [DEBUG] TrendlineBreakDetector: Selected white line from (11,60) to (94,78)
-[2025-08-01 15:36:50.377] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:50.428] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:50.429] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:50.430] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:50.431] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153645788, Handle=852876, X=197, Y=-51, W=1875, H=248
-[2025-08-01 15:36:50.444] [ERROR] CaptureTrackingService: Ошибка при обработке capture ID=20250801153645788, Handle=852876
-Exception: Out of memory.
-StackTrace:    at System.Drawing.Bitmap.Clone(Rectangle rect, PixelFormat format)
-   at ScreenCaptureApp.Services.CaptureTrackingService.ProcessCapturesAsync() in C:\apps\jforex-trading-terminal-win10\Services\CaptureTrackingService.cs:line 152
-[2025-08-01 15:36:51.459] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:51.459] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:51.471] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:51.477] [DEBUG] TrendlineBreakDetector: Found 144 white pixels
-[2025-08-01 15:36:51.478] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:51.478] [DEBUG] Cluster: size=144, len=84,9, center=(52,5,69,0), score=0,077
-[2025-08-01 15:36:51.478] [DEBUG] TrendlineBreakDetector: Selected white line from (11,60) to (94,78)
-[2025-08-01 15:36:51.478] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:51.529] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:51.530] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:51.531] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:51.532] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153645788, Handle=852876, X=197, Y=-51, W=1875, H=248
-[2025-08-01 15:36:51.547] [ERROR] CaptureTrackingService: Ошибка при обработке capture ID=20250801153645788, Handle=852876
-Exception: Out of memory.
-StackTrace:    at System.Drawing.Bitmap.Clone(Rectangle rect, PixelFormat format)
-   at ScreenCaptureApp.Services.CaptureTrackingService.ProcessCapturesAsync() in C:\apps\jforex-trading-terminal-win10\Services\CaptureTrackingService.cs:line 152
-[2025-08-01 15:36:52.561] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:52.561] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:52.574] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:52.580] [DEBUG] TrendlineBreakDetector: Found 144 white pixels
-[2025-08-01 15:36:52.580] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:52.580] [DEBUG] Cluster: size=144, len=84,9, center=(52,5,69,0), score=0,077
-[2025-08-01 15:36:52.580] [DEBUG] TrendlineBreakDetector: Selected white line from (11,60) to (94,78)
-[2025-08-01 15:36:52.581] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:52.634] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:52.636] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:52.636] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:52.638] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153645788, Handle=852876, X=197, Y=-51, W=1875, H=248
-[2025-08-01 15:36:52.652] [ERROR] CaptureTrackingService: Ошибка при обработке capture ID=20250801153645788, Handle=852876
-Exception: Out of memory.
-StackTrace:    at System.Drawing.Bitmap.Clone(Rectangle rect, PixelFormat format)
-   at ScreenCaptureApp.Services.CaptureTrackingService.ProcessCapturesAsync() in C:\apps\jforex-trading-terminal-win10\Services\CaptureTrackingService.cs:line 152
-[2025-08-01 15:36:52.903] [DEBUG] Space key detected but service is disabled
-[2025-08-01 15:36:53.666] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:53.666] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:53.680] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:53.687] [DEBUG] TrendlineBreakDetector: Found 144 white pixels
-[2025-08-01 15:36:53.687] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:53.687] [DEBUG] Cluster: size=144, len=84,9, center=(52,5,69,0), score=0,077
-[2025-08-01 15:36:53.688] [DEBUG] TrendlineBreakDetector: Selected white line from (11,60) to (94,78)
-[2025-08-01 15:36:53.688] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:53.743] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:53.745] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:53.745] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:53.747] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153645788, Handle=852876, X=197, Y=-51, W=1875, H=248
-[2025-08-01 15:36:53.762] [ERROR] CaptureTrackingService: Ошибка при обработке capture ID=20250801153645788, Handle=852876
-Exception: Out of memory.
-StackTrace:    at System.Drawing.Bitmap.Clone(Rectangle rect, PixelFormat format)
-   at ScreenCaptureApp.Services.CaptureTrackingService.ProcessCapturesAsync() in C:\apps\jforex-trading-terminal-win10\Services\CaptureTrackingService.cs:line 152
-[2025-08-01 15:36:54.671] [DEBUG] Space key detected but service is disabled
-[2025-08-01 15:36:54.787] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:54.787] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:54.800] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:54.806] [DEBUG] TrendlineBreakDetector: Found 144 white pixels
-[2025-08-01 15:36:54.806] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:54.807] [DEBUG] Cluster: size=144, len=84,9, center=(52,5,69,0), score=0,077
-[2025-08-01 15:36:54.807] [DEBUG] TrendlineBreakDetector: Selected white line from (11,60) to (94,78)
-[2025-08-01 15:36:54.807] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:54.858] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:54.860] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:54.860] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:54.861] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153645788, Handle=852876, X=197, Y=-51, W=1875, H=248
-[2025-08-01 15:36:54.875] [ERROR] CaptureTrackingService: Ошибка при обработке capture ID=20250801153645788, Handle=852876
-Exception: Out of memory.
-StackTrace:    at System.Drawing.Bitmap.Clone(Rectangle rect, PixelFormat format)
-   at ScreenCaptureApp.Services.CaptureTrackingService.ProcessCapturesAsync() in C:\apps\jforex-trading-terminal-win10\Services\CaptureTrackingService.cs:line 152
-[2025-08-01 15:36:55.878] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:55.878] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:55.889] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:55.895] [DEBUG] TrendlineBreakDetector: Found 144 white pixels
-[2025-08-01 15:36:55.896] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:55.896] [DEBUG] Cluster: size=144, len=84,9, center=(52,5,69,0), score=0,077
-[2025-08-01 15:36:55.896] [DEBUG] TrendlineBreakDetector: Selected white line from (11,60) to (94,78)
-[2025-08-01 15:36:55.896] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:55.946] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:55.947] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:55.948] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:55.949] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153645788, Handle=852876, X=197, Y=-51, W=1875, H=248
-[2025-08-01 15:36:55.962] [ERROR] CaptureTrackingService: Ошибка при обработке capture ID=20250801153645788, Handle=852876
-Exception: Out of memory.
-StackTrace:    at System.Drawing.Bitmap.Clone(Rectangle rect, PixelFormat format)
-   at ScreenCaptureApp.Services.CaptureTrackingService.ProcessCapturesAsync() in C:\apps\jforex-trading-terminal-win10\Services\CaptureTrackingService.cs:line 152
-[2025-08-01 15:36:56.969] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:56.969] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:56.988] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:57.001] [DEBUG] TrendlineBreakDetector: Found 144 white pixels
-[2025-08-01 15:36:57.002] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:57.002] [DEBUG] Cluster: size=144, len=84,9, center=(52,5,69,0), score=0,077
-[2025-08-01 15:36:57.002] [DEBUG] TrendlineBreakDetector: Selected white line from (11,60) to (94,78)
-[2025-08-01 15:36:57.002] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:57.060] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:57.061] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:57.061] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:57.063] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153645788, Handle=852876, X=197, Y=-51, W=1875, H=248
-[2025-08-01 15:36:57.074] [ERROR] CaptureTrackingService: Ошибка при обработке capture ID=20250801153645788, Handle=852876
-Exception: Out of memory.
-StackTrace:    at System.Drawing.Bitmap.Clone(Rectangle rect, PixelFormat format)
-   at ScreenCaptureApp.Services.CaptureTrackingService.ProcessCapturesAsync() in C:\apps\jforex-trading-terminal-win10\Services\CaptureTrackingService.cs:line 152
-[2025-08-01 15:36:58.076] [INFO] CaptureTrackingService: Папка трекинга очищена: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Tracking\captures
-[2025-08-01 15:36:58.076] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153624223, Handle=852876, X=1332, Y=155, W=119, H=139
-[2025-08-01 15:36:58.087] [DEBUG] TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: 119x139
-[2025-08-01 15:36:58.093] [DEBUG] TrendlineBreakDetector: Found 150 white pixels
-[2025-08-01 15:36:58.094] [DEBUG] TrendlineBreakDetector: Found 1 clusters
-[2025-08-01 15:36:58.094] [DEBUG] Cluster: size=150, len=88,8, center=(50,5,69,0), score=0,096
-[2025-08-01 15:36:58.094] [DEBUG] TrendlineBreakDetector: Selected white line from (7,60) to (94,78)
-[2025-08-01 15:36:58.094] [DEBUG] TrendlineBreakDetector: Trendline direction: Downward (BUY), searching for BUY breakout
-[2025-08-01 15:36:58.143] [INFO] TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: BUY
-[2025-08-01 15:36:58.145] [INFO] CaptureTrackingService: [C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png] Trendline detected, breakout NOT found.
-[2025-08-01 15:36:58.145] [DEBUG] CaptureTrackingService: TrendlineBreakDetector result for C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\CAPTURES\20250801153624223\tracking.png: NoBreakout
-[2025-08-01 15:36:58.146] [DEBUG] CaptureTrackingService: Обработка capture ID=20250801153645788, Handle=852876, X=197, Y=-51, W=1875, H=248
-[2025-08-01 15:36:58.160] [ERROR] CaptureTrackingService: Ошибка при обработке capture ID=20250801153645788, Handle=852876
-Exception: Out of memory.
-StackTrace:    at System.Drawing.Bitmap.Clone(Rectangle rect, PixelFormat format)
-   at ScreenCaptureApp.Services.CaptureTrackingService.ProcessCapturesAsync() in C:\apps\jforex-trading-terminal-win10\Services\CaptureTrackingService.cs:line 152
+[2025-08-01 17:15:50.009] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:15:50.011] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:15:50.018] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: -2,59, Points: -33
+[2025-08-01 17:15:50.018] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-29.73000000,"percent":-2.59000000,"lots":1.15000000,"profit_points":-33}},"total_balance":1146.13000000}
+
+[2025-08-01 17:15:51.147] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-28.58000000,"percent":-2.49000000,"lots":1.15000000,"profit_points":-32}},"total_balance":1146.13000000}
+
+[2025-08-01 17:15:51.147] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:15:51.150] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:15:51.156] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: -2,49, Points: -32
+[2025-08-01 17:15:51.157] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-28.58000000,"percent":-2.49000000,"lots":1.15000000,"profit_points":-32}},"total_balance":1146.13000000}
+
+[2025-08-01 17:15:51.985] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":30.07000000,"percent":2.62000000,"lots":1.15000000,"profit_points":69}},"total_balance":1146.13000000}
+
+[2025-08-01 17:15:51.985] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:15:51.987] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:15:51.994] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: 2,62, Points: 69
+[2025-08-01 17:15:51.995] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":30.07000000,"percent":2.62000000,"lots":1.15000000,"profit_points":69}},"total_balance":1146.13000000}
+
+[2025-08-01 17:15:52.977] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":35.82000000,"percent":3.13000000,"lots":1.15000000,"profit_points":78}},"total_balance":1146.13000000}
+
+[2025-08-01 17:15:52.977] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:15:52.978] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:15:52.985] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: 3,13, Points: 78
+[2025-08-01 17:15:52.985] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":35.82000000,"percent":3.13000000,"lots":1.15000000,"profit_points":78}},"total_balance":1146.13000000}
+
+[2025-08-01 17:15:53.964] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":35.82000000,"percent":3.13000000,"lots":1.15000000,"profit_points":78}},"total_balance":1146.13000000}
+
+[2025-08-01 17:15:53.965] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:15:53.966] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:15:53.973] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: 3,13, Points: 78
+[2025-08-01 17:15:53.973] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":35.82000000,"percent":3.13000000,"lots":1.15000000,"profit_points":78}},"total_balance":1146.13000000}
+
+[2025-08-01 17:15:54.969] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":31.22000000,"percent":2.72000000,"lots":1.15000000,"profit_points":70}},"total_balance":1146.13000000}
+
+[2025-08-01 17:15:54.969] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:15:54.971] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:15:54.978] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: 2,72, Points: 70
+[2025-08-01 17:15:54.979] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":31.22000000,"percent":2.72000000,"lots":1.15000000,"profit_points":70}},"total_balance":1146.13000000}
+
+[2025-08-01 17:15:55.967] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":28.92000000,"percent":2.52000000,"lots":1.15000000,"profit_points":67}},"total_balance":1146.13000000}
+
+[2025-08-01 17:15:55.967] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:15:55.969] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:15:55.976] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: 2,52, Points: 67
+[2025-08-01 17:15:55.977] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":28.92000000,"percent":2.52000000,"lots":1.15000000,"profit_points":67}},"total_balance":1146.13000000}
+
+[2025-08-01 17:15:56.962] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":36.97000000,"percent":3.23000000,"lots":1.15000000,"profit_points":81}},"total_balance":1146.13000000}
+
+[2025-08-01 17:15:56.963] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:15:56.964] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:15:56.971] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: 3,23, Points: 81
+[2025-08-01 17:15:56.971] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":36.97000000,"percent":3.23000000,"lots":1.15000000,"profit_points":81}},"total_balance":1146.13000000}
+
+[2025-08-01 17:15:57.973] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":43.87000000,"percent":3.83000000,"lots":1.15000000,"profit_points":93}},"total_balance":1146.13000000}
+
+[2025-08-01 17:15:57.973] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:15:57.975] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:15:57.983] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: 3,83, Points: 93
+[2025-08-01 17:15:57.983] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":43.87000000,"percent":3.83000000,"lots":1.15000000,"profit_points":93}},"total_balance":1146.13000000}
+
+[2025-08-01 17:15:58.960] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":48.47000000,"percent":4.23000000,"lots":1.15000000,"profit_points":101}},"total_balance":1146.13000000}
+
+[2025-08-01 17:15:58.960] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:15:58.961] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:15:58.968] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: 4,23, Points: 101
+[2025-08-01 17:15:58.968] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":48.47000000,"percent":4.23000000,"lots":1.15000000,"profit_points":101}},"total_balance":1146.13000000}
+
+[2025-08-01 17:15:59.970] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":39.27000000,"percent":3.43000000,"lots":1.15000000,"profit_points":85}},"total_balance":1146.13000000}
+
+[2025-08-01 17:15:59.970] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:15:59.972] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:15:59.979] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: 3,43, Points: 85
+[2025-08-01 17:15:59.979] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":39.27000000,"percent":3.43000000,"lots":1.15000000,"profit_points":85}},"total_balance":1146.13000000}
+
+[2025-08-01 17:16:00.979] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":15.12000000,"percent":1.32000000,"lots":1.15000000,"profit_points":43}},"total_balance":1146.13000000}
+
+[2025-08-01 17:16:00.979] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:16:00.981] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:16:00.990] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: 1,32, Points: 43
+[2025-08-01 17:16:00.990] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":15.12000000,"percent":1.32000000,"lots":1.15000000,"profit_points":43}},"total_balance":1146.13000000}
+
+[2025-08-01 17:16:01.968] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":16.27000000,"percent":1.42000000,"lots":1.15000000,"profit_points":43}},"total_balance":1146.13000000}
+
+[2025-08-01 17:16:01.968] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:16:01.970] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:16:01.976] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: 1,42, Points: 43
+[2025-08-01 17:16:01.977] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":16.27000000,"percent":1.42000000,"lots":1.15000000,"profit_points":43}},"total_balance":1146.13000000}
+
+[2025-08-01 17:16:02.960] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-9.03000000,"percent":-0.79000000,"lots":1.15000000,"profit_points":2}},"total_balance":1146.13000000}
+
+[2025-08-01 17:16:02.961] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:16:02.962] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:16:02.969] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: -0,79, Points: 2
+[2025-08-01 17:16:02.969] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":-9.03000000,"percent":-0.79000000,"lots":1.15000000,"profit_points":2}},"total_balance":1146.13000000}
+
+[2025-08-01 17:16:03.977] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":31.22000000,"percent":2.72000000,"lots":1.15000000,"profit_points":70}},"total_balance":1146.13000000}
+
+[2025-08-01 17:16:03.977] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:16:03.979] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:16:03.986] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: 2,72, Points: 70
+[2025-08-01 17:16:03.986] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":31.22000000,"percent":2.72000000,"lots":1.15000000,"profit_points":70}},"total_balance":1146.13000000}
+
+[2025-08-01 17:16:04.985] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":56.52000000,"percent":4.93000000,"lots":1.15000000,"profit_points":115}},"total_balance":1146.13000000}
+
+[2025-08-01 17:16:04.985] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:16:04.987] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:16:04.993] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: 4,93, Points: 115
+[2025-08-01 17:16:04.993] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":56.52000000,"percent":4.93000000,"lots":1.15000000,"profit_points":115}},"total_balance":1146.13000000}
+
+[2025-08-01 17:16:05.979] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":23.17000000,"percent":2.02000000,"lots":1.15000000,"profit_points":57}},"total_balance":1146.13000000}
+
+[2025-08-01 17:16:05.979] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:16:05.981] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:16:05.987] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: 2,02, Points: 57
+[2025-08-01 17:16:05.987] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":23.17000000,"percent":2.02000000,"lots":1.15000000,"profit_points":57}},"total_balance":1146.13000000}
+
+[2025-08-01 17:16:06.975] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":30.07000000,"percent":2.62000000,"lots":1.15000000,"profit_points":69}},"total_balance":1146.13000000}
+
+[2025-08-01 17:16:06.975] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:16:06.977] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:16:06.983] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: 2,62, Points: 69
+[2025-08-01 17:16:06.984] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":30.07000000,"percent":2.62000000,"lots":1.15000000,"profit_points":69}},"total_balance":1146.13000000}
+
+[2025-08-01 17:16:07.992] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":48.47000000,"percent":4.23000000,"lots":1.15000000,"profit_points":101}},"total_balance":1146.13000000}
+
+[2025-08-01 17:16:07.993] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:16:07.994] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:16:08.004] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: 4,23, Points: 101
+[2025-08-01 17:16:08.004] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":48.47000000,"percent":4.23000000,"lots":1.15000000,"profit_points":101}},"total_balance":1146.13000000}
+
+[2025-08-01 17:16:08.989] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":55.37000000,"percent":4.83000000,"lots":1.15000000,"profit_points":113}},"total_balance":1146.13000000}
+
+[2025-08-01 17:16:08.990] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:16:08.992] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:16:08.998] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: 4,83, Points: 113
+[2025-08-01 17:16:08.999] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":55.37000000,"percent":4.83000000,"lots":1.15000000,"profit_points":113}},"total_balance":1146.13000000}
+
+[2025-08-01 17:16:09.981] [INFO] Received from MT4 socket: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":18.57000000,"percent":1.62000000,"lots":1.15000000,"profit_points":49}},"total_balance":1146.13000000}
+
+[2025-08-01 17:16:09.981] [INFO] MT4 Socket: Processing orders_summary event
+[2025-08-01 17:16:09.983] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-01 17:16:09.990] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 1,15, Percent: 1,62, Points: 49
+[2025-08-01 17:16:09.990] [DEBUG] MT4: {"event":"orders_summary","symbols":{"XAUUSD.s":{"profit":18.57000000,"percent":1.62000000,"lots":1.15000000,"profit_points":49}},"total_balance":1146.13000000}
+

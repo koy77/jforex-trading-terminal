@@ -39,7 +39,7 @@ namespace ScreenCaptureApp.Helpers
                 int zoneWidth = 20;
                 int zoneHeight = 20;
                 double breakoutThreshold = 20; // Минимальное количество пикселей для пробоя
-                int zoneOffset = 10;
+                int zoneOffset = 20;
                 return DetectBreakoutOHLC(cropped, saveDebugPath, zoneWidth, zoneHeight, breakoutThreshold, zoneOffset);
             }
         }
@@ -161,7 +161,7 @@ namespace ScreenCaptureApp.Helpers
                      if (redPixels > 0 || greenPixels > 0)
                      {
                          // Добавляем точки в центре области для визуализации
-                         debugPoints.Add((centerX, offsetY, true));
+                         debugPoints.Add((centerX, offsetY, false)); // false - это не брейкаут, просто найденные пиксели
                      }
                     
                                          // Проверяем наличие значимых пикселей
@@ -173,6 +173,10 @@ namespace ScreenCaptureApp.Helpers
                          Logger.LogTagInfo("Trendline Break Detector", $"Breakout UP detected at ({centerX},{offsetY}) - Green pixels: {greenPixels}");
                          if (hasRedBreakout)
                              Logger.LogTagError("Trendline Break Detector", "Impossible: Downward trendline cannot одновременно иметь SELL breakout (red) и BUY breakout (green). Это логическая ошибка.");
+                         
+                         // Добавляем точку брейкаута в правильном месте
+                         debugPoints.Add((centerX, offsetY, true));
+                         
                          if (!string.IsNullOrEmpty(saveDebugPath))
                              SaveDebugVisualization(cropped, debugPoints, trendline, saveDebugPath, (centerX, offsetY), zoneWidth, zoneHeight, true, zoneOffset);
                          return TrendlineBreakResult.BreakoutUp;
@@ -182,6 +186,10 @@ namespace ScreenCaptureApp.Helpers
                          Logger.LogTagInfo("Trendline Break Detector", $"Breakout DOWN detected at ({centerX},{offsetY}) - Red pixels: {redPixels}");
                          if (hasGreenBreakout)
                              Logger.LogTagError("Trendline Break Detector", "Impossible: Upward trendline cannot одновременно иметь BUY breakout (green) и SELL breakout (red). Это логическая ошибка.");
+                         
+                         // Добавляем точку брейкаута в правильном месте
+                         debugPoints.Add((centerX, offsetY, true));
+                         
                          if (!string.IsNullOrEmpty(saveDebugPath))
                              SaveDebugVisualization(cropped, debugPoints, trendline, saveDebugPath, (centerX, offsetY), zoneWidth, zoneHeight, true, zoneOffset);
                          return TrendlineBreakResult.BreakoutDown;
@@ -245,6 +253,14 @@ namespace ScreenCaptureApp.Helpers
         {
             bool drawInterestZones = false; // Управление отрисовкой зон интереса (синие/оранжевые прямоугольники)
             
+            // Находим область брейкаута для выделения желтой рамкой
+            (int breakoutCenterX, int breakoutCenterY)? breakoutZone = null;
+            if (points.Any(p => p.isBreakout))
+            {
+                var breakoutPoint = points.First(p => p.isBreakout);
+                breakoutZone = (breakoutPoint.x, breakoutPoint.y);
+            }
+            
             using (var vis = new Bitmap(cropped))
             using (var g = Graphics.FromImage(vis))
             {
@@ -293,27 +309,26 @@ namespace ScreenCaptureApp.Helpers
                 {
                     if (showOnlyBreakoutPixels && !pt.isBreakout)
                         continue;
-                    var color = pt.isBreakout ? Color.Lime : Color.FromArgb(128, Color.Red);
+                    
+                    // Для пикселей брейкаута используем аква цвет
+                    var color = pt.isBreakout ? Color.Aqua : Color.FromArgb(128, Color.Red);
                     var rect = new Rectangle(pt.x - 2, pt.y - 2, 5, 5);
                     using (var brush = new SolidBrush(Color.FromArgb(80, color)))
                         g.FillRectangle(brush, rect);
                     g.DrawRectangle(new Pen(color, 1), rect);
                 }
                 
-                // Рисуем границы найденных кластеров (если есть)
-                if (points.Any(p => p.isBreakout))
+                // Рисуем желтую рамку вокруг области брейкаута
+                if (breakoutZone.HasValue)
                 {
-                    var breakoutPoints = points.Where(p => p.isBreakout).ToList();
-                    if (breakoutPoints.Count > 0)
-                    {
-                        int minX = breakoutPoints.Min(p => p.x);
-                        int maxX = breakoutPoints.Max(p => p.x);
-                        int minY = breakoutPoints.Min(p => p.y);
-                        int maxY = breakoutPoints.Max(p => p.y);
-                        
-                        var clusterBounds = new Rectangle(minX - 5, minY - 5, maxX - minX + 10, maxY - minY + 10);
-                        g.DrawRectangle(new Pen(Color.Yellow, 3), clusterBounds);
-                    }
+                    var (centerX, centerY) = breakoutZone.Value;
+                    var breakoutRect = new Rectangle(
+                        centerX - zoneWidth/2, 
+                        centerY - zoneHeight/2, 
+                        zoneWidth, 
+                        zoneHeight
+                    );
+                    g.DrawRectangle(new Pen(Color.Yellow, 3), breakoutRect);
                 }
                 
 
