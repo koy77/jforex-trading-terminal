@@ -7,6 +7,7 @@ using ScreenCaptureApp.Services;
 using ScreenCaptureApp.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace ScreenCaptureApp.Helpers
 {
@@ -35,10 +36,10 @@ namespace ScreenCaptureApp.Helpers
             else
             {
                 // OHLC (или по умолчанию)
-                int zoneWidth = 4;
-                int zoneHeight = 4;
-                double breakoutThreshold = 0.3;
-                int zoneOffset = 5;
+                int zoneWidth = 20;
+                int zoneHeight = 20;
+                double breakoutThreshold = 20; // Минимальное количество пикселей для пробоя
+                int zoneOffset = 10;
                 return DetectBreakoutOHLC(cropped, saveDebugPath, zoneWidth, zoneHeight, breakoutThreshold, zoneOffset);
             }
         }
@@ -111,7 +112,7 @@ namespace ScreenCaptureApp.Helpers
                 {
                     Logger.LogInfo("TrendlineBreakDetector: No white line cluster detected");
                     if (!string.IsNullOrEmpty(saveDebugPath))
-                        SaveDebugVisualization(cropped, debugPoints, new Emgu.CV.Structure.LineSegment2D(new System.Drawing.Point(0,0), new System.Drawing.Point(0,0)), saveDebugPath);
+                        SaveDebugVisualization(cropped, debugPoints, new Emgu.CV.Structure.LineSegment2D(new System.Drawing.Point(0,0), new System.Drawing.Point(0,0)), saveDebugPath, null, zoneWidth, zoneHeight, true, zoneOffset);
                     return TrendlineBreakResult.NoTrendline;
                 }
                 Logger.LogDebug($"TrendlineBreakDetector: Selected white line from ({bestP1.X},{bestP1.Y}) to ({bestP2.X},{bestP2.Y})");
@@ -122,70 +123,81 @@ namespace ScreenCaptureApp.Helpers
                 string breakoutType = isDownward ? "BUY" : "SELL";
                 Logger.LogDebug($"TrendlineBreakDetector: Trendline direction: {(isDownward ? "Downward (BUY)" : "Upward (SELL)" )}, searching for {breakoutType} breakout");
                 (int bx, int by)? breakoutArrow = null;
+                // Параметры для поиска пикселей
+                int minPixelsForBreakout = (int)breakoutThreshold; // Минимальное количество пикселей для пробоя
+                
                 for (int i = 0; i < 100; i++)
                 {
                     double t = 1.0 - i / 100.0;
                     int centerX = (int)(left.X + t * (right.X - left.X));
                     int centerY = (int)(left.Y + t * (right.Y - left.Y));
                     int offsetY = isDownward ? centerY - zoneOffset : centerY + zoneOffset;
+                    
                     if (centerX < zoneWidth/2 || centerX >= analysisBmp.Width - zoneWidth/2 || 
                         offsetY < zoneHeight/2 || offsetY >= analysisBmp.Height - zoneHeight/2)
                         continue;
+                    
                     int halfW = zoneWidth / 2;
                     int halfH = zoneHeight / 2;
-                    int redCount = 0, greenCount = 0, totalPixels = 0;
-                    for (int dx = 0; dx < zoneWidth; dx++)
-                    {
-                        for (int dy = 0; dy < zoneHeight; dy++)
-                        {
-                            int x = centerX - halfW + dx;
-                            int y = offsetY - halfH + dy;
-                            if (x < 0 || x >= analysisBmp.Width || y < 0 || y >= analysisBmp.Height)
-                                continue;
-                            var pixel = analysisBmp.GetPixel(x, y);
-                            totalPixels++;
-                            if (IsRed(pixel))
-                                redCount++;
-                            else if (IsGreen(pixel))
-                                greenCount++;
-                            debugPoints.Add((x, y, IsRed(pixel) || IsGreen(pixel)));
-                        }
-                    }
-                    if (totalPixels > 0)
-                    {
-                        double redRatio = (double)redCount / totalPixels;
-                        double greenRatio = (double)greenCount / totalPixels;
-                        if (isDownward && greenRatio >= breakoutThreshold)
-                        {
-                            Logger.LogInfo($"TrendlineBreakDetector: Breakout UP detected at ({centerX},{offsetY}) - Green: {greenRatio:F2}");
-                            if (redRatio >= breakoutThreshold)
-                                Logger.LogError("Impossible: Downward trendline cannot одновременно иметь SELL breakout (red) и BUY breakout (green). Это логическая ошибка.");
-                            if (!string.IsNullOrEmpty(saveDebugPath))
-                                SaveDebugVisualization(cropped, debugPoints, trendline, saveDebugPath, (centerX, offsetY), zoneWidth, zoneHeight, true);
-                            return TrendlineBreakResult.BreakoutUp;
-                        }
-                        else if (!isDownward && redRatio >= breakoutThreshold)
-                        {
-                            Logger.LogInfo($"TrendlineBreakDetector: Breakout DOWN detected at ({centerX},{offsetY}) - Red: {redRatio:F2}");
-                            if (greenRatio >= breakoutThreshold)
-                                Logger.LogError("Impossible: Upward trendline cannot одновременно иметь BUY breakout (green) и SELL breakout (red). Это логическая ошибка.");
-                            if (!string.IsNullOrEmpty(saveDebugPath))
-                                SaveDebugVisualization(cropped, debugPoints, trendline, saveDebugPath, (centerX, offsetY), zoneWidth, zoneHeight, true);
-                            return TrendlineBreakResult.BreakoutDown;
-                        }
-                        else if (isDownward && redRatio >= breakoutThreshold)
-                        {
-                            Logger.LogError("Impossible: Downward trendline cannot have SELL breakout (red). This is a logic error.");
-                        }
-                        else if (!isDownward && greenRatio >= breakoutThreshold)
-                        {
-                            Logger.LogError("Impossible: Upward trendline cannot have BUY breakout (green). This is a logic error.");
-                        }
-                    }
+                    
+                                         // Ищем красные и зеленые пиксели в области
+                     int redPixels = CountPixelsInArea(analysisBmp, centerX - halfW, centerX + halfW, 
+                                                     offsetY - halfH, offsetY + halfH, true);
+                     int greenPixels = CountPixelsInArea(analysisBmp, centerX - halfW, centerX + halfW, 
+                                                       offsetY - halfH, offsetY + halfH, false);
+                    
+                                         // Логируем найденные пиксели для отладки
+                     if (redPixels > 0 || greenPixels > 0)
+                     {
+                         Logger.LogTagDebug("Trendline Break Detector", $"Zone {i}: Found {redPixels} red pixels, {greenPixels} green pixels in area ({centerX - halfW},{offsetY - halfH}) to ({centerX + halfW},{offsetY + halfH})");
+                     }
+                     else
+                     {
+                         // Логируем, если пиксели не найдены
+                         Logger.LogTagDebug("Trendline Break Detector", $"Zone {i}: No colored pixels found in area ({centerX - halfW},{offsetY - halfH}) to ({centerX + halfW},{offsetY + halfH})");
+                     }
+                    
+                                         // Добавляем точки для отладки (показываем все найденные пиксели)
+                     if (redPixels > 0 || greenPixels > 0)
+                     {
+                         // Добавляем точки в центре области для визуализации
+                         debugPoints.Add((centerX, offsetY, true));
+                     }
+                    
+                                         // Проверяем наличие значимых пикселей
+                     bool hasRedBreakout = redPixels >= minPixelsForBreakout;
+                     bool hasGreenBreakout = greenPixels >= minPixelsForBreakout;
+                     
+                     if (isDownward && hasGreenBreakout)
+                     {
+                         Logger.LogTagInfo("Trendline Break Detector", $"Breakout UP detected at ({centerX},{offsetY}) - Green pixels: {greenPixels}");
+                         if (hasRedBreakout)
+                             Logger.LogTagError("Trendline Break Detector", "Impossible: Downward trendline cannot одновременно иметь SELL breakout (red) и BUY breakout (green). Это логическая ошибка.");
+                         if (!string.IsNullOrEmpty(saveDebugPath))
+                             SaveDebugVisualization(cropped, debugPoints, trendline, saveDebugPath, (centerX, offsetY), zoneWidth, zoneHeight, true, zoneOffset);
+                         return TrendlineBreakResult.BreakoutUp;
+                     }
+                     else if (!isDownward && hasRedBreakout)
+                     {
+                         Logger.LogTagInfo("Trendline Break Detector", $"Breakout DOWN detected at ({centerX},{offsetY}) - Red pixels: {redPixels}");
+                         if (hasGreenBreakout)
+                             Logger.LogTagError("Trendline Break Detector", "Impossible: Upward trendline cannot одновременно иметь BUY breakout (green) и SELL breakout (red). Это логическая ошибка.");
+                         if (!string.IsNullOrEmpty(saveDebugPath))
+                             SaveDebugVisualization(cropped, debugPoints, trendline, saveDebugPath, (centerX, offsetY), zoneWidth, zoneHeight, true, zoneOffset);
+                         return TrendlineBreakResult.BreakoutDown;
+                     }
+                     else if (isDownward && hasRedBreakout)
+                     {
+                         Logger.LogTagError("Trendline Break Detector", "Impossible: Downward trendline cannot have SELL breakout (red). This is a logic error.");
+                     }
+                     else if (!isDownward && hasGreenBreakout)
+                     {
+                         Logger.LogTagError("Trendline Break Detector", "Impossible: Upward trendline cannot have BUY breakout (green). This is a logic error.");
+                     }
                 }
                 Logger.LogInfo($"TrendlineBreakDetector: Trendline detected, breakout NOT found. Type: {breakoutType}");
                 if (!string.IsNullOrEmpty(saveDebugPath))
-                    SaveDebugVisualization(cropped, debugPoints, trendline, saveDebugPath, breakoutArrow, zoneWidth, zoneHeight);
+                    SaveDebugVisualization(cropped, debugPoints, trendline, saveDebugPath, breakoutArrow, zoneWidth, zoneHeight, true, zoneOffset);
             }
             return TrendlineBreakResult.NoBreakout;
         }
@@ -195,9 +207,43 @@ namespace ScreenCaptureApp.Helpers
             return DetectBreakoutOHLC(cropped, saveDebugPath, zoneWidth, zoneHeight, breakoutThreshold, zoneOffset);
         }
 
-        private void SaveDebugVisualization(Bitmap cropped, List<(int x, int y, bool isBreakout)> points, LineSegment2D trendline, string path, (int bx, int by)? breakoutArrow = null, int zoneWidth = 5, int zoneHeight = 5, bool showOnlyBreakoutPixels = true)
+        /// <summary>
+        /// Подсчитывает количество красных или зеленых пикселей в заданной области
+        /// </summary>
+        /// <param name="bitmap">Изображение для анализа</param>
+        /// <param name="startX">Начальная X координата области</param>
+        /// <param name="endX">Конечная X координата области</param>
+        /// <param name="startY">Начальная Y координата области</param>
+        /// <param name="endY">Конечная Y координата области</param>
+        /// <param name="isRed">Искать красные (true) или зеленые (false) пиксели</param>
+        /// <returns>Количество найденных пикселей</returns>
+        private int CountPixelsInArea(Bitmap bitmap, int startX, int endX, int startY, int endY, bool isRed)
         {
-            int zoneOffset = 3; // смещение зоны вверх/вниз от линии тренда
+            int count = 0;
+            for (int y = startY; y <= endY; y++)
+            {
+                for (int x = startX; x <= endX; x++)
+                {
+                    if (x < 0 || x >= bitmap.Width || y < 0 || y >= bitmap.Height)
+                        continue;
+                    
+                    var pixel = bitmap.GetPixel(x, y);
+                    bool isTargetColor = isRed ? IsRed(pixel) : IsGreen(pixel);
+                    
+                    if (isTargetColor)
+                    {
+                        count++;
+                    }
+                }
+            }
+            return count;
+        }
+
+
+
+        private void SaveDebugVisualization(Bitmap cropped, List<(int x, int y, bool isBreakout)> points, LineSegment2D trendline, string path, (int bx, int by)? breakoutArrow = null, int zoneWidth = 5, int zoneHeight = 5, bool showOnlyBreakoutPixels = true, int zoneOffset = 5)
+        {
+            bool drawInterestZones = false; // Управление отрисовкой зон интереса (синие/оранжевые прямоугольники)
             
             using (var vis = new Bitmap(cropped))
             using (var g = Graphics.FromImage(vis))
@@ -210,34 +256,37 @@ namespace ScreenCaptureApp.Helpers
                 var right = trendline.P1.X < trendline.P2.X ? trendline.P2 : trendline.P1;
                 bool isDownward = left.Y < right.Y;
                 
-                // Рисуем зоны проверки вдоль линии тренда
-                for (int i = 0; i < 100; i++)
-                {
-                    double t = 1.0 - i / 100.0;
-                    int centerX = (int)(left.X + t * (right.X - left.X));
-                    int centerY = (int)(left.Y + t * (right.Y - left.Y));
-                    
-                    // Смещаем зону интереса на 3 пикселя вверх или вниз от линии
-                    int offsetY = isDownward ? centerY - zoneOffset : centerY + zoneOffset;
-                    
-                    if (centerX < zoneWidth/2 || centerX >= vis.Width - zoneWidth/2 || 
-                        offsetY < zoneHeight/2 || offsetY >= vis.Height - zoneHeight/2)
-                        continue;
-                    
-                    // Рисуем прямоугольник зоны проверки
-                    var zoneRect = new Rectangle(
-                        centerX - zoneWidth/2, 
-                        offsetY - zoneHeight/2, 
-                        zoneWidth, 
-                        zoneHeight
-                    );
-                    
-                    // Цвет зоны зависит от направления тренда
-                    var zoneColor = isDownward ? Color.FromArgb(80, Color.Blue) : Color.FromArgb(80, Color.Orange);
-                    using (var brush = new SolidBrush(zoneColor))
-                        g.FillRectangle(brush, zoneRect);
-                    g.DrawRectangle(new Pen(zoneColor, 1), zoneRect);
-                }
+                                 // Рисуем зоны проверки вдоль линии тренда (если включено)
+                 if (drawInterestZones)
+                 {
+                     for (int i = 0; i < 100; i++)
+                     {
+                         double t = 1.0 - i / 100.0;
+                         int centerX = (int)(left.X + t * (right.X - left.X));
+                         int centerY = (int)(left.Y + t * (right.Y - left.Y));
+                         
+                         // Смещаем зону интереса на 3 пикселя вверх или вниз от линии
+                         int offsetY = isDownward ? centerY - zoneOffset : centerY + zoneOffset;
+                         
+                         if (centerX < zoneWidth/2 || centerX >= vis.Width - zoneWidth/2 || 
+                             offsetY < zoneHeight/2 || offsetY >= vis.Height - zoneHeight/2)
+                             continue;
+                         
+                         // Рисуем прямоугольник зоны проверки
+                         var zoneRect = new Rectangle(
+                             centerX - zoneWidth/2, 
+                             offsetY - zoneHeight/2, 
+                             zoneWidth, 
+                             zoneHeight
+                         );
+                         
+                         // Цвет зоны зависит от направления тренда
+                         var zoneColor = isDownward ? Color.FromArgb(80, Color.Blue) : Color.FromArgb(80, Color.Orange);
+                         using (var brush = new SolidBrush(zoneColor))
+                             g.FillRectangle(brush, zoneRect);
+                         g.DrawRectangle(new Pen(zoneColor, 1), zoneRect);
+                     }
+                 }
                 
                 // Рисуем проверенные пиксели
                 foreach (var pt in points)
@@ -251,35 +300,23 @@ namespace ScreenCaptureApp.Helpers
                     g.DrawRectangle(new Pen(color, 1), rect);
                 }
                 
-                // Стрелка breakout
-                if (breakoutArrow.HasValue)
+                // Рисуем границы найденных кластеров (если есть)
+                if (points.Any(p => p.isBreakout))
                 {
-                    var (bx, by) = breakoutArrow.Value;
-                    // Используем уже объявленные выше переменные left, right, isDownward
-                    int arrowOffset = 10;
-                    int arrowStartY = isDownward ? by - arrowOffset : by + arrowOffset;
-
-                    // Найдём ближайшую точку на линии
-                    double minDist = double.MaxValue;
-                    int arrowX = 0, arrowY = 0;
-                    for (int i = 0; i < 100; i++)
+                    var breakoutPoints = points.Where(p => p.isBreakout).ToList();
+                    if (breakoutPoints.Count > 0)
                     {
-                        double t = 1.0 - i / 100.0;
-                        int x = (int)(trendline.P1.X + t * (trendline.P2.X - trendline.P1.X));
-                        int y = (int)(trendline.P1.Y + t * (trendline.P2.Y - trendline.P1.Y));
-                        double dist = Math.Sqrt((x - bx) * (x - bx) + (y - by) * (y - by));
-                        if (dist < minDist)
-                        {
-                            minDist = dist;
-                            arrowX = x;
-                            arrowY = y;
-                        }
+                        int minX = breakoutPoints.Min(p => p.x);
+                        int maxX = breakoutPoints.Max(p => p.x);
+                        int minY = breakoutPoints.Min(p => p.y);
+                        int maxY = breakoutPoints.Max(p => p.y);
+                        
+                        var clusterBounds = new Rectangle(minX - 5, minY - 5, maxX - minX + 10, maxY - minY + 10);
+                        g.DrawRectangle(new Pen(Color.Yellow, 3), clusterBounds);
                     }
-                    // Рисуем стрелку (жёлтая линия)
-                    var pen = new Pen(Color.Yellow, 2);
-                    pen.EndCap = System.Drawing.Drawing2D.LineCap.ArrowAnchor;
-                    g.DrawLine(pen, bx, arrowStartY, arrowX, arrowY);
                 }
+                
+
                 vis.Save(path);
             }
         }
