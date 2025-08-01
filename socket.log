@@ -385,3 +385,6 @@
 [2025-08-01 10:08:17.407] [SOCKET] PO OUT: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
 [2025-08-01 10:08:56.255] [SOCKET] PO OUT: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
 [2025-08-01 10:08:56.317] [SOCKET] PO OUT: {"cmd":"open_symbol","symbol":"USDJPY","broker":"PocketOption"}
+[2025-08-01 11:15:53.976] [SOCKET] PO OUT: {"cmd":"set_risk","broker":"PocketOption","risk":"5"}
+[2025-08-01 11:15:59.699] [SOCKET] PO OUT: {"cmd":"buy","symbol":"USDJPY","risk":5,"duration":2,"broker":"PocketOption"}
+[2025-08-01 11:16:15.028] [SOCKET] PO OUT: {"cmd":"buy","symbol":"USDJPY","risk":5,"duration":2,"broker":"PocketOption"}
