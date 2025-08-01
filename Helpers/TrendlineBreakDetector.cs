@@ -26,24 +26,24 @@ namespace ScreenCaptureApp.Helpers
             if (capture.Model == "MACD")
             {
                 // Можно задать другие параметры для MACD
-                int zoneWidth = 4;
-                int zoneHeight = 4;
-                double breakoutThreshold = 0.1;
+                int zoneWidth = 20;
+                int zoneHeight = 20;
+                int breakoutPixelCount = 16;
                 int zoneOffset = 5;
-                return DetectBreakoutMACD(cropped, saveDebugPath, zoneWidth, zoneHeight, breakoutThreshold, zoneOffset);
+                return DetectBreakoutMACD(cropped, saveDebugPath, zoneWidth, zoneHeight, breakoutPixelCount, zoneOffset);
             }
             else
             {
                 // OHLC (или по умолчанию)
-                int zoneWidth = 4;
-                int zoneHeight = 4;
-                double breakoutThreshold = 0.3;
+                int zoneWidth = 20;
+                int zoneHeight = 20;
+                int breakoutPixelCount = 16;
                 int zoneOffset = 5;
-                return DetectBreakoutOHLC(cropped, saveDebugPath, zoneWidth, zoneHeight, breakoutThreshold, zoneOffset);
+                return DetectBreakoutOHLC(cropped, saveDebugPath, zoneWidth, zoneHeight, breakoutPixelCount, zoneOffset);
             }
         }
 
-        public TrendlineBreakResult DetectBreakoutOHLC(Bitmap cropped, string saveDebugPath, int zoneWidth, int zoneHeight, double breakoutThreshold, int zoneOffset)
+        public TrendlineBreakResult DetectBreakoutOHLC(Bitmap cropped, string saveDebugPath, int zoneWidth, int zoneHeight, int breakoutPixelCount, int zoneOffset)
         {
             Logger.LogDebug($"TrendlineBreakDetector: Start DetectBreakoutOHLC, bitmap size: {cropped.Width}x{cropped.Height}");
             var debugPoints = new List<(int x, int y, bool isBreakout)>();
@@ -122,6 +122,25 @@ namespace ScreenCaptureApp.Helpers
                 string breakoutType = isDownward ? "BUY" : "SELL";
                 Logger.LogDebug($"TrendlineBreakDetector: Trendline direction: {(isDownward ? "Downward (BUY)" : "Upward (SELL)" )}, searching for {breakoutType} breakout");
                 (int bx, int by)? breakoutArrow = null;
+                
+                // Функция для определения, находится ли точка в правильной стороне от линии тренда
+                bool IsPointInCorrectSide(int x, int y, bool isDownwardTrend)
+                {
+                    // Вычисляем Y-координату на линии тренда для данного X
+                    double lineY = left.Y + (right.Y - left.Y) * (x - left.X) / (double)(right.X - left.X);
+                    
+                    if (isDownwardTrend)
+                    {
+                        // Для нисходящего тренда ищем пробой вверх (зеленые пиксели выше линии)
+                        return y < lineY;
+                    }
+                    else
+                    {
+                        // Для восходящего тренда ищем пробой вниз (красные пиксели ниже линии)
+                        return y > lineY;
+                    }
+                }
+                
                 for (int i = 0; i < 100; i++)
                 {
                     double t = 1.0 - i / 100.0;
@@ -134,6 +153,7 @@ namespace ScreenCaptureApp.Helpers
                     int halfW = zoneWidth / 2;
                     int halfH = zoneHeight / 2;
                     int redCount = 0, greenCount = 0, totalPixels = 0;
+                    
                     for (int dx = 0; dx < zoneWidth; dx++)
                     {
                         for (int dy = 0; dy < zoneHeight; dy++)
@@ -142,42 +162,49 @@ namespace ScreenCaptureApp.Helpers
                             int y = offsetY - halfH + dy;
                             if (x < 0 || x >= analysisBmp.Width || y < 0 || y >= analysisBmp.Height)
                                 continue;
+                            
                             var pixel = analysisBmp.GetPixel(x, y);
                             totalPixels++;
-                            if (IsRed(pixel))
-                                redCount++;
-                            else if (IsGreen(pixel))
-                                greenCount++;
+                            
+                            // Проверяем, что пиксель находится в правильной стороне от линии тренда
+                            if (IsPointInCorrectSide(x, y, isDownward))
+                            {
+                                if (IsRed(pixel))
+                                    redCount++;
+                                else if (IsGreen(pixel))
+                                    greenCount++;
+                            }
+                            
                             debugPoints.Add((x, y, IsRed(pixel) || IsGreen(pixel)));
                         }
                     }
+                    
                     if (totalPixels > 0)
                     {
-                        double redRatio = (double)redCount / totalPixels;
-                        double greenRatio = (double)greenCount / totalPixels;
-                        if (isDownward && greenRatio >= breakoutThreshold)
+                        // Проверяем абсолютное количество пикселей вместо процентов
+                        if (isDownward && greenCount >= breakoutPixelCount)
                         {
-                            Logger.LogInfo($"TrendlineBreakDetector: Breakout UP detected at ({centerX},{offsetY}) - Green: {greenRatio:F2}");
-                            if (redRatio >= breakoutThreshold)
+                            Logger.LogInfo($"TrendlineBreakDetector: Breakout UP detected at ({centerX},{offsetY}) - Green pixels: {greenCount}");
+                            if (redCount >= breakoutPixelCount)
                                 Logger.LogError("Impossible: Downward trendline cannot одновременно иметь SELL breakout (red) и BUY breakout (green). Это логическая ошибка.");
                             if (!string.IsNullOrEmpty(saveDebugPath))
                                 SaveDebugVisualization(cropped, debugPoints, trendline, saveDebugPath, (centerX, offsetY), zoneWidth, zoneHeight, true);
                             return TrendlineBreakResult.BreakoutUp;
                         }
-                        else if (!isDownward && redRatio >= breakoutThreshold)
+                        else if (!isDownward && redCount >= breakoutPixelCount)
                         {
-                            Logger.LogInfo($"TrendlineBreakDetector: Breakout DOWN detected at ({centerX},{offsetY}) - Red: {redRatio:F2}");
-                            if (greenRatio >= breakoutThreshold)
+                            Logger.LogInfo($"TrendlineBreakDetector: Breakout DOWN detected at ({centerX},{offsetY}) - Red pixels: {redCount}");
+                            if (greenCount >= breakoutPixelCount)
                                 Logger.LogError("Impossible: Upward trendline cannot одновременно иметь BUY breakout (green) и SELL breakout (red). Это логическая ошибка.");
                             if (!string.IsNullOrEmpty(saveDebugPath))
                                 SaveDebugVisualization(cropped, debugPoints, trendline, saveDebugPath, (centerX, offsetY), zoneWidth, zoneHeight, true);
                             return TrendlineBreakResult.BreakoutDown;
                         }
-                        else if (isDownward && redRatio >= breakoutThreshold)
+                        else if (isDownward && redCount >= breakoutPixelCount)
                         {
                             Logger.LogError("Impossible: Downward trendline cannot have SELL breakout (red). This is a logic error.");
                         }
-                        else if (!isDownward && greenRatio >= breakoutThreshold)
+                        else if (!isDownward && greenCount >= breakoutPixelCount)
                         {
                             Logger.LogError("Impossible: Upward trendline cannot have BUY breakout (green). This is a logic error.");
                         }
@@ -190,9 +217,9 @@ namespace ScreenCaptureApp.Helpers
             return TrendlineBreakResult.NoBreakout;
         }
 
-        public TrendlineBreakResult DetectBreakoutMACD(Bitmap cropped, string saveDebugPath, int zoneWidth, int zoneHeight, double breakoutThreshold, int zoneOffset)
+        public TrendlineBreakResult DetectBreakoutMACD(Bitmap cropped, string saveDebugPath, int zoneWidth, int zoneHeight, int breakoutPixelCount, int zoneOffset)
         {
-            return DetectBreakoutOHLC(cropped, saveDebugPath, zoneWidth, zoneHeight, breakoutThreshold, zoneOffset);
+            return DetectBreakoutOHLC(cropped, saveDebugPath, zoneWidth, zoneHeight, breakoutPixelCount, zoneOffset);
         }
 
         private void SaveDebugVisualization(Bitmap cropped, List<(int x, int y, bool isBreakout)> points, LineSegment2D trendline, string path, (int bx, int by)? breakoutArrow = null, int zoneWidth = 5, int zoneHeight = 5, bool showOnlyBreakoutPixels = true)
