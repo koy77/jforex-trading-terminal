@@ -288,52 +288,43 @@ namespace ScreenCaptureApp.Services
         {
             try
             {
-                Logger.LogTagInfo("JForex", "Adding trendline to GForex with direct mouse actions");
+                // Convert screen coordinates to window coordinates
+                var firstWindowPoint = ConvertScreenToWindowCoordinates(firstScreenPoint, targetWindowHandle);
+                var lastWindowPoint = ConvertScreenToWindowCoordinates(lastScreenPoint, targetWindowHandle);
 
-                // Отправляем ESC для сброса предыдущих действий
-                SendEscKey(targetWindowHandle);
+                // Activate the window first
+                if (!ActivateWindow(targetWindowHandle))
+                {
+                    Logger.LogTagError("JForex", "Failed to activate target window for trendline");
+                    return false;
+                }
+
+                // Add a small delay to ensure window is fully activated
                 await Task.Delay(100);
 
-                // Отправляем нажатие клавиши A для активации инструмента трендовой линии
-                if (!SendKeyPress(targetWindowHandle, 'A'))
+                // Click at the first point
+                if (!ClickAtPosition(targetWindowHandle, firstWindowPoint.X, firstWindowPoint.Y))
                 {
-                    Logger.LogTagError("JForex", "Failed to send key A");
+                    Logger.LogTagError("JForex", $"Failed to click at first point ({firstWindowPoint.X}, {firstWindowPoint.Y})");
                     return false;
                 }
 
-                await Task.Delay(200);
+                // Add a small delay between clicks
+                await Task.Delay(50);
 
-                // Конвертируем экранные координаты в координаты окна
-                var windowPoint1 = ConvertScreenToWindowCoordinates(firstScreenPoint, targetWindowHandle);
-                var windowPoint2 = ConvertScreenToWindowCoordinates(lastScreenPoint, targetWindowHandle);
-
-                Logger.LogTagInfo("JForex", $"Converted coordinates: Point1=({windowPoint1.X}, {windowPoint1.Y}), Point2=({windowPoint2.X}, {windowPoint2.Y})");
-
-                // Кликаем на первую точку
-                if (!ClickAtPosition(targetWindowHandle, windowPoint1.X, windowPoint1.Y))
+                // Click at the second point
+                if (!ClickAtPosition(targetWindowHandle, lastWindowPoint.X, lastWindowPoint.Y))
                 {
-                    Logger.LogTagError("JForex", "Failed to click on first point");
+                    Logger.LogTagError("JForex", $"Failed to click at second point ({lastWindowPoint.X}, {lastWindowPoint.Y})");
                     return false;
                 }
 
-                await Task.Delay(100);
-
-                // Кликаем на вторую точку
-                if (!ClickAtPosition(targetWindowHandle, windowPoint2.X, windowPoint2.Y))
-                {
-                    Logger.LogTagError("JForex", "Failed to click on second point");
-                    return false;
-                }
-
-                // Отправляем ESC для завершения
-                SendEscKey(targetWindowHandle);
-
-                Logger.LogTagInfo("JForex", "Trendline successfully added to GForex with direct mouse actions");
+                Logger.LogTagInfo("JForex", $"Successfully added trendline from ({firstWindowPoint.X}, {firstWindowPoint.Y}) to ({lastWindowPoint.X}, {lastWindowPoint.Y})");
                 return true;
             }
             catch (Exception ex)
             {
-                Logger.LogTagError("JForex", $"Error adding trendline to GForex directly: {ex.Message}", ex);
+                Logger.LogTagError("JForex", $"Error adding trendline to GForex: {ex.Message}", ex);
                 return false;
             }
         }
@@ -345,29 +336,35 @@ namespace ScreenCaptureApp.Services
         {
             try
             {
-                // Получаем позицию окна на экране
+                // Get window position
                 RECT windowRect;
                 if (!GetWindowRect(windowHandle, out windowRect))
                 {
-                    Logger.LogTagError("JForex", "Failed to get window position");
-                    return new System.Drawing.Point((int)screenPoint.X, (int)screenPoint.Y);
+                    Logger.LogTagError("JForex", "Failed to get window rectangle");
+                    return new System.Drawing.Point(0, 0);
                 }
 
-                // Используем подход из MainWindow для получения границ монитора
-                int monitorLeftBoundary = GetMonitorLeftBoundaryForWindow(windowHandle);
-                
-                // Вычисляем координаты: X = левая граница монитора + X, Y остается как есть
-                int windowX = monitorLeftBoundary + (int)screenPoint.X;
-                int windowY = (int)screenPoint.Y;
+                // Calculate window coordinates
+                int windowX = (int)screenPoint.X - windowRect.Left;
+                int windowY = (int)screenPoint.Y - windowRect.Top;
 
-                Logger.LogTagInfo("JForex", $"ConvertScreenToWindowCoordinates: screenPoint=({screenPoint.X}, {screenPoint.Y}), monitorLeftBoundary={monitorLeftBoundary}, result=({windowX}, {windowY})");
+                // Get monitor info to account for taskbar
+                IntPtr monitor = MonitorFromWindow(windowHandle, MONITOR_DEFAULTTONEAREST);
+                MONITORINFO monitorInfo = new MONITORINFO();
+                monitorInfo.cbSize = Marshal.SizeOf(monitorInfo);
+                GetMonitorInfo(monitor, ref monitorInfo);
 
+                // Adjust for taskbar
+                int taskbarHeight = (monitorInfo.rcMonitor.Bottom - monitorInfo.rcWork.Bottom);
+                windowY -= taskbarHeight;
+
+                Logger.LogTagInfo("JForex", $"Converted screen point ({screenPoint.X}, {screenPoint.Y}) to window point ({windowX}, {windowY})");
                 return new System.Drawing.Point(windowX, windowY);
             }
             catch (Exception ex)
             {
-                Logger.LogTagError("JForex", $"Error converting screen coordinates to window coordinates: {ex.Message}", ex);
-                return new System.Drawing.Point((int)screenPoint.X, (int)screenPoint.Y);
+                Logger.LogTagError("JForex", $"Error converting screen to window coordinates: {ex.Message}", ex);
+                return new System.Drawing.Point(0, 0);
             }
         }
 
@@ -378,150 +375,16 @@ namespace ScreenCaptureApp.Services
         {
             try
             {
-                // Получаем позицию окна
-                RECT windowRect;
-                if (!GetWindowRect(windowHandle, out windowRect))
-                {
-                    Logger.LogTagError("JForex", "Failed to get window position for monitor detection");
-                    return 0;
-                }
-
-                // Используем System.Windows.Forms.Screen для получения информации о мониторах
-                var screens = System.Windows.Forms.Screen.AllScreens;
-                
-                // Находим монитор, на котором находится окно
-                for (int i = 0; i < screens.Length; i++)
-                {
-                    var screen = screens[i];
-                    var bounds = screen.Bounds;
-                    
-                    // Проверяем, находится ли окно на этом мониторе
-                    if (bounds.Contains(windowRect.Left, windowRect.Top))
-                    {
-                        Logger.LogTagInfo("JForex", $"Window found on monitor {i}: LeftBoundary={bounds.Left}, Bounds=({bounds.X}, {bounds.Y}, {bounds.Width}, {bounds.Height})");
-                        return bounds.Left;
-                    }
-                }
-                
-                // Если не найден, возвращаем 0 (основной монитор)
-                Logger.LogTagWarning("JForex", "Window not found on any monitor, using primary monitor (LeftBoundary=0)");
-                return 0;
+                IntPtr monitor = MonitorFromWindow(windowHandle, MONITOR_DEFAULTTONEAREST);
+                MONITORINFO monitorInfo = new MONITORINFO();
+                monitorInfo.cbSize = Marshal.SizeOf(monitorInfo);
+                GetMonitorInfo(monitor, ref monitorInfo);
+                return monitorInfo.rcMonitor.Left;
             }
             catch (Exception ex)
             {
                 Logger.LogTagError("JForex", $"Error getting monitor left boundary: {ex.Message}", ex);
                 return 0;
-            }
-        }
-
-        /// <summary>
-        /// Устанавливает риск для binary-брокера через binary-сокет
-        /// </summary>
-        public async Task<bool> SetRisk(string brokerName, double risk)
-        {
-            try
-            {
-                var binarySocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
-                if (binarySocketService != null && binarySocketService.IsConnected)
-                {
-                    string command = $"{{\"cmd\":\"set_risk\",\"broker\":\"{brokerName}\",\"risk\":\"{risk}\"}}";
-                    
-                    bool sent = await binarySocketService.WriteAsync(command);
-                    if (sent)
-                    {
-                        Logger.LogTagInfo("JForex", $"Risk command sent to binary socket: {command}");
-                        return true;
-                    }
-                    else
-                    {
-                        Logger.LogTagError("JForex", $"Failed to send risk command to binary socket: {command}");
-                        return false;
-                    }
-                }
-                else
-                {
-                    Logger.LogTagWarning("JForex", "Binary socket service not available or not connected for risk command");
-                    return false;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.LogTagError("JForex", $"Error sending risk command to binary socket: {ex.Message}", ex);
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// Устанавливает duration для binary-брокера через binary-сокет
-        /// </summary>
-        public async Task<bool> SetDuration(string brokerName, int duration)
-        {
-            try
-            {
-                var binarySocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
-                if (binarySocketService != null && binarySocketService.IsConnected)
-                {
-                    string command = $"{{\"cmd\":\"set_duration\",\"broker\":\"{brokerName}\",\"duration\":\"{duration}\"}}";
-                    
-                    bool sent = await binarySocketService.WriteAsync(command);
-                    if (sent)
-                    {
-                        Logger.LogTagInfo("JForex", $"Duration command sent to binary socket: {command}");
-                        return true;
-                    }
-                    else
-                    {
-                        Logger.LogTagError("JForex", $"Failed to send duration command to binary socket: {command}");
-                        return false;
-                    }
-                }
-                else
-                {
-                    Logger.LogTagWarning("JForex", "Binary socket service not available or not connected for duration command");
-                    return false;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.LogTagError("JForex", $"Error sending duration command to binary socket: {ex.Message}", ex);
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// Отправляет команду открытия символа для binary-брокера через binary-сокет
-        /// </summary>
-        public async Task<bool> OpenSymbol(string brokerName, string symbolName)
-        {
-            try
-            {
-                var binarySocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
-                if (binarySocketService != null && binarySocketService.IsConnected)
-                {
-                    string command = $"{{\"cmd\":\"open_symbol\",\"symbol\":\"{symbolName}\",\"broker\":\"{brokerName}\"}}";
-                    
-                    bool sent = await binarySocketService.WriteAsync(command);
-                    if (sent)
-                    {
-                        Logger.LogTagInfo("JForex", $"Open symbol command sent to binary socket: {command}");
-                        return true;
-                    }
-                    else
-                    {
-                        Logger.LogTagError("JForex", $"Failed to send open symbol command to binary socket: {command}");
-                        return false;
-                    }
-                }
-                else
-                {
-                    Logger.LogTagWarning("JForex", "Binary socket service not available or not connected for open symbol command");
-                    return false;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.LogTagError("JForex", $"Error sending open symbol command to binary socket: {ex.Message}", ex);
-                return false;
             }
         }
        

@@ -217,8 +217,17 @@ namespace ScreenCaptureApp.Controls
                 SymbolLabel.Text = symbol;
                 SymbolLabel.Visibility = Visibility.Visible;
                 
-                // Отправляем команду открытия символа для binary-брокеров
-                SendOpenSymbolCommand(symbol);
+                // Отправляем команду открытия символа только для binary-брокеров
+                Logger.LogInfo($"SetSymbol: Current broker is {SelectedBroker}, symbol is {symbol}");
+                if (SelectedBroker != BrokerType.Forex)
+                {
+                    Logger.LogInfo($"SetSymbol: Sending open symbol command for {symbol} to broker {SelectedBroker}");
+                    SendOpenSymbolCommand(symbol);
+                }
+                else
+                {
+                    Logger.LogInfo($"SetSymbol: Skipping open symbol command for {symbol} - Forex broker selected");
+                }
             }
             else
             {
@@ -254,8 +263,11 @@ namespace ScreenCaptureApp.Controls
                 HighlightSelectedRiskButton(val);
                 RiskChanged?.Invoke(val);
                 
-                // Отправляем команду в binary-сокет для binary-брокеров
-                SendRiskCommandToBinarySocket(val);
+                // Отправляем команду в binary-сокет только для binary-брокеров
+                if (SelectedBroker != BrokerType.Forex)
+                {
+                    SendRiskCommandToBinarySocket(val);
+                }
             }
         }
 
@@ -267,8 +279,11 @@ namespace ScreenCaptureApp.Controls
                 HighlightSelectedDurationButton(val);
                 DurationChanged?.Invoke(val);
                 
-                // Отправляем команду в binary-сокет для binary-брокеров
-                SendDurationCommandToBinarySocket(val);
+                // Отправляем команду в binary-сокет только для binary-брокеров
+                if (SelectedBroker != BrokerType.Forex)
+                {
+                    SendDurationCommandToBinarySocket(val);
+                }
             }
         }
 
@@ -295,19 +310,13 @@ namespace ScreenCaptureApp.Controls
         /// </summary>
         private async void SendRiskCommandToBinarySocket(double risk)
         {
-            // Проверяем, что выбран binary-брокер (не Forex)
-            if (SelectedBroker == BrokerType.Forex)
-            {
-                return;
-            }
-
             try
             {
-                var jforexService = ServiceContainer.Instance.GetService<JForexWindowsManagerService>();
-                if (jforexService != null)
+                var binarySocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
+                if (binarySocketService != null)
                 {
                     string brokerName = SelectedBroker.ToString();
-                    bool success = await jforexService.SetRisk(brokerName, risk);
+                    bool success = await binarySocketService.SetRisk(brokerName, risk);
                     
                     if (!success)
                     {
@@ -316,12 +325,12 @@ namespace ScreenCaptureApp.Controls
                 }
                 else
                 {
-                    Logger.LogWarning("JForex service not available for risk command");
+                    Logger.LogWarning("Binary socket service not available for risk command");
                 }
             }
             catch (Exception ex)
             {
-                Logger.LogError($"Error setting risk via JForex service: {ex.Message}", ex);
+                Logger.LogError($"Error setting risk via binary socket service: {ex.Message}", ex);
             }
         }
 
@@ -330,19 +339,13 @@ namespace ScreenCaptureApp.Controls
         /// </summary>
         private async void SendDurationCommandToBinarySocket(int duration)
         {
-            // Проверяем, что выбран binary-брокер (не Forex)
-            if (SelectedBroker == BrokerType.Forex)
-            {
-                return;
-            }
-
             try
             {
-                var jforexService = ServiceContainer.Instance.GetService<JForexWindowsManagerService>();
-                if (jforexService != null)
+                var binarySocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
+                if (binarySocketService != null)
                 {
                     string brokerName = SelectedBroker.ToString();
-                    bool success = await jforexService.SetDuration(brokerName, duration);
+                    bool success = await binarySocketService.SetDuration(brokerName, duration);
                     
                     if (!success)
                     {
@@ -351,12 +354,12 @@ namespace ScreenCaptureApp.Controls
                 }
                 else
                 {
-                    Logger.LogWarning("JForex service not available for duration command");
+                    Logger.LogWarning("Binary socket service not available for duration command");
                 }
             }
             catch (Exception ex)
             {
-                Logger.LogError($"Error setting duration via JForex service: {ex.Message}", ex);
+                Logger.LogError($"Error setting duration via binary socket service: {ex.Message}", ex);
             }
         }
 
@@ -365,33 +368,33 @@ namespace ScreenCaptureApp.Controls
         /// </summary>
         private async void SendOpenSymbolCommand(string symbolName)
         {
-            // Проверяем, что выбран binary-брокер (не Forex)
-            if (SelectedBroker == BrokerType.Forex)
-            {
-                return;
-            }
-
+            Logger.LogInfo($"SendOpenSymbolCommand: Starting to send command for symbol {symbolName}, broker {SelectedBroker}");
             try
             {
-                var jforexService = ServiceContainer.Instance.GetService<JForexWindowsManagerService>();
-                if (jforexService != null)
+                var binarySocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
+                if (binarySocketService != null)
                 {
                     string brokerName = SelectedBroker.ToString();
-                    bool success = await jforexService.OpenSymbol(brokerName, symbolName);
+                    Logger.LogInfo($"SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol({brokerName}, {symbolName})");
+                    bool success = await binarySocketService.OpenSymbol(brokerName, symbolName);
                     
                     if (!success)
                     {
                         Logger.LogWarning($"Failed to open symbol {symbolName} for broker {brokerName}");
                     }
+                    else
+                    {
+                        Logger.LogInfo($"Successfully sent open symbol command for {symbolName} to {brokerName}");
+                    }
                 }
                 else
                 {
-                    Logger.LogWarning("JForex service not available for open symbol command");
+                    Logger.LogWarning("Binary socket service not available for open symbol command");
                 }
             }
             catch (Exception ex)
             {
-                Logger.LogError($"Error opening symbol via JForex service: {ex.Message}", ex);
+                Logger.LogError($"Error opening symbol via binary socket service: {ex.Message}", ex);
             }
         }
 

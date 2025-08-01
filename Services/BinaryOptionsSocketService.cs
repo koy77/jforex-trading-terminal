@@ -467,6 +467,129 @@ namespace ScreenCaptureApp.Services
             }
         }
 
+        /// <summary>
+        /// Отправляет команду открытия символа для binary-брокера
+        /// </summary>
+        public async Task<bool> OpenSymbol(string brokerName, string symbolName)
+        {
+            try
+            {
+                // Проверяем, что это не Forex брокер
+                if (string.Equals(brokerName, "Forex", StringComparison.OrdinalIgnoreCase))
+                {
+                    Logger.LogInfo($"Binary Options Socket: Skipping open symbol command for {symbolName} - Forex broker selected");
+                    return true; // Возвращаем true, так как это не ошибка, а намеренное пропускание
+                }
+
+                if (!IsConnected)
+                {
+                    Logger.LogWarning("Binary Options Socket: Cannot send open symbol command - not connected");
+                    return false;
+                }
+
+                string command = $"{{\"cmd\":\"open_symbol\",\"symbol\":\"{symbolName}\",\"broker\":\"{brokerName}\"}}\r\n";
+                
+                bool sent = await WriteAsync(command);
+                if (sent)
+                {
+                    Logger.LogInfo($"Binary Options Socket: Open symbol command sent: {command.Trim()}");
+                    return true;
+                }
+                else
+                {
+                    Logger.LogWarning($"Binary Options Socket: Failed to send open symbol command: {command.Trim()}");
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Binary Options Socket: Error sending open symbol command: {ex.Message}", ex);
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Отправляет команду установки риска для binary-брокера
+        /// </summary>
+        public async Task<bool> SetRisk(string brokerName, double risk)
+        {
+            try
+            {
+                // Проверяем, что это не Forex брокер
+                if (string.Equals(brokerName, "Forex", StringComparison.OrdinalIgnoreCase))
+                {
+                    Logger.LogInfo($"Binary Options Socket: Skipping risk command for {risk} - Forex broker selected");
+                    return true; // Возвращаем true, так как это не ошибка, а намеренное пропускание
+                }
+
+                if (!IsConnected)
+                {
+                    Logger.LogWarning("Binary Options Socket: Cannot send risk command - not connected");
+                    return false;
+                }
+
+                string command = $"{{\"cmd\":\"set_risk\",\"broker\":\"{brokerName}\",\"risk\":\"{risk}\"}}\r\n";
+                
+                bool sent = await WriteAsync(command);
+                if (sent)
+                {
+                    Logger.LogInfo($"Binary Options Socket: Risk command sent: {command.Trim()}");
+                    return true;
+                }
+                else
+                {
+                    Logger.LogWarning($"Binary Options Socket: Failed to send risk command: {command.Trim()}");
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Binary Options Socket: Error sending risk command: {ex.Message}", ex);
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Отправляет команду установки длительности для binary-брокера
+        /// </summary>
+        public async Task<bool> SetDuration(string brokerName, int duration)
+        {
+            try
+            {
+                // Проверяем, что это не Forex брокер
+                if (string.Equals(brokerName, "Forex", StringComparison.OrdinalIgnoreCase))
+                {
+                    Logger.LogInfo($"Binary Options Socket: Skipping duration command for {duration} - Forex broker selected");
+                    return true; // Возвращаем true, так как это не ошибка, а намеренное пропускание
+                }
+
+                if (!IsConnected)
+                {
+                    Logger.LogWarning("Binary Options Socket: Cannot send duration command - not connected");
+                    return false;
+                }
+
+                string command = $"{{\"cmd\":\"set_duration\",\"broker\":\"{brokerName}\",\"duration\":\"{duration}\"}}\r\n";
+                
+                bool sent = await WriteAsync(command);
+                if (sent)
+                {
+                    Logger.LogInfo($"Binary Options Socket: Duration command sent: {command.Trim()}");
+                    return true;
+                }
+                else
+                {
+                    Logger.LogWarning($"Binary Options Socket: Failed to send duration command: {command.Trim()}");
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Binary Options Socket: Error sending duration command: {ex.Message}", ex);
+                return false;
+            }
+        }
+
         public void Dispose()
         {
             if (_isDisposed)
