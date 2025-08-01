@@ -113,7 +113,8 @@ namespace ScreenCaptureApp
                     IsSkipped = capture.IsSkipped,
                     Model = capture.Model,
                     Mt4Order = capture.Mt4Order,
-                    Period = capture.Period
+                    Period = capture.Period,
+                    Direction = capture.Direction
                 });
             }
             return items;
@@ -250,6 +251,7 @@ namespace ScreenCaptureApp
         public string Model { get; set; }
         public string Mt4Order { get; set; }
         public string Period { get; set; } // <--- добавлено
+        public string Direction { get; set; } // <--- добавлено
 
         public System.Windows.Media.Imaging.BitmapImage ImageSource
         {
@@ -279,6 +281,21 @@ namespace ScreenCaptureApp
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value is bool b && b)
+                return Visibility.Visible;
+            return Visibility.Collapsed;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class ModelToDirectionVisibilityConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value is string model && model == "OHLC_rectangle")
                 return Visibility.Visible;
             return Visibility.Collapsed;
         }

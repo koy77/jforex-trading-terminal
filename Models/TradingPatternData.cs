@@ -37,10 +37,16 @@ namespace ScreenCaptureApp.Models
         /// </summary>
         public TradingPatternStatus Status { get; set; }
         
+        /// <summary>
+        /// Флаг, указывающий что это наклонный паттерн (для кнопки A)
+        /// </summary>
+        public bool IsInclined { get; set; }
+        
         public TradingPatternData()
         {
             CreatedAt = DateTime.Now;
             Status = TradingPatternStatus.InProgress;
+            IsInclined = false;
         }
     }
     

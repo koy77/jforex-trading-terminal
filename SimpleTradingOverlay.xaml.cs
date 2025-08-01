@@ -191,6 +191,22 @@ namespace ScreenCaptureApp
             StartTradingPattern();
         }
 
+        public void OnAKeyPressed()
+        {
+            Logger.LogDebug("SimpleTradingOverlay.OnAKeyPressed() called");
+            
+            if (!_isEnabled) 
+            {
+                Logger.LogWarning("SimpleTradingOverlay is disabled, ignoring A key press");
+                return;
+            }
+
+            Logger.LogInfo("A key pressed - starting inclined trading pattern creation");
+            
+            // Начинаем паттерн создания наклонного объекта трейдинга
+            StartInclinedTradingPattern();
+        }
+
         public void OnEscapeKeyPressed()
         {
             if (!_isEnabled) return;
@@ -219,6 +235,26 @@ namespace ScreenCaptureApp
             };
 
             Logger.LogInfo($"Started trading pattern creation for window {_currentWindowHandle} (symbol: {_currentTradingPattern.Symbol})");
+        }
+
+        private void StartInclinedTradingPattern()
+        {
+            if (_isTradingPatternActive)
+            {
+                Logger.LogWarning("Trading pattern already active, cancelling previous one");
+                CancelTradingPattern();
+            }
+
+            _isTradingPatternActive = true;
+            _clickCount = 0;
+            _currentTradingPattern = new TradingPatternData
+            {
+                WindowHandle = _currentWindowHandle,
+                Symbol = ExtractSymbolFromWindowTitle(_currentWindowHandle),
+                IsInclined = true // Mark this as an inclined pattern
+            };
+
+            Logger.LogInfo($"Started inclined trading pattern creation for window {_currentWindowHandle} (symbol: {_currentTradingPattern.Symbol})");
         }
 
         private void CancelTradingPattern()
@@ -309,7 +345,7 @@ namespace ScreenCaptureApp
                 Source = "window",
                 Broker = _brokerState.CurrentBroker.ToString(),
                 Duration = _durationState.CurrentDuration,
-                Model = "OHLC_rectangle",
+                Model = _currentTradingPattern.IsInclined ? "OHLС" : "OHLC_rectangle",
                 Period = null,
                 Direction = direction
             };
@@ -328,10 +364,10 @@ namespace ScreenCaptureApp
             capture.ScreenshotPath = debugInfo.ScreenshotPath;
             db.UpdateCapture(capture);
             
-            Logger.LogInfo($"TradingPattern CaptureData saved: Symbol={capture.Symbol}, Direction={capture.Direction}, X={capture.X}, Y={capture.Y}, W={capture.Width}, H={capture.Height}, Screenshot={capture.ScreenshotPath}");
+            Logger.LogInfo($"TradingPattern CaptureData saved: Symbol={capture.Symbol}, Direction={capture.Direction}, Model={capture.Model}, X={capture.X}, Y={capture.Y}, W={capture.Width}, H={capture.Height}, Screenshot={capture.ScreenshotPath}");
             // --- конец блока сохранения ---
 
-            Logger.LogInfo($"Trading pattern completed: FirstClick={_currentTradingPattern.FirstClick}, SecondClick={_currentTradingPattern.SecondClick}");
+            Logger.LogInfo($"Trading pattern completed: FirstClick={_currentTradingPattern.FirstClick}, SecondClick={_currentTradingPattern.SecondClick}, IsInclined={_currentTradingPattern.IsInclined}");
             
             _currentTradingPattern = null;
         }

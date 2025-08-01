@@ -192,7 +192,8 @@ namespace ScreenCaptureApp.Services
                 }
                 else if (vkCode == VK_A && IsEnabled)
                 {
-                    // A key detected, reserved for future use
+                    Logger.LogDebug("A key detected and service is enabled");
+                    OnAKeyPressed?.Invoke();
                 }
                 else if (vkCode == VK_S && IsEnabled)
                 {

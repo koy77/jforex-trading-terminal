@@ -301,7 +301,19 @@ namespace ScreenCaptureApp
         
         private void OnAKeyPressed()
         {
-            Logger.LogDebug("A key pressed - shifting canvas left");
+            Logger.LogDebug("A key pressed - starting inclined pattern capture");
+            
+            // Вызываем метод SimpleTradingOverlay для наклонного паттерна трейдинга
+            if (simpleTradingOverlay != null)
+            {
+                simpleTradingOverlay.OnAKeyPressed();
+            }
+            else
+            {
+                Logger.LogWarning("SimpleTradingOverlay is null, cannot call OnAKeyPressed");
+            }
+            
+            // Также выполняем оригинальную логику для CanvasWindow
             if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
             {
                 currentCanvasWindow.ShiftCanvasLeft();
