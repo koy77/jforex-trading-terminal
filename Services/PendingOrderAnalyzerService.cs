@@ -26,49 +26,145 @@ namespace ScreenCaptureApp.Services
             _mt4SocketService = ServiceContainer.Instance.GetService<Mt4SocketService>();
         }
         
-        /// <summary>
-        /// Анализирует паттерн отложенной сделки и отправляет данные в MT4
-        /// </summary>
-        public async Task<bool> AnalyzeAndSendToMt4(PendingOrderPatternData patternData)
-        {
-            try
-            {
-                                       Logger.LogTagInfo("PendingOrder", $"Starting analysis of pending order pattern for symbol: {patternData.Symbol}");
-                
-                // Извлекаем цены из скриншотов
-                var prices = await ExtractPricesFromScreenshots(patternData);
-                if (prices == null)
-                {
-                                           Logger.LogTagError("PendingOrder", "Failed to extract prices from screenshots");
-                    return false;
-                }
-                
-                patternData.Prices = prices;
-                
-                // Отправляем данные в MT4
-                var success = await SendPendingOrderToMt4(patternData);
-                if (success)
-                {
-                                           Logger.LogTagInfo("PendingOrder", $"Successfully sent pending order to MT4: {patternData.Symbol} {prices.Direction} Entry:{prices.EntryPrice} Target:{prices.TargetPrice} StopLoss:{prices.StopLossPrice}");
-                }
-                else
-                {
-                        Logger.LogTagError("PendingOrder", "Failed to send pending order to MT4");
-                }
-                
-                return success;
-            }
-            catch (Exception ex)
-            {
-                                 Logger.LogTagError("PendingOrder", "Error analyzing pending order pattern", ex);
-                return false;
-            }
-        }
+                 /// <summary>
+         /// Анализирует паттерн отложенной сделки и отправляет данные в MT4
+         /// </summary>
+         public async Task<bool> AnalyzeAndSendToMt4(PendingOrderPatternData patternData)
+         {
+             try
+             {
+                                        Logger.LogTagInfo("PendingOrder", $"Starting analysis of pending order pattern for symbol: {patternData.Symbol}");
+                 
+                 // Проверяем, что у нас есть цены для обоих кликов
+                 if (patternData.Prices == null)
+                 {
+                                            Logger.LogTagError("PendingOrder", "No prices available for analysis");
+                     return false;
+                 }
+                 
+                 // Отправляем данные в MT4
+                 var success = await SendPendingOrderToMt4(patternData);
+                 if (success)
+                 {
+                                                                                         Logger.LogTagInfo("PendingOrder", $"Successfully sent pending order to MT4: {patternData.Symbol} {patternData.Prices.Direction} Entry:{patternData.Prices.EntryPrice} StopLoss:{patternData.Prices.StopLossPrice}");
+                 }
+                 else
+                 {
+                         Logger.LogTagError("PendingOrder", "Failed to send pending order to MT4");
+                 }
+                 
+                 return success;
+             }
+             catch (Exception ex)
+             {
+                                  Logger.LogTagError("PendingOrder", "Error analyzing pending order pattern", ex);
+                 return false;
+             }
+         }
         
-        /// <summary>
-        /// Извлекает цены из скриншотов отложенной сделки
-        /// </summary>
-        private async Task<PendingOrderPrices> ExtractPricesFromScreenshots(PendingOrderPatternData patternData)
+                 /// <summary>
+         /// Обрабатывает первый скриншот (цена входа) и извлекает цену
+         /// </summary>
+         public async Task<double> ProcessFirstScreenshot(string screenshotPath, string orderId)
+         {
+             try
+             {
+                                  Logger.LogTagInfo("PendingOrder", "Processing first screenshot for entry price...");
+                 
+                 if (!File.Exists(screenshotPath))
+                 {
+                     Logger.LogTagError("PendingOrder", $"First screenshot not found: {screenshotPath}");
+                     return await ExtractPriceFallback("entry");
+                 }
+                 
+                 using (var bitmap = new Bitmap(screenshotPath))
+                 {
+                     // Вырезаем область справа для анализа цены
+                     using (var priceArea = CropPriceArea(bitmap, "entry", orderId))
+                     {
+                         var entryPrice = await ExtractPriceFromImage(priceArea, "entry", orderId);
+                         Logger.LogTagInfo("PendingOrder", $"Extracted entry price: {entryPrice}");
+                         return entryPrice;
+                     }
+                 }
+             }
+             catch (Exception ex)
+             {
+                                  Logger.LogTagError("PendingOrder", "Error processing first screenshot", ex);
+                 return await ExtractPriceFallback("entry");
+             }
+         }
+         
+         /// <summary>
+         /// Обрабатывает второй скриншот (цена стоп-лосса) и извлекает цену
+         /// </summary>
+         public async Task<double> ProcessSecondScreenshot(string screenshotPath, string orderId)
+         {
+             try
+             {
+                                  Logger.LogTagInfo("PendingOrder", "Processing second screenshot for stop loss price...");
+                 
+                 if (!File.Exists(screenshotPath))
+                 {
+                     Logger.LogTagError("PendingOrder", $"Second screenshot not found: {screenshotPath}");
+                     return await ExtractPriceFallback("stopLoss");
+                 }
+                 
+                 using (var bitmap = new Bitmap(screenshotPath))
+                 {
+                     // Вырезаем область справа для анализа цены
+                     using (var priceArea = CropPriceArea(bitmap, "stopLoss", orderId))
+                     {
+                         var stopLossPrice = await ExtractPriceFromImage(priceArea, "stopLoss", orderId);
+                         Logger.LogTagInfo("PendingOrder", $"Extracted stop loss price: {stopLossPrice}");
+                         return stopLossPrice;
+                     }
+                 }
+             }
+             catch (Exception ex)
+             {
+                                  Logger.LogTagError("PendingOrder", "Error processing second screenshot", ex);
+                 return await ExtractPriceFallback("stopLoss");
+             }
+         }
+         
+         /// <summary>
+         /// Создает объект цен на основе entry и stop loss цен
+         /// </summary>
+         public PendingOrderPrices CreatePricesObject(double entryPrice, double stopLossPrice, string symbol)
+         {
+             try
+             {
+                 var prices = new PendingOrderPrices
+                 {
+                     EntryPrice = entryPrice,
+                     StopLossPrice = stopLossPrice
+                 };
+                 
+                 // Определяем направление сделки
+                 prices.Direction = prices.StopLossPrice < prices.EntryPrice ? "Buy" : "Sell";
+                 
+                 // Устанавливаем размер лота по умолчанию
+                 prices.LotSize = 0.1;
+                 
+                 // Создаем комментарий
+                 prices.Comment = $"Pending Order {symbol} {prices.Direction}";
+                 
+                                  Logger.LogTagInfo("PendingOrder", $"Price object created: Entry={prices.EntryPrice}, StopLoss={prices.StopLossPrice}, Direction={prices.Direction}");
+                 
+                 return prices;
+             }
+             catch (Exception ex)
+             {
+                                  Logger.LogTagError("PendingOrder", "Error creating prices object", ex);
+                 return null;
+             }
+         }
+         
+         /// <summary>
+         /// Извлекает цены из скриншотов отложенной сделки (устаревший метод)
+         /// </summary>
+         private async Task<PendingOrderPrices> ExtractPricesFromScreenshots(PendingOrderPatternData patternData)
         {
             try
             {
@@ -95,38 +191,27 @@ namespace ScreenCaptureApp.Services
                     return null;
                 }
                 
-                // Анализируем второй скриншот (цена цели)
-                if (File.Exists(patternData.SecondScreenshotPath))
-                {
-                    using (var bitmap = new Bitmap(patternData.SecondScreenshotPath))
-                    {
-                        // Вырезаем область справа для анализа цены
-                                                 using (var priceArea = CropPriceArea(bitmap, "target", patternData.OrderId))
-                         {
-                             prices.TargetPrice = await ExtractPriceFromImage(priceArea, "target", patternData.OrderId);
-                             Logger.LogTagInfo("PendingOrder", $"Extracted target price: {prices.TargetPrice}");
-                         }
-                    }
-                }
-                else
-                {
-                    Logger.LogTagError("PendingOrder", $"Second screenshot not found: {patternData.SecondScreenshotPath}");
-                    return null;
-                }
-                
-                // Определяем направление сделки
-                prices.Direction = prices.TargetPrice > prices.EntryPrice ? "Buy" : "Sell";
-                
-                // Вычисляем стоп-лосс (противоположная сторона от цели)
-                double priceDifference = Math.Abs(prices.TargetPrice - prices.EntryPrice);
-                if (prices.Direction == "Buy")
-                {
-                    prices.StopLossPrice = prices.EntryPrice - priceDifference;
-                }
-                else
-                {
-                    prices.StopLossPrice = prices.EntryPrice + priceDifference;
-                }
+                                 // Анализируем второй скриншот (цена стоп-лосса)
+                 if (File.Exists(patternData.SecondScreenshotPath))
+                 {
+                     using (var bitmap = new Bitmap(patternData.SecondScreenshotPath))
+                     {
+                         // Вырезаем область справа для анализа цены
+                                                  using (var priceArea = CropPriceArea(bitmap, "stopLoss", patternData.OrderId))
+                          {
+                              prices.StopLossPrice = await ExtractPriceFromImage(priceArea, "stopLoss", patternData.OrderId);
+                              Logger.LogTagInfo("PendingOrder", $"Extracted stop loss price: {prices.StopLossPrice}");
+                          }
+                     }
+                 }
+                 else
+                 {
+                     Logger.LogTagError("PendingOrder", $"Second screenshot not found: {patternData.SecondScreenshotPath}");
+                     return null;
+                 }
+                 
+                 // Определяем направление сделки
+                 prices.Direction = prices.StopLossPrice < prices.EntryPrice ? "Buy" : "Sell";
                 
                 // Устанавливаем размер лота по умолчанию
                 prices.LotSize = 0.1;
@@ -134,7 +219,7 @@ namespace ScreenCaptureApp.Services
                 // Создаем комментарий
                 prices.Comment = $"Pending Order {patternData.Symbol} {prices.Direction}";
                 
-                                 Logger.LogTagInfo("PendingOrder", $"Price extraction completed: Entry={prices.EntryPrice}, Target={prices.TargetPrice}, StopLoss={prices.StopLossPrice}, Direction={prices.Direction}");
+                                                                   Logger.LogTagInfo("PendingOrder", $"Price extraction completed: Entry={prices.EntryPrice}, StopLoss={prices.StopLossPrice}, Direction={prices.Direction}");
                 
                 return prices;
             }
@@ -306,25 +391,25 @@ namespace ScreenCaptureApp.Services
             }
         }
         
-        /// <summary>
-        /// Fallback метод для извлечения цены (используется при ошибках OCR)
-        /// </summary>
-        private async Task<double> ExtractPriceFallback(string priceType)
-        {
-            await Task.Delay(100); // Имитация обработки
-            
-            var random = new Random();
-            double basePrice = 1.2000; // Базовая цена для демонстрации
-            
-            if (priceType == "entry")
-            {
-                return basePrice + (random.NextDouble() * 0.0100); // ±10 пипсов
-            }
-            else // target
-            {
-                return basePrice + (random.NextDouble() * 0.0200) + 0.0050; // +5-25 пипсов
-            }
-        }
+                 /// <summary>
+         /// Fallback метод для извлечения цены (используется при ошибках OCR)
+         /// </summary>
+         private async Task<double> ExtractPriceFallback(string priceType)
+         {
+             await Task.Delay(100); // Имитация обработки
+             
+             var random = new Random();
+             double basePrice = 1.2000; // Базовая цена для демонстрации
+             
+             if (priceType == "entry")
+             {
+                 return basePrice + (random.NextDouble() * 0.0100); // ±10 пипсов
+             }
+             else // stopLoss
+             {
+                 return basePrice - (random.NextDouble() * 0.0100) - 0.0050; // -5-15 пипсов
+             }
+         }
         
         /// <summary>
         /// Отправляет данные отложенной сделки в MT4
@@ -339,18 +424,17 @@ namespace ScreenCaptureApp.Services
                     return false;
                 }
                 
-                var orderData = new
-                {
-                    type = "pending_order",
-                    symbol = patternData.Symbol,
-                    direction = patternData.Prices.Direction,
-                    entry_price = patternData.Prices.EntryPrice,
-                    target_price = patternData.Prices.TargetPrice,
-                    stop_loss_price = patternData.Prices.StopLossPrice,
-                    lot_size = patternData.Prices.LotSize,
-                    comment = patternData.Prices.Comment,
-                    timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
-                };
+                                 var orderData = new
+                 {
+                     type = "pending_order",
+                     symbol = patternData.Symbol,
+                     direction = patternData.Prices.Direction,
+                     entry_price = patternData.Prices.EntryPrice,
+                     stop_loss_price = patternData.Prices.StopLossPrice,
+                     lot_size = patternData.Prices.LotSize,
+                     comment = patternData.Prices.Comment,
+                     timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+                 };
                 
                 var json = System.Text.Json.JsonSerializer.Serialize(orderData);
                 var success = await _mt4SocketService.WriteAsync(json);

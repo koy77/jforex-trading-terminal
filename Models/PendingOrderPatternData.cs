@@ -57,6 +57,11 @@ namespace ScreenCaptureApp.Models
         /// </summary>
         public PendingOrderPrices Prices { get; set; }
         
+        /// <summary>
+        /// Цена входа (извлекается из первого скриншота)
+        /// </summary>
+        public double EntryPrice { get; set; }
+        
         public PendingOrderPatternData()
         {
             CreatedAt = DateTime.Now;
@@ -97,12 +102,7 @@ namespace ScreenCaptureApp.Models
         public double EntryPrice { get; set; }
         
         /// <summary>
-        /// Цена цели (из второго скриншота)
-        /// </summary>
-        public double TargetPrice { get; set; }
-        
-        /// <summary>
-        /// Цена стоп-лосса (вычисляется автоматически)
+        /// Цена стоп-лосса (из второго скриншота)
         /// </summary>
         public double StopLossPrice { get; set; }
         

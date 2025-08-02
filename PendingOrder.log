@@ -1,0 +1,35 @@
+[2025-08-02 19:32:46.678] [INFO] P key pressed - starting pending order pattern creation
+[2025-08-02 19:32:46.679] [INFO] Started pending order pattern creation for window 196970 (symbol: USDJPY)
+[2025-08-02 19:32:48.736] [INFO] Saving horizontal strip screenshot for first click...
+[2025-08-02 19:32:48.747] [INFO] Cropped image around click point (1406, 600): 1920x1039 -> 1920x14, cropY=593
+[2025-08-02 19:32:48.749] [INFO] first screenshot saved (horizontal strip around click point): C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\pending_order_20250802_193248_first.png
+[2025-08-02 19:32:49.062] [INFO] Scheduling Escape key send to window handle: 196970
+[2025-08-02 19:32:49.062] [INFO] Escape thread started for window handle: 196970
+[2025-08-02 19:32:49.063] [INFO] Pending order first click recorded at (1406, 600)
+[2025-08-02 19:32:49.695] [INFO] Escape key sent successfully to window handle: 196970
+[2025-08-02 19:32:52.551] [INFO] P key pressed during active pattern - continuing to second click
+[2025-08-02 19:32:53.956] [INFO] Saving horizontal strip screenshot for second click...
+[2025-08-02 19:32:53.967] [INFO] Cropped image around click point (1402, 522): 1920x1039 -> 1920x14, cropY=515
+[2025-08-02 19:32:53.969] [INFO] second screenshot saved (horizontal strip around click point): C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\pending_order_20250802_193248_second.png
+[2025-08-02 19:32:53.970] [INFO] Pending order second click recorded at (1402, 522)
+[2025-08-02 19:32:53.970] [INFO] Analyzing and sending pending order to MT4...
+[2025-08-02 19:32:53.970] [INFO] Starting analysis of pending order pattern for symbol: USDJPY
+[2025-08-02 19:32:53.970] [INFO] Extracting prices from screenshots...
+[2025-08-02 19:32:53.972] [INFO] Saved entry price area: 1920x14 -> 55x14, cropX=1845, saved to C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\Debug\entry_price_20250802_193248.png
+[2025-08-02 19:32:53.973] [INFO] Starting OCR extraction for entry price...
+[2025-08-02 19:32:53.974] [INFO] Saved final OCR image for entry: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\Debug\final_ocr_entry_20250802_193248.png
+[2025-08-02 19:32:54.060] [INFO] OCR raw result for entry: '147.496'
+[2025-08-02 19:32:54.064] [INFO] Extracted entry price: 147,496
+[2025-08-02 19:32:54.066] [INFO] Saved target price area: 1920x14 -> 55x14, cropX=1845, saved to C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\Debug\target_price_20250802_193248.png
+[2025-08-02 19:32:54.066] [INFO] Starting OCR extraction for target price...
+[2025-08-02 19:32:54.067] [INFO] Saved final OCR image for target: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\Debug\final_ocr_target_20250802_193248.png
+[2025-08-02 19:32:54.156] [INFO] OCR raw result for target: '147.616'
+[2025-08-02 19:32:54.160] [INFO] Extracted target price: 147,616
+[2025-08-02 19:32:54.160] [INFO] Price extraction completed: Entry=147,496, Target=147,616, StopLoss=147,376, Direction=Buy
+[2025-08-02 19:32:54.161] [INFO] Pending order data sent to MT4: {"type":"pending_order","symbol":"USDJPY","direction":"Buy","entry_price":147.49600000000001,"target_price":147.61600000000001,"stop_loss_price":147.376,"lot_size":0.10000000000000001,"comment":"Pending Order USDJPY Buy","timestamp":"2025-08-02 19:32:54"}
+[2025-08-02 19:32:54.161] [INFO] Successfully sent pending order to MT4: USDJPY Buy Entry:147,496 Target:147,616 StopLoss:147,376
+[2025-08-02 19:32:54.161] [INFO] Pending order successfully analyzed and sent to MT4
+[2025-08-02 19:32:54.161] [INFO] Pending order pattern completed: FirstClick=(1406, 600), SecondClick=(1402, 522)
+[2025-08-02 19:32:54.481] [INFO] Scheduling Escape key send to window handle: 196970
+[2025-08-02 19:32:54.482] [INFO] Escape thread started for window handle: 196970
+[2025-08-02 19:32:55.115] [INFO] Escape key sent successfully to window handle: 196970
