@@ -110,9 +110,21 @@ namespace ScreenCaptureApp
         private TradingPatternData _currentTradingPattern = null;
         private int _clickCount = 0;
         
+        // Паттерн отложенной сделки
+        private bool _isPendingOrderPatternActive = false;
+        private PendingOrderPatternData _currentPendingOrderPattern = null;
+        private int _pendingOrderClickCount = 0;
+        
+        // Флаг для различения пользовательского и сервисного нажатия Escape
+        private bool _isServiceEscapeSending = false;
+        
         // События для паттерна трейдинга
         public event EventHandler<TradingPatternData> TradingPatternCompleted;
         public event EventHandler<TradingPatternData> TradingPatternCancelled;
+        
+        // События для паттерна отложенной сделки
+        public event EventHandler<PendingOrderPatternData> PendingOrderPatternCompleted;
+        public event EventHandler<PendingOrderPatternData> PendingOrderPatternCancelled;
         
         public SimpleTradingOverlay()
         {
@@ -207,14 +219,65 @@ namespace ScreenCaptureApp
             StartInclinedTradingPattern();
         }
 
+        public void OnPKeyPressed()
+        {
+            Logger.LogDebug("SimpleTradingOverlay.OnPKeyPressed() called");
+            
+            if (!_isEnabled) 
+            {
+                Logger.LogWarning("SimpleTradingOverlay is disabled, ignoring P key press");
+                return;
+            }
+
+            // Проверяем, активен ли уже паттерн отложенной сделки
+            if (_isPendingOrderPatternActive)
+            {
+                // Если паттерн уже активен, это означает, что пользователь нажимает P второй раз
+                // для активации ожидания второго клика - это нормальное поведение
+                Logger.LogTagInfo("PendingOrder", "P key pressed during active pattern - continuing to second click");
+                return;
+            }
+
+            Logger.LogTagInfo("PendingOrder", "P key pressed - starting pending order pattern creation");
+            
+            // Начинаем паттерн создания отложенной сделки
+            StartPendingOrderPattern();
+        }
+
+        public void OnDKeyPressed()
+        {
+            Logger.LogDebug("SimpleTradingOverlay.OnDKeyPressed() called");
+            
+            if (!_isEnabled) 
+            {
+                Logger.LogWarning("SimpleTradingOverlay is disabled, ignoring D key press");
+                return;
+            }
+
+            Logger.LogInfo("D key pressed - reserved for future use");
+        }
+
         public void OnEscapeKeyPressed()
         {
             if (!_isEnabled) return;
+
+            // Проверяем, не является ли это сервисным нажатием Escape
+            if (_isServiceEscapeSending)
+            {
+                Logger.LogTagInfo("PendingOrder", "Ignoring service Escape key press");
+                return;
+            }
 
             if (_isTradingPatternActive)
             {
                 Logger.LogInfo("Escape key pressed - cancelling trading pattern");
                 CancelTradingPattern();
+            }
+            
+            if (_isPendingOrderPatternActive)
+            {
+                Logger.LogTagInfo("PendingOrder", "Escape key pressed - cancelling pending order pattern");
+                CancelPendingOrderPattern();
             }
         }
 
@@ -257,6 +320,26 @@ namespace ScreenCaptureApp
             Logger.LogInfo($"Started inclined trading pattern creation for window {_currentWindowHandle} (symbol: {_currentTradingPattern.Symbol})");
         }
 
+        private void StartPendingOrderPattern()
+        {
+            if (_isPendingOrderPatternActive)
+            {
+                Logger.LogTagWarning("PendingOrder", "Pending order pattern already active, skipping new pattern creation");
+                return;
+            }
+
+            _isPendingOrderPatternActive = true;
+            _pendingOrderClickCount = 0;
+            _currentPendingOrderPattern = new PendingOrderPatternData
+            {
+                WindowHandle = _currentWindowHandle,
+                Symbol = ExtractSymbolFromWindowTitle(_currentWindowHandle)
+            };
+
+            
+            Logger.LogTagInfo("PendingOrder", $"Started pending order pattern creation for window {_currentWindowHandle} (symbol: {_currentPendingOrderPattern.Symbol})");
+        }
+
         private void CancelTradingPattern()
         {
             if (!_isTradingPatternActive) return;
@@ -279,6 +362,23 @@ namespace ScreenCaptureApp
             }
             
             _currentTradingPattern = null;
+        }
+
+        private void CancelPendingOrderPattern()
+        {
+            if (!_isPendingOrderPatternActive) return;
+
+            _isPendingOrderPatternActive = false;
+            _pendingOrderClickCount = 0;
+            
+            if (_currentPendingOrderPattern != null)
+            {
+                _currentPendingOrderPattern.Status = PendingOrderPatternStatus.Cancelled;
+                PendingOrderPatternCancelled?.Invoke(this, _currentPendingOrderPattern);
+                Logger.LogTagInfo("PendingOrder", "Pending order pattern cancelled");
+            }
+            
+            _currentPendingOrderPattern = null;
         }
 
         private void CompleteTradingPattern()
@@ -372,6 +472,25 @@ namespace ScreenCaptureApp
             _currentTradingPattern = null;
         }
 
+        private async void CompletePendingOrderPattern()
+        {
+            if (!_isPendingOrderPatternActive || _currentPendingOrderPattern == null) return;
+
+            _isPendingOrderPatternActive = false;
+            _pendingOrderClickCount = 0;
+            
+            _currentPendingOrderPattern.Status = PendingOrderPatternStatus.Completed;
+            
+            // Анализируем и отправляем в MT4
+            await AnalyzeAndSendPendingOrder();
+            
+            PendingOrderPatternCompleted?.Invoke(this, _currentPendingOrderPattern);
+            
+            Logger.LogTagInfo("PendingOrder", $"Pending order pattern completed: FirstClick={_currentPendingOrderPattern.FirstClick}, SecondClick={_currentPendingOrderPattern.SecondClick}");
+            
+            _currentPendingOrderPattern = null;
+        }
+
         private void HandleMouseClickForTradingPattern(IntPtr lParam)
         {
             if (!_isTradingPatternActive || _currentTradingPattern == null) return;
@@ -408,6 +527,61 @@ namespace ScreenCaptureApp
             }
         }
 
+        private async void HandleMouseClickForPendingOrderPattern(IntPtr lParam)
+        {
+            if (!_isPendingOrderPatternActive || _currentPendingOrderPattern == null) return;
+
+            try
+            {
+                MSLLHOOKSTRUCT hookStruct = (MSLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(MSLLHOOKSTRUCT));
+                var clickPoint = new TradingPoint(hookStruct.pt.X, hookStruct.pt.Y);
+                
+                _pendingOrderClickCount++;
+                
+                if (_pendingOrderClickCount == 1)
+                {
+                    // Первый клик - начало паттерна
+                    _currentPendingOrderPattern.FirstClick = clickPoint;
+
+                    // Генерируем уникальный ID для этой отложенной сделки (только один раз)
+                    _currentPendingOrderPattern.OrderId = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+
+                    // Сохраняем горизонтальную полосу после первого клика
+                    await SaveHorizontalStripScreenshot("first");
+
+                    // Отправляем клавишу Escape в целевое окно с задержкой 300 мс
+                    await Task.Delay(300);
+                    SendEscapeToTargetWindow();
+
+                    Logger.LogTagInfo("PendingOrder", $"Pending order first click recorded at {clickPoint}");
+                }
+                else if (_pendingOrderClickCount == 2)
+                {
+                    // Второй клик - конец паттерна
+                    _currentPendingOrderPattern.SecondClick = clickPoint;
+                    
+                    // Сохраняем горизонтальную полосу после второго клика
+                    await Task.Delay(50);
+                    await SaveHorizontalStripScreenshot("second");
+                    
+                    Logger.LogTagInfo("PendingOrder", $"Pending order second click recorded at {clickPoint}");
+                    CompletePendingOrderPattern();
+                    
+                    await Task.Delay(300);
+                    SendEscapeToTargetWindow();
+                }
+                else
+                {
+                    // Больше двух кликов - игнорируем
+                    Logger.LogTagWarning("PendingOrder", $"Ignoring pending order click {_pendingOrderClickCount} - pattern requires exactly 2 clicks");
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("PendingOrder", "Error handling mouse click for pending order pattern", ex);
+            }
+        }
+
         private void UpdateTradingToolbarUiByBroker(BrokerType brokerType)
         {
             if (brokerType == BrokerType.Forex)
@@ -417,6 +591,142 @@ namespace ScreenCaptureApp
             else
             {
                 TradingToolbar.ShowDurationPanel(true);
+            }
+        }
+
+        /// <summary>
+        /// Сохраняет горизонтальную полосу скриншота после клика мыши
+        /// </summary>
+        /// <param name="clickType">Тип клика: "first" или "second"</param>
+        private async Task SaveHorizontalStripScreenshot(string clickType)
+        {
+            try
+            {
+                Logger.LogTagInfo("PendingOrder", $"Saving horizontal strip screenshot for {clickType} click...");
+                
+                var screenshotService = ServiceContainer.Instance.GetService<ScreenshotService>();
+                
+                // Создаем папку Trades если её нет
+                string tradesDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Trades");
+                if (!Directory.Exists(tradesDir))
+                {
+                    Directory.CreateDirectory(tradesDir);
+                }
+                
+                // Используем OrderId из паттерна (уже сгенерированный при первом клике)
+                string orderId = _currentPendingOrderPattern.OrderId;
+                
+                // Делаем скриншот окна
+                using (var screenshot = screenshotService.CaptureWindow(_currentPendingOrderPattern.WindowHandle))
+                {
+                    if (screenshot != null)
+                    {
+                        // Получаем координаты клика
+                        TradingPoint clickPoint = clickType == "first" 
+                            ? _currentPendingOrderPattern.FirstClick 
+                            : _currentPendingOrderPattern.SecondClick;
+                        
+                        // Создаем горизонтальную полосу вокруг точки клика с отступами 7 пикселей
+                        var croppedScreenshot = CropHorizontalStrip(screenshot, clickPoint, 7);
+                        string screenshotPath = Path.Combine(tradesDir, $"pending_order_{orderId}_{clickType}.png");
+                        croppedScreenshot.Save(screenshotPath, System.Drawing.Imaging.ImageFormat.Png);
+                        
+                        // Сохраняем путь в соответствующие поля
+                        if (clickType == "first")
+                        {
+                            _currentPendingOrderPattern.FirstScreenshotPath = screenshotPath;
+                        }
+                        else if (clickType == "second")
+                        {
+                            _currentPendingOrderPattern.SecondScreenshotPath = screenshotPath;
+                        }
+                        
+                        Logger.LogTagInfo("PendingOrder", $"{clickType} screenshot saved (horizontal strip around click point): {screenshotPath}");
+                    }
+                    else
+                    {
+                        Logger.LogTagError("PendingOrder", $"Failed to capture window screenshot for {clickType} click");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("PendingOrder", $"Error saving horizontal strip screenshot for {clickType} click", ex);
+            }
+        }
+
+        /// <summary>
+        /// Обрезает изображение до горизонтальной полосы вокруг точки клика с отступами сверху и снизу
+        /// </summary>
+        /// <param name="sourceImage">Исходное изображение</param>
+        /// <param name="clickPoint">Точка клика</param>
+        /// <param name="padding">Отступ в пикселях сверху и снизу от точки клика</param>
+        /// <returns>Обрезанное изображение</returns>
+        private Bitmap CropHorizontalStrip(Bitmap sourceImage, TradingPoint clickPoint, int padding)
+        {
+            try
+            {
+                // Получаем размеры исходного изображения
+                int sourceWidth = sourceImage.Width;
+                int sourceHeight = sourceImage.Height;
+                
+                // Вычисляем Y-координату центра обрезанной области (точка клика)
+                int centerY = (int)clickPoint.Y;
+                
+                // Вычисляем границы обрезанной области
+                int cropY = Math.Max(0, centerY - padding); // Верхняя граница
+                int cropHeight = Math.Min(sourceHeight - cropY, padding * 2); // Высота области
+                
+                // Проверяем, что высота обрезанной области положительная
+                if (cropHeight <= 0)
+                {
+                    Logger.LogTagWarning("PendingOrder", $"Invalid crop height: {cropHeight}, using full image");
+                    return new Bitmap(sourceImage);
+                }
+                
+                // Создаем прямоугольник для обрезки (вся ширина, только нужная высота)
+                var cropRect = new System.Drawing.Rectangle(0, cropY, sourceWidth, cropHeight);
+                
+                // Создаем новое изображение с обрезанными размерами
+                var croppedImage = new Bitmap(sourceWidth, cropHeight);
+                
+                using (var graphics = Graphics.FromImage(croppedImage))
+                {
+                    // Копируем часть исходного изображения
+                    graphics.DrawImage(sourceImage, 0, 0, cropRect, GraphicsUnit.Pixel);
+                }
+                
+                Logger.LogTagInfo("PendingOrder", $"Cropped image around click point ({clickPoint.X}, {clickPoint.Y}): {sourceWidth}x{sourceHeight} -> {sourceWidth}x{cropHeight}, cropY={cropY}");
+                return croppedImage;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("PendingOrder", "Error cropping image around click point", ex);
+                return new Bitmap(sourceImage); // Возвращаем исходное изображение в случае ошибки
+            }
+        }
+
+        private async Task AnalyzeAndSendPendingOrder()
+        {
+            try
+            {
+                Logger.LogTagInfo("PendingOrder", "Analyzing and sending pending order to MT4...");
+                
+                var analyzerService = new PendingOrderAnalyzerService();
+                var success = await analyzerService.AnalyzeAndSendToMt4(_currentPendingOrderPattern);
+                
+                if (success)
+                {
+                    Logger.LogTagInfo("PendingOrder", "Pending order successfully analyzed and sent to MT4");
+                }
+                else
+                {
+                    Logger.LogTagError("PendingOrder", "Failed to analyze and send pending order to MT4");
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("PendingOrder", "Error analyzing and sending pending order", ex);
             }
         }
 
@@ -526,6 +836,11 @@ namespace ScreenCaptureApp
                 {
                     // Обработка клика мыши для паттерна трейдинга
                     HandleMouseClickForTradingPattern(lParam);
+                }
+                else if (message == WM_LBUTTONDOWN && _isPendingOrderPatternActive)
+                {
+                    // Обработка клика мыши для паттерна отложенной сделки
+                    HandleMouseClickForPendingOrderPattern(lParam);
                 }
             }
             
@@ -668,6 +983,12 @@ namespace ScreenCaptureApp
                 CancelTradingPattern();
             }
             
+            // Отменяем активный паттерн отложенной сделки если он есть
+            if (_isPendingOrderPatternActive)
+            {
+                CancelPendingOrderPattern();
+            }
+            
             // Закрываем окно рамки
             if (_patternOverlay != null && _patternOverlay.IsVisible)
             {
@@ -754,18 +1075,17 @@ namespace ScreenCaptureApp
                 return;
             }
 
-            Logger.LogInfo($"Scheduling Escape key send to window handle: {_currentWindowHandle}");
+            Logger.LogTagInfo("PendingOrder", $"Scheduling Escape key send to window handle: {_currentWindowHandle}");
 
             // Запускаем отправку клавиши в отдельном потоке
             System.Threading.Thread escapeThread = new System.Threading.Thread(() =>
             {
                 try
                 {
-                    Logger.LogInfo($"Escape thread started for window handle: {_currentWindowHandle}");
+                    Logger.LogTagInfo("PendingOrder", $"Escape thread started for window handle: {_currentWindowHandle}");
 
-                    // // Активируем окно
-                    // SetForegroundWindow(_currentWindowHandle);
-                    // ShowWindow(_currentWindowHandle, SW_RESTORE);
+                    // Устанавливаем флаг сервисного нажатия
+                    _isServiceEscapeSending = true;
 
                     // Небольшая задержка для активации окна
                     System.Threading.Thread.Sleep(500);
@@ -775,11 +1095,19 @@ namespace ScreenCaptureApp
                     System.Threading.Thread.Sleep(10);
                     PostMessage(_currentWindowHandle, WM_KEYUP, (IntPtr)VK_ESCAPE, IntPtr.Zero);
 
-                    Logger.LogInfo($"Escape key sent successfully to window handle: {_currentWindowHandle}");
+                    // Дополнительная задержка перед сбросом флага
+                    System.Threading.Thread.Sleep(100);
+
+                    // Сбрасываем флаг сервисного нажатия
+                    _isServiceEscapeSending = false;
+
+                    Logger.LogTagInfo("PendingOrder", $"Escape key sent successfully to window handle: {_currentWindowHandle}");
                 }
                 catch (Exception ex)
                 {
-                    Logger.LogError("Error sending Escape key to target window", ex);
+                    Logger.LogTagError("PendingOrder", "Error sending Escape key to target window", ex);
+                    // Сбрасываем флаг в случае ошибки
+                    _isServiceEscapeSending = false;
                 }
             });
 

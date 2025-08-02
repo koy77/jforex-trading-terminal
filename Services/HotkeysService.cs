@@ -20,6 +20,7 @@ namespace ScreenCaptureApp.Services
         private const int VK_A = 0x41;
         private const int VK_S = 0x53;
         private const int VK_D = 0x44;
+        private const int VK_P = 0x50; // Клавиша P
         // Events
         public event Action OnSpaceKeyPressed;
         public event Action OnEscapeKeyPressed;
@@ -31,6 +32,7 @@ namespace ScreenCaptureApp.Services
         public event Action OnAKeyPressed;
         public event Action OnSKeyPressed;
         public event Action OnDKeyPressed;
+        public event Action OnPKeyPressed;
         // Symbol hotkey events (1-6)
         public event Action OnSymbolHotkeyPressed1;
         public event Action OnSymbolHotkeyPressed2;
@@ -128,7 +130,7 @@ namespace ScreenCaptureApp.Services
                 {
                     // Trigger the F key event
                     Logger.LogDebug("F key detected and service is enabled");
-                    OnTKeyPressed?.Invoke();
+                    // OnTKeyPressed?.Invoke();
                 }
                 // else if (vkCode == VK_ENTER && IsEnabled)
                 // {
@@ -193,7 +195,7 @@ namespace ScreenCaptureApp.Services
                 else if (vkCode == VK_A && IsEnabled)
                 {
                     Logger.LogDebug("A key detected and service is enabled");
-                    OnAKeyPressed?.Invoke();
+                    // OnAKeyPressed?.Invoke();
                 }
                 else if (vkCode == VK_S && IsEnabled)
                 {
@@ -203,6 +205,11 @@ namespace ScreenCaptureApp.Services
                 else if (vkCode == VK_D && IsEnabled)
                 {
                     // D key detected, reserved for future use
+                }
+                else if (vkCode == VK_P && IsEnabled)
+                {
+                    Logger.LogDebug("P key detected and service is enabled");
+                    OnPKeyPressed?.Invoke();
                 }
                 else if (vkCode == VK_Q && IsEnabled)
                 {

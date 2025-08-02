@@ -48,7 +48,7 @@ namespace ScreenCaptureApp
 
             InitializeServices();
 
-            StartAutoTracking();
+            // StartAutoTracking(); // Автотрекинг отключен по умолчанию
 
             var mt4SocketService = ServiceContainer.Instance.GetService<Mt4SocketService>();
             if (mt4SocketService != null)
@@ -127,7 +127,8 @@ namespace ScreenCaptureApp
                 OnWKeyPressed,
                 OnAKeyPressed,
                 OnSKeyPressed,
-                OnDKeyPressed);
+                OnDKeyPressed,
+                OnPKeyPressed);
 
                 ServiceInitializer.InitializeWindowManagementService(Dispatcher);
                 ServiceInitializer.InitializeMt4SocketService(Dispatcher);
@@ -342,10 +343,21 @@ namespace ScreenCaptureApp
         
         private void OnDKeyPressed()
         {
-            Logger.LogDebug("D key pressed - shifting canvas right");
-            if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
+            Logger.LogDebug("MainWindow.OnDKeyPressed() called");
+            
+            if (simpleTradingOverlay != null)
             {
-                currentCanvasWindow.ShiftCanvasRight();
+                simpleTradingOverlay.OnDKeyPressed();
+            }
+        }
+
+        private void OnPKeyPressed()
+        {
+            Logger.LogDebug("MainWindow.OnPKeyPressed() called");
+            
+            if (simpleTradingOverlay != null)
+            {
+                simpleTradingOverlay.OnPKeyPressed();
             }
         }
 
@@ -605,9 +617,48 @@ namespace ScreenCaptureApp
             var windowManagementService = ServiceContainer.Instance.GetService<WindowManagementService>();
             MainHelper.ResetDatabase(databaseService, windowManagementService);
             
+            // Очищаем папку Trades
+            ClearTradesFolder();
+            
             // Show toast notification that database is reset
             var toastService = ServiceContainer.Instance.GetService<ToastNotifyService>();
             toastService?.ShowToast("Database has been reset successfully!", ToastType.Success);
+        }
+
+        /// <summary>
+        /// Очищает содержимое папки Trades
+        /// </summary>
+        private void ClearTradesFolder()
+        {
+            try
+            {
+                string tradesDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Trades");
+                if (Directory.Exists(tradesDir))
+                {
+                    var files = Directory.GetFiles(tradesDir, "*.*", SearchOption.AllDirectories);
+                    foreach (var file in files)
+                    {
+                        try
+                        {
+                            File.Delete(file);
+                            Logger.LogInfo($"Deleted file: {file}");
+                        }
+                        catch (Exception ex)
+                        {
+                            Logger.LogError($"Failed to delete file {file}: {ex.Message}");
+                        }
+                    }
+                    Logger.LogInfo($"Cleared Trades folder: {tradesDir}");
+                }
+                else
+                {
+                    Logger.LogInfo("Trades folder does not exist, nothing to clear");
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Error clearing Trades folder: {ex.Message}", ex);
+            }
         }
 
         private async void RunCaptureTracking_Click(object sender, RoutedEventArgs e)

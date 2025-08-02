@@ -39,6 +39,7 @@ namespace ScreenCaptureApp.Helpers
                 // Register services that depend on other services
                 container.RegisterSingleton(new CaptureService());
                 container.RegisterSingleton(new CaptureTrackingService());
+                container.RegisterSingleton(new PendingOrderAnalyzerService());
 
                 // Register ToolbarSettingsManager (singleton, in-memory)
                 container.RegisterSingleton(new ToolbarSettingsManager());
@@ -113,7 +114,8 @@ namespace ScreenCaptureApp.Helpers
             Action onWKeyPressed = null,
             Action onAKeyPressed = null,
             Action onSKeyPressed = null,
-            Action onDKeyPressed = null)
+            Action onDKeyPressed = null,
+            Action onPKeyPressed = null)
         {
             try
             {
@@ -176,6 +178,14 @@ namespace ScreenCaptureApp.Helpers
                     hotkeysService.OnDKeyPressed += () =>
                     {
                         dispatcher.Invoke(onDKeyPressed);
+                    };
+                }
+                
+                if (onPKeyPressed != null)
+                {
+                    hotkeysService.OnPKeyPressed += () =>
+                    {
+                        dispatcher.Invoke(onPKeyPressed);
                     };
                 }
             }

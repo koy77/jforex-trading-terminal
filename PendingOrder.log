@@ -1,0 +1,82 @@
+[2025-08-02 17:04:36.126] [INFO] P key pressed - starting pending order pattern creation
+[2025-08-02 17:04:36.126] [INFO] Started pending order pattern creation for window 131510 (symbol: XAUUSD)
+[2025-08-02 17:04:37.353] [INFO] Saving horizontal strip screenshot for first click...
+[2025-08-02 17:04:37.370] [INFO] Cropped image around click point (1416, 600): 1920x1039 -> 1920x14, cropY=593
+[2025-08-02 17:04:37.373] [INFO] first screenshot saved (horizontal strip around click point): C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\pending_order_20250802_170437_first.png
+[2025-08-02 17:04:37.686] [INFO] Scheduling Escape key send to window handle: 131510
+[2025-08-02 17:04:37.686] [INFO] Pending order first click recorded at (1416, 600)
+[2025-08-02 17:04:37.686] [INFO] Escape thread started for window handle: 131510
+[2025-08-02 17:04:38.318] [INFO] Escape key sent successfully to window handle: 131510
+[2025-08-02 17:04:49.770] [INFO] Escape key pressed - cancelling pending order pattern
+[2025-08-02 17:04:49.770] [INFO] Pending order pattern cancelled
+[2025-08-02 17:05:04.288] [INFO] P key pressed - starting pending order pattern creation
+[2025-08-02 17:05:04.288] [INFO] Started pending order pattern creation for window 131510 (symbol: XAUUSD)
+[2025-08-02 17:05:05.105] [INFO] Saving horizontal strip screenshot for first click...
+[2025-08-02 17:05:05.122] [INFO] Cropped image around click point (1209, 610): 1920x1039 -> 1920x14, cropY=603
+[2025-08-02 17:05:05.124] [INFO] first screenshot saved (horizontal strip around click point): C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\pending_order_20250802_170505_first.png
+[2025-08-02 17:05:05.436] [INFO] Scheduling Escape key send to window handle: 131510
+[2025-08-02 17:05:05.436] [INFO] Pending order first click recorded at (1209, 610)
+[2025-08-02 17:05:05.437] [INFO] Escape thread started for window handle: 131510
+[2025-08-02 17:05:06.068] [INFO] Escape key sent successfully to window handle: 131510
+[2025-08-02 17:05:08.383] [INFO] P key pressed - starting pending order pattern creation
+[2025-08-02 17:05:08.384] [WARNING] Pending order pattern already active, cancelling previous one
+[2025-08-02 17:05:08.384] [INFO] Pending order pattern cancelled
+[2025-08-02 17:05:08.384] [INFO] Started pending order pattern creation for window 131510 (symbol: XAUUSD)
+[2025-08-02 17:05:17.239] [INFO] Escape key pressed - cancelling pending order pattern
+[2025-08-02 17:05:17.239] [INFO] Pending order pattern cancelled
+[2025-08-02 17:09:40.437] [INFO] P key pressed - starting pending order pattern creation
+[2025-08-02 17:09:40.438] [INFO] Started pending order pattern creation for window 131510 (symbol: XAUUSD)
+[2025-08-02 17:09:40.856] [INFO] Saving horizontal strip screenshot for first click...
+[2025-08-02 17:09:40.875] [INFO] Cropped image around click point (1057, 590): 1920x1039 -> 1920x14, cropY=583
+[2025-08-02 17:09:40.882] [INFO] first screenshot saved (horizontal strip around click point): C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\pending_order_20250802_170940_first.png
+[2025-08-02 17:09:41.193] [INFO] Scheduling Escape key send to window handle: 131510
+[2025-08-02 17:09:41.195] [INFO] Escape thread started for window handle: 131510
+[2025-08-02 17:09:41.196] [INFO] Pending order first click recorded at (1057, 590)
+[2025-08-02 17:09:41.613] [INFO] P key pressed during active pattern - continuing to second click
+[2025-08-02 17:09:41.827] [INFO] Escape key sent successfully to window handle: 131510
+[2025-08-02 17:09:42.115] [INFO] P key pressed during active pattern - continuing to second click
+[2025-08-02 17:09:42.539] [INFO] Saving horizontal strip screenshot for second click...
+[2025-08-02 17:09:42.550] [INFO] Cropped image around click point (1049, 534): 1920x1039 -> 1920x14, cropY=527
+[2025-08-02 17:09:42.551] [INFO] second screenshot saved (horizontal strip around click point): C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\pending_order_20250802_170940_second.png
+[2025-08-02 17:09:42.553] [INFO] Pending order second click recorded at (1049, 534)
+[2025-08-02 17:09:42.554] [INFO] Analyzing and sending pending order to MT4...
+[2025-08-02 17:09:42.555] [INFO] Starting analysis of pending order pattern for symbol: XAUUSD
+[2025-08-02 17:09:42.557] [INFO] Extracting prices from screenshots...
+[2025-08-02 17:09:42.667] [INFO] Extracted entry price: 1,2066045324213084
+[2025-08-02 17:09:42.778] [INFO] Extracted target price: 1,2127701465033687
+[2025-08-02 17:09:42.779] [INFO] Price extraction completed: Entry=1,2066045324213084, Target=1,2127701465033687, StopLoss=1,200438918339248, Direction=Buy
+[2025-08-02 17:09:42.794] [INFO] Pending order data sent to MT4: {"type":"pending_order","symbol":"XAUUSD","direction":"Buy","entry_price":1.2066045324213084,"target_price":1.2127701465033687,"stop_loss_price":1.2004389183392481,"lot_size":0.10000000000000001,"comment":"Pending Order XAUUSD Buy","timestamp":"2025-08-02 17:09:42"}
+[2025-08-02 17:09:42.794] [INFO] Successfully sent pending order to MT4: XAUUSD Buy Entry:1,2066045324213084 Target:1,2127701465033687 StopLoss:1,200438918339248
+[2025-08-02 17:09:42.795] [INFO] Pending order successfully analyzed and sent to MT4
+[2025-08-02 17:09:42.795] [INFO] Pending order pattern completed: FirstClick=(1057, 590), SecondClick=(1049, 534)
+[2025-08-02 17:09:42.872] [INFO] Scheduling Escape key send to window handle: 131510
+[2025-08-02 17:09:42.878] [INFO] Escape thread started for window handle: 131510
+[2025-08-02 17:09:43.516] [INFO] Escape key sent successfully to window handle: 197566
+[2025-08-02 17:09:56.100] [INFO] P key pressed - starting pending order pattern creation
+[2025-08-02 17:09:56.100] [INFO] Started pending order pattern creation for window 131510 (symbol: XAUUSD)
+[2025-08-02 17:09:56.525] [INFO] Saving horizontal strip screenshot for first click...
+[2025-08-02 17:09:56.536] [INFO] Cropped image around click point (1397, 272): 1920x1039 -> 1920x14, cropY=265
+[2025-08-02 17:09:56.537] [INFO] first screenshot saved (horizontal strip around click point): C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\pending_order_20250802_170956_first.png
+[2025-08-02 17:09:56.861] [INFO] Scheduling Escape key send to window handle: 131510
+[2025-08-02 17:09:56.862] [INFO] Pending order first click recorded at (1397, 272)
+[2025-08-02 17:09:56.862] [INFO] Escape thread started for window handle: 131510
+[2025-08-02 17:09:57.364] [INFO] P key pressed during active pattern - continuing to second click
+[2025-08-02 17:09:57.500] [INFO] Escape key sent successfully to window handle: 131510
+[2025-08-02 17:09:57.843] [INFO] P key pressed during active pattern - continuing to second click
+[2025-08-02 17:09:58.345] [INFO] Saving horizontal strip screenshot for second click...
+[2025-08-02 17:09:58.356] [INFO] Cropped image around click point (1382, 336): 1920x1039 -> 1920x14, cropY=329
+[2025-08-02 17:09:58.358] [INFO] second screenshot saved (horizontal strip around click point): C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\pending_order_20250802_170956_second.png
+[2025-08-02 17:09:58.359] [INFO] Pending order second click recorded at (1382, 336)
+[2025-08-02 17:09:58.359] [INFO] Analyzing and sending pending order to MT4...
+[2025-08-02 17:09:58.359] [INFO] Starting analysis of pending order pattern for symbol: XAUUSD
+[2025-08-02 17:09:58.359] [INFO] Extracting prices from screenshots...
+[2025-08-02 17:09:58.473] [INFO] Extracted entry price: 1,207556804068433
+[2025-08-02 17:09:58.584] [INFO] Extracted target price: 1,2157189757863245
+[2025-08-02 17:09:58.584] [INFO] Price extraction completed: Entry=1,207556804068433, Target=1,2157189757863245, StopLoss=1,1993946323505416, Direction=Buy
+[2025-08-02 17:09:58.585] [INFO] Pending order data sent to MT4: {"type":"pending_order","symbol":"XAUUSD","direction":"Buy","entry_price":1.207556804068433,"target_price":1.2157189757863245,"stop_loss_price":1.1993946323505416,"lot_size":0.10000000000000001,"comment":"Pending Order XAUUSD Buy","timestamp":"2025-08-02 17:09:58"}
+[2025-08-02 17:09:58.585] [INFO] Successfully sent pending order to MT4: XAUUSD Buy Entry:1,207556804068433 Target:1,2157189757863245 StopLoss:1,1993946323505416
+[2025-08-02 17:09:58.586] [INFO] Pending order successfully analyzed and sent to MT4
+[2025-08-02 17:09:58.586] [INFO] Pending order pattern completed: FirstClick=(1397, 272), SecondClick=(1382, 336)
+[2025-08-02 17:09:58.664] [INFO] Scheduling Escape key send to window handle: 131510
+[2025-08-02 17:09:58.664] [INFO] Escape thread started for window handle: 131510
+[2025-08-02 17:09:59.296] [INFO] Escape key sent successfully to window handle: 131510
