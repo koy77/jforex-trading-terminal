@@ -82,7 +82,7 @@ namespace ScreenCaptureApp.Services
 
         #endregion
 
-      
+
         /// <summary>
         /// Активирует окно GForex
         /// </summary>
