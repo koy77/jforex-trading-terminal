@@ -673,11 +673,11 @@ namespace ScreenCaptureApp
                 DrawingCanvas.DefaultDrawingAttributes.Width = 2;
                 DrawingCanvas.DefaultDrawingAttributes.Height = 2;
                 DrawingCanvas.EditingMode = System.Windows.Controls.InkCanvasEditingMode.Ink;
-                
+            
                 // Устанавливаем фокус на DrawingCanvas
-                DrawingCanvas.IsHitTestVisible = true;
-                DrawingCanvas.IsEnabled = true;
-                DrawingCanvas.Focus();
+            DrawingCanvas.IsHitTestVisible = true;
+            DrawingCanvas.IsEnabled = true;
+            DrawingCanvas.Focus();
             }
             
             Logger.LogInfo($"Brush mode updated: {(isTradingDrawingMode ? "Trading" : "Simple")} mode");
@@ -761,7 +761,7 @@ namespace ScreenCaptureApp
             };
             
             StrokeCompleted?.Invoke(this, args);
-            SaveCanvasProperly();
+                SaveCanvasProperly();
         }
         
         private void TradingCanvas_StrokeCollected(object sender, System.Windows.Controls.InkCanvasStrokeCollectedEventArgs e)
@@ -912,13 +912,13 @@ namespace ScreenCaptureApp
                 var captureData = CreateCaptureDataFromStroke(stroke);
                 if (captureData != null)
                 {
-                    var databaseService = ServiceContainer.Instance.GetService<DatabaseService>();
-                    var screenshotService = ServiceContainer.Instance.GetService<ScreenshotService>();
-                    
+                var databaseService = ServiceContainer.Instance.GetService<DatabaseService>();
+                var screenshotService = ServiceContainer.Instance.GetService<ScreenshotService>();
+                
                     databaseService.SaveCapture(captureData);
-                    
-                    // Capture screenshot
-                    var debugInfo = screenshotService.CaptureScreenAreaDebug(
+                
+                // Capture screenshot
+                var debugInfo = screenshotService.CaptureScreenAreaDebug(
                         captureData.X, 
                         captureData.Y, 
                         captureData.Width, 
@@ -928,8 +928,8 @@ namespace ScreenCaptureApp
                     );
                     captureData.ScreenshotPath = debugInfo.ScreenshotPath;
                     databaseService.UpdateCapture(captureData);
-                    
-                    // Обновляем настройки символа и брокера
+                
+                // Обновляем настройки символа и брокера
                     UpdateSettingsFromCapture(captureData);
                     
                     Logger.LogTagInfo("JForex", $"CaptureData saved to database: ID={captureData.ID}");
@@ -1120,26 +1120,26 @@ namespace ScreenCaptureApp
             // Сдвигаем все штрихи в DrawingCanvas (только в простом режиме)
             if (!isTradingDrawingMode)
             {
-                var shiftedStrokes = new StrokeCollection();
-                foreach (var stroke in DrawingCanvas.Strokes)
+            var shiftedStrokes = new StrokeCollection();
+            foreach (var stroke in DrawingCanvas.Strokes)
+            {
+                var shiftedStroke = stroke.Clone();
+                var points = new StylusPointCollection();
+                
+                foreach (var point in stroke.StylusPoints)
                 {
-                    var shiftedStroke = stroke.Clone();
-                    var points = new StylusPointCollection();
-                    
-                    foreach (var point in stroke.StylusPoints)
-                    {
-                        points.Add(new StylusPoint(point.X + deltaX, point.Y + deltaY, point.PressureFactor));
-                    }
-                    
-                    shiftedStroke.StylusPoints = points;
-                    shiftedStrokes.Add(shiftedStroke);
+                    points.Add(new StylusPoint(point.X + deltaX, point.Y + deltaY, point.PressureFactor));
                 }
                 
-                // Обновляем штрихи
-                DrawingCanvas.Strokes = shiftedStrokes;
-                
-                // Сразу сохраняем обновленные штрихи
-                SaveCanvasProperly();
+                shiftedStroke.StylusPoints = points;
+                shiftedStrokes.Add(shiftedStroke);
+            }
+            
+            // Обновляем штрихи
+            DrawingCanvas.Strokes = shiftedStrokes;
+            
+            // Сразу сохраняем обновленные штрихи
+            SaveCanvasProperly();
             }
         }
         
@@ -1161,7 +1161,7 @@ namespace ScreenCaptureApp
             Logger.LogDebug("Canvas position reset to origin");
         }
         
-                public void ClearCanvas()
+        public void ClearCanvas()
         {
             Logger.LogInfo("Clearing canvas and deleting files");
             DrawingCanvas.Strokes.Clear();
@@ -1215,9 +1215,9 @@ namespace ScreenCaptureApp
                 }
                 
                 Logger.LogInfo($"Active symbol display updated: {activeSymbol}");
-            }
-            else
-            {
+                }
+                else
+                {
                 ActiveSymbolText.Visibility = Visibility.Collapsed;
                 Logger.LogInfo("Active symbol display hidden - no active symbol");
             }

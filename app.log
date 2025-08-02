@@ -1,21 +1,20 @@
-[2025-08-02 17:09:39.215] [INFO] app.log file deleted successfully
-[2025-08-02 17:09:39.216] [INFO] Trade counter reset successfully
-[2025-08-02 17:09:39.230] [INFO] Initialized 6 symbols in database
-[2025-08-02 17:09:39.231] [INFO] Deleted file: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\pending_order_20250802_170505_first.png
-[2025-08-02 17:09:39.231] [INFO] Cleared Trades folder: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades
-[2025-08-02 17:09:40.436] [DEBUG] P key detected and service is enabled
-[2025-08-02 17:09:40.437] [DEBUG] MainWindow.OnPKeyPressed() called
-[2025-08-02 17:09:40.437] [DEBUG] SimpleTradingOverlay.OnPKeyPressed() called
-[2025-08-02 17:09:41.611] [DEBUG] P key detected and service is enabled
-[2025-08-02 17:09:41.612] [DEBUG] MainWindow.OnPKeyPressed() called
-[2025-08-02 17:09:41.612] [DEBUG] SimpleTradingOverlay.OnPKeyPressed() called
-[2025-08-02 17:09:42.114] [DEBUG] P key detected and service is enabled
-[2025-08-02 17:09:42.114] [DEBUG] MainWindow.OnPKeyPressed() called
-[2025-08-02 17:09:42.115] [DEBUG] SimpleTradingOverlay.OnPKeyPressed() called
-[2025-08-02 17:09:42.794] [INFO] Sent message to MT4 socket: {"type":"pending_order","symbol":"XAUUSD","direction":"Buy","entry_price":1.2066045324213084,"target_price":1.2127701465033687,"stop_loss_price":1.2004389183392481,"lot_size":0.10000000000000001,"comment":"Pending Order XAUUSD Buy","timestamp":"2025-08-02 17:09:42"}
-[2025-08-02 17:09:42.930] [INFO] Applied toolbar settings for window 197566: Risk=1, Duration=2, Broker=Forex
-[2025-08-02 17:09:42.930] [INFO] Overlay positioned on window 197566 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
-[2025-08-02 17:09:54.701] [ERROR] Failed to connect to Pocket Option socket at 192.168.0.3:65300
+[2025-08-02 18:42:43.534] [INFO] app.log file deleted successfully
+[2025-08-02 18:42:43.535] [INFO] Trade counter reset successfully
+[2025-08-02 18:42:43.549] [INFO] Initialized 6 symbols in database
+[2025-08-02 18:42:43.551] [INFO] Deleted file: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\pending_order_20250802_183739_first.png
+[2025-08-02 18:42:43.551] [INFO] Deleted file: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\pending_order_20250802_183739_second.png
+[2025-08-02 18:42:43.551] [INFO] Cleared Trades folder: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades
+[2025-08-02 18:42:45.283] [DEBUG] P key detected and service is enabled
+[2025-08-02 18:42:45.283] [DEBUG] MainWindow.OnPKeyPressed() called
+[2025-08-02 18:42:45.284] [DEBUG] SimpleTradingOverlay.OnPKeyPressed() called
+[2025-08-02 18:42:46.025] [DEBUG] P key detected and service is enabled
+[2025-08-02 18:42:46.026] [DEBUG] MainWindow.OnPKeyPressed() called
+[2025-08-02 18:42:46.026] [DEBUG] SimpleTradingOverlay.OnPKeyPressed() called
+[2025-08-02 18:42:47.065] [DEBUG] P key detected and service is enabled
+[2025-08-02 18:42:47.066] [DEBUG] MainWindow.OnPKeyPressed() called
+[2025-08-02 18:42:47.066] [DEBUG] SimpleTradingOverlay.OnPKeyPressed() called
+[2025-08-02 18:42:47.703] [INFO] Sent message to MT4 socket: {"type":"pending_order","symbol":"EURUSD","direction":"Buy","entry_price":1.2074758484272878,"target_price":1.2198675267600336,"stop_loss_price":1.195084170094542,"lot_size":0.10000000000000001,"comment":"Pending Order EURUSD Buy","timestamp":"2025-08-02 18:42:47"}
+[2025-08-02 18:43:01.232] [ERROR] Failed to connect to Pocket Option socket at 192.168.0.3:65300
 Exception: Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера.
 StackTrace:    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
@@ -23,15 +22,4 @@ StackTrace:    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowE
 --- End of stack trace from previous location ---
    at System.Net.Sockets.TcpClient.CompleteConnectAsync(Task task)
    at ScreenCaptureApp.Services.BinaryOptionsSocketService.ConnectAsync() in C:\apps\jforex-trading-terminal-win10\Services\BinaryOptionsSocketService.cs:line 155
-[2025-08-02 17:09:54.959] [INFO] Applied toolbar settings for window 131510: Risk=1, Duration=2, Broker=Forex
-[2025-08-02 17:09:54.959] [INFO] Overlay positioned on window 131510 (symbol: XAUUSD): Left=0, Top=0, Width=1920
-[2025-08-02 17:09:56.099] [DEBUG] P key detected and service is enabled
-[2025-08-02 17:09:56.099] [DEBUG] MainWindow.OnPKeyPressed() called
-[2025-08-02 17:09:56.100] [DEBUG] SimpleTradingOverlay.OnPKeyPressed() called
-[2025-08-02 17:09:57.363] [DEBUG] P key detected and service is enabled
-[2025-08-02 17:09:57.363] [DEBUG] MainWindow.OnPKeyPressed() called
-[2025-08-02 17:09:57.363] [DEBUG] SimpleTradingOverlay.OnPKeyPressed() called
-[2025-08-02 17:09:57.843] [DEBUG] P key detected and service is enabled
-[2025-08-02 17:09:57.843] [DEBUG] MainWindow.OnPKeyPressed() called
-[2025-08-02 17:09:57.843] [DEBUG] SimpleTradingOverlay.OnPKeyPressed() called
-[2025-08-02 17:09:58.585] [INFO] Sent message to MT4 socket: {"type":"pending_order","symbol":"XAUUSD","direction":"Buy","entry_price":1.207556804068433,"target_price":1.2157189757863245,"stop_loss_price":1.1993946323505416,"lot_size":0.10000000000000001,"comment":"Pending Order XAUUSD Buy","timestamp":"2025-08-02 17:09:58"}
+[2025-08-02 18:43:07.777] [DEBUG] F key detected and service is enabled

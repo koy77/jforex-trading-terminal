@@ -76,13 +76,17 @@ namespace ScreenCaptureApp.Services
                 {
                     using (var bitmap = new Bitmap(patternData.FirstScreenshotPath))
                     {
-                        prices.EntryPrice = await ExtractPriceFromImage(bitmap, "entry");
-                                                 Logger.LogTagInfo("PendingOrder", $"Extracted entry price: {prices.EntryPrice}");
+                        // Вырезаем область справа для анализа цены
+                        using (var priceArea = CropPriceArea(bitmap, "entry", patternData.OrderId))
+                        {
+                            prices.EntryPrice = await ExtractPriceFromImage(priceArea, "entry");
+                            Logger.LogTagInfo("PendingOrder", $"Extracted entry price: {prices.EntryPrice}");
+                        }
                     }
                 }
                 else
                 {
-                                         Logger.LogTagError("PendingOrder", $"First screenshot not found: {patternData.FirstScreenshotPath}");
+                    Logger.LogTagError("PendingOrder", $"First screenshot not found: {patternData.FirstScreenshotPath}");
                     return null;
                 }
                 
@@ -91,13 +95,17 @@ namespace ScreenCaptureApp.Services
                 {
                     using (var bitmap = new Bitmap(patternData.SecondScreenshotPath))
                     {
-                        prices.TargetPrice = await ExtractPriceFromImage(bitmap, "target");
-                                                 Logger.LogTagInfo("PendingOrder", $"Extracted target price: {prices.TargetPrice}");
+                        // Вырезаем область справа для анализа цены
+                        using (var priceArea = CropPriceArea(bitmap, "target", patternData.OrderId))
+                        {
+                            prices.TargetPrice = await ExtractPriceFromImage(priceArea, "target");
+                            Logger.LogTagInfo("PendingOrder", $"Extracted target price: {prices.TargetPrice}");
+                        }
                     }
                 }
                 else
                 {
-                                         Logger.LogTagError("PendingOrder", $"Second screenshot not found: {patternData.SecondScreenshotPath}");
+                    Logger.LogTagError("PendingOrder", $"Second screenshot not found: {patternData.SecondScreenshotPath}");
                     return null;
                 }
                 
@@ -132,6 +140,71 @@ namespace ScreenCaptureApp.Services
             }
         }
         
+        /// <summary>
+        /// Вырезает область справа из изображения для анализа цены
+        /// </summary>
+        /// <param name="sourceBitmap">Исходное изображение</param>
+        /// <param name="priceType">Тип цены (entry/target)</param>
+        /// <param name="orderId">ID заказа для именования файлов</param>
+        /// <returns>Вырезанная область</returns>
+        private Bitmap CropPriceArea(Bitmap sourceBitmap, string priceType, string orderId)
+        {
+            try
+            {
+                // Параметры области: отступ 20 пикселей от правого края + 55 пикселей ширины
+                const int rightOffset = 20;
+                const int areaWidth = 55;
+                
+                int sourceWidth = sourceBitmap.Width;
+                int sourceHeight = sourceBitmap.Height;
+                
+                // Вычисляем координаты области
+                int cropX = sourceWidth - rightOffset - areaWidth;
+                int cropY = 0;
+                int cropWidth = areaWidth;
+                int cropHeight = sourceHeight;
+                
+                // Проверяем, что область не выходит за границы изображения
+                if (cropX < 0)
+                {
+                    cropX = 0;
+                    cropWidth = sourceWidth - rightOffset;
+                }
+                
+                // Создаем прямоугольник для обрезки
+                var cropRect = new Rectangle(cropX, cropY, cropWidth, cropHeight);
+                
+                // Создаем новое изображение с обрезанными размерами
+                var croppedImage = new Bitmap(cropWidth, cropHeight);
+                
+                using (var graphics = Graphics.FromImage(croppedImage))
+                {
+                    // Копируем часть исходного изображения
+                    graphics.DrawImage(sourceBitmap, 0, 0, cropRect, GraphicsUnit.Pixel);
+                }
+                
+                // Сохраняем вырезанную область для дебага
+                string debugDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Trades", "Debug");
+                if (!Directory.Exists(debugDir))
+                {
+                    Directory.CreateDirectory(debugDir);
+                }
+                
+                string debugFileName = $"{priceType}_price_{orderId}.png";
+                string debugFilePath = Path.Combine(debugDir, debugFileName);
+                croppedImage.Save(debugFilePath, System.Drawing.Imaging.ImageFormat.Png);
+                
+                Logger.LogTagInfo("PendingOrder", $"Saved {priceType} price area: {sourceWidth}x{sourceHeight} -> {cropWidth}x{cropHeight}, cropX={cropX}, saved to {debugFilePath}");
+                
+                return croppedImage;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("PendingOrder", $"Error cropping price area for {priceType}", ex);
+                return new Bitmap(sourceBitmap); // Возвращаем исходное изображение в случае ошибки
+            }
+        }
+
         /// <summary>
         /// Извлекает цену из изображения (заглушка - в реальности здесь будет OCR)
         /// </summary>

@@ -2053,3 +2053,27 @@
 [2025-08-02 17:09:54.959] [INFO] Skipping open symbol command - Forex broker selected
 [2025-08-02 17:09:54.959] [INFO] OrderSummary panel hidden
 [2025-08-02 17:09:54.959] [INFO] Loaded settings for HandleID 131510: Risk=1, Duration=2, Broker=Forex
+[2025-08-02 18:37:19.246] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-02 18:37:19.257] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-02 18:37:19.257] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-02 18:37:19.257] [INFO] OrderSummary panel hidden
+[2025-08-02 18:37:33.008] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-02 18:37:33.008] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-02 18:37:33.008] [INFO] OrderSummary panel hidden
+[2025-08-02 18:37:33.010] [INFO] Created default settings for HandleID 197588: Risk=1, Duration=2, Broker=Forex
+[2025-08-02 18:37:33.011] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-02 18:37:33.011] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-02 18:37:33.011] [INFO] OrderSummary panel hidden
+[2025-08-02 18:37:33.012] [INFO] Loaded settings for HandleID 197588: Risk=1, Duration=2, Broker=Forex
+[2025-08-02 18:42:40.315] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-02 18:42:40.326] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-02 18:42:40.327] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-02 18:42:40.327] [INFO] OrderSummary panel hidden
+[2025-08-02 18:42:42.060] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-02 18:42:42.060] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-02 18:42:42.060] [INFO] OrderSummary panel hidden
+[2025-08-02 18:42:42.062] [INFO] Created default settings for HandleID 197588: Risk=1, Duration=2, Broker=Forex
+[2025-08-02 18:42:42.063] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-02 18:42:42.063] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-02 18:42:42.063] [INFO] OrderSummary panel hidden
+[2025-08-02 18:42:42.064] [INFO] Loaded settings for HandleID 197588: Risk=1, Duration=2, Broker=Forex

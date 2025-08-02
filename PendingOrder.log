@@ -80,3 +80,61 @@
 [2025-08-02 17:09:58.664] [INFO] Scheduling Escape key send to window handle: 131510
 [2025-08-02 17:09:58.664] [INFO] Escape thread started for window handle: 131510
 [2025-08-02 17:09:59.296] [INFO] Escape key sent successfully to window handle: 131510
+[2025-08-02 18:37:38.623] [INFO] P key pressed - starting pending order pattern creation
+[2025-08-02 18:37:38.624] [INFO] Started pending order pattern creation for window 197588 (symbol: EURUSD)
+[2025-08-02 18:37:39.049] [INFO] Saving horizontal strip screenshot for first click...
+[2025-08-02 18:37:39.070] [INFO] Cropped image around click point (1250, 579): 1920x1039 -> 1920x14, cropY=572
+[2025-08-02 18:37:39.077] [INFO] first screenshot saved (horizontal strip around click point): C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\pending_order_20250802_183739_first.png
+[2025-08-02 18:37:39.393] [INFO] Scheduling Escape key send to window handle: 197588
+[2025-08-02 18:37:39.394] [INFO] Escape thread started for window handle: 197588
+[2025-08-02 18:37:39.395] [INFO] Pending order first click recorded at (1250, 579)
+[2025-08-02 18:37:39.518] [INFO] P key pressed during active pattern - continuing to second click
+[2025-08-02 18:37:40.030] [INFO] Escape key sent successfully to window handle: 197588
+[2025-08-02 18:37:40.190] [INFO] P key pressed during active pattern - continuing to second click
+[2025-08-02 18:37:40.859] [INFO] Saving horizontal strip screenshot for second click...
+[2025-08-02 18:37:40.870] [INFO] Cropped image around click point (1250, 508): 1920x1039 -> 1920x14, cropY=501
+[2025-08-02 18:37:40.872] [INFO] second screenshot saved (horizontal strip around click point): C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\pending_order_20250802_183739_second.png
+[2025-08-02 18:37:40.873] [INFO] Pending order second click recorded at (1250, 508)
+[2025-08-02 18:37:40.875] [INFO] Analyzing and sending pending order to MT4...
+[2025-08-02 18:37:40.876] [INFO] Starting analysis of pending order pattern for symbol: EURUSD
+[2025-08-02 18:37:40.878] [INFO] Extracting prices from screenshots...
+[2025-08-02 18:37:40.990] [INFO] Extracted entry price: 1,2064256979912622
+[2025-08-02 18:37:41.100] [INFO] Extracted target price: 1,2059329260390041
+[2025-08-02 18:37:41.100] [INFO] Price extraction completed: Entry=1,2064256979912622, Target=1,2059329260390041, StopLoss=1,2069184699435203, Direction=Sell
+[2025-08-02 18:37:41.116] [INFO] Pending order data sent to MT4: {"type":"pending_order","symbol":"EURUSD","direction":"Sell","entry_price":1.2064256979912622,"target_price":1.2059329260390041,"stop_loss_price":1.2069184699435203,"lot_size":0.10000000000000001,"comment":"Pending Order EURUSD Sell","timestamp":"2025-08-02 18:37:41"}
+[2025-08-02 18:37:41.116] [INFO] Successfully sent pending order to MT4: EURUSD Sell Entry:1,2064256979912622 Target:1,2059329260390041 StopLoss:1,2069184699435203
+[2025-08-02 18:37:41.116] [INFO] Pending order successfully analyzed and sent to MT4
+[2025-08-02 18:37:41.117] [INFO] Pending order pattern completed: FirstClick=(1250, 579), SecondClick=(1250, 508)
+[2025-08-02 18:37:41.196] [INFO] Scheduling Escape key send to window handle: 197588
+[2025-08-02 18:37:41.196] [INFO] Escape thread started for window handle: 197588
+[2025-08-02 18:37:41.834] [INFO] Escape key sent successfully to window handle: 197588
+[2025-08-02 18:42:45.284] [INFO] P key pressed - starting pending order pattern creation
+[2025-08-02 18:42:45.285] [INFO] Started pending order pattern creation for window 197588 (symbol: EURUSD)
+[2025-08-02 18:42:45.686] [INFO] Saving horizontal strip screenshot for first click...
+[2025-08-02 18:42:45.705] [INFO] Cropped image around click point (795, 390): 1920x1039 -> 1920x14, cropY=383
+[2025-08-02 18:42:45.712] [INFO] first screenshot saved (horizontal strip around click point): C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\pending_order_20250802_184245_first.png
+[2025-08-02 18:42:46.026] [INFO] P key pressed during active pattern - continuing to second click
+[2025-08-02 18:42:46.028] [INFO] Scheduling Escape key send to window handle: 197588
+[2025-08-02 18:42:46.030] [INFO] Escape thread started for window handle: 197588
+[2025-08-02 18:42:46.032] [INFO] Pending order first click recorded at (795, 390)
+[2025-08-02 18:42:46.647] [INFO] Escape key sent successfully to window handle: 197588
+[2025-08-02 18:42:47.066] [INFO] P key pressed during active pattern - continuing to second click
+[2025-08-02 18:42:47.445] [INFO] Saving horizontal strip screenshot for second click...
+[2025-08-02 18:42:47.456] [INFO] Cropped image around click point (799, 319): 1920x1039 -> 1920x14, cropY=312
+[2025-08-02 18:42:47.457] [INFO] second screenshot saved (horizontal strip around click point): C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\pending_order_20250802_184245_second.png
+[2025-08-02 18:42:47.459] [INFO] Pending order second click recorded at (799, 319)
+[2025-08-02 18:42:47.460] [INFO] Analyzing and sending pending order to MT4...
+[2025-08-02 18:42:47.461] [INFO] Starting analysis of pending order pattern for symbol: EURUSD
+[2025-08-02 18:42:47.463] [INFO] Extracting prices from screenshots...
+[2025-08-02 18:42:47.469] [INFO] Saved entry price area: 1920x14 -> 55x14, cropX=1845, saved to C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\Debug\entry_price_20250802_184245.png
+[2025-08-02 18:42:47.575] [INFO] Extracted entry price: 1,2074758484272878
+[2025-08-02 18:42:47.577] [INFO] Saved target price area: 1920x14 -> 55x14, cropX=1845, saved to C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\Debug\target_price_20250802_184245.png
+[2025-08-02 18:42:47.685] [INFO] Extracted target price: 1,2198675267600336
+[2025-08-02 18:42:47.686] [INFO] Price extraction completed: Entry=1,2074758484272878, Target=1,2198675267600336, StopLoss=1,195084170094542, Direction=Buy
+[2025-08-02 18:42:47.703] [INFO] Pending order data sent to MT4: {"type":"pending_order","symbol":"EURUSD","direction":"Buy","entry_price":1.2074758484272878,"target_price":1.2198675267600336,"stop_loss_price":1.195084170094542,"lot_size":0.10000000000000001,"comment":"Pending Order EURUSD Buy","timestamp":"2025-08-02 18:42:47"}
+[2025-08-02 18:42:47.703] [INFO] Successfully sent pending order to MT4: EURUSD Buy Entry:1,2074758484272878 Target:1,2198675267600336 StopLoss:1,195084170094542
+[2025-08-02 18:42:47.703] [INFO] Pending order successfully analyzed and sent to MT4
+[2025-08-02 18:42:47.704] [INFO] Pending order pattern completed: FirstClick=(795, 390), SecondClick=(799, 319)
+[2025-08-02 18:42:47.780] [INFO] Scheduling Escape key send to window handle: 197588
+[2025-08-02 18:42:47.781] [INFO] Escape thread started for window handle: 197588
+[2025-08-02 18:42:48.418] [INFO] Escape key sent successfully to window handle: 197588
