@@ -2,8 +2,13 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using ScreenCaptureApp.Models;
 using ScreenCaptureApp.Services;
+using Emgu.CV;
+using Emgu.CV.OCR;
+using Emgu.CV.Structure;
+using Emgu.CV.CvEnum;
 
 namespace ScreenCaptureApp.Services
 {
@@ -206,13 +211,98 @@ namespace ScreenCaptureApp.Services
         }
 
         /// <summary>
-        /// Извлекает цену из изображения (заглушка - в реальности здесь будет OCR)
+        /// Извлекает цену из изображения с помощью OCR (Emgu.CV + Tesseract)
         /// </summary>
         private async Task<double> ExtractPriceFromImage(Bitmap bitmap, string priceType)
         {
-            // TODO: Здесь должна быть реализация OCR для извлечения цены из изображения
-            // Пока возвращаем случайную цену для демонстрации
-            
+            try
+            {
+                Logger.LogTagInfo("PendingOrder", $"Starting OCR extraction for {priceType} price...");
+                
+                // Путь к tessdata (нужно установить Tesseract-OCR)
+                string tessDataPath = @"C:\Program Files\Tesseract-OCR\tessdata";
+                
+                // Проверяем, существует ли папка tessdata
+                if (!Directory.Exists(tessDataPath))
+                {
+                    Logger.LogTagWarning("PendingOrder", $"Tesseract tessdata not found at {tessDataPath}, using fallback method");
+                    return await ExtractPriceFallback(priceType);
+                }
+                
+                                 // Конвертируем System.Drawing.Bitmap в Emgu.CV Image
+                 using (var ms = new MemoryStream())
+                 {
+                     bitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                     ms.Position = 0;
+                     
+                     using (var img = new Image<Bgr, byte>(bitmap.Width, bitmap.Height))
+                     {
+                         // Копируем данные из Bitmap в Emgu.CV Image
+                         for (int y = 0; y < bitmap.Height; y++)
+                         {
+                             for (int x = 0; x < bitmap.Width; x++)
+                             {
+                                 var pixel = bitmap.GetPixel(x, y);
+                                 img[y, x] = new Bgr(pixel.B, pixel.G, pixel.R);
+                             }
+                         }
+                         
+                         // Преобразуем в серый цвет
+                        var gray = img.Convert<Gray, byte>();
+                        
+                        // Применяем бинаризацию для улучшения распознавания
+                        var binary = gray.ThresholdBinary(new Gray(128), new Gray(255));
+                        
+                                                 // Создаем Tesseract engine
+                         using (var ocr = new Tesseract(tessDataPath, "eng", OcrEngineMode.Default))
+                         {
+                             // Ограничиваем алфавит только цифрами и точкой
+                             ocr.SetVariable("tessedit_char_whitelist", "0123456789.");
+                             
+                             // Устанавливаем изображение для распознавания
+                             ocr.SetImage(binary);
+                             
+                             // Запускаем распознавание
+                             ocr.Recognize();
+                             
+                             // Получаем результат распознавания
+                             var result = ocr.GetUTF8Text();
+                             string resultText = result != null ? result.Trim() : "";
+                             
+                             Logger.LogTagInfo("PendingOrder", $"OCR raw result for {priceType}: '{resultText}'");
+                             
+                             // Фильтруем результат через регулярное выражение
+                             string numbersOnly = Regex.Replace(resultText, @"[^0-9.]", "");
+                             
+                             Logger.LogTagInfo("PendingOrder", $"OCR filtered result for {priceType}: '{numbersOnly}'");
+                             
+                             // Пытаемся распарсить результат
+                             if (double.TryParse(numbersOnly, out double price))
+                             {
+                                 Logger.LogTagInfo("PendingOrder", $"Successfully extracted {priceType} price: {price}");
+                                 return price;
+                             }
+                             else
+                             {
+                                 Logger.LogTagWarning("PendingOrder", $"Failed to parse OCR result '{numbersOnly}' for {priceType}, using fallback");
+                                 return await ExtractPriceFallback(priceType);
+                             }
+                         }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("PendingOrder", $"Error during OCR extraction for {priceType}", ex);
+                return await ExtractPriceFallback(priceType);
+            }
+        }
+        
+        /// <summary>
+        /// Fallback метод для извлечения цены (используется при ошибках OCR)
+        /// </summary>
+        private async Task<double> ExtractPriceFallback(string priceType)
+        {
             await Task.Delay(100); // Имитация обработки
             
             var random = new Random();

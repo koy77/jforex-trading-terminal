@@ -1,25 +1,17 @@
-[2025-08-02 18:42:43.534] [INFO] app.log file deleted successfully
-[2025-08-02 18:42:43.535] [INFO] Trade counter reset successfully
-[2025-08-02 18:42:43.549] [INFO] Initialized 6 symbols in database
-[2025-08-02 18:42:43.551] [INFO] Deleted file: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\pending_order_20250802_183739_first.png
-[2025-08-02 18:42:43.551] [INFO] Deleted file: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\pending_order_20250802_183739_second.png
-[2025-08-02 18:42:43.551] [INFO] Cleared Trades folder: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades
-[2025-08-02 18:42:45.283] [DEBUG] P key detected and service is enabled
-[2025-08-02 18:42:45.283] [DEBUG] MainWindow.OnPKeyPressed() called
-[2025-08-02 18:42:45.284] [DEBUG] SimpleTradingOverlay.OnPKeyPressed() called
-[2025-08-02 18:42:46.025] [DEBUG] P key detected and service is enabled
-[2025-08-02 18:42:46.026] [DEBUG] MainWindow.OnPKeyPressed() called
-[2025-08-02 18:42:46.026] [DEBUG] SimpleTradingOverlay.OnPKeyPressed() called
-[2025-08-02 18:42:47.065] [DEBUG] P key detected and service is enabled
-[2025-08-02 18:42:47.066] [DEBUG] MainWindow.OnPKeyPressed() called
-[2025-08-02 18:42:47.066] [DEBUG] SimpleTradingOverlay.OnPKeyPressed() called
-[2025-08-02 18:42:47.703] [INFO] Sent message to MT4 socket: {"type":"pending_order","symbol":"EURUSD","direction":"Buy","entry_price":1.2074758484272878,"target_price":1.2198675267600336,"stop_loss_price":1.195084170094542,"lot_size":0.10000000000000001,"comment":"Pending Order EURUSD Buy","timestamp":"2025-08-02 18:42:47"}
-[2025-08-02 18:43:01.232] [ERROR] Failed to connect to Pocket Option socket at 192.168.0.3:65300
-Exception: Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера.
-StackTrace:    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
-   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
-   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
---- End of stack trace from previous location ---
-   at System.Net.Sockets.TcpClient.CompleteConnectAsync(Task task)
-   at ScreenCaptureApp.Services.BinaryOptionsSocketService.ConnectAsync() in C:\apps\jforex-trading-terminal-win10\Services\BinaryOptionsSocketService.cs:line 155
-[2025-08-02 18:43:07.777] [DEBUG] F key detected and service is enabled
+[2025-08-02 18:59:52.114] [INFO] app.log file deleted successfully
+[2025-08-02 18:59:52.115] [INFO] Trade counter reset successfully
+[2025-08-02 18:59:52.115] [INFO] Initialized 6 symbols in database
+[2025-08-02 18:59:52.116] [INFO] Deleted file: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\pending_order_20250802_185829_first.png
+[2025-08-02 18:59:52.116] [INFO] Deleted file: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\pending_order_20250802_185829_second.png
+[2025-08-02 18:59:52.116] [INFO] Deleted file: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\pending_order_20250802_185831_first.png
+[2025-08-02 18:59:52.116] [INFO] Deleted file: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\pending_order_20250802_185831_second.png
+[2025-08-02 18:59:52.117] [INFO] Deleted file: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\Debug\entry_price_20250802_185829.png
+[2025-08-02 18:59:52.117] [INFO] Deleted file: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\Debug\entry_price_20250802_185831.png
+[2025-08-02 18:59:52.117] [INFO] Deleted file: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\Debug\target_price_20250802_185829.png
+[2025-08-02 18:59:52.117] [INFO] Deleted file: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\Debug\target_price_20250802_185831.png
+[2025-08-02 18:59:52.117] [INFO] Cleared Trades folder: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades
+[2025-08-02 19:00:04.421] [DEBUG] P key detected and service is enabled
+[2025-08-02 19:00:04.422] [DEBUG] MainWindow.OnPKeyPressed() called
+[2025-08-02 19:00:04.422] [DEBUG] SimpleTradingOverlay.OnPKeyPressed() called
+[2025-08-02 19:00:07.616] [INFO] Sent message to MT4 socket: {"type":"pending_order","symbol":"XAUUSD","direction":"Sell","entry_price":2248456,"target_price":3348,"stop_loss_price":4493564,"lot_size":0.10000000000000001,"comment":"Pending Order XAUUSD Sell","timestamp":"2025-08-02 19:00:07"}
+[2025-08-02 19:01:11.380] [DEBUG] S key detected and service is enabled
