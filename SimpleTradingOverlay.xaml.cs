@@ -547,7 +547,7 @@ namespace ScreenCaptureApp
                     _currentPendingOrderPattern.OrderId = DateTime.Now.ToString("yyyyMMdd_HHmmss");
 
                     // Сохраняем горизонтальную полосу после первого клика
-                    await SaveHorizontalStripScreenshot("first");
+                                                    await SaveHorizontalStripScreenshot("first");
 
                     // Отправляем клавишу Escape в целевое окно с задержкой 300 мс
                     await Task.Delay(300);

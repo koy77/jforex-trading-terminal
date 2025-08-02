@@ -82,11 +82,11 @@ namespace ScreenCaptureApp.Services
                     using (var bitmap = new Bitmap(patternData.FirstScreenshotPath))
                     {
                         // Вырезаем область справа для анализа цены
-                        using (var priceArea = CropPriceArea(bitmap, "entry", patternData.OrderId))
-                        {
-                            prices.EntryPrice = await ExtractPriceFromImage(priceArea, "entry");
-                            Logger.LogTagInfo("PendingOrder", $"Extracted entry price: {prices.EntryPrice}");
-                        }
+                                                 using (var priceArea = CropPriceArea(bitmap, "entry", patternData.OrderId))
+                         {
+                             prices.EntryPrice = await ExtractPriceFromImage(priceArea, "entry", patternData.OrderId);
+                             Logger.LogTagInfo("PendingOrder", $"Extracted entry price: {prices.EntryPrice}");
+                         }
                     }
                 }
                 else
@@ -101,11 +101,11 @@ namespace ScreenCaptureApp.Services
                     using (var bitmap = new Bitmap(patternData.SecondScreenshotPath))
                     {
                         // Вырезаем область справа для анализа цены
-                        using (var priceArea = CropPriceArea(bitmap, "target", patternData.OrderId))
-                        {
-                            prices.TargetPrice = await ExtractPriceFromImage(priceArea, "target");
-                            Logger.LogTagInfo("PendingOrder", $"Extracted target price: {prices.TargetPrice}");
-                        }
+                                                 using (var priceArea = CropPriceArea(bitmap, "target", patternData.OrderId))
+                         {
+                             prices.TargetPrice = await ExtractPriceFromImage(priceArea, "target", patternData.OrderId);
+                             Logger.LogTagInfo("PendingOrder", $"Extracted target price: {prices.TargetPrice}");
+                         }
                     }
                 }
                 else
@@ -210,10 +210,10 @@ namespace ScreenCaptureApp.Services
             }
         }
 
-        /// <summary>
-        /// Извлекает цену из изображения с помощью OCR (Emgu.CV + Tesseract)
-        /// </summary>
-        private async Task<double> ExtractPriceFromImage(Bitmap bitmap, string priceType)
+                 /// <summary>
+         /// Извлекает цену из изображения с помощью OCR (Emgu.CV + Tesseract)
+         /// </summary>
+         private async Task<double> ExtractPriceFromImage(Bitmap bitmap, string priceType, string orderId)
         {
             try
             {
@@ -247,20 +247,35 @@ namespace ScreenCaptureApp.Services
                              }
                          }
                          
-                         // Преобразуем в серый цвет
-                        var gray = img.Convert<Gray, byte>();
-                        
-                        // Применяем бинаризацию для улучшения распознавания
-                        var binary = gray.ThresholdBinary(new Gray(128), new Gray(255));
-                        
-                                                 // Создаем Tesseract engine
+                                                  // Преобразуем в серый цвет
+                         var gray = img.Convert<Gray, byte>();
+                         
+                         // Применяем бинаризацию для улучшения распознавания
+                         // Используем адаптивную бинаризацию для лучшего результата
+                         var binary = gray.ThresholdAdaptive(new Gray(255), AdaptiveThresholdType.GaussianC, ThresholdType.Binary, 11, new Gray(2));
+                         
+                         // Инвертируем изображение, чтобы получить черный текст на белом фоне
+                         var inverted = binary.Not();
+                         
+                         // Сохраняем финальную картинку для анализа
+                         string debugDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Trades", "Debug");
+                         if (!Directory.Exists(debugDir))
+                         {
+                             Directory.CreateDirectory(debugDir);
+                         }
+                         
+                         string finalImagePath = Path.Combine(debugDir, $"final_ocr_{priceType}_{orderId}.png");
+                         inverted.Save(finalImagePath);
+                         Logger.LogTagInfo("PendingOrder", $"Saved final OCR image for {priceType}: {finalImagePath}");
+                         
+                         // Создаем Tesseract engine
                          using (var ocr = new Tesseract(tessDataPath, "eng", OcrEngineMode.Default))
                          {
                              // Ограничиваем алфавит только цифрами и точкой
                              ocr.SetVariable("tessedit_char_whitelist", "0123456789.");
                              
-                             // Устанавливаем изображение для распознавания
-                             ocr.SetImage(binary);
+                             // Устанавливаем изображение для распознавания (инвертированное)
+                             ocr.SetImage(inverted);
                              
                              // Запускаем распознавание
                              ocr.Recognize();
@@ -268,26 +283,19 @@ namespace ScreenCaptureApp.Services
                              // Получаем результат распознавания
                              var result = ocr.GetUTF8Text();
                              string resultText = result != null ? result.Trim() : "";
-                             
+
                              Logger.LogTagInfo("PendingOrder", $"OCR raw result for {priceType}: '{resultText}'");
-                             
-                             // Фильтруем результат через регулярное выражение
-                             string numbersOnly = Regex.Replace(resultText, @"[^0-9.]", "");
-                             
-                             Logger.LogTagInfo("PendingOrder", $"OCR filtered result for {priceType}: '{numbersOnly}'");
-                             
-                             // Пытаемся распарсить результат
-                             if (double.TryParse(numbersOnly, out double price))
+
+                             // Преобразуем строку в double
+                             double price = 0.0;
+                             if (!double.TryParse(resultText.Replace(',', '.'), System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out price))
                              {
-                                 Logger.LogTagInfo("PendingOrder", $"Successfully extracted {priceType} price: {price}");
-                                 return price;
+                                 Logger.LogTagWarning("PendingOrder", $"Failed to parse OCR result to double for {priceType}: '{resultText}'");
+                                 price = await ExtractPriceFallback(priceType);
                              }
-                             else
-                             {
-                                 Logger.LogTagWarning("PendingOrder", $"Failed to parse OCR result '{numbersOnly}' for {priceType}, using fallback");
-                                 return await ExtractPriceFallback(priceType);
-                             }
-                         }
+                             return price;
+                              
+                          }
                     }
                 }
             }
