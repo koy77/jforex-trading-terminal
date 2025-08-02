@@ -19,11 +19,32 @@ namespace ScreenCaptureApp.Controls
         public BrokerType SelectedBroker { get; private set; } = BrokerType.Forex;
 
         private Mt4SocketService _mt4SocketService;
+        private ToolbarSettingsManager _toolbarSettingsManager;
         private string _currentSymbol;
+        private long _currentHandleID;
 
         public TradingToolbar()
         {
             InitializeComponent();
+            
+            // Получаем ToolbarSettingsManager из DI контейнера
+            try
+            {
+                _toolbarSettingsManager = ServiceContainer.Instance.GetService<ToolbarSettingsManager>();
+                if (_toolbarSettingsManager != null)
+                {
+                    Logger.LogTagInfo("TradingToolbar", "ToolbarSettingsManager initialized successfully");
+                }
+                else
+                {
+                    Logger.LogTagWarning("TradingToolbar", "ToolbarSettingsManager is null - settings will not be saved/loaded");
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("TradingToolbar", "Failed to get ToolbarSettingsManager from DI container", ex);
+            }
+            
             HighlightSelectedBroker(SelectedBroker);
             HighlightSelectedRiskButton(SelectedRisk);
             
@@ -61,7 +82,7 @@ namespace ScreenCaptureApp.Controls
             }
             catch (Exception ex)
             {
-                Logger.LogError($"Error subscribing to MT4 socket events: {ex.Message}", ex);
+                Logger.LogTagError("TradingToolbar", $"Error subscribing to MT4 socket events: {ex.Message}", ex);
             }
         }
 
@@ -92,18 +113,18 @@ namespace ScreenCaptureApp.Controls
 
                 if (matchingSymbol != null)
                 {
-                    Logger.LogInfo($"Found matching symbol: {_currentSymbol} matches {matchingSymbol.Symbol}");
+                    Logger.LogTagInfo("TradingToolbar", $"Found matching symbol: {_currentSymbol} matches {matchingSymbol.Symbol}");
                     ShowOrderSummary(matchingSymbol);
                 }
                 else
                 {
-                    Logger.LogInfo($"No matching symbol found for {_currentSymbol}");
+                    Logger.LogTagInfo("TradingToolbar", $"No matching symbol found for {_currentSymbol}");
                     HideOrderSummary();
                 }
             }
             catch (Exception ex)
             {
-                Logger.LogError($"Error handling orders summary event: {ex.Message}", ex);
+                Logger.LogTagError("TradingToolbar", $"Error handling orders summary event: {ex.Message}", ex);
                 HideOrderSummary();
             }
         }
@@ -128,7 +149,7 @@ namespace ScreenCaptureApp.Controls
             OrderPointsText.Text = $"Pts: {symbolInfo.ProfitPoints:F0}";
             
             OrderSummaryPanel.Visibility = Visibility.Visible;
-            Logger.LogInfo($"OrderSummary panel shown for symbol: {symbolInfo.Symbol}, Lots: {symbolInfo.Lots}, Percent: {symbolInfo.Percent}, Points: {symbolInfo.ProfitPoints}");
+            Logger.LogTagInfo("TradingToolbar", $"OrderSummary panel shown for symbol: {symbolInfo.Symbol}, Lots: {symbolInfo.Lots}, Percent: {symbolInfo.Percent}, Points: {symbolInfo.ProfitPoints}");
         }
 
         private void HideOrderSummary()
@@ -136,14 +157,14 @@ namespace ScreenCaptureApp.Controls
             if (Dispatcher.CheckAccess())
             {
                 OrderSummaryPanel.Visibility = Visibility.Collapsed;
-                Logger.LogInfo("OrderSummary panel hidden");
+                Logger.LogTagInfo("TradingToolbar", "OrderSummary panel hidden");
             }
             else
             {
                 Dispatcher.Invoke(() => 
                 {
                     OrderSummaryPanel.Visibility = Visibility.Collapsed;
-                    Logger.LogInfo("OrderSummary panel hidden");
+                    Logger.LogTagInfo("TradingToolbar", "OrderSummary panel hidden");
                 });
             }
         }
@@ -162,7 +183,7 @@ namespace ScreenCaptureApp.Controls
         {
             if (!string.IsNullOrEmpty(_currentSymbol))
             {
-                Logger.LogInfo($"BE clicked for {_currentSymbol}");
+                Logger.LogTagInfo("TradingToolbar", $"BE clicked for {_currentSymbol}");
                 // TODO: Implement BE functionality
             }
         }
@@ -171,7 +192,7 @@ namespace ScreenCaptureApp.Controls
         {
             if (!string.IsNullOrEmpty(_currentSymbol))
             {
-                Logger.LogInfo($"TP1 clicked for {_currentSymbol}");
+                Logger.LogTagInfo("TradingToolbar", $"TP1 clicked for {_currentSymbol}");
                 // TODO: Implement TP1 functionality
             }
         }
@@ -180,7 +201,7 @@ namespace ScreenCaptureApp.Controls
         {
             if (!string.IsNullOrEmpty(_currentSymbol))
             {
-                Logger.LogInfo($"TP2 clicked for {_currentSymbol}");
+                Logger.LogTagInfo("TradingToolbar", $"TP2 clicked for {_currentSymbol}");
                 // TODO: Implement TP2 functionality
             }
         }
@@ -194,12 +215,12 @@ namespace ScreenCaptureApp.Controls
                     // Send close_positions command for the symbol
                     var cmd = $"{{\"cmd\":\"close_positions\",\"symbol\":\"{symbol}\"}}\r\n";
                     _ = _mt4SocketService.WriteAsync(cmd);
-                    Logger.LogInfo($"Sent close_positions command for {symbol}");
+                    Logger.LogTagInfo("TradingToolbar", $"Sent close_positions command for {symbol}");
                 }
             }
             catch (Exception ex)
             {
-                Logger.LogError($"Error closing symbol order: {ex.Message}", ex);
+                Logger.LogTagError("TradingToolbar", $"Error closing symbol order: {ex.Message}", ex);
             }
         }
 
@@ -218,15 +239,15 @@ namespace ScreenCaptureApp.Controls
                 SymbolLabel.Visibility = Visibility.Visible;
                 
                 // Отправляем команду открытия символа только для binary-брокеров
-                Logger.LogInfo($"SetSymbol: Current broker is {SelectedBroker}, symbol is {symbol}");
+                Logger.LogTagInfo("TradingToolbar", $"SetSymbol called for {symbol}, current broker: {SelectedBroker}");
                 if (SelectedBroker != BrokerType.Forex)
                 {
-                    Logger.LogInfo($"SetSymbol: Sending open symbol command for {symbol} to broker {SelectedBroker}");
+                    Logger.LogTagInfo("TradingToolbar", $"Sending open symbol command for broker {SelectedBroker}");
                     SendOpenSymbolCommand(symbol);
                 }
                 else
                 {
-                    Logger.LogInfo($"SetSymbol: Skipping open symbol command for {symbol} - Forex broker selected");
+                    Logger.LogTagInfo("TradingToolbar", $"Skipping open symbol command - Forex broker selected");
                 }
             }
             else
@@ -241,7 +262,48 @@ namespace ScreenCaptureApp.Controls
 
         public void SetHandleID(long handleID)
         {
+            _currentHandleID = handleID;
             HandleIDLabel.Text = $"HandleID: {handleID}";
+            // Загружаем настройки из ToolbarSettingsManager
+            if (_toolbarSettingsManager != null)
+            {
+                var settings = _toolbarSettingsManager.GetSettings(_currentHandleID);
+                if (settings != null)
+                {
+                    SelectedRisk = settings.Risk;
+                    SelectedDuration = settings.Duration;
+                    SelectedBroker = settings.Broker;
+                    HighlightSelectedRiskButton(SelectedRisk);
+                    HighlightSelectedDurationButton(SelectedDuration);
+                    HighlightSelectedBroker(SelectedBroker);
+                    Logger.LogTagInfo("TradingToolbar", $"Loaded settings for HandleID {handleID}: Risk={settings.Risk}, Duration={settings.Duration}, Broker={settings.Broker}");
+                }
+                else
+                {
+                    // Создаем настройки по умолчанию
+                    _toolbarSettingsManager.UpdateSettings(_currentHandleID, SelectedRisk, SelectedDuration, SelectedBroker);
+                    Logger.LogTagInfo("TradingToolbar", $"Created default settings for HandleID {handleID}: Risk={SelectedRisk}, Duration={SelectedDuration}, Broker={SelectedBroker}");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Устанавливает брокера извне (например, при переключении окон)
+        /// </summary>
+        public void SetBroker(BrokerType broker)
+        {
+            Logger.LogTagInfo("TradingToolbar", $"SetBroker called - changing from {SelectedBroker} to {broker}");
+            SelectedBroker = broker;
+            HighlightSelectedBroker(broker);
+            
+            // Сохраняем настройки в ToolbarSettingsManager
+            if (_toolbarSettingsManager != null && _currentHandleID != 0)
+            {
+                _toolbarSettingsManager.UpdateSettings(_currentHandleID, broker: broker);
+                Logger.LogTagInfo("TradingToolbar", $"Saved broker setting {broker} for HandleID {_currentHandleID}");
+            }
+            
+            Logger.LogTagInfo("TradingToolbar", $"SelectedBroker updated to {SelectedBroker}");
         }
 
         public void ShowDurationPanel(bool show)
@@ -259,14 +321,27 @@ namespace ScreenCaptureApp.Controls
         {
             if (sender is Button btn && btn.Tag != null && double.TryParse(btn.Tag.ToString(), out double val))
             {
+                Logger.LogTagInfo("TradingToolbar", $"Risk button clicked - value: {val}, current broker: {SelectedBroker}");
                 SelectedRisk = val;
                 HighlightSelectedRiskButton(val);
                 RiskChanged?.Invoke(val);
                 
+                // Сохраняем настройки в ToolbarSettingsManager
+                if (_toolbarSettingsManager != null && _currentHandleID != 0)
+                {
+                    _toolbarSettingsManager.UpdateSettings(_currentHandleID, risk: val);
+                    Logger.LogTagInfo("TradingToolbar", $"Saved risk setting {val} for HandleID {_currentHandleID}");
+                }
+                
                 // Отправляем команду в binary-сокет только для binary-брокеров
                 if (SelectedBroker != BrokerType.Forex)
                 {
+                    Logger.LogTagInfo("TradingToolbar", $"Sending risk command for broker {SelectedBroker}");
                     SendRiskCommandToBinarySocket(val);
+                }
+                else
+                {
+                    Logger.LogTagInfo("TradingToolbar", $"Skipping risk command - Forex broker selected");
                 }
             }
         }
@@ -275,14 +350,27 @@ namespace ScreenCaptureApp.Controls
         {
             if (sender is Button btn && int.TryParse(btn.Tag.ToString(), out int val))
             {
+                Logger.LogTagInfo("TradingToolbar", $"Duration button clicked - value: {val}, current broker: {SelectedBroker}");
                 SelectedDuration = val;
                 HighlightSelectedDurationButton(val);
                 DurationChanged?.Invoke(val);
                 
+                // Сохраняем настройки в ToolbarSettingsManager
+                if (_toolbarSettingsManager != null && _currentHandleID != 0)
+                {
+                    _toolbarSettingsManager.UpdateSettings(_currentHandleID, duration: val);
+                    Logger.LogTagInfo("TradingToolbar", $"Saved duration setting {val} for HandleID {_currentHandleID}");
+                }
+                
                 // Отправляем команду в binary-сокет только для binary-брокеров
                 if (SelectedBroker != BrokerType.Forex)
                 {
+                    Logger.LogTagInfo("TradingToolbar", $"Sending duration command for broker {SelectedBroker}");
                     SendDurationCommandToBinarySocket(val);
+                }
+                else
+                {
+                    Logger.LogTagInfo("TradingToolbar", $"Skipping duration command - Forex broker selected");
                 }
             }
         }
@@ -291,6 +379,7 @@ namespace ScreenCaptureApp.Controls
         {
             if (sender is Button btn && btn.Tag != null)
             {
+                BrokerType oldType = SelectedBroker;
                 BrokerType newType = BrokerType.Forex;
                 switch (btn.Tag.ToString())
                 {
@@ -299,9 +388,20 @@ namespace ScreenCaptureApp.Controls
                     case "Binarium": newType = BrokerType.Binarium; break;
                     case "Quotex": newType = BrokerType.Quotex; break;
                 }
+                
+                Logger.LogTagInfo("TradingToolbar", $"Broker button clicked - changing from {oldType} to {newType}");
                 SelectedBroker = newType;
                 HighlightSelectedBroker(newType);
                 BrokerChanged?.Invoke(newType);
+                
+                // Сохраняем настройки в ToolbarSettingsManager
+                if (_toolbarSettingsManager != null && _currentHandleID != 0)
+                {
+                    _toolbarSettingsManager.UpdateSettings(_currentHandleID, broker: newType);
+                    Logger.LogTagInfo("TradingToolbar", $"Saved broker setting {newType} for HandleID {_currentHandleID}");
+                }
+                
+                Logger.LogTagInfo("TradingToolbar", $"SelectedBroker updated to {SelectedBroker}");
             }
         }
 
@@ -320,17 +420,17 @@ namespace ScreenCaptureApp.Controls
                     
                     if (!success)
                     {
-                        Logger.LogWarning($"Failed to set risk {risk} for broker {brokerName}");
+                        Logger.LogTagWarning("TradingToolbar", $"Failed to set risk {risk} for broker {brokerName}");
                     }
                 }
                 else
                 {
-                    Logger.LogWarning("Binary socket service not available for risk command");
+                    Logger.LogTagWarning("TradingToolbar", "Binary socket service not available for risk command");
                 }
             }
             catch (Exception ex)
             {
-                Logger.LogError($"Error setting risk via binary socket service: {ex.Message}", ex);
+                Logger.LogTagError("TradingToolbar", $"Error setting risk via binary socket service: {ex.Message}", ex);
             }
         }
 
@@ -349,17 +449,17 @@ namespace ScreenCaptureApp.Controls
                     
                     if (!success)
                     {
-                        Logger.LogWarning($"Failed to set duration {duration} for broker {brokerName}");
+                        Logger.LogTagWarning("TradingToolbar", $"Failed to set duration {duration} for broker {brokerName}");
                     }
                 }
                 else
                 {
-                    Logger.LogWarning("Binary socket service not available for duration command");
+                    Logger.LogTagWarning("TradingToolbar", "Binary socket service not available for duration command");
                 }
             }
             catch (Exception ex)
             {
-                Logger.LogError($"Error setting duration via binary socket service: {ex.Message}", ex);
+                Logger.LogTagError("TradingToolbar", $"Error setting duration via binary socket service: {ex.Message}", ex);
             }
         }
 
@@ -368,33 +468,33 @@ namespace ScreenCaptureApp.Controls
         /// </summary>
         private async void SendOpenSymbolCommand(string symbolName)
         {
-            Logger.LogInfo($"SendOpenSymbolCommand: Starting to send command for symbol {symbolName}, broker {SelectedBroker}");
+            Logger.LogTagInfo("TradingToolbar", $"SendOpenSymbolCommand: Starting to send command for symbol {symbolName}, broker {SelectedBroker}");
             try
             {
                 var binarySocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
                 if (binarySocketService != null)
                 {
                     string brokerName = SelectedBroker.ToString();
-                    Logger.LogInfo($"SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol({brokerName}, {symbolName})");
+                    Logger.LogTagInfo("TradingToolbar", $"SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol({brokerName}, {symbolName})");
                     bool success = await binarySocketService.OpenSymbol(brokerName, symbolName);
                     
                     if (!success)
                     {
-                        Logger.LogWarning($"Failed to open symbol {symbolName} for broker {brokerName}");
+                        Logger.LogTagWarning("TradingToolbar", $"Failed to open symbol {symbolName} for broker {brokerName}");
                     }
                     else
                     {
-                        Logger.LogInfo($"Successfully sent open symbol command for {symbolName} to {brokerName}");
+                        Logger.LogTagInfo("TradingToolbar", $"Successfully sent open symbol command for {symbolName} to {brokerName}");
                     }
                 }
                 else
                 {
-                    Logger.LogWarning("Binary socket service not available for open symbol command");
+                    Logger.LogTagWarning("TradingToolbar", "Binary socket service not available for open symbol command");
                 }
             }
             catch (Exception ex)
             {
-                Logger.LogError($"Error opening symbol via binary socket service: {ex.Message}", ex);
+                Logger.LogTagError("TradingToolbar", $"Error opening symbol via binary socket service: {ex.Message}", ex);
             }
         }
 
