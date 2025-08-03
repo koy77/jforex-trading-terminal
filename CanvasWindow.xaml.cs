@@ -902,11 +902,14 @@ namespace ScreenCaptureApp
                 var firstPoint = points[0];
                 var lastPoint = points[points.Count - 1];
 
-                // Конвертируем координаты из TradingCanvas в экранные координаты
-                var firstScreenPoint = TradingCanvas.PointToScreen(new System.Windows.Point(firstPoint.X, firstPoint.Y));
-                var lastScreenPoint = TradingCanvas.PointToScreen(new System.Windows.Point(lastPoint.X, lastPoint.Y));
+                // Конвертируем координаты из TradingCanvas в экранные координаты с учетом смещения canvas
+                var firstScreenPoint = TradingCanvas.PointToScreen(new System.Windows.Point(firstPoint.X - canvasOffsetX, firstPoint.Y - canvasOffsetY));
+                var lastScreenPoint = TradingCanvas.PointToScreen(new System.Windows.Point(lastPoint.X - canvasOffsetX, lastPoint.Y - canvasOffsetY));
 
-                Logger.LogTagInfo("JForex", $"Processing trading stroke directly: Point1=({firstScreenPoint.X}, {firstScreenPoint.Y}), Point2=({lastScreenPoint.X}, {lastScreenPoint.Y})");
+                Logger.LogTagInfo("JForex", $"Processing trading stroke directly: Canvas offsets: X={canvasOffsetX}, Y={canvasOffsetY}");
+                Logger.LogTagInfo("JForex", $"Original stroke points: Point1=({firstPoint.X}, {firstPoint.Y}), Point2=({lastPoint.X}, {lastPoint.Y})");
+                Logger.LogTagInfo("JForex", $"Adjusted stroke points: Point1=({firstPoint.X - canvasOffsetX}, {firstPoint.Y - canvasOffsetY}), Point2=({lastPoint.X - canvasOffsetX}, {lastPoint.Y - canvasOffsetY})");
+                Logger.LogTagInfo("JForex", $"Final screen points: Point1=({firstScreenPoint.X}, {firstScreenPoint.Y}), Point2=({lastScreenPoint.X}, {lastScreenPoint.Y})");
 
                 // Создаем и сохраняем CaptureData
                 var captureData = CreateCaptureDataFromStroke(stroke);

@@ -302,6 +302,16 @@ namespace ScreenCaptureApp.Services
                 // Add a small delay to ensure window is fully activated
                 await Task.Delay(100);
 
+                // Send 'A' key to activate trendline drawing tool
+                if (!SendKeyPress(targetWindowHandle, 'A'))
+                {
+                    Logger.LogTagError("JForex", "Failed to send 'A' key to activate trendline tool");
+                    return false;
+                }
+
+                // Add a small delay after sending 'A' key
+                await Task.Delay(100);
+
                 // Click at the first point
                 if (!ClickAtPosition(targetWindowHandle, firstWindowPoint.X, firstWindowPoint.Y))
                 {
