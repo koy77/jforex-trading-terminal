@@ -24,15 +24,11 @@ namespace ScreenCaptureApp.Services
         // Events
         public event Action OnSpaceKeyPressed;
         public event Action OnEscapeKeyPressed;
-        public event Action OnTKeyPressed;
-        public event Action OnEnterKeyPressed;
         public event Action OnBackQuoteKeyPressed;
         public event Action OnCKeyPressed;
         public event Action OnWKeyPressed;
         public event Action OnAKeyPressed;
-        public event Action OnSKeyPressed;
         public event Action OnDKeyPressed;
-        public event Action OnPKeyPressed;
         // Symbol hotkey events (1-6)
         public event Action OnSymbolHotkeyPressed1;
         public event Action OnSymbolHotkeyPressed2;
@@ -209,7 +205,7 @@ namespace ScreenCaptureApp.Services
                 else if (vkCode == VK_P && IsEnabled)
                 {
                     Logger.LogDebug("P key detected and service is enabled");
-                    OnPKeyPressed?.Invoke();
+                    // OnPKeyPressed?.Invoke();
                 }
                 else if (vkCode == VK_Q && IsEnabled)
                 {

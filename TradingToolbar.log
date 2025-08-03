@@ -30037,3 +30037,471 @@
 [2025-08-03 21:54:03.886] [INFO] Entry Price set: 197,86942 for GBPJPY
 [2025-08-03 21:54:03.915] [INFO] Entry Price toast shown: Entry Price: 197,86942 (GBPJPY)
 [2025-08-03 21:54:03.916] [INFO] Price display updated: Entry=197,86942, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-03 22:43:40.884] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 22:43:40.885] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 22:43:40.885] [INFO] OrderSummary panel hidden
+[2025-08-03 22:43:40.885] [INFO] Price display panel hidden
+[2025-08-03 22:43:40.887] [INFO] Created default settings for HandleID 985876: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 22:43:40.888] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 22:43:40.888] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 22:43:40.888] [INFO] OrderSummary panel hidden
+[2025-08-03 22:43:40.889] [INFO] Price display panel hidden
+[2025-08-03 22:43:40.889] [INFO] Loaded settings for HandleID 985876: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 22:43:40.906] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 22:43:40.906] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 22:43:40.906] [INFO] OrderSummary panel hidden
+[2025-08-03 22:43:40.906] [INFO] Price display panel hidden
+[2025-08-03 22:43:40.907] [INFO] Created default settings for HandleID 1247880: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 22:43:40.907] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 22:43:40.907] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 22:43:40.907] [INFO] OrderSummary panel hidden
+[2025-08-03 22:43:40.907] [INFO] Price display panel hidden
+[2025-08-03 22:43:40.907] [INFO] Loaded settings for HandleID 1247880: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:16:54.639] [INFO] TradingToolbar instance 1 created
+[2025-08-03 23:16:54.639] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-03 23:16:54.639] [INFO] ToastNotifyService initialized successfully
+[2025-08-03 23:16:54.641] [INFO] Instance 1: Successfully subscribed to HTTP server price level events
+[2025-08-03 23:16:54.653] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-03 23:16:54.653] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:16:54.654] [INFO] OrderSummary panel hidden
+[2025-08-03 23:16:54.654] [INFO] Price display panel hidden
+[2025-08-03 23:16:55.185] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-03 23:16:55.186] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:16:55.186] [INFO] OrderSummary panel hidden
+[2025-08-03 23:16:55.186] [INFO] Price display panel hidden
+[2025-08-03 23:16:55.187] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-03 23:16:55.187] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:16:55.187] [INFO] OrderSummary panel hidden
+[2025-08-03 23:16:55.187] [INFO] Price display panel hidden
+[2025-08-03 23:17:03.796] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 23:17:03.797] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:17:03.797] [INFO] OrderSummary panel hidden
+[2025-08-03 23:17:03.797] [INFO] Price display panel hidden
+[2025-08-03 23:17:03.799] [INFO] Created default settings for HandleID 1247880: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:17:03.801] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 23:17:03.801] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:17:03.801] [INFO] OrderSummary panel hidden
+[2025-08-03 23:17:03.801] [INFO] Price display panel hidden
+[2025-08-03 23:17:03.802] [INFO] Loaded settings for HandleID 1247880: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:17:15.028] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-03 23:17:15.029] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:17:15.029] [INFO] OrderSummary panel hidden
+[2025-08-03 23:17:15.029] [INFO] Price display panel hidden
+[2025-08-03 23:17:15.029] [INFO] Created default settings for HandleID 2097200: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:17:15.030] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-03 23:17:15.030] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:17:15.030] [INFO] OrderSummary panel hidden
+[2025-08-03 23:17:15.030] [INFO] Price display panel hidden
+[2025-08-03 23:17:15.030] [INFO] Loaded settings for HandleID 2097200: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:17:21.169] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3358,36304 | Type: unknown | Time: 2025-08-03 23:17:21.168
+[2025-08-03 23:17:21.198] [INFO] Toast notification shown by instance 1: HTTP: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 3358,36304 (XAUUSD)
+[2025-08-03 23:17:21.200] [INFO] Processing price level: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 3358,36304
+[2025-08-03 23:17:21.200] [INFO] Starting new price level cycle - waiting for Entry Price
+[2025-08-03 23:17:21.206] [INFO] Price display updated: Entry=3358,36304, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-03 23:17:26.833] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3357,74606 | Type: unknown | Time: 2025-08-03 23:17:26.833
+[2025-08-03 23:17:26.855] [INFO] Toast notification shown by instance 1: HTTP: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 3357,74606 (XAUUSD)
+[2025-08-03 23:17:26.855] [INFO] Processing price level: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 3357,74606
+[2025-08-03 23:17:26.855] [INFO] Entry Price set: 3357,74606 for XAUUSD
+[2025-08-03 23:17:26.890] [INFO] Entry Price toast shown: Entry Price: 3357,74606 (XAUUSD)
+[2025-08-03 23:17:26.891] [INFO] Price display updated: Entry=3357,74606, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-03 23:17:31.775] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3358,87114 | Type: unknown | Time: 2025-08-03 23:17:31.775
+[2025-08-03 23:17:31.788] [INFO] Toast notification shown by instance 1: HTTP: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 3358,87114 (XAUUSD)
+[2025-08-03 23:17:31.788] [INFO] Processing price level: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 3358,87114
+[2025-08-03 23:17:31.788] [INFO] Stop Loss Price set: 3358,87114 for XAUUSD
+[2025-08-03 23:17:31.801] [INFO] Stop Loss toast shown: Stop Loss: 3358,87114 | Trade: BUY (XAUUSD)
+[2025-08-03 23:17:31.801] [INFO] Price display updated: Entry=3357,74606, StopLoss=3358,87114, TradeType=Ready to Trade
+[2025-08-03 23:17:31.803] [INFO] Sending trade command to MT4: buy XAUUSD Entry:3357,74606 SL:3358,87114 Risk:1
+[2025-08-03 23:17:31.811] [INFO] Price display panel hidden
+[2025-08-03 23:17:31.811] [INFO] Price level state reset
+[2025-08-03 23:17:37.282] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3359,45183 | Type: unknown | Time: 2025-08-03 23:17:37.282
+[2025-08-03 23:17:37.295] [INFO] Toast notification shown by instance 1: HTTP: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 3359,45183 (XAUUSD)
+[2025-08-03 23:17:37.295] [INFO] Processing price level: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 3359,45183
+[2025-08-03 23:17:37.296] [INFO] Starting new price level cycle - waiting for Entry Price
+[2025-08-03 23:17:37.296] [INFO] Price display updated: Entry=3359,45183, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-03 23:17:44.750] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3360,23817 | Type: unknown | Time: 2025-08-03 23:17:44.750
+[2025-08-03 23:17:44.765] [INFO] Toast notification shown by instance 1: HTTP: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 3360,23817 (XAUUSD)
+[2025-08-03 23:17:44.765] [INFO] Processing price level: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 3360,23817
+[2025-08-03 23:17:44.765] [INFO] Entry Price set: 3360,23817 for XAUUSD
+[2025-08-03 23:17:44.799] [INFO] Entry Price toast shown: Entry Price: 3360,23817 (XAUUSD)
+[2025-08-03 23:17:44.800] [INFO] Price display updated: Entry=3360,23817, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-03 23:17:52.522] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3360,90355 | Type: unknown | Time: 2025-08-03 23:17:52.522
+[2025-08-03 23:17:52.536] [INFO] Toast notification shown by instance 1: HTTP: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 3360,90355 (XAUUSD)
+[2025-08-03 23:17:52.537] [INFO] Processing price level: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 3360,90355
+[2025-08-03 23:17:52.537] [INFO] Stop Loss Price set: 3360,90355 for XAUUSD
+[2025-08-03 23:17:52.553] [INFO] Stop Loss toast shown: Stop Loss: 3360,90355 | Trade: BUY (XAUUSD)
+[2025-08-03 23:17:52.553] [INFO] Price display updated: Entry=3360,23817, StopLoss=3360,90355, TradeType=Ready to Trade
+[2025-08-03 23:17:52.553] [INFO] Sending trade command to MT4: buy XAUUSD Entry:3360,23817 SL:3360,90355 Risk:1
+[2025-08-03 23:17:52.555] [INFO] Price display panel hidden
+[2025-08-03 23:17:52.555] [INFO] Price level state reset
+[2025-08-03 23:18:21.987] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-03 23:18:21.987] [INFO] Cancelling price level entry
+[2025-08-03 23:18:21.987] [INFO] Price display panel hidden
+[2025-08-03 23:18:21.987] [INFO] Price level state reset
+[2025-08-03 23:18:22.169] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-03 23:18:22.169] [INFO] Cancelling price level entry
+[2025-08-03 23:18:22.169] [INFO] Price display panel hidden
+[2025-08-03 23:18:22.169] [INFO] Price level state reset
+[2025-08-03 23:22:41.609] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 23:22:41.609] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:22:41.609] [INFO] OrderSummary panel hidden
+[2025-08-03 23:22:41.609] [INFO] Price display panel hidden
+[2025-08-03 23:22:41.609] [INFO] Loaded settings for HandleID 1247880: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:22:41.610] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 23:22:41.610] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:22:41.610] [INFO] OrderSummary panel hidden
+[2025-08-03 23:22:41.610] [INFO] Price display panel hidden
+[2025-08-03 23:22:41.610] [INFO] Loaded settings for HandleID 1247880: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:22:43.824] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-03 23:22:43.825] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:22:43.825] [INFO] OrderSummary panel hidden
+[2025-08-03 23:22:43.825] [INFO] Price display panel hidden
+[2025-08-03 23:22:43.825] [INFO] Loaded settings for HandleID 2097200: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:22:43.825] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-03 23:22:43.826] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:22:43.826] [INFO] OrderSummary panel hidden
+[2025-08-03 23:22:43.826] [INFO] Price display panel hidden
+[2025-08-03 23:22:43.826] [INFO] Loaded settings for HandleID 2097200: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:22:52.052] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3359,52441 | Type: unknown | Time: 2025-08-03 23:22:52.052
+[2025-08-03 23:22:52.064] [INFO] Toast notification shown by instance 1: HTTP: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 3359,52441 (XAUUSD)
+[2025-08-03 23:22:52.064] [INFO] Processing price level: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 3359,52441
+[2025-08-03 23:22:52.065] [INFO] Starting new price level cycle - waiting for Entry Price
+[2025-08-03 23:22:52.065] [INFO] Price display updated: Entry=3359,52441, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-03 23:22:52.083] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3360,37125 | Type: unknown | Time: 2025-08-03 23:22:52.083
+[2025-08-03 23:22:52.107] [INFO] Toast notification shown by instance 1: HTTP: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 3360,37125 (XAUUSD)
+[2025-08-03 23:22:52.107] [INFO] Processing price level: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 3360,37125
+[2025-08-03 23:22:52.107] [INFO] Entry Price set: 3360,37125 for XAUUSD
+[2025-08-03 23:22:52.136] [INFO] Entry Price toast shown: Entry Price: 3360,37125 (XAUUSD)
+[2025-08-03 23:22:52.137] [INFO] Price display updated: Entry=3360,37125, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-03 23:22:58.863] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3357,98801 | Type: unknown | Time: 2025-08-03 23:22:58.863
+[2025-08-03 23:22:58.875] [INFO] Toast notification shown by instance 1: HTTP: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 3357,98801 (XAUUSD)
+[2025-08-03 23:22:58.876] [INFO] Processing price level: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 3357,98801
+[2025-08-03 23:22:58.876] [INFO] Stop Loss Price set: 3357,98801 for XAUUSD
+[2025-08-03 23:22:58.907] [INFO] Stop Loss toast shown: Stop Loss: 3357,98801 | Trade: SELL (XAUUSD)
+[2025-08-03 23:22:58.908] [INFO] Price display updated: Entry=3360,37125, StopLoss=3357,98801, TradeType=Ready to Trade
+[2025-08-03 23:22:58.909] [INFO] Sending trade command to MT4: sell XAUUSD Entry:3360,37125 SL:3357,98801 Risk:1
+[2025-08-03 23:22:58.923] [INFO] Price display panel hidden
+[2025-08-03 23:22:58.923] [INFO] Price level state reset
+[2025-08-03 23:23:09.837] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3358,65338 | Type: unknown | Time: 2025-08-03 23:23:09.837
+[2025-08-03 23:23:09.850] [INFO] Toast notification shown by instance 1: HTTP: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 3358,65338 (XAUUSD)
+[2025-08-03 23:23:09.850] [INFO] Processing price level: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 3358,65338
+[2025-08-03 23:23:09.850] [INFO] Starting new price level cycle - waiting for Entry Price
+[2025-08-03 23:23:09.850] [INFO] Price display updated: Entry=3358,65338, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-03 23:23:32.504] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3359,51231 | Type: unknown | Time: 2025-08-03 23:23:32.504
+[2025-08-03 23:23:32.517] [INFO] Toast notification shown by instance 1: HTTP: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 3359,51231 (XAUUSD)
+[2025-08-03 23:23:32.517] [INFO] Processing price level: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 3359,51231
+[2025-08-03 23:23:32.517] [INFO] Entry Price set: 3359,51231 for XAUUSD
+[2025-08-03 23:23:32.553] [INFO] Entry Price toast shown: Entry Price: 3359,51231 (XAUUSD)
+[2025-08-03 23:23:32.554] [INFO] Price display updated: Entry=3359,51231, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-03 23:23:53.893] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-03 23:23:53.893] [INFO] Cancelling price level entry
+[2025-08-03 23:23:53.893] [INFO] Price display panel hidden
+[2025-08-03 23:23:53.893] [INFO] Price level state reset
+[2025-08-03 23:23:54.045] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-03 23:23:54.045] [INFO] Cancelling price level entry
+[2025-08-03 23:23:54.045] [INFO] Price display panel hidden
+[2025-08-03 23:23:54.045] [INFO] Price level state reset
+[2025-08-03 23:25:40.415] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 23:25:40.415] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:25:40.415] [INFO] OrderSummary panel hidden
+[2025-08-03 23:25:40.415] [INFO] Price display panel hidden
+[2025-08-03 23:25:40.416] [INFO] Loaded settings for HandleID 1247880: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:25:40.416] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 23:25:40.416] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:25:40.416] [INFO] OrderSummary panel hidden
+[2025-08-03 23:25:40.416] [INFO] Price display panel hidden
+[2025-08-03 23:25:40.416] [INFO] Loaded settings for HandleID 1247880: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:29:58.868] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-03 23:29:58.868] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:29:58.868] [INFO] OrderSummary panel hidden
+[2025-08-03 23:29:58.868] [INFO] Price display panel hidden
+[2025-08-03 23:29:58.868] [INFO] Loaded settings for HandleID 2097200: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:29:58.869] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-03 23:29:58.869] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:29:58.869] [INFO] OrderSummary panel hidden
+[2025-08-03 23:29:58.869] [INFO] Price display panel hidden
+[2025-08-03 23:29:58.869] [INFO] Loaded settings for HandleID 2097200: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:30:00.931] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 23:30:00.931] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:30:00.932] [INFO] OrderSummary panel hidden
+[2025-08-03 23:30:00.932] [INFO] Price display panel hidden
+[2025-08-03 23:30:00.932] [INFO] Loaded settings for HandleID 1247880: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:30:00.932] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 23:30:00.932] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:30:00.932] [INFO] OrderSummary panel hidden
+[2025-08-03 23:30:00.933] [INFO] Price display panel hidden
+[2025-08-03 23:30:00.933] [INFO] Loaded settings for HandleID 1247880: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:30:03.380] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: EURUSD | Value: 1,15450 | Type: unknown | Time: 2025-08-03 23:30:03.380
+[2025-08-03 23:30:03.394] [INFO] Toast notification shown by instance 1: HTTP: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 1,15450 (EURUSD)
+[2025-08-03 23:30:03.394] [INFO] Processing price level: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 1,15450
+[2025-08-03 23:30:03.394] [INFO] Starting new price level cycle - waiting for Entry Price
+[2025-08-03 23:30:03.395] [INFO] Price display updated: Entry=1,15450, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-03 23:30:06.204] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-03 23:30:06.204] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:30:06.204] [INFO] OrderSummary panel hidden
+[2025-08-03 23:30:06.205] [INFO] Price display panel hidden
+[2025-08-03 23:30:06.205] [INFO] Loaded settings for HandleID 2097200: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:30:06.205] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-03 23:30:06.205] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:30:06.205] [INFO] OrderSummary panel hidden
+[2025-08-03 23:30:06.205] [INFO] Price display panel hidden
+[2025-08-03 23:30:06.205] [INFO] Loaded settings for HandleID 2097200: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:31:43.803] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 23:31:43.803] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:31:43.803] [INFO] OrderSummary panel hidden
+[2025-08-03 23:31:43.803] [INFO] Price display panel hidden
+[2025-08-03 23:31:43.804] [INFO] Loaded settings for HandleID 1247880: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:31:43.804] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 23:31:43.804] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:31:43.804] [INFO] OrderSummary panel hidden
+[2025-08-03 23:31:43.804] [INFO] Price display panel hidden
+[2025-08-03 23:31:43.804] [INFO] Loaded settings for HandleID 1247880: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:32:44.002] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-03 23:32:44.002] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:32:44.002] [INFO] OrderSummary panel hidden
+[2025-08-03 23:32:44.002] [INFO] Price display panel hidden
+[2025-08-03 23:32:44.003] [INFO] Loaded settings for HandleID 2097200: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:32:44.003] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-03 23:32:44.003] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:32:44.003] [INFO] OrderSummary panel hidden
+[2025-08-03 23:32:44.003] [INFO] Price display panel hidden
+[2025-08-03 23:32:44.004] [INFO] Loaded settings for HandleID 2097200: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:32:44.329] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 23:32:44.330] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:32:44.330] [INFO] OrderSummary panel hidden
+[2025-08-03 23:32:44.330] [INFO] Price display panel hidden
+[2025-08-03 23:32:44.330] [INFO] Loaded settings for HandleID 1247880: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:32:44.330] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 23:32:44.331] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:32:44.331] [INFO] OrderSummary panel hidden
+[2025-08-03 23:32:44.331] [INFO] Price display panel hidden
+[2025-08-03 23:32:44.331] [INFO] Loaded settings for HandleID 1247880: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:34:24.409] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-03 23:34:24.409] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:34:24.409] [INFO] OrderSummary panel hidden
+[2025-08-03 23:34:24.409] [INFO] Price display panel hidden
+[2025-08-03 23:34:24.409] [INFO] Loaded settings for HandleID 2097200: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:34:24.410] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-03 23:34:24.410] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:34:24.410] [INFO] OrderSummary panel hidden
+[2025-08-03 23:34:24.410] [INFO] Price display panel hidden
+[2025-08-03 23:34:24.410] [INFO] Loaded settings for HandleID 2097200: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:36:04.959] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 23:36:04.960] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:36:04.960] [INFO] OrderSummary panel hidden
+[2025-08-03 23:36:04.960] [INFO] Price display panel hidden
+[2025-08-03 23:36:04.961] [INFO] Loaded settings for HandleID 1247880: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:36:04.961] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 23:36:04.961] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:36:04.962] [INFO] OrderSummary panel hidden
+[2025-08-03 23:36:04.962] [INFO] Price display panel hidden
+[2025-08-03 23:36:04.962] [INFO] Loaded settings for HandleID 1247880: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:40:21.463] [INFO] TradingToolbar instance 1 created
+[2025-08-03 23:40:21.463] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-03 23:40:21.463] [INFO] ToastNotifyService initialized successfully
+[2025-08-03 23:40:21.465] [INFO] Instance 1: Successfully subscribed to HTTP server price level events
+[2025-08-03 23:40:21.476] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-03 23:40:21.476] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:40:21.476] [INFO] OrderSummary panel hidden
+[2025-08-03 23:40:21.477] [INFO] Price display panel hidden
+[2025-08-03 23:40:21.834] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-03 23:40:21.835] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:40:21.835] [INFO] OrderSummary panel hidden
+[2025-08-03 23:40:21.835] [INFO] Price display panel hidden
+[2025-08-03 23:40:21.836] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-03 23:40:21.836] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:40:21.836] [INFO] OrderSummary panel hidden
+[2025-08-03 23:40:21.836] [INFO] Price display panel hidden
+[2025-08-03 23:40:29.492] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-03 23:40:29.493] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:40:29.493] [INFO] OrderSummary panel hidden
+[2025-08-03 23:40:29.493] [INFO] Price display panel hidden
+[2025-08-03 23:40:29.495] [INFO] Created default settings for HandleID 2097200: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:40:29.496] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-03 23:40:29.496] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:40:29.496] [INFO] OrderSummary panel hidden
+[2025-08-03 23:40:29.496] [INFO] Price display panel hidden
+[2025-08-03 23:40:29.497] [INFO] Loaded settings for HandleID 2097200: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:40:29.756] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 23:40:29.756] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:40:29.756] [INFO] OrderSummary panel hidden
+[2025-08-03 23:40:29.756] [INFO] Price display panel hidden
+[2025-08-03 23:40:29.757] [INFO] Created default settings for HandleID 1247880: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:40:29.757] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 23:40:29.757] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:40:29.757] [INFO] OrderSummary panel hidden
+[2025-08-03 23:40:29.757] [INFO] Price display panel hidden
+[2025-08-03 23:40:29.758] [INFO] Loaded settings for HandleID 1247880: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:40:32.204] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-03 23:40:32.204] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:40:32.204] [INFO] OrderSummary panel hidden
+[2025-08-03 23:40:32.204] [INFO] Price display panel hidden
+[2025-08-03 23:40:32.204] [INFO] Loaded settings for HandleID 2097200: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:40:32.205] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-03 23:40:32.205] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:40:32.205] [INFO] OrderSummary panel hidden
+[2025-08-03 23:40:32.205] [INFO] Price display panel hidden
+[2025-08-03 23:40:32.205] [INFO] Loaded settings for HandleID 2097200: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:40:34.845] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 23:40:34.845] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:40:34.846] [INFO] OrderSummary panel hidden
+[2025-08-03 23:40:34.846] [INFO] Price display panel hidden
+[2025-08-03 23:40:34.846] [INFO] Loaded settings for HandleID 1247880: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:40:34.847] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 23:40:34.847] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:40:34.848] [INFO] OrderSummary panel hidden
+[2025-08-03 23:40:34.848] [INFO] Price display panel hidden
+[2025-08-03 23:40:34.848] [INFO] Loaded settings for HandleID 1247880: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:40:41.316] [INFO] TradingToolbar instance 2 created
+[2025-08-03 23:40:41.316] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-03 23:40:41.317] [INFO] ToastNotifyService initialized successfully
+[2025-08-03 23:40:41.317] [INFO] Instance 2: Successfully subscribed to HTTP server price level events
+[2025-08-03 23:40:41.486] [INFO] Loaded settings for HandleID 1247880: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:40:45.762] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-03 23:40:45.763] [INFO] Cancelling price level entry
+[2025-08-03 23:40:45.763] [INFO] Price display panel hidden
+[2025-08-03 23:40:45.763] [INFO] Price level state reset
+[2025-08-03 23:40:52.684] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: EURUSD | Value: 1,15475 | Type: unknown | Time: 2025-08-03 23:40:52.682
+[2025-08-03 23:40:52.712] [INFO] Toast notification shown by instance 1: HTTP: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 1,15475 (EURUSD)
+[2025-08-03 23:40:52.714] [INFO] Processing price level: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 1,15475
+[2025-08-03 23:40:52.714] [INFO] Starting new price level cycle - waiting for Entry Price
+[2025-08-03 23:40:52.720] [INFO] Price display updated: Entry=1,15475, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-03 23:40:52.722] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: EURUSD | Value: 1,15475 | Type: unknown | Time: 2025-08-03 23:40:52.682
+[2025-08-03 23:40:52.723] [DEBUG] Symbol mismatch: current=, event=EURUSD
+[2025-08-03 23:40:59.405] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: EURUSD | Value: 1,15418 | Type: unknown | Time: 2025-08-03 23:40:59.405
+[2025-08-03 23:40:59.418] [INFO] Toast notification shown by instance 1: HTTP: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 1,15418 (EURUSD)
+[2025-08-03 23:40:59.418] [INFO] Processing price level: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 1,15418
+[2025-08-03 23:40:59.418] [INFO] Entry Price set: 1,15418 for EURUSD
+[2025-08-03 23:40:59.452] [INFO] Entry Price toast shown: Entry Price: 1,15418 (EURUSD)
+[2025-08-03 23:40:59.453] [INFO] Price display updated: Entry=1,15418, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-03 23:40:59.454] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: EURUSD | Value: 1,15418 | Type: unknown | Time: 2025-08-03 23:40:59.405
+[2025-08-03 23:40:59.454] [DEBUG] Symbol mismatch: current=, event=EURUSD
+[2025-08-03 23:41:02.564] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: EURUSD | Value: 1,15516 | Type: unknown | Time: 2025-08-03 23:41:02.564
+[2025-08-03 23:41:02.628] [INFO] Toast notification shown by instance 1: HTTP: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 1,15516 (EURUSD)
+[2025-08-03 23:41:02.628] [INFO] Processing price level: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 1,15516
+[2025-08-03 23:41:02.628] [INFO] Stop Loss Price set: 1,15516 for EURUSD
+[2025-08-03 23:41:02.668] [INFO] Stop Loss toast shown: Stop Loss: 1,15516 | Trade: BUY (EURUSD)
+[2025-08-03 23:41:02.670] [INFO] Price display updated: Entry=1,15418, StopLoss=1,15516, TradeType=Ready to Trade
+[2025-08-03 23:41:02.672] [INFO] Sending trade command to MT4: buy EURUSD Entry:1,15418 SL:1,15516 Risk:1
+[2025-08-03 23:41:02.685] [INFO] Price display panel hidden
+[2025-08-03 23:41:02.686] [INFO] Price level state reset
+[2025-08-03 23:41:02.686] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: EURUSD | Value: 1,15516 | Type: unknown | Time: 2025-08-03 23:41:02.564
+[2025-08-03 23:41:02.687] [DEBUG] Symbol mismatch: current=, event=EURUSD
+[2025-08-03 23:41:40.443] [INFO] TradingToolbar instance 1 created
+[2025-08-03 23:41:40.443] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-03 23:41:40.444] [INFO] ToastNotifyService initialized successfully
+[2025-08-03 23:41:40.445] [INFO] Instance 1: Successfully subscribed to HTTP server price level events
+[2025-08-03 23:41:40.456] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-03 23:41:40.456] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:41:40.457] [INFO] OrderSummary panel hidden
+[2025-08-03 23:41:40.457] [INFO] Price display panel hidden
+[2025-08-03 23:41:40.813] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-03 23:41:40.813] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:41:40.813] [INFO] OrderSummary panel hidden
+[2025-08-03 23:41:40.813] [INFO] Price display panel hidden
+[2025-08-03 23:41:40.814] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-03 23:41:40.814] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:41:40.814] [INFO] OrderSummary panel hidden
+[2025-08-03 23:41:40.814] [INFO] Price display panel hidden
+[2025-08-03 23:41:41.199] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: EURUSD | Value: 1,15663 | Type: unknown | Time: 2025-08-03 23:41:41.197
+[2025-08-03 23:41:41.199] [DEBUG] Symbol mismatch: current=UNKNOWN, event=EURUSD
+[2025-08-03 23:41:41.437] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: EURUSD | Value: 1,15595 | Type: unknown | Time: 2025-08-03 23:41:41.437
+[2025-08-03 23:41:41.437] [DEBUG] Symbol mismatch: current=UNKNOWN, event=EURUSD
+[2025-08-03 23:41:43.892] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-03 23:41:43.892] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:41:43.892] [INFO] OrderSummary panel hidden
+[2025-08-03 23:41:43.892] [INFO] Price display panel hidden
+[2025-08-03 23:41:43.895] [INFO] Created default settings for HandleID 2097200: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:41:43.896] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-03 23:41:43.896] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:41:43.896] [INFO] OrderSummary panel hidden
+[2025-08-03 23:41:43.896] [INFO] Price display panel hidden
+[2025-08-03 23:41:43.897] [INFO] Loaded settings for HandleID 2097200: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:41:43.918] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 23:41:43.918] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:41:43.919] [INFO] OrderSummary panel hidden
+[2025-08-03 23:41:43.919] [INFO] Price display panel hidden
+[2025-08-03 23:41:43.919] [INFO] Created default settings for HandleID 1247880: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:41:43.920] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 23:41:43.920] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:41:43.920] [INFO] OrderSummary panel hidden
+[2025-08-03 23:41:43.920] [INFO] Price display panel hidden
+[2025-08-03 23:41:43.920] [INFO] Loaded settings for HandleID 1247880: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:41:48.578] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: EURUSD | Value: 1,15264 | Type: unknown | Time: 2025-08-03 23:41:48.578
+[2025-08-03 23:41:48.604] [INFO] Toast notification shown by instance 1: HTTP: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 1,15264 (EURUSD)
+[2025-08-03 23:41:48.605] [INFO] Processing price level: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 1,15264
+[2025-08-03 23:41:48.605] [INFO] Starting new price level cycle - waiting for Entry Price
+[2025-08-03 23:41:48.610] [INFO] Price display updated: Entry=1,15264, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-03 23:41:52.126] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: EURUSD | Value: 1,15312 | Type: unknown | Time: 2025-08-03 23:41:52.126
+[2025-08-03 23:41:52.152] [INFO] Toast notification shown by instance 1: HTTP: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 1,15312 (EURUSD)
+[2025-08-03 23:41:52.153] [INFO] Processing price level: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 1,15312
+[2025-08-03 23:41:52.153] [INFO] Entry Price set: 1,15312 for EURUSD
+[2025-08-03 23:41:52.192] [INFO] Entry Price toast shown: Entry Price: 1,15312 (EURUSD)
+[2025-08-03 23:41:52.194] [INFO] Price display updated: Entry=1,15312, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-03 23:41:59.494] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: EURUSD | Value: 1,15361 | Type: unknown | Time: 2025-08-03 23:41:59.494
+[2025-08-03 23:41:59.510] [INFO] Toast notification shown by instance 1: HTTP: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 1,15361 (EURUSD)
+[2025-08-03 23:41:59.511] [INFO] Processing price level: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 1,15361
+[2025-08-03 23:41:59.511] [INFO] Stop Loss Price set: 1,15361 for EURUSD
+[2025-08-03 23:41:59.540] [INFO] Stop Loss toast shown: Stop Loss: 1,15361 | Trade: BUY (EURUSD)
+[2025-08-03 23:41:59.541] [INFO] Price display updated: Entry=1,15312, StopLoss=1,15361, TradeType=Ready to Trade
+[2025-08-03 23:41:59.542] [INFO] Sending trade command to MT4: buy EURUSD Entry:1,15312 SL:1,15361 Risk:1
+[2025-08-03 23:41:59.560] [INFO] Price display panel hidden
+[2025-08-03 23:41:59.560] [INFO] Price level state reset
+[2025-08-03 23:42:08.456] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: EURUSD | Value: 1,15243 | Type: unknown | Time: 2025-08-03 23:42:08.456
+[2025-08-03 23:42:08.470] [INFO] Toast notification shown by instance 1: HTTP: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 1,15243 (EURUSD)
+[2025-08-03 23:42:08.470] [INFO] Processing price level: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 1,15243
+[2025-08-03 23:42:08.471] [INFO] Starting new price level cycle - waiting for Entry Price
+[2025-08-03 23:42:08.471] [INFO] Price display updated: Entry=1,15243, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-03 23:42:14.723] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: EURUSD | Value: 1,15292 | Type: unknown | Time: 2025-08-03 23:42:14.723
+[2025-08-03 23:42:14.741] [INFO] Toast notification shown by instance 1: HTTP: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 1,15292 (EURUSD)
+[2025-08-03 23:42:14.742] [INFO] Processing price level: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 1,15292
+[2025-08-03 23:42:14.742] [INFO] Entry Price set: 1,15292 for EURUSD
+[2025-08-03 23:42:14.756] [INFO] Entry Price toast shown: Entry Price: 1,15292 (EURUSD)
+[2025-08-03 23:42:14.756] [INFO] Price display updated: Entry=1,15292, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-03 23:42:30.349] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: EURUSD | Value: 1,15250 | Type: unknown | Time: 2025-08-03 23:42:30.349
+[2025-08-03 23:42:30.362] [INFO] Toast notification shown by instance 1: HTTP: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 1,15250 (EURUSD)
+[2025-08-03 23:42:30.362] [INFO] Processing price level: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 1,15250
+[2025-08-03 23:42:30.362] [INFO] Stop Loss Price set: 1,15250 for EURUSD
+[2025-08-03 23:42:30.397] [INFO] Stop Loss toast shown: Stop Loss: 1,15250 | Trade: SELL (EURUSD)
+[2025-08-03 23:42:30.398] [INFO] Price display updated: Entry=1,15292, StopLoss=1,15250, TradeType=Ready to Trade
+[2025-08-03 23:42:30.399] [INFO] Sending trade command to MT4: sell EURUSD Entry:1,15292 SL:1,15250 Risk:1
+[2025-08-03 23:42:30.412] [INFO] Price display panel hidden
+[2025-08-03 23:42:30.412] [INFO] Price level state reset
+[2025-08-03 23:42:39.378] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-03 23:42:39.379] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:42:39.379] [INFO] OrderSummary panel hidden
+[2025-08-03 23:42:39.379] [INFO] Price display panel hidden
+[2025-08-03 23:42:39.379] [INFO] Loaded settings for HandleID 2097200: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:42:39.379] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-03 23:42:39.380] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:42:39.380] [INFO] OrderSummary panel hidden
+[2025-08-03 23:42:39.380] [INFO] Price display panel hidden
+[2025-08-03 23:42:39.380] [INFO] Loaded settings for HandleID 2097200: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:42:52.618] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 23:42:52.619] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:42:52.619] [INFO] OrderSummary panel hidden
+[2025-08-03 23:42:52.619] [INFO] Price display panel hidden
+[2025-08-03 23:42:52.619] [INFO] Loaded settings for HandleID 1247880: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:42:52.619] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 23:42:52.620] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:42:52.620] [INFO] OrderSummary panel hidden
+[2025-08-03 23:42:52.620] [INFO] Price display panel hidden
+[2025-08-03 23:42:52.620] [INFO] Loaded settings for HandleID 1247880: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:42:55.056] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.RectangleChartObject - RECTANGLE | Symbol: EURUSD | Value: 1,15419 | Type: unknown | Time: 2025-08-03 23:42:55.056
+[2025-08-03 23:42:55.071] [INFO] Toast notification shown by instance 1: HTTP: com.dukascopy.charts.drawings.RectangleChartObject - RECTANGLE = 1,15419 (EURUSD)
+[2025-08-03 23:42:55.072] [INFO] Processing price level: com.dukascopy.charts.drawings.RectangleChartObject - RECTANGLE = 1,15419
+[2025-08-03 23:42:55.072] [INFO] Starting new price level cycle - waiting for Entry Price
+[2025-08-03 23:42:55.072] [INFO] Price display updated: Entry=1,15419, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-03 23:42:56.153] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-03 23:42:56.154] [INFO] Cancelling price level entry
+[2025-08-03 23:42:56.154] [INFO] Price display panel hidden
+[2025-08-03 23:42:56.154] [INFO] Price level state reset
+[2025-08-03 23:42:58.666] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-03 23:42:58.666] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:42:58.666] [INFO] OrderSummary panel hidden
+[2025-08-03 23:42:58.667] [INFO] Price display panel hidden
+[2025-08-03 23:42:58.667] [INFO] Loaded settings for HandleID 2097200: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 23:42:58.667] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-03 23:42:58.667] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 23:42:58.667] [INFO] OrderSummary panel hidden
+[2025-08-03 23:42:58.668] [INFO] Price display panel hidden
+[2025-08-03 23:42:58.668] [INFO] Loaded settings for HandleID 2097200: Risk=1, Duration=2, Broker=Forex

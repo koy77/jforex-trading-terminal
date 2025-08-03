@@ -286,3 +286,9 @@
 [2025-08-03 21:47:56.054] [SOCKET] MT4 OUT: {"type":"pending_order","symbol":"GBPJPY","direction":"Sell","entry_price":197.548,"stop_loss_price":197.678,"lot_size":0.10000000000000001,"comment":"Pending Order GBPJPY Sell","timestamp":"2025-08-03 21:47:56"}
 [2025-08-03 21:53:54.673] [SOCKET] MT4 OUT: {"type":"pending_order","symbol":"GBPJPY","direction":"Sell","entry_price":1.2077291323002204,"stop_loss_price":1197.2608,"lot_size":0.10000000000000001,"comment":"Pending Order GBPJPY Sell","timestamp":"2025-08-03 21:53:54"}
 [2025-08-03 21:54:03.034] [SOCKET] MT4 OUT: {"type":"pending_order","symbol":"GBPJPY","direction":"Sell","entry_price":197.792,"stop_loss_price":197.869,"lot_size":0.10000000000000001,"comment":"Pending Order GBPJPY Sell","timestamp":"2025-08-03 21:54:03"}
+[2025-08-03 23:17:31.809] [SOCKET] MT4 OUT: {"command":"open_position","symbol":"XAUUSD","type":"buy","entry_price":3357.74606,"stop_loss":3358.87114,"risk":1.0}
+[2025-08-03 23:17:52.553] [SOCKET] MT4 OUT: {"command":"open_position","symbol":"XAUUSD","type":"buy","entry_price":3360.23817,"stop_loss":3360.90355,"risk":1.0}
+[2025-08-03 23:22:58.909] [SOCKET] MT4 OUT: {"command":"open_position","symbol":"XAUUSD","type":"sell","entry_price":3360.37125,"stop_loss":3357.98801,"risk":1.0}
+[2025-08-03 23:41:02.677] [SOCKET] MT4 OUT: {"command":"open_position","symbol":"EURUSD","type":"buy","entry_price":1.15418,"stop_loss":1.15516,"risk":1.0}
+[2025-08-03 23:41:59.549] [SOCKET] MT4 OUT: {"command":"open_position","symbol":"EURUSD","type":"buy","entry_price":1.15312,"stop_loss":1.15361,"risk":1.0}
+[2025-08-03 23:42:30.399] [SOCKET] MT4 OUT: {"command":"open_position","symbol":"EURUSD","type":"sell","entry_price":1.15292,"stop_loss":1.15250,"risk":1.0}

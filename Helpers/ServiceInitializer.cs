@@ -124,15 +124,12 @@ namespace ScreenCaptureApp.Helpers
         public static void InitializeHotkeysService(
             Dispatcher dispatcher,
             Action onSpaceKeyPressed,
-            Action onTKeyPressed,
             Action onEscapeKeyPressed,
             Action onBackQuoteKeyPressed,
             Action onCKeyPressed = null,
             Action onWKeyPressed = null,
             Action onAKeyPressed = null,
-            Action onSKeyPressed = null,
-            Action onDKeyPressed = null,
-            Action onPKeyPressed = null)
+            Action onDKeyPressed = null)
         {
             try
             {
@@ -143,10 +140,7 @@ namespace ScreenCaptureApp.Helpers
                     dispatcher.Invoke(onSpaceKeyPressed);
                 };
                 
-                hotkeysService.OnTKeyPressed += () =>
-                {
-                    dispatcher.Invoke(onTKeyPressed);
-                };
+
                 
                 hotkeysService.OnEscapeKeyPressed += () =>
                 {
@@ -182,13 +176,7 @@ namespace ScreenCaptureApp.Helpers
                     };
                 }
                 
-                if (onSKeyPressed != null)
-                {
-                    hotkeysService.OnSKeyPressed += () =>
-                    {
-                        dispatcher.Invoke(onSKeyPressed);
-                    };
-                }
+
                 
                 if (onDKeyPressed != null)
                 {
@@ -198,13 +186,7 @@ namespace ScreenCaptureApp.Helpers
                     };
                 }
                 
-                if (onPKeyPressed != null)
-                {
-                    hotkeysService.OnPKeyPressed += () =>
-                    {
-                        dispatcher.Invoke(onPKeyPressed);
-                    };
-                }
+
             }
             catch (Exception ex)
             {

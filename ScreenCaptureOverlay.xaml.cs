@@ -66,8 +66,6 @@ namespace ScreenCaptureApp
         {
             _captureService.RemoveMouseHook();
             base.OnClosed(e);
-            if (_hotkeysService != null)
-                _hotkeysService.OnEnterKeyPressed -= HotkeysService_OnEnterKeyPressed;
         }
 
         protected override void OnPreviewKeyDown(System.Windows.Input.KeyEventArgs e)
@@ -150,8 +148,7 @@ namespace ScreenCaptureApp
             {
                 TradingToolbar.SetHandleID(_windowHandle.ToInt64());
             }
-            if (_hotkeysService != null)
-                _hotkeysService.OnEnterKeyPressed += HotkeysService_OnEnterKeyPressed;
+
         }
 
         private void InitializeWindow()
@@ -584,15 +581,7 @@ namespace ScreenCaptureApp
             Canvas.SetTop(CoordinatesText, y);
         }
 
-        private void HotkeysService_OnEnterKeyPressed()
-        {
-            Dispatcher.Invoke(() => {
-                if (SelectionRectangle.Visibility == Visibility.Visible && SelectionRectangle.Width > 0 && SelectionRectangle.Height > 0)
-                {
-                    CompleteCapture();
-                }
-            });
-        }
+
 
 
         private async void CompleteCapture()

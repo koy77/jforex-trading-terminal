@@ -126,15 +126,12 @@ namespace ScreenCaptureApp
                             ServiceInitializer.InitializeHotkeysService(
                 Dispatcher,
                 OnSpaceKeyPressed,
-                OnTKeyPressed,
                 OnEscapeKeyPressed,
                 OnBackQuoteKeyPressed,
                 OnCKeyPressed,
                 OnWKeyPressed,
                 OnAKeyPressed,
-                OnSKeyPressed,
-                OnDKeyPressed,
-                OnPKeyPressed);
+                OnDKeyPressed);
 
                 ServiceInitializer.InitializeWindowManagementService(Dispatcher);
                 ServiceInitializer.InitializeMt4SocketService(Dispatcher);
@@ -217,24 +214,7 @@ namespace ScreenCaptureApp
             }
         }
 
-        private void OnTKeyPressed()
-        {
-            // Get the window handle under the current mouse cursor
-            targetWindow = MainHelper.GetWindowUnderCursor();
 
-            // Show status information
-            if (targetWindow != IntPtr.Zero)
-            {
-                Logger.LogDebug($"Target window captured (Handle: 0x{targetWindow:X})");
-            }
-            else
-            {
-                Logger.LogDebug("No target window found under cursor");
-            }
-
-            Logger.LogDebug("T key pressed - starting capture");
-            StartCapture_Click(null, null);
-        }
 
                 private void OnEscapeKeyPressed()
         {

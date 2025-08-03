@@ -60,7 +60,10 @@ namespace ScreenCaptureApp
         private static extern int GetWindowText(IntPtr hWnd, System.Text.StringBuilder lpString, int nMaxCount);
 
         [DllImport("user32.dll")]
-        private static extern bool PostMessage(IntPtr hWnd, uint Msg, IntPtr wParam, IntPtr lParam);
+        private static extern bool PostMessage(IntPtr hWnd, uint Msg, int wParam, int lParam);
+
+        [DllImport("user32.dll")]
+        private static extern bool GetCursorPos(out POINT lpPoint);
 
         [DllImport("user32.dll")]
         private static extern bool SetForegroundWindow(IntPtr hWnd);
@@ -136,6 +139,9 @@ namespace ScreenCaptureApp
             // Настройка событий TradingToolbar
             SetupTradingToolbarEvents();
             
+            // Подписка на событие HttpServerService
+            SetupHttpServerEvents();
+            
             // Инициализация переменных для троттлинга мыши
             _lastMouseX = 0;
             _lastMouseY = 0;
@@ -208,6 +214,28 @@ namespace ScreenCaptureApp
                 if (_currentWindowHandle != IntPtr.Zero)
                     _toolbarSettingsManager.UpdateSettings(_currentWindowHandle.ToInt64(), duration: duration);
             };
+        }
+
+        private void SetupHttpServerEvents()
+        {
+            var httpServerService = ServiceContainer.Instance.GetService<HttpServerService>();
+            if (httpServerService != null)
+            {
+                httpServerService.NewPriceLevelReceived += HttpServerService_NewPriceLevelReceived;
+                Logger.LogInfo("SimpleTradingOverlay subscribed to HttpServerService.NewPriceLevelReceived");
+            }
+            else
+            {
+                Logger.LogWarning("HttpServerService not found, cannot subscribe to NewPriceLevelReceived event");
+            }
+        }
+
+        private async void HttpServerService_NewPriceLevelReceived(object sender, PriceLevelEventData priceLevelEvent)
+        {
+            await Task.Delay(0); // Fix async warning
+            Logger.LogInfo($"SimpleTradingOverlay: New price level received - {priceLevelEvent.Type} for {priceLevelEvent.Symbol}");
+            
+            SendEscapeToTargetWindow();
         }
 
 
@@ -1159,9 +1187,9 @@ namespace ScreenCaptureApp
                     System.Threading.Thread.Sleep(500);
 
                     // Отправляем нажатие клавиши Escape
-                    PostMessage(_currentWindowHandle, WM_KEYDOWN, (IntPtr)VK_ESCAPE, IntPtr.Zero);
+                    PostMessage(_currentWindowHandle, WM_KEYDOWN, VK_ESCAPE, 0);
                     System.Threading.Thread.Sleep(10);
-                    PostMessage(_currentWindowHandle, WM_KEYUP, (IntPtr)VK_ESCAPE, IntPtr.Zero);
+                    PostMessage(_currentWindowHandle, WM_KEYUP, VK_ESCAPE, 0);
 
                     // Дополнительная задержка перед сбросом флага
                     System.Threading.Thread.Sleep(100);

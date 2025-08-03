@@ -8232,3 +8232,113 @@
 [2025-08-03 21:54:03.342] [INFO] Scheduling Escape key send to window handle: 658254
 [2025-08-03 21:54:03.342] [INFO] Escape thread started for window handle: 658254
 [2025-08-03 21:54:03.977] [INFO] Escape key sent successfully to window handle: 658254
+[2025-08-03 23:17:19.043] [INFO] P key pressed - starting pending order pattern creation
+[2025-08-03 23:17:19.044] [INFO] Started pending order pattern creation for window 2097200 (symbol: XAUUSD)
+[2025-08-03 23:17:19.959] [INFO] Scheduling Escape key send to window handle: 2097200
+[2025-08-03 23:17:19.961] [INFO] Escape thread started for window handle: 2097200
+[2025-08-03 23:17:19.962] [INFO] Pending order first click recorded at (2736, 545)
+[2025-08-03 23:17:20.592] [INFO] Escape key sent successfully to window handle: 2097200
+[2025-08-03 23:17:25.466] [INFO] P key pressed during active pattern - continuing to second click
+[2025-08-03 23:17:25.597] [INFO] Scheduling Escape key send to window handle: 2097200
+[2025-08-03 23:17:25.598] [INFO] Escape thread started for window handle: 2097200
+[2025-08-03 23:17:25.835] [WARNING] Ignoring pending order click 3 - pattern requires exactly 2 clicks
+[2025-08-03 23:17:26.231] [INFO] Escape key sent successfully to window handle: 2097200
+[2025-08-03 23:17:30.921] [INFO] P key pressed during active pattern - continuing to second click
+[2025-08-03 23:17:31.547] [WARNING] Ignoring pending order click 4 - pattern requires exactly 2 clicks
+[2025-08-03 23:17:35.459] [WARNING] Ignoring pending order click 5 - pattern requires exactly 2 clicks
+[2025-08-03 23:17:35.674] [INFO] P key pressed during active pattern - continuing to second click
+[2025-08-03 23:17:36.267] [WARNING] Ignoring pending order click 6 - pattern requires exactly 2 clicks
+[2025-08-03 23:17:36.625] [INFO] P key pressed during active pattern - continuing to second click
+[2025-08-03 23:17:37.147] [WARNING] Ignoring pending order click 7 - pattern requires exactly 2 clicks
+[2025-08-03 23:17:42.307] [WARNING] Ignoring pending order click 8 - pattern requires exactly 2 clicks
+[2025-08-03 23:17:42.835] [WARNING] Ignoring pending order click 9 - pattern requires exactly 2 clicks
+[2025-08-03 23:17:43.595] [WARNING] Ignoring pending order click 10 - pattern requires exactly 2 clicks
+[2025-08-03 23:17:43.881] [INFO] P key pressed during active pattern - continuing to second click
+[2025-08-03 23:17:44.347] [WARNING] Ignoring pending order click 11 - pattern requires exactly 2 clicks
+[2025-08-03 23:17:48.355] [WARNING] Ignoring pending order click 12 - pattern requires exactly 2 clicks
+[2025-08-03 23:17:49.434] [INFO] P key pressed during active pattern - continuing to second click
+[2025-08-03 23:17:49.923] [WARNING] Ignoring pending order click 13 - pattern requires exactly 2 clicks
+[2025-08-03 23:17:57.347] [WARNING] Ignoring pending order click 14 - pattern requires exactly 2 clicks
+[2025-08-03 23:17:59.203] [WARNING] Ignoring pending order click 15 - pattern requires exactly 2 clicks
+[2025-08-03 23:18:07.227] [WARNING] Ignoring pending order click 16 - pattern requires exactly 2 clicks
+[2025-08-03 23:18:10.955] [WARNING] Ignoring pending order click 17 - pattern requires exactly 2 clicks
+[2025-08-03 23:18:12.826] [WARNING] Ignoring pending order click 18 - pattern requires exactly 2 clicks
+[2025-08-03 23:18:13.898] [WARNING] Ignoring pending order click 19 - pattern requires exactly 2 clicks
+[2025-08-03 23:18:16.866] [WARNING] Ignoring pending order click 20 - pattern requires exactly 2 clicks
+[2025-08-03 23:18:17.506] [WARNING] Ignoring pending order click 21 - pattern requires exactly 2 clicks
+[2025-08-03 23:18:21.986] [INFO] Escape key pressed - cancelling pending order pattern
+[2025-08-03 23:18:21.986] [INFO] Pending order pattern cancelled
+[2025-08-03 23:22:46.774] [INFO] P key pressed - starting pending order pattern creation
+[2025-08-03 23:22:46.775] [INFO] Started pending order pattern creation for window 2097200 (symbol: XAUUSD)
+[2025-08-03 23:22:47.797] [INFO] Scheduling Escape key send to window handle: 2097200
+[2025-08-03 23:22:47.798] [INFO] Pending order first click recorded at (2767, 449)
+[2025-08-03 23:22:47.798] [INFO] Escape thread started for window handle: 2097200
+[2025-08-03 23:22:48.433] [INFO] Escape key sent successfully to window handle: 2097200
+[2025-08-03 23:22:49.462] [INFO] P key pressed during active pattern - continuing to second click
+[2025-08-03 23:22:49.593] [INFO] Scheduling Escape key send to window handle: 2097200
+[2025-08-03 23:22:49.594] [INFO] Escape thread started for window handle: 2097200
+[2025-08-03 23:22:49.871] [WARNING] Ignoring pending order click 3 - pattern requires exactly 2 clicks
+[2025-08-03 23:22:50.233] [INFO] Escape key sent successfully to window handle: 2097200
+[2025-08-03 23:22:56.863] [WARNING] Ignoring pending order click 4 - pattern requires exactly 2 clicks
+[2025-08-03 23:22:57.062] [INFO] P key pressed during active pattern - continuing to second click
+[2025-08-03 23:22:57.399] [WARNING] Ignoring pending order click 5 - pattern requires exactly 2 clicks
+[2025-08-03 23:23:01.638] [INFO] P key pressed during active pattern - continuing to second click
+[2025-08-03 23:23:02.101] [INFO] P key pressed during active pattern - continuing to second click
+[2025-08-03 23:23:02.535] [WARNING] Ignoring pending order click 6 - pattern requires exactly 2 clicks
+[2025-08-03 23:23:02.742] [INFO] P key pressed during active pattern - continuing to second click
+[2025-08-03 23:23:03.207] [WARNING] Ignoring pending order click 7 - pattern requires exactly 2 clicks
+[2025-08-03 23:23:09.870] [WARNING] Ignoring pending order click 8 - pattern requires exactly 2 clicks
+[2025-08-03 23:23:10.231] [WARNING] Ignoring pending order click 9 - pattern requires exactly 2 clicks
+[2025-08-03 23:23:14.791] [WARNING] Ignoring pending order click 10 - pattern requires exactly 2 clicks
+[2025-08-03 23:23:17.126] [INFO] P key pressed during active pattern - continuing to second click
+[2025-08-03 23:23:17.703] [WARNING] Ignoring pending order click 11 - pattern requires exactly 2 clicks
+[2025-08-03 23:23:21.879] [WARNING] Ignoring pending order click 12 - pattern requires exactly 2 clicks
+[2025-08-03 23:23:22.911] [WARNING] Ignoring pending order click 13 - pattern requires exactly 2 clicks
+[2025-08-03 23:23:23.375] [WARNING] Ignoring pending order click 14 - pattern requires exactly 2 clicks
+[2025-08-03 23:23:23.863] [WARNING] Ignoring pending order click 15 - pattern requires exactly 2 clicks
+[2025-08-03 23:23:24.255] [WARNING] Ignoring pending order click 16 - pattern requires exactly 2 clicks
+[2025-08-03 23:23:25.431] [WARNING] Ignoring pending order click 17 - pattern requires exactly 2 clicks
+[2025-08-03 23:23:29.911] [WARNING] Ignoring pending order click 18 - pattern requires exactly 2 clicks
+[2025-08-03 23:23:34.359] [WARNING] Ignoring pending order click 19 - pattern requires exactly 2 clicks
+[2025-08-03 23:23:35.991] [WARNING] Ignoring pending order click 20 - pattern requires exactly 2 clicks
+[2025-08-03 23:23:39.191] [WARNING] Ignoring pending order click 21 - pattern requires exactly 2 clicks
+[2025-08-03 23:23:43.855] [WARNING] Ignoring pending order click 22 - pattern requires exactly 2 clicks
+[2025-08-03 23:23:46.767] [WARNING] Ignoring pending order click 23 - pattern requires exactly 2 clicks
+[2025-08-03 23:23:46.935] [WARNING] Ignoring pending order click 24 - pattern requires exactly 2 clicks
+[2025-08-03 23:23:48.535] [WARNING] Ignoring pending order click 25 - pattern requires exactly 2 clicks
+[2025-08-03 23:23:50.567] [WARNING] Ignoring pending order click 26 - pattern requires exactly 2 clicks
+[2025-08-03 23:23:51.271] [WARNING] Ignoring pending order click 27 - pattern requires exactly 2 clicks
+[2025-08-03 23:23:51.575] [WARNING] Ignoring pending order click 28 - pattern requires exactly 2 clicks
+[2025-08-03 23:23:53.711] [WARNING] Ignoring pending order click 29 - pattern requires exactly 2 clicks
+[2025-08-03 23:23:53.893] [INFO] Escape key pressed - cancelling pending order pattern
+[2025-08-03 23:23:53.893] [INFO] Pending order pattern cancelled
+[2025-08-03 23:40:52.722] [INFO] Scheduling Escape key send to window handle: 1247880
+[2025-08-03 23:40:52.723] [INFO] Escape thread started for window handle: 1247880
+[2025-08-03 23:40:53.336] [INFO] Escape key sent successfully to window handle: 1247880
+[2025-08-03 23:40:59.454] [INFO] Scheduling Escape key send to window handle: 1247880
+[2025-08-03 23:40:59.454] [INFO] Escape thread started for window handle: 1247880
+[2025-08-03 23:41:00.067] [INFO] Escape key sent successfully to window handle: 1247880
+[2025-08-03 23:41:02.686] [INFO] Scheduling Escape key send to window handle: 1247880
+[2025-08-03 23:41:02.687] [INFO] Escape thread started for window handle: 1247880
+[2025-08-03 23:41:03.299] [INFO] Escape key sent successfully to window handle: 1247880
+[2025-08-03 23:41:48.611] [INFO] Scheduling Escape key send to window handle: 1247880
+[2025-08-03 23:41:48.613] [INFO] Escape thread started for window handle: 1247880
+[2025-08-03 23:41:49.225] [INFO] Escape key sent successfully to window handle: 1247880
+[2025-08-03 23:41:52.194] [INFO] Scheduling Escape key send to window handle: 1247880
+[2025-08-03 23:41:52.194] [INFO] Escape thread started for window handle: 1247880
+[2025-08-03 23:41:52.807] [INFO] Escape key sent successfully to window handle: 1247880
+[2025-08-03 23:41:59.561] [INFO] Scheduling Escape key send to window handle: 1247880
+[2025-08-03 23:41:59.561] [INFO] Escape thread started for window handle: 1247880
+[2025-08-03 23:42:00.174] [INFO] Escape key sent successfully to window handle: 1247880
+[2025-08-03 23:42:08.471] [INFO] Scheduling Escape key send to window handle: 1247880
+[2025-08-03 23:42:08.472] [INFO] Escape thread started for window handle: 1247880
+[2025-08-03 23:42:09.086] [INFO] Escape key sent successfully to window handle: 1247880
+[2025-08-03 23:42:14.757] [INFO] Scheduling Escape key send to window handle: 1247880
+[2025-08-03 23:42:14.757] [INFO] Escape thread started for window handle: 1247880
+[2025-08-03 23:42:15.370] [INFO] Escape key sent successfully to window handle: 1247880
+[2025-08-03 23:42:30.413] [INFO] Scheduling Escape key send to window handle: 1247880
+[2025-08-03 23:42:30.413] [INFO] Escape thread started for window handle: 1247880
+[2025-08-03 23:42:31.026] [INFO] Escape key sent successfully to window handle: 1247880
+[2025-08-03 23:42:55.072] [INFO] Scheduling Escape key send to window handle: 1247880
+[2025-08-03 23:42:55.076] [INFO] Escape thread started for window handle: 1247880
+[2025-08-03 23:42:55.688] [INFO] Escape key sent successfully to window handle: 1247880
