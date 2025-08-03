@@ -65,7 +65,7 @@ namespace ScreenCaptureApp.Services
                  /// <summary>
          /// Обрабатывает первый скриншот (цена входа) и извлекает цену
          /// </summary>
-         public async Task<double> ProcessFirstScreenshot(string screenshotPath, string orderId)
+         public async Task<double> ProcessFirstScreenshot(string screenshotPath, string orderId, string symbol)
          {
              try
              {
@@ -82,7 +82,7 @@ namespace ScreenCaptureApp.Services
                      // Вырезаем область справа для анализа цены
                      using (var priceArea = CropPriceArea(bitmap, "entry", orderId))
                      {
-                         var entryPrice = await ExtractPriceFromImage(priceArea, "entry", orderId);
+                         var entryPrice = await ExtractPriceFromImage(priceArea, "entry", orderId, symbol);
                          Logger.LogTagInfo("PendingOrder", $"Extracted entry price: {entryPrice}");
                          return entryPrice;
                      }
@@ -98,7 +98,7 @@ namespace ScreenCaptureApp.Services
          /// <summary>
          /// Обрабатывает второй скриншот (цена стоп-лосса) и извлекает цену
          /// </summary>
-         public async Task<double> ProcessSecondScreenshot(string screenshotPath, string orderId)
+         public async Task<double> ProcessSecondScreenshot(string screenshotPath, string orderId, string symbol)
          {
              try
              {
@@ -115,7 +115,7 @@ namespace ScreenCaptureApp.Services
                      // Вырезаем область справа для анализа цены
                      using (var priceArea = CropPriceArea(bitmap, "stopLoss", orderId))
                      {
-                         var stopLossPrice = await ExtractPriceFromImage(priceArea, "stopLoss", orderId);
+                         var stopLossPrice = await ExtractPriceFromImage(priceArea, "stopLoss", orderId, symbol);
                          Logger.LogTagInfo("PendingOrder", $"Extracted stop loss price: {stopLossPrice}");
                          return stopLossPrice;
                      }
@@ -180,7 +180,7 @@ namespace ScreenCaptureApp.Services
                         // Вырезаем область справа для анализа цены
                                                  using (var priceArea = CropPriceArea(bitmap, "entry", patternData.OrderId))
                          {
-                             prices.EntryPrice = await ExtractPriceFromImage(priceArea, "entry", patternData.OrderId);
+                             prices.EntryPrice = await ExtractPriceFromImage(priceArea, "entry", patternData.OrderId, patternData.Symbol);
                              Logger.LogTagInfo("PendingOrder", $"Extracted entry price: {prices.EntryPrice}");
                          }
                     }
@@ -199,7 +199,7 @@ namespace ScreenCaptureApp.Services
                          // Вырезаем область справа для анализа цены
                                                   using (var priceArea = CropPriceArea(bitmap, "stopLoss", patternData.OrderId))
                           {
-                              prices.StopLossPrice = await ExtractPriceFromImage(priceArea, "stopLoss", patternData.OrderId);
+                              prices.StopLossPrice = await ExtractPriceFromImage(priceArea, "stopLoss", patternData.OrderId, patternData.Symbol);
                               Logger.LogTagInfo("PendingOrder", $"Extracted stop loss price: {prices.StopLossPrice}");
                           }
                      }
@@ -298,7 +298,7 @@ namespace ScreenCaptureApp.Services
                  /// <summary>
          /// Извлекает цену из изображения с помощью OCR (Emgu.CV + Tesseract)
          /// </summary>
-         private async Task<double> ExtractPriceFromImage(Bitmap bitmap, string priceType, string orderId)
+         private async Task<double> ExtractPriceFromImage(Bitmap bitmap, string priceType, string orderId, string symbol)
         {
             try
             {
