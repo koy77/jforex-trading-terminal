@@ -58,6 +58,7 @@ Write-Host "`n3. Testing /pricelevel endpoint..." -ForegroundColor Cyan
 $priceLevelData = @{
     symbol = "EURUSD"
     price = 1.0850
+    type = "support"
     timestamp = (Get-Date).ToString("yyyy-MM-ddTHH:mm:ss.fffZ")
     additionalData = "Support level from PowerShell test"
 } | ConvertTo-Json
@@ -75,6 +76,7 @@ Write-Host "`n4. Sending another price level..." -ForegroundColor Cyan
 $priceLevelData2 = @{
     symbol = "GBPUSD"
     price = 1.2650
+    type = "resistance"
     timestamp = (Get-Date).ToString("yyyy-MM-ddTHH:mm:ss.fffZ")
     additionalData = "Resistance level from PowerShell test"
 } | ConvertTo-Json

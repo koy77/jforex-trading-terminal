@@ -25,10 +25,18 @@ HTTP сервис для приема данных от GForex через REST A
 {
   "symbol": "EURUSD",
   "price": 1.0850,
+  "type": "support",
   "timestamp": "2024-01-15T10:30:00.000Z",
   "additionalData": "Support level"
 }
 ```
+
+**Поля запроса:**
+- `symbol` (обязательное) - торговый символ
+- `price` (обязательное) - цена уровня
+- `type` (обязательное) - тип ценового уровня (support, resistance, breakout, entry, exit)
+- `timestamp` (опциональное) - временная метка
+- `additionalData` (опциональное) - дополнительные данные
 
 **Ответ:**
 ```json

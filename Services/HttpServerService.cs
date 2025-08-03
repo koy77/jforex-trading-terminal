@@ -198,13 +198,33 @@ namespace ScreenCaptureApp.Services
 
                 Logger.LogDebug($"Received price level data: {requestBody}");
 
-                // Парсим JSON
-                var priceLevelData = JsonConvert.DeserializeObject<PriceLevelData>(requestBody);
+                // Предобработка JSON для исправления неправильных форматов чисел
+                var processedRequestBody = PreprocessJsonForNumberFormat(requestBody);
+
+                // Настройки для десериализации JSON
+                var settings = new JsonSerializerSettings
+                {
+                    Error = (sender, args) =>
+                    {
+                        Logger.LogWarning($"JSON parsing warning: {args.ErrorContext.Error.Message}");
+                        args.ErrorContext.Handled = true;
+                    }
+                };
+
+                // Парсим JSON с настройками
+                var priceLevelData = JsonConvert.DeserializeObject<PriceLevelData>(processedRequestBody, settings);
                 
                 if (priceLevelData == null || string.IsNullOrEmpty(priceLevelData.Symbol))
                 {
                     await SendResponseAsync(response, "Invalid data: symbol is required", 400);
                     return;
+                }
+
+                // Устанавливаем значение по умолчанию для поля type если оно не указано (обратная совместимость)
+                if (string.IsNullOrEmpty(priceLevelData.Type))
+                {
+                    priceLevelData.Type = "unknown";
+                    Logger.LogInfo("Type field not provided, using default value 'unknown' for backward compatibility");
                 }
 
                 // Добавляем в список последних данных (максимум 100 записей)
@@ -361,6 +381,34 @@ namespace ScreenCaptureApp.Services
             lock (RecentPriceLevels)
             {
                 RecentPriceLevels.Clear();
+            }
+        }
+
+        /// <summary>
+        /// Предобрабатывает JSON для исправления неправильных форматов чисел
+        /// </summary>
+        private string PreprocessJsonForNumberFormat(string json)
+        {
+            try
+            {
+                // Исправляем числа с запятыми как десятичными разделителями
+                // Паттерн: "price":число,число -> "price":число.число
+                var regex = new System.Text.RegularExpressions.Regex(@"""(price|Price)"":\s*(\d+),(\d+)");
+                var processedJson = regex.Replace(json, match =>
+                {
+                    var prefix = match.Groups[1].Value;
+                    var wholePart = match.Groups[2].Value;
+                    var decimalPart = match.Groups[3].Value;
+                    return $"\"{prefix}\": {wholePart}.{decimalPart}";
+                });
+
+                Logger.LogDebug($"Preprocessed JSON: {processedJson}");
+                return processedJson;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogWarning($"Error preprocessing JSON: {ex.Message}");
+                return json; // Возвращаем оригинальный JSON если обработка не удалась
             }
         }
 

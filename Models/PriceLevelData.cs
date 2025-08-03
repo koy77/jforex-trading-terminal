@@ -27,9 +27,14 @@ namespace ScreenCaptureApp.Models
         /// </summary>
         public string AdditionalData { get; set; }
 
+        /// <summary>
+        /// Тип ценового уровня (например, "support", "resistance", "breakout", "entry", "exit")
+        /// </summary>
+        public string Type { get; set; }
+
         public override string ToString()
         {
-            return $"Symbol: {Symbol}, Price: {Price}, Timestamp: {Timestamp:yyyy-MM-dd HH:mm:ss.fff}";
+            return $"Symbol: {Symbol}, Price: {Price}, Type: {Type}, Timestamp: {Timestamp:yyyy-MM-dd HH:mm:ss.fff}";
         }
     }
 } 

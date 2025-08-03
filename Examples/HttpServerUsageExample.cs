@@ -18,7 +18,7 @@ namespace ScreenCaptureApp.Examples
         /// <summary>
         /// Отправляет данные ценового уровня на сервер
         /// </summary>
-        public static async Task SendPriceLevelAsync(string symbol, decimal price, string additionalData = null)
+        public static async Task SendPriceLevelAsync(string symbol, decimal price, string type, string additionalData = null)
         {
             try
             {
@@ -26,6 +26,7 @@ namespace ScreenCaptureApp.Examples
                 {
                     Symbol = symbol,
                     Price = price,
+                    Type = type,
                     Timestamp = DateTime.Now,
                     AdditionalData = additionalData
                 };
@@ -94,9 +95,9 @@ namespace ScreenCaptureApp.Examples
             await CheckServerHealthAsync();
 
             // Отправляем несколько ценовых уровней
-            await SendPriceLevelAsync("EURUSD", 1.0850m, "Support level");
-            await SendPriceLevelAsync("GBPUSD", 1.2650m, "Resistance level");
-            await SendPriceLevelAsync("USDJPY", 150.25m, "Key level");
+            await SendPriceLevelAsync("EURUSD", 1.0850m, "support", "Support level");
+            await SendPriceLevelAsync("GBPUSD", 1.2650m, "resistance", "Resistance level");
+            await SendPriceLevelAsync("USDJPY", 150.25m, "breakout", "Key level");
 
             Console.WriteLine("=== Example completed ===");
         }

@@ -119,10 +119,18 @@ GForex должен отправлять POST запросы на `http://localh
 {
   "symbol": "SYMBOL_NAME",
   "price": PRICE_VALUE,
+  "type": "LEVEL_TYPE",
   "timestamp": "ISO_TIMESTAMP",
   "additionalData": "OPTIONAL_DESCRIPTION"
 }
 ```
+
+**Поля:**
+- `symbol` (обязательное) - торговый символ (например, "EURUSD", "GBPUSD")
+- `price` (обязательное) - цена уровня
+- `type` (обязательное) - тип ценового уровня (например, "support", "resistance", "breakout", "entry", "exit")
+- `timestamp` (опциональное) - временная метка в формате ISO
+- `additionalData` (опциональное) - дополнительные данные или описание
 
 ### Пример интеграции на Python
 ```python
@@ -130,11 +138,12 @@ import requests
 import json
 from datetime import datetime
 
-def send_price_level(symbol, price, additional_data=None):
+def send_price_level(symbol, price, level_type, additional_data=None):
     url = "http://localhost:7000/pricelevel"
     data = {
         "symbol": symbol,
         "price": price,
+        "type": level_type,
         "timestamp": datetime.now().isoformat() + "Z",
         "additionalData": additional_data
     }
@@ -143,16 +152,19 @@ def send_price_level(symbol, price, additional_data=None):
     return response.json()
 
 # Пример использования
-send_price_level("EURUSD", 1.0850, "Support level")
+send_price_level("EURUSD", 1.0850, "support", "Support level")
+send_price_level("GBPUSD", 1.2650, "resistance", "Resistance level")
+send_price_level("USDJPY", 150.50, "breakout", "Breakout level")
 ```
 
 ### Пример интеграции на JavaScript
 ```javascript
-async function sendPriceLevel(symbol, price, additionalData = null) {
+async function sendPriceLevel(symbol, price, levelType, additionalData = null) {
     const url = 'http://localhost:7000/pricelevel';
     const data = {
         symbol: symbol,
         price: price,
+        type: levelType,
         timestamp: new Date().toISOString(),
         additionalData: additionalData
     };
@@ -169,7 +181,9 @@ async function sendPriceLevel(symbol, price, additionalData = null) {
 }
 
 // Пример использования
-sendPriceLevel('EURUSD', 1.0850, 'Support level');
+sendPriceLevel('EURUSD', 1.0850, 'support', 'Support level');
+sendPriceLevel('GBPUSD', 1.2650, 'resistance', 'Resistance level');
+sendPriceLevel('USDJPY', 150.50, 'breakout', 'Breakout level');
 ```
 
 ## Логирование
@@ -186,6 +200,12 @@ sendPriceLevel('EURUSD', 1.0850, 'Support level');
 - Валидация входящих JSON данных
 - Обработка исключений для предотвращения сбоев
 
+## Совместимость
+
+- **Автоматическая коррекция форматов чисел:** Сервер автоматически исправляет числа с запятыми как десятичными разделителями (например, `172,79554` → `172.79554`)
+- **Поддержка различных JSON форматов:** Обработка ошибок парсинга с логированием предупреждений
+- **Обратная совместимость:** Поддержка старых форматов данных без поля `type`
+
 ## Устранение неполадок
 
 ### Сервер не запускается
@@ -197,7 +217,11 @@ sendPriceLevel('EURUSD', 1.0850, 'Support level');
 1. Убедитесь, что сервер запущен
 2. Проверьте формат JSON данных
 3. Убедитесь, что поле `symbol` не пустое
-4. Проверьте логи для детальной информации об ошибке
+4. Убедитесь, что поле `type` не пустое
+5. **Важно:** Используйте точку (`.`) как десятичный разделитель в числах, а не запятую (`,`)
+   - ✅ Правильно: `"price": 172.79554`
+   - ❌ Неправильно: `"price": 172,79554`
+6. Проверьте логи для детальной информации об ошибке
 
 ### Проверка статуса сервера
 ```powershell
