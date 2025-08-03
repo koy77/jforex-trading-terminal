@@ -379,6 +379,9 @@ namespace ScreenCaptureApp
             }
             
             _currentPendingOrderPattern = null;
+            
+            // Скрываем цены при отмене паттерна
+            TradingToolbar.HidePrices();
         }
 
         private void CompleteTradingPattern()
@@ -537,66 +540,76 @@ namespace ScreenCaptureApp
                 var clickPoint = new TradingPoint(hookStruct.pt.X, hookStruct.pt.Y);
                 
                 _pendingOrderClickCount++;
-                
-                                    if (_pendingOrderClickCount == 1)
+            
+                if (_pendingOrderClickCount == 1)
+                {
+                    // Первый клик - начало паттерна
+                    _currentPendingOrderPattern.FirstClick = clickPoint;
+
+                    // Генерируем уникальный ID для этой отложенной сделки (только один раз)
+                    _currentPendingOrderPattern.OrderId = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+
+                    // Сохраняем горизонтальную полосу после первого клика
+                    await SaveHorizontalStripScreenshot("first");
+
+                    // Обрабатываем первый скриншот и извлекаем цену входа
+                    var analyzerService = ServiceContainer.Instance.GetService<PendingOrderAnalyzerService>();
+                    if (analyzerService != null)
                     {
-                        // Первый клик - начало паттерна
-                        _currentPendingOrderPattern.FirstClick = clickPoint;
+                        var entryPrice = await analyzerService.ProcessFirstScreenshot(_currentPendingOrderPattern.FirstScreenshotPath, _currentPendingOrderPattern.OrderId, _currentPendingOrderPattern.Symbol);
+                        Logger.LogTagInfo("PendingOrder", $"Entry price extracted: {entryPrice}");
+                        
+                        // Сохраняем цену входа для использования при втором клике
+                        _currentPendingOrderPattern.EntryPrice = entryPrice;
+                        
+                        // Сразу показываем EntryPrice на TradingToolbar (тип сделки пока не определен)
+                        TradingToolbar.ShowPrices(entryPrice, 0, ""); // StopLoss пока 0, тип сделки пока не определен
+                    }
 
-                        // Генерируем уникальный ID для этой отложенной сделки (только один раз)
-                        _currentPendingOrderPattern.OrderId = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+                    // Отправляем клавишу Escape в целевое окно с задержкой 300 мс
+                    await Task.Delay(300);
+                    SendEscapeToTargetWindow();
 
-                        // Сохраняем горизонтальную полосу после первого клика
-                        await SaveHorizontalStripScreenshot("first");
-
-                        // Обрабатываем первый скриншот и извлекаем цену входа
+                    Logger.LogTagInfo("PendingOrder", $"Pending order first click recorded at {clickPoint}");
+                }
+                else if (_pendingOrderClickCount == 2)
+                {
+                    // Второй клик - конец паттерна
+                    _currentPendingOrderPattern.SecondClick = clickPoint;
+                    
+                    // Сохраняем горизонтальную полосу после второго клика
+                    await Task.Delay(50);
+                    await SaveHorizontalStripScreenshot("second");
+                    
+                                                // Обрабатываем второй скриншот и извлекаем цену стоп-лосса
                         var analyzerService = ServiceContainer.Instance.GetService<PendingOrderAnalyzerService>();
                         if (analyzerService != null)
                         {
-                            var entryPrice = await analyzerService.ProcessFirstScreenshot(_currentPendingOrderPattern.FirstScreenshotPath, _currentPendingOrderPattern.OrderId);
-                            Logger.LogTagInfo("PendingOrder", $"Entry price extracted: {entryPrice}");
+                            var stopLossPrice = await analyzerService.ProcessSecondScreenshot(_currentPendingOrderPattern.SecondScreenshotPath, _currentPendingOrderPattern.OrderId, _currentPendingOrderPattern.Symbol);
+                            Logger.LogTagInfo("PendingOrder", $"Stop loss price extracted: {stopLossPrice}");
                             
-                            // Сохраняем цену входа для использования при втором клике
-                            _currentPendingOrderPattern.EntryPrice = entryPrice;
+                            // Определяем тип сделки на основе позиций кликов
+                            string tradeType = DetermineTradeType(_currentPendingOrderPattern.FirstClick, _currentPendingOrderPattern.SecondClick);
+                            Logger.LogTagInfo("PendingOrder", $"Trade type determined: {tradeType} (First Y: {_currentPendingOrderPattern.FirstClick.Y}, Second Y: {_currentPendingOrderPattern.SecondClick.Y})");
+                            
+                            // Создаем объект цен на основе обеих цен
+                            var prices = analyzerService.CreatePricesObject(_currentPendingOrderPattern.EntryPrice, stopLossPrice, _currentPendingOrderPattern.Symbol);
+                            if (prices != null)
+                            {
+                                _currentPendingOrderPattern.Prices = prices;
+                                Logger.LogTagInfo("PendingOrder", $"Prices object created: Entry={prices.EntryPrice}, StopLoss={prices.StopLossPrice}, Direction={prices.Direction}");
+                                
+                                // Обновляем отображение цен на TradingToolbar с типом сделки
+                                TradingToolbar.ShowPrices(_currentPendingOrderPattern.EntryPrice, prices.StopLossPrice, tradeType);
+                            }
                         }
-
-                        // Отправляем клавишу Escape в целевое окно с задержкой 300 мс
-                        await Task.Delay(300);
-                        SendEscapeToTargetWindow();
-
-                        Logger.LogTagInfo("PendingOrder", $"Pending order first click recorded at {clickPoint}");
-                    }
-                                    else if (_pendingOrderClickCount == 2)
-                    {
-                        // Второй клик - конец паттерна
-                        _currentPendingOrderPattern.SecondClick = clickPoint;
-                        
-                        // Сохраняем горизонтальную полосу после второго клика
-                        await Task.Delay(50);
-                        await SaveHorizontalStripScreenshot("second");
-                        
-                                                 // Обрабатываем второй скриншот и извлекаем цену стоп-лосса
-                         var analyzerService = ServiceContainer.Instance.GetService<PendingOrderAnalyzerService>();
-                         if (analyzerService != null)
-                         {
-                             var stopLossPrice = await analyzerService.ProcessSecondScreenshot(_currentPendingOrderPattern.SecondScreenshotPath, _currentPendingOrderPattern.OrderId);
-                             Logger.LogTagInfo("PendingOrder", $"Stop loss price extracted: {stopLossPrice}");
-                             
-                             // Создаем объект цен на основе обеих цен
-                             var prices = analyzerService.CreatePricesObject(_currentPendingOrderPattern.EntryPrice, stopLossPrice, _currentPendingOrderPattern.Symbol);
-                             if (prices != null)
-                             {
-                                 _currentPendingOrderPattern.Prices = prices;
-                                 Logger.LogTagInfo("PendingOrder", $"Prices object created: Entry={prices.EntryPrice}, StopLoss={prices.StopLossPrice}, Direction={prices.Direction}");
-                             }
-                         }
-                        
-                        Logger.LogTagInfo("PendingOrder", $"Pending order second click recorded at {clickPoint}");
-                        CompletePendingOrderPattern();
-                        
-                        await Task.Delay(300);
-                        SendEscapeToTargetWindow();
-                    }
+                    
+                    Logger.LogTagInfo("PendingOrder", $"Pending order second click recorded at {clickPoint}");
+                    CompletePendingOrderPattern();
+                    
+                    await Task.Delay(300);
+                    SendEscapeToTargetWindow();
+                }
                 else
                 {
                     // Больше двух кликов - игнорируем
@@ -1233,6 +1246,26 @@ namespace ScreenCaptureApp
             }
             Rectangle cropRect = new Rectangle(capture.X, capture.Y, capture.Width, capture.Height);
             return merged.Clone(cropRect, merged.PixelFormat);
+        }
+
+        /// <summary>
+        /// Определяет тип сделки на основе позиций кликов
+        /// </summary>
+        /// <param name="firstClick">Первый клик</param>
+        /// <param name="secondClick">Второй клик</param>
+        /// <returns>"BUY" если первый клик выше второго, "SELL" если первый клик ниже второго</returns>
+        private string DetermineTradeType(TradingPoint firstClick, TradingPoint secondClick)
+        {
+            // Если первый клик выше по Y (меньший Y), чем второй - это BUY
+            // Если первый клик ниже по Y (больший Y), чем второй - это SELL
+            if (firstClick.Y < secondClick.Y)
+            {
+                return "BUY";
+            }
+            else
+            {
+                return "SELL";
+            }
         }
     }
 } 
