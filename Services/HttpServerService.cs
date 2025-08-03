@@ -145,6 +145,8 @@ namespace ScreenCaptureApp.Services
                 var request = context.Request;
                 var response = context.Response;
 
+                // Логируем входящий запрос по тегу
+                Logger.LogTagInfo("logger.log.tag.info", $"HTTP Request: {request.HttpMethod} {request.Url?.AbsolutePath}");
                 Logger.LogDebug($"HTTP Request: {request.HttpMethod} {request.Url?.AbsolutePath}");
 
                 switch (request.Url?.AbsolutePath?.ToLower())
@@ -172,6 +174,7 @@ namespace ScreenCaptureApp.Services
             catch (Exception ex)
             {
                 Logger.LogError("Error processing HTTP request", ex);
+                Logger.LogTagError("logger.log.tag.info", "Error processing HTTP request", ex);
                 await HandleErrorAsync(context.Response, ex);
             }
         }
@@ -196,10 +199,15 @@ namespace ScreenCaptureApp.Services
                     requestBody = await reader.ReadToEndAsync();
                 }
 
+                // Логируем входящие данные по тегу
+                Logger.LogTagInfo("logger.log.tag.info", $"Price Level Input Data: {requestBody}");
                 Logger.LogDebug($"Received price level data: {requestBody}");
 
                 // Предобработка JSON для исправления неправильных форматов чисел
                 var processedRequestBody = PreprocessJsonForNumberFormat(requestBody);
+
+                // Логируем предобработанные данные по тегу
+                Logger.LogTagInfo("logger.log.tag.info", $"Preprocessed JSON Data: {processedRequestBody}");
 
                 // Настройки для десериализации JSON
                 var settings = new JsonSerializerSettings
@@ -244,16 +252,20 @@ namespace ScreenCaptureApp.Services
                 var responseData = new { success = true, message = "Price level data received", timestamp = DateTime.Now };
                 await SendJsonResponseAsync(response, responseData, 200);
 
+                // Логируем обработанные данные по тегу
+                Logger.LogTagInfo("logger.log.tag.info", $"Price Level Processed: {priceLevelData}");
                 Logger.LogInfo($"Price level processed: {priceLevelData}");
             }
             catch (JsonException ex)
             {
                 Logger.LogError("Invalid JSON in price level request", ex);
+                Logger.LogTagError("logger.log.tag.info", "Invalid JSON in price level request", ex);
                 await SendResponseAsync(response, "Invalid JSON format", 400);
             }
             catch (Exception ex)
             {
                 Logger.LogError("Error processing price level request", ex);
+                Logger.LogTagError("logger.log.tag.info", "Error processing price level request", ex);
                 await SendResponseAsync(response, "Internal server error", 500);
             }
         }
@@ -263,6 +275,9 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         private async Task HandleHealthRequestAsync(HttpListenerResponse response)
         {
+            // Логируем запрос здоровья по тегу
+            Logger.LogTagInfo("logger.log.tag.info", "Health check request received");
+            
             var healthData = new
             {
                 status = "healthy",
@@ -279,6 +294,9 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         private async Task HandleStatusRequestAsync(HttpListenerResponse response)
         {
+            // Логируем запрос статуса по тегу
+            Logger.LogTagInfo("logger.log.tag.info", "Status request received");
+            
             var statusData = new
             {
                 isRunning = _isRunning,
@@ -295,6 +313,9 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         private async Task HandleNotFoundAsync(HttpListenerResponse response)
         {
+            // Логируем запрос к несуществующему endpoint по тегу
+            Logger.LogTagInfo("logger.log.tag.info", "Not found endpoint request received");
+            
             var notFoundData = new
             {
                 error = "Not Found",
@@ -311,6 +332,9 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         private async Task HandleErrorAsync(HttpListenerResponse response, Exception ex)
         {
+            // Логируем ошибку по тегу
+            Logger.LogTagError("logger.log.tag.info", "Internal server error occurred", ex);
+            
             var errorData = new
             {
                 error = "Internal Server Error",
@@ -403,11 +427,13 @@ namespace ScreenCaptureApp.Services
                 });
 
                 Logger.LogDebug($"Preprocessed JSON: {processedJson}");
+                Logger.LogTagInfo("logger.log.tag.info", $"JSON preprocessing completed: {processedJson}");
                 return processedJson;
             }
             catch (Exception ex)
             {
                 Logger.LogWarning($"Error preprocessing JSON: {ex.Message}");
+                Logger.LogTagError("logger.log.tag.info", "Error preprocessing JSON", ex);
                 return json; // Возвращаем оригинальный JSON если обработка не удалась
             }
         }

@@ -5325,3 +5325,92 @@
 [2025-08-03 12:29:58.971] [INFO] OrderSummary panel hidden
 [2025-08-03 12:29:58.971] [INFO] Price display panel hidden
 [2025-08-03 12:29:58.971] [INFO] Loaded settings for HandleID 262344: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 12:36:46.883] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-03 12:36:46.900] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-03 12:36:46.900] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 12:36:46.901] [INFO] OrderSummary panel hidden
+[2025-08-03 12:36:46.901] [INFO] Price display panel hidden
+[2025-08-03 12:37:36.124] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-03 12:37:36.124] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 12:37:36.124] [INFO] OrderSummary panel hidden
+[2025-08-03 12:37:36.124] [INFO] Price display panel hidden
+[2025-08-03 12:37:36.126] [INFO] Created default settings for HandleID 262344: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 12:37:36.127] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-03 12:37:36.128] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 12:37:36.128] [INFO] OrderSummary panel hidden
+[2025-08-03 12:37:36.128] [INFO] Price display panel hidden
+[2025-08-03 12:37:36.129] [INFO] Loaded settings for HandleID 262344: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 12:37:49.963] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 12:37:49.963] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 12:37:49.964] [INFO] OrderSummary panel hidden
+[2025-08-03 12:37:49.964] [INFO] Price display panel hidden
+[2025-08-03 12:37:49.964] [INFO] Created default settings for HandleID 131684: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 12:37:49.964] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 12:37:49.964] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 12:37:49.964] [INFO] OrderSummary panel hidden
+[2025-08-03 12:37:49.964] [INFO] Price display panel hidden
+[2025-08-03 12:37:49.965] [INFO] Loaded settings for HandleID 131684: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 12:37:50.188] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 12:37:50.188] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 12:37:50.188] [INFO] OrderSummary panel hidden
+[2025-08-03 12:37:50.188] [INFO] Price display panel hidden
+[2025-08-03 12:37:50.189] [INFO] Created default settings for HandleID 131686: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 12:37:50.189] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 12:37:50.189] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 12:37:50.189] [INFO] OrderSummary panel hidden
+[2025-08-03 12:37:50.189] [INFO] Price display panel hidden
+[2025-08-03 12:37:50.189] [INFO] Loaded settings for HandleID 131686: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 12:38:05.988] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 12:38:05.989] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 12:38:05.989] [INFO] OrderSummary panel hidden
+[2025-08-03 12:38:05.989] [INFO] Price display panel hidden
+[2025-08-03 12:38:05.990] [INFO] Loaded settings for HandleID 131684: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 12:38:05.990] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 12:38:05.990] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 12:38:05.990] [INFO] OrderSummary panel hidden
+[2025-08-03 12:38:05.990] [INFO] Price display panel hidden
+[2025-08-03 12:38:05.990] [INFO] Loaded settings for HandleID 131684: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 12:38:43.147] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 12:38:43.147] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 12:38:43.148] [INFO] OrderSummary panel hidden
+[2025-08-03 12:38:43.148] [INFO] Price display panel hidden
+[2025-08-03 12:38:43.148] [INFO] Loaded settings for HandleID 131686: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 12:38:43.148] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 12:38:43.148] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 12:38:43.149] [INFO] OrderSummary panel hidden
+[2025-08-03 12:38:43.149] [INFO] Price display panel hidden
+[2025-08-03 12:38:43.149] [INFO] Loaded settings for HandleID 131686: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 12:38:45.676] [INFO] Price display updated: Entry=1,15364, StopLoss=0,00000, TradeType=
+[2025-08-03 12:38:46.931] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 12:38:46.931] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 12:38:46.931] [INFO] OrderSummary panel hidden
+[2025-08-03 12:38:46.932] [INFO] Price display panel hidden
+[2025-08-03 12:38:46.932] [INFO] Loaded settings for HandleID 131684: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 12:38:46.932] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 12:38:46.932] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 12:38:46.933] [INFO] OrderSummary panel hidden
+[2025-08-03 12:38:46.933] [INFO] Price display panel hidden
+[2025-08-03 12:38:46.933] [INFO] Loaded settings for HandleID 131684: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 12:38:47.837] [INFO] Price display updated: Entry=1,15364, StopLoss=1,19047, TradeType=SELL
+[2025-08-03 12:39:17.507] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 12:39:17.508] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 12:39:17.508] [INFO] OrderSummary panel hidden
+[2025-08-03 12:39:17.508] [INFO] Price display panel hidden
+[2025-08-03 12:39:17.508] [INFO] Loaded settings for HandleID 131686: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 12:39:17.508] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 12:39:17.509] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 12:39:17.509] [INFO] OrderSummary panel hidden
+[2025-08-03 12:39:17.509] [INFO] Price display panel hidden
+[2025-08-03 12:39:17.509] [INFO] Loaded settings for HandleID 131686: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 12:39:22.230] [INFO] Price display updated: Entry=1,15461, StopLoss=0,00000, TradeType=
+[2025-08-03 12:39:23.099] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 12:39:23.099] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 12:39:23.099] [INFO] OrderSummary panel hidden
+[2025-08-03 12:39:23.099] [INFO] Price display panel hidden
+[2025-08-03 12:39:23.099] [INFO] Loaded settings for HandleID 131684: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 12:39:23.100] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-03 12:39:23.100] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-03 12:39:23.100] [INFO] OrderSummary panel hidden
+[2025-08-03 12:39:23.100] [INFO] Price display panel hidden
+[2025-08-03 12:39:23.100] [INFO] Loaded settings for HandleID 131684: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 12:39:26.978] [INFO] Price display updated: Entry=1,15461, StopLoss=1,19359, TradeType=BUY

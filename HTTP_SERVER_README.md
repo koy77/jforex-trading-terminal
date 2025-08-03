@@ -80,11 +80,18 @@ curl -X POST http://localhost:7000/pricelevel \
 
 ## Тестирование
 
-### PowerShell скрипт
-Запустите скрипт `test_http_server.ps1` для автоматического тестирования всех endpoint'ов:
+### PowerShell скрипты
+Запустите скрипты для тестирования:
 
 ```powershell
+# Основное тестирование всех endpoint'ов
 .\test_http_server.ps1
+
+# Тестирование исправления форматов чисел
+.\test_number_format_fix.ps1
+
+# Тестирование тегированного логирования
+.\test_tagged_logging.ps1
 ```
 
 ### Ручное тестирование
@@ -188,11 +195,26 @@ sendPriceLevel('USDJPY', 150.50, 'breakout', 'Breakout level');
 
 ## Логирование
 
+### Основное логирование
 Все операции HTTP сервиса логируются в файл `app.log`. Логи включают:
 - Запуск и остановку сервера
 - Полученные HTTP запросы
 - Обработанные данные ценовых уровней
 - Ошибки и исключения
+
+### Тегированное логирование
+Все входные данные на всех endpoint'ах дополнительно логируются в отдельный файл `logger.log.tag.info.log` с тегом `logger.log.tag.info`:
+
+**Логируемые данные:**
+- Входящие HTTP запросы (метод и путь)
+- Сырые данные от GForex (до обработки)
+- Предобработанные JSON данные (после исправления форматов)
+- Обработанные данные ценовых уровней
+- Запросы к endpoint'ам `/health`, `/status`
+- Запросы к несуществующим endpoint'ам
+- Все ошибки и исключения
+
+**Файл лога:** `logger.log.tag.info.log`
 
 ## Безопасность
 
@@ -232,6 +254,18 @@ try {
 } catch {
     Write-Host "Server is not responding" -ForegroundColor Red
 }
+```
+
+### Проверка тегированных логов
+```powershell
+# Просмотр последних записей в тегированном логе
+Get-Content "logger.log.tag.info.log" -Tail 20
+
+# Просмотр всех записей в тегированном логе
+Get-Content "logger.log.tag.info.log"
+
+# Очистка тегированного лога
+Remove-Item "logger.log.tag.info.log" -ErrorAction SilentlyContinue
 ```
 
 ## Дополнительные возможности

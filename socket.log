@@ -145,3 +145,5 @@
 [2025-08-03 10:59:01.584] [SOCKET] MT4 OUT: {"cmd":"breakout_down","symbol":"XAUUSD","risk":1,"id":"20250803104909600"}
 [2025-08-03 10:59:33.215] [SOCKET] MT4 OUT: {"cmd":"breakout_down","symbol":"XAUUSD","risk":1,"id":"20250803105918263"}
 [2025-08-03 11:02:29.399] [SOCKET] MT4 OUT: {"type":"pending_order","symbol":"XAUUSD","direction":"Sell","entry_price":1.2063213221598301,"stop_loss_price":43295.002999999997,"lot_size":0.10000000000000001,"comment":"Pending Order XAUUSD Sell","timestamp":"2025-08-03 11:02:29"}
+[2025-08-03 12:38:47.873] [SOCKET] MT4 OUT: {"type":"pending_order","symbol":"EURUSD","direction":"Sell","entry_price":1.15364,"stop_loss_price":1.1904678390187355,"lot_size":0.10000000000000001,"comment":"Pending Order EURUSD Sell","timestamp":"2025-08-03 12:38:47"}
+[2025-08-03 12:39:26.979] [SOCKET] MT4 OUT: {"type":"pending_order","symbol":"EURUSD","direction":"Sell","entry_price":1.1546099999999999,"stop_loss_price":1.1935880270437762,"lot_size":0.10000000000000001,"comment":"Pending Order EURUSD Sell","timestamp":"2025-08-03 12:39:26"}

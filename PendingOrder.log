@@ -4013,3 +4013,83 @@
 [2025-08-03 12:16:54.026] [INFO] Started pending order pattern creation for window 262344 (symbol: XAUUSD)
 [2025-08-03 12:16:54.969] [INFO] Escape key pressed - cancelling pending order pattern
 [2025-08-03 12:16:54.970] [INFO] Pending order pattern cancelled
+[2025-08-03 12:38:44.825] [INFO] P key pressed - starting pending order pattern creation
+[2025-08-03 12:38:44.826] [INFO] Started pending order pattern creation for window 131686 (symbol: EURUSD)
+[2025-08-03 12:38:45.481] [INFO] Saving horizontal strip screenshot for first click...
+[2025-08-03 12:38:45.508] [INFO] Cropped image around click point (2964, 548): 1920x1039 -> 1920x14, cropY=541
+[2025-08-03 12:38:45.515] [INFO] first screenshot saved (horizontal strip around click point): C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\pending_order_20250803_123845_first.png
+[2025-08-03 12:38:45.518] [INFO] Processing first screenshot for entry price...
+[2025-08-03 12:38:45.524] [INFO] Saved entry price area: 1920x14 -> 55x14, cropX=1845, saved to C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\Debug\entry_price_20250803_123845.png
+[2025-08-03 12:38:45.529] [INFO] Starting OCR extraction for entry price...
+[2025-08-03 12:38:45.577] [INFO] Saved final OCR image for entry: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\Debug\final_ocr_entry_20250803_123845.png
+[2025-08-03 12:38:45.666] [INFO] OCR raw result for entry: '1.15364'
+[2025-08-03 12:38:45.670] [INFO] Extracted entry price: 1,15364
+[2025-08-03 12:38:45.671] [INFO] Entry price extracted: 1,15364
+[2025-08-03 12:38:45.985] [INFO] Scheduling Escape key send to window handle: 131686
+[2025-08-03 12:38:45.986] [INFO] Escape thread started for window handle: 131686
+[2025-08-03 12:38:45.987] [INFO] Pending order first click recorded at (2964, 548)
+[2025-08-03 12:38:46.629] [INFO] Escape key sent successfully to window handle: 131686
+[2025-08-03 12:38:47.643] [INFO] Saving horizontal strip screenshot for second click...
+[2025-08-03 12:38:47.655] [INFO] Cropped image around click point (806, 490): 1920x1039 -> 1920x14, cropY=483
+[2025-08-03 12:38:47.656] [INFO] second screenshot saved (horizontal strip around click point): C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\pending_order_20250803_123845_second.png
+[2025-08-03 12:38:47.659] [INFO] Processing second screenshot for stop loss price...
+[2025-08-03 12:38:47.661] [INFO] Saved stopLoss price area: 1920x14 -> 55x14, cropX=1845, saved to C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\Debug\stopLoss_price_20250803_123845.png
+[2025-08-03 12:38:47.662] [INFO] Starting OCR extraction for stopLoss price...
+[2025-08-03 12:38:47.663] [INFO] Saved final OCR image for stopLoss: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\Debug\final_ocr_stopLoss_20250803_123845.png
+[2025-08-03 12:38:47.714] [INFO] OCR raw result for stopLoss: ''
+[2025-08-03 12:38:47.715] [WARNING] Failed to parse OCR result to double for stopLoss: ''
+[2025-08-03 12:38:47.834] [INFO] Extracted stop loss price: 1,1904678390187355
+[2025-08-03 12:38:47.835] [INFO] Stop loss price extracted: 1,1904678390187355
+[2025-08-03 12:38:47.835] [INFO] Trade type determined: SELL (First Y: 548, Second Y: 490)
+[2025-08-03 12:38:47.836] [INFO] Price object created: Entry=1,15364, StopLoss=1,1904678390187355, Direction=Sell
+[2025-08-03 12:38:47.836] [INFO] Prices object created: Entry=1,15364, StopLoss=1,1904678390187355, Direction=Sell
+[2025-08-03 12:38:47.837] [INFO] Pending order second click recorded at (806, 490)
+[2025-08-03 12:38:47.839] [INFO] Analyzing and sending pending order to MT4...
+[2025-08-03 12:38:47.840] [INFO] Starting analysis of pending order pattern for symbol: EURUSD
+[2025-08-03 12:38:47.875] [INFO] Pending order data sent to MT4: {"type":"pending_order","symbol":"EURUSD","direction":"Sell","entry_price":1.15364,"stop_loss_price":1.1904678390187355,"lot_size":0.10000000000000001,"comment":"Pending Order EURUSD Sell","timestamp":"2025-08-03 12:38:47"}
+[2025-08-03 12:38:47.875] [INFO] Successfully sent pending order to MT4: EURUSD Sell Entry:1,15364 StopLoss:1,1904678390187355
+[2025-08-03 12:38:47.875] [INFO] Pending order successfully analyzed and sent to MT4
+[2025-08-03 12:38:47.875] [INFO] Pending order pattern completed: FirstClick=(2964, 548), SecondClick=(806, 490)
+[2025-08-03 12:38:48.177] [INFO] Scheduling Escape key send to window handle: 131684
+[2025-08-03 12:38:48.187] [INFO] Escape thread started for window handle: 131684
+[2025-08-03 12:38:48.819] [INFO] Escape key sent successfully to window handle: 131684
+[2025-08-03 12:39:21.632] [INFO] P key pressed - starting pending order pattern creation
+[2025-08-03 12:39:21.633] [INFO] Started pending order pattern creation for window 131686 (symbol: EURUSD)
+[2025-08-03 12:39:22.130] [INFO] Saving horizontal strip screenshot for first click...
+[2025-08-03 12:39:22.140] [INFO] Cropped image around click point (2968, 408): 1920x1039 -> 1920x14, cropY=401
+[2025-08-03 12:39:22.142] [INFO] first screenshot saved (horizontal strip around click point): C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\pending_order_20250803_123922_first.png
+[2025-08-03 12:39:22.143] [INFO] Processing first screenshot for entry price...
+[2025-08-03 12:39:22.145] [INFO] Saved entry price area: 1920x14 -> 55x14, cropX=1845, saved to C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\Debug\entry_price_20250803_123922.png
+[2025-08-03 12:39:22.145] [INFO] Starting OCR extraction for entry price...
+[2025-08-03 12:39:22.147] [INFO] Saved final OCR image for entry: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\Debug\final_ocr_entry_20250803_123922.png
+[2025-08-03 12:39:22.226] [INFO] OCR raw result for entry: '1.15461'
+[2025-08-03 12:39:22.229] [INFO] Extracted entry price: 1,15461
+[2025-08-03 12:39:22.229] [INFO] Entry price extracted: 1,15461
+[2025-08-03 12:39:22.552] [INFO] Scheduling Escape key send to window handle: 131686
+[2025-08-03 12:39:22.552] [INFO] Pending order first click recorded at (2968, 408)
+[2025-08-03 12:39:22.553] [INFO] Escape thread started for window handle: 131686
+[2025-08-03 12:39:23.187] [INFO] Escape key sent successfully to window handle: 131684
+[2025-08-03 12:39:26.800] [INFO] Saving horizontal strip screenshot for second click...
+[2025-08-03 12:39:26.810] [INFO] Cropped image around click point (707, 748): 1920x1039 -> 1920x14, cropY=741
+[2025-08-03 12:39:26.812] [INFO] second screenshot saved (horizontal strip around click point): C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\pending_order_20250803_123922_second.png
+[2025-08-03 12:39:26.813] [INFO] Processing second screenshot for stop loss price...
+[2025-08-03 12:39:26.814] [INFO] Saved stopLoss price area: 1920x14 -> 55x14, cropX=1845, saved to C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\Debug\stopLoss_price_20250803_123922.png
+[2025-08-03 12:39:26.815] [INFO] Starting OCR extraction for stopLoss price...
+[2025-08-03 12:39:26.816] [INFO] Saved final OCR image for stopLoss: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Trades\Debug\final_ocr_stopLoss_20250803_123922.png
+[2025-08-03 12:39:26.861] [INFO] OCR raw result for stopLoss: ''
+[2025-08-03 12:39:26.861] [WARNING] Failed to parse OCR result to double for stopLoss: ''
+[2025-08-03 12:39:26.977] [INFO] Extracted stop loss price: 1,1935880270437762
+[2025-08-03 12:39:26.978] [INFO] Stop loss price extracted: 1,1935880270437762
+[2025-08-03 12:39:26.978] [INFO] Trade type determined: BUY (First Y: 408, Second Y: 748)
+[2025-08-03 12:39:26.978] [INFO] Price object created: Entry=1,15461, StopLoss=1,1935880270437762, Direction=Sell
+[2025-08-03 12:39:26.978] [INFO] Prices object created: Entry=1,15461, StopLoss=1,1935880270437762, Direction=Sell
+[2025-08-03 12:39:26.979] [INFO] Pending order second click recorded at (707, 748)
+[2025-08-03 12:39:26.979] [INFO] Analyzing and sending pending order to MT4...
+[2025-08-03 12:39:26.979] [INFO] Starting analysis of pending order pattern for symbol: EURUSD
+[2025-08-03 12:39:26.980] [INFO] Pending order data sent to MT4: {"type":"pending_order","symbol":"EURUSD","direction":"Sell","entry_price":1.1546099999999999,"stop_loss_price":1.1935880270437762,"lot_size":0.10000000000000001,"comment":"Pending Order EURUSD Sell","timestamp":"2025-08-03 12:39:26"}
+[2025-08-03 12:39:26.980] [INFO] Successfully sent pending order to MT4: EURUSD Sell Entry:1,15461 StopLoss:1,1935880270437762
+[2025-08-03 12:39:26.980] [INFO] Pending order successfully analyzed and sent to MT4
+[2025-08-03 12:39:26.980] [INFO] Pending order pattern completed: FirstClick=(2968, 408), SecondClick=(707, 748)
+[2025-08-03 12:39:27.294] [INFO] Scheduling Escape key send to window handle: 131684
+[2025-08-03 12:39:27.300] [INFO] Escape thread started for window handle: 131684
+[2025-08-03 12:39:27.941] [INFO] Escape key sent successfully to window handle: 131684
