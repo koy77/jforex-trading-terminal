@@ -41,6 +41,9 @@ namespace ScreenCaptureApp.Helpers
                 container.RegisterSingleton(new CaptureTrackingService());
                 container.RegisterSingleton(new PendingOrderAnalyzerService());
 
+                // Register HTTP Server Service
+                container.RegisterSingleton(new HttpServerService());
+
                 // Register ToolbarSettingsManager (singleton, in-memory)
                 container.RegisterSingleton(new ToolbarSettingsManager());
 
@@ -49,6 +52,13 @@ namespace ScreenCaptureApp.Helpers
                 if (binaryOptionsSocketService != null)
                 {
                     Task.Run(async () => await binaryOptionsSocketService.ConnectAsync());
+                }
+
+                // Асинхронный запуск HTTP Server Service
+                var httpServerService = container.GetService<HttpServerService>();
+                if (httpServerService != null)
+                {
+                    Task.Run(async () => await httpServerService.StartAsync());
                 }
                 
                 Logger.LogInfo("All services registered in DI container");
@@ -86,6 +96,12 @@ namespace ScreenCaptureApp.Helpers
                 {
                     var binaryOptionsService = container.GetService<BinaryOptionsSocketService>();
                     binaryOptionsService?.DisconnectAsync();
+                }
+                
+                if (container.IsRegistered<HttpServerService>())
+                {
+                    var httpServerService = container.GetService<HttpServerService>();
+                    httpServerService?.StopAsync();
                 }
                 
                 Logger.LogInfo("All services cleaned up");
@@ -293,6 +309,43 @@ namespace ScreenCaptureApp.Helpers
             {
                 Logger.LogError("Failed to initialize Database Service", ex);
                 MessageBox.Show($"Failed to initialize Database Service: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        /// <summary>
+        /// Initializes the HTTP Server service
+        /// </summary>
+        /// <param name="dispatcher">The dispatcher for UI operations</param>
+        public static void InitializeHttpServerService(Dispatcher dispatcher)
+        {
+            try
+            {
+                var httpServerService = ServiceContainer.Instance.GetService<HttpServerService>();
+                
+                // Subscribe to events
+                httpServerService.PriceLevelReceived += (sender, priceLevelData) =>
+                {
+                    dispatcher.Invoke(() =>
+                    {
+                        Logger.LogInfo($"Price level received from GForex: {priceLevelData}");
+                        // Здесь можно добавить дополнительную логику обработки ценовых уровней
+                    });
+                };
+                
+                httpServerService.StatusChanged += (sender, status) =>
+                {
+                    dispatcher.Invoke(() =>
+                    {
+                        Logger.LogInfo($"HTTP Server status: {status}");
+                    });
+                };
+                
+                Logger.LogInfo("HTTP Server Service initialized in MainWindow");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("Failed to initialize HTTP Server Service", ex);
+                MessageBox.Show($"Failed to initialize HTTP Server Service: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

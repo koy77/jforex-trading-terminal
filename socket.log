@@ -136,3 +136,12 @@
 [2025-08-03 09:26:13.529] [SOCKET] MT4 OUT: {"type":"pending_order","symbol":"XAUUSD","direction":"Buy","entry_price":3324.1840000000002,"stop_loss_price":3319.8989999999999,"lot_size":0.10000000000000001,"comment":"Pending Order XAUUSD Buy","timestamp":"2025-08-03 09:26:13"}
 [2025-08-03 09:26:16.485] [SOCKET] MT4 OUT: {"type":"pending_order","symbol":"XAUUSD","direction":"Sell","entry_price":1.2072755145605831,"stop_loss_price":3315.9913000000001,"lot_size":0.10000000000000001,"comment":"Pending Order XAUUSD Sell","timestamp":"2025-08-03 09:26:16"}
 [2025-08-03 09:26:40.708] [SOCKET] MT4 OUT: {"type":"pending_order","symbol":"XAUUSD","direction":"Buy","entry_price":3311.2260000000001,"stop_loss_price":3307.4850000000001,"lot_size":0.10000000000000001,"comment":"Pending Order XAUUSD Buy","timestamp":"2025-08-03 09:26:40"}
+[2025-08-03 10:16:17.570] [SOCKET] MT4 OUT: {"cmd":"breakout_down","symbol":"USDJPY","risk":1,"id":"20250803101617055"}
+[2025-08-03 10:16:22.981] [SOCKET] MT4 OUT: {"cmd":"breakout_down","symbol":"USDJPY","risk":1,"id":"20250803101621153"}
+[2025-08-03 10:16:26.222] [SOCKET] MT4 OUT: {"cmd":"breakout_down","symbol":"USDJPY","risk":1,"id":"20250803101625130"}
+[2025-08-03 10:21:20.635] [SOCKET] MT4 OUT: {"type":"pending_order","symbol":"USDJPY","direction":"Buy","entry_price":1.2004683547102608,"stop_loss_price":1.1920533539865998,"lot_size":0.10000000000000001,"comment":"Pending Order USDJPY Buy","timestamp":"2025-08-03 10:21:20"}
+[2025-08-03 10:48:49.383] [SOCKET] MT4 OUT: {"cmd":"breakout_down","symbol":"XAUUSD","risk":1,"id":"20250803095414629"}
+[2025-08-03 10:49:15.379] [SOCKET] MT4 OUT: {"cmd":"breakout_down","symbol":"XAUUSD","risk":1,"id":"20250803104914006"}
+[2025-08-03 10:59:01.584] [SOCKET] MT4 OUT: {"cmd":"breakout_down","symbol":"XAUUSD","risk":1,"id":"20250803104909600"}
+[2025-08-03 10:59:33.215] [SOCKET] MT4 OUT: {"cmd":"breakout_down","symbol":"XAUUSD","risk":1,"id":"20250803105918263"}
+[2025-08-03 11:02:29.399] [SOCKET] MT4 OUT: {"type":"pending_order","symbol":"XAUUSD","direction":"Sell","entry_price":1.2063213221598301,"stop_loss_price":43295.002999999997,"lot_size":0.10000000000000001,"comment":"Pending Order XAUUSD Sell","timestamp":"2025-08-03 11:02:29"}

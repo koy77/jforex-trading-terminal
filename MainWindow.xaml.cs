@@ -65,6 +65,9 @@ namespace ScreenCaptureApp
             if (binaryOptionsSocketService != null && captureTrackingService != null)
                 binaryOptionsSocketService.SubscribeToCaptureTrackingEvents(captureTrackingService);
 
+            // Инициализация HTTP Server Service
+            ServiceInitializer.InitializeHttpServerService(this.Dispatcher);
+
             this.Loaded += async (s, e) =>
             {
                 if (mt4SocketService != null)
