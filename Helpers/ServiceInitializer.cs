@@ -39,6 +39,7 @@ namespace ScreenCaptureApp.Helpers
                 // Register services that depend on other services
                 container.RegisterSingleton(new CaptureService());
                 container.RegisterSingleton(new CaptureTrackingService());
+                // Register PendingOrderAnalyzerService for P button functionality
                 container.RegisterSingleton(new PendingOrderAnalyzerService());
 
                 // Register HTTP Server Service

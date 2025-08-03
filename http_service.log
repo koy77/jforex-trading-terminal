@@ -1,0 +1,390 @@
+[2025-08-03 15:24:06.915] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:24:06.916] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":197,70990,"timestamp":"2025-08-03T15:24:06.910Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:24:06.918] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 197.70990,"timestamp":"2025-08-03T15:24:06.910Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:24:06.918] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 197.70990,"timestamp":"2025-08-03T15:24:06.910Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:24:06.920] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 197,70990, Type: unknown, Timestamp: 2025-08-03 15:24:06.910
+[2025-08-03 15:24:06.920] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: GBPJPY | Value: 197,70990 | Type: unknown | Time: 2025-08-03 15:24:06.919
+[2025-08-03 15:32:29.949] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:32:29.950] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":198,56420,"timestamp":"2025-08-03T15:32:29.945Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:32:29.950] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 198.56420,"timestamp":"2025-08-03T15:32:29.945Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:32:29.950] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 198.56420,"timestamp":"2025-08-03T15:32:29.945Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:32:29.998] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 198,56420, Type: unknown, Timestamp: 2025-08-03 15:32:29.945
+[2025-08-03 15:32:29.999] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: GBPJPY | Value: 198,56420 | Type: unknown | Time: 2025-08-03 15:32:29.995
+[2025-08-03 15:32:45.442] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:32:45.443] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":198,27569,"timestamp":"2025-08-03T15:32:45.440Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:32:45.443] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 198.27569,"timestamp":"2025-08-03T15:32:45.440Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:32:45.443] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 198.27569,"timestamp":"2025-08-03T15:32:45.440Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:32:45.445] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 198,27569, Type: unknown, Timestamp: 2025-08-03 15:32:45.440
+[2025-08-03 15:32:45.445] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: GBPJPY | Value: 198,27569 | Type: unknown | Time: 2025-08-03 15:32:45.444
+[2025-08-03 15:32:58.009] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:32:58.009] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":198,69157,"timestamp":"2025-08-03T15:32:58.006Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:32:58.010] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 198.69157,"timestamp":"2025-08-03T15:32:58.006Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:32:58.010] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 198.69157,"timestamp":"2025-08-03T15:32:58.006Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:32:58.011] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 198,69157, Type: unknown, Timestamp: 2025-08-03 15:32:58.006
+[2025-08-03 15:32:58.011] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: GBPJPY | Value: 198,69157 | Type: unknown | Time: 2025-08-03 15:32:58.010
+[2025-08-03 15:33:04.824] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:33:04.824] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":198,79814,"timestamp":"2025-08-03T15:33:04.820Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:04.825] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 198.79814,"timestamp":"2025-08-03T15:33:04.820Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:04.825] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 198.79814,"timestamp":"2025-08-03T15:33:04.820Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:04.828] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 198,79814, Type: unknown, Timestamp: 2025-08-03 15:33:04.820
+[2025-08-03 15:33:04.828] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: GBPJPY | Value: 198,79814 | Type: unknown | Time: 2025-08-03 15:33:04.825
+[2025-08-03 15:33:12.201] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:33:12.201] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":198,40565,"timestamp":"2025-08-03T15:33:12.198Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:12.202] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 198.40565,"timestamp":"2025-08-03T15:33:12.198Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:12.202] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 198.40565,"timestamp":"2025-08-03T15:33:12.198Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:12.203] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 198,40565, Type: unknown, Timestamp: 2025-08-03 15:33:12.198
+[2025-08-03 15:33:12.204] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: GBPJPY | Value: 198,40565 | Type: unknown | Time: 2025-08-03 15:33:12.203
+[2025-08-03 15:33:14.568] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:33:14.569] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":198,20031,"timestamp":"2025-08-03T15:33:14.566Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:14.569] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 198.20031,"timestamp":"2025-08-03T15:33:14.566Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:14.569] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 198.20031,"timestamp":"2025-08-03T15:33:14.566Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:14.571] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 198,20031, Type: unknown, Timestamp: 2025-08-03 15:33:14.566
+[2025-08-03 15:33:14.571] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: GBPJPY | Value: 198,20031 | Type: unknown | Time: 2025-08-03 15:33:14.570
+[2025-08-03 15:33:17.306] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:33:17.307] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":198,03655,"timestamp":"2025-08-03T15:33:17.303Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:17.307] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 198.03655,"timestamp":"2025-08-03T15:33:17.303Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:17.307] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 198.03655,"timestamp":"2025-08-03T15:33:17.303Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:17.312] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 198,03655, Type: unknown, Timestamp: 2025-08-03 15:33:17.303
+[2025-08-03 15:33:17.312] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: GBPJPY | Value: 198,03655 | Type: unknown | Time: 2025-08-03 15:33:17.308
+[2025-08-03 15:33:19.486] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:33:19.486] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":197,90139,"timestamp":"2025-08-03T15:33:19.482Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:19.487] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 197.90139,"timestamp":"2025-08-03T15:33:19.482Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:19.487] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 197.90139,"timestamp":"2025-08-03T15:33:19.482Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:19.489] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 197,90139, Type: unknown, Timestamp: 2025-08-03 15:33:19.482
+[2025-08-03 15:33:19.489] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: GBPJPY | Value: 197,90139 | Type: unknown | Time: 2025-08-03 15:33:19.488
+[2025-08-03 15:33:25.236] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:33:25.236] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3351,65519,"timestamp":"2025-08-03T15:33:25.232Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:25.237] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3351.65519,"timestamp":"2025-08-03T15:33:25.232Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:25.237] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3351.65519,"timestamp":"2025-08-03T15:33:25.232Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:25.239] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3351,65519, Type: unknown, Timestamp: 2025-08-03 15:33:25.232
+[2025-08-03 15:33:25.239] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3351,65519 | Type: unknown | Time: 2025-08-03 15:33:25.238
+[2025-08-03 15:33:32.389] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:33:32.390] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3354,79106,"timestamp":"2025-08-03T15:33:32.385Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:32.394] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3354.79106,"timestamp":"2025-08-03T15:33:32.385Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:32.394] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3354.79106,"timestamp":"2025-08-03T15:33:32.385Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:32.402] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3354,79106, Type: unknown, Timestamp: 2025-08-03 15:33:32.385
+[2025-08-03 15:33:32.402] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3354,79106 | Type: unknown | Time: 2025-08-03 15:33:32.396
+[2025-08-03 15:33:43.365] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:33:43.366] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3358,71089,"timestamp":"2025-08-03T15:33:43.361Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:43.366] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3358.71089,"timestamp":"2025-08-03T15:33:43.361Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:43.367] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3358.71089,"timestamp":"2025-08-03T15:33:43.361Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:43.368] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3358,71089, Type: unknown, Timestamp: 2025-08-03 15:33:43.361
+[2025-08-03 15:33:43.369] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3358,71089 | Type: unknown | Time: 2025-08-03 15:33:43.367
+[2025-08-03 15:33:47.260] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:33:47.260] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3356,60656,"timestamp":"2025-08-03T15:33:47.257Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:47.261] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3356.60656,"timestamp":"2025-08-03T15:33:47.257Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:47.261] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3356.60656,"timestamp":"2025-08-03T15:33:47.257Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:47.299] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3356,60656, Type: unknown, Timestamp: 2025-08-03 15:33:47.257
+[2025-08-03 15:33:47.299] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3356,60656 | Type: unknown | Time: 2025-08-03 15:33:47.298
+[2025-08-03 15:33:51.342] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:33:51.342] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3360,23756,"timestamp":"2025-08-03T15:33:51.339Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:51.342] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3360.23756,"timestamp":"2025-08-03T15:33:51.339Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:51.343] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3360.23756,"timestamp":"2025-08-03T15:33:51.339Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:51.347] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3360,23756, Type: unknown, Timestamp: 2025-08-03 15:33:51.339
+[2025-08-03 15:33:51.348] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3360,23756 | Type: unknown | Time: 2025-08-03 15:33:51.344
+[2025-08-03 15:33:52.389] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:33:52.390] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3358,05071,"timestamp":"2025-08-03T15:33:52.385Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:52.390] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3358.05071,"timestamp":"2025-08-03T15:33:52.385Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:52.390] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3358.05071,"timestamp":"2025-08-03T15:33:52.385Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:52.392] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3358,05071, Type: unknown, Timestamp: 2025-08-03 15:33:52.385
+[2025-08-03 15:33:52.392] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3358,05071 | Type: unknown | Time: 2025-08-03 15:33:52.391
+[2025-08-03 15:33:58.450] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:33:58.450] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3353,51196,"timestamp":"2025-08-03T15:33:58.447Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:58.451] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3353.51196,"timestamp":"2025-08-03T15:33:58.447Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:58.451] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3353.51196,"timestamp":"2025-08-03T15:33:58.447Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:58.452] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3353,51196, Type: unknown, Timestamp: 2025-08-03 15:33:58.447
+[2025-08-03 15:33:58.453] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3353,51196 | Type: unknown | Time: 2025-08-03 15:33:58.452
+[2025-08-03 15:33:58.457] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:33:58.457] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3350,21105,"timestamp":"2025-08-03T15:33:58.452Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:58.458] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3350.21105,"timestamp":"2025-08-03T15:33:58.452Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:58.458] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3350.21105,"timestamp":"2025-08-03T15:33:58.452Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:33:58.461] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3350,21105, Type: unknown, Timestamp: 2025-08-03 15:33:58.452
+[2025-08-03 15:33:58.462] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3350,21105 | Type: unknown | Time: 2025-08-03 15:33:58.459
+[2025-08-03 15:34:00.744] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:34:00.744] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3349,01447,"timestamp":"2025-08-03T15:34:00.741Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:00.744] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3349.01447,"timestamp":"2025-08-03T15:34:00.741Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:00.745] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3349.01447,"timestamp":"2025-08-03T15:34:00.741Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:00.746] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3349,01447, Type: unknown, Timestamp: 2025-08-03 15:34:00.741
+[2025-08-03 15:34:00.747] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3349,01447 | Type: unknown | Time: 2025-08-03 15:34:00.745
+[2025-08-03 15:34:07.788] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:34:07.789] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3347,24023,"timestamp":"2025-08-03T15:34:07.784Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:07.790] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3347.24023,"timestamp":"2025-08-03T15:34:07.784Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:07.790] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3347.24023,"timestamp":"2025-08-03T15:34:07.784Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:07.793] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3347,24023, Type: unknown, Timestamp: 2025-08-03 15:34:07.784
+[2025-08-03 15:34:07.794] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3347,24023 | Type: unknown | Time: 2025-08-03 15:34:07.791
+[2025-08-03 15:34:12.090] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:34:12.090] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3346,53878,"timestamp":"2025-08-03T15:34:12.087Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:12.092] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3346.53878,"timestamp":"2025-08-03T15:34:12.087Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:12.092] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3346.53878,"timestamp":"2025-08-03T15:34:12.087Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:12.095] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3346,53878, Type: unknown, Timestamp: 2025-08-03 15:34:12.087
+[2025-08-03 15:34:12.096] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3346,53878 | Type: unknown | Time: 2025-08-03 15:34:12.093
+[2025-08-03 15:34:15.237] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:34:15.238] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3345,38346,"timestamp":"2025-08-03T15:34:15.234Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:15.239] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3345.38346,"timestamp":"2025-08-03T15:34:15.234Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:15.239] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3345.38346,"timestamp":"2025-08-03T15:34:15.234Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:15.240] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3345,38346, Type: unknown, Timestamp: 2025-08-03 15:34:15.234
+[2025-08-03 15:34:15.241] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3345,38346 | Type: unknown | Time: 2025-08-03 15:34:15.239
+[2025-08-03 15:34:18.807] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:34:18.807] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3344,35193,"timestamp":"2025-08-03T15:34:18.803Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:18.808] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3344.35193,"timestamp":"2025-08-03T15:34:18.803Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:18.808] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3344.35193,"timestamp":"2025-08-03T15:34:18.803Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:18.809] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3344,35193, Type: unknown, Timestamp: 2025-08-03 15:34:18.803
+[2025-08-03 15:34:18.810] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3344,35193 | Type: unknown | Time: 2025-08-03 15:34:18.809
+[2025-08-03 15:34:24.818] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:34:24.819] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3343,15535,"timestamp":"2025-08-03T15:34:24.816Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:24.819] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3343.15535,"timestamp":"2025-08-03T15:34:24.816Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:24.820] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3343.15535,"timestamp":"2025-08-03T15:34:24.816Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:24.823] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3343,15535, Type: unknown, Timestamp: 2025-08-03 15:34:24.816
+[2025-08-03 15:34:24.823] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3343,15535 | Type: unknown | Time: 2025-08-03 15:34:24.820
+[2025-08-03 15:34:29.928] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:34:29.928] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3342,16508,"timestamp":"2025-08-03T15:34:29.924Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:29.929] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3342.16508,"timestamp":"2025-08-03T15:34:29.924Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:29.929] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3342.16508,"timestamp":"2025-08-03T15:34:29.924Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:29.931] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3342,16508, Type: unknown, Timestamp: 2025-08-03 15:34:29.924
+[2025-08-03 15:34:29.932] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3342,16508 | Type: unknown | Time: 2025-08-03 15:34:29.930
+[2025-08-03 15:34:34.256] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:34:34.256] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3341,29859,"timestamp":"2025-08-03T15:34:34.253Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:34.257] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3341.29859,"timestamp":"2025-08-03T15:34:34.253Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:34.257] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3341.29859,"timestamp":"2025-08-03T15:34:34.253Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:34.259] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3341,29859, Type: unknown, Timestamp: 2025-08-03 15:34:34.253
+[2025-08-03 15:34:34.259] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3341,29859 | Type: unknown | Time: 2025-08-03 15:34:34.258
+[2025-08-03 15:34:36.002] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:34:36.003] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3340,47336,"timestamp":"2025-08-03T15:34:35.997Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:36.003] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3340.47336,"timestamp":"2025-08-03T15:34:35.997Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:36.003] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3340.47336,"timestamp":"2025-08-03T15:34:35.997Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:34:36.017] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3340,47336, Type: unknown, Timestamp: 2025-08-03 15:34:35.997
+[2025-08-03 15:34:36.017] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3340,47336 | Type: unknown | Time: 2025-08-03 15:34:36.004
+[2025-08-03 15:36:11.950] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:36:11.951] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3360,78812,"timestamp":"2025-08-03T15:36:11.946Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:36:11.953] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3360.78812,"timestamp":"2025-08-03T15:36:11.946Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:36:11.953] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3360.78812,"timestamp":"2025-08-03T15:36:11.946Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:36:11.956] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3360,78812, Type: unknown, Timestamp: 2025-08-03 15:36:11.946
+[2025-08-03 15:36:11.956] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3360,78812 | Type: unknown | Time: 2025-08-03 15:36:11.954
+[2025-08-03 15:36:35.958] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:36:35.959] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3359,88347,"timestamp":"2025-08-03T15:36:35.954Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:36:35.959] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3359.88347,"timestamp":"2025-08-03T15:36:35.954Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:36:35.960] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3359.88347,"timestamp":"2025-08-03T15:36:35.954Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:36:35.961] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3359,88347, Type: unknown, Timestamp: 2025-08-03 15:36:35.954
+[2025-08-03 15:36:35.962] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3359,88347 | Type: unknown | Time: 2025-08-03 15:36:35.960
+[2025-08-03 15:36:35.965] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:36:35.966] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3359,50467,"timestamp":"2025-08-03T15:36:35.961Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:36:35.966] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3359.50467,"timestamp":"2025-08-03T15:36:35.961Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:36:35.966] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3359.50467,"timestamp":"2025-08-03T15:36:35.961Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:36:35.970] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3359,50467, Type: unknown, Timestamp: 2025-08-03 15:36:35.961
+[2025-08-03 15:36:35.970] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3359,50467 | Type: unknown | Time: 2025-08-03 15:36:35.967
+[2025-08-03 15:36:50.948] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:36:50.949] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3360,72702,"timestamp":"2025-08-03T15:36:50.944Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:36:50.950] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3360.72702,"timestamp":"2025-08-03T15:36:50.944Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:36:50.951] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3360.72702,"timestamp":"2025-08-03T15:36:50.944Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:36:50.954] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3360,72702, Type: unknown, Timestamp: 2025-08-03 15:36:50.944
+[2025-08-03 15:36:50.954] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3360,72702 | Type: unknown | Time: 2025-08-03 15:36:50.952
+[2025-08-03 15:37:07.937] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:37:07.938] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3359,51577,"timestamp":"2025-08-03T15:37:07.935Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:37:07.939] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3359.51577,"timestamp":"2025-08-03T15:37:07.935Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:37:07.939] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3359.51577,"timestamp":"2025-08-03T15:37:07.935Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:37:07.941] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3359,51577, Type: unknown, Timestamp: 2025-08-03 15:37:07.935
+[2025-08-03 15:37:07.941] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3359,51577 | Type: unknown | Time: 2025-08-03 15:37:07.940
+[2025-08-03 15:37:07.944] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:37:07.944] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3358,70435,"timestamp":"2025-08-03T15:37:07.941Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:37:07.945] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3358.70435,"timestamp":"2025-08-03T15:37:07.941Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:37:07.945] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3358.70435,"timestamp":"2025-08-03T15:37:07.941Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:37:07.949] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3358,70435, Type: unknown, Timestamp: 2025-08-03 15:37:07.941
+[2025-08-03 15:37:07.949] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3358,70435 | Type: unknown | Time: 2025-08-03 15:37:07.946
+[2025-08-03 15:37:07.952] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:37:07.953] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3358,31628,"timestamp":"2025-08-03T15:37:07.949Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:37:07.954] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3358.31628,"timestamp":"2025-08-03T15:37:07.949Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:37:07.954] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3358.31628,"timestamp":"2025-08-03T15:37:07.949Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:37:07.955] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3358,31628, Type: unknown, Timestamp: 2025-08-03 15:37:07.949
+[2025-08-03 15:37:07.955] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3358,31628 | Type: unknown | Time: 2025-08-03 15:37:07.954
+[2025-08-03 15:37:14.033] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:37:14.033] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3357,86941,"timestamp":"2025-08-03T15:37:14.030Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:37:14.034] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3357.86941,"timestamp":"2025-08-03T15:37:14.030Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:37:14.034] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3357.86941,"timestamp":"2025-08-03T15:37:14.030Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:37:14.036] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3357,86941, Type: unknown, Timestamp: 2025-08-03 15:37:14.030
+[2025-08-03 15:37:14.036] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3357,86941 | Type: unknown | Time: 2025-08-03 15:37:14.035
+[2025-08-03 15:37:19.956] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:37:19.957] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3357,37550,"timestamp":"2025-08-03T15:37:19.954Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:37:19.957] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3357.37550,"timestamp":"2025-08-03T15:37:19.954Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:37:19.957] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3357.37550,"timestamp":"2025-08-03T15:37:19.954Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:37:19.961] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3357,37550, Type: unknown, Timestamp: 2025-08-03 15:37:19.954
+[2025-08-03 15:37:19.962] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3357,37550 | Type: unknown | Time: 2025-08-03 15:37:19.958
+[2025-08-03 15:37:33.827] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:37:33.827] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3359,08890,"timestamp":"2025-08-03T15:37:33.823Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:37:33.827] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3359.08890,"timestamp":"2025-08-03T15:37:33.823Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:37:33.828] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3359.08890,"timestamp":"2025-08-03T15:37:33.823Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:37:33.830] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3359,08890, Type: unknown, Timestamp: 2025-08-03 15:37:33.823
+[2025-08-03 15:37:33.830] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3359,08890 | Type: unknown | Time: 2025-08-03 15:37:33.828
+[2025-08-03 15:37:36.919] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:37:36.920] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3360,77047,"timestamp":"2025-08-03T15:37:36.916Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:37:36.920] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3360.77047,"timestamp":"2025-08-03T15:37:36.916Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:37:36.920] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3360.77047,"timestamp":"2025-08-03T15:37:36.916Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:37:36.922] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3360,77047, Type: unknown, Timestamp: 2025-08-03 15:37:36.916
+[2025-08-03 15:37:36.922] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3360,77047 | Type: unknown | Time: 2025-08-03 15:37:36.921
+[2025-08-03 15:37:40.637] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:37:40.638] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3358,67758,"timestamp":"2025-08-03T15:37:40.633Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:37:40.639] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3358.67758,"timestamp":"2025-08-03T15:37:40.633Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:37:40.640] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3358.67758,"timestamp":"2025-08-03T15:37:40.633Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:37:40.645] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3358,67758, Type: unknown, Timestamp: 2025-08-03 15:37:40.633
+[2025-08-03 15:37:40.646] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3358,67758 | Type: unknown | Time: 2025-08-03 15:37:40.641
+[2025-08-03 15:41:43.058] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:41:43.058] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3350,00474,"timestamp":"2025-08-03T15:41:43.054Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:41:43.059] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3350.00474,"timestamp":"2025-08-03T15:41:43.054Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:41:43.059] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3350.00474,"timestamp":"2025-08-03T15:41:43.054Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:41:43.061] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3350,00474, Type: unknown, Timestamp: 2025-08-03 15:41:43.054
+[2025-08-03 15:41:43.062] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3350,00474 | Type: unknown | Time: 2025-08-03 15:41:43.060
+[2025-08-03 15:41:48.262] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:41:48.262] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3352,31538,"timestamp":"2025-08-03T15:41:48.257Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:41:48.264] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3352.31538,"timestamp":"2025-08-03T15:41:48.257Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:41:48.264] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3352.31538,"timestamp":"2025-08-03T15:41:48.257Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:41:48.266] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3352,31538, Type: unknown, Timestamp: 2025-08-03 15:41:48.257
+[2025-08-03 15:41:48.267] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3352,31538 | Type: unknown | Time: 2025-08-03 15:41:48.265
+[2025-08-03 15:42:26.226] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:42:26.227] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3353,42943,"timestamp":"2025-08-03T15:42:26.221Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:42:26.228] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3353.42943,"timestamp":"2025-08-03T15:42:26.221Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:42:26.228] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3353.42943,"timestamp":"2025-08-03T15:42:26.221Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:42:26.236] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3353,42943, Type: unknown, Timestamp: 2025-08-03 15:42:26.221
+[2025-08-03 15:42:26.236] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3353,42943 | Type: unknown | Time: 2025-08-03 15:42:26.230
+[2025-08-03 15:42:33.461] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:42:33.462] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3355,57502,"timestamp":"2025-08-03T15:42:33.457Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:42:33.463] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3355.57502,"timestamp":"2025-08-03T15:42:33.457Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:42:33.463] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3355.57502,"timestamp":"2025-08-03T15:42:33.457Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:42:33.466] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3355,57502, Type: unknown, Timestamp: 2025-08-03 15:42:33.457
+[2025-08-03 15:42:33.467] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3355,57502 | Type: unknown | Time: 2025-08-03 15:42:33.465
+[2025-08-03 15:42:40.439] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:42:40.439] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3356,81287,"timestamp":"2025-08-03T15:42:40.436Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:42:40.440] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3356.81287,"timestamp":"2025-08-03T15:42:40.436Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:42:40.440] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3356.81287,"timestamp":"2025-08-03T15:42:40.436Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:42:40.442] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3356,81287, Type: unknown, Timestamp: 2025-08-03 15:42:40.436
+[2025-08-03 15:42:40.442] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3356,81287 | Type: unknown | Time: 2025-08-03 15:42:40.441
+[2025-08-03 15:42:47.500] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:42:47.501] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3358,50458,"timestamp":"2025-08-03T15:42:47.497Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:42:47.501] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3358.50458,"timestamp":"2025-08-03T15:42:47.497Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:42:47.501] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3358.50458,"timestamp":"2025-08-03T15:42:47.497Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:42:47.506] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3358,50458, Type: unknown, Timestamp: 2025-08-03 15:42:47.497
+[2025-08-03 15:42:47.506] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3358,50458 | Type: unknown | Time: 2025-08-03 15:42:47.502
+[2025-08-03 15:48:44.879] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:48:44.889] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":197,56335,"timestamp":"2025-08-03T15:48:44.864Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:48:44.899] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 197.56335,"timestamp":"2025-08-03T15:48:44.864Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:48:44.899] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 197.56335,"timestamp":"2025-08-03T15:48:44.864Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:48:45.086] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 197,56335, Type: unknown, Timestamp: 2025-08-03 15:48:44.864
+[2025-08-03 15:48:45.086] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: GBPJPY | Value: 197,56335 | Type: unknown | Time: 2025-08-03 15:48:45.039
+[2025-08-03 15:48:45.088] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:48:45.088] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":197,33885,"timestamp":"2025-08-03T15:48:45.085Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:48:45.089] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 197.33885,"timestamp":"2025-08-03T15:48:45.085Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:48:45.089] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 197.33885,"timestamp":"2025-08-03T15:48:45.085Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:48:45.091] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 197,33885, Type: unknown, Timestamp: 2025-08-03 15:48:45.085
+[2025-08-03 15:48:45.091] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: GBPJPY | Value: 197,33885 | Type: unknown | Time: 2025-08-03 15:48:45.090
+[2025-08-03 15:49:04.585] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:49:04.585] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":197,74377,"timestamp":"2025-08-03T15:49:04.580Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:49:04.587] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 197.74377,"timestamp":"2025-08-03T15:49:04.580Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:49:04.587] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 197.74377,"timestamp":"2025-08-03T15:49:04.580Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:49:04.603] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 197,74377, Type: unknown, Timestamp: 2025-08-03 15:49:04.580
+[2025-08-03 15:49:04.603] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: GBPJPY | Value: 197,74377 | Type: unknown | Time: 2025-08-03 15:49:04.588
+[2025-08-03 15:49:10.264] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:49:10.265] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":197,90042,"timestamp":"2025-08-03T15:49:10.261Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:49:10.265] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 197.90042,"timestamp":"2025-08-03T15:49:10.261Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:49:10.265] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 197.90042,"timestamp":"2025-08-03T15:49:10.261Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:49:10.267] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 197,90042, Type: unknown, Timestamp: 2025-08-03 15:49:10.261
+[2025-08-03 15:49:10.268] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: GBPJPY | Value: 197,90042 | Type: unknown | Time: 2025-08-03 15:49:10.266
+[2025-08-03 15:49:10.770] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 15:49:10.771] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":198,15021,"timestamp":"2025-08-03T15:49:10.768Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:49:10.771] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 198.15021,"timestamp":"2025-08-03T15:49:10.768Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:49:10.772] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 198.15021,"timestamp":"2025-08-03T15:49:10.768Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 15:49:10.813] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 198,15021, Type: unknown, Timestamp: 2025-08-03 15:49:10.768
+[2025-08-03 15:49:10.813] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: GBPJPY | Value: 198,15021 | Type: unknown | Time: 2025-08-03 15:49:10.812
+[2025-08-03 16:33:02.807] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 16:33:02.808] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3360,21622,"timestamp":"2025-08-03T16:33:02.782Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:02.809] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3360.21622,"timestamp":"2025-08-03T16:33:02.782Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:02.809] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3360.21622,"timestamp":"2025-08-03T16:33:02.782Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:02.815] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3360,21622, Type: unknown, Timestamp: 2025-08-03 16:33:02.782
+[2025-08-03 16:33:02.815] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3360,21622 | Type: unknown | Time: 2025-08-03 16:33:02.810
+[2025-08-03 16:33:02.827] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 16:33:02.828] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3358,85501,"timestamp":"2025-08-03T16:33:02.815Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:02.828] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3358.85501,"timestamp":"2025-08-03T16:33:02.815Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:02.828] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3358.85501,"timestamp":"2025-08-03T16:33:02.815Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:02.831] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3358,85501, Type: unknown, Timestamp: 2025-08-03 16:33:02.815
+[2025-08-03 16:33:02.832] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3358,85501 | Type: unknown | Time: 2025-08-03 16:33:02.829
+[2025-08-03 16:33:02.916] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 16:33:02.924] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3360,73096,"timestamp":"2025-08-03T16:33:02.831Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:02.925] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3360.73096,"timestamp":"2025-08-03T16:33:02.831Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:02.925] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3360.73096,"timestamp":"2025-08-03T16:33:02.831Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:02.927] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3360,73096, Type: unknown, Timestamp: 2025-08-03 16:33:02.831
+[2025-08-03 16:33:02.927] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3360,73096 | Type: unknown | Time: 2025-08-03 16:33:02.925
+[2025-08-03 16:33:02.933] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 16:33:02.935] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3359,52989,"timestamp":"2025-08-03T16:33:02.927Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:02.936] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3359.52989,"timestamp":"2025-08-03T16:33:02.927Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:02.936] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3359.52989,"timestamp":"2025-08-03T16:33:02.927Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:02.941] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3359,52989, Type: unknown, Timestamp: 2025-08-03 16:33:02.927
+[2025-08-03 16:33:02.941] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3359,52989 | Type: unknown | Time: 2025-08-03 16:33:02.937
+[2025-08-03 16:33:26.968] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 16:33:26.969] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3357,37559,"timestamp":"2025-08-03T16:33:26.965Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:26.970] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3357.37559,"timestamp":"2025-08-03T16:33:26.965Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:26.970] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3357.37559,"timestamp":"2025-08-03T16:33:26.965Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:26.975] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3357,37559, Type: unknown, Timestamp: 2025-08-03 16:33:26.965
+[2025-08-03 16:33:26.975] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3357,37559 | Type: unknown | Time: 2025-08-03 16:33:26.971
+[2025-08-03 16:33:36.367] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 16:33:36.368] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3356,78565,"timestamp":"2025-08-03T16:33:36.362Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:36.369] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3356.78565,"timestamp":"2025-08-03T16:33:36.362Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:36.369] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3356.78565,"timestamp":"2025-08-03T16:33:36.362Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:36.371] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3356,78565, Type: unknown, Timestamp: 2025-08-03 16:33:36.362
+[2025-08-03 16:33:36.372] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3356,78565 | Type: unknown | Time: 2025-08-03 16:33:36.370
+[2025-08-03 16:33:41.775] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 16:33:41.776] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3357,78775,"timestamp":"2025-08-03T16:33:41.772Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:41.776] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3357.78775,"timestamp":"2025-08-03T16:33:41.772Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:41.776] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3357.78775,"timestamp":"2025-08-03T16:33:41.772Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:41.780] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3357,78775, Type: unknown, Timestamp: 2025-08-03 16:33:41.772
+[2025-08-03 16:33:41.780] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3357,78775 | Type: unknown | Time: 2025-08-03 16:33:41.777
+[2025-08-03 16:33:48.942] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 16:33:48.942] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3357,47257,"timestamp":"2025-08-03T16:33:48.940Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:48.943] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3357.47257,"timestamp":"2025-08-03T16:33:48.940Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:48.943] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3357.47257,"timestamp":"2025-08-03T16:33:48.940Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:48.945] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3357,47257, Type: unknown, Timestamp: 2025-08-03 16:33:48.940
+[2025-08-03 16:33:48.946] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3357,47257 | Type: unknown | Time: 2025-08-03 16:33:48.944
+[2025-08-03 16:33:55.261] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 16:33:55.261] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3356,89071,"timestamp":"2025-08-03T16:33:55.258Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:55.262] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3356.89071,"timestamp":"2025-08-03T16:33:55.258Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:55.262] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3356.89071,"timestamp":"2025-08-03T16:33:55.258Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:33:55.265] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3356,89071, Type: unknown, Timestamp: 2025-08-03 16:33:55.258
+[2025-08-03 16:33:55.266] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3356,89071 | Type: unknown | Time: 2025-08-03 16:33:55.263
+[2025-08-03 16:34:04.855] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 16:34:04.856] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3356,59169,"timestamp":"2025-08-03T16:34:04.853Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:34:04.856] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3356.59169,"timestamp":"2025-08-03T16:34:04.853Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:34:04.856] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3356.59169,"timestamp":"2025-08-03T16:34:04.853Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:34:04.860] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3356,59169, Type: unknown, Timestamp: 2025-08-03 16:34:04.853
+[2025-08-03 16:34:04.860] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3356,59169 | Type: unknown | Time: 2025-08-03 16:34:04.857
+[2025-08-03 16:34:27.917] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 16:34:27.917] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3358,11100,"timestamp":"2025-08-03T16:34:27.913Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:34:27.918] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3358.11100,"timestamp":"2025-08-03T16:34:27.913Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:34:27.918] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3358.11100,"timestamp":"2025-08-03T16:34:27.913Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:34:27.920] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3358,11100, Type: unknown, Timestamp: 2025-08-03 16:34:27.913
+[2025-08-03 16:34:27.920] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3358,11100 | Type: unknown | Time: 2025-08-03 16:34:27.919
+[2025-08-03 16:34:27.929] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 16:34:27.930] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3358,57973,"timestamp":"2025-08-03T16:34:27.920Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:34:27.930] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3358.57973,"timestamp":"2025-08-03T16:34:27.920Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:34:27.930] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3358.57973,"timestamp":"2025-08-03T16:34:27.920Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:34:27.933] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3358,57973, Type: unknown, Timestamp: 2025-08-03 16:34:27.920
+[2025-08-03 16:34:27.933] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3358,57973 | Type: unknown | Time: 2025-08-03 16:34:27.931
+[2025-08-03 16:34:27.938] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 16:34:27.939] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3359,02421,"timestamp":"2025-08-03T16:34:27.932Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:34:27.940] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3359.02421,"timestamp":"2025-08-03T16:34:27.932Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:34:27.940] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3359.02421,"timestamp":"2025-08-03T16:34:27.932Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:34:27.944] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3359,02421, Type: unknown, Timestamp: 2025-08-03 16:34:27.932
+[2025-08-03 16:34:27.944] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3359,02421 | Type: unknown | Time: 2025-08-03 16:34:27.941
+[2025-08-03 16:34:27.954] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 16:34:27.955] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3359,40403,"timestamp":"2025-08-03T16:34:27.943Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:34:27.955] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3359.40403,"timestamp":"2025-08-03T16:34:27.943Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:34:27.955] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3359.40403,"timestamp":"2025-08-03T16:34:27.943Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:34:27.958] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3359,40403, Type: unknown, Timestamp: 2025-08-03 16:34:27.943
+[2025-08-03 16:34:27.958] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3359,40403 | Type: unknown | Time: 2025-08-03 16:34:27.956
+[2025-08-03 16:34:27.966] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 16:34:27.966] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3359,84043,"timestamp":"2025-08-03T16:34:27.957Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:34:27.967] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3359.84043,"timestamp":"2025-08-03T16:34:27.957Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:34:27.967] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3359.84043,"timestamp":"2025-08-03T16:34:27.957Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:34:27.969] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3359,84043, Type: unknown, Timestamp: 2025-08-03 16:34:27.957
+[2025-08-03 16:34:27.969] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3359,84043 | Type: unknown | Time: 2025-08-03 16:34:27.968
+[2025-08-03 16:34:27.976] [INFO] HTTP Request: POST /pricelevel
+[2025-08-03 16:34:27.976] [INFO] Price Level Input Data: {"symbol":"XAUUSD","price":3360,17177,"timestamp":"2025-08-03T16:34:27.968Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:34:27.977] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3360.17177,"timestamp":"2025-08-03T16:34:27.968Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:34:27.977] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3360.17177,"timestamp":"2025-08-03T16:34:27.968Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 16:34:27.982] [INFO] Price Level Processed: Symbol: XAUUSD, Price: 3360,17177, Type: unknown, Timestamp: 2025-08-03 16:34:27.968
+[2025-08-03 16:34:27.982] [INFO] New Price Level Event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: XAUUSD | Value: 3360,17177 | Type: unknown | Time: 2025-08-03 16:34:27.978

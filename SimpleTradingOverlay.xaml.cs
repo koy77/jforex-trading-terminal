@@ -118,13 +118,7 @@ namespace ScreenCaptureApp
         // Флаг для различения пользовательского и сервисного нажатия Escape
         private bool _isServiceEscapeSending = false;
         
-        // События для паттерна трейдинга
-        public event EventHandler<TradingPatternData> TradingPatternCompleted;
-        public event EventHandler<TradingPatternData> TradingPatternCancelled;
-        
-        // События для паттерна отложенной сделки
-        public event EventHandler<PendingOrderPatternData> PendingOrderPatternCompleted;
-        public event EventHandler<PendingOrderPatternData> PendingOrderPatternCancelled;
+
         
         public SimpleTradingOverlay()
         {
@@ -151,6 +145,9 @@ namespace ScreenCaptureApp
 
             // Установка глобального хука мыши
             SetupMouseHook();
+            
+            // Принудительно показываем окно с Trading Toolbar
+            ShowTradingToolbar();
         }
 
         private void InitializeWindow()
@@ -162,6 +159,34 @@ namespace ScreenCaptureApp
             this.ShowInTaskbar = false;
             this.WindowStartupLocation = WindowStartupLocation.Manual;
             this.ResizeMode = ResizeMode.NoResize;
+        }
+        
+        private void ShowTradingToolbar()
+        {
+            try
+            {
+                // Позиционируем окно в верхней части экрана
+                var screen = System.Windows.Forms.Screen.PrimaryScreen;
+                this.Left = screen.Bounds.Left;
+                this.Top = screen.Bounds.Top;
+                this.Width = screen.Bounds.Width;
+                this.Height = 100; // Высота для Trading Toolbar
+                
+                // Показываем окно
+                if (!this.IsVisible)
+                {
+                    this.Show();
+                }
+                
+                // Устанавливаем символ по умолчанию
+                TradingToolbar.SetSymbol("UNKNOWN");
+                
+                Logger.LogInfo("Trading Toolbar shown successfully");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("Error showing Trading Toolbar", ex);
+            }
         }
 
         private void SetupTradingToolbarEvents()
@@ -279,6 +304,13 @@ namespace ScreenCaptureApp
                 Logger.LogTagInfo("PendingOrder", "Escape key pressed - cancelling pending order pattern");
                 CancelPendingOrderPattern();
             }
+
+            // Отменяем Entry Level в TradingToolbar при нажатии Escape
+            if (TradingToolbar != null)
+            {
+                Logger.LogTagInfo("TradingToolbar", "Escape key pressed - cancelling price level entry");
+                TradingToolbar.CancelPriceLevelEntry();
+            }
         }
 
         private void StartTradingPattern()
@@ -357,7 +389,7 @@ namespace ScreenCaptureApp
             if (_currentTradingPattern != null)
             {
                 _currentTradingPattern.Status = TradingPatternStatus.Cancelled;
-                TradingPatternCancelled?.Invoke(this, _currentTradingPattern);
+    
                 Logger.LogInfo("Trading pattern cancelled");
             }
             
@@ -374,14 +406,11 @@ namespace ScreenCaptureApp
             if (_currentPendingOrderPattern != null)
             {
                 _currentPendingOrderPattern.Status = PendingOrderPatternStatus.Cancelled;
-                PendingOrderPatternCancelled?.Invoke(this, _currentPendingOrderPattern);
+    
                 Logger.LogTagInfo("PendingOrder", "Pending order pattern cancelled");
             }
             
-            _currentPendingOrderPattern = null;
-            
-            // Скрываем цены при отмене паттерна
-            TradingToolbar.HidePrices();
+                         _currentPendingOrderPattern = null;
         }
 
         private void CompleteTradingPattern()
@@ -392,7 +421,7 @@ namespace ScreenCaptureApp
             _clickCount = 0;
             
             _currentTradingPattern.Status = TradingPatternStatus.Completed;
-            TradingPatternCompleted?.Invoke(this, _currentTradingPattern);
+
             
             // Показываем желтую рамку вокруг области трейдинга
             ShowTradingPatternRectangle(_currentTradingPattern.FirstClick, _currentTradingPattern.SecondClick);
@@ -487,7 +516,7 @@ namespace ScreenCaptureApp
             // Анализируем и отправляем в MT4
             await AnalyzeAndSendPendingOrder();
             
-            PendingOrderPatternCompleted?.Invoke(this, _currentPendingOrderPattern);
+
             
             Logger.LogTagInfo("PendingOrder", $"Pending order pattern completed: FirstClick={_currentPendingOrderPattern.FirstClick}, SecondClick={_currentPendingOrderPattern.SecondClick}");
             
@@ -559,11 +588,8 @@ namespace ScreenCaptureApp
                         var entryPrice = await analyzerService.ProcessFirstScreenshot(_currentPendingOrderPattern.FirstScreenshotPath, _currentPendingOrderPattern.OrderId, _currentPendingOrderPattern.Symbol);
                         Logger.LogTagInfo("PendingOrder", $"Entry price extracted: {entryPrice}");
                         
-                        // Сохраняем цену входа для использования при втором клике
-                        _currentPendingOrderPattern.EntryPrice = entryPrice;
-                        
-                        // Сразу показываем EntryPrice на TradingToolbar (тип сделки пока не определен)
-                        TradingToolbar.ShowPrices(entryPrice, 0, ""); // StopLoss пока 0, тип сделки пока не определен
+                                                 // Сохраняем цену входа для использования при втором клике
+                         _currentPendingOrderPattern.EntryPrice = entryPrice;
                     }
 
                     // Отправляем клавишу Escape в целевое окно с задержкой 300 мс
@@ -596,11 +622,8 @@ namespace ScreenCaptureApp
                             var prices = analyzerService.CreatePricesObject(_currentPendingOrderPattern.EntryPrice, stopLossPrice, _currentPendingOrderPattern.Symbol);
                             if (prices != null)
                             {
-                                _currentPendingOrderPattern.Prices = prices;
-                                Logger.LogTagInfo("PendingOrder", $"Prices object created: Entry={prices.EntryPrice}, StopLoss={prices.StopLossPrice}, Direction={prices.Direction}");
-                                
-                                // Обновляем отображение цен на TradingToolbar с типом сделки
-                                TradingToolbar.ShowPrices(_currentPendingOrderPattern.EntryPrice, prices.StopLossPrice, tradeType);
+                                                                 _currentPendingOrderPattern.Prices = prices;
+                                 Logger.LogTagInfo("PendingOrder", $"Prices object created: Entry={prices.EntryPrice}, StopLoss={prices.StopLossPrice}, Direction={prices.Direction}");
                             }
                         }
                     
@@ -1013,6 +1036,11 @@ namespace ScreenCaptureApp
             _isEnabled = false;
             this.Hide();
             Logger.LogInfo("SimpleTradingOverlay disabled");
+        }
+        
+        public void ForceShowTradingToolbar()
+        {
+            ShowTradingToolbar();
         }
 
         protected override void OnClosed(EventArgs e)

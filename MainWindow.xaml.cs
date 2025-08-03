@@ -77,8 +77,8 @@ namespace ScreenCaptureApp
             var databaseService = ServiceContainer.Instance.GetService<DatabaseService>();
             ((App)System.Windows.Application.Current).SubscribeToCaptureTrackingIteration(captureTrackingService, databaseService);
 
-            // Инициализация SimpleTradingOverlay
-            InitializeSimpleTradingOverlay();
+                    // Инициализация SimpleTradingOverlay
+        InitializeSimpleTradingOverlay();
 
             var hotkeysService = ServiceContainer.Instance.GetService<HotkeysService>();
             if (hotkeysService != null)
@@ -106,6 +106,9 @@ namespace ScreenCaptureApp
             try
             {
                 simpleTradingOverlay = new SimpleTradingOverlay();
+                
+                // Принудительно показываем Trading Toolbar
+                simpleTradingOverlay.ForceShowTradingToolbar();
                 
                 Logger.LogInfo("SimpleTradingOverlay initialized successfully");
             }
@@ -233,9 +236,16 @@ namespace ScreenCaptureApp
             StartCapture_Click(null, null);
         }
 
-        private void OnEscapeKeyPressed()
+                private void OnEscapeKeyPressed()
         {
             Logger.LogDebug("Escape key pressed - starting cleanup");
+            
+            // Отменяем заполнение ценовых уровней в TradingToolbar
+            if (overlay != null && overlay.TradingToolbar != null)
+            {
+                overlay.TradingToolbar.CancelPriceLevelEntry();
+                Logger.LogInfo("Price level entry cancelled via Escape key");
+            }
             
             // Вызываем метод SimpleTradingOverlay для отмены паттерна
             if (simpleTradingOverlay != null)
@@ -326,6 +336,7 @@ namespace ScreenCaptureApp
         
         private void OnSKeyPressed()
         {
+            Logger.LogDebug("S key pressed - starting trading pattern capture");
             
             // Вызываем метод SimpleTradingOverlay для паттерна трейдинга
             if (simpleTradingOverlay != null)
@@ -348,9 +359,14 @@ namespace ScreenCaptureApp
         {
             Logger.LogDebug("MainWindow.OnDKeyPressed() called");
             
+            // Вызываем метод SimpleTradingOverlay
             if (simpleTradingOverlay != null)
             {
                 simpleTradingOverlay.OnDKeyPressed();
+            }
+            else
+            {
+                Logger.LogWarning("SimpleTradingOverlay is null, cannot call OnDKeyPressed");
             }
         }
 
@@ -358,9 +374,14 @@ namespace ScreenCaptureApp
         {
             Logger.LogDebug("MainWindow.OnPKeyPressed() called");
             
+            // Вызываем метод SimpleTradingOverlay для отложенных ордеров
             if (simpleTradingOverlay != null)
             {
                 simpleTradingOverlay.OnPKeyPressed();
+            }
+            else
+            {
+                Logger.LogWarning("SimpleTradingOverlay is null, cannot call OnPKeyPressed");
             }
         }
 
@@ -464,13 +485,13 @@ namespace ScreenCaptureApp
             // Stop auto tracking
             StopAutoTracking();
             
-            // Закрытие SimpleTradingOverlay
-            if (simpleTradingOverlay != null)
-            {
-                simpleTradingOverlay.Close();
-                simpleTradingOverlay = null;
-                Logger.LogInfo("SimpleTradingOverlay closed");
-            }
+                    // Закрытие SimpleTradingOverlay
+        if (simpleTradingOverlay != null)
+        {
+            simpleTradingOverlay.Close();
+            simpleTradingOverlay = null;
+            Logger.LogInfo("SimpleTradingOverlay closed");
+        }
             
             // Cleanup services
             ServiceInitializer.CleanupServices();

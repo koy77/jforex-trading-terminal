@@ -33,6 +33,11 @@ namespace ScreenCaptureApp.Services
         public event EventHandler<string> StatusChanged;
 
         /// <summary>
+        /// Событие нового ценового уровня
+        /// </summary>
+        public event EventHandler<PriceLevelEventData> NewPriceLevelReceived;
+
+        /// <summary>
         /// Список последних полученных данных (для отладки)
         /// </summary>
         public List<PriceLevelData> RecentPriceLevels { get; private set; }
@@ -248,12 +253,23 @@ namespace ScreenCaptureApp.Services
                 // Вызываем событие
                 OnPriceLevelReceived(priceLevelData);
 
+                // Создаем и вызываем событие нового ценового уровня
+                var priceLevelEvent = new PriceLevelEventData(
+                    name: priceLevelData.AdditionalData ?? "Price Level",
+                    symbol: priceLevelData.Symbol,
+                    levelValue: priceLevelData.Price,
+                    type: priceLevelData.Type,
+                    additionalData: priceLevelData.AdditionalData
+                );
+                OnNewPriceLevelReceived(priceLevelEvent);
+
                 // Отправляем успешный ответ
                 var responseData = new { success = true, message = "Price level data received", timestamp = DateTime.Now };
                 await SendJsonResponseAsync(response, responseData, 200);
 
                 // Логируем обработанные данные по тегу
                 Logger.LogTagInfo("http_service", $"Price Level Processed: {priceLevelData}");
+                Logger.LogTagInfo("http_service", $"New Price Level Event: {priceLevelEvent}");
                 Logger.LogInfo($"Price level processed: {priceLevelData}");
             }
             catch (JsonException ex)
@@ -384,6 +400,14 @@ namespace ScreenCaptureApp.Services
         protected virtual void OnStatusChanged(string status)
         {
             StatusChanged?.Invoke(this, status);
+        }
+
+        /// <summary>
+        /// Вызывает событие нового ценового уровня
+        /// </summary>
+        protected virtual void OnNewPriceLevelReceived(PriceLevelEventData priceLevelEvent)
+        {
+            NewPriceLevelReceived?.Invoke(this, priceLevelEvent);
         }
 
         /// <summary>

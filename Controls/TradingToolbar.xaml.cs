@@ -20,8 +20,16 @@ namespace ScreenCaptureApp.Controls
 
         private Mt4SocketService _mt4SocketService;
         private ToolbarSettingsManager _toolbarSettingsManager;
+        private HttpServerService _httpServerService;
         private string _currentSymbol;
         private long _currentHandleID;
+
+        // Состояние для обработки ценовых уровней
+        private bool _isWaitingForEntryPrice = false;
+        private bool _isWaitingForStopLossPrice = false;
+        private decimal _entryPrice = 0;
+        private decimal _stopLossPrice = 0;
+        private string _currentTradeSymbol = "";
 
         public TradingToolbar()
         {
@@ -50,6 +58,9 @@ namespace ScreenCaptureApp.Controls
             
             // Subscribe to MT4 socket service events
             SubscribeToMt4SocketEvents();
+            
+            // Subscribe to HTTP server service events
+            SubscribeToHttpServerEvents();
             
             // Wire up order summary button events
             OrderCloseButton.Click += (s, e) => OnOrderCloseClicked();
@@ -83,6 +94,27 @@ namespace ScreenCaptureApp.Controls
             catch (Exception ex)
             {
                 Logger.LogTagError("TradingToolbar", $"Error subscribing to MT4 socket events: {ex.Message}", ex);
+            }
+        }
+
+        private void SubscribeToHttpServerEvents()
+        {
+            try
+            {
+                _httpServerService = ServiceContainer.Instance.GetService<HttpServerService>();
+                if (_httpServerService != null)
+                {
+                    _httpServerService.NewPriceLevelReceived += HttpServerService_NewPriceLevelReceived;
+                    Logger.LogTagInfo("TradingToolbar", "Successfully subscribed to HTTP server price level events");
+                }
+                else
+                {
+                    Logger.LogTagWarning("TradingToolbar", "HttpServerService is null - price level events will not be processed");
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("TradingToolbar", $"Error subscribing to HTTP server events: {ex.Message}", ex);
             }
         }
 
@@ -166,6 +198,151 @@ namespace ScreenCaptureApp.Controls
                     OrderSummaryPanel.Visibility = Visibility.Collapsed;
                     Logger.LogTagInfo("TradingToolbar", "OrderSummary panel hidden");
                 });
+            }
+        }
+
+        private void HttpServerService_NewPriceLevelReceived(object sender, PriceLevelEventData priceLevelEvent)
+        {
+            try
+            {
+                Logger.LogTagInfo("TradingToolbar", $"Received new price level event: {priceLevelEvent}");
+
+                // Проверяем, соответствует ли символ текущему символу в тулбаре
+                if (string.IsNullOrEmpty(_currentSymbol) || !_currentSymbol.Equals(priceLevelEvent.Symbol, StringComparison.OrdinalIgnoreCase))
+                {
+                    Logger.LogTagDebug("TradingToolbar", $"Symbol mismatch: current={_currentSymbol}, event={priceLevelEvent.Symbol}");
+                    return;
+                }
+
+                // Обрабатываем ценовой уровень в зависимости от состояния
+                ProcessPriceLevelEvent(priceLevelEvent);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("TradingToolbar", "Error processing price level event", ex);
+            }
+        }
+
+        private void ProcessPriceLevelEvent(PriceLevelEventData priceLevelEvent)
+        {
+            try
+            {
+                Logger.LogTagInfo("TradingToolbar", $"Processing price level: {priceLevelEvent.Name} = {priceLevelEvent.LevelValue}");
+
+                // Если ожидаем Entry Price
+                if (_isWaitingForEntryPrice)
+                {
+                    _entryPrice = priceLevelEvent.LevelValue;
+                    _currentTradeSymbol = priceLevelEvent.Symbol;
+                    _isWaitingForEntryPrice = false;
+                    _isWaitingForStopLossPrice = true;
+
+                    Logger.LogTagInfo("TradingToolbar", $"Entry Price set: {_entryPrice} for {_currentTradeSymbol}");
+                    
+                    // Обновляем UI
+                    ShowPrices((double)_entryPrice, 0, "Waiting for Stop Loss");
+                    
+                    return;
+                }
+
+                // Если ожидаем Stop Loss Price
+                if (_isWaitingForStopLossPrice)
+                {
+                    _stopLossPrice = priceLevelEvent.LevelValue;
+                    _isWaitingForStopLossPrice = false;
+
+                    Logger.LogTagInfo("TradingToolbar", $"Stop Loss Price set: {_stopLossPrice} for {_currentTradeSymbol}");
+
+                    // Обновляем UI
+                    ShowPrices((double)_entryPrice, (double)_stopLossPrice, "Ready to Trade");
+
+                    // Отправляем команду в MT4
+                    SendTradeCommandToMt4();
+                    
+                    return;
+                }
+
+                // Если не ожидаем никаких цен, начинаем новый цикл
+                Logger.LogTagInfo("TradingToolbar", "Starting new price level cycle - waiting for Entry Price");
+                _isWaitingForEntryPrice = true;
+                _entryPrice = priceLevelEvent.LevelValue;
+                _currentTradeSymbol = priceLevelEvent.Symbol;
+                
+                // Обновляем UI
+                ShowPrices((double)_entryPrice, 0, "Waiting for Stop Loss");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("TradingToolbar", "Error processing price level event", ex);
+            }
+        }
+
+        private async void SendTradeCommandToMt4()
+        {
+            try
+            {
+                if (_mt4SocketService == null)
+                {
+                    Logger.LogTagWarning("TradingToolbar", "MT4 Socket Service is null, cannot send trade command");
+                    return;
+                }
+
+                // Определяем тип сделки на основе цен
+                string tradeType = _entryPrice > _stopLossPrice ? "sell" : "buy";
+                
+                // Получаем риск из тулбара
+                double risk = SelectedRisk;
+                
+                // Формируем команду для MT4
+                var command = new
+                {
+                    command = "open_position",
+                    symbol = _currentTradeSymbol,
+                    type = tradeType,
+                    entry_price = _entryPrice,
+                    stop_loss = _stopLossPrice,
+                    risk = risk
+                };
+
+                Logger.LogTagInfo("TradingToolbar", $"Sending trade command to MT4: {tradeType} {_currentTradeSymbol} Entry:{_entryPrice} SL:{_stopLossPrice} Risk:{risk}");
+
+                // Сериализуем команду в JSON и отправляем в MT4
+                string jsonCommand = Newtonsoft.Json.JsonConvert.SerializeObject(command);
+                await _mt4SocketService.WriteAsync(jsonCommand);
+
+                // Сбрасываем состояние
+                ResetPriceLevelState();
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("TradingToolbar", "Error sending trade command to MT4", ex);
+            }
+        }
+
+        private void ResetPriceLevelState()
+        {
+            _isWaitingForEntryPrice = false;
+            _isWaitingForStopLossPrice = false;
+            _entryPrice = 0;
+            _stopLossPrice = 0;
+            _currentTradeSymbol = "";
+            
+            // Скрываем цены в UI
+            HidePrices();
+            
+            Logger.LogTagInfo("TradingToolbar", "Price level state reset");
+        }
+
+        public void CancelPriceLevelEntry()
+        {
+            try
+            {
+                Logger.LogTagInfo("TradingToolbar", "Cancelling price level entry");
+                ResetPriceLevelState();
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("TradingToolbar", "Error cancelling price level entry", ex);
             }
         }
 
