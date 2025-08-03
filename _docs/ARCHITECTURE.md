@@ -45,6 +45,20 @@ ScreenCaptureApp — это WPF-приложение для трекинга, а
   - ConnectAsync, DisconnectAsync, WriteAsync, ReadLineAsync, ProcessIncomingMessage, HandleOrderClosedEvent, HandleOrdersSummaryEvent.
 - **Связи:** Используется в MainWindow, CaptureTrackingService, CaptureTrackingViewer.
 
+### HttpServerService
+- **Назначение:** HTTP сервер для приема данных от внешних источников (GForex), обработка ценовых уровней и генерация событий.
+- **Поля:**
+  - _listener, _isRunning, _port, _cancellationTokenSource, RecentPriceLevels
+- **События:**
+  - PriceLevelReceived, StatusChanged, NewPriceLevelReceived
+- **Методы:**
+  - StartAsync, StopAsync, HandlePriceLevelRequestAsync, OnNewPriceLevelReceived
+- **Обработка данных:**
+  - Прием POST запросов с JSON данными ценовых уровней
+  - Предобработка JSON для исправления форматов чисел
+  - Создание PriceLevelEventData и генерация событий
+- **Связи:** Используется TradingToolbar для получения ценовых уровней, отправляемых в MT4.
+
 ### DatabaseService
 - **Назначение:** Работа с локальной JSON-базой (captures, symbols), CRUD для CaptureData и SymbolData.
 - **Поля:**
@@ -60,6 +74,25 @@ ScreenCaptureApp — это WPF-приложение для трекинга, а
 - **Методы:**
   - GetSettings(handle), SetSettings(handle, ...), UpdateSettings(handle, ...), RemoveSettings(handle)
 - **Связи:** Используется CanvasWindow, ScreenCaptureOverlay, MainWindow для инициализации и сохранения настроек тулбара по окну.
+
+### TradingToolbar
+- **Назначение:** Основной UI компонент для управления торговыми операциями, обработки ценовых уровней от HTTP сервера и отправки команд в MT4.
+- **Поля:**
+  - Состояния ценовых уровней: `_isWaitingForEntryPrice`, `_isWaitingForStopLossPrice`
+  - Цены: `_entryPrice`, `_stopLossPrice`, `_currentTradeSymbol`
+  - Сервисы: `_mt4SocketService`, `_httpServerService`, `_toastNotifyService`
+- **Методы:**
+  - `ProcessPriceLevelEvent()` - обработка событий от HTTP сервера
+  - `SendTradeCommandToMt4()` - отправка команд в MT4
+  - `CancelPriceLevelEntry()` - отмена по Escape
+  - `ShowPrices()`, `HidePrices()` - управление UI
+- **События:**
+  - `RiskChanged`, `BrokerChanged`, `DurationChanged`
+- **Логика обработки цен:**
+  1. Первое событие → заполняет EntryPrice
+  2. Второе событие → заполняет StopLoss → отправляет команду в MT4
+  3. Escape → сбрасывает все цены
+- **Связи:** Использует HttpServerService, Mt4SocketService, ToastNotifyService, ToolbarSettingsManager.
 
 (Остальные сервисы: CaptureTrackingService, ScreenshotService, WindowManagementService, JForexWindowsManagerService, ToastNotifyService, Logger — аналогично, с описанием их задач и основных методов.)
 

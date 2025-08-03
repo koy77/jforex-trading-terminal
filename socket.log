@@ -292,3 +292,8 @@
 [2025-08-03 23:41:02.677] [SOCKET] MT4 OUT: {"command":"open_position","symbol":"EURUSD","type":"buy","entry_price":1.15418,"stop_loss":1.15516,"risk":1.0}
 [2025-08-03 23:41:59.549] [SOCKET] MT4 OUT: {"command":"open_position","symbol":"EURUSD","type":"buy","entry_price":1.15312,"stop_loss":1.15361,"risk":1.0}
 [2025-08-03 23:42:30.399] [SOCKET] MT4 OUT: {"command":"open_position","symbol":"EURUSD","type":"sell","entry_price":1.15292,"stop_loss":1.15250,"risk":1.0}
+[2025-08-04 00:04:22.235] [SOCKET] MT4 OUT: {"command":"open_position","symbol":"EURUSD","type":"buy","entry_price":1.15311,"stop_loss":197.51091,"risk":1.0}
+[2025-08-04 00:15:29.013] [SOCKET] MT4 OUT: {"command":"open_position","symbol":"GBPJPY","type":"sell","entry_price":198.19255,"stop_loss":197.78187,"risk":1.0}
+[2025-08-04 00:15:48.692] [SOCKET] MT4 OUT: {"command":"open_position","symbol":"GBPJPY","type":"sell","entry_price":197.69297,"stop_loss":197.54055,"risk":1.0}
+[2025-08-04 00:16:03.939] [SOCKET] MT4 OUT: {"command":"open_position","symbol":"GBPJPY","type":"sell","entry_price":197.34157,"stop_loss":197.16798,"risk":1.0}
+[2025-08-04 00:23:28.110] [SOCKET] MT4 OUT: {"command":"open_position","symbol":"GBPJPY","type":"buy","entry_price":197.16375,"stop_loss":198.06553,"risk":1.0}

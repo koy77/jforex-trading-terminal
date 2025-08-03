@@ -120,6 +120,13 @@ namespace ScreenCaptureApp
         
         // Флаг для различения пользовательского и сервисного нажатия Escape
         private bool _isServiceEscapeSending = false;
+
+        // Состояние для обработки ценовых уровней
+        private bool _isWaitingForEntryPrice = false;
+        private bool _isWaitingForStopLossPrice = false;
+        private decimal _entryPrice = 0;
+        private decimal _stopLossPrice = 0;
+        private string _currentTradeSymbol = "";
         
 
         
@@ -232,13 +239,158 @@ namespace ScreenCaptureApp
 
         private async void HttpServerService_NewPriceLevelReceived(object sender, PriceLevelEventData priceLevelEvent)
         {
-            await Task.Delay(0); // Fix async warning
-            Logger.LogInfo($"SimpleTradingOverlay: New price level received - {priceLevelEvent.Type} for {priceLevelEvent.Symbol}");
-            
-            SendEscapeToTargetWindow();
+            try
+            {
+                Logger.LogTagInfo("SimpleTradingOverlay", $"Received new price level event: {priceLevelEvent}");
+
+                // Проверяем, соответствует ли символ текущему символу в тулбаре
+                if (string.IsNullOrEmpty(TradingToolbar.CurrentSymbol) || !TradingToolbar.CurrentSymbol.Equals(priceLevelEvent.Symbol, StringComparison.OrdinalIgnoreCase))
+                {
+                    Logger.LogTagDebug("SimpleTradingOverlay", $"Symbol mismatch: current={TradingToolbar.CurrentSymbol}, event={priceLevelEvent.Symbol}");
+                    return;
+                }
+
+                // Показываем тост сообщение
+                var toastNotifyService = ServiceContainer.Instance.GetService<ToastNotifyService>();
+                if (toastNotifyService != null)
+                {
+                    string toastMessage = $"HTTP: {priceLevelEvent.Name} = {priceLevelEvent.LevelValue:F5} ({priceLevelEvent.Symbol})";
+                    toastNotifyService.ShowToast(toastMessage, ToastType.Success, 3000);
+                    Logger.LogTagInfo("SimpleTradingOverlay", $"Toast notification shown: {toastMessage}");
+                }
+
+                // Обрабатываем ценовой уровень в зависимости от состояния
+                ProcessPriceLevelEvent(priceLevelEvent);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("SimpleTradingOverlay", "Error processing price level event", ex);
+            }
         }
 
+        private void ProcessPriceLevelEvent(PriceLevelEventData priceLevelEvent)
+        {
+            try
+            {
+                Logger.LogTagInfo("SimpleTradingOverlay", $"Processing price level: {priceLevelEvent.Name} = {priceLevelEvent.LevelValue}");
 
+                // Если ожидаем Entry Price
+                if (_isWaitingForEntryPrice)
+                {
+                    _entryPrice = priceLevelEvent.LevelValue;
+                    _currentTradeSymbol = priceLevelEvent.Symbol;
+                    _isWaitingForEntryPrice = false;
+                    _isWaitingForStopLossPrice = true;
+
+                    Logger.LogTagInfo("SimpleTradingOverlay", $"Entry Price set: {_entryPrice} for {_currentTradeSymbol}");
+                    
+                    // Устанавливаем Entry Level в активном TradingToolbar
+                    TradingToolbar.SetEntryLevel(_entryPrice, _currentTradeSymbol);
+                    
+                    return;
+                }
+
+                // Если ожидаем Stop Loss Price
+                if (_isWaitingForStopLossPrice)
+                {
+                    _stopLossPrice = priceLevelEvent.LevelValue;
+                    _isWaitingForStopLossPrice = false;
+
+                    Logger.LogTagInfo("SimpleTradingOverlay", $"Stop Loss Price set: {_stopLossPrice} for {_currentTradeSymbol}");
+
+                    // Показываем тост сообщение о установке Stop Loss Price
+                    var toastNotifyService = ServiceContainer.Instance.GetService<ToastNotifyService>();
+                    if (toastNotifyService != null)
+                    {
+                        string tradeType = _entryPrice > _stopLossPrice ? "SELL" : "BUY";
+                        string toastMessage = $"Stop Loss: {_stopLossPrice:F5} | Trade: {tradeType} ({_currentTradeSymbol})";
+                        toastNotifyService.ShowToast(toastMessage, ToastType.Success, 3000);
+                        Logger.LogTagInfo("SimpleTradingOverlay", $"Stop Loss toast shown: {toastMessage}");
+                    }
+
+                    // Отправляем команду в MT4
+                    SendTradeCommandToMt4();
+                    
+                    return;
+                }
+
+                // Если не ожидаем никаких цен, начинаем новый цикл
+                Logger.LogTagInfo("SimpleTradingOverlay", "Starting new price level cycle - waiting for Entry Price");
+                _isWaitingForEntryPrice = true;
+                _entryPrice = priceLevelEvent.LevelValue;
+                _currentTradeSymbol = priceLevelEvent.Symbol;
+                
+                // Устанавливаем Entry Level в активном TradingToolbar
+                TradingToolbar.SetEntryLevel(_entryPrice, _currentTradeSymbol);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("SimpleTradingOverlay", "Error processing price level event", ex);
+            }
+        }
+
+        private async void SendTradeCommandToMt4()
+        {
+            try
+            {
+                var mt4SocketService = ServiceContainer.Instance.GetService<Mt4SocketService>();
+                if (mt4SocketService == null)
+                {
+                    Logger.LogTagWarning("SimpleTradingOverlay", "MT4 Socket Service is null, cannot send trade command");
+                    return;
+                }
+
+                // Определяем тип сделки на основе цен
+                string tradeType = _entryPrice > _stopLossPrice ? "sell" : "buy";
+                
+                // Получаем риск из тулбара
+                double risk = TradingToolbar.SelectedRisk;
+                
+                // Формируем команду для MT4
+                var command = new
+                {
+                    command = "open_position",
+                    symbol = _currentTradeSymbol,
+                    type = tradeType,
+                    entry_price = _entryPrice,
+                    stop_loss = _stopLossPrice,
+                    risk = risk
+                };
+
+                Logger.LogTagInfo("SimpleTradingOverlay", $"Sending trade command to MT4: {tradeType} {_currentTradeSymbol} Entry:{_entryPrice} SL:{_stopLossPrice} Risk:{risk}");
+
+                // Сериализуем команду в JSON и отправляем в MT4
+                string jsonCommand = Newtonsoft.Json.JsonConvert.SerializeObject(command);
+                await mt4SocketService.WriteAsync(jsonCommand);
+
+                Logger.LogTagInfo("SimpleTradingOverlay", "MT4 command sent successfully, clearing UI");
+
+                // Сбрасываем состояние после отправки команды в MT4
+                ResetPriceLevelState();
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("SimpleTradingOverlay", "Error sending trade command to MT4", ex);
+                
+                // Даже при ошибке очищаем UI, чтобы избежать неправильного отображения
+                Logger.LogTagInfo("SimpleTradingOverlay", "Clearing UI due to error in MT4 command");
+                ResetPriceLevelState();
+            }
+        }
+
+        private void ResetPriceLevelState()
+        {
+            _isWaitingForEntryPrice = false;
+            _isWaitingForStopLossPrice = false;
+            _entryPrice = 0;
+            _stopLossPrice = 0;
+            _currentTradeSymbol = "";
+            
+            // Скрываем цены в UI
+            TradingToolbar.HidePrices();
+            
+            Logger.LogTagInfo("SimpleTradingOverlay", "Price level state reset");
+        }
 
         public void OnSKeyPressed()
         {
@@ -336,8 +488,8 @@ namespace ScreenCaptureApp
             // Отменяем Entry Level в TradingToolbar при нажатии Escape
             if (TradingToolbar != null)
             {
-                Logger.LogTagInfo("TradingToolbar", "Escape key pressed - cancelling price level entry");
-                TradingToolbar.CancelPriceLevelEntry();
+                Logger.LogTagInfo("SimpleTradingOverlay", "Escape key pressed - cancelling price level entry");
+                ResetPriceLevelState();
             }
         }
 

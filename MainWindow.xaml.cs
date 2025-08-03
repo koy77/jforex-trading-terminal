@@ -220,12 +220,8 @@ namespace ScreenCaptureApp
         {
             Logger.LogDebug("Escape key pressed - starting cleanup");
             
-            // Отменяем заполнение ценовых уровней в TradingToolbar
-            if (overlay != null && overlay.TradingToolbar != null)
-            {
-                overlay.TradingToolbar.CancelPriceLevelEntry();
-                Logger.LogInfo("Price level entry cancelled via Escape key");
-            }
+            // Логика обработки ценовых уровней перенесена в SimpleTradingOverlay
+            // Отмена происходит через simpleTradingOverlay.OnEscapeKeyPressed()
             
             // Вызываем метод SimpleTradingOverlay для отмены паттерна
             if (simpleTradingOverlay != null)
