@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using ScreenCaptureApp.Models;
 using ScreenCaptureApp.Services;
+using static ScreenCaptureApp.Services.ToastNotifyService;
 
 namespace ScreenCaptureApp.Controls
 {
@@ -21,8 +22,11 @@ namespace ScreenCaptureApp.Controls
         private Mt4SocketService _mt4SocketService;
         private ToolbarSettingsManager _toolbarSettingsManager;
         private HttpServerService _httpServerService;
+        private ToastNotifyService _toastNotifyService;
         private string _currentSymbol;
         private long _currentHandleID;
+        private static int _instanceCounter = 0;
+        private readonly int _instanceId;
 
         // Состояние для обработки ценовых уровней
         private bool _isWaitingForEntryPrice = false;
@@ -34,6 +38,8 @@ namespace ScreenCaptureApp.Controls
         public TradingToolbar()
         {
             InitializeComponent();
+            _instanceId = ++_instanceCounter;
+            Logger.LogTagInfo("TradingToolbar", $"TradingToolbar instance {_instanceId} created");
             
             // Получаем ToolbarSettingsManager из DI контейнера
             try
@@ -51,6 +57,24 @@ namespace ScreenCaptureApp.Controls
             catch (Exception ex)
             {
                 Logger.LogTagError("TradingToolbar", "Failed to get ToolbarSettingsManager from DI container", ex);
+            }
+
+            // Получаем ToastNotifyService из DI контейнера
+            try
+            {
+                _toastNotifyService = ServiceContainer.Instance.GetService<ToastNotifyService>();
+                if (_toastNotifyService != null)
+                {
+                    Logger.LogTagInfo("TradingToolbar", "ToastNotifyService initialized successfully");
+                }
+                else
+                {
+                    Logger.LogTagWarning("TradingToolbar", "ToastNotifyService is null - toast notifications will not be shown");
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("TradingToolbar", "Failed to get ToastNotifyService from DI container", ex);
             }
             
             HighlightSelectedBroker(SelectedBroker);
@@ -105,11 +129,11 @@ namespace ScreenCaptureApp.Controls
                 if (_httpServerService != null)
                 {
                     _httpServerService.NewPriceLevelReceived += HttpServerService_NewPriceLevelReceived;
-                    Logger.LogTagInfo("TradingToolbar", "Successfully subscribed to HTTP server price level events");
+                    Logger.LogTagInfo("TradingToolbar", $"Instance {_instanceId}: Successfully subscribed to HTTP server price level events");
                 }
                 else
                 {
-                    Logger.LogTagWarning("TradingToolbar", "HttpServerService is null - price level events will not be processed");
+                    Logger.LogTagWarning("TradingToolbar", $"Instance {_instanceId}: HttpServerService is null - price level events will not be processed");
                 }
             }
             catch (Exception ex)
@@ -214,6 +238,18 @@ namespace ScreenCaptureApp.Controls
                     return;
                 }
 
+                // Показываем тост сообщение только от основного экземпляра (instance 1)
+                if (_toastNotifyService != null && _instanceId == 1)
+                {
+                    string toastMessage = $"HTTP: {priceLevelEvent.Name} = {priceLevelEvent.LevelValue:F5} ({priceLevelEvent.Symbol})";
+                    _toastNotifyService.ShowToast(toastMessage, ToastType.Success, 3000);
+                    Logger.LogTagInfo("TradingToolbar", $"Toast notification shown by instance {_instanceId}: {toastMessage}");
+                }
+                else
+                {
+                    Logger.LogTagDebug("TradingToolbar", $"Toast notification skipped by instance {_instanceId} (not primary)");
+                }
+
                 // Обрабатываем ценовой уровень в зависимости от состояния
                 ProcessPriceLevelEvent(priceLevelEvent);
             }
@@ -239,6 +275,14 @@ namespace ScreenCaptureApp.Controls
 
                     Logger.LogTagInfo("TradingToolbar", $"Entry Price set: {_entryPrice} for {_currentTradeSymbol}");
                     
+                    // Показываем тост сообщение о установке Entry Price
+                    if (_toastNotifyService != null)
+                    {
+                        string toastMessage = $"Entry Price: {_entryPrice:F5} ({_currentTradeSymbol})";
+                        _toastNotifyService.ShowToast(toastMessage, ToastType.Success, 3000);
+                        Logger.LogTagInfo("TradingToolbar", $"Entry Price toast shown: {toastMessage}");
+                    }
+                    
                     // Обновляем UI
                     ShowPrices((double)_entryPrice, 0, "Waiting for Stop Loss");
                     
@@ -252,6 +296,15 @@ namespace ScreenCaptureApp.Controls
                     _isWaitingForStopLossPrice = false;
 
                     Logger.LogTagInfo("TradingToolbar", $"Stop Loss Price set: {_stopLossPrice} for {_currentTradeSymbol}");
+
+                    // Показываем тост сообщение о установке Stop Loss Price
+                    if (_toastNotifyService != null)
+                    {
+                        string tradeType = _entryPrice > _stopLossPrice ? "SELL" : "BUY";
+                        string toastMessage = $"Stop Loss: {_stopLossPrice:F5} | Trade: {tradeType} ({_currentTradeSymbol})";
+                        _toastNotifyService.ShowToast(toastMessage, ToastType.Success, 3000);
+                        Logger.LogTagInfo("TradingToolbar", $"Stop Loss toast shown: {toastMessage}");
+                    }
 
                     // Обновляем UI
                     ShowPrices((double)_entryPrice, (double)_stopLossPrice, "Ready to Trade");
