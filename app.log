@@ -39880,3 +39880,210 @@ StackTrace:    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowE
 [2025-08-03 12:39:32.974] [INFO] Price level received from GForex: Symbol: EURUSD, Price: 1,15461, Type: unknown, Timestamp: 2025-08-03 12:39:32.970
 [2025-08-03 12:39:32.975] [INFO] Price level processed: Symbol: EURUSD, Price: 1,15461, Type: unknown, Timestamp: 2025-08-03 12:39:32.970
 [2025-08-03 12:39:47.199] [DEBUG] F key detected and service is enabled
+[2025-08-03 12:39:49.117] [INFO] Applied toolbar settings for window 131686: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 12:39:49.117] [INFO] Overlay positioned on window 131686 (symbol: EURUSD): Left=1920, Top=0, Width=1920
+[2025-08-03 12:39:52.252] [INFO] Applied toolbar settings for window 131684: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 12:39:52.253] [INFO] Overlay positioned on window 131684 (symbol: EURUSD): Left=0, Top=0, Width=1920
+[2025-08-03 12:40:38.455] [DEBUG] A key detected and service is enabled
+[2025-08-03 12:41:19.503] [DEBUG] A key detected and service is enabled
+[2025-08-03 12:41:19.798] [DEBUG] C key detected and service is enabled
+[2025-08-03 12:41:19.799] [DEBUG] C key pressed - clearing canvas
+[2025-08-03 12:41:20.430] [DEBUG] C key detected and service is enabled
+[2025-08-03 12:41:20.431] [DEBUG] C key pressed - clearing canvas
+[2025-08-03 12:41:51.038] [DEBUG] A key detected and service is enabled
+[2025-08-03 12:41:51.358] [DEBUG] C key detected and service is enabled
+[2025-08-03 12:41:51.358] [DEBUG] C key pressed - clearing canvas
+[2025-08-03 12:41:51.798] [DEBUG] C key detected and service is enabled
+[2025-08-03 12:41:51.798] [DEBUG] C key pressed - clearing canvas
+[2025-08-03 12:42:21.390] [DEBUG] C key detected and service is enabled
+[2025-08-03 12:42:21.390] [DEBUG] C key pressed - clearing canvas
+[2025-08-03 12:42:37.078] [DEBUG] A key detected and service is enabled
+[2025-08-03 12:42:37.390] [DEBUG] C key detected and service is enabled
+[2025-08-03 12:42:37.390] [DEBUG] C key pressed - clearing canvas
+[2025-08-03 12:42:39.534] [DEBUG] Z hotkey detected and service is enabled
+[2025-08-03 12:42:39.534] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-08-03 12:42:56.693] [DEBUG] A key detected and service is enabled
+[2025-08-03 12:43:16.196] [INFO] Received from MT4 socket: {"event":"watchlist_stats","data":{"EURJPY.s":{"total":1,"buy":1,"sell":0,"tline_total":0,"tline_buy":0,"tline_sell":0,"shortline_total":1,"shortline_buy":1,"shortline_sell":0}}}
+[2025-08-03 12:43:16.208] [INFO] MT4 Socket: Received unknown event type: watchlist_stats
+[2025-08-03 12:43:16.209] [DEBUG] MT4: {"event":"watchlist_stats","data":{"EURJPY.s":{"total":1,"buy":1,"sell":0,"tline_total":0,"tline_buy":0,"tline_sell":0,"shortline_total":1,"shortline_buy":1,"shortline_sell":0}}}
+[2025-08-03 12:44:36.084] [DEBUG] C key detected and service is enabled
+[2025-08-03 12:44:36.084] [DEBUG] C key pressed - clearing canvas
+[2025-08-03 12:45:02.084] [DEBUG] E hotkey detected and service is enabled
+[2025-08-03 12:45:02.084] [INFO] [DEBUG] OnEHotkey event in MainWindow
+[2025-08-03 12:45:02.213] [INFO] Hotkey button index 2 clicked at (480,56) on window 2884600
+[2025-08-03 12:45:02.213] [INFO] [DEBUG] Mouse returned to (2982,122)
+[2025-08-03 12:45:02.214] [DEBUG] Space key detected and service is enabled
+[2025-08-03 12:45:02.218] [DEBUG] Target window captured (Handle: 0x2C03F8)
+[2025-08-03 12:45:02.261] [INFO] Created default toolbar settings for handle=2884600: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 12:45:02.358] [INFO] Window activated - focus set to InkCanvas
+[2025-08-03 12:45:02.362] [INFO] Window loaded for handler 2884600
+[2025-08-03 12:45:02.521] [INFO] InkCanvas initialized successfully with Yellow brush for DrawingCanvas and White for TradingCanvas
+[2025-08-03 12:45:02.522] [INFO] Canvas loaded: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\2884600.xaml
+[2025-08-03 12:45:02.523] [INFO] Brush mode updated: Simple mode
+[2025-08-03 12:45:02.524] [INFO] Active symbol display updated: EURUSD
+[2025-08-03 12:45:02.568] [DEBUG] Canvas window opened
+[2025-08-03 12:45:02.568] [DEBUG] New CanvasWindow opened
+[2025-08-03 12:45:03.636] [DEBUG] Escape key detected and service is enabled
+[2025-08-03 12:45:03.636] [DEBUG] Escape key pressed - starting cleanup
+[2025-08-03 12:45:03.636] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-08-03 12:45:03.636] [DEBUG] Closing canvas window
+[2025-08-03 12:45:03.637] [INFO] Window closing: saving canvas
+[2025-08-03 12:45:03.715] [INFO] Canvas saved: C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\2884600.xaml, C:\apps\jforex-trading-terminal-win10\bin\Debug\net6.0-windows\Canvases\2884600.png
+[2025-08-03 12:45:03.716] [INFO] Canvas saved properly
+[2025-08-03 12:45:03.723] [DEBUG] Canvas window closed
+[2025-08-03 12:45:03.723] [DEBUG] No overlay to close
+[2025-08-03 12:45:03.723] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-08-03 12:45:06.412] [DEBUG] E hotkey detected and service is enabled
+[2025-08-03 12:45:06.412] [INFO] [DEBUG] OnEHotkey event in MainWindow
+[2025-08-03 12:45:06.527] [INFO] Hotkey button index 2 clicked at (480,56) on window 2884600
+[2025-08-03 12:45:06.528] [INFO] [DEBUG] Mouse returned to (2363,115)
+[2025-08-03 12:45:11.572] [DEBUG] Escape key detected and service is enabled
+[2025-08-03 12:45:11.572] [DEBUG] Escape key pressed - starting cleanup
+[2025-08-03 12:45:11.572] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-08-03 12:45:11.572] [DEBUG] No overlay to close
+[2025-08-03 12:45:11.573] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-08-03 12:45:11.716] [DEBUG] Escape key detected and service is enabled
+[2025-08-03 12:45:11.716] [DEBUG] Escape key pressed - starting cleanup
+[2025-08-03 12:45:11.716] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-08-03 12:45:11.716] [DEBUG] No overlay to close
+[2025-08-03 12:45:11.716] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-08-03 12:45:13.753] [INFO] Applied toolbar settings for window 131686: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 12:45:13.753] [INFO] Overlay positioned on window 131686 (symbol: EURUSD): Left=1920, Top=0, Width=1920
+[2025-08-03 12:45:19.080] [INFO] Applied toolbar settings for window 131684: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 12:45:19.081] [INFO] Overlay positioned on window 131684 (symbol: EURUSD): Left=0, Top=0, Width=1920
+[2025-08-03 12:50:38.032] [DEBUG] C key detected and service is enabled
+[2025-08-03 12:50:38.032] [DEBUG] C key pressed - clearing canvas
+[2025-08-03 12:53:09.878] [DEBUG] A key detected and service is enabled
+[2025-08-03 12:53:10.318] [DEBUG] C key detected and service is enabled
+[2025-08-03 12:53:10.318] [DEBUG] C key pressed - clearing canvas
+[2025-08-03 12:53:41.454] [DEBUG] C key detected and service is enabled
+[2025-08-03 12:53:41.454] [DEBUG] C key pressed - clearing canvas
+[2025-08-03 12:53:44.470] [DEBUG] C key detected and service is enabled
+[2025-08-03 12:53:44.470] [DEBUG] C key pressed - clearing canvas
+[2025-08-03 12:53:57.862] [DEBUG] A key detected and service is enabled
+[2025-08-03 12:53:59.638] [DEBUG] Z hotkey detected and service is enabled
+[2025-08-03 12:53:59.638] [INFO] [DEBUG] OnLeftShiftHotkey event in MainWindow
+[2025-08-03 12:54:43.877] [DEBUG] A key detected and service is enabled
+[2025-08-03 12:54:44.173] [DEBUG] C key detected and service is enabled
+[2025-08-03 12:54:44.173] [DEBUG] C key pressed - clearing canvas
+[2025-08-03 12:58:35.218] [DEBUG] C key detected and service is enabled
+[2025-08-03 12:58:35.219] [DEBUG] C key pressed - clearing canvas
+[2025-08-03 12:58:36.090] [DEBUG] C key detected and service is enabled
+[2025-08-03 12:58:36.091] [DEBUG] C key pressed - clearing canvas
+[2025-08-03 12:59:00.066] [DEBUG] C key detected and service is enabled
+[2025-08-03 12:59:00.067] [DEBUG] C key pressed - clearing canvas
+[2025-08-03 12:59:00.346] [DEBUG] A key detected and service is enabled
+[2025-08-03 12:59:00.514] [DEBUG] P key detected and service is enabled
+[2025-08-03 12:59:00.515] [DEBUG] MainWindow.OnPKeyPressed() called
+[2025-08-03 12:59:00.515] [DEBUG] SimpleTradingOverlay.OnPKeyPressed() called
+[2025-08-03 12:59:00.650] [DEBUG] P key detected and service is enabled
+[2025-08-03 12:59:00.650] [DEBUG] MainWindow.OnPKeyPressed() called
+[2025-08-03 12:59:00.651] [DEBUG] SimpleTradingOverlay.OnPKeyPressed() called
+[2025-08-03 12:59:07.713] [INFO] Sent message to MT4 socket: {"type":"pending_order","symbol":"EURUSD","direction":"Buy","entry_price":1.2033642141549352,"stop_loss_price":1.1850174981343322,"lot_size":0.10000000000000001,"comment":"Pending Order EURUSD Buy","timestamp":"2025-08-03 12:59:07"}
+[2025-08-03 12:59:18.778] [DEBUG] P key detected and service is enabled
+[2025-08-03 12:59:18.778] [DEBUG] MainWindow.OnPKeyPressed() called
+[2025-08-03 12:59:18.778] [DEBUG] SimpleTradingOverlay.OnPKeyPressed() called
+[2025-08-03 12:59:18.890] [DEBUG] R hotkey detected and service is enabled
+[2025-08-03 12:59:18.890] [INFO] [DEBUG] OnRHotkey event in MainWindow
+[2025-08-03 12:59:19.009] [INFO] Hotkey button index 3 clicked at (680,56) on window 3146650
+[2025-08-03 12:59:19.010] [INFO] [DEBUG] Mouse returned to (2299,219)
+[2025-08-03 12:59:20.010] [DEBUG] Escape key detected and service is enabled
+[2025-08-03 12:59:20.010] [DEBUG] Escape key pressed - starting cleanup
+[2025-08-03 12:59:20.011] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-08-03 12:59:20.011] [DEBUG] No overlay to close
+[2025-08-03 12:59:20.011] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-08-03 12:59:22.978] [DEBUG] P key detected and service is enabled
+[2025-08-03 12:59:22.978] [DEBUG] MainWindow.OnPKeyPressed() called
+[2025-08-03 12:59:22.978] [DEBUG] SimpleTradingOverlay.OnPKeyPressed() called
+[2025-08-03 12:59:23.058] [DEBUG] R hotkey detected and service is enabled
+[2025-08-03 12:59:23.058] [INFO] [DEBUG] OnRHotkey event in MainWindow
+[2025-08-03 12:59:23.180] [INFO] Hotkey button index 3 clicked at (680,56) on window 3146650
+[2025-08-03 12:59:23.180] [INFO] [DEBUG] Mouse returned to (2261,240)
+[2025-08-03 12:59:26.892] [INFO] Sent message to MT4 socket: {"type":"pending_order","symbol":"EURUSD","direction":"Buy","entry_price":1.201234219218722,"stop_loss_price":1.1869470180984685,"lot_size":0.10000000000000001,"comment":"Pending Order EURUSD Buy","timestamp":"2025-08-03 12:59:26"}
+[2025-08-03 12:59:28.386] [DEBUG] BackQuote (`) key detected and service is enabled
+[2025-08-03 12:59:46.690] [DEBUG] Space key detected but service is disabled
+[2025-08-03 13:03:52.663] [DEBUG] Space key detected but service is disabled
+[2025-08-03 13:03:55.895] [DEBUG] Space key detected but service is disabled
+[2025-08-03 13:03:56.415] [DEBUG] Space key detected but service is disabled
+[2025-08-03 13:03:58.191] [DEBUG] Space key detected but service is disabled
+[2025-08-03 13:04:04.310] [DEBUG] Space key detected but service is disabled
+[2025-08-03 13:06:16.527] [DEBUG] Status: Found and brought 2 window(s) to foreground: XAU/USD, T610, XAU/USD, T13
+[2025-08-03 13:06:17.481] [INFO] Applied toolbar settings for window 262344: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 13:06:17.481] [INFO] Overlay positioned on window 262344 (symbol: XAUUSD): Left=0, Top=0, Width=1920
+[2025-08-03 13:06:17.794] [INFO] Applied toolbar settings for window 328060: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 13:06:17.794] [INFO] Overlay positioned on window 328060 (symbol: XAUUSD): Left=1920, Top=0, Width=1920
+[2025-08-03 13:06:19.089] [INFO] Applied toolbar settings for window 262344: Risk=1, Duration=2, Broker=Forex
+[2025-08-03 13:06:19.090] [INFO] Overlay positioned on window 262344 (symbol: XAUUSD): Left=0, Top=0, Width=1920
+[2025-08-03 13:06:42.197] [DEBUG] P key detected and service is enabled
+[2025-08-03 13:06:42.197] [DEBUG] MainWindow.OnPKeyPressed() called
+[2025-08-03 13:06:42.197] [DEBUG] SimpleTradingOverlay.OnPKeyPressed() called
+[2025-08-03 13:06:43.898] [DEBUG] HTTP Request: POST /pricelevel
+[2025-08-03 13:06:43.899] [DEBUG] Received price level data: {"symbol":"XAUUSD","price":3319,65068,"timestamp":"2025-08-03T13:06:43.895Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 13:06:43.899] [DEBUG] Preprocessed JSON: {"symbol":"XAUUSD","price": 3319.65068,"timestamp":"2025-08-03T13:06:43.895Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 13:06:43.899] [INFO] Type field not provided, using default value 'unknown' for backward compatibility
+[2025-08-03 13:06:43.899] [INFO] Price level received from GForex: Symbol: XAUUSD, Price: 3319,65068, Type: unknown, Timestamp: 2025-08-03 13:06:43.895
+[2025-08-03 13:06:43.900] [INFO] Price level processed: Symbol: XAUUSD, Price: 3319,65068, Type: unknown, Timestamp: 2025-08-03 13:06:43.895
+[2025-08-03 13:06:45.498] [INFO] Sent message to MT4 socket: {"type":"pending_order","symbol":"XAUUSD","direction":"Buy","entry_price":3319.6509999999998,"stop_loss_price":1.1901419742705219,"lot_size":0.10000000000000001,"comment":"Pending Order XAUUSD Buy","timestamp":"2025-08-03 13:06:45"}
+[2025-08-03 13:07:06.364] [DEBUG] P key detected and service is enabled
+[2025-08-03 13:07:06.365] [DEBUG] MainWindow.OnPKeyPressed() called
+[2025-08-03 13:07:06.365] [DEBUG] SimpleTradingOverlay.OnPKeyPressed() called
+[2025-08-03 13:07:07.500] [DEBUG] P key detected and service is enabled
+[2025-08-03 13:07:07.501] [DEBUG] MainWindow.OnPKeyPressed() called
+[2025-08-03 13:07:07.501] [DEBUG] SimpleTradingOverlay.OnPKeyPressed() called
+[2025-08-03 13:07:08.055] [INFO] Sent message to MT4 socket: {"type":"pending_order","symbol":"XAUUSD","direction":"Buy","entry_price":3335.0100000000002,"stop_loss_price":3334.8400000000001,"lot_size":0.10000000000000001,"comment":"Pending Order XAUUSD Buy","timestamp":"2025-08-03 13:07:08"}
+[2025-08-03 13:07:09.468] [DEBUG] P key detected and service is enabled
+[2025-08-03 13:07:09.469] [DEBUG] MainWindow.OnPKeyPressed() called
+[2025-08-03 13:07:09.469] [DEBUG] SimpleTradingOverlay.OnPKeyPressed() called
+[2025-08-03 13:07:11.434] [INFO] Sent message to MT4 socket: {"type":"pending_order","symbol":"XAUUSD","direction":"Buy","entry_price":3333.8400000000001,"stop_loss_price":3326.8180000000002,"lot_size":0.10000000000000001,"comment":"Pending Order XAUUSD Buy","timestamp":"2025-08-03 13:07:11"}
+[2025-08-03 13:07:11.988] [DEBUG] P key detected and service is enabled
+[2025-08-03 13:07:11.989] [DEBUG] MainWindow.OnPKeyPressed() called
+[2025-08-03 13:07:11.989] [DEBUG] SimpleTradingOverlay.OnPKeyPressed() called
+[2025-08-03 13:07:13.524] [DEBUG] P key detected and service is enabled
+[2025-08-03 13:07:13.525] [DEBUG] MainWindow.OnPKeyPressed() called
+[2025-08-03 13:07:13.525] [DEBUG] SimpleTradingOverlay.OnPKeyPressed() called
+[2025-08-03 13:07:13.574] [DEBUG] HTTP Request: POST /pricelevel
+[2025-08-03 13:07:13.575] [DEBUG] Received price level data: {"symbol":"XAUUSD","price":3333,83985,"timestamp":"2025-08-03T13:07:13.571Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 13:07:13.575] [DEBUG] Preprocessed JSON: {"symbol":"XAUUSD","price": 3333.83985,"timestamp":"2025-08-03T13:07:13.571Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 13:07:13.575] [INFO] Type field not provided, using default value 'unknown' for backward compatibility
+[2025-08-03 13:07:13.575] [INFO] Price level received from GForex: Symbol: XAUUSD, Price: 3333,83985, Type: unknown, Timestamp: 2025-08-03 13:07:13.571
+[2025-08-03 13:07:13.576] [INFO] Price level processed: Symbol: XAUUSD, Price: 3333,83985, Type: unknown, Timestamp: 2025-08-03 13:07:13.571
+[2025-08-03 13:07:14.386] [INFO] Sent message to MT4 socket: {"type":"pending_order","symbol":"XAUUSD","direction":"Sell","entry_price":3339.6918999999998,"stop_loss_price":3342178,"lot_size":0.10000000000000001,"comment":"Pending Order XAUUSD Sell","timestamp":"2025-08-03 13:07:14"}
+[2025-08-03 13:07:15.940] [DEBUG] Escape key detected and service is enabled
+[2025-08-03 13:07:15.941] [DEBUG] Escape key pressed - starting cleanup
+[2025-08-03 13:07:15.941] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-08-03 13:07:15.941] [DEBUG] No overlay to close
+[2025-08-03 13:07:15.941] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-08-03 13:07:18.194] [DEBUG] HTTP Request: POST /pricelevel
+[2025-08-03 13:07:18.194] [DEBUG] Received price level data: {"symbol":"XAUUSD","price":3342,17782,"timestamp":"2025-08-03T13:07:18.191Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 13:07:18.195] [DEBUG] Preprocessed JSON: {"symbol":"XAUUSD","price": 3342.17782,"timestamp":"2025-08-03T13:07:18.191Z","additionalData":"com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER"}
+[2025-08-03 13:07:18.195] [INFO] Type field not provided, using default value 'unknown' for backward compatibility
+[2025-08-03 13:07:18.195] [INFO] Price level received from GForex: Symbol: XAUUSD, Price: 3342,17782, Type: unknown, Timestamp: 2025-08-03 13:07:18.191
+[2025-08-03 13:07:18.196] [INFO] Price level processed: Symbol: XAUUSD, Price: 3342,17782, Type: unknown, Timestamp: 2025-08-03 13:07:18.191
+[2025-08-03 13:08:07.028] [DEBUG] F key detected and service is enabled
+[2025-08-03 13:08:07.820] [DEBUG] A key detected and service is enabled
+[2025-08-03 13:08:09.036] [DEBUG] A key detected and service is enabled
+[2025-08-03 13:08:12.780] [DEBUG] R hotkey detected and service is enabled
+[2025-08-03 13:08:12.780] [INFO] [DEBUG] OnRHotkey event in MainWindow
+[2025-08-03 13:08:12.904] [INFO] Hotkey button index 3 clicked at (680,56) on window 2688582
+[2025-08-03 13:08:12.904] [INFO] [DEBUG] Mouse returned to (816,467)
+[2025-08-03 13:08:14.660] [DEBUG] Escape key detected and service is enabled
+[2025-08-03 13:08:14.660] [DEBUG] Escape key pressed - starting cleanup
+[2025-08-03 13:08:14.660] [DEBUG] Before cleanup: isCapturing=False, overlay=null
+[2025-08-03 13:08:14.661] [DEBUG] No overlay to close
+[2025-08-03 13:08:14.661] [DEBUG] After cleanup: isCapturing=False, overlay=null
+[2025-08-03 13:08:21.876] [DEBUG] F key detected and service is enabled
+[2025-08-03 13:08:27.243] [DEBUG] P key detected and service is enabled
+[2025-08-03 13:08:27.244] [DEBUG] MainWindow.OnPKeyPressed() called
+[2025-08-03 13:08:27.244] [DEBUG] SimpleTradingOverlay.OnPKeyPressed() called
+[2025-08-03 13:08:27.995] [DEBUG] S key detected and service is enabled
+[2025-08-03 13:08:28.211] [DEBUG] E hotkey detected and service is enabled
+[2025-08-03 13:08:28.212] [INFO] [DEBUG] OnEHotkey event in MainWindow
+[2025-08-03 13:08:28.336] [INFO] Hotkey button index 2 clicked at (480,56) on window 2688582
+[2025-08-03 13:08:28.336] [INFO] [DEBUG] Mouse returned to (902,228)
+[2025-08-03 13:08:28.337] [DEBUG] R hotkey detected and service is enabled
+[2025-08-03 13:08:28.337] [INFO] [DEBUG] OnRHotkey event in MainWindow
+[2025-08-03 13:08:28.461] [INFO] Hotkey button index 3 clicked at (680,56) on window 2688582
+[2025-08-03 13:08:28.461] [INFO] [DEBUG] Mouse returned to (902,228)
+[2025-08-03 13:08:32.220] [INFO] Sent message to MT4 socket: {"type":"pending_order","symbol":"XAUUSD","direction":"Sell","entry_price":1.2003006268625676,"stop_loss_price":3350.0050000000001,"lot_size":0.10000000000000001,"comment":"Pending Order XAUUSD Sell","timestamp":"2025-08-03 13:08:32"}
+[2025-08-03 13:08:41.899] [DEBUG] Escape key detected but service is disabled
+[2025-08-03 13:08:42.091] [DEBUG] Escape key detected but service is disabled
