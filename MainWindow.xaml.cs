@@ -48,7 +48,7 @@ namespace ScreenCaptureApp
 
             InitializeServices();
 
-            // StartAutoTracking(); // Автотрекинг отключен по умолчанию
+            StartAutoTracking(); // Автотрекинг включен по умолчанию
 
             var mt4SocketService = ServiceContainer.Instance.GetService<Mt4SocketService>();
             if (mt4SocketService != null)
