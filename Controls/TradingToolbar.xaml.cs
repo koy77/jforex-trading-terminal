@@ -258,6 +258,9 @@ namespace ScreenCaptureApp.Controls
             
             // Hide order summary when symbol changes
             HideOrderSummary();
+            
+            // Hide prices when symbol changes
+            HidePrices();
         }
 
         public void SetHandleID(long handleID)
@@ -544,6 +547,82 @@ namespace ScreenCaptureApp.Controls
                     QOButton.Background = Brushes.Orange;
                     break;
             }
+        }
+
+        /// <summary>
+        /// Отображает цены входа и стоп-лосса на панели инструментов
+        /// </summary>
+        /// <param name="entryPrice">Цена входа</param>
+        /// <param name="stopLossPrice">Цена стоп-лосса (0 если еще не распознана)</param>
+        /// <param name="tradeType">Тип сделки (BUY/SELL)</param>
+        public void ShowPrices(double entryPrice, double stopLossPrice, string tradeType = "")
+        {
+            if (Dispatcher.CheckAccess())
+            {
+                UpdatePricesUI(entryPrice, stopLossPrice, tradeType);
+            }
+            else
+            {
+                Dispatcher.Invoke(() => UpdatePricesUI(entryPrice, stopLossPrice, tradeType));
+            }
+        }
+
+        /// <summary>
+        /// Скрывает панель с ценами
+        /// </summary>
+        public void HidePrices()
+        {
+            if (Dispatcher.CheckAccess())
+            {
+                PriceDisplayPanel.Visibility = Visibility.Collapsed;
+                Logger.LogTagInfo("TradingToolbar", "Price display panel hidden");
+            }
+            else
+            {
+                Dispatcher.Invoke(() => 
+                {
+                    PriceDisplayPanel.Visibility = Visibility.Collapsed;
+                    Logger.LogTagInfo("TradingToolbar", "Price display panel hidden");
+                });
+            }
+        }
+
+        /// <summary>
+        /// Обновляет UI с ценами
+        /// </summary>
+        /// <param name="entryPrice">Цена входа</param>
+        /// <param name="stopLossPrice">Цена стоп-лосса (0 если еще не распознана)</param>
+        /// <param name="tradeType">Тип сделки (BUY/SELL)</param>
+        private void UpdatePricesUI(double entryPrice, double stopLossPrice, string tradeType)
+        {
+            // Обновляем тип сделки
+            if (!string.IsNullOrEmpty(tradeType))
+            {
+                TradeTypeLabel.Text = tradeType;
+                TradeTypeLabel.Foreground = tradeType == "BUY" ? Brushes.LightGreen : Brushes.LightCoral;
+                TradeTypeLabel.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                TradeTypeLabel.Visibility = Visibility.Collapsed;
+            }
+            
+            EntryPriceLabel.Text = $"Entry: {entryPrice:F5}";
+            
+            if (stopLossPrice > 0)
+            {
+                StopLossPriceLabel.Text = $"SL: {stopLossPrice:F5}";
+                StopLossPriceLabel.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                StopLossPriceLabel.Text = "SL: ---";
+                StopLossPriceLabel.Visibility = Visibility.Visible;
+            }
+            
+            PriceDisplayPanel.Visibility = Visibility.Visible;
+            
+            Logger.LogTagInfo("TradingToolbar", $"Price display updated: Entry={entryPrice:F5}, StopLoss={stopLossPrice:F5}, TradeType={tradeType}");
         }
     }
 } 

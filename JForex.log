@@ -13002,3 +13002,27 @@
 [2025-08-02 19:19:22.817] [INFO] Calculated screen coordinates: (80, 56)
 [2025-08-02 19:19:22.934] [INFO] Клик успешно выполнен в позиции (80, 56) -> screen (80, 56)
 [2025-08-02 19:19:22.934] [INFO] === MOUSE CLICK END ===
+[2025-08-03 00:34:13.170] [INFO] Processing trading stroke directly: Point1=(890, 574), Point2=(943, 604)
+[2025-08-03 00:34:13.223] [INFO] CaptureData saved to database: ID=20250803003413172
+[2025-08-03 00:34:13.223] [INFO] Closing CanvasWindow for trading mode
+[2025-08-03 00:34:13.365] [INFO] Окно успешно активировано. Handle: 131510
+[2025-08-03 00:34:13.786] [INFO] Converted screen point (890, 574) to window point (890, 534)
+[2025-08-03 00:34:13.787] [INFO] Converted screen point (943, 604) to window point (943, 564)
+[2025-08-03 00:34:13.787] [INFO] Окно успешно активировано. Handle: 131510
+[2025-08-03 00:34:13.896] [INFO] === MOUSE CLICK START ===
+[2025-08-03 00:34:13.896] [INFO] Click coordinates: (890, 534)
+[2025-08-03 00:34:13.896] [INFO] Window handle: 131510
+[2025-08-03 00:34:13.897] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-03 00:34:13.897] [INFO] Calculated screen coordinates: (890, 534)
+[2025-08-03 00:34:14.023] [INFO] Клик успешно выполнен в позиции (890, 534) -> screen (890, 534)
+[2025-08-03 00:34:14.023] [INFO] === MOUSE CLICK END ===
+[2025-08-03 00:34:14.086] [INFO] === MOUSE CLICK START ===
+[2025-08-03 00:34:14.086] [INFO] Click coordinates: (943, 564)
+[2025-08-03 00:34:14.086] [INFO] Window handle: 131510
+[2025-08-03 00:34:14.086] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-03 00:34:14.087] [INFO] Calculated screen coordinates: (943, 564)
+[2025-08-03 00:34:14.213] [INFO] Клик успешно выполнен в позиции (943, 564) -> screen (943, 564)
+[2025-08-03 00:34:14.214] [INFO] === MOUSE CLICK END ===
+[2025-08-03 00:34:14.214] [INFO] Successfully added trendline from (890, 534) to (943, 564)
+[2025-08-03 00:34:14.214] [INFO] Trading stroke processing completed
+[2025-08-03 00:34:14.214] [INFO] Trendline drawn successfully - triggering space hotkey callback

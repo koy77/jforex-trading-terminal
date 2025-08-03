@@ -7,9 +7,18 @@
              d:DesignHeight="80" d:DesignWidth="1200">
     <StackPanel x:Name="TopPanel" Orientation="Horizontal" Background="#AA222222" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0" Panel.ZIndex="1000">
         <!-- Symbol Display with HandleID -->
-        <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="20,0,30,0">
-            <TextBlock x:Name="SymbolLabel" Text="XAUUSD" Foreground="Cyan" FontWeight="Bold" FontSize="32" Background="#80000000" Padding="15,10" TextAlignment="Center" MinWidth="120"/>
-            <TextBlock x:Name="HandleIDLabel" Text="HandleID: 0" Foreground="Aqua" FontSize="10" TextAlignment="Center" Margin="0,2,0,0"/>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,10,0">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                <TextBlock x:Name="SymbolLabel" Text="XAUUSD" Foreground="Cyan" FontWeight="Bold" FontSize="32" Background="#80000000" Padding="15,10" TextAlignment="Center" MinWidth="120"/>
+                <TextBlock x:Name="HandleIDLabel" Text="HandleID: 0" Foreground="Aqua" FontSize="10" TextAlignment="Center" Margin="0,2,0,0"/>
+            </StackPanel>
+            
+            <!-- Price Display Panel - справа от символа -->
+            <StackPanel x:Name="PriceDisplayPanel" Orientation="Vertical" VerticalAlignment="Center" Margin="10,0,0,0" Visibility="Collapsed">
+                <TextBlock x:Name="TradeTypeLabel" Text="BUY" Foreground="White" FontSize="14" FontWeight="Bold" Background="#80000000" Padding="15,4" TextAlignment="Center" MinWidth="120"/>
+                <TextBlock x:Name="EntryPriceLabel" Text="Entry: 0.00000" Foreground="LightGreen" FontSize="16" FontWeight="Bold" Background="#80000000" Padding="15,3" TextAlignment="Center" MinWidth="120" Margin="0,2,0,0"/>
+                <TextBlock x:Name="StopLossPriceLabel" Text="SL: 0.00000" Foreground="LightCoral" FontSize="16" FontWeight="Bold" Background="#80000000" Padding="15,3" TextAlignment="Center" MinWidth="120" Margin="0,2,0,0"/>
+            </StackPanel>
         </StackPanel>
         
         <!-- Order Summary Panel -->
