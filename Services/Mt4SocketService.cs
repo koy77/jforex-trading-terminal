@@ -311,6 +311,7 @@ namespace ScreenCaptureApp.Services
         /// <returns>True если команда отправлена успешно, иначе False</returns>
         public async Task<bool> SendNewOrderCommand(string symbol, string tradeType, double entryPrice, double stopLossPrice, double risk)
         {
+            string command="";
             try
             {
                 // Форматируем числа с точкой как разделителем десятичных дробей
@@ -321,10 +322,13 @@ namespace ScreenCaptureApp.Services
 
                 // Logger.LogTagInfo("MT4SocketService", $"Converting prices - Entry: {entryPrice} -> {entryPrice}, StopLoss: {stopLossPrice} -> {stopLossPrice}");
 
-                // Формируем команду в том же формате, что и breakout команды
-                string json = $"{{\"cmd\":\"pending_order\",\"symbol\":\"{symbol}\",\"type\":\"{tradeType}\",\"entry_price\":{entryPriceFormatted},\"stop_loss\":{stopLossPriceFormatted},\"risk\":{risk}}}";
+                // Определяем команду в зависимости от типа операции
+                command = tradeType.ToLower() == "buy" ? "pending_buy" : "pending_sell";
+                
+                // Формируем команду без поля type
+                string json = $"{{\"cmd\":\"{command}\",\"symbol\":\"{symbol}\",\"entry_price\":{entryPriceFormatted},\"stop_loss\":{stopLossPriceFormatted},\"risk\":{risk}}}";
 
-                Logger.LogTagInfo("MT4SocketService", $"Sending new order command: {tradeType} {symbol} Entry:{entryPriceFormatted} SL:{stopLossPriceFormatted} Risk:{risk}");
+                Logger.LogTagInfo("MT4SocketService", $"Sending {command} command: {symbol} Entry:{entryPriceFormatted} SL:{stopLossPriceFormatted} Risk:{risk}");
 
                 // Добавляем CRLF как в breakout командах
                 json += "\r\n";
@@ -334,18 +338,18 @@ namespace ScreenCaptureApp.Services
 
                 if (result)
                 {
-                    Logger.LogTagInfo("MT4SocketService", "New order command sent successfully");
+                    Logger.LogTagInfo("MT4SocketService", $"{command} command sent successfully");
                 }
                 else
                 {
-                    Logger.LogTagWarning("MT4SocketService", "Failed to send new order command");
+                    Logger.LogTagWarning("MT4SocketService", $"Failed to send {command} command");
                 }
 
                 return result;
             }
             catch (Exception ex)
             {
-                Logger.LogTagError("MT4SocketService", "Error sending new order command", ex);
+                Logger.LogTagError("MT4SocketService", $"Error sending {command} command", ex);
                 return false;
             }
         }

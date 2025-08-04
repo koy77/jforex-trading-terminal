@@ -46,3 +46,99 @@
 [2025-08-04 14:46:18.920] [INFO] Formatting prices - Entry: 3358,49182 -> 3358.49182, StopLoss: 3356,22287 -> 3356.22287
 [2025-08-04 14:46:18.920] [INFO] Sending new order command: buy XAUUSD Entry:3358.49182 SL:3356.22287 Risk:1
 [2025-08-04 14:46:18.921] [INFO] New order command sent successfully
+[2025-08-04 15:14:26.973] [INFO] Formatting prices - Entry: 3368,43151 -> 3368.43151, StopLoss: 3369,19475 -> 3369.19475
+[2025-08-04 15:14:26.973] [INFO] Sending pending_sell command: XAUUSD Entry:3368.43151 SL:3369.19475 Risk:1
+[2025-08-04 15:14:26.976] [INFO] pending_sell command sent successfully
+[2025-08-04 15:16:23.015] [INFO] Formatting prices - Entry: 3357,2879 -> 3357.28790, StopLoss: 3353,23932 -> 3353.23932
+[2025-08-04 15:16:23.015] [INFO] Sending pending_buy command: XAUUSD Entry:3357.28790 SL:3353.23932 Risk:1
+[2025-08-04 15:16:23.016] [INFO] pending_buy command sent successfully
+[2025-08-04 15:16:43.831] [INFO] Formatting prices - Entry: 3373,3942 -> 3373.39420, StopLoss: 3365,65138 -> 3365.65138
+[2025-08-04 15:16:43.831] [INFO] Sending pending_buy command: XAUUSD Entry:3373.39420 SL:3365.65138 Risk:1
+[2025-08-04 15:16:43.832] [INFO] pending_buy command sent successfully
+[2025-08-04 15:25:55.318] [INFO] Formatting prices - Entry: 3362,40131 -> 3362.40131, StopLoss: 3371,10003 -> 3371.10003
+[2025-08-04 15:25:55.319] [INFO] Sending pending_sell command: XAUUSD Entry:3362.40131 SL:3371.10003 Risk:1
+[2025-08-04 15:25:55.332] [WARNING] Failed to send pending_sell command
+[2025-08-04 15:26:13.195] [INFO] Formatting prices - Entry: 3363,5484 -> 3363.54840, StopLoss: 3371,67357 -> 3371.67357
+[2025-08-04 15:26:13.196] [INFO] Sending pending_sell command: XAUUSD Entry:3363.54840 SL:3371.67357 Risk:1
+[2025-08-04 15:26:13.199] [INFO] pending_sell command sent successfully
+[2025-08-04 15:29:21.193] [INFO] Formatting prices - Entry: 3362,73149 -> 3362.73149, StopLoss: 3371,30294 -> 3371.30294
+[2025-08-04 15:29:21.193] [INFO] Sending pending_sell command: XAUUSD Entry:3362.73149 SL:3371.30294 Risk:1
+[2025-08-04 15:29:21.198] [WARNING] Failed to send pending_sell command
+[2025-08-04 15:29:32.081] [INFO] Formatting prices - Entry: 3362,42807 -> 3362.42807, StopLoss: 3371,75806 -> 3371.75806
+[2025-08-04 15:29:32.081] [INFO] Sending pending_sell command: XAUUSD Entry:3362.42807 SL:3371.75806 Risk:1
+[2025-08-04 15:29:32.082] [INFO] pending_sell command sent successfully
+[2025-08-04 15:30:10.327] [INFO] Formatting prices - Entry: 3365,99319 -> 3365.99319, StopLoss: 3372,59245 -> 3372.59245
+[2025-08-04 15:30:10.327] [INFO] Sending pending_sell command: XAUUSD Entry:3365.99319 SL:3372.59245 Risk:1
+[2025-08-04 15:30:10.328] [INFO] pending_sell command sent successfully
+[2025-08-04 15:33:05.311] [INFO] Formatting prices - Entry: 3366,92809 -> 3366.92809, StopLoss: 3368,0896 -> 3368.08960
+[2025-08-04 15:33:05.311] [INFO] Sending pending_sell command: XAUUSD Entry:3366.92809 SL:3368.08960 Risk:1
+[2025-08-04 15:33:05.311] [INFO] pending_sell command sent successfully
+[2025-08-04 15:35:07.431] [INFO] Formatting prices - Entry: 3366,46256 -> 3366.46256, StopLoss: 3367,66368 -> 3367.66368
+[2025-08-04 15:35:07.431] [INFO] Sending pending_sell command: XAUUSD Entry:3366.46256 SL:3367.66368 Risk:1
+[2025-08-04 15:35:07.431] [INFO] pending_sell command sent successfully
+[2025-08-04 15:36:22.337] [INFO] Formatting prices - Entry: 3361,1883 -> 3361.18830, StopLoss: 3364,5935 -> 3364.59350
+[2025-08-04 15:36:22.337] [INFO] Sending pending_sell command: XAUUSD Entry:3361.18830 SL:3364.59350 Risk:1
+[2025-08-04 15:36:22.338] [WARNING] Failed to send pending_sell command
+[2025-08-04 15:36:47.457] [INFO] Formatting prices - Entry: 3360,92935 -> 3360.92935, StopLoss: 3364,45108 -> 3364.45108
+[2025-08-04 15:36:47.457] [INFO] Sending pending_sell command: XAUUSD Entry:3360.92935 SL:3364.45108 Risk:1
+[2025-08-04 15:36:47.458] [INFO] pending_sell command sent successfully
+[2025-08-04 15:38:02.414] [INFO] Formatting prices - Entry: 3364,11444 -> 3364.11444, StopLoss: 3361,01998 -> 3361.01998
+[2025-08-04 15:38:02.414] [INFO] Sending pending_buy command: XAUUSD Entry:3364.11444 SL:3361.01998 Risk:1
+[2025-08-04 15:38:02.415] [INFO] pending_buy command sent successfully
+[2025-08-04 15:39:03.313] [INFO] Formatting prices - Entry: 3360,9164 -> 3360.91640, StopLoss: 3364,06265 -> 3364.06265
+[2025-08-04 15:39:03.313] [INFO] Sending pending_sell command: XAUUSD Entry:3360.91640 SL:3364.06265 Risk:1
+[2025-08-04 15:39:03.314] [INFO] pending_sell command sent successfully
+[2025-08-04 15:39:24.498] [INFO] Formatting prices - Entry: 3362,71611 -> 3362.71611, StopLoss: 3364,25686 -> 3364.25686
+[2025-08-04 15:39:24.498] [INFO] Sending pending_sell command: XAUUSD Entry:3362.71611 SL:3364.25686 Risk:1
+[2025-08-04 15:39:24.498] [INFO] pending_sell command sent successfully
+[2025-08-04 15:40:42.450] [INFO] Formatting prices - Entry: 3361,17535 -> 3361.17535, StopLoss: 3363,11748 -> 3363.11748
+[2025-08-04 15:40:42.450] [INFO] Sending pending_sell command: XAUUSD Entry:3361.17535 SL:3363.11748 Risk:1
+[2025-08-04 15:40:42.453] [WARNING] Failed to send pending_sell command
+[2025-08-04 15:41:02.972] [INFO] Formatting prices - Entry: 3361,08398 -> 3361.08398, StopLoss: 3363,2646 -> 3363.26460
+[2025-08-04 15:41:02.972] [INFO] Sending pending_sell command: XAUUSD Entry:3361.08398 SL:3363.26460 Risk:1
+[2025-08-04 15:41:02.973] [INFO] pending_sell command sent successfully
+[2025-08-04 15:41:17.525] [INFO] Formatting prices - Entry: 3361,39896 -> 3361.39896, StopLoss: 3363,57958 -> 3363.57958
+[2025-08-04 15:41:17.526] [INFO] Sending pending_sell command: XAUUSD Entry:3361.39896 SL:3363.57958 Risk:1
+[2025-08-04 15:41:17.526] [INFO] pending_sell command sent successfully
+[2025-08-04 15:47:31.574] [INFO] Formatting prices - Entry: 3366,01214 -> 3366.01214, StopLoss: 3364,36848 -> 3364.36848
+[2025-08-04 15:47:31.574] [INFO] Sending pending_buy command: XAUUSD Entry:3366.01214 SL:3364.36848 Risk:1
+[2025-08-04 15:47:31.575] [INFO] pending_buy command sent successfully
+[2025-08-04 15:48:41.573] [INFO] Formatting prices - Entry: 3367,56573 -> 3367.56573, StopLoss: 3364,41351 -> 3364.41351
+[2025-08-04 15:48:41.573] [INFO] Sending pending_buy command: XAUUSD Entry:3367.56573 SL:3364.41351 Risk:1
+[2025-08-04 15:48:41.575] [WARNING] Failed to send pending_buy command
+[2025-08-04 15:49:05.102] [INFO] Formatting prices - Entry: 3370,87953 -> 3370.87953, StopLoss: 3358,82045 -> 3358.82045
+[2025-08-04 15:49:05.103] [INFO] Sending pending_buy command: XAUUSD Entry:3370.87953 SL:3358.82045 Risk:1
+[2025-08-04 15:49:05.104] [WARNING] Failed to send pending_buy command
+[2025-08-04 15:49:21.403] [INFO] Formatting prices - Entry: 3372,55441 -> 3372.55441, StopLoss: 3359,23917 -> 3359.23917
+[2025-08-04 15:49:21.403] [INFO] Sending pending_buy command: XAUUSD Entry:3372.55441 SL:3359.23917 Risk:1
+[2025-08-04 15:49:21.404] [INFO] pending_buy command sent successfully
+[2025-08-04 15:50:20.634] [INFO] Formatting prices - Entry: 3372,13569 -> 3372.13569, StopLoss: 3360,91404 -> 3360.91404
+[2025-08-04 15:50:20.634] [INFO] Sending pending_buy command: XAUUSD Entry:3372.13569 SL:3360.91404 Risk:1
+[2025-08-04 15:50:20.636] [WARNING] Failed to send pending_buy command
+[2025-08-04 15:50:30.930] [INFO] Formatting prices - Entry: 3371,9682 -> 3371.96820, StopLoss: 3359,99286 -> 3359.99286
+[2025-08-04 15:50:30.930] [INFO] Sending pending_buy command: XAUUSD Entry:3371.96820 SL:3359.99286 Risk:1
+[2025-08-04 15:50:30.931] [INFO] pending_buy command sent successfully
+[2025-08-04 15:57:44.777] [INFO] Formatting prices - Entry: 3366,70805 -> 3366.70805, StopLoss: 3365,23921 -> 3365.23921
+[2025-08-04 15:57:44.777] [INFO] Sending pending_buy command: XAUUSD Entry:3366.70805 SL:3365.23921 Risk:1
+[2025-08-04 15:57:44.778] [INFO] pending_buy command sent successfully
+[2025-08-04 16:05:02.057] [INFO] Formatting prices - Entry: 3368,42114 -> 3368.42114, StopLoss: 3367,09237 -> 3367.09237
+[2025-08-04 16:05:02.057] [INFO] Sending pending_buy command: XAUUSD Entry:3368.42114 SL:3367.09237 Risk:1
+[2025-08-04 16:05:02.057] [INFO] pending_buy command sent successfully
+[2025-08-04 16:05:36.810] [INFO] Formatting prices - Entry: 3368,60131 -> 3368.60131, StopLoss: 3366,31563 -> 3366.31563
+[2025-08-04 16:05:36.810] [INFO] Sending pending_buy command: XAUUSD Entry:3368.60131 SL:3366.31563 Risk:1
+[2025-08-04 16:05:36.811] [INFO] pending_buy command sent successfully
+[2025-08-04 16:07:28.522] [INFO] Formatting prices - Entry: 3363,95153 -> 3363.95153, StopLoss: 3361,25663 -> 3361.25663
+[2025-08-04 16:07:28.523] [INFO] Sending pending_buy command: XAUUSD Entry:3363.95153 SL:3361.25663 Risk:1
+[2025-08-04 16:07:28.523] [INFO] pending_buy command sent successfully
+[2025-08-04 16:13:06.255] [INFO] Formatting prices - Entry: 3372,71025 -> 3372.71025, StopLoss: 3369,91397 -> 3369.91397
+[2025-08-04 16:13:06.255] [INFO] Sending pending_buy command: XAUUSD Entry:3372.71025 SL:3369.91397 Risk:1
+[2025-08-04 16:13:06.255] [INFO] pending_buy command sent successfully
+[2025-08-04 16:18:50.545] [INFO] Formatting prices - Entry: 3375,22106 -> 3375.22106, StopLoss: 3373,34432 -> 3373.34432
+[2025-08-04 16:18:50.545] [INFO] Sending pending_buy command: XAUUSD Entry:3375.22106 SL:3373.34432 Risk:1
+[2025-08-04 16:18:50.545] [INFO] pending_buy command sent successfully
+[2025-08-04 16:29:17.506] [INFO] Formatting prices - Entry: 3311,87729 -> 3311.87729, StopLoss: 3326,99869 -> 3326.99869
+[2025-08-04 16:29:17.506] [INFO] Sending pending_sell command: XAUUSD Entry:3311.87729 SL:3326.99869 Risk:1
+[2025-08-04 16:29:17.507] [INFO] pending_sell command sent successfully
+[2025-08-04 16:29:34.376] [INFO] Formatting prices - Entry: 3375,23554 -> 3375.23554, StopLoss: 3373,58388 -> 3373.58388
+[2025-08-04 16:29:34.377] [INFO] Sending pending_buy command: XAUUSD Entry:3375.23554 SL:3373.58388 Risk:1
+[2025-08-04 16:29:34.377] [INFO] pending_buy command sent successfully
