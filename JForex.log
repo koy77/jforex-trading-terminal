@@ -14988,3 +14988,31 @@
 [2025-08-04 09:28:42.683] [INFO] Successfully added trendline from (940, 553) to (1022, 620)
 [2025-08-04 09:28:42.684] [INFO] Trading stroke processing completed
 [2025-08-04 09:28:42.684] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-08-04 10:53:45.861] [INFO] === MOUSE CLICK START ===
+[2025-08-04 10:53:45.861] [INFO] Click coordinates: (480, 56)
+[2025-08-04 10:53:45.861] [INFO] Window handle: 197108
+[2025-08-04 10:53:45.861] [INFO] Window rect: Left=2122, Top=115, Right=3660, Bottom=1013
+[2025-08-04 10:53:45.861] [INFO] Calculated screen coordinates: (480, 56)
+[2025-08-04 10:53:45.987] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-08-04 10:53:45.987] [INFO] === MOUSE CLICK END ===
+[2025-08-04 10:53:47.681] [INFO] === MOUSE CLICK START ===
+[2025-08-04 10:53:47.681] [INFO] Click coordinates: (480, 56)
+[2025-08-04 10:53:47.681] [INFO] Window handle: 197108
+[2025-08-04 10:53:47.682] [INFO] Window rect: Left=2122, Top=115, Right=3660, Bottom=1013
+[2025-08-04 10:53:47.682] [INFO] Calculated screen coordinates: (480, 56)
+[2025-08-04 10:53:47.798] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-08-04 10:53:47.798] [INFO] === MOUSE CLICK END ===
+[2025-08-04 10:53:49.657] [INFO] === MOUSE CLICK START ===
+[2025-08-04 10:53:49.657] [INFO] Click coordinates: (480, 56)
+[2025-08-04 10:53:49.658] [INFO] Window handle: 197108
+[2025-08-04 10:53:49.658] [INFO] Window rect: Left=2122, Top=115, Right=3660, Bottom=1013
+[2025-08-04 10:53:49.658] [INFO] Calculated screen coordinates: (480, 56)
+[2025-08-04 10:53:49.780] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-08-04 10:53:49.780] [INFO] === MOUSE CLICK END ===
+[2025-08-04 11:22:15.023] [INFO] === MOUSE CLICK START ===
+[2025-08-04 11:22:15.024] [INFO] Click coordinates: (680, 56)
+[2025-08-04 11:22:15.024] [INFO] Window handle: 197108
+[2025-08-04 11:22:15.024] [INFO] Window rect: Left=0, Top=0, Right=1921, Bottom=1041
+[2025-08-04 11:22:15.024] [INFO] Calculated screen coordinates: (680, 56)
+[2025-08-04 11:22:15.164] [INFO] Клик успешно выполнен в позиции (680, 56) -> screen (680, 56)
+[2025-08-04 11:22:15.164] [INFO] === MOUSE CLICK END ===

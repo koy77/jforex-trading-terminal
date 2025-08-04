@@ -4444,3 +4444,105 @@
 [2025-08-04 09:31:39.376] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.84270,"timestamp":"2025-08-04T09:31:39.372Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
 [2025-08-04 09:31:39.389] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 196,84270, Type: com.dukascopy.charts.drawings.PriceMarkerChartObject, Timestamp: 2025-08-04 09:31:39.372
 [2025-08-04 09:31:39.389] [INFO] New Price Level Event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,84270 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 09:31:39.376
+[2025-08-04 10:45:14.030] [INFO] HTTP Request: POST /pricelevel
+[2025-08-04 10:45:14.030] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,18083,"timestamp":"2025-08-04T10:45:14.026Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 10:45:14.031] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.18083,"timestamp":"2025-08-04T10:45:14.026Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 10:45:14.031] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.18083,"timestamp":"2025-08-04T10:45:14.026Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 10:45:14.044] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 196,18083, Type: com.dukascopy.charts.drawings.PriceMarkerChartObject, Timestamp: 2025-08-04 10:45:14.026
+[2025-08-04 10:45:14.044] [INFO] New Price Level Event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,18083 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 10:45:14.032
+[2025-08-04 10:45:20.370] [INFO] HTTP Request: POST /pricelevel
+[2025-08-04 10:45:20.371] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,21465,"timestamp":"2025-08-04T10:45:20.366Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 10:45:20.372] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.21465,"timestamp":"2025-08-04T10:45:20.366Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 10:45:20.372] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.21465,"timestamp":"2025-08-04T10:45:20.366Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 10:45:20.386] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 196,21465, Type: com.dukascopy.charts.drawings.PriceMarkerChartObject, Timestamp: 2025-08-04 10:45:20.366
+[2025-08-04 10:45:20.386] [INFO] New Price Level Event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,21465 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 10:45:20.372
+[2025-08-04 10:48:30.582] [INFO] HTTP Request: POST /pricelevel
+[2025-08-04 10:48:30.583] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":195,72493,"timestamp":"2025-08-04T10:48:30.579Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 10:48:30.583] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 195.72493,"timestamp":"2025-08-04T10:48:30.579Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 10:48:30.583] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 195.72493,"timestamp":"2025-08-04T10:48:30.579Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 10:48:30.597] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 195,72493, Type: com.dukascopy.charts.drawings.PriceMarkerChartObject, Timestamp: 2025-08-04 10:48:30.579
+[2025-08-04 10:48:30.598] [INFO] New Price Level Event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 195,72493 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 10:48:30.584
+[2025-08-04 10:48:48.451] [INFO] HTTP Request: POST /pricelevel
+[2025-08-04 10:48:48.452] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":195,87494,"timestamp":"2025-08-04T10:48:48.448Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 10:48:48.452] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 195.87494,"timestamp":"2025-08-04T10:48:48.448Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 10:48:48.452] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 195.87494,"timestamp":"2025-08-04T10:48:48.448Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 10:48:48.465] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 195,87494, Type: com.dukascopy.charts.drawings.PriceMarkerChartObject, Timestamp: 2025-08-04 10:48:48.448
+[2025-08-04 10:48:48.465] [INFO] New Price Level Event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 195,87494 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 10:48:48.453
+[2025-08-04 10:49:10.061] [INFO] HTTP Request: POST /pricelevel
+[2025-08-04 10:49:10.062] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,18462,"timestamp":"2025-08-04T10:49:10.058Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 10:49:10.062] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.18462,"timestamp":"2025-08-04T10:49:10.058Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 10:49:10.063] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.18462,"timestamp":"2025-08-04T10:49:10.058Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 10:49:10.075] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 196,18462, Type: com.dukascopy.charts.drawings.PriceMarkerChartObject, Timestamp: 2025-08-04 10:49:10.058
+[2025-08-04 10:49:10.075] [INFO] New Price Level Event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,18462 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 10:49:10.063
+[2025-08-04 10:49:27.988] [INFO] HTTP Request: POST /pricelevel
+[2025-08-04 10:49:27.989] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,60076,"timestamp":"2025-08-04T10:49:27.986Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 10:49:27.989] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.60076,"timestamp":"2025-08-04T10:49:27.986Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 10:49:27.989] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.60076,"timestamp":"2025-08-04T10:49:27.986Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 10:49:28.070] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 196,60076, Type: com.dukascopy.charts.drawings.PriceMarkerChartObject, Timestamp: 2025-08-04 10:49:27.986
+[2025-08-04 10:49:28.070] [INFO] New Price Level Event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,60076 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 10:49:27.990
+[2025-08-04 10:49:42.282] [INFO] HTTP Request: POST /pricelevel
+[2025-08-04 10:49:42.283] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,93463,"timestamp":"2025-08-04T10:49:42.279Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 10:49:42.283] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.93463,"timestamp":"2025-08-04T10:49:42.279Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 10:49:42.283] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.93463,"timestamp":"2025-08-04T10:49:42.279Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 10:49:42.295] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 196,93463, Type: com.dukascopy.charts.drawings.PriceMarkerChartObject, Timestamp: 2025-08-04 10:49:42.279
+[2025-08-04 10:49:42.296] [INFO] New Price Level Event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,93463 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 10:49:42.284
+[2025-08-04 11:16:49.707] [INFO] HTTP Request: POST /pricelevel
+[2025-08-04 11:16:49.721] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":195,85074,"timestamp":"2025-08-04T11:16:49.690Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 11:16:49.731] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 195.85074,"timestamp":"2025-08-04T11:16:49.690Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 11:16:49.732] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 195.85074,"timestamp":"2025-08-04T11:16:49.690Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 11:16:49.960] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 195,85074, Type: com.dukascopy.charts.drawings.PriceMarkerChartObject, Timestamp: 2025-08-04 11:16:49.690
+[2025-08-04 11:16:49.960] [INFO] New Price Level Event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 195,85074 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 11:16:49.886
+[2025-08-04 11:16:53.871] [INFO] HTTP Request: POST /pricelevel
+[2025-08-04 11:16:53.872] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,30559,"timestamp":"2025-08-04T11:16:53.868Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 11:16:53.873] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.30559,"timestamp":"2025-08-04T11:16:53.868Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 11:16:53.873] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.30559,"timestamp":"2025-08-04T11:16:53.868Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 11:16:53.885] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 196,30559, Type: com.dukascopy.charts.drawings.PriceMarkerChartObject, Timestamp: 2025-08-04 11:16:53.868
+[2025-08-04 11:16:53.885] [INFO] New Price Level Event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,30559 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 11:16:53.873
+[2025-08-04 11:16:58.141] [INFO] HTTP Request: POST /pricelevel
+[2025-08-04 11:16:58.142] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,85721,"timestamp":"2025-08-04T11:16:58.138Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 11:16:58.142] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.85721,"timestamp":"2025-08-04T11:16:58.138Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 11:16:58.143] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.85721,"timestamp":"2025-08-04T11:16:58.138Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 11:16:58.154] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 196,85721, Type: com.dukascopy.charts.drawings.PriceMarkerChartObject, Timestamp: 2025-08-04 11:16:58.138
+[2025-08-04 11:16:58.154] [INFO] New Price Level Event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,85721 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 11:16:58.143
+[2025-08-04 11:17:01.637] [INFO] HTTP Request: POST /pricelevel
+[2025-08-04 11:17:01.637] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,94431,"timestamp":"2025-08-04T11:17:01.634Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 11:17:01.637] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.94431,"timestamp":"2025-08-04T11:17:01.634Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 11:17:01.638] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.94431,"timestamp":"2025-08-04T11:17:01.634Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 11:17:01.670] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 196,94431, Type: com.dukascopy.charts.drawings.PriceMarkerChartObject, Timestamp: 2025-08-04 11:17:01.634
+[2025-08-04 11:17:01.670] [INFO] New Price Level Event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,94431 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 11:17:01.638
+[2025-08-04 11:17:04.124] [INFO] HTTP Request: POST /pricelevel
+[2025-08-04 11:17:04.125] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,57172,"timestamp":"2025-08-04T11:17:04.105Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 11:17:04.125] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.57172,"timestamp":"2025-08-04T11:17:04.105Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 11:17:04.125] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.57172,"timestamp":"2025-08-04T11:17:04.105Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 11:17:04.137] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 196,57172, Type: com.dukascopy.charts.drawings.PriceMarkerChartObject, Timestamp: 2025-08-04 11:17:04.105
+[2025-08-04 11:17:04.137] [INFO] New Price Level Event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,57172 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 11:17:04.126
+[2025-08-04 11:17:08.338] [INFO] HTTP Request: POST /pricelevel
+[2025-08-04 11:17:08.339] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":197,19109,"timestamp":"2025-08-04T11:17:08.335Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 11:17:08.339] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 197.19109,"timestamp":"2025-08-04T11:17:08.335Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 11:17:08.339] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 197.19109,"timestamp":"2025-08-04T11:17:08.335Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 11:17:08.352] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 197,19109, Type: com.dukascopy.charts.drawings.PriceMarkerChartObject, Timestamp: 2025-08-04 11:17:08.335
+[2025-08-04 11:17:08.352] [INFO] New Price Level Event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 197,19109 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 11:17:08.340
+[2025-08-04 11:19:15.949] [INFO] HTTP Request: POST /pricelevel
+[2025-08-04 11:19:15.949] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,33534,"timestamp":"2025-08-04T11:19:15.945Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 11:19:15.950] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.33534,"timestamp":"2025-08-04T11:19:15.945Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 11:19:15.950] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.33534,"timestamp":"2025-08-04T11:19:15.945Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 11:19:15.963] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 196,33534, Type: com.dukascopy.charts.drawings.PriceMarkerChartObject, Timestamp: 2025-08-04 11:19:15.945
+[2025-08-04 11:19:15.963] [INFO] New Price Level Event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,33534 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 11:19:15.951
+[2025-08-04 11:19:20.370] [INFO] HTTP Request: POST /pricelevel
+[2025-08-04 11:19:20.370] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,35969,"timestamp":"2025-08-04T11:19:20.348Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 11:19:20.371] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.35969,"timestamp":"2025-08-04T11:19:20.348Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 11:19:20.371] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.35969,"timestamp":"2025-08-04T11:19:20.348Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":"PRICEMARKER"}
+[2025-08-04 11:19:20.382] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 196,35969, Type: com.dukascopy.charts.drawings.PriceMarkerChartObject, Timestamp: 2025-08-04 11:19:20.348
+[2025-08-04 11:19:20.383] [INFO] New Price Level Event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,35969 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 11:19:20.372
+[2025-08-04 11:22:05.344] [INFO] HTTP Request: POST /pricelevel
+[2025-08-04 11:22:05.356] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,38404,"timestamp":"2025-08-04T11:22:05.324Z","type":"com.dukascopy.charts.drawings.ShortLineChartObject","additionalData":"SHORT_LINE"}
+[2025-08-04 11:22:05.365] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.38404,"timestamp":"2025-08-04T11:22:05.324Z","type":"com.dukascopy.charts.drawings.ShortLineChartObject","additionalData":"SHORT_LINE"}
+[2025-08-04 11:22:05.365] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.38404,"timestamp":"2025-08-04T11:22:05.324Z","type":"com.dukascopy.charts.drawings.ShortLineChartObject","additionalData":"SHORT_LINE"}
+[2025-08-04 11:22:06.051] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 196,38404, Type: com.dukascopy.charts.drawings.ShortLineChartObject, Timestamp: 2025-08-04 11:22:05.324
+[2025-08-04 11:22:06.052] [INFO] New Price Level Event: PriceLevel: SHORT_LINE | Symbol: GBPJPY | Value: 196,38404 | Type: com.dukascopy.charts.drawings.ShortLineChartObject | Time: 2025-08-04 11:22:05.952
+[2025-08-04 11:22:06.054] [INFO] HTTP Request: POST /pricelevel
+[2025-08-04 11:22:06.058] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,39587,"timestamp":"2025-08-04T11:22:06.050Z","type":"com.dukascopy.charts.drawings.ShortLineChartObject","additionalData":"SHORT_LINE"}
+[2025-08-04 11:22:06.059] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.39587,"timestamp":"2025-08-04T11:22:06.050Z","type":"com.dukascopy.charts.drawings.ShortLineChartObject","additionalData":"SHORT_LINE"}
+[2025-08-04 11:22:06.059] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.39587,"timestamp":"2025-08-04T11:22:06.050Z","type":"com.dukascopy.charts.drawings.ShortLineChartObject","additionalData":"SHORT_LINE"}
+[2025-08-04 11:22:07.040] [INFO] Price Level Processed: Symbol: GBPJPY, Price: 196,39587, Type: com.dukascopy.charts.drawings.ShortLineChartObject, Timestamp: 2025-08-04 11:22:06.050
+[2025-08-04 11:22:07.041] [INFO] New Price Level Event: PriceLevel: SHORT_LINE | Symbol: GBPJPY | Value: 196,39587 | Type: com.dukascopy.charts.drawings.ShortLineChartObject | Time: 2025-08-04 11:22:06.998

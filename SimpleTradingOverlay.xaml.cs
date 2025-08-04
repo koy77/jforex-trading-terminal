@@ -245,12 +245,12 @@ namespace ScreenCaptureApp
             if (_hotkeysService != null)
             {
                 _hotkeysService.OnEscapeKeyPressed += OnEscapeKeyPressed;
-                _hotkeysService.OnSKeyPressed += OnSKeyPressed;
-                _hotkeysService.OnAKeyPressed += OnAKeyPressed;
-                _hotkeysService.OnPKeyPressed += OnPKeyPressed;
-                _hotkeysService.OnDKeyPressed += OnDKeyPressed;
+                // _hotkeysService.OnSKeyPressed += OnSKeyPressed;
+                // _hotkeysService.OnAKeyPressed += OnAKeyPressed;
+                // _hotkeysService.OnPKeyPressed += OnPKeyPressed;
+                // _hotkeysService.OnDKeyPressed += OnDKeyPressed;
                 
-                Logger.LogInfo("SimpleTradingOverlay subscribed to HotkeyService events");
+                Logger.LogInfo("SimpleTradingOverlay subscribed to HotkeyService events (Escape only)");
             }
             else
             {
@@ -1309,11 +1309,11 @@ namespace ScreenCaptureApp
             if (_hotkeysService != null)
             {
                 _hotkeysService.OnEscapeKeyPressed -= OnEscapeKeyPressed;
-                _hotkeysService.OnSKeyPressed -= OnSKeyPressed;
-                _hotkeysService.OnAKeyPressed -= OnAKeyPressed;
-                _hotkeysService.OnPKeyPressed -= OnPKeyPressed;
-                _hotkeysService.OnDKeyPressed -= OnDKeyPressed;
-                Logger.LogInfo("SimpleTradingOverlay unsubscribed from HotkeyService events");
+                // _hotkeysService.OnSKeyPressed -= OnSKeyPressed;
+                // _hotkeysService.OnAKeyPressed -= OnAKeyPressed;
+                // _hotkeysService.OnPKeyPressed -= OnPKeyPressed;
+                // _hotkeysService.OnDKeyPressed -= OnDKeyPressed;
+                Logger.LogInfo("SimpleTradingOverlay unsubscribed from HotkeyService events (Escape only)");
             }
             
             // Отписываемся от событий HttpServerService
