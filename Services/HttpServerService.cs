@@ -198,7 +198,9 @@ namespace ScreenCaptureApp.Services
             {
                 if (request.HttpMethod != "POST")
                 {
-                    await SendResponseAsync(response, "Method not allowed", 405);
+                    var errorResponse = "Method not allowed";
+                    Logger.LogTagInfo("http_service", $"Server Response (405): {errorResponse}");
+                    await SendResponseAsync(response, errorResponse, 405);
                     return;
                 }
 
@@ -210,7 +212,7 @@ namespace ScreenCaptureApp.Services
                 }
 
                 // Логируем входящие данные по тегу
-                Logger.LogTagInfo("http_service", $"Price Level Input Data: {requestBody}");
+                Logger.LogTagInfo("http_service", $"Price Level Input Data (raw): {requestBody}");
                 Logger.LogDebug($"Received price level data: {requestBody}");
 
                 // Предобработка JSON для исправления неправильных форматов чисел
@@ -232,11 +234,10 @@ namespace ScreenCaptureApp.Services
                 // Парсим JSON с настройками
                 var priceLevelData = JsonConvert.DeserializeObject<PriceLevelData>(processedRequestBody, settings);
                 
+                // Логируем результат десериализации
+                Logger.LogTagInfo("http_service", $"Deserialized PriceLevelData: Symbol='{priceLevelData?.Symbol}', Price={priceLevelData?.Price}, Type='{priceLevelData?.Type}', AdditionalData='{priceLevelData?.AdditionalData}'");
+                
                 if (priceLevelData == null || string.IsNullOrEmpty(priceLevelData.Symbol))
-                {
-                    await SendResponseAsync(response, "Invalid data: symbol is required", 400);
-                    return;
-                }
 
                 // Устанавливаем значение по умолчанию для поля type если оно не указано (обратная совместимость)
                 if (string.IsNullOrEmpty(priceLevelData.Type))
@@ -260,44 +261,51 @@ namespace ScreenCaptureApp.Services
 
                 // Создаем и вызываем событие нового ценового уровня (для обратной совместимости)
                 var priceLevelEvent = new PriceLevelEventData(
-                    name: priceLevelData.AdditionalData ?? "Price Level",
+                    name: priceLevelData.AdditionalData?.ToString() ?? "Price Level",
                     symbol: priceLevelData.Symbol,
                     levelValue: priceLevelData.Price,
                     type: priceLevelData.Type,
-                    additionalData: priceLevelData.AdditionalData
+                    additionalData: priceLevelData.AdditionalData?.ToString() ?? ""
                 );
                 OnNewPriceLevelReceived(priceLevelEvent);
 
                 // Создаем и вызываем новое событие JForex объекта
-                var jforexObjectType = JForexChartObjectData.GetObjectTypeFromClassName(priceLevelData.AdditionalData);
+                // Получаем тип объекта из поля Type
+                var jforexObjectType = JForexChartObjectData.GetObjectTypeFromClassName(priceLevelData.Type);
                 var jforexChartObject = new JForexChartObjectData(
                     symbol: priceLevelData.Symbol,
                     price: priceLevelData.Price,
                     objectType: jforexObjectType,
-                    className: priceLevelData.AdditionalData,
-                    additionalData: priceLevelData.AdditionalData
+                    className: priceLevelData.Type,
+                    additionalData: priceLevelData.AdditionalData?.ToString() ?? ""
                 );
                 OnNewJForexChartObject(jforexChartObject);
 
                 // Отправляем успешный ответ
-                var responseData = new { success = true, message = "", timestamp = DateTime.Now };
+                var responseData = new { success = true, message = "JForex chart object processed successfully", timestamp = DateTime.Now };
+                var responseJson = JsonConvert.SerializeObject(responseData, Formatting.Indented);
                 await SendJsonResponseAsync(response, responseData, 200);
 
                 // Логируем обработанные данные по тегу
                 Logger.LogTagInfo("http_service", $"New JForex Chart Object: {jforexChartObject}");
+                Logger.LogTagInfo("http_service", $"Server Response (200): {responseJson}");
                 Logger.LogInfo($"Price level processed: {priceLevelData}");
             }
             catch (JsonException ex)
             {
                 Logger.LogError("Invalid JSON in price level request", ex);
                 Logger.LogTagError("http_service", "Invalid JSON in price level request", ex);
-                await SendResponseAsync(response, "Invalid JSON format", 400);
+                var errorResponse = "Invalid JSON format";
+                Logger.LogTagInfo("http_service", $"Server Response (400): {errorResponse}");
+                await SendResponseAsync(response, errorResponse, 400);
             }
             catch (Exception ex)
             {
                 Logger.LogError("Error processing price level request", ex);
                 Logger.LogTagError("http_service", "Error processing price level request", ex);
-                await SendResponseAsync(response, "Internal server error", 500);
+                var errorResponse = "Internal server error";
+                Logger.LogTagInfo("http_service", $"Server Response (500): {errorResponse}");
+                await SendResponseAsync(response, errorResponse, 500);
             }
         }
 

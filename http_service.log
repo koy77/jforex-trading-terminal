@@ -1,144 +1,52 @@
-[2025-08-04 11:52:42.991] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:52:42.992] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:52:42.987Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:42.993] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:42.987Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:42.993] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:42.987Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:43.997] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:52:43.998] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:52:43.995Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:43.998] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:43.995Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:43.998] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:43.995Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:45.004] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:52:45.004] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:52:45.002Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:45.005] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:45.002Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:45.005] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:45.002Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:45.067] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:52:45.068] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:52:45.065Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:45.068] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:45.065Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:45.068] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:45.065Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:46.075] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:52:46.075] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:52:46.072Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:46.076] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:46.072Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:46.076] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:46.072Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:47.082] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:52:47.083] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:52:47.080Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:47.083] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:47.080Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:47.083] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:47.080Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:47.122] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:52:47.123] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:52:47.120Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:47.123] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:47.120Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:47.123] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:47.120Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:48.127] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:52:48.127] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:52:48.125Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:48.128] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:48.125Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:48.128] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:48.125Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:49.135] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:52:49.135] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:52:49.131Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:49.136] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:49.131Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:49.136] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:49.131Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:49.189] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:52:49.190] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:52:49.187Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:49.190] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:49.187Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:49.190] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:49.187Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:50.197] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:52:50.198] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:52:50.194Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:50.199] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:50.194Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:50.199] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:50.194Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:51.206] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:52:51.207] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:52:51.203Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:51.208] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:51.203Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:51.208] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:51.203Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:51.256] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:52:51.257] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:52:51.255Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:51.257] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:51.255Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:51.258] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:51.255Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:52.266] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:52:52.267] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:52:52.264Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:52.267] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:52.264Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:52.268] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:52.264Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:53.279] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:52:53.280] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:52:53.270Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:53.280] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:53.270Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:53.280] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:53.270Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:53.316] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:52:53.317] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:52:53.314Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:53.317] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:53.314Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:53.317] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:53.314Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:54.321] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:52:54.321] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:52:54.319Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:54.322] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:54.319Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:54.322] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:54.319Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:55.329] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:52:55.329] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:52:55.325Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:55.330] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:55.325Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:55.330] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:55.325Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:55.374] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:52:55.374] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:52:55.371Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:55.375] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:55.371Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:55.375] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:55.371Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:56.378] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:52:56.379] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:52:56.377Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:56.379] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:56.377Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:56.380] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:56.377Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:57.385] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:52:57.385] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:52:57.381Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:57.386] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:57.381Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:57.387] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:57.381Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:57.448] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:52:57.449] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:52:57.446Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:57.449] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:57.446Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:57.450] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:57.446Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:58.455] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:52:58.456] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:52:58.452Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:58.457] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:58.452Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:58.457] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:58.452Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:59.464] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:52:59.465] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:52:59.461Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:59.465] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:59.461Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:59.465] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:59.461Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:59.503] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:52:59.503] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:52:59.501Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:59.504] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:59.501Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:52:59.504] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:52:59.501Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:00.508] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:53:00.508] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:53:00.506Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:00.509] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:53:00.506Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:00.509] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:53:00.506Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:01.515] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:53:01.515] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:53:01.513Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:01.516] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:53:01.513Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:01.516] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:53:01.513Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:01.547] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:53:01.548] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:53:01.545Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:01.548] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:53:01.545Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:01.548] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:53:01.545Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:02.554] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:53:02.555] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:53:02.550Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:02.555] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:53:02.550Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:02.556] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:53:02.550Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:03.561] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:53:03.561] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:53:03.559Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:03.562] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:53:03.559Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:03.562] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:53:03.559Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:03.605] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:53:03.605] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:53:03.603Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:03.605] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:53:03.603Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:03.606] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:53:03.603Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:04.609] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:53:04.610] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:53:04.607Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:04.610] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:53:04.607Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:04.610] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:53:04.607Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:05.616] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:53:05.616] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:53:05.614Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:05.617] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:53:05.614Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:05.617] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:53:05.614Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:05.785] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:53:05.786] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:53:05.782Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:05.786] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:53:05.782Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:05.786] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:53:05.782Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:06.792] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:53:06.794] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:53:06.790Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:06.794] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:53:06.790Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:06.794] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:53:06.790Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:07.802] [INFO] HTTP Request: POST /pricelevel
-[2025-08-04 11:53:07.802] [INFO] Price Level Input Data: {"symbol":"GBPJPY","price":196,36243,"timestamp":"2025-08-04T11:53:07.800Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:07.803] [INFO] JSON preprocessing completed: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:53:07.800Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
-[2025-08-04 11:53:07.803] [INFO] Preprocessed JSON Data: {"symbol":"GBPJPY","price": 196.36243,"timestamp":"2025-08-04T11:53:07.800Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-04 12:17:11.760] [INFO] HTTP Request: POST /pricelevel
+[2025-08-04 12:17:11.761] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3357,73277,"timestamp":"2025-08-04T12:17:11.757Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-04 12:17:11.761] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3357.73277,"timestamp":"2025-08-04T12:17:11.757Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-04 12:17:11.761] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3357.73277,"timestamp":"2025-08-04T12:17:11.757Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-04 12:17:11.762] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3357,73277, Type='com.dukascopy.charts.drawings.PriceMarkerChartObject', AdditionalData='{
+  "objectType": "PRICEMARKER"
+}'
+[2025-08-04 12:17:11.799] [INFO] New JForex Chart Object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3357,73277 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 12:17:11.762
+[2025-08-04 12:17:11.799] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-04T12:17:11.7993177+03:00"
+}
+[2025-08-04 12:18:43.617] [INFO] HTTP Request: POST /pricelevel
+[2025-08-04 12:18:43.617] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3319,07200,"timestamp":"2025-08-04T12:18:43.613Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-04 12:18:43.618] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3319.07200,"timestamp":"2025-08-04T12:18:43.613Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-04 12:18:43.618] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3319.07200,"timestamp":"2025-08-04T12:18:43.613Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-04 12:18:43.618] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3319,07200, Type='com.dukascopy.charts.drawings.PriceMarkerChartObject', AdditionalData='{
+  "objectType": "PRICEMARKER"
+}'
+[2025-08-04 12:18:43.630] [INFO] New JForex Chart Object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3319,07200 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 12:18:43.618
+[2025-08-04 12:18:43.630] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-04T12:18:43.6301327+03:00"
+}
+[2025-08-04 12:18:48.969] [INFO] HTTP Request: POST /pricelevel
+[2025-08-04 12:18:48.970] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3312,00847,"timestamp":"2025-08-04T12:18:48.967Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-04 12:18:48.970] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3312.00847,"timestamp":"2025-08-04T12:18:48.967Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-04 12:18:48.971] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3312.00847,"timestamp":"2025-08-04T12:18:48.967Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-04 12:18:48.971] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3312,00847, Type='com.dukascopy.charts.drawings.PriceMarkerChartObject', AdditionalData='{
+  "objectType": "PRICEMARKER"
+}'
+[2025-08-04 12:18:48.982] [INFO] New JForex Chart Object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3312,00847 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 12:18:48.971
+[2025-08-04 12:18:48.983] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-04T12:18:48.9827749+03:00"
+}
+[2025-08-04 12:18:52.090] [INFO] HTTP Request: POST /pricelevel
+[2025-08-04 12:18:52.091] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3303,53224,"timestamp":"2025-08-04T12:18:52.087Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-04 12:18:52.091] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price": 3303.53224,"timestamp":"2025-08-04T12:18:52.087Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-04 12:18:52.091] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price": 3303.53224,"timestamp":"2025-08-04T12:18:52.087Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-04 12:18:52.091] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3303,53224, Type='com.dukascopy.charts.drawings.PriceMarkerChartObject', AdditionalData='{
+  "objectType": "PRICEMARKER"
+}'
+[2025-08-04 12:18:52.238] [INFO] New JForex Chart Object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3303,53224 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 12:18:52.092
+[2025-08-04 12:18:52.241] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-04T12:18:52.2387159+03:00"
+}

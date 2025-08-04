@@ -342,3 +342,71 @@
 [2025-08-04 11:56:53.311] [INFO] Price display panel hidden
 [2025-08-04 11:56:53.462] [INFO] Price display panel hidden
 [2025-08-04 11:56:53.463] [INFO] Price display panel hidden
+[2025-08-04 12:01:33.094] [INFO] TradingToolbar instance 1 created
+[2025-08-04 12:01:33.095] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-04 12:01:33.095] [INFO] ToastNotifyService initialized successfully
+[2025-08-04 12:01:33.112] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 12:01:33.112] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:01:33.113] [INFO] OrderSummary panel hidden
+[2025-08-04 12:01:33.113] [INFO] Price display panel hidden
+[2025-08-04 12:01:33.912] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 12:01:33.913] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:01:33.913] [INFO] OrderSummary panel hidden
+[2025-08-04 12:01:33.913] [INFO] Price display panel hidden
+[2025-08-04 12:01:33.913] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 12:01:33.913] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:01:33.914] [INFO] OrderSummary panel hidden
+[2025-08-04 12:01:33.914] [INFO] Price display panel hidden
+[2025-08-04 12:02:53.679] [INFO] TradingToolbar instance 2 created
+[2025-08-04 12:02:53.680] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-04 12:02:53.680] [INFO] ToastNotifyService initialized successfully
+[2025-08-04 12:02:54.507] [INFO] Price display panel hidden
+[2025-08-04 12:02:54.587] [INFO] Price display panel hidden
+[2025-08-04 12:05:41.238] [INFO] TradingToolbar instance 1 created
+[2025-08-04 12:05:41.239] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-04 12:05:41.239] [INFO] ToastNotifyService initialized successfully
+[2025-08-04 12:05:41.262] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 12:05:41.263] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:05:41.263] [INFO] OrderSummary panel hidden
+[2025-08-04 12:05:41.264] [INFO] Price display panel hidden
+[2025-08-04 12:05:41.701] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 12:05:41.702] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:05:41.702] [INFO] OrderSummary panel hidden
+[2025-08-04 12:05:41.702] [INFO] Price display panel hidden
+[2025-08-04 12:05:41.702] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 12:05:41.703] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:05:41.703] [INFO] OrderSummary panel hidden
+[2025-08-04 12:05:41.703] [INFO] Price display panel hidden
+[2025-08-04 12:15:20.175] [INFO] TradingToolbar instance 1 created
+[2025-08-04 12:15:20.175] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-04 12:15:20.175] [INFO] ToastNotifyService initialized successfully
+[2025-08-04 12:15:20.188] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 12:15:20.188] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:15:20.189] [INFO] OrderSummary panel hidden
+[2025-08-04 12:15:20.189] [INFO] Price display panel hidden
+[2025-08-04 12:15:20.612] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 12:15:20.613] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:15:20.613] [INFO] OrderSummary panel hidden
+[2025-08-04 12:15:20.613] [INFO] Price display panel hidden
+[2025-08-04 12:15:20.613] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 12:15:20.613] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:15:20.614] [INFO] OrderSummary panel hidden
+[2025-08-04 12:15:20.614] [INFO] Price display panel hidden
+[2025-08-04 12:17:11.792] [INFO] SetEntryLevel called: 3357,73277 for XAUUSD
+[2025-08-04 12:17:11.798] [INFO] Price display updated: Entry=3357,73277, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 12:17:11.799] [INFO] Entry Level set successfully: 3357,73277 for XAUUSD
+[2025-08-04 12:18:38.336] [INFO] Price display panel hidden
+[2025-08-04 12:18:38.337] [INFO] Price display panel hidden
+[2025-08-04 12:18:38.494] [INFO] Price display panel hidden
+[2025-08-04 12:18:38.495] [INFO] Price display panel hidden
+[2025-08-04 12:18:43.629] [INFO] SetEntryLevel called: 3319,07200 for XAUUSD
+[2025-08-04 12:18:43.629] [INFO] Price display updated: Entry=3319,07200, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 12:18:43.629] [INFO] Entry Level set successfully: 3319,07200 for XAUUSD
+[2025-08-04 12:18:47.230] [INFO] Price display panel hidden
+[2025-08-04 12:18:47.231] [INFO] Price display panel hidden
+[2025-08-04 12:18:47.398] [INFO] Price display panel hidden
+[2025-08-04 12:18:47.399] [INFO] Price display panel hidden
+[2025-08-04 12:18:48.982] [INFO] SetEntryLevel called: 3312,00847 for XAUUSD
+[2025-08-04 12:18:48.982] [INFO] Price display updated: Entry=3312,00847, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 12:18:48.982] [INFO] Entry Level set successfully: 3312,00847 for XAUUSD
+[2025-08-04 12:18:52.238] [INFO] Price display panel hidden

@@ -1,7 +1,10 @@
 using System;
+using Newtonsoft.Json;
 
 namespace ScreenCaptureApp.Models
 {
+
+
     /// <summary>
     /// Модель данных ценового уровня от GForex
     /// </summary>
@@ -23,9 +26,9 @@ namespace ScreenCaptureApp.Models
         public DateTime Timestamp { get; set; } = DateTime.Now;
 
         /// <summary>
-        /// Дополнительные данные (опционально)
+        /// Дополнительные данные (опционально) - JSON объект
         /// </summary>
-        public string AdditionalData { get; set; }
+        public object AdditionalData { get; set; }
 
         /// <summary>
         /// Тип ценового уровня (например, "support", "resistance", "breakout", "entry", "exit")

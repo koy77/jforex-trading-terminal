@@ -262,3 +262,67 @@ StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
 [2025-08-04 11:56:53.462] [INFO] Escape key pressed via HotkeyService
 [2025-08-04 11:56:53.463] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
 [2025-08-04 11:56:53.463] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:02:54.506] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:02:54.506] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:02:54.507] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:02:54.587] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:02:54.587] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:02:54.587] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:16:37.230] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3357,38361 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 12:16:37.227
+[2025-08-04 12:16:37.230] [INFO] Updating toolbar symbol from UNKNOWN to XAUUSD
+[2025-08-04 12:16:37.235] [ERROR] Error processing JForex chart object
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at System.Windows.Controls.TextBlock.set_Text(String value)
+   at ScreenCaptureApp.Controls.TradingToolbar.SetSymbol(String symbol) in C:\apps\jforex-trading-terminal-win10\Controls\TradingToolbar.xaml.cs:line 280
+   at ScreenCaptureApp.SimpleTradingOverlay.HttpServerService_NewJForexChartObject(Object sender, JForexChartObjectData jforexChartObject) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 273
+[2025-08-04 12:17:11.762] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3357,73277 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 12:17:11.762
+[2025-08-04 12:17:11.789] [INFO] Toast notification shown: JForex: PriceMarker = 3357,73277 (XAUUSD)
+[2025-08-04 12:17:11.790] [INFO] Processing JForex chart object: PriceMarker = 3357,73277
+[2025-08-04 12:17:11.791] [INFO] Processing PriceMarker object: 3357,73277
+[2025-08-04 12:17:11.791] [INFO] Starting new price level cycle - waiting for Entry Price
+[2025-08-04 12:18:38.335] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:18:38.336] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:18:38.336] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:18:38.337] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:18:38.337] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:18:38.337] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:18:38.494] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:18:38.494] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:18:38.494] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:18:38.495] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:18:38.495] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:18:38.495] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:18:43.618] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3319,07200 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 12:18:43.618
+[2025-08-04 12:18:43.628] [INFO] Toast notification shown: JForex: PriceMarker = 3319,07200 (XAUUSD)
+[2025-08-04 12:18:43.629] [INFO] Processing JForex chart object: PriceMarker = 3319,07200
+[2025-08-04 12:18:43.629] [INFO] Processing PriceMarker object: 3319,07200
+[2025-08-04 12:18:43.629] [INFO] Entry Price set: 3319,07200 for XAUUSD
+[2025-08-04 12:18:47.230] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:18:47.230] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:18:47.230] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:18:47.231] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:18:47.231] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:18:47.231] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:18:47.398] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:18:47.398] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:18:47.399] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:18:47.399] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:18:47.399] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:18:47.399] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:18:48.971] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3312,00847 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 12:18:48.971
+[2025-08-04 12:18:48.981] [INFO] Toast notification shown: JForex: PriceMarker = 3312,00847 (XAUUSD)
+[2025-08-04 12:18:48.981] [INFO] Processing JForex chart object: PriceMarker = 3312,00847
+[2025-08-04 12:18:48.981] [INFO] Processing PriceMarker object: 3312,00847
+[2025-08-04 12:18:48.982] [INFO] Entry Price set: 3312,00847 for XAUUSD
+[2025-08-04 12:18:52.092] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3303,53224 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 12:18:52.092
+[2025-08-04 12:18:52.111] [INFO] Toast notification shown: JForex: PriceMarker = 3303,53224 (XAUUSD)
+[2025-08-04 12:18:52.112] [INFO] Processing JForex chart object: PriceMarker = 3303,53224
+[2025-08-04 12:18:52.112] [INFO] Processing PriceMarker object: 3303,53224
+[2025-08-04 12:18:52.112] [INFO] Stop Loss Price set: 3303,53224 for XAUUSD
+[2025-08-04 12:18:52.154] [INFO] Stop Loss toast shown: Stop Loss: 3303,53224 | Trade: SELL (XAUUSD)
+[2025-08-04 12:18:52.158] [INFO] Sending trade command to MT4: sell XAUUSD Entry:3312,00847 SL:3303,53224 Risk:1
+[2025-08-04 12:18:52.194] [INFO] Trade creation toast shown: Сделка SELL от 3312,00847 с риском 1 отправлена
+[2025-08-04 12:18:52.215] [INFO] MT4 command sent successfully, clearing UI
+[2025-08-04 12:18:52.238] [INFO] Price level state reset - ready for new PriceMarkerChartObject cycle
