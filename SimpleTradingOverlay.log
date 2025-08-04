@@ -1,481 +1,281 @@
-[2025-08-04 10:49:10.063] [INFO] Received new price level event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,18462 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 10:49:10.063
-[2025-08-04 10:49:10.074] [INFO] Toast notification shown: HTTP: PRICEMARKER = 196,18462 (GBPJPY)
-[2025-08-04 10:49:10.074] [INFO] Processing price level: PRICEMARKER = 196,18462
-[2025-08-04 10:49:10.074] [INFO] Entry Price set: 196,18462 for GBPJPY
-[2025-08-04 10:49:27.990] [INFO] Received new price level event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,60076 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 10:49:27.990
-[2025-08-04 10:49:28.000] [INFO] Toast notification shown: HTTP: PRICEMARKER = 196,60076 (GBPJPY)
-[2025-08-04 10:49:28.001] [INFO] Processing price level: PRICEMARKER = 196,60076
-[2025-08-04 10:49:28.001] [INFO] Stop Loss Price set: 196,60076 for GBPJPY
-[2025-08-04 10:49:28.034] [INFO] Stop Loss toast shown: Stop Loss: 196,60076 | Trade: BUY (GBPJPY)
-[2025-08-04 10:49:28.034] [INFO] Sending trade command to MT4: buy GBPJPY Entry:196,18462 SL:196,60076 Risk:1
-[2025-08-04 10:49:28.065] [INFO] Trade creation toast shown: Сделка BUY от 196,18462 с риском 1 отправлена
-[2025-08-04 10:49:28.067] [INFO] MT4 command sent successfully, clearing UI
-[2025-08-04 10:49:28.069] [INFO] Price level state reset
-[2025-08-04 10:49:42.284] [INFO] Received new price level event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,93463 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 10:49:42.284
-[2025-08-04 10:49:42.294] [INFO] Toast notification shown: HTTP: PRICEMARKER = 196,93463 (GBPJPY)
-[2025-08-04 10:49:42.294] [INFO] Processing price level: PRICEMARKER = 196,93463
-[2025-08-04 10:49:42.295] [INFO] Starting new price level cycle - waiting for Entry Price
-[2025-08-04 10:51:27.539] [INFO] Escape key pressed - cancelling price level entry
-[2025-08-04 10:51:27.539] [INFO] Price level state reset
-[2025-08-04 10:51:27.707] [INFO] Escape key pressed - cancelling price level entry
-[2025-08-04 10:51:27.707] [INFO] Price level state reset
-[2025-08-04 10:51:57.259] [INFO] Escape key pressed - cancelling price level entry
-[2025-08-04 10:51:57.259] [INFO] Price level state reset
-[2025-08-04 10:51:57.402] [INFO] Escape key pressed - cancelling price level entry
-[2025-08-04 10:51:57.403] [INFO] Price level state reset
-[2025-08-04 10:52:36.994] [INFO] Escape key pressed - cancelling price level entry
-[2025-08-04 10:52:36.994] [INFO] Price level state reset
-[2025-08-04 10:52:37.146] [INFO] Escape key pressed - cancelling price level entry
-[2025-08-04 10:52:37.146] [INFO] Price level state reset
-[2025-08-04 10:53:13.762] [INFO] Escape key pressed - cancelling price level entry
-[2025-08-04 10:53:13.762] [INFO] Price level state reset
-[2025-08-04 10:53:13.938] [INFO] Escape key pressed - cancelling price level entry
-[2025-08-04 10:53:13.938] [INFO] Price level state reset
-[2025-08-04 10:53:41.937] [INFO] Escape key pressed - cancelling price level entry
-[2025-08-04 10:53:41.938] [INFO] Price level state reset
-[2025-08-04 10:53:46.321] [INFO] Escape key pressed - cancelling price level entry
-[2025-08-04 10:53:46.321] [INFO] Price level state reset
-[2025-08-04 10:53:46.457] [INFO] Escape key pressed - cancelling price level entry
-[2025-08-04 10:53:46.458] [INFO] Price level state reset
-[2025-08-04 10:53:48.761] [INFO] Escape key pressed - cancelling price level entry
-[2025-08-04 10:53:48.762] [INFO] Price level state reset
-[2025-08-04 10:53:48.921] [INFO] Escape key pressed - cancelling price level entry
-[2025-08-04 10:53:48.921] [INFO] Price level state reset
-[2025-08-04 10:53:50.705] [INFO] Escape key pressed - cancelling price level entry
-[2025-08-04 10:53:50.706] [INFO] Price level state reset
-[2025-08-04 10:53:50.857] [INFO] Escape key pressed - cancelling price level entry
-[2025-08-04 10:53:50.857] [INFO] Price level state reset
-[2025-08-04 10:54:12.457] [INFO] Escape key pressed - cancelling price level entry
-[2025-08-04 10:54:12.457] [INFO] Price level state reset
-[2025-08-04 11:16:49.888] [INFO] Received new price level event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 195,85074 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 11:16:49.886
-[2025-08-04 11:16:49.911] [INFO] Toast notification shown: HTTP: PRICEMARKER = 195,85074 (GBPJPY)
-[2025-08-04 11:16:49.912] [INFO] Processing price level: PRICEMARKER = 195,85074
-[2025-08-04 11:16:49.912] [DEBUG] Skipping non-PriceMarkerChartObject event: PRICEMARKER
-[2025-08-04 11:16:53.873] [INFO] Received new price level event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,30559 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 11:16:53.873
-[2025-08-04 11:16:53.884] [INFO] Toast notification shown: HTTP: PRICEMARKER = 196,30559 (GBPJPY)
-[2025-08-04 11:16:53.884] [INFO] Processing price level: PRICEMARKER = 196,30559
-[2025-08-04 11:16:53.885] [DEBUG] Skipping non-PriceMarkerChartObject event: PRICEMARKER
-[2025-08-04 11:16:56.746] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:16:56.746] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:16:56.747] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:16:56.747] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:16:56.748] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:16:56.748] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:16:58.143] [INFO] Received new price level event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,85721 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 11:16:58.143
-[2025-08-04 11:16:58.153] [INFO] Toast notification shown: HTTP: PRICEMARKER = 196,85721 (GBPJPY)
-[2025-08-04 11:16:58.154] [INFO] Processing price level: PRICEMARKER = 196,85721
-[2025-08-04 11:16:58.154] [DEBUG] Skipping non-PriceMarkerChartObject event: PRICEMARKER
-[2025-08-04 11:16:59.706] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:16:59.706] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:16:59.706] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:16:59.708] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:16:59.708] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:16:59.709] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:17:01.638] [INFO] Received new price level event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,94431 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 11:17:01.638
-[2025-08-04 11:17:01.669] [INFO] Toast notification shown: HTTP: PRICEMARKER = 196,94431 (GBPJPY)
-[2025-08-04 11:17:01.670] [INFO] Processing price level: PRICEMARKER = 196,94431
-[2025-08-04 11:17:01.670] [DEBUG] Skipping non-PriceMarkerChartObject event: PRICEMARKER
-[2025-08-04 11:17:02.681] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:17:02.681] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:17:02.681] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:17:02.682] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:17:02.682] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:17:02.682] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:17:04.126] [INFO] Received new price level event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,57172 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 11:17:04.126
-[2025-08-04 11:17:04.136] [INFO] Toast notification shown: HTTP: PRICEMARKER = 196,57172 (GBPJPY)
-[2025-08-04 11:17:04.137] [INFO] Processing price level: PRICEMARKER = 196,57172
-[2025-08-04 11:17:04.137] [DEBUG] Skipping non-PriceMarkerChartObject event: PRICEMARKER
-[2025-08-04 11:17:08.340] [INFO] Received new price level event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 197,19109 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 11:17:08.340
-[2025-08-04 11:17:08.351] [INFO] Toast notification shown: HTTP: PRICEMARKER = 197,19109 (GBPJPY)
-[2025-08-04 11:17:08.351] [INFO] Processing price level: PRICEMARKER = 197,19109
-[2025-08-04 11:17:08.351] [DEBUG] Skipping non-PriceMarkerChartObject event: PRICEMARKER
-[2025-08-04 11:19:15.951] [INFO] Received new price level event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,33534 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 11:19:15.951
-[2025-08-04 11:19:15.962] [INFO] Toast notification shown: HTTP: PRICEMARKER = 196,33534 (GBPJPY)
-[2025-08-04 11:19:15.962] [INFO] Processing price level: PRICEMARKER = 196,33534
-[2025-08-04 11:19:15.962] [DEBUG] Skipping non-PriceMarkerChartObject event: PRICEMARKER
-[2025-08-04 11:19:18.903] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:19:18.903] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:19:18.904] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:19:18.904] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:19:18.904] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:19:18.905] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:19:20.372] [INFO] Received new price level event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,35969 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 11:19:20.372
-[2025-08-04 11:19:20.382] [INFO] Toast notification shown: HTTP: PRICEMARKER = 196,35969 (GBPJPY)
-[2025-08-04 11:19:20.382] [INFO] Processing price level: PRICEMARKER = 196,35969
-[2025-08-04 11:19:20.382] [DEBUG] Skipping non-PriceMarkerChartObject event: PRICEMARKER
-[2025-08-04 11:19:22.688] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:19:22.688] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:19:22.689] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:19:22.689] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:19:22.690] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:19:22.690] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:22:05.954] [INFO] Received new price level event: PriceLevel: SHORT_LINE | Symbol: GBPJPY | Value: 196,38404 | Type: com.dukascopy.charts.drawings.ShortLineChartObject | Time: 2025-08-04 11:22:05.952
-[2025-08-04 11:22:05.954] [INFO] Updating toolbar symbol from UNKNOWN to GBPJPY
-[2025-08-04 11:22:05.982] [ERROR] Error processing price level event
-Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
-StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
-   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
-   at System.Windows.Controls.TextBlock.set_Text(String value)
-   at ScreenCaptureApp.Controls.TradingToolbar.SetSymbol(String symbol) in C:\apps\jforex-trading-terminal-win10\Controls\TradingToolbar.xaml.cs:line 280
-   at ScreenCaptureApp.SimpleTradingOverlay.HttpServerService_NewPriceLevelReceived(Object sender, PriceLevelEventData priceLevelEvent) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 272
-[2025-08-04 11:22:06.998] [INFO] Received new price level event: PriceLevel: SHORT_LINE | Symbol: GBPJPY | Value: 196,39587 | Type: com.dukascopy.charts.drawings.ShortLineChartObject | Time: 2025-08-04 11:22:06.998
-[2025-08-04 11:22:07.038] [INFO] Toast notification shown: HTTP: SHORT_LINE = 196,39587 (GBPJPY)
-[2025-08-04 11:22:07.039] [INFO] Processing price level: SHORT_LINE = 196,39587
-[2025-08-04 11:22:07.040] [DEBUG] Skipping non-PriceMarkerChartObject event: SHORT_LINE
-[2025-08-04 11:22:10.646] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:22:10.646] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:22:10.647] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:22:10.648] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:22:10.648] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:22:10.648] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:22:10.805] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:22:10.805] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:22:10.806] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:22:10.806] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:22:10.806] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:22:10.807] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:22:12.553] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:22:12.553] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:22:12.554] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:22:12.554] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:22:12.555] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:22:12.555] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:22:12.693] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:22:12.694] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:22:12.694] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:22:12.694] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:22:12.695] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:22:12.695] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:22:16.741] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:22:16.741] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:22:16.742] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:22:16.742] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:22:16.742] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:22:16.742] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:26:49.273] [INFO] Received new price level event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,79303 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 11:26:49.271
-[2025-08-04 11:26:49.298] [INFO] Toast notification shown: HTTP: PRICEMARKER = 196,79303 (GBPJPY)
-[2025-08-04 11:26:49.299] [INFO] Processing price level: PRICEMARKER = 196,79303
-[2025-08-04 11:26:49.299] [DEBUG] Skipping non-PriceMarkerChartObject event: PRICEMARKER
-[2025-08-04 11:26:51.996] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:26:51.996] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:26:51.996] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:26:51.997] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:26:51.997] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:26:51.997] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:28:51.553] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:28:51.553] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:28:51.553] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:28:51.640] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:28:51.640] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:28:51.640] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:28:55.009] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:28:55.009] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:28:55.009] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:28:55.010] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:28:55.010] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:28:55.010] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:28:55.569] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:28:55.569] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:28:55.570] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:28:55.571] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:28:55.571] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:28:55.572] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:28:58.465] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:28:58.465] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:28:58.466] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:28:58.551] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:28:58.551] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:28:58.551] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:29:00.265] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:29:00.265] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:29:00.265] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:29:00.336] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:29:00.336] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:29:00.336] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:29:01.945] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:29:01.945] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:29:01.946] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:29:02.031] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:29:02.031] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:29:02.031] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:29:06.969] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:29:06.969] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:29:06.970] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:29:07.048] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:29:07.048] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:29:07.049] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:29:15.953] [INFO] Received new price level event: PriceLevel: SHORT_LINE | Symbol: GBPJPY | Value: 196,48933 | Type: com.dukascopy.charts.drawings.ShortLineChartObject | Time: 2025-08-04 11:29:15.953
-[2025-08-04 11:29:15.965] [INFO] Toast notification shown: HTTP: SHORT_LINE = 196,48933 (GBPJPY)
-[2025-08-04 11:29:15.965] [INFO] Processing price level: SHORT_LINE = 196,48933
-[2025-08-04 11:29:15.965] [DEBUG] Skipping non-PriceMarkerChartObject event: SHORT_LINE
-[2025-08-04 11:29:20.328] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:29:20.329] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:29:20.329] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:29:20.329] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:29:20.330] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:29:20.330] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:47:22.486] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:47:22.487] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:47:22.488] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:47:22.489] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:47:22.489] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:47:22.490] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:49:35.330] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:49:35.331] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:49:35.332] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:49:35.332] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:49:35.332] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:49:35.332] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:49:35.506] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:49:35.506] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:49:35.506] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:49:35.507] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:49:35.507] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:49:35.507] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:54:28.503] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:54:28.503] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:54:28.503] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:54:28.504] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:54:28.504] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:54:28.505] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:56:51.029] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:56:51.029] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:56:51.030] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:56:51.030] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:56:51.030] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:56:51.030] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:56:51.173] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:56:51.173] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:56:51.174] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:56:51.174] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:56:51.174] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:56:51.175] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:56:53.309] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:56:53.310] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:56:53.310] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:56:53.310] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:56:53.311] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:56:53.311] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:56:53.461] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:56:53.462] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:56:53.462] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 11:56:53.462] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 11:56:53.463] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 11:56:53.463] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:02:54.506] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:02:54.506] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:02:54.507] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:02:54.587] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:02:54.587] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:02:54.587] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:16:37.230] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3357,38361 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 12:16:37.227
-[2025-08-04 12:16:37.230] [INFO] Updating toolbar symbol from UNKNOWN to XAUUSD
-[2025-08-04 12:16:37.235] [ERROR] Error processing JForex chart object
-Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
-StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
-   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
-   at System.Windows.Controls.TextBlock.set_Text(String value)
-   at ScreenCaptureApp.Controls.TradingToolbar.SetSymbol(String symbol) in C:\apps\jforex-trading-terminal-win10\Controls\TradingToolbar.xaml.cs:line 280
-   at ScreenCaptureApp.SimpleTradingOverlay.HttpServerService_NewJForexChartObject(Object sender, JForexChartObjectData jforexChartObject) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 273
-[2025-08-04 12:17:11.762] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3357,73277 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 12:17:11.762
-[2025-08-04 12:17:11.789] [INFO] Toast notification shown: JForex: PriceMarker = 3357,73277 (XAUUSD)
-[2025-08-04 12:17:11.790] [INFO] Processing JForex chart object: PriceMarker = 3357,73277
-[2025-08-04 12:17:11.791] [INFO] Processing PriceMarker object: 3357,73277
-[2025-08-04 12:17:11.791] [INFO] Starting new price level cycle - waiting for Entry Price
-[2025-08-04 12:18:38.335] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:18:38.336] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:18:38.336] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:18:38.337] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:18:38.337] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:18:38.337] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:18:38.494] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:18:38.494] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:18:38.494] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:18:38.495] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:18:38.495] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:18:38.495] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:18:43.618] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3319,07200 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 12:18:43.618
-[2025-08-04 12:18:43.628] [INFO] Toast notification shown: JForex: PriceMarker = 3319,07200 (XAUUSD)
-[2025-08-04 12:18:43.629] [INFO] Processing JForex chart object: PriceMarker = 3319,07200
-[2025-08-04 12:18:43.629] [INFO] Processing PriceMarker object: 3319,07200
-[2025-08-04 12:18:43.629] [INFO] Entry Price set: 3319,07200 for XAUUSD
-[2025-08-04 12:18:47.230] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:18:47.230] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:18:47.230] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:18:47.231] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:18:47.231] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:18:47.231] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:18:47.398] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:18:47.398] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:18:47.399] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:18:47.399] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:18:47.399] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:18:47.399] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:18:48.971] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3312,00847 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 12:18:48.971
-[2025-08-04 12:18:48.981] [INFO] Toast notification shown: JForex: PriceMarker = 3312,00847 (XAUUSD)
-[2025-08-04 12:18:48.981] [INFO] Processing JForex chart object: PriceMarker = 3312,00847
-[2025-08-04 12:18:48.981] [INFO] Processing PriceMarker object: 3312,00847
-[2025-08-04 12:18:48.982] [INFO] Entry Price set: 3312,00847 for XAUUSD
-[2025-08-04 12:18:52.092] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3303,53224 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 12:18:52.092
-[2025-08-04 12:18:52.111] [INFO] Toast notification shown: JForex: PriceMarker = 3303,53224 (XAUUSD)
-[2025-08-04 12:18:52.112] [INFO] Processing JForex chart object: PriceMarker = 3303,53224
-[2025-08-04 12:18:52.112] [INFO] Processing PriceMarker object: 3303,53224
-[2025-08-04 12:18:52.112] [INFO] Stop Loss Price set: 3303,53224 for XAUUSD
-[2025-08-04 12:18:52.154] [INFO] Stop Loss toast shown: Stop Loss: 3303,53224 | Trade: SELL (XAUUSD)
-[2025-08-04 12:18:52.158] [INFO] Sending trade command to MT4: sell XAUUSD Entry:3312,00847 SL:3303,53224 Risk:1
-[2025-08-04 12:18:52.194] [INFO] Trade creation toast shown: Сделка SELL от 3312,00847 с риском 1 отправлена
-[2025-08-04 12:18:52.215] [INFO] MT4 command sent successfully, clearing UI
-[2025-08-04 12:18:52.238] [INFO] Price level state reset - ready for new PriceMarkerChartObject cycle
-[2025-08-04 12:23:02.619] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:23:02.619] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:23:02.619] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:23:02.620] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:23:02.620] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:23:02.620] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:23:02.979] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:23:02.979] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:23:02.979] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:23:02.980] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:23:02.980] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:23:02.980] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:26:21.415] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3359,44639 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 12:26:21.415
-[2025-08-04 12:26:21.430] [INFO] Toast notification shown: JForex: PriceMarker = 3359,44639 (XAUUSD)
-[2025-08-04 12:26:21.430] [INFO] Processing JForex chart object: PriceMarker = 3359,44639
-[2025-08-04 12:26:21.431] [INFO] Processing PriceMarker object: 3359,44639
-[2025-08-04 12:26:21.431] [INFO] Entry Price set: 3359,44639 for XAUUSD
-[2025-08-04 12:26:24.952] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:26:24.953] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:26:24.953] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:26:24.954] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:26:24.954] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:26:24.954] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:26:26.512] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3360,06869 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 12:26:26.512
-[2025-08-04 12:26:26.524] [INFO] Toast notification shown: JForex: PriceMarker = 3360,06869 (XAUUSD)
-[2025-08-04 12:26:26.524] [INFO] Processing JForex chart object: PriceMarker = 3360,06869
-[2025-08-04 12:26:26.524] [INFO] Processing PriceMarker object: 3360,06869
-[2025-08-04 12:26:26.524] [INFO] Entry Price set: 3360,06869 for XAUUSD
-[2025-08-04 12:28:55.599] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:28:55.599] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:28:55.599] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:28:55.600] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:28:55.600] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:28:55.600] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:28:58.807] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:28:58.807] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:28:58.807] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:28:58.807] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:28:58.808] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:28:58.808] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:35:25.686] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3314,96950 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 12:35:25.684
-[2025-08-04 12:35:25.710] [INFO] Toast notification shown: JForex: PriceMarker = 3314,96950 (XAUUSD)
-[2025-08-04 12:35:25.710] [INFO] Processing JForex chart object: PriceMarker = 3314,96950
-[2025-08-04 12:35:25.711] [INFO] Processing PriceMarker object: 3314,96950
-[2025-08-04 12:35:25.711] [INFO] Starting new price level cycle - waiting for Entry Price
-[2025-08-04 12:35:30.800] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:35:30.800] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:35:30.800] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:35:30.801] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:35:30.801] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:35:30.801] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:35:32.157] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3302,36055 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 12:35:32.157
-[2025-08-04 12:35:32.169] [INFO] Toast notification shown: JForex: PriceMarker = 3302,36055 (XAUUSD)
-[2025-08-04 12:35:32.169] [INFO] Processing JForex chart object: PriceMarker = 3302,36055
-[2025-08-04 12:35:32.170] [INFO] Processing PriceMarker object: 3302,36055
-[2025-08-04 12:35:32.170] [INFO] Entry Price set: 3302,36055 for XAUUSD
-[2025-08-04 12:35:33.570] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:35:33.570] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:35:33.571] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:35:33.571] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:35:33.571] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:35:33.572] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:35:35.758] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3323,92861 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 12:35:35.758
-[2025-08-04 12:35:35.772] [INFO] Toast notification shown: JForex: PriceMarker = 3323,92861 (XAUUSD)
-[2025-08-04 12:35:35.772] [INFO] Processing JForex chart object: PriceMarker = 3323,92861
-[2025-08-04 12:35:35.772] [INFO] Processing PriceMarker object: 3323,92861
-[2025-08-04 12:35:35.773] [INFO] Entry Price set: 3323,92861 for XAUUSD
-[2025-08-04 12:35:39.568] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3332,19170 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 12:35:39.568
-[2025-08-04 12:35:39.581] [INFO] Toast notification shown: JForex: PriceMarker = 3332,19170 (XAUUSD)
-[2025-08-04 12:35:39.582] [INFO] Processing JForex chart object: PriceMarker = 3332,19170
-[2025-08-04 12:35:39.584] [INFO] Processing PriceMarker object: 3332,19170
-[2025-08-04 12:35:39.584] [INFO] Stop Loss Price set: 3332,19170 for XAUUSD
-[2025-08-04 12:35:39.599] [INFO] Stop Loss toast shown: Stop Loss: 3332,19170 | Trade: BUY (XAUUSD)
-[2025-08-04 12:35:39.601] [INFO] Sending trade command to MT4: buy XAUUSD Entry:3323,92861 SL:3332,19170 Risk:1
-[2025-08-04 12:35:39.632] [INFO] Trade creation toast shown: Сделка BUY от 3323,92861 с риском 1 отправлена
-[2025-08-04 12:35:39.650] [INFO] MT4 command sent successfully, clearing UI
-[2025-08-04 12:35:39.666] [INFO] Price level state reset - ready for new PriceMarkerChartObject cycle
-[2025-08-04 12:39:17.063] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:39:17.063] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:39:17.064] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:39:17.064] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:39:17.064] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:39:17.064] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:39:18.239] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:39:18.239] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:39:18.239] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:39:18.240] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:39:18.240] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:39:18.240] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:40:09.159] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:40:09.159] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:40:09.159] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:40:09.160] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:40:09.160] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:40:09.160] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:40:09.295] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:40:09.295] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:40:09.296] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:40:09.297] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:40:09.297] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:40:09.298] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:40:24.182] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:40:24.183] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:40:24.183] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:40:24.184] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:40:24.184] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:40:24.184] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:40:24.311] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:40:24.311] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:40:24.312] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:40:24.312] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:40:24.312] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:40:24.312] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:41:04.590] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:41:04.590] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:41:04.590] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:41:04.591] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:41:04.591] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:41:04.591] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:41:20.286] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:41:20.286] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:41:20.286] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:41:20.287] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:41:20.287] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:41:20.287] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:41:20.766] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:41:20.766] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:41:20.766] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:41:20.767] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:41:20.767] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:41:20.767] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:41:20.910] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:41:20.910] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:41:20.910] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:41:20.911] [INFO] Escape key pressed via HotkeyService
-[2025-08-04 12:41:20.911] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
-[2025-08-04 12:41:20.911] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
-[2025-08-04 12:51:04.734] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3303,24396 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 12:51:04.730
-[2025-08-04 12:51:04.762] [INFO] Toast notification shown: JForex: PriceMarker = 3303,24396 (XAUUSD)
-[2025-08-04 12:51:04.762] [INFO] Processing JForex chart object: PriceMarker = 3303,24396
-[2025-08-04 12:51:04.763] [INFO] Processing PriceMarker object: 3303,24396
-[2025-08-04 12:51:04.764] [INFO] Entry Price set: 3303,24396 for XAUUSD
-[2025-08-04 12:51:13.667] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3324,72536 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 12:51:13.667
-[2025-08-04 12:51:13.681] [INFO] Toast notification shown: JForex: PriceMarker = 3324,72536 (XAUUSD)
-[2025-08-04 12:51:13.681] [INFO] Processing JForex chart object: PriceMarker = 3324,72536
-[2025-08-04 12:51:13.681] [INFO] Processing PriceMarker object: 3324,72536
-[2025-08-04 12:51:13.681] [INFO] Stop Loss Price set: 3324,72536 for XAUUSD
-[2025-08-04 12:51:13.694] [INFO] Stop Loss toast shown: Stop Loss: 3324,72536 | Trade: BUY (XAUUSD)
-[2025-08-04 12:51:13.696] [INFO] Sending trade command to MT4: buy XAUUSD Entry:3303,24396 SL:3324,72536 Risk:1
-[2025-08-04 12:51:13.730] [INFO] Trade creation toast shown: Сделка BUY от 3303,24396 с риском 1 отправлена
-[2025-08-04 12:51:13.748] [INFO] MT4 command sent successfully, clearing UI
-[2025-08-04 12:51:13.764] [INFO] Price level state reset - ready for new PriceMarkerChartObject cycle
-[2025-08-04 12:51:13.777] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:53:10.355] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3314,79718 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 13:53:10.355
+[2025-08-04 13:53:10.369] [INFO] Toast notification shown: JForex: PriceMarker = 3314,79718 (XAUUSD)
+[2025-08-04 13:53:10.369] [INFO] Processing JForex chart object: PriceMarker = 3314,79718
+[2025-08-04 13:53:10.370] [INFO] Processing PriceMarker object: 3314,79718
+[2025-08-04 13:53:10.370] [INFO] Entry Price set: 3314,79718 for XAUUSD
+[2025-08-04 13:54:31.252] [INFO] Window handle initialized: 2362030
+[2025-08-04 13:54:48.140] [INFO] P key pressed via HotkeyService - waiting for mouse click
+[2025-08-04 13:54:49.132] [INFO] Mouse click detected after P key press
+[2025-08-04 13:54:49.133] [INFO] SendDelayedEscapeToCurrentWindow called - sending Escape to current window
+[2025-08-04 13:54:49.135] [INFO] SendDelayedEscapeToCurrentWindow: Waiting 200ms before sending Escape
+[2025-08-04 13:54:49.338] [INFO] SendDelayedEscapeToCurrentWindow: Using JForexWindowsManagerService to send Escape to current window
+[2025-08-04 13:54:49.342] [INFO] Delayed Escape sent to current window after P key + mouse click
+[2025-08-04 13:54:51.090] [INFO] P key pressed via HotkeyService - waiting for mouse click
+[2025-08-04 13:54:51.772] [INFO] Mouse click detected after P key press
+[2025-08-04 13:54:51.772] [INFO] SendDelayedEscapeToCurrentWindow called - sending Escape to current window
+[2025-08-04 13:54:51.773] [INFO] SendDelayedEscapeToCurrentWindow: Waiting 200ms before sending Escape
+[2025-08-04 13:54:51.988] [INFO] SendDelayedEscapeToCurrentWindow: Using JForexWindowsManagerService to send Escape to current window
+[2025-08-04 13:54:51.988] [INFO] Delayed Escape sent to current window after P key + mouse click
+[2025-08-04 13:54:52.735] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3325,83386 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 13:54:52.733
+[2025-08-04 13:54:52.760] [INFO] Toast notification shown: JForex: PriceMarker = 3325,83386 (XAUUSD)
+[2025-08-04 13:54:52.761] [INFO] Processing JForex chart object: PriceMarker = 3325,83386
+[2025-08-04 13:54:52.762] [INFO] Processing PriceMarker object: 3325,83386
+[2025-08-04 13:54:52.762] [INFO] Entry Price set: 3325,83386 for XAUUSD
+[2025-08-04 13:54:55.450] [INFO] P key pressed via HotkeyService - waiting for mouse click
+[2025-08-04 13:54:56.244] [INFO] Mouse click detected after P key press
+[2025-08-04 13:54:56.244] [INFO] SendDelayedEscapeToCurrentWindow called - sending Escape to current window
+[2025-08-04 13:54:56.244] [INFO] SendDelayedEscapeToCurrentWindow: Waiting 200ms before sending Escape
+[2025-08-04 13:54:56.445] [INFO] SendDelayedEscapeToCurrentWindow: Using JForexWindowsManagerService to send Escape to current window
+[2025-08-04 13:54:56.446] [INFO] Delayed Escape sent to current window after P key + mouse click
+[2025-08-04 13:54:56.886] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3334,50043 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 13:54:56.886
+[2025-08-04 13:54:56.898] [INFO] Toast notification shown: JForex: PriceMarker = 3334,50043 (XAUUSD)
+[2025-08-04 13:54:56.898] [INFO] Processing JForex chart object: PriceMarker = 3334,50043
+[2025-08-04 13:54:56.898] [INFO] Processing PriceMarker object: 3334,50043
+[2025-08-04 13:54:56.899] [INFO] Stop Loss Price set: 3334,50043 for XAUUSD
+[2025-08-04 13:54:56.915] [INFO] Stop Loss toast shown: Stop Loss: 3334,50043 | Trade: BUY (XAUUSD)
+[2025-08-04 13:54:56.917] [INFO] Sending trade command to MT4: buy XAUUSD Entry:3325,83386 SL:3334,50043 Risk:1
+[2025-08-04 13:54:56.948] [INFO] Trade creation toast shown: Сделка BUY от 3325,83386 с риском 1 отправлена
+[2025-08-04 13:54:56.967] [INFO] MT4 command sent successfully, clearing UI
+[2025-08-04 13:54:56.984] [INFO] Price level state reset - ready for new PriceMarkerChartObject cycle
+[2025-08-04 13:54:57.009] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:54:58.746] [INFO] P key pressed via HotkeyService - waiting for mouse click
+[2025-08-04 13:54:59.404] [INFO] Mouse click detected after P key press
+[2025-08-04 13:54:59.404] [INFO] SendDelayedEscapeToCurrentWindow called - sending Escape to current window
+[2025-08-04 13:54:59.405] [INFO] SendDelayedEscapeToCurrentWindow: Waiting 200ms before sending Escape
+[2025-08-04 13:54:59.522] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3305,37508 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 13:54:59.522
+[2025-08-04 13:54:59.535] [INFO] Toast notification shown: JForex: PriceMarker = 3305,37508 (XAUUSD)
+[2025-08-04 13:54:59.536] [INFO] Processing JForex chart object: PriceMarker = 3305,37508
+[2025-08-04 13:54:59.536] [INFO] Processing PriceMarker object: 3305,37508
+[2025-08-04 13:54:59.536] [INFO] Entry Price set: 3305,37508 for XAUUSD
+[2025-08-04 13:54:59.606] [INFO] SendDelayedEscapeToCurrentWindow: Using JForexWindowsManagerService to send Escape to current window
+[2025-08-04 13:54:59.607] [INFO] Delayed Escape sent to current window after P key + mouse click
+[2025-08-04 13:55:00.826] [INFO] P key pressed via HotkeyService - waiting for mouse click
+[2025-08-04 13:55:01.310] [INFO] Mouse click detected after P key press
+[2025-08-04 13:55:01.311] [INFO] SendDelayedEscapeToCurrentWindow called - sending Escape to current window
+[2025-08-04 13:55:01.311] [INFO] SendDelayedEscapeToCurrentWindow: Waiting 200ms before sending Escape
+[2025-08-04 13:55:01.353] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3318,30390 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 13:55:01.353
+[2025-08-04 13:55:01.388] [INFO] Toast notification shown: JForex: PriceMarker = 3318,30390 (XAUUSD)
+[2025-08-04 13:55:01.388] [INFO] Processing JForex chart object: PriceMarker = 3318,30390
+[2025-08-04 13:55:01.388] [INFO] Processing PriceMarker object: 3318,30390
+[2025-08-04 13:55:01.388] [INFO] Stop Loss Price set: 3318,30390 for XAUUSD
+[2025-08-04 13:55:01.415] [INFO] Stop Loss toast shown: Stop Loss: 3318,30390 | Trade: BUY (XAUUSD)
+[2025-08-04 13:55:01.415] [INFO] Sending trade command to MT4: buy XAUUSD Entry:3305,37508 SL:3318,30390 Risk:1
+[2025-08-04 13:55:01.455] [INFO] Trade creation toast shown: Сделка BUY от 3305,37508 с риском 1 отправлена
+[2025-08-04 13:55:01.459] [INFO] MT4 command sent successfully, clearing UI
+[2025-08-04 13:55:01.474] [INFO] Price level state reset - ready for new PriceMarkerChartObject cycle
+[2025-08-04 13:55:01.475] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:55:01.512] [INFO] SendDelayedEscapeToCurrentWindow: Using JForexWindowsManagerService to send Escape to current window
+[2025-08-04 13:55:01.512] [INFO] Delayed Escape sent to current window after P key + mouse click
+[2025-08-04 13:55:04.091] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:55:04.092] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:55:04.092] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:55:04.094] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:55:04.094] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:55:04.095] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:55:04.250] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:55:04.250] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:55:04.251] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:55:04.251] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:55:04.252] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:55:04.252] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:55:06.882] [INFO] P key pressed via HotkeyService - waiting for mouse click
+[2025-08-04 13:55:07.508] [INFO] Mouse click detected after P key press
+[2025-08-04 13:55:07.508] [INFO] SendDelayedEscapeToCurrentWindow called - sending Escape to current window
+[2025-08-04 13:55:07.509] [INFO] SendDelayedEscapeToCurrentWindow: Waiting 200ms before sending Escape
+[2025-08-04 13:55:07.649] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3311,48430 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 13:55:07.649
+[2025-08-04 13:55:07.660] [INFO] Toast notification shown: JForex: PriceMarker = 3311,48430 (XAUUSD)
+[2025-08-04 13:55:07.660] [INFO] Processing JForex chart object: PriceMarker = 3311,48430
+[2025-08-04 13:55:07.660] [INFO] Processing PriceMarker object: 3311,48430
+[2025-08-04 13:55:07.660] [INFO] Entry Price set: 3311,48430 for XAUUSD
+[2025-08-04 13:55:07.717] [INFO] SendDelayedEscapeToCurrentWindow: Using JForexWindowsManagerService to send Escape to current window
+[2025-08-04 13:55:07.717] [INFO] Delayed Escape sent to current window after P key + mouse click
+[2025-08-04 13:55:08.930] [INFO] P key pressed via HotkeyService - waiting for mouse click
+[2025-08-04 13:55:09.508] [INFO] Mouse click detected after P key press
+[2025-08-04 13:55:09.508] [INFO] SendDelayedEscapeToCurrentWindow called - sending Escape to current window
+[2025-08-04 13:55:09.509] [INFO] SendDelayedEscapeToCurrentWindow: Waiting 200ms before sending Escape
+[2025-08-04 13:55:09.548] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3321,85577 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 13:55:09.548
+[2025-08-04 13:55:09.596] [INFO] Toast notification shown: JForex: PriceMarker = 3321,85577 (XAUUSD)
+[2025-08-04 13:55:09.597] [INFO] Processing JForex chart object: PriceMarker = 3321,85577
+[2025-08-04 13:55:09.597] [INFO] Processing PriceMarker object: 3321,85577
+[2025-08-04 13:55:09.597] [INFO] Stop Loss Price set: 3321,85577 for XAUUSD
+[2025-08-04 13:55:09.609] [INFO] Stop Loss toast shown: Stop Loss: 3321,85577 | Trade: BUY (XAUUSD)
+[2025-08-04 13:55:09.609] [INFO] Sending trade command to MT4: buy XAUUSD Entry:3311,48430 SL:3321,85577 Risk:1
+[2025-08-04 13:55:09.643] [INFO] Trade creation toast shown: Сделка BUY от 3311,48430 с риском 1 отправлена
+[2025-08-04 13:55:09.644] [INFO] MT4 command sent successfully, clearing UI
+[2025-08-04 13:55:09.657] [INFO] Price level state reset - ready for new PriceMarkerChartObject cycle
+[2025-08-04 13:55:09.676] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:55:09.724] [INFO] SendDelayedEscapeToCurrentWindow: Using JForexWindowsManagerService to send Escape to current window
+[2025-08-04 13:55:09.724] [INFO] Delayed Escape sent to current window after P key + mouse click
+[2025-08-04 13:55:19.498] [INFO] P key pressed via HotkeyService - waiting for mouse click
+[2025-08-04 13:55:19.932] [INFO] Mouse click detected after P key press
+[2025-08-04 13:55:19.932] [INFO] SendDelayedEscapeToCurrentWindow called - sending Escape to current window
+[2025-08-04 13:55:19.932] [INFO] SendDelayedEscapeToCurrentWindow: Waiting 200ms before sending Escape
+[2025-08-04 13:55:19.966] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3313,18920 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 13:55:19.966
+[2025-08-04 13:55:19.977] [INFO] Toast notification shown: JForex: PriceMarker = 3313,18920 (XAUUSD)
+[2025-08-04 13:55:19.977] [INFO] Processing JForex chart object: PriceMarker = 3313,18920
+[2025-08-04 13:55:19.977] [INFO] Processing PriceMarker object: 3313,18920
+[2025-08-04 13:55:19.977] [INFO] Entry Price set: 3313,18920 for XAUUSD
+[2025-08-04 13:55:20.137] [INFO] SendDelayedEscapeToCurrentWindow: Using JForexWindowsManagerService to send Escape to current window
+[2025-08-04 13:55:20.138] [INFO] Delayed Escape sent to current window after P key + mouse click
+[2025-08-04 13:55:20.778] [INFO] P key pressed via HotkeyService - waiting for mouse click
+[2025-08-04 13:55:21.324] [INFO] Mouse click detected after P key press
+[2025-08-04 13:55:21.324] [INFO] SendDelayedEscapeToCurrentWindow called - sending Escape to current window
+[2025-08-04 13:55:21.324] [INFO] SendDelayedEscapeToCurrentWindow: Waiting 200ms before sending Escape
+[2025-08-04 13:55:21.363] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3319,86672 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 13:55:21.363
+[2025-08-04 13:55:21.373] [INFO] Toast notification shown: JForex: PriceMarker = 3319,86672 (XAUUSD)
+[2025-08-04 13:55:21.374] [INFO] Processing JForex chart object: PriceMarker = 3319,86672
+[2025-08-04 13:55:21.374] [INFO] Processing PriceMarker object: 3319,86672
+[2025-08-04 13:55:21.374] [INFO] Stop Loss Price set: 3319,86672 for XAUUSD
+[2025-08-04 13:55:21.404] [INFO] Stop Loss toast shown: Stop Loss: 3319,86672 | Trade: BUY (XAUUSD)
+[2025-08-04 13:55:21.404] [INFO] Sending trade command to MT4: buy XAUUSD Entry:3313,18920 SL:3319,86672 Risk:1
+[2025-08-04 13:55:21.434] [INFO] Trade creation toast shown: Сделка BUY от 3313,18920 с риском 1 отправлена
+[2025-08-04 13:55:21.435] [INFO] MT4 command sent successfully, clearing UI
+[2025-08-04 13:55:21.437] [INFO] Price level state reset - ready for new PriceMarkerChartObject cycle
+[2025-08-04 13:55:21.438] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:55:21.527] [INFO] SendDelayedEscapeToCurrentWindow: Using JForexWindowsManagerService to send Escape to current window
+[2025-08-04 13:55:21.529] [INFO] Delayed Escape sent to current window after P key + mouse click
+[2025-08-04 13:55:22.338] [INFO] P key pressed via HotkeyService - waiting for mouse click
+[2025-08-04 13:55:22.748] [INFO] Mouse click detected after P key press
+[2025-08-04 13:55:22.748] [INFO] SendDelayedEscapeToCurrentWindow called - sending Escape to current window
+[2025-08-04 13:55:22.749] [INFO] SendDelayedEscapeToCurrentWindow: Waiting 200ms before sending Escape
+[2025-08-04 13:55:22.962] [INFO] SendDelayedEscapeToCurrentWindow: Using JForexWindowsManagerService to send Escape to current window
+[2025-08-04 13:55:22.963] [INFO] Delayed Escape sent to current window after P key + mouse click
+[2025-08-04 13:55:23.236] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3325,26556 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 13:55:23.236
+[2025-08-04 13:55:23.290] [INFO] Toast notification shown: JForex: PriceMarker = 3325,26556 (XAUUSD)
+[2025-08-04 13:55:23.290] [INFO] Processing JForex chart object: PriceMarker = 3325,26556
+[2025-08-04 13:55:23.291] [INFO] Processing PriceMarker object: 3325,26556
+[2025-08-04 13:55:23.291] [INFO] Entry Price set: 3325,26556 for XAUUSD
+[2025-08-04 13:55:23.291] [INFO] P key pressed via HotkeyService - waiting for mouse click
+[2025-08-04 13:55:24.340] [INFO] Mouse click detected after P key press
+[2025-08-04 13:55:24.340] [INFO] SendDelayedEscapeToCurrentWindow called - sending Escape to current window
+[2025-08-04 13:55:24.340] [INFO] SendDelayedEscapeToCurrentWindow: Waiting 200ms before sending Escape
+[2025-08-04 13:55:24.369] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3330,23818 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 13:55:24.369
+[2025-08-04 13:55:24.393] [INFO] Toast notification shown: JForex: PriceMarker = 3330,23818 (XAUUSD)
+[2025-08-04 13:55:24.393] [INFO] Processing JForex chart object: PriceMarker = 3330,23818
+[2025-08-04 13:55:24.393] [INFO] Processing PriceMarker object: 3330,23818
+[2025-08-04 13:55:24.394] [INFO] Stop Loss Price set: 3330,23818 for XAUUSD
+[2025-08-04 13:55:24.432] [INFO] Stop Loss toast shown: Stop Loss: 3330,23818 | Trade: BUY (XAUUSD)
+[2025-08-04 13:55:24.432] [INFO] Sending trade command to MT4: buy XAUUSD Entry:3325,26556 SL:3330,23818 Risk:1
+[2025-08-04 13:55:24.489] [INFO] Trade creation toast shown: Сделка BUY от 3325,26556 с риском 1 отправлена
+[2025-08-04 13:55:24.493] [INFO] MT4 command sent successfully, clearing UI
+[2025-08-04 13:55:24.518] [INFO] Price level state reset - ready for new PriceMarkerChartObject cycle
+[2025-08-04 13:55:24.541] [INFO] SendDelayedEscapeToCurrentWindow: Using JForexWindowsManagerService to send Escape to current window
+[2025-08-04 13:55:24.543] [INFO] Delayed Escape sent to current window after P key + mouse click
+[2025-08-04 13:55:24.547] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:55:29.858] [INFO] P key pressed via HotkeyService - waiting for mouse click
+[2025-08-04 13:55:30.316] [INFO] Mouse click detected after P key press
+[2025-08-04 13:55:30.316] [INFO] SendDelayedEscapeToCurrentWindow called - sending Escape to current window
+[2025-08-04 13:55:30.316] [INFO] SendDelayedEscapeToCurrentWindow: Waiting 200ms before sending Escape
+[2025-08-04 13:55:30.343] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3321,00332 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 13:55:30.343
+[2025-08-04 13:55:30.354] [INFO] Toast notification shown: JForex: PriceMarker = 3321,00332 (XAUUSD)
+[2025-08-04 13:55:30.354] [INFO] Processing JForex chart object: PriceMarker = 3321,00332
+[2025-08-04 13:55:30.356] [INFO] Processing PriceMarker object: 3321,00332
+[2025-08-04 13:55:30.356] [INFO] Entry Price set: 3321,00332 for XAUUSD
+[2025-08-04 13:55:30.530] [INFO] SendDelayedEscapeToCurrentWindow: Using JForexWindowsManagerService to send Escape to current window
+[2025-08-04 13:55:30.531] [INFO] Delayed Escape sent to current window after P key + mouse click
+[2025-08-04 13:55:31.170] [INFO] P key pressed via HotkeyService - waiting for mouse click
+[2025-08-04 13:55:31.876] [INFO] Mouse click detected after P key press
+[2025-08-04 13:55:31.876] [INFO] SendDelayedEscapeToCurrentWindow called - sending Escape to current window
+[2025-08-04 13:55:31.876] [INFO] SendDelayedEscapeToCurrentWindow: Waiting 200ms before sending Escape
+[2025-08-04 13:55:31.919] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3312,90505 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 13:55:31.919
+[2025-08-04 13:55:31.929] [INFO] Toast notification shown: JForex: PriceMarker = 3312,90505 (XAUUSD)
+[2025-08-04 13:55:31.929] [INFO] Processing JForex chart object: PriceMarker = 3312,90505
+[2025-08-04 13:55:31.929] [INFO] Processing PriceMarker object: 3312,90505
+[2025-08-04 13:55:31.929] [INFO] Stop Loss Price set: 3312,90505 for XAUUSD
+[2025-08-04 13:55:31.940] [INFO] Stop Loss toast shown: Stop Loss: 3312,90505 | Trade: SELL (XAUUSD)
+[2025-08-04 13:55:31.941] [INFO] Sending trade command to MT4: sell XAUUSD Entry:3321,00332 SL:3312,90505 Risk:1
+[2025-08-04 13:55:31.966] [INFO] Trade creation toast shown: Сделка SELL от 3321,00332 с риском 1 отправлена
+[2025-08-04 13:55:31.968] [INFO] MT4 command sent successfully, clearing UI
+[2025-08-04 13:55:31.980] [INFO] Price level state reset - ready for new PriceMarkerChartObject cycle
+[2025-08-04 13:55:31.996] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:55:32.077] [INFO] SendDelayedEscapeToCurrentWindow: Using JForexWindowsManagerService to send Escape to current window
+[2025-08-04 13:55:32.077] [INFO] Delayed Escape sent to current window after P key + mouse click
+[2025-08-04 13:56:11.321] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:56:11.321] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:56:11.322] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:56:11.322] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:56:11.323] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:56:11.323] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:56:11.513] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:56:11.513] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:56:11.514] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:56:11.514] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:56:11.514] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:56:11.515] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:56:12.641] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:56:12.642] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:56:12.642] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:56:12.642] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:56:12.642] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:56:12.643] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:56:12.809] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:56:12.810] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:56:12.810] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:56:12.810] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:56:12.811] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:56:12.811] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:56:16.074] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:56:16.074] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:56:16.074] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:56:16.075] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:56:16.075] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:56:16.075] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:56:16.249] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:56:16.249] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:56:16.250] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:56:16.250] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:56:16.250] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:56:16.251] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:56:16.385] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:56:16.385] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:56:16.386] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:56:16.386] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:56:16.386] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:56:16.387] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:56:48.857] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:56:48.857] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:56:48.857] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:56:48.858] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:56:48.858] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:56:48.858] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:56:49.001] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:56:49.001] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:56:49.001] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:56:49.002] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:56:49.002] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:56:49.002] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:56:54.081] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:56:54.081] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:56:54.081] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:56:54.082] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:56:54.082] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:56:54.082] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:56:54.241] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:56:54.241] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:56:54.241] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:56:54.242] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 13:56:54.242] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 13:56:54.242] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 13:58:34.155] [INFO] Window handle initialized: 1312778
+[2025-08-04 13:58:53.824] [INFO] P key pressed via HotkeyService - waiting for mouse click
+[2025-08-04 13:58:54.369] [INFO] Mouse click detected after P key press
+[2025-08-04 13:58:54.370] [INFO] SendDelayedEscapeToCurrentWindow called - sending Escape to current window
+[2025-08-04 13:58:54.762] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3333,07496 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 13:58:54.760
+[2025-08-04 13:58:54.784] [INFO] Toast notification shown: JForex: PriceMarker = 3333,07496 (XAUUSD)
+[2025-08-04 13:58:54.785] [INFO] Processing JForex chart object: PriceMarker = 3333,07496
+[2025-08-04 13:58:54.786] [INFO] Processing PriceMarker object: 3333,07496
+[2025-08-04 13:58:54.786] [INFO] Entry Price set: 3333,07496 for XAUUSD
+[2025-08-04 13:58:55.975] [INFO] P key pressed via HotkeyService - waiting for mouse click
+[2025-08-04 13:58:56.601] [INFO] Mouse click detected after P key press
+[2025-08-04 13:58:56.601] [INFO] SendDelayedEscapeToCurrentWindow called - sending Escape to current window
+[2025-08-04 13:58:56.647] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3339,80181 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 13:58:56.647
+[2025-08-04 13:58:56.658] [INFO] Toast notification shown: JForex: PriceMarker = 3339,80181 (XAUUSD)
+[2025-08-04 13:58:56.658] [INFO] Processing JForex chart object: PriceMarker = 3339,80181
+[2025-08-04 13:58:56.658] [INFO] Processing PriceMarker object: 3339,80181
+[2025-08-04 13:58:56.659] [INFO] Stop Loss Price set: 3339,80181 for XAUUSD
+[2025-08-04 13:58:56.670] [INFO] Stop Loss toast shown: Stop Loss: 3339,80181 | Trade: BUY (XAUUSD)
+[2025-08-04 13:58:56.672] [INFO] Sending trade command to MT4: buy XAUUSD Entry:3333,07496 SL:3339,80181 Risk:1
+[2025-08-04 13:58:56.700] [INFO] Trade creation toast shown: Сделка BUY от 3333,07496 с риском 1 отправлена
+[2025-08-04 13:58:56.714] [INFO] MT4 command sent successfully, clearing UI
+[2025-08-04 13:58:56.734] [INFO] Price level state reset - ready for new PriceMarkerChartObject cycle
+[2025-08-04 13:58:56.759] [INFO] Entry Price reset - ready for new PriceMarkerChartObject

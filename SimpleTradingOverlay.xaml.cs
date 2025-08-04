@@ -102,6 +102,7 @@ namespace ScreenCaptureApp
         private readonly DurationState _durationState;
         private readonly WindowManagementService _windowManagementService;
         private readonly HotkeysService _hotkeysService;
+        private readonly JForexWindowsManagerService _jforexWindowsManagerService;
         private IntPtr _currentWindowHandle = IntPtr.Zero;
         private bool _isEnabled = true;
         private int _lastMouseX = 0;
@@ -114,6 +115,10 @@ namespace ScreenCaptureApp
         private decimal _entryPrice = 0;
         private decimal _stopLossPrice = 0;
         private string _currentTradeSymbol = "";
+
+        // Состояние для обработки P-кнопки и кликов мыши
+        private bool _isWaitingForMouseClick = false;
+        private IntPtr _windowHandle = IntPtr.Zero;
         
         public SimpleTradingOverlay()
         {
@@ -124,6 +129,7 @@ namespace ScreenCaptureApp
             _durationState = ServiceContainer.Instance.GetService<DurationState>();
             _windowManagementService = ServiceContainer.Instance.GetService<WindowManagementService>();
             _hotkeysService = ServiceContainer.Instance.GetService<HotkeysService>();
+            _jforexWindowsManagerService = ServiceContainer.Instance.GetService<JForexWindowsManagerService>();
 
             // Инициализация окна
             InitializeWindow();
@@ -231,8 +237,9 @@ namespace ScreenCaptureApp
             if (_hotkeysService != null)
             {
                 _hotkeysService.OnEscapeKeyPressed += OnEscapeKeyPressed;
+                _hotkeysService.OnPKeyPressed += OnPKeyPressed;
                 
-                Logger.LogInfo("SimpleTradingOverlay subscribed to HotkeyService events (Escape only)");
+                Logger.LogInfo("SimpleTradingOverlay subscribed to HotkeyService events (Escape and P)");
             }
             else
             {
@@ -481,6 +488,16 @@ namespace ScreenCaptureApp
             }
         }
 
+        public void OnPKeyPressed()
+        {
+            if (!_isEnabled) return;
+
+            Logger.LogTagInfo("SimpleTradingOverlay", "P key pressed via HotkeyService - waiting for mouse click");
+
+            // Активируем режим ожидания клика мыши
+            _isWaitingForMouseClick = true;
+        }
+
         private void UpdateTradingToolbarUiByBroker(BrokerType brokerType)
         {
             if (brokerType == BrokerType.Forex)
@@ -594,6 +611,17 @@ namespace ScreenCaptureApp
                             }
                         }
                     }
+                }
+                else if (message == WM_LBUTTONDOWN && _isWaitingForMouseClick)
+                {
+                    // Обрабатываем клик мыши только если ожидаем его после нажатия P
+                    Logger.LogTagInfo("SimpleTradingOverlay", "Mouse click detected after P key press");
+                    
+                    // Отключаем режим ожидания клика
+                    _isWaitingForMouseClick = false;
+                    
+                    // Отправляем Escape через 200 мс в текущее окно Toolbar
+                    SendDelayedEscapeToCurrentWindow();
                 }
             }
             
@@ -737,7 +765,8 @@ namespace ScreenCaptureApp
             if (_hotkeysService != null)
             {
                 _hotkeysService.OnEscapeKeyPressed -= OnEscapeKeyPressed;
-                Logger.LogInfo("SimpleTradingOverlay unsubscribed from HotkeyService events (Escape only)");
+                _hotkeysService.OnPKeyPressed -= OnPKeyPressed;
+                Logger.LogInfo("SimpleTradingOverlay unsubscribed from HotkeyService events (Escape and P)");
             }
             
             // Отписываемся от событий HttpServerService
@@ -757,10 +786,36 @@ namespace ScreenCaptureApp
             base.OnClosed(e);
         }
 
+        /// <summary>
+        /// Отправляет Escape с задержкой 200 мс в текущее окно Toolbar
+        /// Используется после нажатия P-кнопки и клика мыши
+        /// </summary>
+        private void SendDelayedEscapeToCurrentWindow()
+        {
+            Logger.LogTagInfo("SimpleTradingOverlay", "SendDelayedEscapeToCurrentWindow called - sending Escape to current window");
+            
+            Task.Run(async () =>
+            {
+                try
+                {
+                    await Task.Delay(200);
+                    _jforexWindowsManagerService?.SendEscKey(_currentWindowHandle);
+                }
+                catch (Exception ex)
+                {
+                    Logger.LogTagError("SimpleTradingOverlay", "Error in SendDelayedEscapeToCurrentWindow", ex);
+                }
+            });
+        }
+
         protected override void OnSourceInitialized(EventArgs e)
         {
             base.OnSourceInitialized(e);
             source = HwndSource.FromHwnd(new WindowInteropHelper(this).Handle);
+            
+            // Инициализируем handle окна для использования в других потоках
+            _windowHandle = new WindowInteropHelper(this).Handle;
+            Logger.LogTagInfo("SimpleTradingOverlay", $"Window handle initialized: {_windowHandle}");
         }
     }
 } 
