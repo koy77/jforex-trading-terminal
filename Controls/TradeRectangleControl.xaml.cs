@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using ScreenCaptureApp.Services;
@@ -14,11 +15,17 @@ namespace ScreenCaptureApp.Controls
         private string _symbol;
         private double _upperPrice;
         private double _lowerPrice;
+        private double _selectedRisk = 1; // По умолчанию риск 1
 
         public TradeRectangleControl()
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Получает выбранный риск
+        /// </summary>
+        public double SelectedRisk => _selectedRisk;
 
         /// <summary>
         /// Устанавливает данные для отображения
@@ -88,6 +95,48 @@ namespace ScreenCaptureApp.Controls
             };
 
             SellClicked?.Invoke(this, args);
+        }
+
+        private void RiskButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button && button.Tag is string riskString)
+            {
+                if (double.TryParse(riskString, out double risk))
+                {
+                    _selectedRisk = risk;
+                    
+                    // Сбрасываем цвет всех кнопок риска
+                    ResetRiskButtonColors();
+                    
+                    // Подсвечиваем выбранную кнопку
+                    button.Background = System.Windows.Media.Brushes.Yellow;
+                    button.Foreground = System.Windows.Media.Brushes.Black;
+                    
+                    Logger.LogTagInfo("TradeRectangleControl", $"Risk changed to {risk}");
+                }
+            }
+        }
+
+        private void ResetRiskButtonColors()
+        {
+            // Находим все кнопки риска и сбрасываем их цвет
+            var riskButtons = FindVisualChildren<Button>(this).Where(b => b.Tag is string && double.TryParse(b.Tag.ToString(), out _));
+            foreach (var button in riskButtons)
+            {
+                button.Background = System.Windows.Media.Brushes.White;
+                button.Foreground = System.Windows.Media.Brushes.Black;
+            }
+        }
+
+        private static System.Collections.Generic.IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
+        {
+            if (depObj == null) yield break;
+            for (int i = 0; i < System.Windows.Media.VisualTreeHelper.GetChildrenCount(depObj); i++)
+            {
+                var child = System.Windows.Media.VisualTreeHelper.GetChild(depObj, i);
+                if (child is T t) yield return t;
+                foreach (T childOfChild in FindVisualChildren<T>(child)) yield return childOfChild;
+            }
         }
     }
 

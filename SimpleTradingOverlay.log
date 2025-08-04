@@ -4419,3 +4419,257 @@ StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
 [2025-08-04 23:02:49.428] [INFO] Escape key pressed via HotkeyService
 [2025-08-04 23:02:49.428] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
 [2025-08-04 23:02:49.428] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 23:10:02.462] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 23:10:02.462] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 23:10:02.463] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 23:10:02.542] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 23:10:02.542] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 23:10:02.542] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 23:10:02.654] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 23:10:02.654] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 23:10:02.654] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 23:10:02.655] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 23:10:02.655] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 23:10:02.655] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 23:10:55.505] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:10:55.505] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:10:56.784] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-04 23:10:56.785] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:11:02.800] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:11:02.801] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:12:28.211] [INFO] Window handle initialized: 724362
+[2025-08-04 23:12:28.311] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:12:28.312] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:12:28.313] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:12:28.313] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:12:31.879] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:12:31.879] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:12:31.975] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-04 23:12:31.975] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:12:32.503] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:12:32.504] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:12:32.840] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-04 23:12:32.840] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:12:33.056] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:12:33.056] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:12:33.784] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-04 23:12:33.784] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:12:34.167] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:12:34.168] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:12:34.408] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-04 23:12:34.408] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:12:34.703] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:12:34.704] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:12:35.095] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-04 23:12:35.096] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:12:35.431] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:12:35.432] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:12:35.927] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-04 23:12:35.927] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:12:36.287] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:12:36.288] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:12:37.551] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-04 23:12:37.552] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:12:39.967] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3375,36385 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-04 23:12:39.965
+[2025-08-04 23:12:39.991] [INFO] Toast notification shown: JForex: Rectangle = 3375,36385 (XAUUSD)
+[2025-08-04 23:12:39.991] [INFO] Processing JForex chart object: Rectangle = 3375,36385
+[2025-08-04 23:12:39.992] [INFO] Processing Rectangle object: 3375,36385
+[2025-08-04 23:12:40.001] [INFO] Parsed rectangle data: Upper=3375,60748, Lower=3375,12021
+[2025-08-04 23:12:40.041] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at System.Windows.Controls.Canvas.SetTop(UIElement element, Double length)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 876
+[2025-08-04 23:12:40.057] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3375,60748, Lower=3375,12021
+[2025-08-04 23:12:40.058] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-04 23:12:54.285] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 23:12:54.286] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 23:12:54.286] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 23:12:54.287] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 23:12:54.287] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 23:12:54.287] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 23:12:54.436] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 23:12:54.436] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 23:12:54.437] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 23:12:54.437] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 23:12:54.437] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 23:12:54.437] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 23:12:55.820] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3376,22498 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-04 23:12:55.820
+[2025-08-04 23:12:55.831] [INFO] Toast notification shown: JForex: Rectangle = 3376,22498 (XAUUSD)
+[2025-08-04 23:12:55.831] [INFO] Processing JForex chart object: Rectangle = 3376,22498
+[2025-08-04 23:12:55.831] [INFO] Processing Rectangle object: 3376,22498
+[2025-08-04 23:12:55.831] [INFO] Parsed rectangle data: Upper=3376,54423, Lower=3375,90573
+[2025-08-04 23:12:55.832] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at System.Windows.Controls.Canvas.SetTop(UIElement element, Double length)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 876
+[2025-08-04 23:12:55.833] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3376,54423, Lower=3375,90573
+[2025-08-04 23:12:55.833] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-04 23:13:02.121] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=199, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:13:02.121] [INFO] TradeRectangleControl Canvas.Top: 440,74, Canvas.Right: 20
+[2025-08-04 23:13:14.519] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=199, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-04 23:13:14.519] [INFO] TradeRectangleControl Canvas.Top: 440,74, Canvas.Right: 20
+[2025-08-04 23:13:14.554] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=199, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:13:14.554] [INFO] TradeRectangleControl Canvas.Top: 440,74, Canvas.Right: 20
+[2025-08-04 23:14:08.819] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 23:14:08.819] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 23:14:08.820] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 23:14:08.820] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 23:14:08.820] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 23:14:08.821] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 23:14:11.747] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 23:14:11.747] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 23:14:11.747] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 23:14:11.748] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 23:14:11.748] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 23:14:11.748] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 23:14:19.094] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-04 23:14:19.095] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:14:23.711] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3375,13911 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-04 23:14:23.711
+[2025-08-04 23:14:23.724] [INFO] Toast notification shown: JForex: Rectangle = 3375,13911 (XAUUSD)
+[2025-08-04 23:14:23.725] [INFO] Processing JForex chart object: Rectangle = 3375,13911
+[2025-08-04 23:14:23.725] [INFO] Processing Rectangle object: 3375,13911
+[2025-08-04 23:14:23.725] [INFO] Parsed rectangle data: Upper=3375,25043, Lower=3375,02779
+[2025-08-04 23:14:23.726] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 876
+[2025-08-04 23:14:23.726] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3375,25043, Lower=3375,02779
+[2025-08-04 23:14:23.727] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-04 23:14:24.015] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 23:14:24.015] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 23:14:24.016] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 23:14:24.016] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 23:14:24.016] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 23:14:24.017] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 23:14:25.823] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3375,42896 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-04 23:14:25.823
+[2025-08-04 23:14:25.838] [INFO] Toast notification shown: JForex: Rectangle = 3375,42896 (XAUUSD)
+[2025-08-04 23:14:25.839] [INFO] Processing JForex chart object: Rectangle = 3375,42896
+[2025-08-04 23:14:25.839] [INFO] Processing Rectangle object: 3375,42896
+[2025-08-04 23:14:25.839] [INFO] Parsed rectangle data: Upper=3375,52347, Lower=3375,33444
+[2025-08-04 23:14:25.840] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 876
+[2025-08-04 23:14:25.841] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3375,52347, Lower=3375,33444
+[2025-08-04 23:14:25.841] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-04 23:14:27.646] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=199, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:14:27.646] [INFO] TradeRectangleControl Canvas.Top: 440,74, Canvas.Right: 20
+[2025-08-04 23:18:04.058] [INFO] Window handle initialized: 2231862
+[2025-08-04 23:18:04.164] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:18:04.164] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:18:04.166] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:18:04.166] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:31:30.942] [INFO] Window handle initialized: 1969148
+[2025-08-04 23:31:31.051] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:31:31.052] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:31:31.054] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:31:31.054] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:31:33.450] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-04 23:31:33.451] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:31:35.834] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:31:35.834] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:31:36.546] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-04 23:31:36.546] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:31:36.858] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:31:36.858] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:31:37.090] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-04 23:31:37.090] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:31:37.410] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:31:37.410] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:31:37.618] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-04 23:31:37.618] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:31:40.168] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 23:31:40.169] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 23:31:40.169] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 23:31:40.170] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 23:31:40.170] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 23:31:40.170] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 23:31:40.343] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 23:31:40.343] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 23:31:40.343] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 23:31:40.344] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 23:31:40.344] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 23:31:40.344] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 23:31:41.531] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3375,05930 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-04 23:31:41.528
+[2025-08-04 23:31:41.553] [INFO] Toast notification shown: JForex: Rectangle = 3375,05930 (XAUUSD)
+[2025-08-04 23:31:41.558] [INFO] Processing JForex chart object: Rectangle = 3375,05930
+[2025-08-04 23:31:41.559] [INFO] Processing Rectangle object: 3375,05930
+[2025-08-04 23:31:41.566] [INFO] Parsed rectangle data: Upper=3375,19162, Lower=3374,92698
+[2025-08-04 23:31:41.597] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at System.Windows.Controls.Canvas.SetTop(UIElement element, Double length)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 879
+[2025-08-04 23:31:41.603] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3375,19162, Lower=3374,92698
+[2025-08-04 23:31:41.604] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-04 23:31:57.595] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=232, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:31:57.596] [INFO] TradeRectangleControl Canvas.Top: 424,24, Canvas.Right: 20
+[2025-08-04 23:32:32.907] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=232, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-04 23:32:32.907] [INFO] TradeRectangleControl Canvas.Top: 424,24, Canvas.Right: 20
+[2025-08-04 23:32:42.723] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=232, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:32:42.723] [INFO] TradeRectangleControl Canvas.Top: 424,24, Canvas.Right: 20
+[2025-08-04 23:32:44.747] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=232, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-04 23:32:44.748] [INFO] TradeRectangleControl Canvas.Top: 424,24, Canvas.Right: 20
+[2025-08-04 23:32:48.074] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=232, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:32:48.074] [INFO] TradeRectangleControl Canvas.Top: 424,24, Canvas.Right: 20
+[2025-08-04 23:32:48.734] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 23:32:48.734] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 23:32:48.734] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 23:32:48.735] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 23:32:48.735] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 23:32:48.736] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-04 23:32:52.363] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-04 23:32:52.364] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:32:56.881] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:32:56.881] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:33:39.306] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-04 23:33:39.306] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-04 23:33:40.585] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-04 23:33:40.585] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 00:06:18.266] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-05 00:06:18.266] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 00:06:28.124] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3376,55901 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 00:06:28.124
+[2025-08-05 00:06:28.136] [INFO] Toast notification shown: JForex: Rectangle = 3376,55901 (XAUUSD)
+[2025-08-05 00:06:28.137] [INFO] Processing JForex chart object: Rectangle = 3376,55901
+[2025-08-05 00:06:28.137] [INFO] Processing Rectangle object: 3376,55901
+[2025-08-05 00:06:28.137] [INFO] Parsed rectangle data: Upper=3376,73671, Lower=3376,38130
+[2025-08-05 00:06:28.138] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 879
+[2025-08-05 00:06:28.138] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3376,73671, Lower=3376,38130
+[2025-08-05 00:06:28.139] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 00:06:30.356] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=232, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 00:06:30.356] [INFO] TradeRectangleControl Canvas.Top: 424,24, Canvas.Right: 20
+[2025-08-05 00:12:04.383] [INFO] Window handle initialized: 12061212
+[2025-08-05 00:12:04.510] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 00:12:04.511] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 00:12:04.512] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 00:12:04.512] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 00:12:10.605] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 00:12:10.605] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 00:12:13.254] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-05 00:12:13.254] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 00:12:17.983] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3373,99140 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 00:12:17.981
+[2025-08-05 00:12:18.007] [INFO] Toast notification shown: JForex: Rectangle = 3373,99140 (XAUUSD)
+[2025-08-05 00:12:18.008] [INFO] Processing JForex chart object: Rectangle = 3373,99140
+[2025-08-05 00:12:18.009] [INFO] Processing Rectangle object: 3373,99140
+[2025-08-05 00:12:18.017] [INFO] Parsed rectangle data: Upper=3374,10383, Lower=3373,87898
+[2025-08-05 00:12:18.046] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at System.Windows.Controls.Canvas.SetTop(UIElement element, Double length)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 879
+[2025-08-05 00:12:18.055] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3374,10383, Lower=3373,87898
+[2025-08-05 00:12:18.056] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 00:14:17.900] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=232, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 00:14:17.900] [INFO] TradeRectangleControl Canvas.Top: 424,24, Canvas.Right: 20

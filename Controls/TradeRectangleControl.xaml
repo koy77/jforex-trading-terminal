@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="150">
+             d:DesignHeight="280" d:DesignWidth="150">
     
     <Border Background="#AA222222" BorderBrush="Gray" BorderThickness="1" CornerRadius="8" Padding="10">
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
@@ -27,6 +27,25 @@
                     Foreground="LightGreen" FontSize="14" FontWeight="Bold" 
                     Background="#80000000" Padding="8,4" 
                     TextAlignment="Center" Margin="0,0,0,4"/>
+            </StackPanel>
+            
+                      <!-- Risk Buttons -->
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,8" HorizontalAlignment="Center">
+                <Button Content="1" Tag="1" Width="25" Height="25" Margin="2,0" 
+                        Background="White" Foreground="Black" FontSize="10" 
+                        Click="RiskButton_Click"/>
+                <Button Content="5" Tag="5" Width="25" Height="25" Margin="2,0" 
+                        Background="White" Foreground="Black" FontSize="10" 
+                        Click="RiskButton_Click"/>
+                <Button Content="10" Tag="10" Width="25" Height="25" Margin="2,0" 
+                        Background="White" Foreground="Black" FontSize="10" 
+                        Click="RiskButton_Click"/>
+                <Button Content="20" Tag="20" Width="25" Height="25" Margin="2,0" 
+                        Background="White" Foreground="Black" FontSize="10" 
+                        Click="RiskButton_Click"/>
+                <Button Content="30" Tag="30" Width="25" Height="25" Margin="2,0" 
+                        Background="White" Foreground="Black" FontSize="10" 
+                        Click="RiskButton_Click"/>
             </StackPanel>
             
             <!-- Lower Price and Sell Button -->

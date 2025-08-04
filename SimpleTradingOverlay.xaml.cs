@@ -239,8 +239,8 @@ namespace ScreenCaptureApp
                 
                 try
                 {
-                    // Получаем риск из тулбара
-                    double risk = TradingToolbar.SelectedRisk;
+                    // Получаем риск из TradeRectangleControl
+                    double risk = TradeRectangleControl.SelectedRisk;
                     
                     // Отправляем команду в MT4
                     var mt4SocketService = ServiceContainer.Instance.GetService<Mt4SocketService>();
@@ -814,12 +814,15 @@ namespace ScreenCaptureApp
                     this.Left = left;
                     this.Top = top;
                     
-                    // Позиционируем TradingToolbar в верхней части экрана
+                    // Позиционируем TradingToolbar в верхней части экрана по центру
                     Canvas.SetTop(TradingToolbar, 0);
-                    Canvas.SetLeft(TradingToolbar, 0);
-                    Canvas.SetRight(TradingToolbar, 0);
                     
-                    // TradingToolbar теперь позиционируется справа через Canvas.Right="0"
+                    // Центрируем TradingToolbar горизонтально
+                    double toolbarWidth = TradingToolbar.ActualWidth > 0 ? TradingToolbar.ActualWidth : 1200; // Примерная ширина
+                    double centerX = (width - toolbarWidth) / 2;
+                    Canvas.SetLeft(TradingToolbar, centerX);
+                    
+                    // TradingToolbar теперь позиционируется по центру
                     
                     // Позиционируем TradeRectangleControl по центру справа
                     PositionTradeRectangleControl(windowRect);
