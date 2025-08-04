@@ -403,3 +403,79 @@ StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
 [2025-08-04 12:35:39.632] [INFO] Trade creation toast shown: Сделка BUY от 3323,92861 с риском 1 отправлена
 [2025-08-04 12:35:39.650] [INFO] MT4 command sent successfully, clearing UI
 [2025-08-04 12:35:39.666] [INFO] Price level state reset - ready for new PriceMarkerChartObject cycle
+[2025-08-04 12:39:17.063] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:39:17.063] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:39:17.064] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:39:17.064] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:39:17.064] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:39:17.064] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:39:18.239] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:39:18.239] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:39:18.239] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:39:18.240] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:39:18.240] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:39:18.240] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:40:09.159] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:40:09.159] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:40:09.159] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:40:09.160] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:40:09.160] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:40:09.160] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:40:09.295] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:40:09.295] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:40:09.296] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:40:09.297] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:40:09.297] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:40:09.298] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:40:24.182] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:40:24.183] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:40:24.183] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:40:24.184] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:40:24.184] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:40:24.184] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:40:24.311] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:40:24.311] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:40:24.312] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:40:24.312] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:40:24.312] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:40:24.312] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:41:04.590] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:41:04.590] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:41:04.590] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:41:04.591] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:41:04.591] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:41:04.591] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:41:20.286] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:41:20.286] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:41:20.286] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:41:20.287] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:41:20.287] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:41:20.287] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:41:20.766] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:41:20.766] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:41:20.766] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:41:20.767] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:41:20.767] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:41:20.767] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:41:20.910] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:41:20.910] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:41:20.910] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:41:20.911] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 12:41:20.911] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 12:41:20.911] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 12:51:04.734] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3303,24396 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 12:51:04.730
+[2025-08-04 12:51:04.762] [INFO] Toast notification shown: JForex: PriceMarker = 3303,24396 (XAUUSD)
+[2025-08-04 12:51:04.762] [INFO] Processing JForex chart object: PriceMarker = 3303,24396
+[2025-08-04 12:51:04.763] [INFO] Processing PriceMarker object: 3303,24396
+[2025-08-04 12:51:04.764] [INFO] Entry Price set: 3303,24396 for XAUUSD
+[2025-08-04 12:51:13.667] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3324,72536 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 12:51:13.667
+[2025-08-04 12:51:13.681] [INFO] Toast notification shown: JForex: PriceMarker = 3324,72536 (XAUUSD)
+[2025-08-04 12:51:13.681] [INFO] Processing JForex chart object: PriceMarker = 3324,72536
+[2025-08-04 12:51:13.681] [INFO] Processing PriceMarker object: 3324,72536
+[2025-08-04 12:51:13.681] [INFO] Stop Loss Price set: 3324,72536 for XAUUSD
+[2025-08-04 12:51:13.694] [INFO] Stop Loss toast shown: Stop Loss: 3324,72536 | Trade: BUY (XAUUSD)
+[2025-08-04 12:51:13.696] [INFO] Sending trade command to MT4: buy XAUUSD Entry:3303,24396 SL:3324,72536 Risk:1
+[2025-08-04 12:51:13.730] [INFO] Trade creation toast shown: Сделка BUY от 3303,24396 с риском 1 отправлена
+[2025-08-04 12:51:13.748] [INFO] MT4 command sent successfully, clearing UI
+[2025-08-04 12:51:13.764] [INFO] Price level state reset - ready for new PriceMarkerChartObject cycle
+[2025-08-04 12:51:13.777] [INFO] Entry Price reset - ready for new PriceMarkerChartObject

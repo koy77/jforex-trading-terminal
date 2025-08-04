@@ -111,8 +111,6 @@ namespace ScreenCaptureApp
         private bool _isServiceEscapeSending = false;
 
         // Состояние для обработки ценовых уровней
-        private bool _isWaitingForEntryPrice = false;
-        private bool _isWaitingForStopLossPrice = false;
         private decimal _entryPrice = 0;
         private decimal _stopLossPrice = 0;
         private string _currentTradeSymbol = "";
@@ -318,27 +316,23 @@ namespace ScreenCaptureApp
         {
             Logger.LogTagInfo("SimpleTradingOverlay", $"Processing PriceMarker object: {jforexChartObject.Price}");
 
-            // Если ожидаем Entry Price
-            if (_isWaitingForEntryPrice)
+            // Если Entry Price не установлен, устанавливаем его
+            if (_entryPrice == 0)
             {
                 _entryPrice = jforexChartObject.Price;
                 _currentTradeSymbol = jforexChartObject.Symbol;
-                _isWaitingForEntryPrice = false;
-                _isWaitingForStopLossPrice = true;
-
+                
                 Logger.LogTagInfo("SimpleTradingOverlay", $"Entry Price set: {_entryPrice} for {_currentTradeSymbol}");
                 
                 // Устанавливаем Entry Level в активном TradingToolbar
                 TradingToolbar.SetEntryLevel(_entryPrice, _currentTradeSymbol);
-                
                 return;
             }
 
-            // Если ожидаем Stop Loss Price
-            if (_isWaitingForStopLossPrice)
+            // Если Entry Price уже установлен, устанавливаем Stop Loss Price
+            if (_stopLossPrice == 0)
             {
                 _stopLossPrice = jforexChartObject.Price;
-                _isWaitingForStopLossPrice = false;
 
                 Logger.LogTagInfo("SimpleTradingOverlay", $"Stop Loss Price set: {_stopLossPrice} for {_currentTradeSymbol}");
 
@@ -352,20 +346,13 @@ namespace ScreenCaptureApp
                     Logger.LogTagInfo("SimpleTradingOverlay", $"Stop Loss toast shown: {toastMessage}");
                 }
 
-                // Отправляем команду в MT4
-                SendTradeCommandToMt4();
-                
-                return;
+                // Проверяем, если обе цены установлены, отправляем команду в MT4
+                if (_entryPrice > 0 && _stopLossPrice > 0)
+                {
+                    SendTradeCommandToMt4();
+                    ResetPriceLevelStateToWaitForEntry();
+                }
             }
-
-            // Если не ожидаем никаких цен, начинаем новый цикл
-            Logger.LogTagInfo("SimpleTradingOverlay", "Starting new price level cycle - waiting for Entry Price");
-            _isWaitingForEntryPrice = true;
-            _entryPrice = jforexChartObject.Price;
-            _currentTradeSymbol = jforexChartObject.Symbol;
-            
-            // Устанавливаем Entry Level в активном TradingToolbar
-            TradingToolbar.SetEntryLevel(_entryPrice, _currentTradeSymbol);
         }
 
         /// <summary>
@@ -447,8 +434,6 @@ namespace ScreenCaptureApp
 
         private void ResetPriceLevelState()
         {
-            _isWaitingForEntryPrice = false;
-            _isWaitingForStopLossPrice = false;
             _entryPrice = 0;
             _stopLossPrice = 0;
             _currentTradeSymbol = "";
@@ -460,21 +445,19 @@ namespace ScreenCaptureApp
         }
 
         /// <summary>
-        /// Сбрасывает состояние ценовых уровней и переводит в режим ожидания Entry Price
+        /// Сбрасывает состояние ценовых уровней - обнуляет Entry Price
         /// Используется при нажатии Escape для отмены текущего состояния
         /// </summary>
         private void ResetPriceLevelStateToWaitForEntry()
         {
-            _isWaitingForEntryPrice = true; // Переводим в режим ожидания Entry Price
-            _isWaitingForStopLossPrice = false;
-            _entryPrice = 0;
+            _entryPrice = 0; // Обнуляем только Entry Price
             _stopLossPrice = 0;
             _currentTradeSymbol = "";
             
             // Скрываем цены в UI
             TradingToolbar.HidePrices();
             
-            Logger.LogTagInfo("SimpleTradingOverlay", "Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject");
+            Logger.LogTagInfo("SimpleTradingOverlay", "Entry Price reset - ready for new PriceMarkerChartObject");
         }
 
         public void OnEscapeKeyPressed()
