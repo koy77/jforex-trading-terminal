@@ -15016,3 +15016,31 @@
 [2025-08-04 11:22:15.024] [INFO] Calculated screen coordinates: (680, 56)
 [2025-08-04 11:22:15.164] [INFO] Клик успешно выполнен в позиции (680, 56) -> screen (680, 56)
 [2025-08-04 11:22:15.164] [INFO] === MOUSE CLICK END ===
+[2025-08-04 11:28:54.832] [INFO] Processing trading stroke directly: Canvas offsets: X=0, Y=0
+[2025-08-04 11:28:54.832] [INFO] Original stroke points: Point1=(1355, 621), Point2=(1221, 627)
+[2025-08-04 11:28:54.832] [INFO] Adjusted stroke points: Point1=(1355, 621), Point2=(1221, 627)
+[2025-08-04 11:28:54.832] [INFO] Final screen points: Point1=(1355, 621), Point2=(1221, 627)
+[2025-08-04 11:28:54.855] [INFO] CaptureData saved to database: ID=20250804112854835
+[2025-08-04 11:28:54.855] [INFO] Closing CanvasWindow for trading mode
+[2025-08-04 11:28:54.981] [INFO] Окно успешно активировано. Handle: 395356
+[2025-08-04 11:28:55.390] [INFO] Converted screen point (1355, 621) to window point (1355, 581)
+[2025-08-04 11:28:55.390] [INFO] Converted screen point (1221, 627) to window point (1221, 587)
+[2025-08-04 11:28:55.391] [INFO] Окно успешно активировано. Handle: 395356
+[2025-08-04 11:28:55.559] [INFO] Клавиша 'A' успешно отправлена в окно 395356
+[2025-08-04 11:28:55.671] [INFO] === MOUSE CLICK START ===
+[2025-08-04 11:28:55.671] [INFO] Click coordinates: (1355, 581)
+[2025-08-04 11:28:55.671] [INFO] Window handle: 395356
+[2025-08-04 11:28:55.671] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-04 11:28:55.672] [INFO] Calculated screen coordinates: (1355, 581)
+[2025-08-04 11:28:55.795] [INFO] Клик успешно выполнен в позиции (1355, 581) -> screen (1355, 581)
+[2025-08-04 11:28:55.796] [INFO] === MOUSE CLICK END ===
+[2025-08-04 11:28:55.857] [INFO] === MOUSE CLICK START ===
+[2025-08-04 11:28:55.858] [INFO] Click coordinates: (1221, 587)
+[2025-08-04 11:28:55.858] [INFO] Window handle: 395356
+[2025-08-04 11:28:55.858] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-04 11:28:55.858] [INFO] Calculated screen coordinates: (1221, 587)
+[2025-08-04 11:28:55.960] [INFO] Клик успешно выполнен в позиции (1221, 587) -> screen (1221, 587)
+[2025-08-04 11:28:55.961] [INFO] === MOUSE CLICK END ===
+[2025-08-04 11:28:55.961] [INFO] Successfully added trendline from (1355, 581) to (1221, 587)
+[2025-08-04 11:28:55.962] [INFO] Trading stroke processing completed
+[2025-08-04 11:28:55.962] [INFO] Trendline drawn successfully - triggering space hotkey callback

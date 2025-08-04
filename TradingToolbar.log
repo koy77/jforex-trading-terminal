@@ -194,3 +194,120 @@
 [2025-08-04 11:22:34.620] [INFO] OrderSummary panel hidden
 [2025-08-04 11:22:34.621] [INFO] Price display panel hidden
 [2025-08-04 11:22:34.621] [INFO] Loaded settings for HandleID 394144: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 11:26:17.492] [INFO] TradingToolbar instance 1 created
+[2025-08-04 11:26:17.493] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-04 11:26:17.493] [INFO] ToastNotifyService initialized successfully
+[2025-08-04 11:26:17.505] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 11:26:17.505] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 11:26:17.506] [INFO] OrderSummary panel hidden
+[2025-08-04 11:26:17.506] [INFO] Price display panel hidden
+[2025-08-04 11:26:17.875] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 11:26:17.876] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 11:26:17.876] [INFO] OrderSummary panel hidden
+[2025-08-04 11:26:17.876] [INFO] Price display panel hidden
+[2025-08-04 11:26:17.876] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 11:26:17.876] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 11:26:17.877] [INFO] OrderSummary panel hidden
+[2025-08-04 11:26:17.877] [INFO] Price display panel hidden
+[2025-08-04 11:26:45.533] [INFO] SetSymbol called for GBPJPY, current broker: Forex
+[2025-08-04 11:26:45.533] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 11:26:45.533] [INFO] OrderSummary panel hidden
+[2025-08-04 11:26:45.534] [INFO] Price display panel hidden
+[2025-08-04 11:26:45.536] [INFO] Created default settings for HandleID 395356: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 11:26:45.537] [INFO] SetSymbol called for GBPJPY, current broker: Forex
+[2025-08-04 11:26:45.537] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 11:26:45.537] [INFO] OrderSummary panel hidden
+[2025-08-04 11:26:45.537] [INFO] Price display panel hidden
+[2025-08-04 11:26:45.538] [INFO] Loaded settings for HandleID 395356: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 11:26:51.996] [INFO] Price display panel hidden
+[2025-08-04 11:26:51.997] [INFO] Price display panel hidden
+[2025-08-04 11:26:55.365] [INFO] SetSymbol called for GBPJPY, current broker: Forex
+[2025-08-04 11:26:55.365] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 11:26:55.365] [INFO] OrderSummary panel hidden
+[2025-08-04 11:26:55.365] [INFO] Price display panel hidden
+[2025-08-04 11:26:55.366] [INFO] Created default settings for HandleID 394144: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 11:26:55.366] [INFO] SetSymbol called for GBPJPY, current broker: Forex
+[2025-08-04 11:26:55.366] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 11:26:55.366] [INFO] OrderSummary panel hidden
+[2025-08-04 11:26:55.366] [INFO] Price display panel hidden
+[2025-08-04 11:26:55.367] [INFO] Loaded settings for HandleID 394144: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 11:27:31.556] [INFO] SetSymbol called for GBPJPY, current broker: Forex
+[2025-08-04 11:27:31.556] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 11:27:31.557] [INFO] OrderSummary panel hidden
+[2025-08-04 11:27:31.557] [INFO] Price display panel hidden
+[2025-08-04 11:27:31.557] [INFO] Loaded settings for HandleID 395356: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 11:27:31.557] [INFO] SetSymbol called for GBPJPY, current broker: Forex
+[2025-08-04 11:27:31.557] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 11:27:31.557] [INFO] OrderSummary panel hidden
+[2025-08-04 11:27:31.558] [INFO] Price display panel hidden
+[2025-08-04 11:27:31.558] [INFO] Loaded settings for HandleID 395356: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 11:27:57.828] [INFO] SetSymbol called for GBPJPY, current broker: Forex
+[2025-08-04 11:27:57.828] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 11:27:57.828] [INFO] OrderSummary panel hidden
+[2025-08-04 11:27:57.828] [INFO] Price display panel hidden
+[2025-08-04 11:27:57.829] [INFO] Loaded settings for HandleID 394144: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 11:27:57.829] [INFO] SetSymbol called for GBPJPY, current broker: Forex
+[2025-08-04 11:27:57.829] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 11:27:57.829] [INFO] OrderSummary panel hidden
+[2025-08-04 11:27:57.829] [INFO] Price display panel hidden
+[2025-08-04 11:27:57.829] [INFO] Loaded settings for HandleID 394144: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 11:28:40.198] [INFO] SetSymbol called for GBPJPY, current broker: Forex
+[2025-08-04 11:28:40.198] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 11:28:40.198] [INFO] OrderSummary panel hidden
+[2025-08-04 11:28:40.198] [INFO] Price display panel hidden
+[2025-08-04 11:28:40.198] [INFO] Loaded settings for HandleID 395356: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 11:28:40.199] [INFO] SetSymbol called for GBPJPY, current broker: Forex
+[2025-08-04 11:28:40.199] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 11:28:40.199] [INFO] OrderSummary panel hidden
+[2025-08-04 11:28:40.199] [INFO] Price display panel hidden
+[2025-08-04 11:28:40.199] [INFO] Loaded settings for HandleID 395356: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 11:28:48.280] [INFO] TradingToolbar instance 2 created
+[2025-08-04 11:28:48.281] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-04 11:28:48.281] [INFO] ToastNotifyService initialized successfully
+[2025-08-04 11:28:48.458] [INFO] Loaded settings for HandleID 395356: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 11:28:51.553] [INFO] Price display panel hidden
+[2025-08-04 11:28:51.640] [INFO] Price display panel hidden
+[2025-08-04 11:28:52.999] [INFO] TradingToolbar instance 3 created
+[2025-08-04 11:28:52.999] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-04 11:28:52.999] [INFO] ToastNotifyService initialized successfully
+[2025-08-04 11:28:53.146] [INFO] Loaded settings for HandleID 395356: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 11:28:55.009] [INFO] Price display panel hidden
+[2025-08-04 11:28:55.010] [INFO] Price display panel hidden
+[2025-08-04 11:28:55.570] [INFO] Price display panel hidden
+[2025-08-04 11:28:55.572] [INFO] Price display panel hidden
+[2025-08-04 11:28:57.222] [INFO] TradingToolbar instance 4 created
+[2025-08-04 11:28:57.222] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-04 11:28:57.222] [INFO] ToastNotifyService initialized successfully
+[2025-08-04 11:28:57.371] [INFO] Loaded settings for HandleID 395356: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 11:28:58.465] [INFO] Price display panel hidden
+[2025-08-04 11:28:58.551] [INFO] Price display panel hidden
+[2025-08-04 11:28:59.277] [INFO] TradingToolbar instance 5 created
+[2025-08-04 11:28:59.278] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-04 11:28:59.278] [INFO] ToastNotifyService initialized successfully
+[2025-08-04 11:28:59.434] [INFO] Loaded settings for HandleID 395356: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 11:29:00.265] [INFO] Price display panel hidden
+[2025-08-04 11:29:00.336] [INFO] Price display panel hidden
+[2025-08-04 11:29:01.081] [INFO] TradingToolbar instance 6 created
+[2025-08-04 11:29:01.082] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-04 11:29:01.082] [INFO] ToastNotifyService initialized successfully
+[2025-08-04 11:29:01.234] [INFO] Loaded settings for HandleID 395356: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 11:29:01.945] [INFO] Price display panel hidden
+[2025-08-04 11:29:02.031] [INFO] Price display panel hidden
+[2025-08-04 11:29:03.049] [INFO] TradingToolbar instance 7 created
+[2025-08-04 11:29:03.050] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-04 11:29:03.050] [INFO] ToastNotifyService initialized successfully
+[2025-08-04 11:29:03.207] [INFO] Loaded settings for HandleID 395356: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 11:29:06.970] [INFO] Price display panel hidden
+[2025-08-04 11:29:07.049] [INFO] Price display panel hidden
+[2025-08-04 11:29:12.980] [INFO] SetSymbol called for GBPJPY, current broker: Forex
+[2025-08-04 11:29:12.980] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 11:29:12.980] [INFO] OrderSummary panel hidden
+[2025-08-04 11:29:12.980] [INFO] Price display panel hidden
+[2025-08-04 11:29:12.980] [INFO] Loaded settings for HandleID 394144: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 11:29:12.981] [INFO] SetSymbol called for GBPJPY, current broker: Forex
+[2025-08-04 11:29:12.981] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 11:29:12.981] [INFO] OrderSummary panel hidden
+[2025-08-04 11:29:12.981] [INFO] Price display panel hidden
+[2025-08-04 11:29:12.982] [INFO] Loaded settings for HandleID 394144: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 11:29:20.329] [INFO] Price display panel hidden
+[2025-08-04 11:29:20.330] [INFO] Price display panel hidden

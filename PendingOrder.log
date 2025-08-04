@@ -10346,3 +10346,9 @@
 [2025-08-04 00:23:30.199] [INFO] Scheduling Escape key send to window handle: 658254
 [2025-08-04 00:23:30.199] [INFO] Escape thread started for window handle: 658254
 [2025-08-04 00:23:30.813] [INFO] Escape key sent successfully to window handle: 658254
+[2025-08-04 11:27:38.744] [INFO] Scheduling Escape key send to window handle: 395356
+[2025-08-04 11:27:38.745] [INFO] Escape thread started for window handle: 395356
+[2025-08-04 11:27:39.383] [INFO] Escape key sent successfully to window handle: 395356
+[2025-08-04 11:29:15.740] [INFO] Scheduling Escape key send to window handle: 394144
+[2025-08-04 11:29:15.741] [INFO] Escape thread started for window handle: 394144
+[2025-08-04 11:29:16.364] [INFO] Escape key sent successfully to window handle: 394144
