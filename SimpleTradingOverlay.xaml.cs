@@ -149,6 +149,9 @@ namespace ScreenCaptureApp
             // Подписка на событие HttpServerService
             SetupHttpServerEvents();
             
+            // Подписка на события HotkeyService
+            SetupHotkeyServiceEvents();
+            
             // Инициализация переменных для троттлинга мыши
             _lastMouseX = 0;
             _lastMouseY = 0;
@@ -237,6 +240,24 @@ namespace ScreenCaptureApp
             }
         }
 
+        private void SetupHotkeyServiceEvents()
+        {
+            if (_hotkeysService != null)
+            {
+                _hotkeysService.OnEscapeKeyPressed += OnEscapeKeyPressed;
+                _hotkeysService.OnSKeyPressed += OnSKeyPressed;
+                _hotkeysService.OnAKeyPressed += OnAKeyPressed;
+                _hotkeysService.OnPKeyPressed += OnPKeyPressed;
+                _hotkeysService.OnDKeyPressed += OnDKeyPressed;
+                
+                Logger.LogInfo("SimpleTradingOverlay subscribed to HotkeyService events");
+            }
+            else
+            {
+                Logger.LogWarning("HotkeyService not found, cannot subscribe to hotkey events");
+            }
+        }
+
         private async void HttpServerService_NewPriceLevelReceived(object sender, PriceLevelEventData priceLevelEvent)
         {
             try
@@ -244,7 +265,13 @@ namespace ScreenCaptureApp
                 Logger.LogTagInfo("SimpleTradingOverlay", $"Received new price level event: {priceLevelEvent}");
 
                 // Проверяем, соответствует ли символ текущему символу в тулбаре
-                if (string.IsNullOrEmpty(TradingToolbar.CurrentSymbol) || !TradingToolbar.CurrentSymbol.Equals(priceLevelEvent.Symbol, StringComparison.OrdinalIgnoreCase))
+                // Если символ в тулбаре UNKNOWN, обновляем его на символ из события
+                if (string.IsNullOrEmpty(TradingToolbar.CurrentSymbol) || TradingToolbar.CurrentSymbol.Equals("UNKNOWN", StringComparison.OrdinalIgnoreCase))
+                {
+                    Logger.LogTagInfo("SimpleTradingOverlay", $"Updating toolbar symbol from UNKNOWN to {priceLevelEvent.Symbol}");
+                    TradingToolbar.SetSymbol(priceLevelEvent.Symbol);
+                }
+                else if (!TradingToolbar.CurrentSymbol.Equals(priceLevelEvent.Symbol, StringComparison.OrdinalIgnoreCase))
                 {
                     Logger.LogTagDebug("SimpleTradingOverlay", $"Symbol mismatch: current={TradingToolbar.CurrentSymbol}, event={priceLevelEvent.Symbol}");
                     return;
@@ -273,6 +300,13 @@ namespace ScreenCaptureApp
             try
             {
                 Logger.LogTagInfo("SimpleTradingOverlay", $"Processing price level: {priceLevelEvent.Name} = {priceLevelEvent.LevelValue}");
+
+                // Проверяем, что это PriceMarkerChartObject
+                if (!priceLevelEvent.Name.Contains("PriceMarkerChartObject"))
+                {
+                    Logger.LogTagDebug("SimpleTradingOverlay", $"Skipping non-PriceMarkerChartObject event: {priceLevelEvent.Name}");
+                    return;
+                }
 
                 // Если ожидаем Entry Price
                 if (_isWaitingForEntryPrice)
@@ -311,17 +345,15 @@ namespace ScreenCaptureApp
                     // Отправляем команду в MT4
                     SendTradeCommandToMt4();
                     
+                    // Если не ожидаем никаких цен, начинаем новый цикл
+                    _entryPrice = priceLevelEvent.LevelValue;
+                    _currentTradeSymbol = priceLevelEvent.Symbol;
+                    // Устанавливаем Entry Level в активном TradingToolbar, если начинаем новый цикл после Stop Loss
+                    TradingToolbar.SetEntryLevel(0, string.Empty);
+                    
                     return;
                 }
 
-                // Если не ожидаем никаких цен, начинаем новый цикл
-                Logger.LogTagInfo("SimpleTradingOverlay", "Starting new price level cycle - waiting for Entry Price");
-                _isWaitingForEntryPrice = true;
-                _entryPrice = priceLevelEvent.LevelValue;
-                _currentTradeSymbol = priceLevelEvent.Symbol;
-                
-                // Устанавливаем Entry Level в активном TradingToolbar
-                TradingToolbar.SetEntryLevel(_entryPrice, _currentTradeSymbol);
             }
             catch (Exception ex)
             {
@@ -399,7 +431,25 @@ namespace ScreenCaptureApp
             // Скрываем цены в UI
             TradingToolbar.HidePrices();
             
-            Logger.LogTagInfo("SimpleTradingOverlay", "Price level state reset");
+            Logger.LogTagInfo("SimpleTradingOverlay", "Price level state reset - ready for new PriceMarkerChartObject cycle");
+        }
+
+        /// <summary>
+        /// Сбрасывает состояние ценовых уровней и переводит в режим ожидания Entry Price
+        /// Используется при нажатии Escape для отмены текущего состояния
+        /// </summary>
+        private void ResetPriceLevelStateToWaitForEntry()
+        {
+            _isWaitingForEntryPrice = true; // Переводим в режим ожидания Entry Price
+            _isWaitingForStopLossPrice = false;
+            _entryPrice = 0;
+            _stopLossPrice = 0;
+            _currentTradeSymbol = "";
+            
+            // Скрываем цены в UI
+            TradingToolbar.HidePrices();
+            
+            Logger.LogTagInfo("SimpleTradingOverlay", "Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject");
         }
 
         public void OnSKeyPressed()
@@ -483,6 +533,8 @@ namespace ScreenCaptureApp
                 return;
             }
 
+            Logger.LogTagInfo("SimpleTradingOverlay", "Escape key pressed via HotkeyService");
+
             if (_isTradingPatternActive)
             {
                 Logger.LogInfo("Escape key pressed - cancelling trading pattern");
@@ -495,11 +547,11 @@ namespace ScreenCaptureApp
                 CancelPendingOrderPattern();
             }
 
-            // Отменяем Entry Level в TradingToolbar при нажатии Escape
+            // Сбрасываем состояние ценовых уровней и переходим в режим ожидания Entry Price
             if (TradingToolbar != null)
             {
-                Logger.LogTagInfo("SimpleTradingOverlay", "Escape key pressed - cancelling price level entry");
-                ResetPriceLevelState();
+                Logger.LogTagInfo("SimpleTradingOverlay", "Escape key pressed - resetting price level state to wait for Entry Price");
+                ResetPriceLevelStateToWaitForEntry();
             }
         }
 
@@ -1251,6 +1303,25 @@ namespace ScreenCaptureApp
             if (_patternOverlay != null && _patternOverlay.IsVisible)
             {
                 _patternOverlay.Close();
+            }
+            
+            // Отписываемся от событий HotkeyService
+            if (_hotkeysService != null)
+            {
+                _hotkeysService.OnEscapeKeyPressed -= OnEscapeKeyPressed;
+                _hotkeysService.OnSKeyPressed -= OnSKeyPressed;
+                _hotkeysService.OnAKeyPressed -= OnAKeyPressed;
+                _hotkeysService.OnPKeyPressed -= OnPKeyPressed;
+                _hotkeysService.OnDKeyPressed -= OnDKeyPressed;
+                Logger.LogInfo("SimpleTradingOverlay unsubscribed from HotkeyService events");
+            }
+            
+            // Отписываемся от событий HttpServerService
+            var httpServerService = ServiceContainer.Instance.GetService<HttpServerService>();
+            if (httpServerService != null)
+            {
+                httpServerService.NewPriceLevelReceived -= HttpServerService_NewPriceLevelReceived;
+                Logger.LogInfo("SimpleTradingOverlay unsubscribed from HttpServerService events");
             }
             
             if (mouseHook != IntPtr.Zero)
