@@ -112,8 +112,8 @@ namespace ScreenCaptureApp
         private bool _isServiceEscapeSending = false;
 
         // Состояние для обработки ценовых уровней
-        private decimal _entryPrice = 0;
-        private decimal _stopLossPrice = 0;
+        private double _entryPrice = 0;
+        private double _stopLossPrice = 0;
         private string _currentTradeSymbol = "";
 
         // Состояние для обработки P-кнопки и кликов мыши
@@ -326,7 +326,7 @@ namespace ScreenCaptureApp
             // Если Entry Price не установлен, устанавливаем его
             if (_entryPrice == 0)
             {
-                _entryPrice = jforexChartObject.Price;
+                _entryPrice = Convert.ToDouble(jforexChartObject.Price);
                 _currentTradeSymbol = jforexChartObject.Symbol;
                 
                 Logger.LogTagInfo("SimpleTradingOverlay", $"Entry Price set: {_entryPrice} for {_currentTradeSymbol}");
@@ -339,7 +339,7 @@ namespace ScreenCaptureApp
             // Если Entry Price уже установлен, устанавливаем Stop Loss Price
             if (_stopLossPrice == 0)
             {
-                _stopLossPrice = jforexChartObject.Price;
+                _stopLossPrice = Convert.ToDouble(jforexChartObject.Price);
 
                 Logger.LogTagInfo("SimpleTradingOverlay", $"Stop Loss Price set: {_stopLossPrice} for {_currentTradeSymbol}");
 
@@ -347,7 +347,7 @@ namespace ScreenCaptureApp
                 var toastNotifyService = ServiceContainer.Instance.GetService<ToastNotifyService>();
                 if (toastNotifyService != null)
                 {
-                    string tradeType = _entryPrice > _stopLossPrice ? "SELL" : "BUY";
+                    string tradeType = _entryPrice > _stopLossPrice ? "BUY" : "SELL";
                     string toastMessage = $"Stop Loss: {_stopLossPrice:F5} | Trade: {tradeType} ({_currentTradeSymbol})";
                     toastNotifyService.ShowToast(toastMessage, ToastType.Success, 3000);
                     Logger.LogTagInfo("SimpleTradingOverlay", $"Stop Loss toast shown: {toastMessage}");
@@ -392,21 +392,10 @@ namespace ScreenCaptureApp
                 }
 
                 // Определяем тип сделки на основе цен
-                string tradeType = _entryPrice > _stopLossPrice ? "sell" : "buy";
+                string tradeType = _entryPrice > _stopLossPrice ? "buy" : "sell";
                 
                 // Получаем риск из тулбара
                 double risk = TradingToolbar.SelectedRisk;
-                
-                // Формируем команду для MT4
-                var command = new
-                {
-                    command = "open_position",
-                    symbol = _currentTradeSymbol,
-                    type = tradeType,
-                    entry_price = _entryPrice,
-                    stop_loss = _stopLossPrice,
-                    risk = risk
-                };
 
                 Logger.LogTagInfo("SimpleTradingOverlay", $"Sending trade command to MT4: {tradeType} {_currentTradeSymbol} Entry:{_entryPrice} SL:{_stopLossPrice} Risk:{risk}");
 
@@ -420,11 +409,17 @@ namespace ScreenCaptureApp
                     Logger.LogTagInfo("SimpleTradingOverlay", $"Trade creation toast shown: {toastMessage}");
                 }
 
-                // Сериализуем команду в JSON и отправляем в MT4
-                string jsonCommand = Newtonsoft.Json.JsonConvert.SerializeObject(command);
-                await mt4SocketService.WriteAsync(jsonCommand);
+                // Используем новый метод SendNewOrderCommand из MT4SocketService
+                bool result = await mt4SocketService.SendNewOrderCommand(_currentTradeSymbol, tradeType, _entryPrice, _stopLossPrice, risk);
 
-                Logger.LogTagInfo("SimpleTradingOverlay", "MT4 command sent successfully, clearing UI");
+                if (result)
+                {
+                    Logger.LogTagInfo("SimpleTradingOverlay", "MT4 command sent successfully, clearing UI");
+                }
+                else
+                {
+                    Logger.LogTagWarning("SimpleTradingOverlay", "Failed to send MT4 command");
+                }
 
                 // Сбрасываем состояние после отправки команды в MT4
                 ResetPriceLevelState();

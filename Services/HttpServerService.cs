@@ -472,13 +472,14 @@ namespace ScreenCaptureApp.Services
             {
                 // Исправляем числа с запятыми как десятичными разделителями
                 // Паттерн: "price":число,число -> "price":число.число
-                var regex = new System.Text.RegularExpressions.Regex(@"""(price|Price)"":\s*(\d+),(\d+)");
+                // Также обрабатываем levelValue, LevelValue и другие числовые поля
+                var regex = new System.Text.RegularExpressions.Regex(@"""(price|Price|levelValue|LevelValue|entry_price|stop_loss|risk)"":\s*(\d+),(\d+)");
                 var processedJson = regex.Replace(json, match =>
                 {
-                    var prefix = match.Groups[1].Value;
+                    var fieldName = match.Groups[1].Value;
                     var wholePart = match.Groups[2].Value;
                     var decimalPart = match.Groups[3].Value;
-                    return $"\"{prefix}\": {wholePart}.{decimalPart}";
+                    return $"\"{fieldName}\": {wholePart}.{decimalPart}";
                 });
 
                 Logger.LogDebug($"Preprocessed JSON: {processedJson}");

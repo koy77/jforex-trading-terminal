@@ -2418,3 +2418,872 @@
 [2025-08-04 13:58:54.788] [INFO] Entry Level set successfully: 3333,07496 for XAUUSD
 [2025-08-04 13:58:56.734] [INFO] Price display panel hidden
 [2025-08-04 13:58:56.759] [INFO] Price display panel hidden
+[2025-08-04 13:59:16.259] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 13:59:16.260] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 13:59:16.260] [INFO] OrderSummary panel hidden
+[2025-08-04 13:59:16.260] [INFO] Price display panel hidden
+[2025-08-04 13:59:16.260] [INFO] Created default settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 13:59:16.261] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 13:59:16.261] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 13:59:16.261] [INFO] OrderSummary panel hidden
+[2025-08-04 13:59:16.261] [INFO] Price display panel hidden
+[2025-08-04 13:59:16.261] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 13:59:18.669] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 13:59:18.669] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 13:59:18.669] [INFO] OrderSummary panel hidden
+[2025-08-04 13:59:18.669] [INFO] Price display panel hidden
+[2025-08-04 13:59:18.670] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 13:59:18.670] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 13:59:18.670] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 13:59:18.670] [INFO] OrderSummary panel hidden
+[2025-08-04 13:59:18.670] [INFO] Price display panel hidden
+[2025-08-04 13:59:18.671] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 13:59:19.711] [INFO] SetSymbol called for GBPJPY, current broker: Forex
+[2025-08-04 13:59:19.711] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 13:59:19.711] [INFO] OrderSummary panel hidden
+[2025-08-04 13:59:19.711] [INFO] Price display panel hidden
+[2025-08-04 13:59:19.711] [INFO] Created default settings for HandleID 395356: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 13:59:19.712] [INFO] SetSymbol called for GBPJPY, current broker: Forex
+[2025-08-04 13:59:19.712] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 13:59:19.712] [INFO] OrderSummary panel hidden
+[2025-08-04 13:59:19.712] [INFO] Price display panel hidden
+[2025-08-04 13:59:19.712] [INFO] Loaded settings for HandleID 395356: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 13:59:21.234] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-04 13:59:21.234] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 13:59:21.234] [INFO] OrderSummary panel hidden
+[2025-08-04 13:59:21.234] [INFO] Price display panel hidden
+[2025-08-04 13:59:21.234] [INFO] Created default settings for HandleID 526404: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 13:59:21.235] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-04 13:59:21.235] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 13:59:21.235] [INFO] OrderSummary panel hidden
+[2025-08-04 13:59:21.235] [INFO] Price display panel hidden
+[2025-08-04 13:59:21.235] [INFO] Loaded settings for HandleID 526404: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 13:59:23.602] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-04 13:59:23.602] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 13:59:23.602] [INFO] OrderSummary panel hidden
+[2025-08-04 13:59:23.603] [INFO] Price display panel hidden
+[2025-08-04 13:59:23.603] [INFO] Created default settings for HandleID 526406: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 13:59:23.603] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-04 13:59:23.603] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 13:59:23.604] [INFO] OrderSummary panel hidden
+[2025-08-04 13:59:23.604] [INFO] Price display panel hidden
+[2025-08-04 13:59:23.605] [INFO] Loaded settings for HandleID 526406: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 13:59:27.082] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-04 13:59:27.082] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 13:59:27.083] [INFO] OrderSummary panel hidden
+[2025-08-04 13:59:27.083] [INFO] Price display panel hidden
+[2025-08-04 13:59:27.083] [INFO] Loaded settings for HandleID 526404: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 13:59:27.083] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-04 13:59:27.084] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 13:59:27.084] [INFO] OrderSummary panel hidden
+[2025-08-04 13:59:27.084] [INFO] Price display panel hidden
+[2025-08-04 13:59:27.084] [INFO] Loaded settings for HandleID 526404: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 13:59:27.898] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-04 13:59:27.898] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 13:59:27.899] [INFO] OrderSummary panel hidden
+[2025-08-04 13:59:27.899] [INFO] Price display panel hidden
+[2025-08-04 13:59:27.899] [INFO] Loaded settings for HandleID 526406: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 13:59:27.899] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-04 13:59:27.899] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 13:59:27.900] [INFO] OrderSummary panel hidden
+[2025-08-04 13:59:27.900] [INFO] Price display panel hidden
+[2025-08-04 13:59:27.900] [INFO] Loaded settings for HandleID 526406: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 13:59:29.669] [INFO] SetEntryLevel called: 1,15560 for EURUSD
+[2025-08-04 13:59:29.670] [INFO] Price display updated: Entry=1,15560, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 13:59:29.670] [INFO] Entry Level set successfully: 1,15560 for EURUSD
+[2025-08-04 13:59:32.574] [INFO] Price display panel hidden
+[2025-08-04 13:59:32.575] [INFO] Price display panel hidden
+[2025-08-04 13:59:40.659] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-04 13:59:40.659] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 13:59:40.659] [INFO] OrderSummary panel hidden
+[2025-08-04 13:59:40.659] [INFO] Price display panel hidden
+[2025-08-04 13:59:40.659] [INFO] Loaded settings for HandleID 526404: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 13:59:40.660] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-04 13:59:40.660] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 13:59:40.660] [INFO] OrderSummary panel hidden
+[2025-08-04 13:59:40.660] [INFO] Price display panel hidden
+[2025-08-04 13:59:40.661] [INFO] Loaded settings for HandleID 526404: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:01:04.344] [INFO] Price display panel hidden
+[2025-08-04 14:01:04.345] [INFO] Price display panel hidden
+[2025-08-04 14:01:14.042] [INFO] TradingToolbar instance 2 created
+[2025-08-04 14:01:14.042] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-04 14:01:14.042] [INFO] ToastNotifyService initialized successfully
+[2025-08-04 14:01:14.212] [INFO] Loaded settings for HandleID 197108: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:01:15.198] [INFO] Price display panel hidden
+[2025-08-04 14:01:15.231] [INFO] Price display panel hidden
+[2025-08-04 14:01:15.374] [INFO] Price display panel hidden
+[2025-08-04 14:01:15.375] [INFO] Price display panel hidden
+[2025-08-04 14:04:22.814] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:04:22.814] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:04:22.814] [INFO] OrderSummary panel hidden
+[2025-08-04 14:04:22.815] [INFO] Price display panel hidden
+[2025-08-04 14:04:22.815] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:04:22.815] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:04:22.815] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:04:22.815] [INFO] OrderSummary panel hidden
+[2025-08-04 14:04:22.816] [INFO] Price display panel hidden
+[2025-08-04 14:04:22.816] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:04:25.167] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:04:25.167] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:04:25.167] [INFO] OrderSummary panel hidden
+[2025-08-04 14:04:25.167] [INFO] Price display panel hidden
+[2025-08-04 14:04:25.167] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:04:25.167] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:04:25.168] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:04:25.168] [INFO] OrderSummary panel hidden
+[2025-08-04 14:04:25.168] [INFO] Price display panel hidden
+[2025-08-04 14:04:25.168] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:04:34.031] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:04:34.032] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:04:34.032] [INFO] OrderSummary panel hidden
+[2025-08-04 14:04:34.032] [INFO] Price display panel hidden
+[2025-08-04 14:04:34.032] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:04:34.032] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:04:34.033] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:04:34.033] [INFO] OrderSummary panel hidden
+[2025-08-04 14:04:34.033] [INFO] Price display panel hidden
+[2025-08-04 14:04:34.033] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:06:21.269] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:06:21.270] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:06:21.270] [INFO] OrderSummary panel hidden
+[2025-08-04 14:06:21.270] [INFO] Price display panel hidden
+[2025-08-04 14:06:21.270] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:06:21.271] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:06:21.271] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:06:21.271] [INFO] OrderSummary panel hidden
+[2025-08-04 14:06:21.271] [INFO] Price display panel hidden
+[2025-08-04 14:06:21.271] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:06:28.661] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:06:28.661] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:06:28.661] [INFO] OrderSummary panel hidden
+[2025-08-04 14:06:28.661] [INFO] Price display panel hidden
+[2025-08-04 14:06:28.662] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:06:28.662] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:06:28.662] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:06:28.662] [INFO] OrderSummary panel hidden
+[2025-08-04 14:06:28.662] [INFO] Price display panel hidden
+[2025-08-04 14:06:28.663] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:06:41.905] [INFO] TradingToolbar instance 3 created
+[2025-08-04 14:06:41.906] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-04 14:06:41.906] [INFO] ToastNotifyService initialized successfully
+[2025-08-04 14:06:42.066] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:07:08.674] [INFO] Price display panel hidden
+[2025-08-04 14:07:08.746] [INFO] Price display panel hidden
+[2025-08-04 14:07:32.533] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:07:32.533] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:07:32.533] [INFO] OrderSummary panel hidden
+[2025-08-04 14:07:32.533] [INFO] Price display panel hidden
+[2025-08-04 14:07:32.533] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:07:32.534] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:07:32.534] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:07:32.534] [INFO] OrderSummary panel hidden
+[2025-08-04 14:07:32.534] [INFO] Price display panel hidden
+[2025-08-04 14:07:32.534] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:08:34.236] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:08:34.236] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:08:34.236] [INFO] OrderSummary panel hidden
+[2025-08-04 14:08:34.236] [INFO] Price display panel hidden
+[2025-08-04 14:08:34.236] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:08:34.237] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:08:34.237] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:08:34.237] [INFO] OrderSummary panel hidden
+[2025-08-04 14:08:34.237] [INFO] Price display panel hidden
+[2025-08-04 14:08:34.237] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:09:50.990] [INFO] TradingToolbar instance 1 created
+[2025-08-04 14:09:50.990] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-04 14:09:50.990] [INFO] ToastNotifyService initialized successfully
+[2025-08-04 14:09:51.003] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 14:09:51.003] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:09:51.003] [INFO] OrderSummary panel hidden
+[2025-08-04 14:09:51.004] [INFO] Price display panel hidden
+[2025-08-04 14:09:51.419] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 14:09:51.419] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:09:51.419] [INFO] OrderSummary panel hidden
+[2025-08-04 14:09:51.419] [INFO] Price display panel hidden
+[2025-08-04 14:09:51.420] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 14:09:51.420] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:09:51.420] [INFO] OrderSummary panel hidden
+[2025-08-04 14:09:51.420] [INFO] Price display panel hidden
+[2025-08-04 14:10:10.923] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:10:10.923] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:10:10.923] [INFO] OrderSummary panel hidden
+[2025-08-04 14:10:10.923] [INFO] Price display panel hidden
+[2025-08-04 14:10:10.925] [INFO] Created default settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:10:10.926] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:10:10.926] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:10:10.926] [INFO] OrderSummary panel hidden
+[2025-08-04 14:10:10.926] [INFO] Price display panel hidden
+[2025-08-04 14:10:10.927] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:10:13.481] [INFO] SetEntryLevel called: 3342,34743 for XAUUSD
+[2025-08-04 14:10:13.483] [INFO] Price display updated: Entry=3342,34743, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 14:10:13.483] [INFO] Entry Level set successfully: 3342,34743 for XAUUSD
+[2025-08-04 14:10:15.287] [INFO] Price display panel hidden
+[2025-08-04 14:10:15.303] [INFO] Price display panel hidden
+[2025-08-04 14:10:27.095] [INFO] SetEntryLevel called: 3337,20589 for XAUUSD
+[2025-08-04 14:10:27.095] [INFO] Price display updated: Entry=3337,20589, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 14:10:27.095] [INFO] Entry Level set successfully: 3337,20589 for XAUUSD
+[2025-08-04 14:10:32.305] [INFO] Price display panel hidden
+[2025-08-04 14:10:32.306] [INFO] Price display panel hidden
+[2025-08-04 14:10:35.044] [INFO] SetEntryLevel called: 3348,42949 for XAUUSD
+[2025-08-04 14:10:35.044] [INFO] Price display updated: Entry=3348,42949, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 14:10:35.044] [INFO] Entry Level set successfully: 3348,42949 for XAUUSD
+[2025-08-04 14:10:36.131] [INFO] Price display panel hidden
+[2025-08-04 14:10:36.148] [INFO] Price display panel hidden
+[2025-08-04 14:12:04.690] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:12:04.690] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:12:04.690] [INFO] OrderSummary panel hidden
+[2025-08-04 14:12:04.691] [INFO] Price display panel hidden
+[2025-08-04 14:12:04.691] [INFO] Created default settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:12:04.691] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:12:04.692] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:12:04.692] [INFO] OrderSummary panel hidden
+[2025-08-04 14:12:04.692] [INFO] Price display panel hidden
+[2025-08-04 14:12:04.692] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:12:13.223] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:12:13.223] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:12:13.223] [INFO] OrderSummary panel hidden
+[2025-08-04 14:12:13.224] [INFO] Price display panel hidden
+[2025-08-04 14:12:13.224] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:12:13.224] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:12:13.224] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:12:13.224] [INFO] OrderSummary panel hidden
+[2025-08-04 14:12:13.225] [INFO] Price display panel hidden
+[2025-08-04 14:12:13.225] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:12:15.003] [INFO] SetEntryLevel called: 3342,53553 for XAUUSD
+[2025-08-04 14:12:15.003] [INFO] Price display updated: Entry=3342,53553, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 14:12:15.003] [INFO] Entry Level set successfully: 3342,53553 for XAUUSD
+[2025-08-04 14:12:16.040] [INFO] Price display panel hidden
+[2025-08-04 14:12:16.041] [INFO] Price display panel hidden
+[2025-08-04 14:13:36.512] [INFO] TradingToolbar instance 1 created
+[2025-08-04 14:13:36.513] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-04 14:13:36.513] [INFO] ToastNotifyService initialized successfully
+[2025-08-04 14:13:36.533] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 14:13:36.533] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:13:36.533] [INFO] OrderSummary panel hidden
+[2025-08-04 14:13:36.534] [INFO] Price display panel hidden
+[2025-08-04 14:13:37.236] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 14:13:37.237] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:13:37.237] [INFO] OrderSummary panel hidden
+[2025-08-04 14:13:37.237] [INFO] Price display panel hidden
+[2025-08-04 14:13:37.237] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 14:13:37.237] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:13:37.238] [INFO] OrderSummary panel hidden
+[2025-08-04 14:13:37.238] [INFO] Price display panel hidden
+[2025-08-04 14:14:01.813] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:14:01.813] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:14:01.813] [INFO] OrderSummary panel hidden
+[2025-08-04 14:14:01.813] [INFO] Price display panel hidden
+[2025-08-04 14:14:01.815] [INFO] Created default settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:14:01.816] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:14:01.816] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:14:01.816] [INFO] OrderSummary panel hidden
+[2025-08-04 14:14:01.817] [INFO] Price display panel hidden
+[2025-08-04 14:14:01.817] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:14:05.444] [INFO] SetEntryLevel called: 3340,62559 for XAUUSD
+[2025-08-04 14:14:05.445] [INFO] Price display updated: Entry=3340,62559, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 14:14:05.445] [INFO] Entry Level set successfully: 3340,62559 for XAUUSD
+[2025-08-04 14:14:05.879] [INFO] Price display panel hidden
+[2025-08-04 14:14:05.908] [INFO] Price display panel hidden
+[2025-08-04 14:14:52.719] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:14:52.720] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:14:52.720] [INFO] OrderSummary panel hidden
+[2025-08-04 14:14:52.720] [INFO] Price display panel hidden
+[2025-08-04 14:14:52.720] [INFO] Created default settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:14:52.720] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:14:52.721] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:14:52.721] [INFO] OrderSummary panel hidden
+[2025-08-04 14:14:52.721] [INFO] Price display panel hidden
+[2025-08-04 14:14:52.721] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:15:49.399] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:15:49.399] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:15:49.399] [INFO] OrderSummary panel hidden
+[2025-08-04 14:15:49.399] [INFO] Price display panel hidden
+[2025-08-04 14:15:49.399] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:15:49.400] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:15:49.400] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:15:49.400] [INFO] OrderSummary panel hidden
+[2025-08-04 14:15:49.400] [INFO] Price display panel hidden
+[2025-08-04 14:15:49.400] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:15:51.324] [INFO] SetEntryLevel called: 3344,54199 for XAUUSD
+[2025-08-04 14:15:51.324] [INFO] Price display updated: Entry=3344,54199, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 14:15:51.325] [INFO] Entry Level set successfully: 3344,54199 for XAUUSD
+[2025-08-04 14:15:52.026] [INFO] Price display panel hidden
+[2025-08-04 14:15:52.027] [INFO] Price display panel hidden
+[2025-08-04 14:15:53.023] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:15:53.023] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:15:53.023] [INFO] OrderSummary panel hidden
+[2025-08-04 14:15:53.023] [INFO] Price display panel hidden
+[2025-08-04 14:15:53.023] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:15:53.024] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:15:53.024] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:15:53.024] [INFO] OrderSummary panel hidden
+[2025-08-04 14:15:53.024] [INFO] Price display panel hidden
+[2025-08-04 14:15:53.024] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:16:05.751] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:16:05.751] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:16:05.751] [INFO] OrderSummary panel hidden
+[2025-08-04 14:16:05.751] [INFO] Price display panel hidden
+[2025-08-04 14:16:05.751] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:16:05.752] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:16:05.752] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:16:05.752] [INFO] OrderSummary panel hidden
+[2025-08-04 14:16:05.752] [INFO] Price display panel hidden
+[2025-08-04 14:16:05.752] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:16:15.767] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:16:15.767] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:16:15.767] [INFO] OrderSummary panel hidden
+[2025-08-04 14:16:15.768] [INFO] Price display panel hidden
+[2025-08-04 14:16:15.768] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:16:15.768] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:16:15.768] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:16:15.769] [INFO] OrderSummary panel hidden
+[2025-08-04 14:16:15.769] [INFO] Price display panel hidden
+[2025-08-04 14:16:15.769] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:16:48.493] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:16:48.494] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:16:48.494] [INFO] OrderSummary panel hidden
+[2025-08-04 14:16:48.494] [INFO] Price display panel hidden
+[2025-08-04 14:16:48.494] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:16:48.494] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:16:48.495] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:16:48.495] [INFO] OrderSummary panel hidden
+[2025-08-04 14:16:48.495] [INFO] Price display panel hidden
+[2025-08-04 14:16:48.495] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:16:52.105] [INFO] SetEntryLevel called: 3343,03340 for XAUUSD
+[2025-08-04 14:16:52.106] [INFO] Price display updated: Entry=3343,03340, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 14:16:52.106] [INFO] Entry Level set successfully: 3343,03340 for XAUUSD
+[2025-08-04 14:16:53.383] [INFO] Price display panel hidden
+[2025-08-04 14:16:53.384] [INFO] Price display panel hidden
+[2025-08-04 14:17:03.790] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:17:03.791] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:17:03.791] [INFO] OrderSummary panel hidden
+[2025-08-04 14:17:03.791] [INFO] Price display panel hidden
+[2025-08-04 14:17:03.792] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:17:03.792] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:17:03.792] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:17:03.793] [INFO] OrderSummary panel hidden
+[2025-08-04 14:17:03.793] [INFO] Price display panel hidden
+[2025-08-04 14:17:03.793] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:17:24.086] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:17:24.086] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:17:24.086] [INFO] OrderSummary panel hidden
+[2025-08-04 14:17:24.086] [INFO] Price display panel hidden
+[2025-08-04 14:17:24.086] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:17:24.087] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:17:24.087] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:17:24.087] [INFO] OrderSummary panel hidden
+[2025-08-04 14:17:24.087] [INFO] Price display panel hidden
+[2025-08-04 14:17:24.087] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:17:25.657] [INFO] SetEntryLevel called: 3346,75977 for XAUUSD
+[2025-08-04 14:17:25.657] [INFO] Price display updated: Entry=3346,75977, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 14:17:25.657] [INFO] Entry Level set successfully: 3346,75977 for XAUUSD
+[2025-08-04 14:17:26.524] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-04 14:17:26.533] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,03, Percent: -0,15, Points: -31
+[2025-08-04 14:17:27.189] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-04 14:17:27.196] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,03, Percent: -0,16, Points: -33
+[2025-08-04 14:17:27.484] [INFO] Price display panel hidden
+[2025-08-04 14:17:27.501] [INFO] Price display panel hidden
+[2025-08-04 14:17:28.216] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-04 14:17:28.228] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,03, Percent: -0,16, Points: -32
+[2025-08-04 14:17:29.181] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-04 14:17:29.189] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,03, Percent: -0,19, Points: -39
+[2025-08-04 14:17:30.193] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-04 14:17:30.203] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,03, Percent: -0,18, Points: -38
+[2025-08-04 14:17:31.191] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-04 14:17:31.198] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,03, Percent: -0,27, Points: -56
+[2025-08-04 14:17:32.182] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-04 14:17:32.188] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,03, Percent: -0,29, Points: -60
+[2025-08-04 14:17:33.187] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-04 14:17:33.194] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,03, Percent: -0,28, Points: -58
+[2025-08-04 14:17:34.320] [INFO] No matching symbol found for XAUUSD
+[2025-08-04 14:17:34.323] [INFO] OrderSummary panel hidden
+[2025-08-04 14:17:39.294] [INFO] SetEntryLevel called: 3357,59489 for XAUUSD
+[2025-08-04 14:17:39.295] [INFO] Price display updated: Entry=3357,59489, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 14:17:39.295] [INFO] Entry Level set successfully: 3357,59489 for XAUUSD
+[2025-08-04 14:17:40.765] [INFO] Price display panel hidden
+[2025-08-04 14:17:40.766] [INFO] Price display panel hidden
+[2025-08-04 14:17:48.117] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:17:48.118] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:17:48.118] [INFO] OrderSummary panel hidden
+[2025-08-04 14:17:48.118] [INFO] Price display panel hidden
+[2025-08-04 14:17:48.118] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:17:48.118] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:17:48.119] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:17:48.119] [INFO] OrderSummary panel hidden
+[2025-08-04 14:17:48.119] [INFO] Price display panel hidden
+[2025-08-04 14:17:48.119] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:18:04.901] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:18:04.902] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:18:04.902] [INFO] OrderSummary panel hidden
+[2025-08-04 14:18:04.902] [INFO] Price display panel hidden
+[2025-08-04 14:18:04.903] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:18:04.903] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:18:04.903] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:18:04.903] [INFO] OrderSummary panel hidden
+[2025-08-04 14:18:04.904] [INFO] Price display panel hidden
+[2025-08-04 14:18:04.904] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:18:07.237] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:18:07.237] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:18:07.237] [INFO] OrderSummary panel hidden
+[2025-08-04 14:18:07.238] [INFO] Price display panel hidden
+[2025-08-04 14:18:07.238] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:18:07.238] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:18:07.238] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:18:07.238] [INFO] OrderSummary panel hidden
+[2025-08-04 14:18:07.239] [INFO] Price display panel hidden
+[2025-08-04 14:18:07.239] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:20:16.450] [INFO] TradingToolbar instance 1 created
+[2025-08-04 14:20:16.502] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-04 14:20:16.503] [INFO] ToastNotifyService initialized successfully
+[2025-08-04 14:20:16.529] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 14:20:16.530] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:20:16.532] [INFO] OrderSummary panel hidden
+[2025-08-04 14:20:16.533] [INFO] Price display panel hidden
+[2025-08-04 14:20:17.566] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 14:20:17.566] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:20:17.566] [INFO] OrderSummary panel hidden
+[2025-08-04 14:20:17.566] [INFO] Price display panel hidden
+[2025-08-04 14:20:17.567] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 14:20:17.567] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:20:17.567] [INFO] OrderSummary panel hidden
+[2025-08-04 14:20:17.568] [INFO] Price display panel hidden
+[2025-08-04 14:20:23.452] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:20:23.452] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:20:23.452] [INFO] OrderSummary panel hidden
+[2025-08-04 14:20:23.452] [INFO] Price display panel hidden
+[2025-08-04 14:20:23.454] [INFO] Created default settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:20:23.455] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:20:23.455] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:20:23.456] [INFO] OrderSummary panel hidden
+[2025-08-04 14:20:23.456] [INFO] Price display panel hidden
+[2025-08-04 14:20:23.456] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:23:17.848] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:23:17.848] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:23:17.849] [INFO] OrderSummary panel hidden
+[2025-08-04 14:23:17.849] [INFO] Price display panel hidden
+[2025-08-04 14:23:17.849] [INFO] Created default settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:23:17.849] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:23:17.849] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:23:17.850] [INFO] OrderSummary panel hidden
+[2025-08-04 14:23:17.850] [INFO] Price display panel hidden
+[2025-08-04 14:23:17.850] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:23:27.359] [INFO] SetEntryLevel called: 3353,64576 for XAUUSD
+[2025-08-04 14:23:27.360] [INFO] Price display updated: Entry=3353,64576, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 14:23:27.360] [INFO] Entry Level set successfully: 3353,64576 for XAUUSD
+[2025-08-04 14:23:27.650] [INFO] Price display panel hidden
+[2025-08-04 14:23:27.651] [INFO] Price display panel hidden
+[2025-08-04 14:23:47.577] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:23:47.577] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:23:47.578] [INFO] OrderSummary panel hidden
+[2025-08-04 14:23:47.578] [INFO] Price display panel hidden
+[2025-08-04 14:23:47.578] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:23:47.578] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:23:47.578] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:23:47.579] [INFO] OrderSummary panel hidden
+[2025-08-04 14:23:47.579] [INFO] Price display panel hidden
+[2025-08-04 14:23:47.579] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:23:47.586] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:23:47.586] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:23:47.587] [INFO] OrderSummary panel hidden
+[2025-08-04 14:23:47.587] [INFO] Price display panel hidden
+[2025-08-04 14:23:47.587] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:23:47.587] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:23:47.587] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:23:47.588] [INFO] OrderSummary panel hidden
+[2025-08-04 14:23:47.588] [INFO] Price display panel hidden
+[2025-08-04 14:23:47.588] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:23:52.254] [INFO] SetEntryLevel called: 3352,18659 for XAUUSD
+[2025-08-04 14:23:52.254] [INFO] Price display updated: Entry=3352,18659, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 14:23:52.254] [INFO] Entry Level set successfully: 3352,18659 for XAUUSD
+[2025-08-04 14:23:53.595] [INFO] Price display panel hidden
+[2025-08-04 14:23:53.596] [INFO] Price display panel hidden
+[2025-08-04 14:23:54.714] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:23:54.714] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:23:54.715] [INFO] OrderSummary panel hidden
+[2025-08-04 14:23:54.715] [INFO] Price display panel hidden
+[2025-08-04 14:23:54.715] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:23:54.715] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:23:54.715] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:23:54.715] [INFO] OrderSummary panel hidden
+[2025-08-04 14:23:54.715] [INFO] Price display panel hidden
+[2025-08-04 14:23:54.716] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:23:58.194] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:23:58.194] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:23:58.194] [INFO] OrderSummary panel hidden
+[2025-08-04 14:23:58.194] [INFO] Price display panel hidden
+[2025-08-04 14:23:58.195] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:23:58.195] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:23:58.195] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:23:58.195] [INFO] OrderSummary panel hidden
+[2025-08-04 14:23:58.195] [INFO] Price display panel hidden
+[2025-08-04 14:23:58.196] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:26:21.406] [INFO] Price display panel hidden
+[2025-08-04 14:26:21.407] [INFO] Price display panel hidden
+[2025-08-04 14:26:21.589] [INFO] Price display panel hidden
+[2025-08-04 14:26:21.590] [INFO] Price display panel hidden
+[2025-08-04 14:28:32.356] [INFO] TradingToolbar instance 1 created
+[2025-08-04 14:28:32.357] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-04 14:28:32.357] [INFO] ToastNotifyService initialized successfully
+[2025-08-04 14:28:32.382] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 14:28:32.382] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:28:32.383] [INFO] OrderSummary panel hidden
+[2025-08-04 14:28:32.383] [INFO] Price display panel hidden
+[2025-08-04 14:28:33.172] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 14:28:33.172] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:28:33.172] [INFO] OrderSummary panel hidden
+[2025-08-04 14:28:33.173] [INFO] Price display panel hidden
+[2025-08-04 14:28:33.173] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 14:28:33.173] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:28:33.173] [INFO] OrderSummary panel hidden
+[2025-08-04 14:28:33.174] [INFO] Price display panel hidden
+[2025-08-04 14:28:37.651] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:28:37.651] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:28:37.651] [INFO] OrderSummary panel hidden
+[2025-08-04 14:28:37.651] [INFO] Price display panel hidden
+[2025-08-04 14:28:37.653] [INFO] Created default settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:28:37.654] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:28:37.655] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:28:37.655] [INFO] OrderSummary panel hidden
+[2025-08-04 14:28:37.655] [INFO] Price display panel hidden
+[2025-08-04 14:28:37.655] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:28:42.121] [INFO] SetEntryLevel called: 3351,89123 for XAUUSD
+[2025-08-04 14:28:42.122] [INFO] Price display updated: Entry=3351,89123, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 14:28:42.123] [INFO] Entry Level set successfully: 3351,89123 for XAUUSD
+[2025-08-04 14:28:42.439] [INFO] Price display panel hidden
+[2025-08-04 14:28:42.439] [INFO] Price display panel hidden
+[2025-08-04 14:28:46.062] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:28:46.062] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:28:46.062] [INFO] OrderSummary panel hidden
+[2025-08-04 14:28:46.062] [INFO] Price display panel hidden
+[2025-08-04 14:28:46.062] [INFO] Created default settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:28:46.063] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:28:46.063] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:28:46.063] [INFO] OrderSummary panel hidden
+[2025-08-04 14:28:46.063] [INFO] Price display panel hidden
+[2025-08-04 14:28:46.063] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:29:00.230] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:29:00.230] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:29:00.230] [INFO] OrderSummary panel hidden
+[2025-08-04 14:29:00.230] [INFO] Price display panel hidden
+[2025-08-04 14:29:00.230] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:29:00.231] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:29:00.231] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:29:00.231] [INFO] OrderSummary panel hidden
+[2025-08-04 14:29:00.231] [INFO] Price display panel hidden
+[2025-08-04 14:29:00.231] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:29:26.505] [INFO] SetEntryLevel called: 3350,13795 for XAUUSD
+[2025-08-04 14:29:26.506] [INFO] Price display updated: Entry=3350,13795, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 14:29:26.506] [INFO] Entry Level set successfully: 3350,13795 for XAUUSD
+[2025-08-04 14:29:27.085] [INFO] Price display panel hidden
+[2025-08-04 14:29:27.086] [INFO] Price display panel hidden
+[2025-08-04 14:30:25.147] [INFO] TradingToolbar instance 1 created
+[2025-08-04 14:30:25.147] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-04 14:30:25.147] [INFO] ToastNotifyService initialized successfully
+[2025-08-04 14:30:25.169] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 14:30:25.170] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:30:25.170] [INFO] OrderSummary panel hidden
+[2025-08-04 14:30:25.171] [INFO] Price display panel hidden
+[2025-08-04 14:30:25.668] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 14:30:25.669] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:30:25.669] [INFO] OrderSummary panel hidden
+[2025-08-04 14:30:25.669] [INFO] Price display panel hidden
+[2025-08-04 14:30:25.669] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 14:30:25.669] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:30:25.670] [INFO] OrderSummary panel hidden
+[2025-08-04 14:30:25.670] [INFO] Price display panel hidden
+[2025-08-04 14:30:34.232] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:30:34.232] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:30:34.232] [INFO] OrderSummary panel hidden
+[2025-08-04 14:30:34.232] [INFO] Price display panel hidden
+[2025-08-04 14:30:34.234] [INFO] Created default settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:30:34.236] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:30:34.236] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:30:34.236] [INFO] OrderSummary panel hidden
+[2025-08-04 14:30:34.236] [INFO] Price display panel hidden
+[2025-08-04 14:30:34.237] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:30:37.657] [INFO] SetEntryLevel called: 3353,12884 for XAUUSD
+[2025-08-04 14:30:37.659] [INFO] Price display updated: Entry=3353,12884, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 14:30:37.660] [INFO] Entry Level set successfully: 3353,12884 for XAUUSD
+[2025-08-04 14:30:38.644] [INFO] Price display panel hidden
+[2025-08-04 14:30:38.645] [INFO] Price display panel hidden
+[2025-08-04 14:30:43.916] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:30:43.916] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:30:43.917] [INFO] OrderSummary panel hidden
+[2025-08-04 14:30:43.917] [INFO] Price display panel hidden
+[2025-08-04 14:30:43.917] [INFO] Created default settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:30:43.917] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:30:43.917] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:30:43.918] [INFO] OrderSummary panel hidden
+[2025-08-04 14:30:43.918] [INFO] Price display panel hidden
+[2025-08-04 14:30:43.918] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:30:45.469] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:30:45.469] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:30:45.472] [INFO] OrderSummary panel hidden
+[2025-08-04 14:30:45.472] [INFO] Price display panel hidden
+[2025-08-04 14:30:45.473] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:30:45.473] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:30:45.473] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:30:45.473] [INFO] OrderSummary panel hidden
+[2025-08-04 14:30:45.474] [INFO] Price display panel hidden
+[2025-08-04 14:30:45.474] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:32:24.642] [INFO] Price display panel hidden
+[2025-08-04 14:32:24.643] [INFO] Price display panel hidden
+[2025-08-04 14:32:26.584] [INFO] Price display panel hidden
+[2025-08-04 14:32:26.585] [INFO] Price display panel hidden
+[2025-08-04 14:32:26.760] [INFO] Price display panel hidden
+[2025-08-04 14:32:26.761] [INFO] Price display panel hidden
+[2025-08-04 14:33:33.312] [INFO] Price display panel hidden
+[2025-08-04 14:33:33.313] [INFO] Price display panel hidden
+[2025-08-04 14:34:29.658] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:34:29.658] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:34:29.658] [INFO] OrderSummary panel hidden
+[2025-08-04 14:34:29.658] [INFO] Price display panel hidden
+[2025-08-04 14:34:29.658] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:34:29.659] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:34:29.659] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:34:29.659] [INFO] OrderSummary panel hidden
+[2025-08-04 14:34:29.659] [INFO] Price display panel hidden
+[2025-08-04 14:34:29.660] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:37:09.226] [INFO] TradingToolbar instance 1 created
+[2025-08-04 14:37:09.240] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-04 14:37:09.240] [INFO] ToastNotifyService initialized successfully
+[2025-08-04 14:37:09.254] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 14:37:09.254] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:37:09.255] [INFO] OrderSummary panel hidden
+[2025-08-04 14:37:09.255] [INFO] Price display panel hidden
+[2025-08-04 14:37:10.087] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 14:37:10.087] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:37:10.087] [INFO] OrderSummary panel hidden
+[2025-08-04 14:37:10.088] [INFO] Price display panel hidden
+[2025-08-04 14:37:10.088] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 14:37:10.088] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:37:10.088] [INFO] OrderSummary panel hidden
+[2025-08-04 14:37:10.088] [INFO] Price display panel hidden
+[2025-08-04 14:38:51.518] [INFO] TradingToolbar instance 1 created
+[2025-08-04 14:38:51.519] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-04 14:38:51.519] [INFO] ToastNotifyService initialized successfully
+[2025-08-04 14:38:51.531] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 14:38:51.531] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:38:51.532] [INFO] OrderSummary panel hidden
+[2025-08-04 14:38:51.532] [INFO] Price display panel hidden
+[2025-08-04 14:38:51.923] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 14:38:51.924] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:38:51.924] [INFO] OrderSummary panel hidden
+[2025-08-04 14:38:51.924] [INFO] Price display panel hidden
+[2025-08-04 14:38:51.924] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 14:38:51.924] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:38:51.925] [INFO] OrderSummary panel hidden
+[2025-08-04 14:38:51.925] [INFO] Price display panel hidden
+[2025-08-04 14:38:57.014] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:38:57.014] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:38:57.014] [INFO] OrderSummary panel hidden
+[2025-08-04 14:38:57.015] [INFO] Price display panel hidden
+[2025-08-04 14:38:57.016] [INFO] Created default settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:38:57.017] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:38:57.017] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:38:57.017] [INFO] OrderSummary panel hidden
+[2025-08-04 14:38:57.018] [INFO] Price display panel hidden
+[2025-08-04 14:38:57.018] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:39:00.319] [INFO] SetEntryLevel called: 3348,95191 for XAUUSD
+[2025-08-04 14:39:00.321] [INFO] Price display updated: Entry=3348,95191, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 14:39:00.321] [INFO] Entry Level set successfully: 3348,95191 for XAUUSD
+[2025-08-04 14:39:00.789] [INFO] Price display panel hidden
+[2025-08-04 14:39:00.790] [INFO] Price display panel hidden
+[2025-08-04 14:39:02.543] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:39:02.543] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:39:02.543] [INFO] OrderSummary panel hidden
+[2025-08-04 14:39:02.543] [INFO] Price display panel hidden
+[2025-08-04 14:39:02.543] [INFO] Created default settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:39:02.544] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:39:02.544] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:39:02.544] [INFO] OrderSummary panel hidden
+[2025-08-04 14:39:02.544] [INFO] Price display panel hidden
+[2025-08-04 14:39:02.544] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:39:06.639] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:39:06.639] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:39:06.640] [INFO] OrderSummary panel hidden
+[2025-08-04 14:39:06.640] [INFO] Price display panel hidden
+[2025-08-04 14:39:06.640] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:39:06.640] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:39:06.640] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:39:06.641] [INFO] OrderSummary panel hidden
+[2025-08-04 14:39:06.641] [INFO] Price display panel hidden
+[2025-08-04 14:39:06.641] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:39:08.774] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:39:08.775] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:39:08.775] [INFO] OrderSummary panel hidden
+[2025-08-04 14:39:08.775] [INFO] Price display panel hidden
+[2025-08-04 14:39:08.775] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:39:08.775] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:39:08.776] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:39:08.776] [INFO] OrderSummary panel hidden
+[2025-08-04 14:39:08.776] [INFO] Price display panel hidden
+[2025-08-04 14:39:08.776] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:39:15.414] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:39:15.414] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:39:15.415] [INFO] OrderSummary panel hidden
+[2025-08-04 14:39:15.415] [INFO] Price display panel hidden
+[2025-08-04 14:39:15.415] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:39:15.415] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:39:15.416] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:39:15.416] [INFO] OrderSummary panel hidden
+[2025-08-04 14:39:15.416] [INFO] Price display panel hidden
+[2025-08-04 14:39:15.416] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:41:28.979] [INFO] SetSymbol called for GBPJPY, current broker: Forex
+[2025-08-04 14:41:28.979] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:41:28.979] [INFO] OrderSummary panel hidden
+[2025-08-04 14:41:28.979] [INFO] Price display panel hidden
+[2025-08-04 14:41:28.979] [INFO] Created default settings for HandleID 395356: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:41:28.980] [INFO] SetSymbol called for GBPJPY, current broker: Forex
+[2025-08-04 14:41:28.980] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:41:28.980] [INFO] OrderSummary panel hidden
+[2025-08-04 14:41:28.980] [INFO] Price display panel hidden
+[2025-08-04 14:41:28.980] [INFO] Loaded settings for HandleID 395356: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:41:35.710] [INFO] TradingToolbar instance 2 created
+[2025-08-04 14:41:35.710] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-04 14:41:35.710] [INFO] ToastNotifyService initialized successfully
+[2025-08-04 14:41:35.927] [INFO] Loaded settings for HandleID 395356: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:41:49.148] [INFO] SetSymbol called for GBPJPY, current broker: Forex
+[2025-08-04 14:41:49.149] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:41:49.149] [INFO] OrderSummary panel hidden
+[2025-08-04 14:41:49.149] [INFO] Price display panel hidden
+[2025-08-04 14:41:49.149] [INFO] Created default settings for HandleID 394144: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:41:49.149] [INFO] SetSymbol called for GBPJPY, current broker: Forex
+[2025-08-04 14:41:49.150] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:41:49.150] [INFO] OrderSummary panel hidden
+[2025-08-04 14:41:49.150] [INFO] Price display panel hidden
+[2025-08-04 14:41:49.151] [INFO] Loaded settings for HandleID 394144: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:41:52.891] [INFO] Price display panel hidden
+[2025-08-04 14:41:52.955] [INFO] Price display panel hidden
+[2025-08-04 14:41:56.322] [INFO] Price display panel hidden
+[2025-08-04 14:41:56.323] [INFO] Price display panel hidden
+[2025-08-04 14:41:59.242] [INFO] Price display panel hidden
+[2025-08-04 14:41:59.243] [INFO] Price display panel hidden
+[2025-08-04 14:42:03.898] [INFO] Price display panel hidden
+[2025-08-04 14:42:03.899] [INFO] Price display panel hidden
+[2025-08-04 14:42:07.122] [INFO] Price display panel hidden
+[2025-08-04 14:42:07.123] [INFO] Price display panel hidden
+[2025-08-04 14:42:09.540] [INFO] SetSymbol called for GBPJPY, current broker: Forex
+[2025-08-04 14:42:09.541] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:42:09.541] [INFO] OrderSummary panel hidden
+[2025-08-04 14:42:09.541] [INFO] Price display panel hidden
+[2025-08-04 14:42:09.541] [INFO] Loaded settings for HandleID 395356: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:42:09.542] [INFO] SetSymbol called for GBPJPY, current broker: Forex
+[2025-08-04 14:42:09.542] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:42:09.542] [INFO] OrderSummary panel hidden
+[2025-08-04 14:42:09.542] [INFO] Price display panel hidden
+[2025-08-04 14:42:09.542] [INFO] Loaded settings for HandleID 395356: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:44:33.559] [INFO] TradingToolbar instance 1 created
+[2025-08-04 14:44:33.559] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-04 14:44:33.559] [INFO] ToastNotifyService initialized successfully
+[2025-08-04 14:44:33.573] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 14:44:33.574] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:44:33.574] [INFO] OrderSummary panel hidden
+[2025-08-04 14:44:33.574] [INFO] Price display panel hidden
+[2025-08-04 14:44:34.053] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 14:44:34.053] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:44:34.054] [INFO] OrderSummary panel hidden
+[2025-08-04 14:44:34.054] [INFO] Price display panel hidden
+[2025-08-04 14:44:34.054] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 14:44:34.054] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:44:34.054] [INFO] OrderSummary panel hidden
+[2025-08-04 14:44:34.054] [INFO] Price display panel hidden
+[2025-08-04 14:44:38.799] [INFO] SetSymbol called for GBPJPY, current broker: Forex
+[2025-08-04 14:44:38.799] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:44:38.799] [INFO] OrderSummary panel hidden
+[2025-08-04 14:44:38.799] [INFO] Price display panel hidden
+[2025-08-04 14:44:38.801] [INFO] Created default settings for HandleID 394144: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:44:38.802] [INFO] SetSymbol called for GBPJPY, current broker: Forex
+[2025-08-04 14:44:38.802] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:44:38.803] [INFO] OrderSummary panel hidden
+[2025-08-04 14:44:38.803] [INFO] Price display panel hidden
+[2025-08-04 14:44:38.804] [INFO] Loaded settings for HandleID 394144: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:44:41.691] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:44:41.691] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:44:41.691] [INFO] OrderSummary panel hidden
+[2025-08-04 14:44:41.691] [INFO] Price display panel hidden
+[2025-08-04 14:44:41.691] [INFO] Created default settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:44:41.692] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:44:41.692] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:44:41.692] [INFO] OrderSummary panel hidden
+[2025-08-04 14:44:41.692] [INFO] Price display panel hidden
+[2025-08-04 14:44:41.692] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:44:44.366] [INFO] SetEntryLevel called: 3344,5687 for XAUUSD
+[2025-08-04 14:44:44.368] [INFO] Price display updated: Entry=3344,56870, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 14:44:44.368] [INFO] Entry Level set successfully: 3344,5687 for XAUUSD
+[2025-08-04 14:44:47.048] [INFO] Price display panel hidden
+[2025-08-04 14:44:47.049] [INFO] Price display panel hidden
+[2025-08-04 14:44:51.681] [INFO] SetEntryLevel called: 3345,23908 for XAUUSD
+[2025-08-04 14:44:51.681] [INFO] Price display updated: Entry=3345,23908, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 14:44:51.682] [INFO] Entry Level set successfully: 3345,23908 for XAUUSD
+[2025-08-04 14:44:52.847] [INFO] Price display panel hidden
+[2025-08-04 14:44:52.847] [INFO] Price display panel hidden
+[2025-08-04 14:44:57.306] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:44:57.307] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:44:57.307] [INFO] OrderSummary panel hidden
+[2025-08-04 14:44:57.307] [INFO] Price display panel hidden
+[2025-08-04 14:44:57.307] [INFO] Created default settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:44:57.307] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:44:57.308] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:44:57.309] [INFO] OrderSummary panel hidden
+[2025-08-04 14:44:57.309] [INFO] Price display panel hidden
+[2025-08-04 14:44:57.309] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:45:15.818] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:45:15.818] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:45:15.818] [INFO] OrderSummary panel hidden
+[2025-08-04 14:45:15.818] [INFO] Price display panel hidden
+[2025-08-04 14:45:15.819] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:45:15.819] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:45:15.819] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:45:15.819] [INFO] OrderSummary panel hidden
+[2025-08-04 14:45:15.819] [INFO] Price display panel hidden
+[2025-08-04 14:45:15.820] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:45:21.773] [INFO] SetEntryLevel called: 3358,33712 for XAUUSD
+[2025-08-04 14:45:21.773] [INFO] Price display updated: Entry=3358,33712, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 14:45:21.773] [INFO] Entry Level set successfully: 3358,33712 for XAUUSD
+[2025-08-04 14:45:23.052] [INFO] Price display panel hidden
+[2025-08-04 14:45:23.053] [INFO] Price display panel hidden
+[2025-08-04 14:45:26.105] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:45:26.106] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:45:26.106] [INFO] OrderSummary panel hidden
+[2025-08-04 14:45:26.106] [INFO] Price display panel hidden
+[2025-08-04 14:45:26.106] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:45:26.107] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:45:26.107] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:45:26.107] [INFO] OrderSummary panel hidden
+[2025-08-04 14:45:26.107] [INFO] Price display panel hidden
+[2025-08-04 14:45:26.107] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:45:38.138] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:45:38.138] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:45:38.138] [INFO] OrderSummary panel hidden
+[2025-08-04 14:45:38.139] [INFO] Price display panel hidden
+[2025-08-04 14:45:38.139] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:45:38.139] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:45:38.140] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:45:38.140] [INFO] OrderSummary panel hidden
+[2025-08-04 14:45:38.140] [INFO] Price display panel hidden
+[2025-08-04 14:45:38.140] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:45:41.096] [INFO] Price display panel hidden
+[2025-08-04 14:45:41.097] [INFO] Price display panel hidden
+[2025-08-04 14:45:41.223] [INFO] Price display panel hidden
+[2025-08-04 14:45:41.224] [INFO] Price display panel hidden
+[2025-08-04 14:45:55.308] [INFO] SetEntryLevel called: 3345,96101 for XAUUSD
+[2025-08-04 14:45:55.308] [INFO] Price display updated: Entry=3345,96101, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 14:45:55.308] [INFO] Entry Level set successfully: 3345,96101 for XAUUSD
+[2025-08-04 14:45:59.133] [INFO] Price display panel hidden
+[2025-08-04 14:45:59.145] [INFO] Price display panel hidden
+[2025-08-04 14:46:12.101] [INFO] SetEntryLevel called: 3358,49182 for XAUUSD
+[2025-08-04 14:46:12.101] [INFO] Price display updated: Entry=3358,49182, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 14:46:12.101] [INFO] Entry Level set successfully: 3358,49182 for XAUUSD
+[2025-08-04 14:46:18.922] [INFO] Price display panel hidden
+[2025-08-04 14:46:18.923] [INFO] Price display panel hidden
+[2025-08-04 14:47:10.489] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:47:10.489] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:47:10.489] [INFO] OrderSummary panel hidden
+[2025-08-04 14:47:10.489] [INFO] Price display panel hidden
+[2025-08-04 14:47:10.490] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 14:47:10.490] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 14:47:10.490] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 14:47:10.490] [INFO] OrderSummary panel hidden
+[2025-08-04 14:47:10.490] [INFO] Price display panel hidden
+[2025-08-04 14:47:10.490] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex

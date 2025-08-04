@@ -299,6 +299,57 @@ namespace ScreenCaptureApp.Services
             }
         }
 
+        /// <summary>
+        /// Отправляет команду создания нового ордера в MT4
+        /// </summary>
+        /// <param name="symbol">Символ торгового инструмента</param>
+        /// <param name="tradeType">Тип сделки ("buy" или "sell")</param>
+        /// <param name="entryPrice">Цена входа</param>
+        /// <param name="stopLossPrice">Цена стоп-лосса</param>
+        /// <param name="risk">Риск (размер позиции)<
+        /// /param>
+        /// <returns>True если команда отправлена успешно, иначе False</returns>
+        public async Task<bool> SendNewOrderCommand(string symbol, string tradeType, double entryPrice, double stopLossPrice, double risk)
+        {
+            try
+            {
+                // Форматируем числа с точкой как разделителем десятичных дробей
+                string entryPriceFormatted = entryPrice.ToString("F5", System.Globalization.CultureInfo.InvariantCulture);
+                string stopLossPriceFormatted = stopLossPrice.ToString("F5", System.Globalization.CultureInfo.InvariantCulture);
+
+                Logger.LogTagInfo("MT4SocketService", $"Formatting prices - Entry: {entryPrice} -> {entryPriceFormatted}, StopLoss: {stopLossPrice} -> {stopLossPriceFormatted}");
+
+                // Logger.LogTagInfo("MT4SocketService", $"Converting prices - Entry: {entryPrice} -> {entryPrice}, StopLoss: {stopLossPrice} -> {stopLossPrice}");
+
+                // Формируем команду в том же формате, что и breakout команды
+                string json = $"{{\"cmd\":\"pending_order\",\"symbol\":\"{symbol}\",\"type\":\"{tradeType}\",\"entry_price\":{entryPriceFormatted},\"stop_loss\":{stopLossPriceFormatted},\"risk\":{risk}}}";
+
+                Logger.LogTagInfo("MT4SocketService", $"Sending new order command: {tradeType} {symbol} Entry:{entryPriceFormatted} SL:{stopLossPriceFormatted} Risk:{risk}");
+
+                // Добавляем CRLF как в breakout командах
+                json += "\r\n";
+                Logger.LogInfo($"MT4 Socket: Sending to MT4: {json.Trim()} (with CRLF)");
+
+                bool result = await WriteAsync(json);
+
+                if (result)
+                {
+                    Logger.LogTagInfo("MT4SocketService", "New order command sent successfully");
+                }
+                else
+                {
+                    Logger.LogTagWarning("MT4SocketService", "Failed to send new order command");
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("MT4SocketService", "Error sending new order command", ex);
+                return false;
+            }
+        }
+
         private async Task ReadMessagesAsync(CancellationToken cancellationToken)
         {
             byte[] buffer = new byte[4096];

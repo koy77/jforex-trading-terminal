@@ -1,0 +1,48 @@
+[2025-08-04 14:10:15.233] [INFO] Sending new order command: sell XAUUSD Entry:3342,34743 SL:3346,54844 Risk:1
+[2025-08-04 14:10:15.277] [WARNING] Failed to send new order command
+[2025-08-04 14:10:32.302] [INFO] Sending new order command: buy XAUUSD Entry:3337,20589 SL:3334,94863 Risk:1
+[2025-08-04 14:10:32.304] [WARNING] Failed to send new order command
+[2025-08-04 14:10:36.117] [INFO] Sending new order command: sell XAUUSD Entry:3348,42949 SL:3351,18837 Risk:1
+[2025-08-04 14:10:36.120] [WARNING] Failed to send new order command
+[2025-08-04 14:12:16.024] [INFO] Sending new order command: buy XAUUSD Entry:3342,53553 SL:3340,15287 Risk:1
+[2025-08-04 14:12:16.027] [WARNING] Failed to send new order command
+[2025-08-04 14:14:05.814] [INFO] Sending new order command: buy XAUUSD Entry:3340,62559 SL:3338,21779 Risk:1
+[2025-08-04 14:14:05.866] [WARNING] Failed to send new order command
+[2025-08-04 14:15:52.022] [INFO] Sending new order command: sell XAUUSD Entry:3344,54199 SL:3347,42627 Risk:1
+[2025-08-04 14:15:52.024] [INFO] New order command sent successfully
+[2025-08-04 14:16:53.380] [INFO] Sending new order command: buy XAUUSD Entry:3343,03340 SL:3340,85491 Risk:1
+[2025-08-04 14:16:53.381] [INFO] New order command sent successfully
+[2025-08-04 14:17:27.481] [INFO] Sending new order command: buy XAUUSD Entry:3346,75977 SL:3344,12264 Risk:1
+[2025-08-04 14:17:27.482] [INFO] New order command sent successfully
+[2025-08-04 14:17:40.762] [INFO] Sending new order command: buy XAUUSD Entry:3357,59489 SL:3353,86853 Risk:1
+[2025-08-04 14:17:40.763] [INFO] New order command sent successfully
+[2025-08-04 14:23:27.621] [INFO] Sending new order command: sell XAUUSD Entry:3353,64576 SL:3355,88316 Risk:1
+[2025-08-04 14:23:27.626] [INFO] New order command sent successfully
+[2025-08-04 14:23:53.593] [INFO] Sending new order command: buy XAUUSD Entry:3352,18659 SL:3348,68458 Risk:1
+[2025-08-04 14:23:53.594] [INFO] New order command sent successfully
+[2025-08-04 14:28:42.424] [INFO] Converting prices - Entry: 3351,89123 -> 3351,89123, StopLoss: 3354,57272 -> 3354,57272
+[2025-08-04 14:28:42.424] [INFO] Sending new order command: sell XAUUSD Entry:3351,89123 SL:3354,57272 Risk:1
+[2025-08-04 14:28:42.427] [INFO] New order command sent successfully
+[2025-08-04 14:29:27.068] [INFO] Converting prices - Entry: 3350,13795 -> 3350,13795, StopLoss: 3353,07728 -> 3353,07728
+[2025-08-04 14:29:27.068] [INFO] Sending new order command: sell XAUUSD Entry:3350,13795 SL:3353,07728 Risk:1
+[2025-08-04 14:29:27.069] [INFO] New order command sent successfully
+[2025-08-04 14:30:38.622] [INFO] Converting prices - Entry: 3353,12884 -> 3353,12884, StopLoss: 3355,81033 -> 3355,81033
+[2025-08-04 14:30:38.622] [INFO] Sending new order command: sell XAUUSD Entry:3353,12884 SL:3355,81033 Risk:1
+[2025-08-04 14:30:38.625] [INFO] New order command sent successfully
+[2025-08-04 14:39:00.760] [INFO] Sending new order command: sell XAUUSD Entry:3348,95191 SL:3351,47870 Risk:1
+[2025-08-04 14:39:00.764] [INFO] New order command sent successfully
+[2025-08-04 14:44:47.029] [INFO] Formatting prices - Entry: 3344,5687 -> 3344.56870, StopLoss: 3341,26841 -> 3341.26841
+[2025-08-04 14:44:47.029] [INFO] Sending new order command: buy XAUUSD Entry:3344.56870 SL:3341.26841 Risk:1
+[2025-08-04 14:44:47.032] [INFO] New order command sent successfully
+[2025-08-04 14:44:52.844] [INFO] Formatting prices - Entry: 3345,23908 -> 3345.23908, StopLoss: 3342,50602 -> 3342.50602
+[2025-08-04 14:44:52.845] [INFO] Sending new order command: buy XAUUSD Entry:3345.23908 SL:3342.50602 Risk:1
+[2025-08-04 14:44:52.845] [INFO] New order command sent successfully
+[2025-08-04 14:45:23.051] [INFO] Formatting prices - Entry: 3358,33712 -> 3358.33712, StopLoss: 3356,42914 -> 3356.42914
+[2025-08-04 14:45:23.051] [INFO] Sending new order command: buy XAUUSD Entry:3358.33712 SL:3356.42914 Risk:1
+[2025-08-04 14:45:23.051] [INFO] New order command sent successfully
+[2025-08-04 14:45:59.131] [INFO] Formatting prices - Entry: 3345,96101 -> 3345.96101, StopLoss: 3349,57071 -> 3349.57071
+[2025-08-04 14:45:59.131] [INFO] Sending new order command: sell XAUUSD Entry:3345.96101 SL:3349.57071 Risk:1
+[2025-08-04 14:45:59.132] [INFO] New order command sent successfully
+[2025-08-04 14:46:18.920] [INFO] Formatting prices - Entry: 3358,49182 -> 3358.49182, StopLoss: 3356,22287 -> 3356.22287
+[2025-08-04 14:46:18.920] [INFO] Sending new order command: buy XAUUSD Entry:3358.49182 SL:3356.22287 Risk:1
+[2025-08-04 14:46:18.921] [INFO] New order command sent successfully

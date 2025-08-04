@@ -53,7 +53,9 @@ namespace ScreenCaptureApp.Models
 
         public override string ToString()
         {
-            return $"PriceLevel: {Name} | Symbol: {Symbol} | Value: {LevelValue} | Type: {Type} | Time: {Timestamp:yyyy-MM-dd HH:mm:ss.fff}";
+            // Форматируем LevelValue с точкой как разделителем десятичных дробей
+            string formattedValue = LevelValue.ToString("F5", System.Globalization.CultureInfo.InvariantCulture);
+            return $"PriceLevel: {Name} | Symbol: {Symbol} | Value: {formattedValue} | Type: {Type} | Time: {Timestamp:yyyy-MM-dd HH:mm:ss.fff}";
         }
     }
 } 

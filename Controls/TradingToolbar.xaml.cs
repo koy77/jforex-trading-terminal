@@ -310,7 +310,7 @@ namespace ScreenCaptureApp.Controls
         /// </summary>
         /// <param name="entryPrice">Цена входа</param>
         /// <param name="symbol">Торговый символ</param>
-        public void SetEntryLevel(decimal entryPrice, string symbol)
+        public void SetEntryLevel(double entryPrice, string symbol)
         {
             try
             {
