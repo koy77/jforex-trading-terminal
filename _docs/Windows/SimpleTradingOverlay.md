@@ -31,6 +31,7 @@ private string _currentTradeSymbol = "";
    - Определяет тип сделки (BUY/SELL) на основе сравнения цен
    - Показывает тост уведомление: "Stop Loss: {price} | Trade: {type} ({symbol})"
    - **Автоматически отправляет команду в MT4**
+   - **Показывает тост уведомление о создании сделки: "Сделка {BUY/SELL} от {entryPrice} с риском {risk} отправлена"**
    - **Автоматически полностью очищает UI (скрывает панель с ценами)**
 
 3. **Последующие события** - начинают новый цикл
@@ -195,4 +196,5 @@ TradingToolbar.HidePrices();
 
 - **Entry Price**: "Entry Price: 2345.67 (XAUUSD)"
 - **Stop Loss**: "Stop Loss: 2340.00 | Trade: BUY (XAUUSD)"
-- **HTTP события**: "HTTP: Support Level = 2345.67 (XAUUSD)" 
+- **HTTP события**: "HTTP: Support Level = 2345.67 (XAUUSD)"
+- **Создание сделки**: "Сделка BUY от 2345.67 с риском 1 отправлена" (тип Info, синий цвет) 

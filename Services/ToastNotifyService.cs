@@ -14,6 +14,7 @@ namespace ScreenCaptureApp.Services
     {
         Success,
         Error,
+        Info,
         BreakoutUp,
         BreakoutDown
     }
@@ -350,6 +351,8 @@ namespace ScreenCaptureApp.Services
                     return new SolidColorBrush(Color.FromRgb(60, 180, 75));
                 case ToastType.Error:
                     return new SolidColorBrush(Color.FromRgb(0, 0, 0));
+                case ToastType.Info:
+                    return new SolidColorBrush(Color.FromRgb(0, 120, 215));
                 case ToastType.BreakoutUp:
                     return new SolidColorBrush(Color.FromRgb(60, 180, 75));
                 case ToastType.BreakoutDown:

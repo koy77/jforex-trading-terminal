@@ -68,3 +68,162 @@
 [2025-08-04 00:45:24.027] [INFO] Toast notification shown: HTTP: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 195,89979 (GBPJPY)
 [2025-08-04 00:45:24.027] [INFO] Processing price level: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 195,89979
 [2025-08-04 00:45:24.028] [INFO] Starting new price level cycle - waiting for Entry Price
+[2025-08-04 07:50:56.005] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 07:50:56.006] [INFO] Price level state reset
+[2025-08-04 07:50:56.145] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 07:50:56.146] [INFO] Price level state reset
+[2025-08-04 07:52:56.792] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 07:52:56.792] [INFO] Price level state reset
+[2025-08-04 08:28:31.515] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: GBPJPY | Value: 195,68225 | Type: unknown | Time: 2025-08-04 08:28:31.514
+[2025-08-04 08:28:31.552] [INFO] Toast notification shown: HTTP: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 195,68225 (GBPJPY)
+[2025-08-04 08:28:31.553] [INFO] Processing price level: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 195,68225
+[2025-08-04 08:28:31.553] [INFO] Starting new price level cycle - waiting for Entry Price
+[2025-08-04 08:28:35.371] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.RectangleChartObject - RECTANGLE | Symbol: GBPJPY | Value: 196,36104 | Type: unknown | Time: 2025-08-04 08:28:35.371
+[2025-08-04 08:28:35.382] [INFO] Toast notification shown: HTTP: com.dukascopy.charts.drawings.RectangleChartObject - RECTANGLE = 196,36104 (GBPJPY)
+[2025-08-04 08:28:35.383] [INFO] Processing price level: com.dukascopy.charts.drawings.RectangleChartObject - RECTANGLE = 196,36104
+[2025-08-04 08:28:35.383] [INFO] Entry Price set: 196,36104 for GBPJPY
+[2025-08-04 08:29:13.279] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.ShortLineChartObject - SHORT_LINE | Symbol: GBPJPY | Value: 196,99754 | Type: unknown | Time: 2025-08-04 08:29:13.279
+[2025-08-04 08:29:13.290] [INFO] Toast notification shown: HTTP: com.dukascopy.charts.drawings.ShortLineChartObject - SHORT_LINE = 196,99754 (GBPJPY)
+[2025-08-04 08:29:13.290] [INFO] Processing price level: com.dukascopy.charts.drawings.ShortLineChartObject - SHORT_LINE = 196,99754
+[2025-08-04 08:29:13.290] [INFO] Stop Loss Price set: 196,99754 for GBPJPY
+[2025-08-04 08:29:13.304] [INFO] Stop Loss toast shown: Stop Loss: 196,99754 | Trade: BUY (GBPJPY)
+[2025-08-04 08:29:13.306] [INFO] Sending trade command to MT4: buy GBPJPY Entry:196,36104 SL:196,99754 Risk:1
+[2025-08-04 08:29:13.335] [INFO] Trade creation toast shown: Сделка BUY от 196,36104 с риском 1 отправлена
+[2025-08-04 08:29:13.349] [INFO] MT4 command sent successfully, clearing UI
+[2025-08-04 08:29:13.366] [INFO] Price level state reset
+[2025-08-04 08:33:52.467] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 08:33:52.467] [INFO] Price level state reset
+[2025-08-04 08:33:52.635] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 08:33:52.636] [INFO] Price level state reset
+[2025-08-04 08:33:53.211] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 08:33:53.211] [INFO] Price level state reset
+[2025-08-04 08:33:53.387] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 08:33:53.387] [INFO] Price level state reset
+[2025-08-04 08:34:00.131] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.ShortLineChartObject - SHORT_LINE | Symbol: GBPJPY | Value: 196,22520 | Type: unknown | Time: 2025-08-04 08:34:00.131
+[2025-08-04 08:34:00.144] [INFO] Toast notification shown: HTTP: com.dukascopy.charts.drawings.ShortLineChartObject - SHORT_LINE = 196,22520 (GBPJPY)
+[2025-08-04 08:34:00.144] [INFO] Processing price level: com.dukascopy.charts.drawings.ShortLineChartObject - SHORT_LINE = 196,22520
+[2025-08-04 08:34:00.145] [INFO] Starting new price level cycle - waiting for Entry Price
+[2025-08-04 08:34:00.451] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 08:34:00.452] [INFO] Price level state reset
+[2025-08-04 08:35:03.450] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 08:35:03.451] [INFO] Price level state reset
+[2025-08-04 08:35:09.850] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 08:35:09.851] [INFO] Price level state reset
+[2025-08-04 08:35:33.922] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 08:35:33.922] [INFO] Price level state reset
+[2025-08-04 08:35:34.322] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 08:35:34.322] [INFO] Price level state reset
+[2025-08-04 08:35:59.956] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.ShortLineChartObject - SHORT_LINE | Symbol: GBPJPY | Value: 196,15944 | Type: unknown | Time: 2025-08-04 08:35:59.956
+[2025-08-04 08:35:59.969] [INFO] Toast notification shown: HTTP: com.dukascopy.charts.drawings.ShortLineChartObject - SHORT_LINE = 196,15944 (GBPJPY)
+[2025-08-04 08:35:59.969] [INFO] Processing price level: com.dukascopy.charts.drawings.ShortLineChartObject - SHORT_LINE = 196,15944
+[2025-08-04 08:35:59.969] [INFO] Starting new price level cycle - waiting for Entry Price
+[2025-08-04 08:36:05.106] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.ShortLineChartObject - SHORT_LINE | Symbol: GBPJPY | Value: 196,16180 | Type: unknown | Time: 2025-08-04 08:36:05.106
+[2025-08-04 08:36:05.117] [INFO] Toast notification shown: HTTP: com.dukascopy.charts.drawings.ShortLineChartObject - SHORT_LINE = 196,16180 (GBPJPY)
+[2025-08-04 08:36:05.117] [INFO] Processing price level: com.dukascopy.charts.drawings.ShortLineChartObject - SHORT_LINE = 196,16180
+[2025-08-04 08:36:05.117] [INFO] Entry Price set: 196,16180 for GBPJPY
+[2025-08-04 08:41:21.220] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.RectangleChartObject - RECTANGLE | Symbol: GBPJPY | Value: 196,20399 | Type: unknown | Time: 2025-08-04 08:41:21.220
+[2025-08-04 08:41:21.233] [INFO] Toast notification shown: HTTP: com.dukascopy.charts.drawings.RectangleChartObject - RECTANGLE = 196,20399 (GBPJPY)
+[2025-08-04 08:41:21.233] [INFO] Processing price level: com.dukascopy.charts.drawings.RectangleChartObject - RECTANGLE = 196,20399
+[2025-08-04 08:41:21.234] [INFO] Stop Loss Price set: 196,20399 for GBPJPY
+[2025-08-04 08:41:21.246] [INFO] Stop Loss toast shown: Stop Loss: 196,20399 | Trade: BUY (GBPJPY)
+[2025-08-04 08:41:21.246] [INFO] Sending trade command to MT4: buy GBPJPY Entry:196,16180 SL:196,20399 Risk:1
+[2025-08-04 08:41:21.272] [INFO] Trade creation toast shown: Сделка BUY от 196,16180 с риском 1 отправлена
+[2025-08-04 08:41:21.275] [INFO] MT4 command sent successfully, clearing UI
+[2025-08-04 08:41:21.287] [INFO] Price level state reset
+[2025-08-04 08:42:31.613] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: GBPJPY | Value: 195,92075 | Type: unknown | Time: 2025-08-04 08:42:31.613
+[2025-08-04 08:42:31.625] [INFO] Toast notification shown: HTTP: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 195,92075 (GBPJPY)
+[2025-08-04 08:42:31.626] [INFO] Processing price level: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 195,92075
+[2025-08-04 08:42:31.626] [INFO] Starting new price level cycle - waiting for Entry Price
+[2025-08-04 08:43:57.021] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 08:43:57.021] [INFO] Price level state reset
+[2025-08-04 08:43:59.765] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.RectangleChartObject - RECTANGLE | Symbol: USDJPY | Value: 147,55735 | Type: unknown | Time: 2025-08-04 08:43:59.765
+[2025-08-04 08:43:59.778] [INFO] Toast notification shown: HTTP: com.dukascopy.charts.drawings.RectangleChartObject - RECTANGLE = 147,55735 (USDJPY)
+[2025-08-04 08:43:59.779] [INFO] Processing price level: com.dukascopy.charts.drawings.RectangleChartObject - RECTANGLE = 147,55735
+[2025-08-04 08:43:59.779] [INFO] Starting new price level cycle - waiting for Entry Price
+[2025-08-04 08:44:04.293] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 08:44:04.293] [INFO] Price level state reset
+[2025-08-04 08:44:04.484] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 08:44:04.484] [INFO] Price level state reset
+[2025-08-04 08:44:16.571] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.ShortLineChartObject - SHORT_LINE | Symbol: USDJPY | Value: 147,46195 | Type: unknown | Time: 2025-08-04 08:44:16.571
+[2025-08-04 08:44:16.584] [INFO] Toast notification shown: HTTP: com.dukascopy.charts.drawings.ShortLineChartObject - SHORT_LINE = 147,46195 (USDJPY)
+[2025-08-04 08:44:16.584] [INFO] Processing price level: com.dukascopy.charts.drawings.ShortLineChartObject - SHORT_LINE = 147,46195
+[2025-08-04 08:44:16.584] [INFO] Starting new price level cycle - waiting for Entry Price
+[2025-08-04 08:44:57.388] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 08:44:57.388] [INFO] Price level state reset
+[2025-08-04 09:26:38.223] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER | Symbol: GBPJPY | Value: 196,15242 | Type: unknown | Time: 2025-08-04 09:26:38.223
+[2025-08-04 09:26:38.237] [INFO] Toast notification shown: HTTP: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 196,15242 (GBPJPY)
+[2025-08-04 09:26:38.237] [INFO] Processing price level: com.dukascopy.charts.drawings.PriceMarkerChartObject - PRICEMARKER = 196,15242
+[2025-08-04 09:26:38.237] [INFO] Starting new price level cycle - waiting for Entry Price
+[2025-08-04 09:27:56.317] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 09:27:56.318] [INFO] Price level state reset
+[2025-08-04 09:28:14.654] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 09:28:14.654] [INFO] Price level state reset
+[2025-08-04 09:28:20.956] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.ShortLineChartObject - SHORT_LINE | Symbol: GBPJPY | Value: 196,85237 | Type: unknown | Time: 2025-08-04 09:28:20.956
+[2025-08-04 09:28:20.974] [INFO] Toast notification shown: HTTP: com.dukascopy.charts.drawings.ShortLineChartObject - SHORT_LINE = 196,85237 (GBPJPY)
+[2025-08-04 09:28:20.974] [INFO] Processing price level: com.dukascopy.charts.drawings.ShortLineChartObject - SHORT_LINE = 196,85237
+[2025-08-04 09:28:20.974] [INFO] Starting new price level cycle - waiting for Entry Price
+[2025-08-04 09:28:21.428] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 09:28:21.430] [INFO] Price level state reset
+[2025-08-04 09:28:21.605] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 09:28:21.605] [INFO] Price level state reset
+[2025-08-04 09:28:36.033] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.ShortLineChartObject - SHORT_LINE | Symbol: GBPJPY | Value: 197,26851 | Type: unknown | Time: 2025-08-04 09:28:36.033
+[2025-08-04 09:28:36.054] [INFO] Toast notification shown: HTTP: com.dukascopy.charts.drawings.ShortLineChartObject - SHORT_LINE = 197,26851 (GBPJPY)
+[2025-08-04 09:28:36.054] [INFO] Processing price level: com.dukascopy.charts.drawings.ShortLineChartObject - SHORT_LINE = 197,26851
+[2025-08-04 09:28:36.054] [INFO] Starting new price level cycle - waiting for Entry Price
+[2025-08-04 09:28:38.341] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 09:28:38.342] [INFO] Price level state reset
+[2025-08-04 09:28:42.684] [INFO] Received new price level event: PriceLevel: com.dukascopy.charts.drawings.ShortLineChartObject - SHORT_LINE | Symbol: GBPJPY | Value: 196,14107 | Type: unknown | Time: 2025-08-04 09:28:42.684
+[2025-08-04 09:28:42.702] [INFO] Toast notification shown: HTTP: com.dukascopy.charts.drawings.ShortLineChartObject - SHORT_LINE = 196,14107 (GBPJPY)
+[2025-08-04 09:28:42.702] [INFO] Processing price level: com.dukascopy.charts.drawings.ShortLineChartObject - SHORT_LINE = 196,14107
+[2025-08-04 09:28:42.702] [INFO] Starting new price level cycle - waiting for Entry Price
+[2025-08-04 09:28:48.933] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 09:28:48.933] [INFO] Price level state reset
+[2025-08-04 09:30:36.543] [INFO] Received new price level event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 195,59913 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 09:30:36.543
+[2025-08-04 09:30:36.554] [INFO] Toast notification shown: HTTP: PRICEMARKER = 195,59913 (GBPJPY)
+[2025-08-04 09:30:36.555] [INFO] Processing price level: PRICEMARKER = 195,59913
+[2025-08-04 09:30:36.555] [INFO] Starting new price level cycle - waiting for Entry Price
+[2025-08-04 09:31:05.731] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 09:31:05.732] [INFO] Price level state reset
+[2025-08-04 09:31:06.100] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 09:31:06.100] [INFO] Price level state reset
+[2025-08-04 09:31:07.315] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 09:31:07.315] [INFO] Price level state reset
+[2025-08-04 09:31:07.451] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 09:31:07.452] [INFO] Price level state reset
+[2025-08-04 09:31:09.357] [INFO] Received new price level event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 195,63300 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 09:31:09.357
+[2025-08-04 09:31:09.369] [INFO] Toast notification shown: HTTP: PRICEMARKER = 195,63300 (GBPJPY)
+[2025-08-04 09:31:09.370] [INFO] Processing price level: PRICEMARKER = 195,63300
+[2025-08-04 09:31:09.370] [INFO] Starting new price level cycle - waiting for Entry Price
+[2025-08-04 09:31:12.760] [INFO] Received new price level event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 195,42493 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 09:31:12.760
+[2025-08-04 09:31:12.793] [INFO] Toast notification shown: HTTP: PRICEMARKER = 195,42493 (GBPJPY)
+[2025-08-04 09:31:12.793] [INFO] Processing price level: PRICEMARKER = 195,42493
+[2025-08-04 09:31:12.793] [INFO] Entry Price set: 195,42493 for GBPJPY
+[2025-08-04 09:31:18.172] [INFO] Received new price level event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 195,82655 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 09:31:18.172
+[2025-08-04 09:31:18.182] [INFO] Toast notification shown: HTTP: PRICEMARKER = 195,82655 (GBPJPY)
+[2025-08-04 09:31:18.182] [INFO] Processing price level: PRICEMARKER = 195,82655
+[2025-08-04 09:31:18.183] [INFO] Stop Loss Price set: 195,82655 for GBPJPY
+[2025-08-04 09:31:18.194] [INFO] Stop Loss toast shown: Stop Loss: 195,82655 | Trade: BUY (GBPJPY)
+[2025-08-04 09:31:18.194] [INFO] Sending trade command to MT4: buy GBPJPY Entry:195,42493 SL:195,82655 Risk:1
+[2025-08-04 09:31:18.220] [INFO] Trade creation toast shown: Сделка BUY от 195,42493 с риском 1 отправлена
+[2025-08-04 09:31:18.221] [INFO] MT4 command sent successfully, clearing UI
+[2025-08-04 09:31:18.234] [INFO] Price level state reset
+[2025-08-04 09:31:22.370] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 09:31:22.370] [INFO] Price level state reset
+[2025-08-04 09:31:24.177] [INFO] Received new price level event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,05397 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 09:31:24.177
+[2025-08-04 09:31:24.189] [INFO] Toast notification shown: HTTP: PRICEMARKER = 196,05397 (GBPJPY)
+[2025-08-04 09:31:24.189] [INFO] Processing price level: PRICEMARKER = 196,05397
+[2025-08-04 09:31:24.189] [INFO] Starting new price level cycle - waiting for Entry Price
+[2025-08-04 09:31:29.408] [INFO] Received new price level event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,38301 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 09:31:29.408
+[2025-08-04 09:31:29.419] [INFO] Toast notification shown: HTTP: PRICEMARKER = 196,38301 (GBPJPY)
+[2025-08-04 09:31:29.419] [INFO] Processing price level: PRICEMARKER = 196,38301
+[2025-08-04 09:31:29.419] [INFO] Entry Price set: 196,38301 for GBPJPY
+[2025-08-04 09:31:32.011] [INFO] Escape key pressed - cancelling price level entry
+[2025-08-04 09:31:32.011] [INFO] Price level state reset
+[2025-08-04 09:31:34.062] [INFO] Received new price level event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,58140 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 09:31:34.062
+[2025-08-04 09:31:34.071] [INFO] Toast notification shown: HTTP: PRICEMARKER = 196,58140 (GBPJPY)
+[2025-08-04 09:31:34.071] [INFO] Processing price level: PRICEMARKER = 196,58140
+[2025-08-04 09:31:34.071] [INFO] Starting new price level cycle - waiting for Entry Price
+[2025-08-04 09:31:39.376] [INFO] Received new price level event: PriceLevel: PRICEMARKER | Symbol: GBPJPY | Value: 196,84270 | Type: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-04 09:31:39.376
+[2025-08-04 09:31:39.388] [INFO] Toast notification shown: HTTP: PRICEMARKER = 196,84270 (GBPJPY)
+[2025-08-04 09:31:39.388] [INFO] Processing price level: PRICEMARKER = 196,84270
+[2025-08-04 09:31:39.388] [INFO] Entry Price set: 196,84270 for GBPJPY

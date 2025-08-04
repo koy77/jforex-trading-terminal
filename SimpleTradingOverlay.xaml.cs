@@ -359,6 +359,16 @@ namespace ScreenCaptureApp
 
                 Logger.LogTagInfo("SimpleTradingOverlay", $"Sending trade command to MT4: {tradeType} {_currentTradeSymbol} Entry:{_entryPrice} SL:{_stopLossPrice} Risk:{risk}");
 
+                // Показываем toast сообщение о создании новой сделки
+                var toastNotifyService = ServiceContainer.Instance.GetService<ToastNotifyService>();
+                if (toastNotifyService != null)
+                {
+                    string tradeTypeDisplay = tradeType.ToUpper();
+                    string toastMessage = $"Сделка {tradeTypeDisplay} от {_entryPrice:F5} с риском {risk} отправлена";
+                    toastNotifyService.ShowToast(toastMessage, ToastType.Info, 4000);
+                    Logger.LogTagInfo("SimpleTradingOverlay", $"Trade creation toast shown: {toastMessage}");
+                }
+
                 // Сериализуем команду в JSON и отправляем в MT4
                 string jsonCommand = Newtonsoft.Json.JsonConvert.SerializeObject(command);
                 await mt4SocketService.WriteAsync(jsonCommand);

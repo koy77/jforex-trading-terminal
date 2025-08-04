@@ -315,15 +315,7 @@ namespace ScreenCaptureApp.Controls
             try
             {
                 Logger.LogTagInfo("TradingToolbar", $"SetEntryLevel called: {entryPrice} for {symbol}");
-                
-                // Показываем тост уведомление
-                if (_toastNotifyService != null)
-                {
-                    string toastMessage = $"Entry Price: {entryPrice:F5} ({symbol})";
-                    _toastNotifyService.ShowToast(toastMessage, ToastType.Success, 3000);
-                    Logger.LogTagInfo("TradingToolbar", $"Entry Price toast shown: {toastMessage}");
-                }
-                
+                                
                 // Обновляем UI
                 ShowPrices((double)entryPrice, 0, "Waiting for Stop Loss");
                 

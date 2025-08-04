@@ -141,34 +141,35 @@ public class ToastNotification
 ```csharp
 public enum ToastType
 {
-    Info,
-    Warning,
+    Success,
     Error,
-    Success
+    Info,
+    BreakoutUp,
+    BreakoutDown
 }
 ```
 
 ## Типы уведомлений
 
-### Info (Информация)
-- **Цвет**: Синий
-- **Иконка**: Информационная иконка
-- **Использование**: Общая информация, подсказки
-
-### Warning (Предупреждение)
-- **Цвет**: Желтый/Оранжевый
-- **Иконка**: Предупреждающая иконка
-- **Использование**: Предупреждения, некритичные ошибки
+### Success (Успех)
+- **Цвет**: Зеленый (RGB: 60, 180, 75)
+- **Использование**: Успешные операции, подтверждения
 
 ### Error (Ошибка)
-- **Цвет**: Красный
-- **Иконка**: Иконка ошибки
+- **Цвет**: Черный (RGB: 0, 0, 0)
 - **Использование**: Критические ошибки, сбои
 
-### Success (Успех)
-- **Цвет**: Зеленый
-- **Иконка**: Иконка успеха
-- **Использование**: Успешные операции, подтверждения
+### Info (Информация)
+- **Цвет**: Синий (RGB: 0, 120, 215)
+- **Использование**: Информационные сообщения, создание сделок
+
+### BreakoutUp (Прорыв вверх)
+- **Цвет**: Зеленый (RGB: 60, 180, 75)
+- **Использование**: Сигналы прорыва вверх
+
+### BreakoutDown (Прорыв вниз)
+- **Цвет**: Красный (RGB: 220, 50, 47)
+- **Использование**: Сигналы прорыва вниз
 
 ## Взаимодействие с другими компонентами
 
@@ -194,19 +195,19 @@ public enum ToastType
 
 ```csharp
 // Информационное уведомление
-toastNotifyService.ShowInfo("Application started successfully");
-
-// Предупреждающее уведомление
-toastNotifyService.ShowWarning("Connection to MT4 lost");
+toastNotifyService.ShowToast("Сделка BUY от 2345.67 с риском 1 отправлена", ToastType.Info, 4000);
 
 // Уведомление об ошибке
-toastNotifyService.ShowError("Failed to save capture data");
+toastNotifyService.ShowToast("Failed to save capture data", ToastType.Error, 3000);
 
 // Уведомление об успехе
-toastNotifyService.ShowSuccess("Trade executed successfully");
+toastNotifyService.ShowToast("Trade executed successfully", ToastType.Success, 3000);
 
-// Уведомление с кастомным заголовком
-toastNotifyService.ShowInfo("Pattern detected", "Pattern Recognition");
+// Уведомление о прорыве вверх
+toastNotifyService.ShowToast("BUY #123 EURUSD 1.0", ToastType.BreakoutUp, 3000);
+
+// Уведомление о прорыве вниз
+toastNotifyService.ShowToast("SELL #124 GBPJPY 1.0", ToastType.BreakoutDown, 3000);
 ```
 
 ## Обработка ошибок
