@@ -293,16 +293,6 @@ namespace ScreenCaptureApp
         {
             Logger.LogDebug("A key pressed - starting inclined pattern capture");
             
-            // Вызываем метод SimpleTradingOverlay для наклонного паттерна трейдинга
-            if (simpleTradingOverlay != null)
-            {
-                simpleTradingOverlay.OnAKeyPressed();
-            }
-            else
-            {
-                Logger.LogWarning("SimpleTradingOverlay is null, cannot call OnAKeyPressed");
-            }
-            
             // Также выполняем оригинальную логику для CanvasWindow
             if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
             {
@@ -313,16 +303,6 @@ namespace ScreenCaptureApp
         private void OnSKeyPressed()
         {
             Logger.LogDebug("S key pressed - starting trading pattern capture");
-            
-            // Вызываем метод SimpleTradingOverlay для паттерна трейдинга
-            if (simpleTradingOverlay != null)
-            {
-                simpleTradingOverlay.OnSKeyPressed();
-            }
-            else
-            {
-                Logger.LogWarning("SimpleTradingOverlay is null, cannot call OnSKeyPressed");
-            }
             
             // Также выполняем оригинальную логику для CanvasWindow
             if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
@@ -335,30 +315,14 @@ namespace ScreenCaptureApp
         {
             Logger.LogDebug("MainWindow.OnDKeyPressed() called");
             
-            // Вызываем метод SimpleTradingOverlay
-            if (simpleTradingOverlay != null)
-            {
-                simpleTradingOverlay.OnDKeyPressed();
-            }
-            else
-            {
-                Logger.LogWarning("SimpleTradingOverlay is null, cannot call OnDKeyPressed");
-            }
+            // Метод зарезервирован для будущего использования
         }
 
         private void OnPKeyPressed()
         {
             Logger.LogDebug("MainWindow.OnPKeyPressed() called");
             
-            // Вызываем метод SimpleTradingOverlay для отложенных ордеров
-            if (simpleTradingOverlay != null)
-            {
-                simpleTradingOverlay.OnPKeyPressed();
-            }
-            else
-            {
-                Logger.LogWarning("SimpleTradingOverlay is null, cannot call OnPKeyPressed");
-            }
+            // Метод зарезервирован для будущего использования
         }
 
         private void StartCapture_Click(object sender, RoutedEventArgs e)

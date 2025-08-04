@@ -410,3 +410,692 @@
 [2025-08-04 12:18:48.982] [INFO] Price display updated: Entry=3312,00847, StopLoss=0,00000, TradeType=Waiting for Stop Loss
 [2025-08-04 12:18:48.982] [INFO] Entry Level set successfully: 3312,00847 for XAUUSD
 [2025-08-04 12:18:52.238] [INFO] Price display panel hidden
+[2025-08-04 12:23:02.619] [INFO] Price display panel hidden
+[2025-08-04 12:23:02.620] [INFO] Price display panel hidden
+[2025-08-04 12:23:02.979] [INFO] Price display panel hidden
+[2025-08-04 12:23:02.980] [INFO] Price display panel hidden
+[2025-08-04 12:26:21.431] [INFO] SetEntryLevel called: 3359,44639 for XAUUSD
+[2025-08-04 12:26:21.431] [INFO] Price display updated: Entry=3359,44639, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 12:26:21.431] [INFO] Entry Level set successfully: 3359,44639 for XAUUSD
+[2025-08-04 12:26:24.953] [INFO] Price display panel hidden
+[2025-08-04 12:26:24.954] [INFO] Price display panel hidden
+[2025-08-04 12:26:26.525] [INFO] SetEntryLevel called: 3360,06869 for XAUUSD
+[2025-08-04 12:26:26.525] [INFO] Price display updated: Entry=3360,06869, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 12:26:26.525] [INFO] Entry Level set successfully: 3360,06869 for XAUUSD
+[2025-08-04 12:28:55.599] [INFO] Price display panel hidden
+[2025-08-04 12:28:55.600] [INFO] Price display panel hidden
+[2025-08-04 12:28:58.807] [INFO] Price display panel hidden
+[2025-08-04 12:28:58.808] [INFO] Price display panel hidden
+[2025-08-04 12:34:44.467] [INFO] TradingToolbar instance 1 created
+[2025-08-04 12:34:44.468] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-04 12:34:44.468] [INFO] ToastNotifyService initialized successfully
+[2025-08-04 12:34:44.488] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 12:34:44.488] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:34:44.488] [INFO] OrderSummary panel hidden
+[2025-08-04 12:34:44.489] [INFO] Price display panel hidden
+[2025-08-04 12:34:45.148] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 12:34:45.149] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:34:45.149] [INFO] OrderSummary panel hidden
+[2025-08-04 12:34:45.149] [INFO] Price display panel hidden
+[2025-08-04 12:34:45.150] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 12:34:45.150] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:34:45.150] [INFO] OrderSummary panel hidden
+[2025-08-04 12:34:45.150] [INFO] Price display panel hidden
+[2025-08-04 12:35:03.990] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:03.991] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:03.991] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:03.991] [INFO] Price display panel hidden
+[2025-08-04 12:35:03.993] [INFO] Created default settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:03.995] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:03.995] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:03.995] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:03.995] [INFO] Price display panel hidden
+[2025-08-04 12:35:03.996] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:07.429] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:07.429] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:07.429] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:07.429] [INFO] Price display panel hidden
+[2025-08-04 12:35:07.430] [INFO] Created default settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:07.430] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:07.430] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:07.430] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:07.431] [INFO] Price display panel hidden
+[2025-08-04 12:35:07.431] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:08.125] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:08.126] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:08.126] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:08.126] [INFO] Price display panel hidden
+[2025-08-04 12:35:08.126] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:08.126] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:08.127] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:08.127] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:08.127] [INFO] Price display panel hidden
+[2025-08-04 12:35:08.127] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:08.534] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:08.534] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:08.534] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:08.534] [INFO] Price display panel hidden
+[2025-08-04 12:35:08.534] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:08.535] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:08.535] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:08.535] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:08.535] [INFO] Price display panel hidden
+[2025-08-04 12:35:08.536] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:08.701] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:08.701] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:08.701] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:08.702] [INFO] Price display panel hidden
+[2025-08-04 12:35:08.702] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:08.702] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:08.703] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:08.703] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:08.703] [INFO] Price display panel hidden
+[2025-08-04 12:35:08.703] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:09.045] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:09.045] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:09.045] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:09.045] [INFO] Price display panel hidden
+[2025-08-04 12:35:09.046] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:09.046] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:09.046] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:09.046] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:09.046] [INFO] Price display panel hidden
+[2025-08-04 12:35:09.046] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:09.181] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:09.181] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:09.182] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:09.182] [INFO] Price display panel hidden
+[2025-08-04 12:35:09.182] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:09.182] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:09.183] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:09.183] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:09.183] [INFO] Price display panel hidden
+[2025-08-04 12:35:09.183] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:09.461] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:09.461] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:09.462] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:09.462] [INFO] Price display panel hidden
+[2025-08-04 12:35:09.462] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:09.462] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:09.463] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:09.463] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:09.463] [INFO] Price display panel hidden
+[2025-08-04 12:35:09.463] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:09.757] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:09.757] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:09.758] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:09.758] [INFO] Price display panel hidden
+[2025-08-04 12:35:09.758] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:09.758] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:09.758] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:09.759] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:09.759] [INFO] Price display panel hidden
+[2025-08-04 12:35:09.759] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:10.838] [INFO] Broker button clicked - changing from Forex to PocketOption
+[2025-08-04 12:35:10.838] [INFO] Saved broker setting PocketOption for HandleID 67634
+[2025-08-04 12:35:10.838] [INFO] SelectedBroker updated to PocketOption
+[2025-08-04 12:35:11.205] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:11.206] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:11.207] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:11.207] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:11.208] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:11.209] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:11.209] [INFO] Price display panel hidden
+[2025-08-04 12:35:11.209] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:11.209] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:11.210] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:11.210] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:11.210] [INFO] Price display panel hidden
+[2025-08-04 12:35:11.210] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:11.461] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:11.461] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:11.461] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:11.462] [INFO] Price display panel hidden
+[2025-08-04 12:35:11.462] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:11.462] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:11.462] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:11.462] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:11.463] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:11.463] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:11.463] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:11.463] [INFO] Price display panel hidden
+[2025-08-04 12:35:11.463] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:11.853] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:11.853] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:11.853] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:11.853] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:11.854] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:11.854] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:11.854] [INFO] Price display panel hidden
+[2025-08-04 12:35:11.854] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:11.855] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:11.855] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:11.855] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:11.856] [INFO] Price display panel hidden
+[2025-08-04 12:35:11.856] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:12.069] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:12.070] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:12.070] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:12.070] [INFO] Price display panel hidden
+[2025-08-04 12:35:12.070] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:12.071] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:12.071] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:12.071] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:12.071] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:12.071] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:12.072] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:12.072] [INFO] Price display panel hidden
+[2025-08-04 12:35:12.072] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:12.437] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:12.437] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:12.438] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:12.438] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:12.438] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:12.438] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:12.438] [INFO] Price display panel hidden
+[2025-08-04 12:35:12.439] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:12.439] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:12.439] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:12.439] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:12.439] [INFO] Price display panel hidden
+[2025-08-04 12:35:12.440] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:12.746] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-04 12:35:12.746] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:12.746] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:12.747] [INFO] Price display panel hidden
+[2025-08-04 12:35:12.747] [INFO] Created default settings for HandleID 526406: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:12.748] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-04 12:35:12.748] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:12.748] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:12.749] [INFO] Price display panel hidden
+[2025-08-04 12:35:12.749] [INFO] Loaded settings for HandleID 526406: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:12.997] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-04 12:35:12.997] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:12.998] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:12.998] [INFO] Price display panel hidden
+[2025-08-04 12:35:12.998] [INFO] Created default settings for HandleID 526404: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:12.998] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-04 12:35:12.998] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:12.999] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:12.999] [INFO] Price display panel hidden
+[2025-08-04 12:35:12.999] [INFO] Loaded settings for HandleID 526404: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:14.317] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-04 12:35:14.317] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:14.317] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:14.318] [INFO] Price display panel hidden
+[2025-08-04 12:35:14.318] [INFO] Loaded settings for HandleID 526406: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:14.318] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-04 12:35:14.318] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:14.319] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:14.319] [INFO] Price display panel hidden
+[2025-08-04 12:35:14.319] [INFO] Loaded settings for HandleID 526406: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:14.845] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-04 12:35:14.845] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:14.845] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:14.846] [INFO] Price display panel hidden
+[2025-08-04 12:35:14.846] [INFO] Loaded settings for HandleID 526404: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:14.846] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-04 12:35:14.846] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:14.847] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:14.847] [INFO] Price display panel hidden
+[2025-08-04 12:35:14.847] [INFO] Loaded settings for HandleID 526404: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:15.029] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-04 12:35:15.029] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:15.030] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:15.030] [INFO] Price display panel hidden
+[2025-08-04 12:35:15.030] [INFO] Loaded settings for HandleID 526406: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:15.030] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-04 12:35:15.031] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:15.031] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:15.031] [INFO] Price display panel hidden
+[2025-08-04 12:35:15.031] [INFO] Loaded settings for HandleID 526406: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:15.349] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-04 12:35:15.349] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:15.350] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:15.350] [INFO] Price display panel hidden
+[2025-08-04 12:35:15.350] [INFO] Loaded settings for HandleID 526404: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:15.351] [INFO] SetSymbol called for EURUSD, current broker: Forex
+[2025-08-04 12:35:15.351] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:15.351] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:15.352] [INFO] Price display panel hidden
+[2025-08-04 12:35:15.352] [INFO] Loaded settings for HandleID 526404: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:15.860] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:15.860] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:15.860] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:15.861] [INFO] Price display panel hidden
+[2025-08-04 12:35:15.861] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:15.861] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:15.861] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:15.861] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:15.861] [INFO] Price display panel hidden
+[2025-08-04 12:35:15.862] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:15.925] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:15.925] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:15.926] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:15.926] [INFO] Price display panel hidden
+[2025-08-04 12:35:15.926] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:15.926] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:15.926] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:15.926] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:15.926] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:15.927] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:15.927] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:15.927] [INFO] Price display panel hidden
+[2025-08-04 12:35:15.927] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:16.365] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:16.365] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:16.365] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:16.365] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:16.366] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:16.366] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:16.366] [INFO] Price display panel hidden
+[2025-08-04 12:35:16.366] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:16.366] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:16.367] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:16.367] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:16.367] [INFO] Price display panel hidden
+[2025-08-04 12:35:16.367] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:16.573] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:16.573] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:16.573] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:16.573] [INFO] Price display panel hidden
+[2025-08-04 12:35:16.574] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:16.574] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:16.574] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:16.574] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:16.574] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:16.575] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:16.575] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:16.575] [INFO] Price display panel hidden
+[2025-08-04 12:35:16.575] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:16.877] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:16.877] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:16.877] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:16.878] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:16.878] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:16.878] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:16.878] [INFO] Price display panel hidden
+[2025-08-04 12:35:16.878] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:16.879] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:16.879] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:16.879] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:16.879] [INFO] Price display panel hidden
+[2025-08-04 12:35:16.879] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:17.077] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:17.077] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:17.078] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:17.078] [INFO] Price display panel hidden
+[2025-08-04 12:35:17.078] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:17.078] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:17.078] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:17.079] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:17.079] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:17.079] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:17.079] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:17.079] [INFO] Price display panel hidden
+[2025-08-04 12:35:17.080] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:17.301] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:17.301] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:17.301] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:17.301] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:17.302] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:17.302] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:17.302] [INFO] Price display panel hidden
+[2025-08-04 12:35:17.302] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:17.303] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:17.303] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:17.303] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:17.303] [INFO] Price display panel hidden
+[2025-08-04 12:35:17.303] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:17.501] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:17.501] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:17.501] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:17.501] [INFO] Price display panel hidden
+[2025-08-04 12:35:17.502] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:17.502] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:17.502] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:17.502] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:17.502] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:17.503] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:17.503] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:17.503] [INFO] Price display panel hidden
+[2025-08-04 12:35:17.503] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:17.861] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:17.861] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:17.861] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:17.862] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:17.862] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:17.862] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:17.862] [INFO] Price display panel hidden
+[2025-08-04 12:35:17.863] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:17.863] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:17.863] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:17.863] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:17.863] [INFO] Price display panel hidden
+[2025-08-04 12:35:17.864] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:18.085] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:18.085] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:18.086] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:18.086] [INFO] Price display panel hidden
+[2025-08-04 12:35:18.086] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:18.086] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:18.087] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:18.087] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:18.087] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:18.087] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:18.087] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:18.088] [INFO] Price display panel hidden
+[2025-08-04 12:35:18.088] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:18.485] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:18.485] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:18.485] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:18.485] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:18.486] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:18.486] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:18.486] [INFO] Price display panel hidden
+[2025-08-04 12:35:18.486] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:18.487] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:18.487] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:18.487] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:18.487] [INFO] Price display panel hidden
+[2025-08-04 12:35:18.487] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:18.877] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:18.878] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:18.878] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:18.878] [INFO] Price display panel hidden
+[2025-08-04 12:35:18.878] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:18.880] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:18.880] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:18.881] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:18.881] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:18.881] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:18.881] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:18.881] [INFO] Price display panel hidden
+[2025-08-04 12:35:18.881] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:19.157] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:19.157] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:19.157] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:19.157] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:19.158] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:19.158] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:19.158] [INFO] Price display panel hidden
+[2025-08-04 12:35:19.158] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:19.158] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:19.159] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:19.159] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:19.159] [INFO] Price display panel hidden
+[2025-08-04 12:35:19.159] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:19.341] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:19.341] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:19.341] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:19.341] [INFO] Price display panel hidden
+[2025-08-04 12:35:19.342] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:19.342] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:19.342] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:19.342] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:19.343] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:19.343] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:19.343] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:19.343] [INFO] Price display panel hidden
+[2025-08-04 12:35:19.343] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:19.509] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:19.509] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:19.509] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:19.509] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:19.510] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:19.510] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:19.510] [INFO] Price display panel hidden
+[2025-08-04 12:35:19.510] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:19.511] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:19.511] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:19.511] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:19.511] [INFO] Price display panel hidden
+[2025-08-04 12:35:19.511] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:20.021] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:20.021] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:20.021] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:20.021] [INFO] Price display panel hidden
+[2025-08-04 12:35:20.022] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:20.022] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:20.022] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:20.022] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:20.023] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:20.023] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:20.023] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:20.023] [INFO] Price display panel hidden
+[2025-08-04 12:35:20.023] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:20.229] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:20.229] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:20.229] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:20.229] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:20.230] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:20.230] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:20.230] [INFO] Price display panel hidden
+[2025-08-04 12:35:20.230] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:20.231] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:20.231] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:20.231] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:20.231] [INFO] Price display panel hidden
+[2025-08-04 12:35:20.231] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:20.445] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:20.445] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:20.445] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:20.445] [INFO] Price display panel hidden
+[2025-08-04 12:35:20.445] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:20.446] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:20.446] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:20.446] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:20.446] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:20.447] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:20.447] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:20.447] [INFO] Price display panel hidden
+[2025-08-04 12:35:20.447] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:20.621] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:20.622] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:20.622] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:20.622] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:20.622] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:20.623] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:20.623] [INFO] Price display panel hidden
+[2025-08-04 12:35:20.623] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:20.623] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:20.624] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:20.624] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:20.624] [INFO] Price display panel hidden
+[2025-08-04 12:35:20.624] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:20.741] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:20.741] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:20.741] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:20.741] [INFO] Price display panel hidden
+[2025-08-04 12:35:20.742] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:20.742] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:20.742] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:20.742] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:20.742] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:20.743] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:20.743] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:20.743] [INFO] Price display panel hidden
+[2025-08-04 12:35:20.743] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:21.125] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:21.125] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:21.125] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:21.125] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:21.126] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:21.126] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:21.126] [INFO] Price display panel hidden
+[2025-08-04 12:35:21.126] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:21.127] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:21.127] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:21.127] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:21.127] [INFO] Price display panel hidden
+[2025-08-04 12:35:21.127] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:21.389] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:21.389] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:21.389] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:21.390] [INFO] Price display panel hidden
+[2025-08-04 12:35:21.390] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:21.390] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:21.391] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:21.391] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:21.391] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:21.391] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:21.391] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:21.391] [INFO] Price display panel hidden
+[2025-08-04 12:35:21.392] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:21.525] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:21.525] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:21.526] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:21.526] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:21.526] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:21.526] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:21.526] [INFO] Price display panel hidden
+[2025-08-04 12:35:21.526] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:21.527] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:21.527] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:21.527] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:21.527] [INFO] Price display panel hidden
+[2025-08-04 12:35:21.527] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:21.685] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:21.685] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:21.686] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:21.686] [INFO] Price display panel hidden
+[2025-08-04 12:35:21.686] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:21.686] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:21.686] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:21.687] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:21.688] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:21.688] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:21.688] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:21.688] [INFO] Price display panel hidden
+[2025-08-04 12:35:21.688] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:21.821] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:21.821] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:21.821] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:21.821] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:21.822] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:21.822] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:21.822] [INFO] Price display panel hidden
+[2025-08-04 12:35:21.822] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:21.823] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:21.823] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:21.823] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:21.823] [INFO] Price display panel hidden
+[2025-08-04 12:35:21.823] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:21.917] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:21.917] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:21.917] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:21.917] [INFO] Price display panel hidden
+[2025-08-04 12:35:21.918] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:21.918] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:21.918] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:21.918] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:21.918] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:21.919] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:21.919] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:21.919] [INFO] Price display panel hidden
+[2025-08-04 12:35:21.919] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:22.045] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:22.045] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:22.045] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:22.046] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:22.046] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:22.046] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:22.046] [INFO] Price display panel hidden
+[2025-08-04 12:35:22.046] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:22.047] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:22.047] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:22.047] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:22.047] [INFO] Price display panel hidden
+[2025-08-04 12:35:22.048] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:22.189] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:22.189] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:22.190] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:22.190] [INFO] Price display panel hidden
+[2025-08-04 12:35:22.190] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:22.190] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:22.191] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:22.191] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:22.191] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:22.191] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:22.191] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:22.191] [INFO] Price display panel hidden
+[2025-08-04 12:35:22.192] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:22.293] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:22.293] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:22.294] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:22.294] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:22.294] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:22.294] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:22.294] [INFO] Price display panel hidden
+[2025-08-04 12:35:22.294] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:22.295] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:22.295] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:22.295] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:22.295] [INFO] Price display panel hidden
+[2025-08-04 12:35:22.295] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:22.437] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:22.437] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:22.437] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:22.437] [INFO] Price display panel hidden
+[2025-08-04 12:35:22.438] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:22.438] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:22.438] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:22.438] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:22.438] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:22.439] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:22.439] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:22.439] [INFO] Price display panel hidden
+[2025-08-04 12:35:22.439] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:22.645] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:22.645] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:22.646] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:22.646] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:22.646] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:22.646] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:22.646] [INFO] Price display panel hidden
+[2025-08-04 12:35:22.647] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:22.647] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:22.647] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:22.647] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:22.647] [INFO] Price display panel hidden
+[2025-08-04 12:35:22.648] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:22.893] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:22.894] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:22.894] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:22.894] [INFO] Price display panel hidden
+[2025-08-04 12:35:22.894] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:22.895] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:22.895] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:22.895] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:22.895] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:22.895] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:22.896] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:22.896] [INFO] Price display panel hidden
+[2025-08-04 12:35:22.896] [INFO] Loaded settings for HandleID 67634: Risk=1, Duration=2, Broker=PocketOption
+[2025-08-04 12:35:22.997] [INFO] SetSymbol called for XAUUSD, current broker: PocketOption
+[2025-08-04 12:35:22.997] [INFO] Sending open symbol command for broker PocketOption
+[2025-08-04 12:35:22.997] [INFO] SendOpenSymbolCommand: Starting to send command for symbol XAUUSD, broker PocketOption
+[2025-08-04 12:35:22.997] [INFO] SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol(PocketOption, XAUUSD)
+[2025-08-04 12:35:22.998] [WARNING] Failed to open symbol XAUUSD for broker PocketOption
+[2025-08-04 12:35:22.998] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:22.998] [INFO] Price display panel hidden
+[2025-08-04 12:35:22.998] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:22.999] [INFO] SetSymbol called for XAUUSD, current broker: Forex
+[2025-08-04 12:35:22.999] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 12:35:22.999] [INFO] OrderSummary panel hidden
+[2025-08-04 12:35:22.999] [INFO] Price display panel hidden
+[2025-08-04 12:35:22.999] [INFO] Loaded settings for HandleID 11929868: Risk=1, Duration=2, Broker=Forex
+[2025-08-04 12:35:25.712] [INFO] SetEntryLevel called: 3314,96950 for XAUUSD
+[2025-08-04 12:35:25.718] [INFO] Price display updated: Entry=3314,96950, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 12:35:25.718] [INFO] Entry Level set successfully: 3314,96950 for XAUUSD
+[2025-08-04 12:35:30.800] [INFO] Price display panel hidden
+[2025-08-04 12:35:30.801] [INFO] Price display panel hidden
+[2025-08-04 12:35:32.170] [INFO] SetEntryLevel called: 3302,36055 for XAUUSD
+[2025-08-04 12:35:32.170] [INFO] Price display updated: Entry=3302,36055, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 12:35:32.170] [INFO] Entry Level set successfully: 3302,36055 for XAUUSD
+[2025-08-04 12:35:33.570] [INFO] Price display panel hidden
+[2025-08-04 12:35:33.572] [INFO] Price display panel hidden
+[2025-08-04 12:35:35.773] [INFO] SetEntryLevel called: 3323,92861 for XAUUSD
+[2025-08-04 12:35:35.773] [INFO] Price display updated: Entry=3323,92861, StopLoss=0,00000, TradeType=Waiting for Stop Loss
+[2025-08-04 12:35:35.773] [INFO] Entry Level set successfully: 3323,92861 for XAUUSD
+[2025-08-04 12:35:39.666] [INFO] Price display panel hidden
