@@ -39,3 +39,8 @@
 [2025-08-04 16:29:34.377] [SOCKET] MT4 OUT: {"cmd":"pending_buy","symbol":"XAUUSD","entry_price":3375.23554,"stop_loss":3373.58388,"risk":1}
 [2025-08-04 16:53:10.952] [SOCKET] MT4 OUT: {"cmd":"pending_buy","symbol":"XAUUSD","entry_price":3382.31097,"stop_loss":3380.06516,"risk":1}
 [2025-08-04 17:23:16.861] [SOCKET] MT4 OUT: {"cmd":"pending_buy","symbol":"XAUUSD","entry_price":3358.46604,"stop_loss":3355.00866,"risk":1}
+[2025-08-04 17:44:08.892] [SOCKET] MT4 OUT: {"cmd":"pending_sell","symbol":"XAUUSD","entry_price":3376.87361,"stop_loss":3377.39413,"risk":1}
+[2025-08-04 17:44:14.412] [SOCKET] MT4 OUT: {"cmd":"pending_sell","symbol":"XAUUSD","entry_price":3377.80371,"stop_loss":3378.37543,"risk":1}
+[2025-08-04 17:44:28.965] [SOCKET] MT4 OUT: {"cmd":"pending_sell","symbol":"XAUUSD","entry_price":3377.44532,"stop_loss":3378.04264,"risk":1}
+[2025-08-04 18:19:45.057] [SOCKET] MT4 OUT: {"cmd":"pending_sell","symbol":"XAUUSD","entry_price":3371.45841,"stop_loss":3372.06879,"risk":1}
+[2025-08-04 18:25:12.558] [SOCKET] MT4 OUT: {"cmd":"pending_sell","symbol":"XAUUSD","entry_price":3353.91139,"stop_loss":3357.61018,"risk":1}

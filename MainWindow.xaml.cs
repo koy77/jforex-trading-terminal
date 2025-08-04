@@ -131,6 +131,7 @@ namespace ScreenCaptureApp
                 OnCKeyPressed,
                 OnWKeyPressed,
                 OnAKeyPressed,
+                OnSKeyPressed,
                 OnDKeyPressed);
 
                 ServiceInitializer.InitializeWindowManagementService(Dispatcher);
@@ -313,9 +314,13 @@ namespace ScreenCaptureApp
         
         private void OnDKeyPressed()
         {
-            Logger.LogDebug("MainWindow.OnDKeyPressed() called");
+            Logger.LogDebug("D key pressed - shifting canvas right");
             
-            // Метод зарезервирован для будущего использования
+            // Также выполняем оригинальную логику для CanvasWindow
+            if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
+            {
+                currentCanvasWindow.ShiftCanvasRight();
+            }
         }
 
         private void OnPKeyPressed()

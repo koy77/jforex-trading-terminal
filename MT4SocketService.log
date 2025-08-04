@@ -148,3 +148,21 @@
 [2025-08-04 17:23:16.859] [INFO] Formatting prices - Entry: 3358,46604 -> 3358.46604, StopLoss: 3355,00866 -> 3355.00866
 [2025-08-04 17:23:16.860] [INFO] Sending pending_buy command: XAUUSD Entry:3358.46604 SL:3355.00866 Risk:1
 [2025-08-04 17:23:16.870] [INFO] pending_buy command sent successfully
+[2025-08-04 17:44:08.891] [INFO] Formatting prices - Entry: 3376,87361 -> 3376.87361, StopLoss: 3377,39413 -> 3377.39413
+[2025-08-04 17:44:08.892] [INFO] Sending pending_sell command: XAUUSD Entry:3376.87361 SL:3377.39413 Risk:1
+[2025-08-04 17:44:08.892] [INFO] pending_sell command sent successfully
+[2025-08-04 17:44:14.412] [INFO] Formatting prices - Entry: 3377,80371 -> 3377.80371, StopLoss: 3378,37543 -> 3378.37543
+[2025-08-04 17:44:14.412] [INFO] Sending pending_sell command: XAUUSD Entry:3377.80371 SL:3378.37543 Risk:1
+[2025-08-04 17:44:14.412] [INFO] pending_sell command sent successfully
+[2025-08-04 17:44:28.964] [INFO] Formatting prices - Entry: 3377,44532 -> 3377.44532, StopLoss: 3378,04264 -> 3378.04264
+[2025-08-04 17:44:28.964] [INFO] Sending pending_sell command: XAUUSD Entry:3377.44532 SL:3378.04264 Risk:1
+[2025-08-04 17:44:28.965] [INFO] pending_sell command sent successfully
+[2025-08-04 18:19:20.147] [INFO] Formatting prices - Entry: 3362,53806 -> 3362.53806, StopLoss: 3357,6209 -> 3357.62090
+[2025-08-04 18:19:20.147] [INFO] Sending pending_buy command: XAUUSD Entry:3362.53806 SL:3357.62090 Risk:1
+[2025-08-04 18:19:20.150] [WARNING] Failed to send pending_buy command
+[2025-08-04 18:19:45.057] [INFO] Formatting prices - Entry: 3371,45841 -> 3371.45841, StopLoss: 3372,06879 -> 3372.06879
+[2025-08-04 18:19:45.057] [INFO] Sending pending_sell command: XAUUSD Entry:3371.45841 SL:3372.06879 Risk:1
+[2025-08-04 18:19:45.058] [INFO] pending_sell command sent successfully
+[2025-08-04 18:25:12.556] [INFO] Formatting prices - Entry: 3353,91139 -> 3353.91139, StopLoss: 3357,61018 -> 3357.61018
+[2025-08-04 18:25:12.556] [INFO] Sending pending_sell command: XAUUSD Entry:3353.91139 SL:3357.61018 Risk:1
+[2025-08-04 18:25:12.560] [INFO] pending_sell command sent successfully

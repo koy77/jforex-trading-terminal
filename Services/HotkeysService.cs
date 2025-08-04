@@ -243,7 +243,7 @@ namespace ScreenCaptureApp.Services
                 else if (vkCode == VK_DOWN && IsEnabled)
                 {
                     Logger.LogDebug("Down Arrow key detected and service is enabled");
-                    // Down arrow key detected, reserved for future use
+                    OnSKeyPressed?.Invoke();
                 }
                 else if (vkCode == VK_RIGHT && IsEnabled)
                 {

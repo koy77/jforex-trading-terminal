@@ -15575,3 +15575,31 @@
 [2025-08-04 16:53:11.103] [INFO] Sent ESC key to hwnd=0x710744
 [2025-08-04 17:23:16.145] [INFO] Sent ESC key to hwnd=0x150598
 [2025-08-04 17:23:16.919] [INFO] Sent ESC key to hwnd=0x150598
+[2025-08-04 17:35:41.690] [INFO] === MOUSE CLICK START ===
+[2025-08-04 17:35:41.690] [INFO] Click coordinates: (280, 56)
+[2025-08-04 17:35:41.690] [INFO] Window handle: 1377688
+[2025-08-04 17:35:41.691] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-04 17:35:41.691] [INFO] Calculated screen coordinates: (280, 56)
+[2025-08-04 17:35:41.816] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-08-04 17:35:41.816] [INFO] === MOUSE CLICK END ===
+[2025-08-04 17:44:07.806] [INFO] Sent ESC key to hwnd=0x710744
+[2025-08-04 17:44:09.016] [INFO] Sent ESC key to hwnd=0x710744
+[2025-08-04 17:44:13.310] [INFO] Sent ESC key to hwnd=0x710744
+[2025-08-04 17:44:14.538] [INFO] Sent ESC key to hwnd=0x710744
+[2025-08-04 17:44:20.637] [INFO] Sent ESC key to hwnd=0x710744
+[2025-08-04 17:44:26.838] [INFO] Sent ESC key to hwnd=0x710744
+[2025-08-04 17:44:28.626] [INFO] Sent ESC key to hwnd=0x710744
+[2025-08-04 17:48:33.063] [INFO] === MOUSE CLICK START ===
+[2025-08-04 17:48:33.063] [INFO] Click coordinates: (80, 56)
+[2025-08-04 17:48:33.064] [INFO] Window handle: 2821098
+[2025-08-04 17:48:33.064] [INFO] Window rect: Left=1920, Top=0, Right=3841, Bottom=1041
+[2025-08-04 17:48:33.064] [INFO] Calculated screen coordinates: (80, 56)
+[2025-08-04 17:48:33.183] [INFO] Клик успешно выполнен в позиции (80, 56) -> screen (80, 56)
+[2025-08-04 17:48:33.183] [INFO] === MOUSE CLICK END ===
+[2025-08-04 18:19:19.327] [INFO] Sent ESC key to hwnd=0x150598
+[2025-08-04 18:19:20.229] [INFO] Sent ESC key to hwnd=0x150598
+[2025-08-04 18:19:33.688] [INFO] Sent ESC key to hwnd=0x150598
+[2025-08-04 18:19:44.137] [INFO] Sent ESC key to hwnd=0x710744
+[2025-08-04 18:19:45.170] [INFO] Sent ESC key to hwnd=0x710744
+[2025-08-04 18:25:11.608] [INFO] Sent ESC key to hwnd=0x150598
+[2025-08-04 18:25:12.503] [INFO] Sent ESC key to hwnd=0x150598

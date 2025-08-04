@@ -129,6 +129,7 @@ namespace ScreenCaptureApp.Helpers
             Action onCKeyPressed = null,
             Action onWKeyPressed = null,
             Action onAKeyPressed = null,
+            Action onSKeyPressed = null,
             Action onDKeyPressed = null)
         {
             try
@@ -176,7 +177,13 @@ namespace ScreenCaptureApp.Helpers
                     };
                 }
                 
-
+                if (onSKeyPressed != null)
+                {
+                    hotkeysService.OnSKeyPressed += () =>
+                    {
+                        dispatcher.Invoke(onSKeyPressed);
+                    };
+                }
                 
                 if (onDKeyPressed != null)
                 {
