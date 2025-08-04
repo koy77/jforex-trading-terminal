@@ -18,6 +18,13 @@
                                  Canvas.Top="0" 
                                  Panel.ZIndex="1000" />
         
+        <!-- Trade Rectangle Control - позиционируется справа по центру -->
+        <controls:TradeRectangleControl x:Name="TradeRectangleControl" 
+                                        Canvas.Right="20" 
+                                        Canvas.Top="0" 
+                                        Panel.ZIndex="1001"
+                                        Visibility="Collapsed" />
+        
         <!-- Yellow Trading Pattern Rectangle -->
         <Rectangle x:Name="TradingPatternRectangle" 
                    Stroke="Yellow" 

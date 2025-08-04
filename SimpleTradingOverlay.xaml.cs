@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Windows.Interop;
@@ -143,6 +144,9 @@ namespace ScreenCaptureApp
             // Подписка на события HotkeyService
             SetupHotkeyServiceEvents();
             
+            // Настройка событий TradeRectangleControl
+            SetupTradeRectangleControlEvents();
+            
             // Инициализация переменных для троттлинга мыши
             _lastMouseX = 0;
             _lastMouseY = 0;
@@ -172,12 +176,12 @@ namespace ScreenCaptureApp
         {
             try
             {
-                // Позиционируем окно в верхней части экрана
+                // Позиционируем окно на основной экран при запуске
                 var screen = System.Windows.Forms.Screen.PrimaryScreen;
                 this.Left = screen.Bounds.Left;
                 this.Top = screen.Bounds.Top;
                 this.Width = screen.Bounds.Width;
-                this.Height = 100; // Высота для Trading Toolbar
+                this.Height = screen.Bounds.Height; // Полная высота экрана
                 
                 // Показываем окно
                 if (!this.IsVisible)
@@ -188,7 +192,17 @@ namespace ScreenCaptureApp
                 // Устанавливаем символ по умолчанию
                 TradingToolbar.SetSymbol("UNKNOWN");
                 
-                Logger.LogInfo("Trading Toolbar shown successfully");
+                // Позиционируем TradeRectangleControl по центру экрана
+                var screenRect = new RECT 
+                { 
+                    Left = screen.Bounds.Left, 
+                    Top = screen.Bounds.Top, 
+                    Right = screen.Bounds.Right, 
+                    Bottom = screen.Bounds.Bottom 
+                };
+                PositionTradeRectangleControl(screenRect);
+                
+                Logger.LogInfo($"Trading Toolbar shown successfully on screen: {screen.DeviceName}");
             }
             catch (Exception ex)
             {
@@ -214,6 +228,93 @@ namespace ScreenCaptureApp
                 _durationState.CurrentDuration = duration;
                 if (_currentWindowHandle != IntPtr.Zero)
                     _toolbarSettingsManager.UpdateSettings(_currentWindowHandle.ToInt64(), duration: duration);
+            };
+        }
+
+        private void SetupTradeRectangleControlEvents()
+        {
+            TradeRectangleControl.BuyClicked += async (sender, args) =>
+            {
+                Logger.LogTagInfo("SimpleTradingOverlay", $"Buy clicked for rectangle trade: {args.Symbol} Entry:{args.EntryPrice:F5} SL:{args.StopLossPrice:F5}");
+                
+                try
+                {
+                    // Получаем риск из тулбара
+                    double risk = TradingToolbar.SelectedRisk;
+                    
+                    // Отправляем команду в MT4
+                    var mt4SocketService = ServiceContainer.Instance.GetService<Mt4SocketService>();
+                    if (mt4SocketService != null)
+                    {
+                        bool result = await mt4SocketService.SendNewOrderCommand(args.Symbol, args.TradeType, args.EntryPrice, args.StopLossPrice, risk);
+                        
+                        if (result)
+                        {
+                            Logger.LogTagInfo("SimpleTradingOverlay", "Rectangle buy trade sent successfully");
+                            
+                            // Показываем toast сообщение
+                            var toastNotifyService = ServiceContainer.Instance.GetService<ToastNotifyService>();
+                            if (toastNotifyService != null)
+                            {
+                                string toastMessage = $"Rectangle BUY от {args.EntryPrice:F5} с риском {risk} отправлена";
+                                toastNotifyService.ShowToast(toastMessage, ToastType.Info, 4000);
+                            }
+                        }
+                        else
+                        {
+                            Logger.LogTagWarning("SimpleTradingOverlay", "Failed to send rectangle buy trade");
+                        }
+                    }
+                    
+                    // Скрываем контрол после отправки команды
+                    TradeRectangleControl.Hide();
+                }
+                catch (Exception ex)
+                {
+                    Logger.LogTagError("SimpleTradingOverlay", "Error processing rectangle buy trade", ex);
+                }
+            };
+
+            TradeRectangleControl.SellClicked += async (sender, args) =>
+            {
+                Logger.LogTagInfo("SimpleTradingOverlay", $"Sell clicked for rectangle trade: {args.Symbol} Entry:{args.EntryPrice:F5} SL:{args.StopLossPrice:F5}");
+                
+                try
+                {
+                    // Получаем риск из тулбара
+                    double risk = TradingToolbar.SelectedRisk;
+                    
+                    // Отправляем команду в MT4
+                    var mt4SocketService = ServiceContainer.Instance.GetService<Mt4SocketService>();
+                    if (mt4SocketService != null)
+                    {
+                        bool result = await mt4SocketService.SendNewOrderCommand(args.Symbol, args.TradeType, args.EntryPrice, args.StopLossPrice, risk);
+                        
+                        if (result)
+                        {
+                            Logger.LogTagInfo("SimpleTradingOverlay", "Rectangle sell trade sent successfully");
+                            
+                            // Показываем toast сообщение
+                            var toastNotifyService = ServiceContainer.Instance.GetService<ToastNotifyService>();
+                            if (toastNotifyService != null)
+                            {
+                                string toastMessage = $"Rectangle SELL от {args.EntryPrice:F5} с риском {risk} отправлена";
+                                toastNotifyService.ShowToast(toastMessage, ToastType.Info, 4000);
+                            }
+                        }
+                        else
+                        {
+                            Logger.LogTagWarning("SimpleTradingOverlay", "Failed to send rectangle sell trade");
+                        }
+                    }
+                    
+                    // Скрываем контрол после отправки команды
+                    TradeRectangleControl.Hide();
+                }
+                catch (Exception ex)
+                {
+                    Logger.LogTagError("SimpleTradingOverlay", "Error processing rectangle sell trade", ex);
+                }
             };
         }
 
@@ -368,7 +469,45 @@ namespace ScreenCaptureApp
         private void ProcessRectangleObject(JForexChartObjectData jforexChartObject)
         {
             Logger.LogTagInfo("SimpleTradingOverlay", $"Processing Rectangle object: {jforexChartObject.Price}");
-            // TODO: Добавить логику обработки Rectangle объектов
+            
+            try
+            {
+                // Парсим дополнительные данные для получения верхней и нижней цены
+                var rectangleData = ParseRectangleData(jforexChartObject.AdditionalData);
+                if (rectangleData != null)
+                {
+                    Logger.LogTagInfo("SimpleTradingOverlay", $"Parsed rectangle data: Upper={rectangleData.UpperPrice:F5}, Lower={rectangleData.LowerPrice:F5}");
+                    
+                    // Устанавливаем данные в TradeRectangleControl
+                    TradeRectangleControl.SetRectangleData(jforexChartObject.Symbol, rectangleData.UpperPrice, rectangleData.LowerPrice);
+                    
+                    // Позиционируем контрол по центру экрана
+                    var screen = System.Windows.Forms.Screen.PrimaryScreen;
+                    var screenRect = new RECT 
+                    { 
+                        Left = screen.Bounds.Left, 
+                        Top = screen.Bounds.Top, 
+                        Right = screen.Bounds.Right, 
+                        Bottom = screen.Bounds.Bottom 
+                    };
+                    PositionTradeRectangleControl(screenRect);
+                    
+                    // Показываем контрол
+                    TradeRectangleControl.Show();
+                    
+                    Logger.LogTagInfo("SimpleTradingOverlay", $"Rectangle control shown and positioned for {jforexChartObject.Symbol}: Upper={rectangleData.UpperPrice:F5}, Lower={rectangleData.LowerPrice:F5}");
+                    Logger.LogTagInfo("SimpleTradingOverlay", $"TradeRectangleControl Visibility: {TradeRectangleControl.Visibility}");
+                }
+                else
+                {
+                    Logger.LogTagWarning("SimpleTradingOverlay", "Failed to parse rectangle data from AdditionalData");
+                    Logger.LogTagWarning("SimpleTradingOverlay", $"AdditionalData content: {jforexChartObject.AdditionalData}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("SimpleTradingOverlay", "Error processing Rectangle object", ex);
+            }
         }
 
         /// <summary>
@@ -474,6 +613,9 @@ namespace ScreenCaptureApp
             }
 
             Logger.LogTagInfo("SimpleTradingOverlay", "Escape key pressed via HotkeyService");
+
+            // Скрываем TradeRectangleControl
+            TradeRectangleControl.Hide();
 
             // Сбрасываем состояние ценовых уровней и переходим в режим ожидания Entry Price
             if (TradingToolbar != null)
@@ -652,17 +794,35 @@ namespace ScreenCaptureApp
                 RECT windowRect;
                 if (GetWindowRect(windowHandle, out windowRect))
                 {
-                    // Позиционируем оверлей в верхней части окна
-                    double left = windowRect.Left;
-                    double top = windowRect.Top;
-                    double width = windowRect.Right - windowRect.Left;
+                    // Получаем экран, на котором находится окно
+                    var screen = System.Windows.Forms.Screen.FromHandle(windowHandle);
+                    if (screen == null)
+                    {
+                        // Если не удалось определить экран, используем основной
+                        screen = System.Windows.Forms.Screen.PrimaryScreen;
+                    }
                     
-                    // Устанавливаем размер оверлея равным ширине окна
+                    // Позиционируем оверлей на весь экран, где находится окно
+                    double left = screen.Bounds.Left;
+                    double top = screen.Bounds.Top;
+                    double width = screen.Bounds.Width;
+                    double height = screen.Bounds.Height;
+                    
+                    // Устанавливаем размер оверлея равным размеру экрана
                     this.Width = width;
+                    this.Height = height;
                     this.Left = left;
                     this.Top = top;
                     
+                    // Позиционируем TradingToolbar в верхней части экрана
+                    Canvas.SetTop(TradingToolbar, 0);
+                    Canvas.SetLeft(TradingToolbar, 0);
+                    Canvas.SetRight(TradingToolbar, 0);
+                    
                     // TradingToolbar теперь позиционируется справа через Canvas.Right="0"
+                    
+                    // Позиционируем TradeRectangleControl по центру справа
+                    PositionTradeRectangleControl(windowRect);
                     
                     // Устанавливаем символ в тулбаре
                     TradingToolbar.SetSymbol(symbol);
@@ -686,6 +846,89 @@ namespace ScreenCaptureApp
             {
                 Logger.LogError($"Error updating overlay position for window {windowHandle}", ex);
             }
+        }
+
+        /// <summary>
+        /// Позиционирует TradeRectangleControl по центру экрана справа
+        /// </summary>
+        private void PositionTradeRectangleControl(RECT windowRect)
+        {
+            try
+            {
+                // Получаем экран, на котором находится окно
+                var screen = System.Windows.Forms.Screen.FromHandle(_currentWindowHandle);
+                if (screen == null)
+                {
+                    // Если не удалось определить экран, используем основной
+                    screen = System.Windows.Forms.Screen.PrimaryScreen;
+                }
+                
+                double screenHeight = screen.Bounds.Height;
+                double screenWidth = screen.Bounds.Width;
+                
+                // Вычисляем центр экрана по вертикали
+                double centerY = screenHeight / 2;
+                
+                // Используем фиксированную высоту контрола (примерно 200px) если ActualHeight еще не доступна
+                double controlHeight = TradeRectangleControl.ActualHeight > 0 ? TradeRectangleControl.ActualHeight : 200;
+                
+                // Позиционируем контрол по центру экрана справа
+                Canvas.SetTop(TradeRectangleControl, centerY - (controlHeight / 2));
+                
+                // Устанавливаем отступ справа (контрол должен быть виден)
+                Canvas.SetRight(TradeRectangleControl, 20);
+                
+                Logger.LogTagInfo("SimpleTradingOverlay", $"TradeRectangleControl positioned at screen center-right: Y={centerY:F0}, ControlHeight={controlHeight:F0}, ScreenHeight={screenHeight:F0}, Right=20, Screen: {screen.DeviceName}");
+                Logger.LogTagInfo("SimpleTradingOverlay", $"TradeRectangleControl Canvas.Top: {Canvas.GetTop(TradeRectangleControl)}, Canvas.Right: {Canvas.GetRight(TradeRectangleControl)}");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("SimpleTradingOverlay", "Error positioning TradeRectangleControl", ex);
+            }
+        }
+
+        /// <summary>
+        /// Парсит данные прямоугольника из AdditionalData
+        /// </summary>
+        private RectangleData ParseRectangleData(string additionalData)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(additionalData))
+                    return null;
+
+                // Ищем данные о верхней и нижней цене в JSON
+                if (additionalData.Contains("upperPrice") && additionalData.Contains("lowerPrice"))
+                {
+                    // Извлекаем значения цен из JSON строки
+                    var upperPriceMatch = System.Text.RegularExpressions.Regex.Match(additionalData, @"""upperPrice"":\s*([\d.]+)");
+                    var lowerPriceMatch = System.Text.RegularExpressions.Regex.Match(additionalData, @"""lowerPrice"":\s*([\d.]+)");
+                    
+                    if (upperPriceMatch.Success && lowerPriceMatch.Success)
+                    {
+                        double upperPrice = double.Parse(upperPriceMatch.Groups[1].Value, System.Globalization.CultureInfo.InvariantCulture);
+                        double lowerPrice = double.Parse(lowerPriceMatch.Groups[1].Value, System.Globalization.CultureInfo.InvariantCulture);
+                        
+                        return new RectangleData { UpperPrice = upperPrice, LowerPrice = lowerPrice };
+                    }
+                }
+                
+                return null;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("SimpleTradingOverlay", "Error parsing rectangle data", ex);
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Данные прямоугольника
+        /// </summary>
+        private class RectangleData
+        {
+            public double UpperPrice { get; set; }
+            public double LowerPrice { get; set; }
         }
 
         private void ApplyToolbarSettings(IntPtr windowHandle)
