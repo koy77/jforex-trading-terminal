@@ -33,9 +33,14 @@ namespace ScreenCaptureApp.Services
         public event EventHandler<string> StatusChanged;
 
         /// <summary>
-        /// Событие нового ценового уровня
+        /// Событие нового ценового уровня (для обратной совместимости)
         /// </summary>
         public event EventHandler<PriceLevelEventData> NewPriceLevelReceived;
+
+        /// <summary>
+        /// Событие нового JForex объекта
+        /// </summary>
+        public event EventHandler<JForexChartObjectData> NewJForexChartObject;
 
         /// <summary>
         /// Список последних полученных данных (для отладки)
@@ -253,7 +258,7 @@ namespace ScreenCaptureApp.Services
                 // Вызываем событие
                 OnPriceLevelReceived(priceLevelData);
 
-                // Создаем и вызываем событие нового ценового уровня
+                // Создаем и вызываем событие нового ценового уровня (для обратной совместимости)
                 var priceLevelEvent = new PriceLevelEventData(
                     name: priceLevelData.AdditionalData ?? "Price Level",
                     symbol: priceLevelData.Symbol,
@@ -263,13 +268,23 @@ namespace ScreenCaptureApp.Services
                 );
                 OnNewPriceLevelReceived(priceLevelEvent);
 
+                // Создаем и вызываем новое событие JForex объекта
+                var jforexObjectType = JForexChartObjectData.GetObjectTypeFromClassName(priceLevelData.AdditionalData);
+                var jforexChartObject = new JForexChartObjectData(
+                    symbol: priceLevelData.Symbol,
+                    price: priceLevelData.Price,
+                    objectType: jforexObjectType,
+                    className: priceLevelData.AdditionalData,
+                    additionalData: priceLevelData.AdditionalData
+                );
+                OnNewJForexChartObject(jforexChartObject);
+
                 // Отправляем успешный ответ
-                var responseData = new { success = true, message = "Price level data received", timestamp = DateTime.Now };
+                var responseData = new { success = true, message = "", timestamp = DateTime.Now };
                 await SendJsonResponseAsync(response, responseData, 200);
 
                 // Логируем обработанные данные по тегу
-                Logger.LogTagInfo("http_service", $"Price Level Processed: {priceLevelData}");
-                Logger.LogTagInfo("http_service", $"New Price Level Event: {priceLevelEvent}");
+                Logger.LogTagInfo("http_service", $"New JForex Chart Object: {jforexChartObject}");
                 Logger.LogInfo($"Price level processed: {priceLevelData}");
             }
             catch (JsonException ex)
@@ -408,6 +423,14 @@ namespace ScreenCaptureApp.Services
         protected virtual void OnNewPriceLevelReceived(PriceLevelEventData priceLevelEvent)
         {
             NewPriceLevelReceived?.Invoke(this, priceLevelEvent);
+        }
+
+        /// <summary>
+        /// Вызывает событие нового JForex объекта
+        /// </summary>
+        protected virtual void OnNewJForexChartObject(JForexChartObjectData jforexChartObject)
+        {
+            NewJForexChartObject?.Invoke(this, jforexChartObject);
         }
 
         /// <summary>

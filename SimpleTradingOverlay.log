@@ -214,3 +214,51 @@ StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
 [2025-08-04 11:29:20.329] [INFO] Escape key pressed via HotkeyService
 [2025-08-04 11:29:20.330] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
 [2025-08-04 11:29:20.330] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 11:47:22.486] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 11:47:22.487] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 11:47:22.488] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 11:47:22.489] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 11:47:22.489] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 11:47:22.490] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 11:49:35.330] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 11:49:35.331] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 11:49:35.332] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 11:49:35.332] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 11:49:35.332] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 11:49:35.332] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 11:49:35.506] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 11:49:35.506] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 11:49:35.506] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 11:49:35.507] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 11:49:35.507] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 11:49:35.507] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 11:54:28.503] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 11:54:28.503] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 11:54:28.503] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 11:54:28.504] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 11:54:28.504] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 11:54:28.505] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 11:56:51.029] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 11:56:51.029] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 11:56:51.030] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 11:56:51.030] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 11:56:51.030] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 11:56:51.030] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 11:56:51.173] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 11:56:51.173] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 11:56:51.174] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 11:56:51.174] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 11:56:51.174] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 11:56:51.175] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 11:56:53.309] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 11:56:53.310] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 11:56:53.310] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 11:56:53.310] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 11:56:53.311] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 11:56:53.311] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 11:56:53.461] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 11:56:53.462] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 11:56:53.462] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject
+[2025-08-04 11:56:53.462] [INFO] Escape key pressed via HotkeyService
+[2025-08-04 11:56:53.463] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-04 11:56:53.463] [INFO] Price level state reset to wait for Entry Price - ready for new PriceMarkerChartObject

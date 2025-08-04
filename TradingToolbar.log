@@ -311,3 +311,34 @@
 [2025-08-04 11:29:12.982] [INFO] Loaded settings for HandleID 394144: Risk=1, Duration=2, Broker=Forex
 [2025-08-04 11:29:20.329] [INFO] Price display panel hidden
 [2025-08-04 11:29:20.330] [INFO] Price display panel hidden
+[2025-08-04 11:46:36.992] [INFO] TradingToolbar instance 1 created
+[2025-08-04 11:46:36.992] [INFO] ToolbarSettingsManager initialized successfully
+[2025-08-04 11:46:36.993] [INFO] ToastNotifyService initialized successfully
+[2025-08-04 11:46:37.007] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 11:46:37.007] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 11:46:37.008] [INFO] OrderSummary panel hidden
+[2025-08-04 11:46:37.008] [INFO] Price display panel hidden
+[2025-08-04 11:46:37.428] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 11:46:37.429] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 11:46:37.429] [INFO] OrderSummary panel hidden
+[2025-08-04 11:46:37.429] [INFO] Price display panel hidden
+[2025-08-04 11:46:37.429] [INFO] SetSymbol called for UNKNOWN, current broker: Forex
+[2025-08-04 11:46:37.430] [INFO] Skipping open symbol command - Forex broker selected
+[2025-08-04 11:46:37.431] [INFO] OrderSummary panel hidden
+[2025-08-04 11:46:37.431] [INFO] Price display panel hidden
+[2025-08-04 11:47:22.487] [INFO] Price display panel hidden
+[2025-08-04 11:47:22.489] [INFO] Price display panel hidden
+[2025-08-04 11:49:35.331] [INFO] Price display panel hidden
+[2025-08-04 11:49:35.332] [INFO] Price display panel hidden
+[2025-08-04 11:49:35.506] [INFO] Price display panel hidden
+[2025-08-04 11:49:35.507] [INFO] Price display panel hidden
+[2025-08-04 11:54:28.503] [INFO] Price display panel hidden
+[2025-08-04 11:54:28.504] [INFO] Price display panel hidden
+[2025-08-04 11:56:51.030] [INFO] Price display panel hidden
+[2025-08-04 11:56:51.030] [INFO] Price display panel hidden
+[2025-08-04 11:56:51.173] [INFO] Price display panel hidden
+[2025-08-04 11:56:51.174] [INFO] Price display panel hidden
+[2025-08-04 11:56:53.310] [INFO] Price display panel hidden
+[2025-08-04 11:56:53.311] [INFO] Price display panel hidden
+[2025-08-04 11:56:53.462] [INFO] Price display panel hidden
+[2025-08-04 11:56:53.463] [INFO] Price display panel hidden

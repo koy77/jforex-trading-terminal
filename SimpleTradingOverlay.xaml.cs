@@ -160,7 +160,7 @@ namespace ScreenCaptureApp
             TradingToolbar.SetSymbol("UNKNOWN");
 
             // Установка глобального хука мыши
-            SetupMouseHook();
+            //SetupMouseHook();
             
             // Принудительно показываем окно с Trading Toolbar
             ShowTradingToolbar();
@@ -231,12 +231,13 @@ namespace ScreenCaptureApp
             var httpServerService = ServiceContainer.Instance.GetService<HttpServerService>();
             if (httpServerService != null)
             {
-                httpServerService.NewPriceLevelReceived += HttpServerService_NewPriceLevelReceived;
-                Logger.LogInfo("SimpleTradingOverlay subscribed to HttpServerService.NewPriceLevelReceived");
+                // Подписываемся на новое событие JForex объектов
+                httpServerService.NewJForexChartObject += HttpServerService_NewJForexChartObject;
+                Logger.LogInfo("SimpleTradingOverlay subscribed to HttpServerService.NewJForexChartObject");
             }
             else
             {
-                Logger.LogWarning("HttpServerService not found, cannot subscribe to NewPriceLevelReceived event");
+                Logger.LogWarning("HttpServerService not found, cannot subscribe to NewJForexChartObject event");
             }
         }
 
@@ -258,22 +259,22 @@ namespace ScreenCaptureApp
             }
         }
 
-        private async void HttpServerService_NewPriceLevelReceived(object sender, PriceLevelEventData priceLevelEvent)
+        private async void HttpServerService_NewJForexChartObject(object sender, JForexChartObjectData jforexChartObject)
         {
             try
             {
-                Logger.LogTagInfo("SimpleTradingOverlay", $"Received new price level event: {priceLevelEvent}");
+                Logger.LogTagInfo("SimpleTradingOverlay", $"Received new JForex chart object: {jforexChartObject}");
 
                 // Проверяем, соответствует ли символ текущему символу в тулбаре
                 // Если символ в тулбаре UNKNOWN, обновляем его на символ из события
                 if (string.IsNullOrEmpty(TradingToolbar.CurrentSymbol) || TradingToolbar.CurrentSymbol.Equals("UNKNOWN", StringComparison.OrdinalIgnoreCase))
                 {
-                    Logger.LogTagInfo("SimpleTradingOverlay", $"Updating toolbar symbol from UNKNOWN to {priceLevelEvent.Symbol}");
-                    TradingToolbar.SetSymbol(priceLevelEvent.Symbol);
+                    Logger.LogTagInfo("SimpleTradingOverlay", $"Updating toolbar symbol from UNKNOWN to {jforexChartObject.Symbol}");
+                    TradingToolbar.SetSymbol(jforexChartObject.Symbol);
                 }
-                else if (!TradingToolbar.CurrentSymbol.Equals(priceLevelEvent.Symbol, StringComparison.OrdinalIgnoreCase))
+                else if (!TradingToolbar.CurrentSymbol.Equals(jforexChartObject.Symbol, StringComparison.OrdinalIgnoreCase))
                 {
-                    Logger.LogTagDebug("SimpleTradingOverlay", $"Symbol mismatch: current={TradingToolbar.CurrentSymbol}, event={priceLevelEvent.Symbol}");
+                    Logger.LogTagDebug("SimpleTradingOverlay", $"Symbol mismatch: current={TradingToolbar.CurrentSymbol}, event={jforexChartObject.Symbol}");
                     return;
                 }
 
@@ -281,84 +282,125 @@ namespace ScreenCaptureApp
                 var toastNotifyService = ServiceContainer.Instance.GetService<ToastNotifyService>();
                 if (toastNotifyService != null)
                 {
-                    string toastMessage = $"HTTP: {priceLevelEvent.Name} = {priceLevelEvent.LevelValue:F5} ({priceLevelEvent.Symbol})";
+                    string toastMessage = $"JForex: {jforexChartObject.ObjectType} = {jforexChartObject.Price:F5} ({jforexChartObject.Symbol})";
                     toastNotifyService.ShowToast(toastMessage, ToastType.Success, 3000);
                     Logger.LogTagInfo("SimpleTradingOverlay", $"Toast notification shown: {toastMessage}");
                 }
 
-                // Обрабатываем ценовой уровень в зависимости от состояния
-                ProcessPriceLevelEvent(priceLevelEvent);
+                // Обрабатываем JForex объект в зависимости от типа
+                ProcessJForexChartObject(jforexChartObject);
             }
             catch (Exception ex)
             {
-                Logger.LogTagError("SimpleTradingOverlay", "Error processing price level event", ex);
+                Logger.LogTagError("SimpleTradingOverlay", "Error processing JForex chart object", ex);
             }
         }
 
-        private void ProcessPriceLevelEvent(PriceLevelEventData priceLevelEvent)
+        private void ProcessJForexChartObject(JForexChartObjectData jforexChartObject)
         {
             try
             {
-                Logger.LogTagInfo("SimpleTradingOverlay", $"Processing price level: {priceLevelEvent.Name} = {priceLevelEvent.LevelValue}");
+                Logger.LogTagInfo("SimpleTradingOverlay", $"Processing JForex chart object: {jforexChartObject.ObjectType} = {jforexChartObject.Price}");
 
-                // Проверяем, что это PriceMarkerChartObject
-                if (!priceLevelEvent.Name.Contains("PriceMarkerChartObject"))
+                // Обрабатываем объект в зависимости от типа
+                switch (jforexChartObject.ObjectType)
                 {
-                    Logger.LogTagDebug("SimpleTradingOverlay", $"Skipping non-PriceMarkerChartObject event: {priceLevelEvent.Name}");
-                    return;
+                    case JForexChartObjectType.PriceMarker:
+                        ProcessPriceMarkerObject(jforexChartObject);
+                        break;
+                    
+                    case JForexChartObjectType.Rectangle:
+                        ProcessRectangleObject(jforexChartObject);
+                        break;
+                    
+                    case JForexChartObjectType.ShortLine:
+                        ProcessShortLineObject(jforexChartObject);
+                        break;
+                    
+                    default:
+                        Logger.LogTagWarning("SimpleTradingOverlay", $"Unknown JForex object type: {jforexChartObject.ObjectType}");
+                        break;
                 }
-
-                // Если ожидаем Entry Price
-                if (_isWaitingForEntryPrice)
-                {
-                    _entryPrice = priceLevelEvent.LevelValue;
-                    _currentTradeSymbol = priceLevelEvent.Symbol;
-                    _isWaitingForEntryPrice = false;
-                    _isWaitingForStopLossPrice = true;
-
-                    Logger.LogTagInfo("SimpleTradingOverlay", $"Entry Price set: {_entryPrice} for {_currentTradeSymbol}");
-                    
-                    // Устанавливаем Entry Level в активном TradingToolbar
-                    TradingToolbar.SetEntryLevel(_entryPrice, _currentTradeSymbol);
-                    
-                    return;
-                }
-
-                // Если ожидаем Stop Loss Price
-                if (_isWaitingForStopLossPrice)
-                {
-                    _stopLossPrice = priceLevelEvent.LevelValue;
-                    _isWaitingForStopLossPrice = false;
-
-                    Logger.LogTagInfo("SimpleTradingOverlay", $"Stop Loss Price set: {_stopLossPrice} for {_currentTradeSymbol}");
-
-                    // Показываем тост сообщение о установке Stop Loss Price
-                    var toastNotifyService = ServiceContainer.Instance.GetService<ToastNotifyService>();
-                    if (toastNotifyService != null)
-                    {
-                        string tradeType = _entryPrice > _stopLossPrice ? "SELL" : "BUY";
-                        string toastMessage = $"Stop Loss: {_stopLossPrice:F5} | Trade: {tradeType} ({_currentTradeSymbol})";
-                        toastNotifyService.ShowToast(toastMessage, ToastType.Success, 3000);
-                        Logger.LogTagInfo("SimpleTradingOverlay", $"Stop Loss toast shown: {toastMessage}");
-                    }
-
-                    // Отправляем команду в MT4
-                    SendTradeCommandToMt4();
-                    
-                    // Если не ожидаем никаких цен, начинаем новый цикл
-                    _entryPrice = priceLevelEvent.LevelValue;
-                    _currentTradeSymbol = priceLevelEvent.Symbol;
-                    // Устанавливаем Entry Level в активном TradingToolbar, если начинаем новый цикл после Stop Loss
-                    TradingToolbar.SetEntryLevel(0, string.Empty);
-                    
-                    return;
-                }
-
             }
             catch (Exception ex)
             {
-                Logger.LogTagError("SimpleTradingOverlay", "Error processing price level event", ex);
+                Logger.LogTagError("SimpleTradingOverlay", "Error processing JForex chart object", ex);
             }
+        }
+
+        /// <summary>
+        /// Обрабатывает PriceMarker объект (аналог старой логики PriceLevel)
+        /// </summary>
+        private void ProcessPriceMarkerObject(JForexChartObjectData jforexChartObject)
+        {
+            Logger.LogTagInfo("SimpleTradingOverlay", $"Processing PriceMarker object: {jforexChartObject.Price}");
+
+            // Если ожидаем Entry Price
+            if (_isWaitingForEntryPrice)
+            {
+                _entryPrice = jforexChartObject.Price;
+                _currentTradeSymbol = jforexChartObject.Symbol;
+                _isWaitingForEntryPrice = false;
+                _isWaitingForStopLossPrice = true;
+
+                Logger.LogTagInfo("SimpleTradingOverlay", $"Entry Price set: {_entryPrice} for {_currentTradeSymbol}");
+                
+                // Устанавливаем Entry Level в активном TradingToolbar
+                TradingToolbar.SetEntryLevel(_entryPrice, _currentTradeSymbol);
+                
+                return;
+            }
+
+            // Если ожидаем Stop Loss Price
+            if (_isWaitingForStopLossPrice)
+            {
+                _stopLossPrice = jforexChartObject.Price;
+                _isWaitingForStopLossPrice = false;
+
+                Logger.LogTagInfo("SimpleTradingOverlay", $"Stop Loss Price set: {_stopLossPrice} for {_currentTradeSymbol}");
+
+                // Показываем тост сообщение о установке Stop Loss Price
+                var toastNotifyService = ServiceContainer.Instance.GetService<ToastNotifyService>();
+                if (toastNotifyService != null)
+                {
+                    string tradeType = _entryPrice > _stopLossPrice ? "SELL" : "BUY";
+                    string toastMessage = $"Stop Loss: {_stopLossPrice:F5} | Trade: {tradeType} ({_currentTradeSymbol})";
+                    toastNotifyService.ShowToast(toastMessage, ToastType.Success, 3000);
+                    Logger.LogTagInfo("SimpleTradingOverlay", $"Stop Loss toast shown: {toastMessage}");
+                }
+
+                // Отправляем команду в MT4
+                SendTradeCommandToMt4();
+                
+                return;
+            }
+
+            // Если не ожидаем никаких цен, начинаем новый цикл
+            Logger.LogTagInfo("SimpleTradingOverlay", "Starting new price level cycle - waiting for Entry Price");
+            _isWaitingForEntryPrice = true;
+            _entryPrice = jforexChartObject.Price;
+            _currentTradeSymbol = jforexChartObject.Symbol;
+            
+            // Устанавливаем Entry Level в активном TradingToolbar
+            TradingToolbar.SetEntryLevel(_entryPrice, _currentTradeSymbol);
+        }
+
+        /// <summary>
+        /// Обрабатывает Rectangle объект
+        /// </summary>
+        private void ProcessRectangleObject(JForexChartObjectData jforexChartObject)
+        {
+            Logger.LogTagInfo("SimpleTradingOverlay", $"Processing Rectangle object: {jforexChartObject.Price}");
+            // TODO: Добавить логику обработки Rectangle объектов
+        }
+
+        /// <summary>
+        /// Обрабатывает ShortLine объект
+        /// </summary>
+        private void ProcessShortLineObject(JForexChartObjectData jforexChartObject)
+        {
+            Logger.LogTagInfo("SimpleTradingOverlay", $"Processing ShortLine object: {jforexChartObject.Price}");
+            // TODO: Добавить логику обработки ShortLine объектов
         }
 
         private async void SendTradeCommandToMt4()
@@ -1320,7 +1362,7 @@ namespace ScreenCaptureApp
             var httpServerService = ServiceContainer.Instance.GetService<HttpServerService>();
             if (httpServerService != null)
             {
-                httpServerService.NewPriceLevelReceived -= HttpServerService_NewPriceLevelReceived;
+                httpServerService.NewJForexChartObject -= HttpServerService_NewJForexChartObject;
                 Logger.LogInfo("SimpleTradingOverlay unsubscribed from HttpServerService events");
             }
             

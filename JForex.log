@@ -15044,3 +15044,17 @@
 [2025-08-04 11:28:55.961] [INFO] Successfully added trendline from (1355, 581) to (1221, 587)
 [2025-08-04 11:28:55.962] [INFO] Trading stroke processing completed
 [2025-08-04 11:28:55.962] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-08-04 11:58:08.160] [INFO] === MOUSE CLICK START ===
+[2025-08-04 11:58:08.160] [INFO] Click coordinates: (480, 56)
+[2025-08-04 11:58:08.160] [INFO] Window handle: 394962
+[2025-08-04 11:58:08.161] [INFO] Window rect: Left=1971, Top=64, Right=3686, Bottom=1019
+[2025-08-04 11:58:08.161] [INFO] Calculated screen coordinates: (480, 56)
+[2025-08-04 11:58:08.281] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-08-04 11:58:08.281] [INFO] === MOUSE CLICK END ===
+[2025-08-04 11:58:09.676] [INFO] === MOUSE CLICK START ===
+[2025-08-04 11:58:09.676] [INFO] Click coordinates: (480, 56)
+[2025-08-04 11:58:09.676] [INFO] Window handle: 394962
+[2025-08-04 11:58:09.677] [INFO] Window rect: Left=1971, Top=64, Right=3686, Bottom=1019
+[2025-08-04 11:58:09.677] [INFO] Calculated screen coordinates: (480, 56)
+[2025-08-04 11:58:09.792] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-08-04 11:58:09.793] [INFO] === MOUSE CLICK END ===
