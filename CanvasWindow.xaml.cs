@@ -1038,41 +1038,86 @@ namespace ScreenCaptureApp
         {
             try
             {
-                int width = (int)DrawingCanvas.ActualWidth;
-                int height = (int)DrawingCanvas.ActualHeight;
-                if (width == 0 || height == 0) return;
-
-                var rtb = new RenderTargetBitmap(width, height, 96d, 96d, PixelFormats.Pbgra32);
-
-                // Визуализируем фон через WPF Image
-                if (BackgroundImage.Source != null)
+                // Получаем размеры целевого окна
+                RECT windowRect;
+                if (targetWindowHandle != IntPtr.Zero && GetWindowRect(targetWindowHandle, out windowRect))
                 {
-                    var bg = new System.Windows.Controls.Image
+                    int windowWidth = windowRect.Right - windowRect.Left;
+                    int windowHeight = windowRect.Bottom - windowRect.Top;
+                    
+                    // Создаем RenderTargetBitmap размером с окно
+                    var rtb = new RenderTargetBitmap(windowWidth, windowHeight, 96d, 96d, PixelFormats.Pbgra32);
+                    
+                    // Создаем временный Canvas для композиции
+                    var tempCanvas = new System.Windows.Controls.Canvas
                     {
-                        Source = BackgroundImage.Source,
-                        Width = width,
-                        Height = height,
-                        Stretch = Stretch.None
+                        Width = windowWidth,
+                        Height = windowHeight
                     };
-                    bg.Measure(new System.Windows.Size(width, height));
-                    bg.Arrange(new Rect(0, 0, width, height));
-                    rtb.Render(bg);
+                    
+                    // Добавляем скриншот окна как фон
+                    if (BackgroundImage.Source != null)
+                    {
+                        var bg = new System.Windows.Controls.Image
+                        {
+                            Source = BackgroundImage.Source,
+                            Width = windowWidth,
+                            Height = windowHeight,
+                            Stretch = Stretch.None
+                        };
+                        tempCanvas.Children.Add(bg);
+                    }
+                    
+                    // Создаем временный InkCanvas для штрихов
+                    var tempInkCanvas = new System.Windows.Controls.InkCanvas
+                    {
+                        Width = windowWidth,
+                        Height = windowHeight,
+                        Background = System.Windows.Media.Brushes.Transparent
+                    };
+                    
+                    // Копируем штрихи с учетом смещения canvas
+                    var adjustedStrokes = new StrokeCollection();
+                    foreach (var stroke in DrawingCanvas.Strokes)
+                    {
+                        var adjustedStroke = stroke.Clone();
+                        var points = new StylusPointCollection();
+                        
+                        foreach (var point in stroke.StylusPoints)
+                        {
+                            // Применяем смещение canvas к координатам штрихов
+                            points.Add(new StylusPoint(
+                                point.X - canvasOffsetX, 
+                                point.Y - canvasOffsetY, 
+                                point.PressureFactor
+                            ));
+                        }
+                        
+                        adjustedStroke.StylusPoints = points;
+                        adjustedStrokes.Add(adjustedStroke);
+                    }
+                    
+                    tempInkCanvas.Strokes = adjustedStrokes;
+                    tempCanvas.Children.Add(tempInkCanvas);
+                    
+                    // Рендерим композицию
+                    tempCanvas.Measure(new System.Windows.Size(windowWidth, windowHeight));
+                    tempCanvas.Arrange(new Rect(0, 0, windowWidth, windowHeight));
+                    rtb.Render(tempCanvas);
+                    
+                    System.Windows.Clipboard.SetImage(rtb);
+                    
+                    var toast = ServiceContainer.Instance.GetService<ToastNotifyService>();
+                    toast?.ShowToast("Скопировано в буфер обмена!", ToastType.Success);
+                    
+                    Logger.LogInfo($"Copied window area to clipboard: {windowWidth}x{windowHeight} pixels");
                 }
-
-                // Визуализируем InkCanvas
-                DrawingCanvas.Measure(new System.Windows.Size(width, height));
-                DrawingCanvas.Arrange(new Rect(0, 0, width, height));
-                rtb.Render(DrawingCanvas);
-
-                System.Windows.Clipboard.SetImage(rtb);
-
-                var toast = ServiceContainer.Instance.GetService<ToastNotifyService>();
-                toast?.ShowToast("Скопировано в буфер обмена!", ToastType.Success);
             }
             catch (Exception ex)
             {
                 var toast = ServiceContainer.Instance.GetService<ToastNotifyService>();
                 toast?.ShowToast($"Ошибка копирования: {ex.Message}", ToastType.Error);
+                Logger.LogError($"Error copying to clipboard: {ex.Message}", ex);
             }
         }
 
