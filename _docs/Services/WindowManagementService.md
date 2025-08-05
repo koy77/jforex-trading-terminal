@@ -273,11 +273,11 @@ private void InitializeHotkeys()
     
     // Открытие ScreenCaptureOverlay по горячей клавише
     hotkeysService.OnSKeyPressed += () => {
-        var activeWindow = GetActiveWindowHandle();
-        if (activeWindow != IntPtr.Zero)
-        {
-            windowManagementService.ShowScreenCaptureOverlay(activeWindow);
-        }
+        // var activeWindow = GetActiveWindowHandle();
+        // if (activeWindow != IntPtr.Zero)
+        // {
+        //     windowManagementService.ShowScreenCaptureOverlay(activeWindow);
+        // }
     };
     
     // Открытие SimpleTradingOverlay по горячей клавише

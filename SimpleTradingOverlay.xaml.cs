@@ -121,6 +121,10 @@ namespace ScreenCaptureApp
         private bool _isWaitingForMouseClick = false;
         private IntPtr _windowHandle = IntPtr.Zero;
         
+        // Состояние для обработки торгового паттерна (S-кнопка)
+        private bool _isWaitingForTradingPattern = false;
+        private int _tradingPatternClickCount = 0;
+        
         public SimpleTradingOverlay()
         {
             InitializeComponent();
@@ -368,8 +372,9 @@ namespace ScreenCaptureApp
             {
                 _hotkeysService.OnEscapeKeyPressed += OnEscapeKeyPressed;
                 _hotkeysService.OnPKeyPressed += OnPKeyPressed;
+                _hotkeysService.OnSKeyPressed += OnSKeyPressed;
                 
-                Logger.LogInfo("SimpleTradingOverlay subscribed to HotkeyService events (Escape and P)");
+                Logger.LogInfo("SimpleTradingOverlay subscribed to HotkeyService events (Escape, P, and S)");
             }
             else
             {
@@ -669,6 +674,14 @@ namespace ScreenCaptureApp
                 Logger.LogTagInfo("SimpleTradingOverlay", "Escape key pressed - resetting price level state to wait for Entry Price");
                 ResetPriceLevelStateToWaitForEntry();
             }
+
+            // Отменяем торговый паттерн если он активен
+            if (_isWaitingForTradingPattern)
+            {
+                Logger.LogTagInfo("SimpleTradingOverlay", "Escape key pressed - canceling trading pattern capture");
+                _isWaitingForTradingPattern = false;
+                _tradingPatternClickCount = 0;
+            }
         }
 
         public void OnPKeyPressed()
@@ -679,6 +692,17 @@ namespace ScreenCaptureApp
 
             // Активируем режим ожидания клика мыши
             _isWaitingForMouseClick = true;
+        }
+
+        public void OnSKeyPressed()
+        {
+            if (!_isEnabled) return;
+
+            Logger.LogTagInfo("SimpleTradingOverlay", "S key pressed via HotkeyService - starting trading pattern capture");
+
+            // Активируем режим ожидания торгового паттерна (два клика мыши)
+            _isWaitingForTradingPattern = true;
+            _tradingPatternClickCount = 0;
         }
 
         private void UpdateTradingToolbarUiByBroker(BrokerType brokerType)
@@ -805,6 +829,25 @@ namespace ScreenCaptureApp
                     
                     // Отправляем Escape через 200 мс в текущее окно Toolbar
                     SendDelayedEscapeToCurrentWindow();
+                }
+                else if (message == WM_LBUTTONDOWN && _isWaitingForTradingPattern)
+                {
+                    // Обрабатываем клик мыши для торгового паттерна
+                    _tradingPatternClickCount++;
+                    Logger.LogTagInfo("SimpleTradingOverlay", $"Trading pattern click {_tradingPatternClickCount} detected");
+                    
+                    if (_tradingPatternClickCount >= 2)
+                    {
+                        // Торговый паттерн завершен
+                        Logger.LogTagInfo("SimpleTradingOverlay", "Trading pattern completed - sending delayed escape");
+                        
+                        // Отключаем режим ожидания торгового паттерна
+                        _isWaitingForTradingPattern = false;
+                        _tradingPatternClickCount = 0;
+                        
+                        // Отправляем Escape через 300 мс в текущее окно
+                        SendDelayedEscapeForTradingPattern();
+                    }
                 }
             }
             
@@ -1006,6 +1049,13 @@ namespace ScreenCaptureApp
                     // Обновляем UI в зависимости от брокера
                     UpdateTradingToolbarUiByBroker(toolbarSettings.Broker);
                     
+                    // Проверяем, есть ли Rectangle Control, и устанавливаем такой же риск
+                    if (TradeRectangleControl != null)
+                    {
+                        TradeRectangleControl.SetRisk(toolbarSettings.Risk);
+                        Logger.LogTagInfo("SimpleTradingOverlay", $"Applied risk {toolbarSettings.Risk} to Rectangle Control from toolbar settings");
+                    }
+                    
                     Logger.LogInfo($"Applied toolbar settings for window {windowHandle}: Risk={toolbarSettings.Risk}, Duration={toolbarSettings.Duration}, Broker={toolbarSettings.Broker}");
                 }
                 else
@@ -1018,6 +1068,13 @@ namespace ScreenCaptureApp
                     
                     // Создаем настройки с дефолтными значениями
                     _toolbarSettingsManager.UpdateSettings(windowHandle.ToInt64(), 1, 2, BrokerType.Forex);
+                    
+                    // Проверяем, есть ли Rectangle Control, и устанавливаем такой же риск (по умолчанию 1)
+                    if (TradeRectangleControl != null)
+                    {
+                        TradeRectangleControl.SetRisk(1);
+                        Logger.LogTagInfo("SimpleTradingOverlay", $"Applied default risk 1 to Rectangle Control from toolbar settings");
+                    }
                     
                     Logger.LogInfo($"Applied and created default toolbar settings for window {windowHandle}");
                 }
@@ -1053,7 +1110,8 @@ namespace ScreenCaptureApp
             {
                 _hotkeysService.OnEscapeKeyPressed -= OnEscapeKeyPressed;
                 _hotkeysService.OnPKeyPressed -= OnPKeyPressed;
-                Logger.LogInfo("SimpleTradingOverlay unsubscribed from HotkeyService events (Escape and P)");
+                _hotkeysService.OnSKeyPressed -= OnSKeyPressed;
+                Logger.LogInfo("SimpleTradingOverlay unsubscribed from HotkeyService events (Escape, P, and S)");
             }
             
             // Отписываемся от событий HttpServerService
@@ -1091,6 +1149,28 @@ namespace ScreenCaptureApp
                 catch (Exception ex)
                 {
                     Logger.LogTagError("SimpleTradingOverlay", "Error in SendDelayedEscapeToCurrentWindow", ex);
+                }
+            });
+        }
+
+        /// <summary>
+        /// Отправляет Escape с задержкой 300 мс в текущее окно после завершения торгового паттерна
+        /// Используется после нажатия S-кнопки и двух кликов мыши
+        /// </summary>
+        private void SendDelayedEscapeForTradingPattern()
+        {
+            Logger.LogTagInfo("SimpleTradingOverlay", "SendDelayedEscapeForTradingPattern called - sending Escape to current window after trading pattern completion");
+            
+            Task.Run(async () =>
+            {
+                try
+                {
+                    await Task.Delay(300);
+                    _jforexWindowsManagerService?.SendEscKey(_currentWindowHandle);
+                }
+                catch (Exception ex)
+                {
+                    Logger.LogTagError("SimpleTradingOverlay", "Error in SendDelayedEscapeForTradingPattern", ex);
                 }
             });
         }

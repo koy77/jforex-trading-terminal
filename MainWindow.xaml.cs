@@ -306,10 +306,10 @@ namespace ScreenCaptureApp
             Logger.LogDebug("S key pressed - starting trading pattern capture");
             
             // Также выполняем оригинальную логику для CanvasWindow
-            if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
-            {
-                currentCanvasWindow.ShiftCanvasDown();
-            }
+            // if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
+            // {
+            //     // currentCanvasWindow.ShiftCanvasDown();
+            // }
         }
         
         private void OnDKeyPressed()
