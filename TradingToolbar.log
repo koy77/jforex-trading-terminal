@@ -27250,3 +27250,37 @@
 [2025-08-05 15:56:37.584] [INFO] OrderSummary panel hidden
 [2025-08-05 15:56:38.547] [INFO] No matching symbol found for UNKNOWN
 [2025-08-05 15:56:38.559] [INFO] OrderSummary panel hidden
+[2025-08-05 17:07:53.128] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-05 17:07:53.134] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,05, Percent: 1,27, Points: 67
+[2025-08-05 17:07:54.131] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-05 17:07:54.137] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,05, Percent: 0,7, Points: 37
+[2025-08-05 17:07:55.129] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-05 17:07:55.135] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,05, Percent: 0,23, Points: 12
+[2025-08-05 17:07:56.126] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-05 17:07:56.135] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,05, Percent: 0,61, Points: 32
+[2025-08-05 17:07:57.129] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-05 17:07:57.136] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,05, Percent: 0,42, Points: 22
+[2025-08-05 17:07:58.123] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-05 17:07:58.129] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,05, Percent: 0,64, Points: 34
+[2025-08-05 17:07:59.118] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-05 17:07:59.124] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,05, Percent: 0,66, Points: 35
+[2025-08-05 17:08:00.130] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-05 17:08:00.137] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,05, Percent: 0,87, Points: 46
+[2025-08-05 17:08:01.126] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-05 17:08:01.137] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,05, Percent: 1,04, Points: 55
+[2025-08-05 17:08:02.132] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-05 17:08:02.139] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,05, Percent: 0,57, Points: 30
+[2025-08-05 17:08:03.128] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-05 17:08:03.134] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,05, Percent: 0,66, Points: 35
+[2025-08-05 17:08:04.124] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-05 17:08:04.130] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,05, Percent: 0,91, Points: 48
+[2025-08-05 17:08:05.120] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-05 17:08:05.126] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,05, Percent: 0,95, Points: 50
+[2025-08-05 17:08:06.132] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-05 17:08:06.139] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,05, Percent: 1,16, Points: 61
+[2025-08-05 17:08:07.126] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-05 17:08:07.132] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,05, Percent: 1,46, Points: 76
+[2025-08-05 17:08:08.125] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-05 17:08:08.133] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,05, Percent: 1,48, Points: 78
+[2025-08-05 17:08:09.122] [INFO] Found matching symbol: XAUUSD matches XAUUSD.s
+[2025-08-05 17:08:09.128] [INFO] OrderSummary panel shown for symbol: XAUUSD.s, Lots: 0,05, Percent: 1,44, Points: 76
