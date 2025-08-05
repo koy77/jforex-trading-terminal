@@ -176,8 +176,8 @@ namespace ScreenCaptureApp.Controls
         private void UpdateOrderSummaryUI(Mt4SocketService.OrdersSummary.SymbolInfo symbolInfo)
         {
             OrderSymbolText.Text = symbolInfo.Symbol;
-            OrderLotsText.Text = $"Lots: {symbolInfo.Lots:F2}";
-            OrderPercentText.Text = $"%: {symbolInfo.Percent:F2}";
+            OrderLotsText.Text = $"%: {symbolInfo.Percent:F2}";
+            OrderPercentText.Text = $"Lots: {symbolInfo.Lots:F2}";
             OrderPointsText.Text = $"Pts: {symbolInfo.ProfitPoints:F0}";
             
             OrderSummaryPanel.Visibility = Visibility.Visible;

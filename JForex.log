@@ -15695,3 +15695,183 @@
 [2025-08-04 23:10:48.870] [INFO] Calculated screen coordinates: (680, 56)
 [2025-08-04 23:10:48.988] [INFO] Клик успешно выполнен в позиции (680, 56) -> screen (680, 56)
 [2025-08-04 23:10:48.989] [INFO] === MOUSE CLICK END ===
+[2025-08-05 10:18:55.105] [INFO] === MOUSE CLICK START ===
+[2025-08-05 10:18:55.106] [INFO] Click coordinates: (280, 56)
+[2025-08-05 10:18:55.106] [INFO] Window handle: 4261580
+[2025-08-05 10:18:55.106] [INFO] Window rect: Left=1920, Top=145, Right=3841, Bottom=1041
+[2025-08-05 10:18:55.106] [INFO] Calculated screen coordinates: (280, 56)
+[2025-08-05 10:18:55.234] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-08-05 10:18:55.235] [INFO] === MOUSE CLICK END ===
+[2025-08-05 10:22:06.774] [INFO] === MOUSE CLICK START ===
+[2025-08-05 10:22:06.774] [INFO] Click coordinates: (80, 56)
+[2025-08-05 10:22:06.774] [INFO] Window handle: 199028
+[2025-08-05 10:22:06.774] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-05 10:22:06.775] [INFO] Calculated screen coordinates: (80, 56)
+[2025-08-05 10:22:06.895] [INFO] Клик успешно выполнен в позиции (80, 56) -> screen (80, 56)
+[2025-08-05 10:22:06.895] [INFO] === MOUSE CLICK END ===
+[2025-08-05 10:22:28.726] [INFO] Sent ESC key to hwnd=0x14097C
+[2025-08-05 10:22:29.755] [INFO] Sent ESC key to hwnd=0x14097C
+[2025-08-05 10:22:47.665] [INFO] Sent ESC key to hwnd=0x14097C
+[2025-08-05 10:22:48.778] [INFO] Sent ESC key to hwnd=0x14097C
+[2025-08-05 10:31:10.167] [INFO] === MOUSE CLICK START ===
+[2025-08-05 10:31:10.167] [INFO] Click coordinates: (280, 56)
+[2025-08-05 10:31:10.167] [INFO] Window handle: 2952682
+[2025-08-05 10:31:10.167] [INFO] Window rect: Left=1920, Top=145, Right=3841, Bottom=1041
+[2025-08-05 10:31:10.168] [INFO] Calculated screen coordinates: (280, 56)
+[2025-08-05 10:31:10.286] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-08-05 10:31:10.287] [INFO] === MOUSE CLICK END ===
+[2025-08-05 10:31:16.590] [INFO] === MOUSE CLICK START ===
+[2025-08-05 10:31:16.591] [INFO] Click coordinates: (280, 56)
+[2025-08-05 10:31:16.591] [INFO] Window handle: 2035012
+[2025-08-05 10:31:16.591] [INFO] Window rect: Left=1920, Top=145, Right=3841, Bottom=1041
+[2025-08-05 10:31:16.591] [INFO] Calculated screen coordinates: (280, 56)
+[2025-08-05 10:31:16.712] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-08-05 10:31:16.712] [INFO] === MOUSE CLICK END ===
+[2025-08-05 10:32:47.270] [INFO] === MOUSE CLICK START ===
+[2025-08-05 10:32:47.270] [INFO] Click coordinates: (480, 56)
+[2025-08-05 10:32:47.270] [INFO] Window handle: 460590
+[2025-08-05 10:32:47.270] [INFO] Window rect: Left=2022, Top=103, Right=3492, Bottom=926
+[2025-08-05 10:32:47.271] [INFO] Calculated screen coordinates: (480, 56)
+[2025-08-05 10:32:47.386] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-08-05 10:32:47.387] [INFO] === MOUSE CLICK END ===
+[2025-08-05 10:32:48.502] [INFO] === MOUSE CLICK START ===
+[2025-08-05 10:32:48.502] [INFO] Click coordinates: (480, 56)
+[2025-08-05 10:32:48.502] [INFO] Window handle: 460590
+[2025-08-05 10:32:48.502] [INFO] Window rect: Left=2022, Top=103, Right=3492, Bottom=926
+[2025-08-05 10:32:48.502] [INFO] Calculated screen coordinates: (480, 56)
+[2025-08-05 10:32:48.630] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-08-05 10:32:48.630] [INFO] === MOUSE CLICK END ===
+[2025-08-05 10:32:51.286] [INFO] === MOUSE CLICK START ===
+[2025-08-05 10:32:51.286] [INFO] Click coordinates: (480, 56)
+[2025-08-05 10:32:51.286] [INFO] Window handle: 460590
+[2025-08-05 10:32:51.286] [INFO] Window rect: Left=2022, Top=103, Right=3492, Bottom=926
+[2025-08-05 10:32:51.286] [INFO] Calculated screen coordinates: (480, 56)
+[2025-08-05 10:32:51.407] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-08-05 10:32:51.407] [INFO] === MOUSE CLICK END ===
+[2025-08-05 11:05:59.345] [INFO] === MOUSE CLICK START ===
+[2025-08-05 11:05:59.345] [INFO] Click coordinates: (480, 56)
+[2025-08-05 11:05:59.345] [INFO] Window handle: 5835434
+[2025-08-05 11:05:59.346] [INFO] Window rect: Left=1969, Top=57, Right=3890, Bottom=953
+[2025-08-05 11:05:59.346] [INFO] Calculated screen coordinates: (480, 56)
+[2025-08-05 11:05:59.547] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-08-05 11:05:59.590] [INFO] === MOUSE CLICK END ===
+[2025-08-05 11:13:15.178] [INFO] === MOUSE CLICK START ===
+[2025-08-05 11:13:15.178] [INFO] Click coordinates: (480, 56)
+[2025-08-05 11:13:15.178] [INFO] Window handle: 460590
+[2025-08-05 11:13:15.179] [INFO] Window rect: Left=2010, Top=98, Right=3562, Bottom=1049
+[2025-08-05 11:13:15.179] [INFO] Calculated screen coordinates: (480, 56)
+[2025-08-05 11:13:15.308] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-08-05 11:13:15.308] [INFO] === MOUSE CLICK END ===
+[2025-08-05 11:13:15.466] [INFO] === MOUSE CLICK START ===
+[2025-08-05 11:13:15.466] [INFO] Click coordinates: (280, 56)
+[2025-08-05 11:13:15.466] [INFO] Window handle: 460590
+[2025-08-05 11:13:15.466] [INFO] Window rect: Left=2010, Top=98, Right=3562, Bottom=1049
+[2025-08-05 11:13:15.467] [INFO] Calculated screen coordinates: (280, 56)
+[2025-08-05 11:13:15.597] [INFO] Клик успешно выполнен в позиции (280, 56) -> screen (280, 56)
+[2025-08-05 11:13:15.598] [INFO] === MOUSE CLICK END ===
+[2025-08-05 12:14:10.451] [INFO] Sent ESC key to hwnd=0xE04B6
+[2025-08-05 12:25:43.426] [INFO] Sent ESC key to hwnd=0xE04B6
+[2025-08-05 12:31:06.685] [INFO] Sent ESC key to hwnd=0x5804C4
+[2025-08-05 12:31:07.887] [INFO] Sent ESC key to hwnd=0x5804C4
+[2025-08-05 12:33:19.967] [INFO] Processing trading stroke directly: Canvas offsets: X=0, Y=0
+[2025-08-05 12:33:19.967] [INFO] Original stroke points: Point1=(1448,4817041535691, 353,0674153874325), Point2=(1449,5950193792535, 352,8366954557939)
+[2025-08-05 12:33:19.967] [INFO] Adjusted stroke points: Point1=(1448,4817041535691, 353,0674153874325), Point2=(1449,5950193792535, 352,8366954557939)
+[2025-08-05 12:33:19.967] [INFO] Final screen points: Point1=(1448, 353), Point2=(1450, 353)
+[2025-08-05 12:33:20.037] [INFO] CaptureData saved to database: ID=20250805123319970
+[2025-08-05 12:33:20.037] [INFO] Closing CanvasWindow for trading mode
+[2025-08-05 12:33:20.179] [INFO] Окно успешно активировано. Handle: 5768388
+[2025-08-05 12:33:20.591] [INFO] Converted screen point (1448, 353) to window point (1448, 313)
+[2025-08-05 12:33:20.591] [INFO] Converted screen point (1450, 353) to window point (1450, 313)
+[2025-08-05 12:33:20.592] [INFO] Окно успешно активировано. Handle: 5768388
+[2025-08-05 12:33:20.758] [INFO] Клавиша 'A' успешно отправлена в окно 5768388
+[2025-08-05 12:33:20.871] [INFO] === MOUSE CLICK START ===
+[2025-08-05 12:33:20.871] [INFO] Click coordinates: (1448, 313)
+[2025-08-05 12:33:20.872] [INFO] Window handle: 5768388
+[2025-08-05 12:33:20.872] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-05 12:33:20.872] [INFO] Calculated screen coordinates: (1448, 313)
+[2025-08-05 12:33:20.994] [INFO] Клик успешно выполнен в позиции (1448, 313) -> screen (1448, 313)
+[2025-08-05 12:33:20.994] [INFO] === MOUSE CLICK END ===
+[2025-08-05 12:33:21.057] [INFO] === MOUSE CLICK START ===
+[2025-08-05 12:33:21.057] [INFO] Click coordinates: (1450, 313)
+[2025-08-05 12:33:21.058] [INFO] Window handle: 5768388
+[2025-08-05 12:33:21.058] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-05 12:33:21.059] [INFO] Calculated screen coordinates: (1450, 313)
+[2025-08-05 12:33:21.179] [INFO] Клик успешно выполнен в позиции (1450, 313) -> screen (1450, 313)
+[2025-08-05 12:33:21.180] [INFO] === MOUSE CLICK END ===
+[2025-08-05 12:33:21.180] [INFO] Successfully added trendline from (1448, 313) to (1450, 313)
+[2025-08-05 12:33:21.181] [INFO] Trading stroke processing completed
+[2025-08-05 12:33:21.181] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-08-05 12:33:26.523] [INFO] Processing trading stroke directly: Canvas offsets: X=0, Y=0
+[2025-08-05 12:33:26.523] [INFO] Original stroke points: Point1=(1332,5211340678122, 405,1771599475082), Point2=(1431,8405713064974, 283,488876003296)
+[2025-08-05 12:33:26.523] [INFO] Adjusted stroke points: Point1=(1332,5211340678122, 405,1771599475082), Point2=(1431,8405713064974, 283,488876003296)
+[2025-08-05 12:33:26.523] [INFO] Final screen points: Point1=(1333, 405), Point2=(1432, 283)
+[2025-08-05 12:33:26.543] [INFO] CaptureData saved to database: ID=20250805123326523
+[2025-08-05 12:33:26.543] [INFO] Closing CanvasWindow for trading mode
+[2025-08-05 12:33:26.670] [INFO] Окно успешно активировано. Handle: 5768388
+[2025-08-05 12:33:27.079] [INFO] Converted screen point (1333, 405) to window point (1333, 365)
+[2025-08-05 12:33:27.079] [INFO] Converted screen point (1432, 283) to window point (1432, 243)
+[2025-08-05 12:33:27.080] [INFO] Окно успешно активировано. Handle: 5768388
+[2025-08-05 12:33:27.251] [INFO] Клавиша 'A' успешно отправлена в окно 5768388
+[2025-08-05 12:33:27.363] [INFO] === MOUSE CLICK START ===
+[2025-08-05 12:33:27.363] [INFO] Click coordinates: (1333, 365)
+[2025-08-05 12:33:27.363] [INFO] Window handle: 5768388
+[2025-08-05 12:33:27.363] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-05 12:33:27.364] [INFO] Calculated screen coordinates: (1333, 365)
+[2025-08-05 12:33:27.489] [INFO] Клик успешно выполнен в позиции (1333, 365) -> screen (1333, 365)
+[2025-08-05 12:33:27.490] [INFO] === MOUSE CLICK END ===
+[2025-08-05 12:33:27.552] [INFO] === MOUSE CLICK START ===
+[2025-08-05 12:33:27.552] [INFO] Click coordinates: (1432, 243)
+[2025-08-05 12:33:27.553] [INFO] Window handle: 5768388
+[2025-08-05 12:33:27.553] [INFO] Window rect: Left=0, Top=0, Right=1920, Bottom=1039
+[2025-08-05 12:33:27.553] [INFO] Calculated screen coordinates: (1432, 243)
+[2025-08-05 12:33:27.676] [INFO] Клик успешно выполнен в позиции (1432, 243) -> screen (1432, 243)
+[2025-08-05 12:33:27.677] [INFO] === MOUSE CLICK END ===
+[2025-08-05 12:33:27.677] [INFO] Successfully added trendline from (1333, 365) to (1432, 243)
+[2025-08-05 12:33:27.678] [INFO] Trading stroke processing completed
+[2025-08-05 12:33:27.678] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-08-05 12:33:53.346] [INFO] Processing trading stroke directly: Canvas offsets: X=0, Y=0
+[2025-08-05 12:33:53.346] [INFO] Original stroke points: Point1=(893,8749351481673, 496,3774529251991), Point2=(957,3924985503708, 438,0053102206488)
+[2025-08-05 12:33:53.346] [INFO] Adjusted stroke points: Point1=(893,8749351481673, 496,3774529251991), Point2=(957,3924985503708, 438,0053102206488)
+[2025-08-05 12:33:53.346] [INFO] Final screen points: Point1=(894, 496), Point2=(957, 438)
+[2025-08-05 12:33:53.361] [INFO] CaptureData saved to database: ID=20250805123353346
+[2025-08-05 12:33:53.361] [INFO] Closing CanvasWindow for trading mode
+[2025-08-05 12:33:53.499] [INFO] Окно успешно активировано. Handle: 918710
+[2025-08-05 12:33:53.910] [INFO] Converted screen point (894, 496) to window point (-1026, 456)
+[2025-08-05 12:33:53.911] [INFO] Converted screen point (957, 438) to window point (-963, 398)
+[2025-08-05 12:33:53.911] [INFO] Окно успешно активировано. Handle: 918710
+[2025-08-05 12:33:54.079] [INFO] Клавиша 'A' успешно отправлена в окно 918710
+[2025-08-05 12:33:54.189] [INFO] === MOUSE CLICK START ===
+[2025-08-05 12:33:54.189] [INFO] Click coordinates: (-1026, 456)
+[2025-08-05 12:33:54.190] [INFO] Window handle: 918710
+[2025-08-05 12:33:54.190] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-08-05 12:33:54.191] [INFO] Calculated screen coordinates: (-1026, 456)
+[2025-08-05 12:33:54.313] [INFO] Клик успешно выполнен в позиции (-1026, 456) -> screen (-1026, 456)
+[2025-08-05 12:33:54.314] [INFO] === MOUSE CLICK END ===
+[2025-08-05 12:33:54.375] [INFO] === MOUSE CLICK START ===
+[2025-08-05 12:33:54.375] [INFO] Click coordinates: (-963, 398)
+[2025-08-05 12:33:54.376] [INFO] Window handle: 918710
+[2025-08-05 12:33:54.376] [INFO] Window rect: Left=1920, Top=0, Right=3840, Bottom=1039
+[2025-08-05 12:33:54.377] [INFO] Calculated screen coordinates: (-963, 398)
+[2025-08-05 12:33:54.498] [INFO] Клик успешно выполнен в позиции (-963, 398) -> screen (-963, 398)
+[2025-08-05 12:33:54.499] [INFO] === MOUSE CLICK END ===
+[2025-08-05 12:33:54.499] [INFO] Successfully added trendline from (-1026, 456) to (-963, 398)
+[2025-08-05 12:33:54.523] [INFO] Trading stroke processing completed
+[2025-08-05 12:33:54.523] [INFO] Trendline drawn successfully - triggering space hotkey callback
+[2025-08-05 12:45:42.677] [INFO] === MOUSE CLICK START ===
+[2025-08-05 12:45:42.677] [INFO] Click coordinates: (480, 56)
+[2025-08-05 12:45:42.677] [INFO] Window handle: 197656
+[2025-08-05 12:45:42.677] [INFO] Window rect: Left=2071, Top=69, Right=3624, Bottom=1022
+[2025-08-05 12:45:42.678] [INFO] Calculated screen coordinates: (480, 56)
+[2025-08-05 12:45:42.801] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-08-05 12:45:42.802] [INFO] === MOUSE CLICK END ===
+[2025-08-05 15:45:39.357] [INFO] Sent ESC key to hwnd=0x402C0
+[2025-08-05 15:45:40.173] [INFO] Sent ESC key to hwnd=0x402C0
+[2025-08-05 15:45:41.567] [INFO] Sent ESC key to hwnd=0x402C0
+[2025-08-05 15:45:42.695] [INFO] Sent ESC key to hwnd=0x402C0
+[2025-08-05 15:52:17.401] [INFO] === MOUSE CLICK START ===
+[2025-08-05 15:52:17.401] [INFO] Click coordinates: (480, 56)
+[2025-08-05 15:52:17.401] [INFO] Window handle: 525040
+[2025-08-05 15:52:17.402] [INFO] Window rect: Left=0, Top=0, Right=1921, Bottom=1041
+[2025-08-05 15:52:17.402] [INFO] Calculated screen coordinates: (480, 56)
+[2025-08-05 15:52:17.519] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-08-05 15:52:17.519] [INFO] === MOUSE CLICK END ===

@@ -6496,3 +6496,577 @@ StackTrace:    at ScreenCaptureApp.Services.HttpServerService.HandlePriceLevelRe
   "message": "JForex chart object processed successfully",
   "timestamp": "2025-08-05T00:12:18.0566076+03:00"
 }
+[2025-08-05 10:22:47.679] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 10:22:47.681] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3367.32094,"timestamp":"2025-08-05T10:22:47.670Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-05 10:22:47.682] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3367.32094,"timestamp":"2025-08-05T10:22:47.670Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-05 10:22:47.682] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3367.32094,"timestamp":"2025-08-05T10:22:47.670Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-05 10:22:47.684] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3367,32094, Type='com.dukascopy.charts.drawings.PriceMarkerChartObject', AdditionalData='{
+  "objectType": "PRICEMARKER"
+}'
+[2025-08-05 10:22:47.717] [INFO] New JForex Chart Object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3367,32094 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-05 10:22:47.685
+[2025-08-05 10:22:47.717] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T10:22:47.714958+03:00"
+}
+[2025-08-05 10:22:48.610] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 10:22:48.611] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3365.82472,"timestamp":"2025-08-05T10:22:48.606Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-05 10:22:48.611] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3365.82472,"timestamp":"2025-08-05T10:22:48.606Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-05 10:22:48.612] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3365.82472,"timestamp":"2025-08-05T10:22:48.606Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-05 10:22:48.612] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3365,82472, Type='com.dukascopy.charts.drawings.PriceMarkerChartObject', AdditionalData='{
+  "objectType": "PRICEMARKER"
+}'
+[2025-08-05 10:22:48.737] [INFO] New JForex Chart Object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3365,82472 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-05 10:22:48.612
+[2025-08-05 10:22:48.737] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T10:22:48.7373978+03:00"
+}
+[2025-08-05 10:23:08.590] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 10:23:08.590] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3366.79449,"timestamp":"2025-08-05T10:23:08.587Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3367.83353,"lowerPrice":3365.75545}}}
+[2025-08-05 10:23:08.591] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3366.79449,"timestamp":"2025-08-05T10:23:08.587Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3367.83353,"lowerPrice":3365.75545}}}
+[2025-08-05 10:23:08.591] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3366.79449,"timestamp":"2025-08-05T10:23:08.587Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3367.83353,"lowerPrice":3365.75545}}}
+[2025-08-05 10:23:08.591] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3366,79449, Type='com.dukascopy.charts.drawings.RectangleChartObject', AdditionalData='{
+  "objectType": "RECTANGLE",
+  "area": {
+    "upperPrice": 3367.83353,
+    "lowerPrice": 3365.75545
+  }
+}'
+[2025-08-05 10:23:08.607] [INFO] New JForex Chart Object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3366,79449 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 10:23:08.592
+[2025-08-05 10:23:08.607] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T10:23:08.6073555+03:00"
+}
+[2025-08-05 10:23:37.490] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 10:23:37.491] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3367.01530,"timestamp":"2025-08-05T10:23:37.476Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3368.10096,"lowerPrice":3365.92963}}}
+[2025-08-05 10:23:37.492] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3367.01530,"timestamp":"2025-08-05T10:23:37.476Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3368.10096,"lowerPrice":3365.92963}}}
+[2025-08-05 10:23:37.492] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3367.01530,"timestamp":"2025-08-05T10:23:37.476Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3368.10096,"lowerPrice":3365.92963}}}
+[2025-08-05 10:23:37.492] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3367,01530, Type='com.dukascopy.charts.drawings.RectangleChartObject', AdditionalData='{
+  "objectType": "RECTANGLE",
+  "area": {
+    "upperPrice": 3368.10096,
+    "lowerPrice": 3365.92963
+  }
+}'
+[2025-08-05 10:23:37.510] [INFO] New JForex Chart Object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3367,01530 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 10:23:37.493
+[2025-08-05 10:23:37.510] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T10:23:37.510052+03:00"
+}
+[2025-08-05 10:23:54.540] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 10:23:54.541] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3366.76476,"timestamp":"2025-08-05T10:23:54.535Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3368.49069,"lowerPrice":3365.03883}}}
+[2025-08-05 10:23:54.542] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3366.76476,"timestamp":"2025-08-05T10:23:54.535Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3368.49069,"lowerPrice":3365.03883}}}
+[2025-08-05 10:23:54.542] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3366.76476,"timestamp":"2025-08-05T10:23:54.535Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3368.49069,"lowerPrice":3365.03883}}}
+[2025-08-05 10:23:54.542] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3366,76476, Type='com.dukascopy.charts.drawings.RectangleChartObject', AdditionalData='{
+  "objectType": "RECTANGLE",
+  "area": {
+    "upperPrice": 3368.49069,
+    "lowerPrice": 3365.03883
+  }
+}'
+[2025-08-05 10:23:54.566] [INFO] New JForex Chart Object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3366,76476 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 10:23:54.543
+[2025-08-05 10:23:54.566] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T10:23:54.5659464+03:00"
+}
+[2025-08-05 10:31:36.485] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 10:31:36.485] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3366.27839,"timestamp":"2025-08-05T10:31:36.481Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3366.88660,"lowerPrice":3365.67018}}}
+[2025-08-05 10:31:36.486] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3366.27839,"timestamp":"2025-08-05T10:31:36.481Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3366.88660,"lowerPrice":3365.67018}}}
+[2025-08-05 10:31:36.486] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3366.27839,"timestamp":"2025-08-05T10:31:36.481Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3366.88660,"lowerPrice":3365.67018}}}
+[2025-08-05 10:31:36.486] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3366,27839, Type='com.dukascopy.charts.drawings.RectangleChartObject', AdditionalData='{
+  "objectType": "RECTANGLE",
+  "area": {
+    "upperPrice": 3366.8866,
+    "lowerPrice": 3365.67018
+  }
+}'
+[2025-08-05 10:31:36.525] [INFO] New JForex Chart Object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3366,27839 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 10:31:36.487
+[2025-08-05 10:31:36.525] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T10:31:36.5251+03:00"
+}
+[2025-08-05 10:40:26.895] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 10:40:26.895] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3369.73663,"timestamp":"2025-08-05T10:40:26.891Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3370.27800,"lowerPrice":3369.19527}}}
+[2025-08-05 10:40:26.896] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3369.73663,"timestamp":"2025-08-05T10:40:26.891Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3370.27800,"lowerPrice":3369.19527}}}
+[2025-08-05 10:40:26.896] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3369.73663,"timestamp":"2025-08-05T10:40:26.891Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3370.27800,"lowerPrice":3369.19527}}}
+[2025-08-05 10:40:26.896] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3369,73663, Type='com.dukascopy.charts.drawings.RectangleChartObject', AdditionalData='{
+  "objectType": "RECTANGLE",
+  "area": {
+    "upperPrice": 3370.278,
+    "lowerPrice": 3369.19527
+  }
+}'
+[2025-08-05 10:40:26.912] [INFO] New JForex Chart Object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3369,73663 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 10:40:26.897
+[2025-08-05 10:40:26.912] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T10:40:26.9125888+03:00"
+}
+[2025-08-05 10:45:11.310] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 10:45:11.322] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3372.14449,"timestamp":"2025-08-05T10:45:11.301Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3372.44345,"lowerPrice":3371.84553}}}
+[2025-08-05 10:45:11.329] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3372.14449,"timestamp":"2025-08-05T10:45:11.301Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3372.44345,"lowerPrice":3371.84553}}}
+[2025-08-05 10:45:11.329] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3372.14449,"timestamp":"2025-08-05T10:45:11.301Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3372.44345,"lowerPrice":3371.84553}}}
+[2025-08-05 10:45:11.566] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3372,14449, Type='com.dukascopy.charts.drawings.RectangleChartObject', AdditionalData='{
+  "objectType": "RECTANGLE",
+  "area": {
+    "upperPrice": 3372.44345,
+    "lowerPrice": 3371.84553
+  }
+}'
+[2025-08-05 10:45:11.657] [INFO] New JForex Chart Object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3372,14449 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 10:45:11.571
+[2025-08-05 10:45:11.658] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T10:45:11.6223938+03:00"
+}
+[2025-08-05 10:45:33.315] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 10:45:33.315] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3369.80127,"timestamp":"2025-08-05T10:45:33.309Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3370.31032,"lowerPrice":3369.29223}}}
+[2025-08-05 10:45:33.316] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3369.80127,"timestamp":"2025-08-05T10:45:33.309Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3370.31032,"lowerPrice":3369.29223}}}
+[2025-08-05 10:45:33.316] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3369.80127,"timestamp":"2025-08-05T10:45:33.309Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3370.31032,"lowerPrice":3369.29223}}}
+[2025-08-05 10:45:33.317] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3369,80127, Type='com.dukascopy.charts.drawings.RectangleChartObject', AdditionalData='{
+  "objectType": "RECTANGLE",
+  "area": {
+    "upperPrice": 3370.31032,
+    "lowerPrice": 3369.29223
+  }
+}'
+[2025-08-05 10:45:33.337] [INFO] New JForex Chart Object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3369,80127 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 10:45:33.318
+[2025-08-05 10:45:33.338] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T10:45:33.3375753+03:00"
+}
+[2025-08-05 10:45:35.557] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 10:45:35.558] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3367.61966,"timestamp":"2025-08-05T10:45:35.451Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3368.33878,"lowerPrice":3366.90053}}}
+[2025-08-05 10:45:35.560] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3367.61966,"timestamp":"2025-08-05T10:45:35.451Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3368.33878,"lowerPrice":3366.90053}}}
+[2025-08-05 10:45:35.560] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3367.61966,"timestamp":"2025-08-05T10:45:35.451Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3368.33878,"lowerPrice":3366.90053}}}
+[2025-08-05 10:45:35.560] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3367,61966, Type='com.dukascopy.charts.drawings.RectangleChartObject', AdditionalData='{
+  "objectType": "RECTANGLE",
+  "area": {
+    "upperPrice": 3368.33878,
+    "lowerPrice": 3366.90053
+  }
+}'
+[2025-08-05 10:45:35.585] [INFO] New JForex Chart Object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3367,61966 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 10:45:35.561
+[2025-08-05 10:45:35.585] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T10:45:35.5849632+03:00"
+}
+[2025-08-05 11:44:26.314] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 11:44:26.327] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3371.52996,"timestamp":"2025-08-05T11:44:26.299Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3371.67214,"lowerPrice":3371.38778}}}
+[2025-08-05 11:44:26.336] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3371.52996,"timestamp":"2025-08-05T11:44:26.299Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3371.67214,"lowerPrice":3371.38778}}}
+[2025-08-05 11:44:26.336] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3371.52996,"timestamp":"2025-08-05T11:44:26.299Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3371.67214,"lowerPrice":3371.38778}}}
+[2025-08-05 11:44:26.534] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3371,52996, Type='com.dukascopy.charts.drawings.RectangleChartObject', AdditionalData='{
+  "objectType": "RECTANGLE",
+  "area": {
+    "upperPrice": 3371.67214,
+    "lowerPrice": 3371.38778
+  }
+}'
+[2025-08-05 11:44:26.633] [INFO] New JForex Chart Object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3371,52996 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 11:44:26.539
+[2025-08-05 11:44:26.633] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T11:44:26.6033697+03:00"
+}
+[2025-08-05 11:48:37.667] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 11:48:37.668] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3371.18241,"timestamp":"2025-08-05T11:48:37.662Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3371.81432,"lowerPrice":3370.55051}}}
+[2025-08-05 11:48:37.669] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3371.18241,"timestamp":"2025-08-05T11:48:37.662Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3371.81432,"lowerPrice":3370.55051}}}
+[2025-08-05 11:48:37.669] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3371.18241,"timestamp":"2025-08-05T11:48:37.662Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3371.81432,"lowerPrice":3370.55051}}}
+[2025-08-05 11:48:37.670] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3371,18241, Type='com.dukascopy.charts.drawings.RectangleChartObject', AdditionalData='{
+  "objectType": "RECTANGLE",
+  "area": {
+    "upperPrice": 3371.81432,
+    "lowerPrice": 3370.55051
+  }
+}'
+[2025-08-05 11:48:37.691] [INFO] New JForex Chart Object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3371,18241 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 11:48:37.671
+[2025-08-05 11:48:37.691] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T11:48:37.6911864+03:00"
+}
+[2025-08-05 12:09:28.818] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 12:09:28.838] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3370.07930,"timestamp":"2025-08-05T12:09:28.805Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3370.89047,"lowerPrice":3369.26813}}}
+[2025-08-05 12:09:28.844] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3370.07930,"timestamp":"2025-08-05T12:09:28.805Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3370.89047,"lowerPrice":3369.26813}}}
+[2025-08-05 12:09:28.845] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3370.07930,"timestamp":"2025-08-05T12:09:28.805Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3370.89047,"lowerPrice":3369.26813}}}
+[2025-08-05 12:09:29.061] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3370,07930, Type='com.dukascopy.charts.drawings.RectangleChartObject', AdditionalData='{
+  "objectType": "RECTANGLE",
+  "area": {
+    "upperPrice": 3370.89047,
+    "lowerPrice": 3369.26813
+  }
+}'
+[2025-08-05 12:09:29.149] [INFO] New JForex Chart Object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3370,07930 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 12:09:29.065
+[2025-08-05 12:09:29.149] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T12:09:29.1227472+03:00"
+}
+[2025-08-05 12:10:13.805] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 12:10:13.806] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3369.58514,"timestamp":"2025-08-05T12:10:13.799Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3370.66670,"lowerPrice":3368.50358}}}
+[2025-08-05 12:10:13.807] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3369.58514,"timestamp":"2025-08-05T12:10:13.799Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3370.66670,"lowerPrice":3368.50358}}}
+[2025-08-05 12:10:13.807] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3369.58514,"timestamp":"2025-08-05T12:10:13.799Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3370.66670,"lowerPrice":3368.50358}}}
+[2025-08-05 12:10:13.807] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3369,58514, Type='com.dukascopy.charts.drawings.RectangleChartObject', AdditionalData='{
+  "objectType": "RECTANGLE",
+  "area": {
+    "upperPrice": 3370.6667,
+    "lowerPrice": 3368.50358
+  }
+}'
+[2025-08-05 12:10:13.822] [INFO] New JForex Chart Object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3369,58514 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 12:10:13.808
+[2025-08-05 12:10:13.822] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T12:10:13.8218358+03:00"
+}
+[2025-08-05 12:23:46.492] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 12:23:46.494] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3369.59858,"timestamp":"2025-08-05T12:23:46.488Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3371.16360,"lowerPrice":3368.03356}}}
+[2025-08-05 12:23:46.495] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3369.59858,"timestamp":"2025-08-05T12:23:46.488Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3371.16360,"lowerPrice":3368.03356}}}
+[2025-08-05 12:23:46.495] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3369.59858,"timestamp":"2025-08-05T12:23:46.488Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3371.16360,"lowerPrice":3368.03356}}}
+[2025-08-05 12:23:46.495] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3369,59858, Type='com.dukascopy.charts.drawings.RectangleChartObject', AdditionalData='{
+  "objectType": "RECTANGLE",
+  "area": {
+    "upperPrice": 3371.1636,
+    "lowerPrice": 3368.03356
+  }
+}'
+[2025-08-05 12:23:46.516] [INFO] New JForex Chart Object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3369,59858 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 12:23:46.496
+[2025-08-05 12:23:46.517] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T12:23:46.5133288+03:00"
+}
+[2025-08-05 12:27:42.943] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 12:27:42.943] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3370.19722,"timestamp":"2025-08-05T12:27:42.936Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3371.26622,"lowerPrice":3369.12822}}}
+[2025-08-05 12:27:42.944] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3370.19722,"timestamp":"2025-08-05T12:27:42.936Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3371.26622,"lowerPrice":3369.12822}}}
+[2025-08-05 12:27:42.945] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3370.19722,"timestamp":"2025-08-05T12:27:42.936Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3371.26622,"lowerPrice":3369.12822}}}
+[2025-08-05 12:27:42.945] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3370,19722, Type='com.dukascopy.charts.drawings.RectangleChartObject', AdditionalData='{
+  "objectType": "RECTANGLE",
+  "area": {
+    "upperPrice": 3371.26622,
+    "lowerPrice": 3369.12822
+  }
+}'
+[2025-08-05 12:27:42.969] [INFO] New JForex Chart Object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3370,19722 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 12:27:42.946
+[2025-08-05 12:27:42.969] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T12:27:42.9688841+03:00"
+}
+[2025-08-05 12:28:18.149] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 12:28:18.151] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3364.66407,"timestamp":"2025-08-05T12:28:18.142Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3365.16009,"lowerPrice":3364.16805}}}
+[2025-08-05 12:28:18.152] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3364.66407,"timestamp":"2025-08-05T12:28:18.142Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3365.16009,"lowerPrice":3364.16805}}}
+[2025-08-05 12:28:18.152] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3364.66407,"timestamp":"2025-08-05T12:28:18.142Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3365.16009,"lowerPrice":3364.16805}}}
+[2025-08-05 12:28:18.152] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3364,66407, Type='com.dukascopy.charts.drawings.RectangleChartObject', AdditionalData='{
+  "objectType": "RECTANGLE",
+  "area": {
+    "upperPrice": 3365.16009,
+    "lowerPrice": 3364.16805
+  }
+}'
+[2025-08-05 12:28:18.168] [INFO] New JForex Chart Object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3364,66407 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 12:28:18.153
+[2025-08-05 12:28:18.168] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T12:28:18.1678279+03:00"
+}
+[2025-08-05 12:31:06.919] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 12:31:06.923] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3369.82127,"timestamp":"2025-08-05T12:31:06.913Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-05 12:31:06.923] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3369.82127,"timestamp":"2025-08-05T12:31:06.913Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-05 12:31:06.924] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3369.82127,"timestamp":"2025-08-05T12:31:06.913Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-05 12:31:06.924] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3369,82127, Type='com.dukascopy.charts.drawings.PriceMarkerChartObject', AdditionalData='{
+  "objectType": "PRICEMARKER"
+}'
+[2025-08-05 12:31:06.954] [INFO] New JForex Chart Object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3369,82127 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-05 12:31:06.925
+[2025-08-05 12:31:06.956] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T12:31:06.9521234+03:00"
+}
+[2025-08-05 12:31:07.752] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 12:31:07.753] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3373.29613,"timestamp":"2025-08-05T12:31:07.747Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-05 12:31:07.754] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3373.29613,"timestamp":"2025-08-05T12:31:07.747Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-05 12:31:07.754] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3373.29613,"timestamp":"2025-08-05T12:31:07.747Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-05 12:31:07.754] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3373,29613, Type='com.dukascopy.charts.drawings.PriceMarkerChartObject', AdditionalData='{
+  "objectType": "PRICEMARKER"
+}'
+[2025-08-05 12:31:07.852] [INFO] New JForex Chart Object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3373,29613 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-05 12:31:07.754
+[2025-08-05 12:31:07.853] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T12:31:07.8522888+03:00"
+}
+[2025-08-05 12:31:54.623] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 12:31:54.623] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3366.26976,"timestamp":"2025-08-05T12:31:54.619Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3367.21587,"lowerPrice":3365.32365}}}
+[2025-08-05 12:31:54.624] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3366.26976,"timestamp":"2025-08-05T12:31:54.619Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3367.21587,"lowerPrice":3365.32365}}}
+[2025-08-05 12:31:54.624] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3366.26976,"timestamp":"2025-08-05T12:31:54.619Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3367.21587,"lowerPrice":3365.32365}}}
+[2025-08-05 12:31:54.624] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3366,26976, Type='com.dukascopy.charts.drawings.RectangleChartObject', AdditionalData='{
+  "objectType": "RECTANGLE",
+  "area": {
+    "upperPrice": 3367.21587,
+    "lowerPrice": 3365.32365
+  }
+}'
+[2025-08-05 12:31:54.637] [INFO] New JForex Chart Object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3366,26976 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 12:31:54.625
+[2025-08-05 12:31:54.637] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T12:31:54.6368607+03:00"
+}
+[2025-08-05 12:33:21.542] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 12:33:21.543] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3372.82836,"timestamp":"2025-08-05T12:33:21.536Z","type":"com.dukascopy.charts.drawings.ShortLineChartObject","additionalData":{"objectType":"SHORT_LINE","points":[{"x":1754373975130,"y":3372.82836},{"x":1754376112358,"y":3371.75917}]}}
+[2025-08-05 12:33:21.543] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3372.82836,"timestamp":"2025-08-05T12:33:21.536Z","type":"com.dukascopy.charts.drawings.ShortLineChartObject","additionalData":{"objectType":"SHORT_LINE","points":[{"x":1754373975130,"y":3372.82836},{"x":1754376112358,"y":3371.75917}]}}
+[2025-08-05 12:33:21.544] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3372.82836,"timestamp":"2025-08-05T12:33:21.536Z","type":"com.dukascopy.charts.drawings.ShortLineChartObject","additionalData":{"objectType":"SHORT_LINE","points":[{"x":1754373975130,"y":3372.82836},{"x":1754376112358,"y":3371.75917}]}}
+[2025-08-05 12:33:21.548] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3372,82836, Type='com.dukascopy.charts.drawings.ShortLineChartObject', AdditionalData='{
+  "objectType": "SHORT_LINE",
+  "points": [
+    {
+      "x": 1754373975130,
+      "y": 3372.82836
+    },
+    {
+      "x": 1754376112358,
+      "y": 3371.75917
+    }
+  ]
+}'
+[2025-08-05 12:33:21.569] [INFO] New JForex Chart Object: JForexChartObject: ShortLine | Symbol: XAUUSD | Price: 3372,82836 | Class: com.dukascopy.charts.drawings.ShortLineChartObject | Time: 2025-08-05 12:33:21.548
+[2025-08-05 12:33:21.570] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T12:33:21.5691151+03:00"
+}
+[2025-08-05 12:33:28.533] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 12:33:28.533] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3369.35350,"timestamp":"2025-08-05T12:33:28.522Z","type":"com.dukascopy.charts.drawings.ShortLineChartObject","additionalData":{"objectType":"SHORT_LINE","points":[{"x":1754359569605,"y":3369.35350},{"x":1754372282589,"y":3377.50607}]}}
+[2025-08-05 12:33:28.534] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3369.35350,"timestamp":"2025-08-05T12:33:28.522Z","type":"com.dukascopy.charts.drawings.ShortLineChartObject","additionalData":{"objectType":"SHORT_LINE","points":[{"x":1754359569605,"y":3369.35350},{"x":1754372282589,"y":3377.50607}]}}
+[2025-08-05 12:33:28.534] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3369.35350,"timestamp":"2025-08-05T12:33:28.522Z","type":"com.dukascopy.charts.drawings.ShortLineChartObject","additionalData":{"objectType":"SHORT_LINE","points":[{"x":1754359569605,"y":3369.35350},{"x":1754372282589,"y":3377.50607}]}}
+[2025-08-05 12:33:28.534] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3369,35350, Type='com.dukascopy.charts.drawings.ShortLineChartObject', AdditionalData='{
+  "objectType": "SHORT_LINE",
+  "points": [
+    {
+      "x": 1754359569605,
+      "y": 3369.3535
+    },
+    {
+      "x": 1754372282589,
+      "y": 3377.50607
+    }
+  ]
+}'
+[2025-08-05 12:33:28.558] [INFO] New JForex Chart Object: JForexChartObject: ShortLine | Symbol: XAUUSD | Price: 3369,35350 | Class: com.dukascopy.charts.drawings.ShortLineChartObject | Time: 2025-08-05 12:33:28.539
+[2025-08-05 12:33:28.558] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T12:33:28.5553216+03:00"
+}
+[2025-08-05 12:33:46.152] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 12:33:46.152] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3367.46998,"timestamp":"2025-08-05T12:33:46.149Z","type":"com.dukascopy.charts.drawings.ShortLineChartObject","additionalData":{"objectType":"SHORT_LINE","points":[{"x":1754383488874,"y":3367.46998},{"x":1754383884060,"y":3368.72823}]}}
+[2025-08-05 12:33:46.153] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3367.46998,"timestamp":"2025-08-05T12:33:46.149Z","type":"com.dukascopy.charts.drawings.ShortLineChartObject","additionalData":{"objectType":"SHORT_LINE","points":[{"x":1754383488874,"y":3367.46998},{"x":1754383884060,"y":3368.72823}]}}
+[2025-08-05 12:33:46.153] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3367.46998,"timestamp":"2025-08-05T12:33:46.149Z","type":"com.dukascopy.charts.drawings.ShortLineChartObject","additionalData":{"objectType":"SHORT_LINE","points":[{"x":1754383488874,"y":3367.46998},{"x":1754383884060,"y":3368.72823}]}}
+[2025-08-05 12:33:46.155] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3367,46998, Type='com.dukascopy.charts.drawings.ShortLineChartObject', AdditionalData='{
+  "objectType": "SHORT_LINE",
+  "points": [
+    {
+      "x": 1754383488874,
+      "y": 3367.46998
+    },
+    {
+      "x": 1754383884060,
+      "y": 3368.72823
+    }
+  ]
+}'
+[2025-08-05 12:33:46.169] [INFO] New JForex Chart Object: JForexChartObject: ShortLine | Symbol: XAUUSD | Price: 3367,46998 | Class: com.dukascopy.charts.drawings.ShortLineChartObject | Time: 2025-08-05 12:33:46.156
+[2025-08-05 12:33:46.170] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T12:33:46.1696092+03:00"
+}
+[2025-08-05 12:37:35.000] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 12:37:35.001] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3367.09617,"timestamp":"2025-08-05T12:37:34.991Z","type":"com.dukascopy.charts.drawings.ShortLineChartObject","additionalData":{"objectType":"SHORT_LINE","points":[{"x":1754383506258,"y":3367.09617},{"x":1754383983960,"y":3368.87270}]}}
+[2025-08-05 12:37:35.002] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3367.09617,"timestamp":"2025-08-05T12:37:34.991Z","type":"com.dukascopy.charts.drawings.ShortLineChartObject","additionalData":{"objectType":"SHORT_LINE","points":[{"x":1754383506258,"y":3367.09617},{"x":1754383983960,"y":3368.87270}]}}
+[2025-08-05 12:37:35.002] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3367.09617,"timestamp":"2025-08-05T12:37:34.991Z","type":"com.dukascopy.charts.drawings.ShortLineChartObject","additionalData":{"objectType":"SHORT_LINE","points":[{"x":1754383506258,"y":3367.09617},{"x":1754383983960,"y":3368.87270}]}}
+[2025-08-05 12:37:35.002] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3367,09617, Type='com.dukascopy.charts.drawings.ShortLineChartObject', AdditionalData='{
+  "objectType": "SHORT_LINE",
+  "points": [
+    {
+      "x": 1754383506258,
+      "y": 3367.09617
+    },
+    {
+      "x": 1754383983960,
+      "y": 3368.8727
+    }
+  ]
+}'
+[2025-08-05 12:37:35.018] [INFO] New JForex Chart Object: JForexChartObject: ShortLine | Symbol: XAUUSD | Price: 3367,09617 | Class: com.dukascopy.charts.drawings.ShortLineChartObject | Time: 2025-08-05 12:37:35.002
+[2025-08-05 12:37:35.018] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T12:37:35.0166942+03:00"
+}
+[2025-08-05 12:41:47.243] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 12:41:47.243] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3366.34216,"timestamp":"2025-08-05T12:41:47.238Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3367.47801,"lowerPrice":3365.20630}}}
+[2025-08-05 12:41:47.244] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3366.34216,"timestamp":"2025-08-05T12:41:47.238Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3367.47801,"lowerPrice":3365.20630}}}
+[2025-08-05 12:41:47.244] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3366.34216,"timestamp":"2025-08-05T12:41:47.238Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3367.47801,"lowerPrice":3365.20630}}}
+[2025-08-05 12:41:47.245] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3366,34216, Type='com.dukascopy.charts.drawings.RectangleChartObject', AdditionalData='{
+  "objectType": "RECTANGLE",
+  "area": {
+    "upperPrice": 3367.47801,
+    "lowerPrice": 3365.2063
+  }
+}'
+[2025-08-05 12:41:47.263] [INFO] New JForex Chart Object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3366,34216 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 12:41:47.245
+[2025-08-05 12:41:47.263] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T12:41:47.2628678+03:00"
+}
+[2025-08-05 12:42:09.011] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 12:42:09.012] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3365.76309,"timestamp":"2025-08-05T12:42:09.006Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3366.52033,"lowerPrice":3365.00586}}}
+[2025-08-05 12:42:09.013] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3365.76309,"timestamp":"2025-08-05T12:42:09.006Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3366.52033,"lowerPrice":3365.00586}}}
+[2025-08-05 12:42:09.014] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3365.76309,"timestamp":"2025-08-05T12:42:09.006Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3366.52033,"lowerPrice":3365.00586}}}
+[2025-08-05 12:42:09.014] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3365,76309, Type='com.dukascopy.charts.drawings.RectangleChartObject', AdditionalData='{
+  "objectType": "RECTANGLE",
+  "area": {
+    "upperPrice": 3366.52033,
+    "lowerPrice": 3365.00586
+  }
+}'
+[2025-08-05 12:42:09.036] [INFO] New JForex Chart Object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3365,76309 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 12:42:09.015
+[2025-08-05 12:42:09.038] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T12:42:09.0367474+03:00"
+}
+[2025-08-05 12:42:29.148] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 12:42:29.149] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3365.68514,"timestamp":"2025-08-05T12:42:29.143Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3366.56487,"lowerPrice":3364.80541}}}
+[2025-08-05 12:42:29.149] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3365.68514,"timestamp":"2025-08-05T12:42:29.143Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3366.56487,"lowerPrice":3364.80541}}}
+[2025-08-05 12:42:29.149] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3365.68514,"timestamp":"2025-08-05T12:42:29.143Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3366.56487,"lowerPrice":3364.80541}}}
+[2025-08-05 12:42:29.150] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3365,68514, Type='com.dukascopy.charts.drawings.RectangleChartObject', AdditionalData='{
+  "objectType": "RECTANGLE",
+  "area": {
+    "upperPrice": 3366.56487,
+    "lowerPrice": 3364.80541
+  }
+}'
+[2025-08-05 12:42:29.165] [INFO] New JForex Chart Object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3365,68514 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 12:42:29.151
+[2025-08-05 12:42:29.165] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T12:42:29.1646786+03:00"
+}
+[2025-08-05 15:41:35.760] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 15:41:35.783] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3351.50191,"timestamp":"2025-08-05T15:41:35.745Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3352.47121,"lowerPrice":3350.53261}}}
+[2025-08-05 15:41:35.792] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3351.50191,"timestamp":"2025-08-05T15:41:35.745Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3352.47121,"lowerPrice":3350.53261}}}
+[2025-08-05 15:41:35.792] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3351.50191,"timestamp":"2025-08-05T15:41:35.745Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3352.47121,"lowerPrice":3350.53261}}}
+[2025-08-05 15:41:36.005] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3351,50191, Type='com.dukascopy.charts.drawings.RectangleChartObject', AdditionalData='{
+  "objectType": "RECTANGLE",
+  "area": {
+    "upperPrice": 3352.47121,
+    "lowerPrice": 3350.53261
+  }
+}'
+[2025-08-05 15:41:36.092] [INFO] New JForex Chart Object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3351,50191 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 15:41:36.009
+[2025-08-05 15:41:36.092] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T15:41:36.0586147+03:00"
+}
+[2025-08-05 15:42:57.527] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 15:42:57.528] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3374.44211,"timestamp":"2025-08-05T15:42:57.524Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3375.79327,"lowerPrice":3373.09096}}}
+[2025-08-05 15:42:57.529] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3374.44211,"timestamp":"2025-08-05T15:42:57.524Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3375.79327,"lowerPrice":3373.09096}}}
+[2025-08-05 15:42:57.529] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3374.44211,"timestamp":"2025-08-05T15:42:57.524Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3375.79327,"lowerPrice":3373.09096}}}
+[2025-08-05 15:42:57.530] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3374,44211, Type='com.dukascopy.charts.drawings.RectangleChartObject', AdditionalData='{
+  "objectType": "RECTANGLE",
+  "area": {
+    "upperPrice": 3375.79327,
+    "lowerPrice": 3373.09096
+  }
+}'
+[2025-08-05 15:42:57.543] [INFO] New JForex Chart Object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3374,44211 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 15:42:57.530
+[2025-08-05 15:42:57.544] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T15:42:57.5431401+03:00"
+}
+[2025-08-05 15:43:05.198] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 15:43:05.199] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3374.20713,"timestamp":"2025-08-05T15:43:05.196Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3375.67577,"lowerPrice":3372.73849}}}
+[2025-08-05 15:43:05.199] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3374.20713,"timestamp":"2025-08-05T15:43:05.196Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3375.67577,"lowerPrice":3372.73849}}}
+[2025-08-05 15:43:05.200] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3374.20713,"timestamp":"2025-08-05T15:43:05.196Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3375.67577,"lowerPrice":3372.73849}}}
+[2025-08-05 15:43:05.200] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3374,20713, Type='com.dukascopy.charts.drawings.RectangleChartObject', AdditionalData='{
+  "objectType": "RECTANGLE",
+  "area": {
+    "upperPrice": 3375.67577,
+    "lowerPrice": 3372.73849
+  }
+}'
+[2025-08-05 15:43:05.212] [INFO] New JForex Chart Object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3374,20713 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 15:43:05.201
+[2025-08-05 15:43:05.212] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T15:43:05.2120248+03:00"
+}
+[2025-08-05 15:45:41.745] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 15:45:41.745] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3355.23226,"timestamp":"2025-08-05T15:45:41.741Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-05 15:45:41.746] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3355.23226,"timestamp":"2025-08-05T15:45:41.741Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-05 15:45:41.746] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3355.23226,"timestamp":"2025-08-05T15:45:41.741Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-05 15:45:41.746] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3355,23226, Type='com.dukascopy.charts.drawings.PriceMarkerChartObject', AdditionalData='{
+  "objectType": "PRICEMARKER"
+}'
+[2025-08-05 15:45:41.765] [INFO] New JForex Chart Object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3355,23226 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-05 15:45:41.747
+[2025-08-05 15:45:41.768] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T15:45:41.7635436+03:00"
+}
+[2025-08-05 15:45:42.694] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 15:45:42.695] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3351.76627,"timestamp":"2025-08-05T15:45:42.688Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-05 15:45:42.696] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3351.76627,"timestamp":"2025-08-05T15:45:42.688Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-05 15:45:42.696] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3351.76627,"timestamp":"2025-08-05T15:45:42.688Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-05 15:45:42.696] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3351,76627, Type='com.dukascopy.charts.drawings.PriceMarkerChartObject', AdditionalData='{
+  "objectType": "PRICEMARKER"
+}'
+[2025-08-05 15:45:42.760] [INFO] New JForex Chart Object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3351,76627 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-05 15:45:42.697
+[2025-08-05 15:45:42.762] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T15:45:42.7606753+03:00"
+}
+[2025-08-05 15:46:45.100] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 15:46:45.101] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3357.34584,"timestamp":"2025-08-05T15:46:45.095Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-05 15:46:45.102] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3357.34584,"timestamp":"2025-08-05T15:46:45.095Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-05 15:46:45.102] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3357.34584,"timestamp":"2025-08-05T15:46:45.095Z","type":"com.dukascopy.charts.drawings.PriceMarkerChartObject","additionalData":{"objectType":"PRICEMARKER"}}
+[2025-08-05 15:46:45.102] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3357,34584, Type='com.dukascopy.charts.drawings.PriceMarkerChartObject', AdditionalData='{
+  "objectType": "PRICEMARKER"
+}'
+[2025-08-05 15:46:45.117] [INFO] New JForex Chart Object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3357,34584 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-05 15:46:45.103
+[2025-08-05 15:46:45.117] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T15:46:45.117077+03:00"
+}
+[2025-08-05 15:46:56.620] [INFO] HTTP Request: POST /pricelevel
+[2025-08-05 15:46:56.620] [INFO] Price Level Input Data (raw): {"symbol":"XAUUSD","price":3362.66399,"timestamp":"2025-08-05T15:46:56.616Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3364.29168,"lowerPrice":3361.03629}}}
+[2025-08-05 15:46:56.621] [INFO] JSON preprocessing completed: {"symbol":"XAUUSD","price":3362.66399,"timestamp":"2025-08-05T15:46:56.616Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3364.29168,"lowerPrice":3361.03629}}}
+[2025-08-05 15:46:56.621] [INFO] Preprocessed JSON Data: {"symbol":"XAUUSD","price":3362.66399,"timestamp":"2025-08-05T15:46:56.616Z","type":"com.dukascopy.charts.drawings.RectangleChartObject","additionalData":{"objectType":"RECTANGLE","area":{"upperPrice":3364.29168,"lowerPrice":3361.03629}}}
+[2025-08-05 15:46:56.621] [INFO] Deserialized PriceLevelData: Symbol='XAUUSD', Price=3362,66399, Type='com.dukascopy.charts.drawings.RectangleChartObject', AdditionalData='{
+  "objectType": "RECTANGLE",
+  "area": {
+    "upperPrice": 3364.29168,
+    "lowerPrice": 3361.03629
+  }
+}'
+[2025-08-05 15:46:56.633] [INFO] New JForex Chart Object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3362,66399 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 15:46:56.622
+[2025-08-05 15:46:56.634] [INFO] Server Response (200): {
+  "success": true,
+  "message": "JForex chart object processed successfully",
+  "timestamp": "2025-08-05T15:46:56.6337968+03:00"
+}

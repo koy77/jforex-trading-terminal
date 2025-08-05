@@ -20,6 +20,9 @@ namespace ScreenCaptureApp.Controls
         public TradeRectangleControl()
         {
             InitializeComponent();
+            
+            // Устанавливаем начальное состояние - кнопка с риском 1 активна
+            HighlightSelectedRiskButton(_selectedRisk);
         }
 
         /// <summary>
@@ -105,26 +108,29 @@ namespace ScreenCaptureApp.Controls
                 {
                     _selectedRisk = risk;
                     
-                    // Сбрасываем цвет всех кнопок риска
-                    ResetRiskButtonColors();
-                    
                     // Подсвечиваем выбранную кнопку
-                    button.Background = System.Windows.Media.Brushes.Yellow;
-                    button.Foreground = System.Windows.Media.Brushes.Black;
+                    HighlightSelectedRiskButton(risk);
                     
                     Logger.LogTagInfo("TradeRectangleControl", $"Risk changed to {risk}");
                 }
             }
         }
 
-        private void ResetRiskButtonColors()
+
+
+        /// <summary>
+        /// Подсвечивает выбранную кнопку риска
+        /// </summary>
+        /// <param name="risk">Выбранный риск</param>
+        public void HighlightSelectedRiskButton(double risk)
         {
-            // Находим все кнопки риска и сбрасываем их цвет
             var riskButtons = FindVisualChildren<Button>(this).Where(b => b.Tag is string && double.TryParse(b.Tag.ToString(), out _));
             foreach (var button in riskButtons)
             {
-                button.Background = System.Windows.Media.Brushes.White;
-                button.Foreground = System.Windows.Media.Brushes.Black;
+                if (double.TryParse(button.Tag?.ToString(), out double val))
+                {
+                    button.Background = (val == risk) ? System.Windows.Media.Brushes.Orange : System.Windows.Media.Brushes.LightGray;
+                }
             }
         }
 
