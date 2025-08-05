@@ -7,8 +7,30 @@ namespace ScreenCaptureApp.Services
     public static class Logger
     {
         private static readonly object _lock = new object();
-        private static readonly string _logFilePath = "app.log";
-        private static readonly string _socketLogFilePath = "socket.log";
+        private static readonly string _logsDirectory = "logs";
+        private static readonly string _logDirectory = "log";
+        private static readonly string _logFilePath = Path.Combine(_logsDirectory, "app.log");
+        private static readonly string _socketLogFilePath = Path.Combine(_logsDirectory, "socket.log");
+
+        static Logger()
+        {
+            // Создаем папки для логов при инициализации
+            try
+            {
+                if (!Directory.Exists(_logsDirectory))
+                {
+                    Directory.CreateDirectory(_logsDirectory);
+                }
+                if (!Directory.Exists(_logDirectory))
+                {
+                    Directory.CreateDirectory(_logDirectory);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to create log directories: {ex.Message}");
+            }
+        }
 
         public static event Action LogUpdated;
 
@@ -130,7 +152,7 @@ namespace ScreenCaptureApp.Services
         }
 
         /// <summary>
-        /// Логирует сообщение в отдельный файл по тегу
+        /// Логирует сообщение в отдельный файл по тегу в папке log
         /// </summary>
         /// <param name="tag">Тег (название файла)</param>
         /// <param name="message">Сообщение для логирования</param>
@@ -141,7 +163,7 @@ namespace ScreenCaptureApp.Services
             {
                 lock (_lock)
                 {
-                    string logFileName = $"{tag}.log";
+                    string logFileName = Path.Combine(_logDirectory, $"{tag}.log");
                     string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
                     string logEntry = $"[{timestamp}] [{logLevel}] {message}";
                     
@@ -211,7 +233,7 @@ namespace ScreenCaptureApp.Services
         {
             try
             {
-                string logFileName = $"{tag}.log";
+                string logFileName = Path.Combine(_logDirectory, $"{tag}.log");
                 if (File.Exists(logFileName))
                 {
                     return File.ReadAllText(logFileName);
@@ -235,7 +257,7 @@ namespace ScreenCaptureApp.Services
         {
             lock (_lock)
             {
-                string logFileName = $"{tag}.log";
+                string logFileName = Path.Combine(_logDirectory, $"{tag}.log");
                 File.WriteAllText(logFileName, string.Empty);
             }
             LogUpdated?.Invoke();

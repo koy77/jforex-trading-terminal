@@ -1,0 +1,27 @@
+[2025-08-05 17:21:14.513] [INFO] Sent ESC key to hwnd=0x402C0
+[2025-08-05 17:22:29.179] [INFO] Sent ESC key to hwnd=0x402C0
+[2025-08-05 17:23:53.161] [INFO] Sent ESC key to hwnd=0x40266
+[2025-08-05 17:23:59.221] [INFO] Sent ESC key to hwnd=0x40266
+[2025-08-05 17:24:00.636] [INFO] Sent ESC key to hwnd=0x40266
+[2025-08-05 17:24:18.415] [INFO] Sent ESC key to hwnd=0x40266
+[2025-08-05 17:25:08.883] [INFO] === MOUSE CLICK START ===
+[2025-08-05 17:25:08.883] [INFO] Click coordinates: (480, 56)
+[2025-08-05 17:25:08.883] [INFO] Window handle: 66330
+[2025-08-05 17:25:08.883] [INFO] Window rect: Left=2070, Top=68, Right=3626, Bottom=1023
+[2025-08-05 17:25:08.883] [INFO] Calculated screen coordinates: (480, 56)
+[2025-08-05 17:25:09.004] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-08-05 17:25:09.004] [INFO] === MOUSE CLICK END ===
+[2025-08-05 17:25:09.297] [INFO] === MOUSE CLICK START ===
+[2025-08-05 17:25:09.297] [INFO] Click coordinates: (480, 56)
+[2025-08-05 17:25:09.297] [INFO] Window handle: 66330
+[2025-08-05 17:25:09.297] [INFO] Window rect: Left=2070, Top=68, Right=3626, Bottom=1023
+[2025-08-05 17:25:09.297] [INFO] Calculated screen coordinates: (480, 56)
+[2025-08-05 17:25:09.415] [INFO] Клик успешно выполнен в позиции (480, 56) -> screen (480, 56)
+[2025-08-05 17:25:09.415] [INFO] === MOUSE CLICK END ===
+[2025-08-05 17:36:26.651] [INFO] Sent ESC key to hwnd=0x40266
+[2025-08-05 17:36:37.008] [INFO] Sent ESC key to hwnd=0x40266
+[2025-08-05 17:38:07.517] [INFO] Sent ESC key to hwnd=0x40266
+[2025-08-05 17:38:33.331] [INFO] Sent ESC key to hwnd=0x40266
+[2025-08-05 17:42:09.699] [INFO] Sent ESC key to hwnd=0x40266
+[2025-08-05 17:42:14.618] [INFO] Sent ESC key to hwnd=0x40266
+[2025-08-05 17:42:21.572] [INFO] Sent ESC key to hwnd=0x402C0

@@ -1,0 +1,767 @@
+[2025-08-05 17:19:53.558] [INFO] Window handle initialized: 1705548
+[2025-08-05 17:19:53.661] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 17:19:53.662] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:19:53.663] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 17:19:53.663] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:20:14.086] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 17:20:14.087] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:20:14.092] [INFO] Applied risk 1 to Rectangle Control from toolbar settings
+[2025-08-05 17:20:16.215] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-05 17:20:16.215] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:20:16.217] [INFO] Applied risk 1 to Rectangle Control from toolbar settings
+[2025-08-05 17:20:16.259] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 17:20:16.259] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:20:16.261] [INFO] Applied risk 1 to Rectangle Control from toolbar settings
+[2025-08-05 17:20:20.687] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-05 17:20:20.688] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:20:20.689] [INFO] Applied risk 1 to Rectangle Control from toolbar settings
+[2025-08-05 17:21:01.687] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 17:21:01.688] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:21:01.690] [INFO] Applied risk 1 to Rectangle Control from toolbar settings
+[2025-08-05 17:21:01.991] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-05 17:21:01.991] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:21:01.993] [INFO] Applied risk 1 to Rectangle Control from toolbar settings
+[2025-08-05 17:21:07.879] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 17:21:07.879] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:21:07.881] [INFO] Applied risk 1 to Rectangle Control from toolbar settings
+[2025-08-05 17:21:10.932] [INFO] S key pressed via HotkeyService - starting trading pattern capture
+[2025-08-05 17:21:11.309] [INFO] Trading pattern click 1 detected
+[2025-08-05 17:21:14.205] [INFO] Trading pattern click 2 detected
+[2025-08-05 17:21:14.205] [INFO] Trading pattern completed - sending delayed escape
+[2025-08-05 17:21:14.206] [INFO] SendDelayedEscapeForTradingPattern called - sending Escape to current window after trading pattern completion
+[2025-08-05 17:21:14.449] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3376,45160 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:21:14.446
+[2025-08-05 17:21:14.471] [INFO] Toast notification shown: JForex: Rectangle = 3376,45160 (XAUUSD)
+[2025-08-05 17:21:14.471] [INFO] Processing JForex chart object: Rectangle = 3376,45160
+[2025-08-05 17:21:14.473] [INFO] Processing Rectangle object: 3376,45160
+[2025-08-05 17:21:14.480] [INFO] Parsed rectangle data: Upper=3377,65474, Lower=3375,24846
+[2025-08-05 17:21:14.486] [INFO] Applied risk 1 to Rectangle Control from toolbar settings
+[2025-08-05 17:21:14.488] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at System.Windows.Controls.Canvas.SetTop(UIElement element, Double length)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:21:14.499] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3377,65474, Lower=3375,24846
+[2025-08-05 17:21:14.500] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:21:16.152] [INFO] Rectangle Control risk changed to 30
+[2025-08-05 17:21:16.152] [INFO] Updated toolbar settings for window 262848: Risk=30
+[2025-08-05 17:21:16.664] [INFO] Buy clicked for rectangle trade: XAUUSD Entry:3377,65474 SL:3375,24846
+[2025-08-05 17:21:16.667] [INFO] Rectangle buy trade sent successfully
+[2025-08-05 17:21:22.575] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-05 17:21:22.575] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:21:22.577] [INFO] Applied risk 1 to Rectangle Control from toolbar settings
+[2025-08-05 17:21:46.670] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 17:21:46.670] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:21:46.672] [INFO] Applied risk 30 to Rectangle Control from toolbar settings
+[2025-08-05 17:22:22.797] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:22:22.797] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:22:22.798] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:22:22.799] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:22:22.799] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:22:22.800] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:22:22.963] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:22:22.963] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:22:22.963] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:22:22.964] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:22:22.964] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:22:22.965] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:22:25.602] [INFO] S key pressed via HotkeyService - starting trading pattern capture
+[2025-08-05 17:22:26.124] [INFO] Trading pattern click 1 detected
+[2025-08-05 17:22:28.868] [INFO] Trading pattern click 2 detected
+[2025-08-05 17:22:28.868] [INFO] Trading pattern completed - sending delayed escape
+[2025-08-05 17:22:28.869] [INFO] SendDelayedEscapeForTradingPattern called - sending Escape to current window after trading pattern completion
+[2025-08-05 17:22:28.904] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3376,34920 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:22:28.904
+[2025-08-05 17:22:28.916] [INFO] Toast notification shown: JForex: Rectangle = 3376,34920 (XAUUSD)
+[2025-08-05 17:22:28.916] [INFO] Processing JForex chart object: Rectangle = 3376,34920
+[2025-08-05 17:22:28.916] [INFO] Processing Rectangle object: 3376,34920
+[2025-08-05 17:22:28.916] [INFO] Parsed rectangle data: Upper=3377,70593, Lower=3374,99248
+[2025-08-05 17:22:28.917] [INFO] Applied risk 30 to Rectangle Control from toolbar settings
+[2025-08-05 17:22:28.918] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at System.Windows.Controls.Canvas.SetTop(UIElement element, Double length)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:22:28.918] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3377,70593, Lower=3374,99248
+[2025-08-05 17:22:28.918] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:22:30.662] [INFO] Buy clicked for rectangle trade: XAUUSD Entry:3377,70593 SL:3374,99248
+[2025-08-05 17:22:30.663] [INFO] Rectangle buy trade sent successfully
+[2025-08-05 17:22:31.478] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-05 17:22:31.479] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:22:31.481] [INFO] Applied risk 1 to Rectangle Control from toolbar settings
+[2025-08-05 17:22:33.926] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 17:22:33.926] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:22:33.928] [INFO] Applied risk 30 to Rectangle Control from toolbar settings
+[2025-08-05 17:22:46.598] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-05 17:22:46.598] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:22:46.600] [INFO] Applied risk 1 to Rectangle Control from toolbar settings
+[2025-08-05 17:23:50.562] [INFO] S key pressed via HotkeyService - starting trading pattern capture
+[2025-08-05 17:23:51.267] [INFO] Trading pattern click 1 detected
+[2025-08-05 17:23:52.843] [INFO] Trading pattern click 2 detected
+[2025-08-05 17:23:52.843] [INFO] Trading pattern completed - sending delayed escape
+[2025-08-05 17:23:52.844] [INFO] SendDelayedEscapeForTradingPattern called - sending Escape to current window after trading pattern completion
+[2025-08-05 17:23:57.313] [INFO] S key pressed via HotkeyService - starting trading pattern capture
+[2025-08-05 17:23:58.547] [INFO] Trading pattern click 1 detected
+[2025-08-05 17:23:58.899] [INFO] Trading pattern click 2 detected
+[2025-08-05 17:23:58.899] [INFO] Trading pattern completed - sending delayed escape
+[2025-08-05 17:23:58.899] [INFO] SendDelayedEscapeForTradingPattern called - sending Escape to current window after trading pattern completion
+[2025-08-05 17:23:59.145] [INFO] S key pressed via HotkeyService - starting trading pattern capture
+[2025-08-05 17:23:59.459] [INFO] Trading pattern click 1 detected
+[2025-08-05 17:24:00.331] [INFO] Trading pattern click 2 detected
+[2025-08-05 17:24:00.331] [INFO] Trading pattern completed - sending delayed escape
+[2025-08-05 17:24:00.331] [INFO] SendDelayedEscapeForTradingPattern called - sending Escape to current window after trading pattern completion
+[2025-08-05 17:24:16.161] [INFO] S key pressed via HotkeyService - starting trading pattern capture
+[2025-08-05 17:24:17.059] [INFO] Trading pattern click 1 detected
+[2025-08-05 17:24:18.099] [INFO] Trading pattern click 2 detected
+[2025-08-05 17:24:18.099] [INFO] Trading pattern completed - sending delayed escape
+[2025-08-05 17:24:18.099] [INFO] SendDelayedEscapeForTradingPattern called - sending Escape to current window after trading pattern completion
+[2025-08-05 17:24:39.353] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:24:39.353] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:24:39.353] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:24:39.354] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:24:39.354] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:24:39.354] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:25:05.425] [INFO] S key pressed via HotkeyService - starting trading pattern capture
+[2025-08-05 17:25:10.152] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:25:10.153] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:25:10.153] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:25:10.153] [INFO] Escape key pressed - canceling trading pattern capture
+[2025-08-05 17:25:10.153] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:25:10.153] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:25:10.154] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:27:55.819] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 17:27:55.820] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:27:55.824] [INFO] Applied risk 30 to Rectangle Control from toolbar settings
+[2025-08-05 17:27:56.210] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-05 17:27:56.210] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:27:56.212] [INFO] Applied risk 1 to Rectangle Control from toolbar settings
+[2025-08-05 17:27:56.842] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 17:27:56.843] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:27:56.844] [INFO] Applied risk 30 to Rectangle Control from toolbar settings
+[2025-08-05 17:28:00.866] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-05 17:28:00.867] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:28:00.868] [INFO] Applied risk 1 to Rectangle Control from toolbar settings
+[2025-08-05 17:28:22.067] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 17:28:22.068] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:28:22.072] [INFO] Applied risk 30 to Rectangle Control from toolbar settings
+[2025-08-05 17:28:26.287] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3380,21016 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:28:26.287
+[2025-08-05 17:28:26.309] [INFO] Toast notification shown: JForex: Rectangle = 3380,21016 (XAUUSD)
+[2025-08-05 17:28:26.309] [INFO] Processing JForex chart object: Rectangle = 3380,21016
+[2025-08-05 17:28:26.310] [INFO] Processing Rectangle object: 3380,21016
+[2025-08-05 17:28:26.310] [INFO] Parsed rectangle data: Upper=3381,12320, Lower=3379,29713
+[2025-08-05 17:28:26.312] [INFO] Applied risk 30 to Rectangle Control from toolbar settings
+[2025-08-05 17:28:26.313] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:28:26.314] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3381,12320, Lower=3379,29713
+[2025-08-05 17:28:26.315] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:28:27.522] [INFO] Buy clicked for rectangle trade: XAUUSD Entry:3381,12320 SL:3379,29713
+[2025-08-05 17:28:27.523] [WARNING] Failed to send rectangle buy trade
+[2025-08-05 17:28:40.890] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-05 17:28:40.890] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:28:40.892] [INFO] Applied risk 1 to Rectangle Control from toolbar settings
+[2025-08-05 17:28:45.035] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3379,57779 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:28:45.035
+[2025-08-05 17:28:45.048] [INFO] Toast notification shown: JForex: Rectangle = 3379,57779 (XAUUSD)
+[2025-08-05 17:28:45.048] [INFO] Processing JForex chart object: Rectangle = 3379,57779
+[2025-08-05 17:28:45.048] [INFO] Processing Rectangle object: 3379,57779
+[2025-08-05 17:28:45.049] [INFO] Parsed rectangle data: Upper=3380,88567, Lower=3378,26991
+[2025-08-05 17:28:45.049] [INFO] Applied risk 1 to Rectangle Control from toolbar settings
+[2025-08-05 17:28:45.050] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:28:45.050] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3380,88567, Lower=3378,26991
+[2025-08-05 17:28:45.050] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:28:46.281] [INFO] Rectangle Control risk changed to 10
+[2025-08-05 17:28:46.281] [INFO] Updated toolbar settings for window 262758: Risk=10
+[2025-08-05 17:28:46.689] [INFO] Buy clicked for rectangle trade: XAUUSD Entry:3380,88567 SL:3378,26991
+[2025-08-05 17:28:46.690] [WARNING] Failed to send rectangle buy trade
+[2025-08-05 17:28:48.842] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 17:28:48.842] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:28:48.844] [INFO] Applied risk 30 to Rectangle Control from toolbar settings
+[2025-08-05 17:28:52.162] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-05 17:28:52.162] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:28:52.164] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:28:57.610] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 17:28:57.610] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:28:57.612] [INFO] Applied risk 30 to Rectangle Control from toolbar settings
+[2025-08-05 17:29:10.938] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-05 17:29:10.938] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:29:10.940] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:29:17.449] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3379,06049 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:29:17.449
+[2025-08-05 17:29:17.460] [INFO] Toast notification shown: JForex: Rectangle = 3379,06049 (XAUUSD)
+[2025-08-05 17:29:17.460] [INFO] Processing JForex chart object: Rectangle = 3379,06049
+[2025-08-05 17:29:17.460] [INFO] Processing Rectangle object: 3379,06049
+[2025-08-05 17:29:17.460] [INFO] Parsed rectangle data: Upper=3380,45622, Lower=3377,66477
+[2025-08-05 17:29:17.461] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:29:17.461] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:29:17.462] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3380,45622, Lower=3377,66477
+[2025-08-05 17:29:17.462] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:29:18.745] [INFO] Buy clicked for rectangle trade: XAUUSD Entry:3380,45622 SL:3377,66477
+[2025-08-05 17:29:18.746] [WARNING] Failed to send rectangle buy trade
+[2025-08-05 17:29:26.121] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 17:29:26.122] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:29:26.123] [INFO] Applied risk 30 to Rectangle Control from toolbar settings
+[2025-08-05 17:29:29.753] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-05 17:29:29.753] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:29:29.755] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:29:34.247] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3379,22642 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:29:34.247
+[2025-08-05 17:29:34.260] [INFO] Toast notification shown: JForex: Rectangle = 3379,22642 (XAUUSD)
+[2025-08-05 17:29:34.260] [INFO] Processing JForex chart object: Rectangle = 3379,22642
+[2025-08-05 17:29:34.261] [INFO] Processing Rectangle object: 3379,22642
+[2025-08-05 17:29:34.261] [INFO] Parsed rectangle data: Upper=3380,12437, Lower=3378,32847
+[2025-08-05 17:29:34.261] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:29:34.263] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:29:34.263] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3380,12437, Lower=3378,32847
+[2025-08-05 17:29:34.263] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:29:35.265] [INFO] Buy clicked for rectangle trade: XAUUSD Entry:3380,12437 SL:3378,32847
+[2025-08-05 17:29:35.266] [INFO] Rectangle buy trade sent successfully
+[2025-08-05 17:29:36.617] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 17:29:36.617] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:29:36.619] [INFO] Applied risk 30 to Rectangle Control from toolbar settings
+[2025-08-05 17:29:41.512] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-05 17:29:41.513] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:29:41.514] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:29:58.532] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3379,16786 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:29:58.532
+[2025-08-05 17:29:58.546] [INFO] Toast notification shown: JForex: Rectangle = 3379,16786 (XAUUSD)
+[2025-08-05 17:29:58.546] [INFO] Processing JForex chart object: Rectangle = 3379,16786
+[2025-08-05 17:29:58.546] [INFO] Processing Rectangle object: 3379,16786
+[2025-08-05 17:29:58.546] [INFO] Parsed rectangle data: Upper=3380,06580, Lower=3378,26991
+[2025-08-05 17:29:58.547] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:29:58.547] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:29:58.548] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3380,06580, Lower=3378,26991
+[2025-08-05 17:29:58.548] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:30:00.348] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3379,48019 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:30:00.348
+[2025-08-05 17:30:00.360] [INFO] Toast notification shown: JForex: Rectangle = 3379,48019 (XAUUSD)
+[2025-08-05 17:30:00.360] [INFO] Processing JForex chart object: Rectangle = 3379,48019
+[2025-08-05 17:30:00.360] [INFO] Processing Rectangle object: 3379,48019
+[2025-08-05 17:30:00.361] [INFO] Parsed rectangle data: Upper=3380,37813, Lower=3378,58224
+[2025-08-05 17:30:00.362] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:30:00.363] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:30:00.380] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3380,37813, Lower=3378,58224
+[2025-08-05 17:30:00.380] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:30:00.403] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3379,55827 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:30:00.403
+[2025-08-05 17:30:00.454] [INFO] Toast notification shown: JForex: Rectangle = 3379,55827 (XAUUSD)
+[2025-08-05 17:30:00.454] [INFO] Processing JForex chart object: Rectangle = 3379,55827
+[2025-08-05 17:30:00.454] [INFO] Processing Rectangle object: 3379,55827
+[2025-08-05 17:30:00.454] [INFO] Parsed rectangle data: Upper=3380,45622, Lower=3378,66032
+[2025-08-05 17:30:00.469] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:30:00.469] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:30:00.481] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3380,45622, Lower=3378,66032
+[2025-08-05 17:30:00.481] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:30:00.621] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3379,51923 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:30:00.621
+[2025-08-05 17:30:00.681] [INFO] Toast notification shown: JForex: Rectangle = 3379,51923 (XAUUSD)
+[2025-08-05 17:30:00.682] [INFO] Processing JForex chart object: Rectangle = 3379,51923
+[2025-08-05 17:30:00.682] [INFO] Processing Rectangle object: 3379,51923
+[2025-08-05 17:30:00.682] [INFO] Parsed rectangle data: Upper=3380,41718, Lower=3378,62128
+[2025-08-05 17:30:00.684] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:30:00.684] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:30:00.694] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3380,41718, Lower=3378,62128
+[2025-08-05 17:30:00.694] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:30:00.734] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3379,44114 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:30:00.734
+[2025-08-05 17:30:00.771] [INFO] Toast notification shown: JForex: Rectangle = 3379,44114 (XAUUSD)
+[2025-08-05 17:30:00.771] [INFO] Processing JForex chart object: Rectangle = 3379,44114
+[2025-08-05 17:30:00.771] [INFO] Processing Rectangle object: 3379,44114
+[2025-08-05 17:30:00.771] [INFO] Parsed rectangle data: Upper=3380,33909, Lower=3378,54319
+[2025-08-05 17:30:00.772] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:30:00.773] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:30:00.788] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3380,33909, Lower=3378,54319
+[2025-08-05 17:30:00.788] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:30:00.997] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3379,42162 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:30:00.997
+[2025-08-05 17:30:01.072] [INFO] Toast notification shown: JForex: Rectangle = 3379,42162 (XAUUSD)
+[2025-08-05 17:30:01.073] [INFO] Processing JForex chart object: Rectangle = 3379,42162
+[2025-08-05 17:30:01.073] [INFO] Processing Rectangle object: 3379,42162
+[2025-08-05 17:30:01.073] [INFO] Parsed rectangle data: Upper=3380,31957, Lower=3378,52367
+[2025-08-05 17:30:01.076] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:30:01.077] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:30:01.106] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3380,31957, Lower=3378,52367
+[2025-08-05 17:30:01.107] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:30:01.841] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3379,47043 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:30:01.841
+[2025-08-05 17:30:01.892] [INFO] Toast notification shown: JForex: Rectangle = 3379,47043 (XAUUSD)
+[2025-08-05 17:30:01.893] [INFO] Processing JForex chart object: Rectangle = 3379,47043
+[2025-08-05 17:30:01.893] [INFO] Processing Rectangle object: 3379,47043
+[2025-08-05 17:30:01.893] [INFO] Parsed rectangle data: Upper=3380,41718, Lower=3378,52367
+[2025-08-05 17:30:01.912] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:30:01.912] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:30:01.930] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3380,41718, Lower=3378,52367
+[2025-08-05 17:30:01.931] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:30:01.957] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3380,05604 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:30:01.957
+[2025-08-05 17:30:02.019] [INFO] Toast notification shown: JForex: Rectangle = 3380,05604 (XAUUSD)
+[2025-08-05 17:30:02.019] [INFO] Processing JForex chart object: Rectangle = 3380,05604
+[2025-08-05 17:30:02.019] [INFO] Processing Rectangle object: 3380,05604
+[2025-08-05 17:30:02.020] [INFO] Parsed rectangle data: Upper=3381,58841, Lower=3378,52367
+[2025-08-05 17:30:02.024] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:30:02.025] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:30:02.052] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3381,58841, Lower=3378,52367
+[2025-08-05 17:30:02.053] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:30:02.078] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3380,14389 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:30:02.078
+[2025-08-05 17:30:02.156] [INFO] Toast notification shown: JForex: Rectangle = 3380,14389 (XAUUSD)
+[2025-08-05 17:30:02.156] [INFO] Processing JForex chart object: Rectangle = 3380,14389
+[2025-08-05 17:30:02.156] [INFO] Processing Rectangle object: 3380,14389
+[2025-08-05 17:30:02.156] [INFO] Parsed rectangle data: Upper=3381,76410, Lower=3378,52367
+[2025-08-05 17:30:02.159] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:30:02.159] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:30:02.179] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3381,76410, Lower=3378,52367
+[2025-08-05 17:30:02.179] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:30:06.256] [INFO] Buy clicked for rectangle trade: XAUUSD Entry:3381,76410 SL:3378,52367
+[2025-08-05 17:30:06.257] [INFO] Rectangle buy trade sent successfully
+[2025-08-05 17:30:12.833] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 17:30:12.833] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:30:12.835] [INFO] Applied risk 30 to Rectangle Control from toolbar settings
+[2025-08-05 17:30:16.474] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-05 17:30:16.474] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:30:16.478] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:30:26.731] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3380,13413 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:30:26.731
+[2025-08-05 17:30:26.744] [INFO] Toast notification shown: JForex: Rectangle = 3380,13413 (XAUUSD)
+[2025-08-05 17:30:26.744] [INFO] Processing JForex chart object: Rectangle = 3380,13413
+[2025-08-05 17:30:26.744] [INFO] Processing Rectangle object: 3380,13413
+[2025-08-05 17:30:26.744] [INFO] Parsed rectangle data: Upper=3381,74458, Lower=3378,52367
+[2025-08-05 17:30:26.745] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:30:26.746] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:30:26.747] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3381,74458, Lower=3378,52367
+[2025-08-05 17:30:26.747] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:30:26.795] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3380,15365 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:30:26.795
+[2025-08-05 17:30:26.836] [INFO] Toast notification shown: JForex: Rectangle = 3380,15365 (XAUUSD)
+[2025-08-05 17:30:26.836] [INFO] Processing JForex chart object: Rectangle = 3380,15365
+[2025-08-05 17:30:26.836] [INFO] Processing Rectangle object: 3380,15365
+[2025-08-05 17:30:26.837] [INFO] Parsed rectangle data: Upper=3381,78362, Lower=3378,52367
+[2025-08-05 17:30:26.838] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:30:26.838] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:30:26.860] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3381,78362, Lower=3378,52367
+[2025-08-05 17:30:26.861] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:30:26.925] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3380,38789 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:30:26.925
+[2025-08-05 17:30:26.979] [INFO] Toast notification shown: JForex: Rectangle = 3380,38789 (XAUUSD)
+[2025-08-05 17:30:26.979] [INFO] Processing JForex chart object: Rectangle = 3380,38789
+[2025-08-05 17:30:26.980] [INFO] Processing Rectangle object: 3380,38789
+[2025-08-05 17:30:26.980] [INFO] Parsed rectangle data: Upper=3382,25212, Lower=3378,52367
+[2025-08-05 17:30:26.982] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:30:26.982] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:30:27.000] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3382,25212, Lower=3378,52367
+[2025-08-05 17:30:27.000] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:30:27.119] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3380,36837 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:30:27.119
+[2025-08-05 17:30:27.190] [INFO] Toast notification shown: JForex: Rectangle = 3380,36837 (XAUUSD)
+[2025-08-05 17:30:27.190] [INFO] Processing JForex chart object: Rectangle = 3380,36837
+[2025-08-05 17:30:27.190] [INFO] Processing Rectangle object: 3380,36837
+[2025-08-05 17:30:27.190] [INFO] Parsed rectangle data: Upper=3382,21307, Lower=3378,52367
+[2025-08-05 17:30:27.193] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:30:27.193] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:30:27.206] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3382,21307, Lower=3378,52367
+[2025-08-05 17:30:27.206] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:30:27.237] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3380,27077 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:30:27.237
+[2025-08-05 17:30:27.311] [INFO] Toast notification shown: JForex: Rectangle = 3380,27077 (XAUUSD)
+[2025-08-05 17:30:27.311] [INFO] Processing JForex chart object: Rectangle = 3380,27077
+[2025-08-05 17:30:27.312] [INFO] Processing Rectangle object: 3380,27077
+[2025-08-05 17:30:27.312] [INFO] Parsed rectangle data: Upper=3382,01787, Lower=3378,52367
+[2025-08-05 17:30:27.313] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:30:27.314] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:30:27.340] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3382,01787, Lower=3378,52367
+[2025-08-05 17:30:27.341] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:30:27.367] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3380,26101 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:30:27.367
+[2025-08-05 17:30:27.445] [INFO] Toast notification shown: JForex: Rectangle = 3380,26101 (XAUUSD)
+[2025-08-05 17:30:27.445] [INFO] Processing JForex chart object: Rectangle = 3380,26101
+[2025-08-05 17:30:27.445] [INFO] Processing Rectangle object: 3380,26101
+[2025-08-05 17:30:27.445] [INFO] Parsed rectangle data: Upper=3381,99835, Lower=3378,52367
+[2025-08-05 17:30:27.447] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:30:27.448] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:30:27.473] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3381,99835, Lower=3378,52367
+[2025-08-05 17:30:27.473] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:30:28.784] [INFO] Buy clicked for rectangle trade: XAUUSD Entry:3381,99835 SL:3378,52367
+[2025-08-05 17:30:28.786] [INFO] Rectangle buy trade sent successfully
+[2025-08-05 17:30:43.919] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3380,22197 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:30:43.919
+[2025-08-05 17:30:43.932] [INFO] Toast notification shown: JForex: Rectangle = 3380,22197 (XAUUSD)
+[2025-08-05 17:30:43.933] [INFO] Processing JForex chart object: Rectangle = 3380,22197
+[2025-08-05 17:30:43.933] [INFO] Processing Rectangle object: 3380,22197
+[2025-08-05 17:30:43.933] [INFO] Parsed rectangle data: Upper=3381,95931, Lower=3378,48463
+[2025-08-05 17:30:43.935] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:30:43.935] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:30:43.937] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3381,95931, Lower=3378,48463
+[2025-08-05 17:30:43.937] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:30:43.958] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3380,16341 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:30:43.958
+[2025-08-05 17:30:43.989] [INFO] Toast notification shown: JForex: Rectangle = 3380,16341 (XAUUSD)
+[2025-08-05 17:30:43.989] [INFO] Processing JForex chart object: Rectangle = 3380,16341
+[2025-08-05 17:30:43.989] [INFO] Processing Rectangle object: 3380,16341
+[2025-08-05 17:30:43.989] [INFO] Parsed rectangle data: Upper=3381,90074, Lower=3378,42607
+[2025-08-05 17:30:44.006] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:30:44.007] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:30:44.022] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3381,90074, Lower=3378,42607
+[2025-08-05 17:30:44.022] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:30:45.016] [INFO] Buy clicked for rectangle trade: XAUUSD Entry:3381,90074 SL:3378,42607
+[2025-08-05 17:30:45.018] [INFO] Rectangle buy trade sent successfully
+[2025-08-05 17:30:55.201] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 17:30:55.201] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:30:55.203] [INFO] Applied risk 30 to Rectangle Control from toolbar settings
+[2025-08-05 17:31:26.328] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-05 17:31:26.328] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:31:26.330] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:36:07.495] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 17:36:07.495] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:36:07.498] [INFO] Applied risk 30 to Rectangle Control from toolbar settings
+[2025-08-05 17:36:18.508] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-05 17:36:18.509] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:36:18.511] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:36:25.145] [INFO] S key pressed via HotkeyService - starting trading pattern capture
+[2025-08-05 17:36:25.745] [INFO] S key pressed via HotkeyService - starting trading pattern capture
+[2025-08-05 17:36:25.963] [INFO] Trading pattern click 1 detected
+[2025-08-05 17:36:26.339] [INFO] Trading pattern click 2 detected
+[2025-08-05 17:36:26.339] [INFO] Trading pattern completed - sending delayed escape
+[2025-08-05 17:36:26.339] [INFO] SendDelayedEscapeForTradingPattern called - sending Escape to current window after trading pattern completion
+[2025-08-05 17:36:26.651] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3378,57625 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:36:26.651
+[2025-08-05 17:36:26.666] [INFO] Toast notification shown: JForex: Rectangle = 3378,57625 (XAUUSD)
+[2025-08-05 17:36:26.666] [INFO] Processing JForex chart object: Rectangle = 3378,57625
+[2025-08-05 17:36:26.667] [INFO] Processing Rectangle object: 3378,57625
+[2025-08-05 17:36:26.667] [INFO] Parsed rectangle data: Upper=3379,40640, Lower=3377,74610
+[2025-08-05 17:36:26.667] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:36:26.668] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:36:26.670] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3379,40640, Lower=3377,74610
+[2025-08-05 17:36:26.670] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:36:27.613] [INFO] Buy clicked for rectangle trade: XAUUSD Entry:3379,40640 SL:3377,74610
+[2025-08-05 17:36:27.614] [WARNING] Failed to send rectangle buy trade
+[2025-08-05 17:36:28.365] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 17:36:28.365] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:36:28.367] [INFO] Applied risk 30 to Rectangle Control from toolbar settings
+[2025-08-05 17:36:32.245] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-05 17:36:32.245] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:36:32.247] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:36:32.793] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:36:32.793] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:36:32.793] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:36:32.794] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:36:32.794] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:36:32.794] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:36:32.929] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:36:32.929] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:36:32.929] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:36:32.930] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:36:32.930] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:36:32.930] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:36:35.873] [INFO] S key pressed via HotkeyService - starting trading pattern capture
+[2025-08-05 17:36:36.362] [INFO] Trading pattern click 1 detected
+[2025-08-05 17:36:36.706] [INFO] Trading pattern click 2 detected
+[2025-08-05 17:36:36.707] [INFO] Trading pattern completed - sending delayed escape
+[2025-08-05 17:36:36.707] [INFO] SendDelayedEscapeForTradingPattern called - sending Escape to current window after trading pattern completion
+[2025-08-05 17:36:36.789] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3379,42689 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:36:36.789
+[2025-08-05 17:36:36.804] [INFO] Toast notification shown: JForex: Rectangle = 3379,42689 (XAUUSD)
+[2025-08-05 17:36:36.804] [INFO] Processing JForex chart object: Rectangle = 3379,42689
+[2025-08-05 17:36:36.805] [INFO] Processing Rectangle object: 3379,42689
+[2025-08-05 17:36:36.805] [INFO] Parsed rectangle data: Upper=3380,26729, Lower=3378,58650
+[2025-08-05 17:36:36.805] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:36:36.806] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:36:36.807] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3380,26729, Lower=3378,58650
+[2025-08-05 17:36:36.807] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:36:37.572] [INFO] Buy clicked for rectangle trade: XAUUSD Entry:3380,26729 SL:3378,58650
+[2025-08-05 17:36:37.573] [INFO] Rectangle buy trade sent successfully
+[2025-08-05 17:36:39.453] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 17:36:39.453] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:36:39.455] [INFO] Applied risk 30 to Rectangle Control from toolbar settings
+[2025-08-05 17:36:54.137] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:36:54.137] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:36:54.137] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:36:54.138] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:36:54.138] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:36:54.138] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:36:54.297] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:36:54.297] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:36:54.297] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:36:54.299] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:36:54.299] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:36:54.299] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:36:57.232] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:36:57.233] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:36:57.233] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:36:57.233] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:36:57.234] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:36:57.234] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:36:57.376] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:36:57.376] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:36:57.377] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:36:57.377] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:36:57.377] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:36:57.378] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:36:57.528] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:36:57.528] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:36:57.529] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:36:57.529] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:36:57.529] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:36:57.530] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:36:59.305] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:36:59.305] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:36:59.305] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:36:59.306] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:36:59.306] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:36:59.306] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:36:59.449] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:36:59.449] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:36:59.449] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:36:59.449] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:36:59.449] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:36:59.450] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:37:01.216] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:37:01.217] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:37:01.217] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:37:01.217] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:37:01.218] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:37:01.218] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:37:01.368] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:37:01.369] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:37:01.369] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:37:01.369] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:37:01.369] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:37:01.370] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:37:20.672] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:37:20.672] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:37:20.672] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:37:20.734] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:37:20.734] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:37:20.734] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:37:43.056] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:37:43.056] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:37:43.056] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:37:43.115] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:37:43.116] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:37:43.116] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:37:56.741] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-05 17:37:56.741] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:37:56.743] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:38:05.216] [INFO] S key pressed via HotkeyService - starting trading pattern capture
+[2025-08-05 17:38:05.770] [INFO] Trading pattern click 1 detected
+[2025-08-05 17:38:07.201] [INFO] Trading pattern click 2 detected
+[2025-08-05 17:38:07.202] [INFO] Trading pattern completed - sending delayed escape
+[2025-08-05 17:38:07.202] [INFO] SendDelayedEscapeForTradingPattern called - sending Escape to current window after trading pattern completion
+[2025-08-05 17:38:07.236] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3380,97445 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:38:07.236
+[2025-08-05 17:38:07.249] [INFO] Toast notification shown: JForex: Rectangle = 3380,97445 (XAUUSD)
+[2025-08-05 17:38:07.249] [INFO] Processing JForex chart object: Rectangle = 3380,97445
+[2025-08-05 17:38:07.249] [INFO] Processing Rectangle object: 3380,97445
+[2025-08-05 17:38:07.249] [INFO] Parsed rectangle data: Upper=3381,84560, Lower=3380,10331
+[2025-08-05 17:38:07.250] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:38:07.250] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:38:07.251] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3381,84560, Lower=3380,10331
+[2025-08-05 17:38:07.252] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:38:08.331] [INFO] Buy clicked for rectangle trade: XAUUSD Entry:3381,84560 SL:3380,10331
+[2025-08-05 17:38:08.332] [INFO] Rectangle buy trade sent successfully
+[2025-08-05 17:38:09.636] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 17:38:09.636] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:38:09.639] [INFO] Applied risk 30 to Rectangle Control from toolbar settings
+[2025-08-05 17:38:16.860] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-05 17:38:16.860] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:38:16.862] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:38:30.912] [INFO] S key pressed via HotkeyService - starting trading pattern capture
+[2025-08-05 17:38:32.073] [INFO] Trading pattern click 1 detected
+[2025-08-05 17:38:33.009] [INFO] Trading pattern click 2 detected
+[2025-08-05 17:38:33.010] [INFO] Trading pattern completed - sending delayed escape
+[2025-08-05 17:38:33.010] [INFO] SendDelayedEscapeForTradingPattern called - sending Escape to current window after trading pattern completion
+[2025-08-05 17:39:04.043] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 17:39:04.043] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:39:04.045] [INFO] Applied risk 30 to Rectangle Control from toolbar settings
+[2025-08-05 17:39:32.877] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-05 17:39:32.878] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:39:32.881] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:40:08.906] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 17:40:08.906] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:40:08.908] [INFO] Applied risk 30 to Rectangle Control from toolbar settings
+[2025-08-05 17:40:14.457] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-05 17:40:14.457] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:40:14.459] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:41:46.098] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 17:41:46.099] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:41:46.101] [INFO] Applied risk 30 to Rectangle Control from toolbar settings
+[2025-08-05 17:41:58.688] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
+[2025-08-05 17:41:58.688] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:41:58.690] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:42:07.365] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:42:07.365] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:42:07.365] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:42:07.366] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:42:07.366] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:42:07.366] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:42:07.525] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:42:07.525] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:42:07.525] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:42:07.526] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:42:07.526] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:42:07.526] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:42:08.093] [INFO] S key pressed via HotkeyService - starting trading pattern capture
+[2025-08-05 17:42:08.438] [INFO] Trading pattern click 1 detected
+[2025-08-05 17:42:09.399] [INFO] Trading pattern click 2 detected
+[2025-08-05 17:42:09.399] [INFO] Trading pattern completed - sending delayed escape
+[2025-08-05 17:42:09.399] [INFO] SendDelayedEscapeForTradingPattern called - sending Escape to current window after trading pattern completion
+[2025-08-05 17:42:09.420] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3376,05282 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:42:09.420
+[2025-08-05 17:42:09.431] [INFO] Toast notification shown: JForex: Rectangle = 3376,05282 (XAUUSD)
+[2025-08-05 17:42:09.431] [INFO] Processing JForex chart object: Rectangle = 3376,05282
+[2025-08-05 17:42:09.432] [INFO] Processing Rectangle object: 3376,05282
+[2025-08-05 17:42:09.432] [INFO] Parsed rectangle data: Upper=3377,23316, Lower=3374,87248
+[2025-08-05 17:42:09.432] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:42:09.433] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:42:09.433] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3377,23316, Lower=3374,87248
+[2025-08-05 17:42:09.433] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:42:11.373] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:42:11.373] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:42:11.374] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:42:11.374] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:42:11.374] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:42:11.374] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:42:13.293] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:42:13.293] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:42:13.293] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:42:13.294] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:42:13.294] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:42:13.294] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:42:13.421] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:42:13.421] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:42:13.421] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:42:13.422] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:42:13.422] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:42:13.422] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:42:13.901] [INFO] S key pressed via HotkeyService - starting trading pattern capture
+[2025-08-05 17:42:14.030] [INFO] Trading pattern click 1 detected
+[2025-08-05 17:42:14.302] [INFO] Trading pattern click 2 detected
+[2025-08-05 17:42:14.303] [INFO] Trading pattern completed - sending delayed escape
+[2025-08-05 17:42:14.303] [INFO] SendDelayedEscapeForTradingPattern called - sending Escape to current window after trading pattern completion
+[2025-08-05 17:42:14.565] [INFO] Received new JForex chart object: JForexChartObject: Rectangle | Symbol: XAUUSD | Price: 3374,46432 | Class: com.dukascopy.charts.drawings.RectangleChartObject | Time: 2025-08-05 17:42:14.565
+[2025-08-05 17:42:14.581] [INFO] Toast notification shown: JForex: Rectangle = 3374,46432 (XAUUSD)
+[2025-08-05 17:42:14.581] [INFO] Processing JForex chart object: Rectangle = 3374,46432
+[2025-08-05 17:42:14.581] [INFO] Processing Rectangle object: 3374,46432
+[2025-08-05 17:42:14.581] [INFO] Parsed rectangle data: Upper=3375,31372, Lower=3373,61492
+[2025-08-05 17:42:14.581] [INFO] Applied risk 10 to Rectangle Control from toolbar settings
+[2025-08-05 17:42:14.583] [ERROR] Error positioning TradeRectangleControl
+Exception: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
+   at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+   at ScreenCaptureApp.SimpleTradingOverlay.PositionTradeRectangleControl(RECT windowRect) in C:\apps\jforex-trading-terminal-win10\SimpleTradingOverlay.xaml.cs:line 968
+[2025-08-05 17:42:14.592] [INFO] Rectangle control shown and positioned for XAUUSD: Upper=3375,31372, Lower=3373,61492
+[2025-08-05 17:42:14.593] [INFO] TradeRectangleControl Visibility: Visible
+[2025-08-05 17:42:14.838] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:42:14.838] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:42:14.838] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:42:14.838] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:42:14.839] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:42:14.839] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:42:15.840] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 17:42:15.840] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 17:42:15.842] [INFO] Applied risk 30 to Rectangle Control from toolbar settings
+[2025-08-05 17:42:20.909] [INFO] P key pressed via HotkeyService - waiting for mouse click
+[2025-08-05 17:42:21.302] [INFO] Mouse click detected after P key press
+[2025-08-05 17:42:21.303] [INFO] SendDelayedEscapeToCurrentWindow called - sending Escape to current window
+[2025-08-05 17:42:21.668] [INFO] Received new JForex chart object: JForexChartObject: PriceMarker | Symbol: XAUUSD | Price: 3361,23974 | Class: com.dukascopy.charts.drawings.PriceMarkerChartObject | Time: 2025-08-05 17:42:21.668
+[2025-08-05 17:42:21.678] [INFO] Toast notification shown: JForex: PriceMarker = 3361,23974 (XAUUSD)
+[2025-08-05 17:42:21.678] [INFO] Processing JForex chart object: PriceMarker = 3361,23974
+[2025-08-05 17:42:21.679] [INFO] Processing PriceMarker object: 3361,23974
+[2025-08-05 17:42:21.679] [INFO] Entry Price set: 3361,23974 for XAUUSD
+[2025-08-05 17:42:22.093] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:42:22.093] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:42:22.094] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:42:22.094] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:42:22.094] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:42:22.095] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:42:22.225] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:42:22.225] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:42:22.225] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:42:22.226] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:42:22.226] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:42:22.226] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:42:29.125] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:42:29.125] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:42:29.125] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:42:29.126] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:42:29.126] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:42:29.126] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:42:29.269] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:42:29.269] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:42:29.269] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
+[2025-08-05 17:42:29.270] [INFO] Escape key pressed via HotkeyService
+[2025-08-05 17:42:29.270] [INFO] Escape key pressed - resetting price level state to wait for Entry Price
+[2025-08-05 17:42:29.270] [INFO] Entry Price reset - ready for new PriceMarkerChartObject
