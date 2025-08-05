@@ -6,14 +6,19 @@ Write-Host "1. In TradingToolbar.xaml.cs - UpdateOrderSummaryUI method:" -Foregr
 Write-Host "   - OrderLotsText now shows % value" -ForegroundColor White
 Write-Host "   - OrderPercentText now shows Lots value" -ForegroundColor White
 
-Write-Host "`n2. In OrderSymbol.xaml.cs - Properties:" -ForegroundColor White
-Write-Host "   - Lots property now displays % format" -ForegroundColor White
-Write-Host "   - Percent property now displays Lots format" -ForegroundColor White
+Write-Host "`n2. In OrderSymbol.xaml - UI Layout:" -ForegroundColor White
+Write-Host "   - First row: Symbol + Percent (was Symbol + Lots)" -ForegroundColor White
+Write-Host "   - Second row: Lots + Points (was Percent + Points)" -ForegroundColor White
+
+Write-Host "`n3. In OrderSymbol.xaml.cs - Properties:" -ForegroundColor White
+Write-Host "   - Lots property displays 'Lots: X.XX' format" -ForegroundColor White
+Write-Host "   - Percent property displays '%: X.XX' format" -ForegroundColor White
 
 Write-Host "`nFiles modified:" -ForegroundColor Yellow
 Write-Host "- Controls/TradingToolbar.xaml.cs: swapped Lots and Percent display values" -ForegroundColor White
-Write-Host "- Controls/OrderSymbol.xaml.cs: swapped Lots and Percent property display formats" -ForegroundColor White
+Write-Host "- Controls/OrderSymbol.xaml: swapped UI positions of Lots and Percent TextBlocks" -ForegroundColor White
+Write-Host "- Controls/OrderSymbol.xaml.cs: restored correct display formats" -ForegroundColor White
 
 Write-Host "`nTo test: run the application and check Trading Toolbar order summary panel" -ForegroundColor Cyan
-Write-Host "Where it used to show 'Lots: X.XX', it should now show '%: X.XX'" -ForegroundColor Cyan
-Write-Host "Where it used to show '%: X.XX', it should now show 'Lots: X.XX'" -ForegroundColor Cyan 
+Write-Host "First row should show: Symbol + % value + Close button" -ForegroundColor Cyan
+Write-Host "Second row should show: Lots value + Points + BE/TP buttons" -ForegroundColor Cyan 

@@ -6175,3 +6175,8 @@ StackTrace:    at System.Windows.Threading.Dispatcher.VerifyAccess()
 [2025-08-05 15:52:56.366] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
 [2025-08-05 15:53:07.047] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY2
 [2025-08-05 15:53:07.047] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 15:56:25.064] [INFO] Window handle initialized: 460370
+[2025-08-05 15:56:25.164] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 15:56:25.165] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20
+[2025-08-05 15:56:25.167] [INFO] TradeRectangleControl positioned at screen center-right: Y=540, ControlHeight=200, ScreenHeight=1080, Right=20, Screen: \\.\DISPLAY1
+[2025-08-05 15:56:25.167] [INFO] TradeRectangleControl Canvas.Top: 440, Canvas.Right: 20

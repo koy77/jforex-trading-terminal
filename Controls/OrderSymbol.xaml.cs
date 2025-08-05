@@ -14,12 +14,12 @@ namespace ScreenCaptureApp.Controls
         public double Lots
         {
             get => double.TryParse(LotsText.Text, out var v) ? v : 0;
-            set => LotsText.Text = $"%: {value:F2}";
+            set => LotsText.Text = $"Lots: {value:F2}";
         }
         public double Percent
         {
             get => double.TryParse(PercentText.Text, out var v) ? v : 0;
-            set => PercentText.Text = $"Lots: {value:F2}";
+            set => PercentText.Text = $"%: {value:F2}";
         }
         public double Points
         {
