@@ -11,6 +11,7 @@ namespace ScreenCaptureApp.Controls
     {
         public event EventHandler<RectangleTradeEventArgs> BuyClicked;
         public event EventHandler<RectangleTradeEventArgs> SellClicked;
+        public event EventHandler<double> RiskChanged;
 
         private string _symbol;
         private double _upperPrice;
@@ -29,6 +30,16 @@ namespace ScreenCaptureApp.Controls
         /// Получает выбранный риск
         /// </summary>
         public double SelectedRisk => _selectedRisk;
+
+        /// <summary>
+        /// Устанавливает риск извне (например, из Trading Toolbar)
+        /// </summary>
+        /// <param name="risk">Значение риска</param>
+        public void SetRisk(double risk)
+        {
+            _selectedRisk = risk;
+            HighlightSelectedRiskButton(risk);
+        }
 
         /// <summary>
         /// Устанавливает данные для отображения
@@ -108,8 +119,11 @@ namespace ScreenCaptureApp.Controls
                 {
                     _selectedRisk = risk;
                     
-                    // Подсвечиваем выбранную кнопку
+                    // Подсвечиваем выбранную кнопку (уже безопасно)
                     HighlightSelectedRiskButton(risk);
+                    
+                    // Вызываем событие изменения риска
+                    RiskChanged?.Invoke(this, risk);
                     
                     Logger.LogTagInfo("TradeRectangleControl", $"Risk changed to {risk}");
                 }
@@ -123,6 +137,22 @@ namespace ScreenCaptureApp.Controls
         /// </summary>
         /// <param name="risk">Выбранный риск</param>
         public void HighlightSelectedRiskButton(double risk)
+        {
+            if (Dispatcher.CheckAccess())
+            {
+                UpdateRiskButtonColors(risk);
+            }
+            else
+            {
+                Dispatcher.Invoke(() => UpdateRiskButtonColors(risk));
+            }
+        }
+
+        /// <summary>
+        /// Обновляет цвета кнопок риска (выполняется в UI потоке)
+        /// </summary>
+        /// <param name="risk">Выбранный риск</param>
+        private void UpdateRiskButtonColors(double risk)
         {
             var riskButtons = FindVisualChildren<Button>(this).Where(b => b.Tag is string && double.TryParse(b.Tag.ToString(), out _));
             foreach (var button in riskButtons)

@@ -213,8 +213,21 @@ namespace ScreenCaptureApp
         private void SetupTradingToolbarEvents()
         {
             TradingToolbar.RiskChanged += (risk) => {
+                Logger.LogTagInfo("SimpleTradingOverlay", $"Trading Toolbar risk changed to {risk}");
+                
+                // Обновляем риск в Rectangle Control, если он видим
+                if (TradeRectangleControl.Visibility == Visibility.Visible)
+                {
+                    TradeRectangleControl.SetRisk(risk);
+                    Logger.LogTagInfo("SimpleTradingOverlay", $"Updated Rectangle Control risk to {risk}");
+                }
+                
+                // Сохраняем настройки в ToolbarSettingsManager
                 if (_currentWindowHandle != IntPtr.Zero)
+                {
                     _toolbarSettingsManager.UpdateSettings(_currentWindowHandle.ToInt64(), risk: risk);
+                    Logger.LogTagInfo("SimpleTradingOverlay", $"Updated toolbar settings for window {_currentWindowHandle}: Risk={risk}");
+                }
             };
 
             TradingToolbar.BrokerChanged += (broker) => {
@@ -233,6 +246,22 @@ namespace ScreenCaptureApp
 
         private void SetupTradeRectangleControlEvents()
         {
+            // Обработчик изменения риска в Rectangle Control
+            TradeRectangleControl.RiskChanged += (sender, risk) =>
+            {
+                Logger.LogTagInfo("SimpleTradingOverlay", $"Rectangle Control risk changed to {risk}");
+                
+                // Обновляем риск в Trading Toolbar
+                TradingToolbar.HighlightSelectedRiskButton(risk);
+                
+                // Сохраняем настройки в ToolbarSettingsManager
+                if (_currentWindowHandle != IntPtr.Zero)
+                {
+                    _toolbarSettingsManager.UpdateSettings(_currentWindowHandle.ToInt64(), risk: risk);
+                    Logger.LogTagInfo("SimpleTradingOverlay", $"Updated toolbar settings for window {_currentWindowHandle}: Risk={risk}");
+                }
+            };
+
             TradeRectangleControl.BuyClicked += async (sender, args) =>
             {
                 Logger.LogTagInfo("SimpleTradingOverlay", $"Buy clicked for rectangle trade: {args.Symbol} Entry:{args.EntryPrice:F5} SL:{args.StopLossPrice:F5}");
@@ -281,8 +310,8 @@ namespace ScreenCaptureApp
                 
                 try
                 {
-                    // Получаем риск из тулбара
-                    double risk = TradingToolbar.SelectedRisk;
+                    // Получаем риск из TradeRectangleControl
+                    double risk = TradeRectangleControl.SelectedRisk;
                     
                     // Отправляем команду в MT4
                     var mt4SocketService = ServiceContainer.Instance.GetService<Mt4SocketService>();
@@ -480,6 +509,23 @@ namespace ScreenCaptureApp
                     
                     // Устанавливаем данные в TradeRectangleControl
                     TradeRectangleControl.SetRectangleData(jforexChartObject.Symbol, rectangleData.UpperPrice, rectangleData.LowerPrice);
+                    
+                    // Применяем настройки риска из ToolbarSettingsManager
+                    if (_currentWindowHandle != IntPtr.Zero)
+                    {
+                        var toolbarSettings = _toolbarSettingsManager.GetSettings(_currentWindowHandle.ToInt64());
+                        if (toolbarSettings != null)
+                        {
+                            TradeRectangleControl.SetRisk(toolbarSettings.Risk);
+                            Logger.LogTagInfo("SimpleTradingOverlay", $"Applied risk {toolbarSettings.Risk} to Rectangle Control from toolbar settings");
+                        }
+                        else
+                        {
+                            // Используем риск по умолчанию
+                            TradeRectangleControl.SetRisk(1.0);
+                            Logger.LogTagInfo("SimpleTradingOverlay", "Applied default risk 1.0 to Rectangle Control");
+                        }
+                    }
                     
                     // Позиционируем контрол по центру экрана
                     var screen = System.Windows.Forms.Screen.PrimaryScreen;
