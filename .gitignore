@@ -11,4 +11,9 @@ build_output.txt
 
 # Ignore build output
 [Bb]in/
-[Oo]bj/ 
+[Oo]bj/
+
+# Ignore log directories
+logs/
+log/
+*.log 
