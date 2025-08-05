@@ -24,6 +24,13 @@
                                         Panel.ZIndex="1001"
                                         Visibility="Collapsed" />
         
+        <!-- Trade Price Level Control - позиционируется справа по центру -->
+        <controls:TradePriceLevelControl x:Name="TradePriceLevelControl" 
+                                         Canvas.Right="20" 
+                                         Canvas.Top="0" 
+                                         Panel.ZIndex="1001"
+                                         Visibility="Collapsed" />
+        
         <!-- Yellow Trading Pattern Rectangle -->
         <Rectangle x:Name="TradingPatternRectangle" 
                    Stroke="Yellow" 

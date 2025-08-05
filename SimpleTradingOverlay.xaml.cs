@@ -151,6 +151,9 @@ namespace ScreenCaptureApp
             // Настройка событий TradeRectangleControl
             SetupTradeRectangleControlEvents();
             
+            // Настройка событий TradePriceLevelControl
+            SetupTradePriceLevelControlEvents();
+            
             // Инициализация переменных для троттлинга мыши
             _lastMouseX = 0;
             _lastMouseY = 0;
@@ -224,6 +227,13 @@ namespace ScreenCaptureApp
                 {
                     TradeRectangleControl.SetRisk(risk);
                     Logger.LogTagInfo("SimpleTradingOverlay", $"Updated Rectangle Control risk to {risk}");
+                }
+                
+                // Обновляем риск в Price Level Control, если он видим
+                if (TradePriceLevelControl.Visibility == Visibility.Visible)
+                {
+                    TradePriceLevelControl.SetRisk(risk);
+                    Logger.LogTagInfo("SimpleTradingOverlay", $"Updated Price Level Control risk to {risk}");
                 }
                 
                 // Сохраняем настройки в ToolbarSettingsManager
@@ -351,6 +361,27 @@ namespace ScreenCaptureApp
             };
         }
 
+        private void SetupTradePriceLevelControlEvents()
+        {
+            // Обработчик изменения риска в Price Level Control
+            TradePriceLevelControl.RiskChanged += (sender, risk) =>
+            {
+                Logger.LogTagInfo("SimpleTradingOverlay", $"Price Level Control risk changed to {risk}");
+                
+                // Обновляем риск в Trading Toolbar
+                TradingToolbar.HighlightSelectedRiskButton(risk);
+                
+                // Сохраняем настройки в ToolbarSettingsManager
+                if (_currentWindowHandle != IntPtr.Zero)
+                {
+                    _toolbarSettingsManager.UpdateSettings(_currentWindowHandle.ToInt64(), risk: risk);
+                    Logger.LogTagInfo("SimpleTradingOverlay", $"Updated toolbar settings for window {_currentWindowHandle}: Risk={risk}");
+                }
+            };
+
+
+        }
+
         private void SetupHttpServerEvents()
         {
             var httpServerService = ServiceContainer.Instance.GetService<HttpServerService>();
@@ -468,6 +499,10 @@ namespace ScreenCaptureApp
                 
                 // Устанавливаем Entry Level в активном TradingToolbar
                 TradingToolbar.SetEntryLevel(_entryPrice, _currentTradeSymbol);
+                
+                // Показываем TradePriceLevelControl
+                ShowTradePriceLevelControl();
+                
                 return;
             }
 
@@ -477,6 +512,10 @@ namespace ScreenCaptureApp
                 _stopLossPrice = Convert.ToDouble(jforexChartObject.Price);
 
                 Logger.LogTagInfo("SimpleTradingOverlay", $"Stop Loss Price set: {_stopLossPrice} for {_currentTradeSymbol}");
+
+                // Скрываем TradePriceLevelControl при установке Stop Loss Price
+                TradePriceLevelControl.Hide();
+                Logger.LogTagInfo("SimpleTradingOverlay", "TradePriceLevelControl hidden due to Stop Loss Price being set");
 
                 // Показываем тост сообщение о установке Stop Loss Price
                 var toastNotifyService = ServiceContainer.Instance.GetService<ToastNotifyService>();
@@ -667,6 +706,9 @@ namespace ScreenCaptureApp
 
             // Скрываем TradeRectangleControl
             TradeRectangleControl.Hide();
+            
+            // Скрываем TradePriceLevelControl
+            TradePriceLevelControl.Hide();
 
             // Сбрасываем состояние ценовых уровней и переходим в режим ожидания Entry Price
             if (TradingToolbar != null)
@@ -976,6 +1018,101 @@ namespace ScreenCaptureApp
             catch (Exception ex)
             {
                 Logger.LogTagError("SimpleTradingOverlay", "Error positioning TradeRectangleControl", ex);
+            }
+        }
+
+        /// <summary>
+        /// Показывает TradePriceLevelControl
+        /// </summary>
+        private void ShowTradePriceLevelControl()
+        {
+            try
+            {
+                Logger.LogTagInfo("SimpleTradingOverlay", $"Showing TradePriceLevelControl for {_currentTradeSymbol} at entry price {_entryPrice:F5}");
+                
+                // Устанавливаем данные в контрол
+                TradePriceLevelControl.SetPriceLevelData(_currentTradeSymbol, _entryPrice);
+                
+                // Применяем настройки риска из ToolbarSettingsManager
+                if (_currentWindowHandle != IntPtr.Zero)
+                {
+                    var toolbarSettings = _toolbarSettingsManager.GetSettings(_currentWindowHandle.ToInt64());
+                    if (toolbarSettings != null)
+                    {
+                        TradePriceLevelControl.SetRisk(toolbarSettings.Risk);
+                        Logger.LogTagInfo("SimpleTradingOverlay", $"Applied risk {toolbarSettings.Risk} to Price Level Control from toolbar settings");
+                    }
+                    else
+                    {
+                        // Используем риск по умолчанию
+                        TradePriceLevelControl.SetRisk(1.0);
+                        Logger.LogTagInfo("SimpleTradingOverlay", "Applied default risk 1.0 to Price Level Control");
+                    }
+                }
+                
+                // Позиционируем контрол по центру экрана
+                var screen = System.Windows.Forms.Screen.FromHandle(_currentWindowHandle);
+                if (screen == null)
+                {
+                    // Если не удалось определить экран, используем основной
+                    screen = System.Windows.Forms.Screen.PrimaryScreen;
+                }
+                var screenRect = new RECT 
+                { 
+                    Left = screen.Bounds.Left, 
+                    Top = screen.Bounds.Top, 
+                    Right = screen.Bounds.Right, 
+                    Bottom = screen.Bounds.Bottom 
+                };
+                PositionTradePriceLevelControl(screenRect);
+                
+                // Показываем контрол
+                TradePriceLevelControl.Show();
+                
+                Logger.LogTagInfo("SimpleTradingOverlay", $"Price Level control shown and positioned for {_currentTradeSymbol}: Entry={_entryPrice:F5}");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("SimpleTradingOverlay", "Error showing TradePriceLevelControl", ex);
+            }
+        }
+
+        /// <summary>
+        /// Позиционирует TradePriceLevelControl по центру экрана справа
+        /// </summary>
+        private void PositionTradePriceLevelControl(RECT windowRect)
+        {
+            try
+            {
+                // Получаем экран, на котором находится окно
+                var screen = System.Windows.Forms.Screen.FromHandle(_currentWindowHandle);
+                if (screen == null)
+                {
+                    // Если не удалось определить экран, используем основной
+                    screen = System.Windows.Forms.Screen.PrimaryScreen;
+                }
+                
+                double screenHeight = screen.Bounds.Height;
+                double screenWidth = screen.Bounds.Width;
+                
+                // Вычисляем центр экрана по вертикали
+                double centerY = screenHeight / 2;
+                
+                // Используем фиксированную высоту контрола (примерно 150px) если ActualHeight еще не доступна
+                double controlHeight = TradePriceLevelControl.ActualHeight > 0 ? TradePriceLevelControl.ActualHeight : 150;
+                
+                // Позиционируем контрол по центру экрана справа
+                Canvas.SetTop(TradePriceLevelControl, centerY - (controlHeight / 2));
+                
+                // Устанавливаем отступ справа (контрол должен быть виден)
+                Canvas.SetRight(TradePriceLevelControl, 0);
+                
+                Logger.LogTagInfo("SimpleTradingOverlay", $"TradePriceLevelControl positioned at screen center-right: Y={centerY:F0}, ControlHeight={controlHeight:F0}, ScreenHeight={screenHeight:F0}, Right=20, Screen: {screen.DeviceName}");
+                Logger.LogTagInfo("SimpleTradingOverlay", $"TradePriceLevelControl Canvas.Top: {Canvas.GetTop(TradePriceLevelControl)}, Canvas.Right: {Canvas.GetRight(TradePriceLevelControl)}");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("SimpleTradingOverlay", "Error positioning TradePriceLevelControl", ex);
             }
         }
 
