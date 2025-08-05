@@ -498,7 +498,7 @@ namespace ScreenCaptureApp
                 Logger.LogTagInfo("SimpleTradingOverlay", $"Entry Price set: {_entryPrice} for {_currentTradeSymbol}");
                 
                 // Устанавливаем Entry Level в активном TradingToolbar
-                TradingToolbar.SetEntryLevel(_entryPrice, _currentTradeSymbol);
+                // TradingToolbar.SetEntryLevel(_entryPrice, _currentTradeSymbol);
                 
                 // Показываем TradePriceLevelControl
                 ShowTradePriceLevelControl();
