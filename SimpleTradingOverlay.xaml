@@ -27,7 +27,6 @@
         <!-- Trade Price Level Control - позиционируется справа по центру -->
         <controls:TradePriceLevelControl x:Name="TradePriceLevelControl" 
                                          Canvas.Right="20" 
-                                         Canvas.Top="0" 
                                          Panel.ZIndex="1001"
                                          Visibility="Collapsed" />
         

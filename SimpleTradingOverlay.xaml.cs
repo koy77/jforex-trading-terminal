@@ -1010,7 +1010,7 @@ namespace ScreenCaptureApp
                 Canvas.SetTop(TradeRectangleControl, centerY - (controlHeight / 2));
                 
                 // Устанавливаем отступ справа (контрол должен быть виден)
-                Canvas.SetRight(TradeRectangleControl, 20);
+                Canvas.SetRight(TradeRectangleControl, 3);
                 
                 Logger.LogTagInfo("SimpleTradingOverlay", $"TradeRectangleControl positioned at screen center-right: Y={centerY:F0}, ControlHeight={controlHeight:F0}, ScreenHeight={screenHeight:F0}, Right=20, Screen: {screen.DeviceName}");
                 Logger.LogTagInfo("SimpleTradingOverlay", $"TradeRectangleControl Canvas.Top: {Canvas.GetTop(TradeRectangleControl)}, Canvas.Right: {Canvas.GetRight(TradeRectangleControl)}");
@@ -1051,12 +1051,7 @@ namespace ScreenCaptureApp
                 }
                 
                 // Позиционируем контрол по центру экрана
-                var screen = System.Windows.Forms.Screen.FromHandle(_currentWindowHandle);
-                if (screen == null)
-                {
-                    // Если не удалось определить экран, используем основной
-                    screen = System.Windows.Forms.Screen.PrimaryScreen;
-                }
+                var screen = System.Windows.Forms.Screen.PrimaryScreen;
                 var screenRect = new RECT 
                 { 
                     Left = screen.Bounds.Left, 
@@ -1064,10 +1059,14 @@ namespace ScreenCaptureApp
                     Right = screen.Bounds.Right, 
                     Bottom = screen.Bounds.Bottom 
                 };
-                PositionTradePriceLevelControl(screenRect);
-                
                 // Показываем контрол
                 TradePriceLevelControl.Show();
+                
+                // Позиционируем контрол после показа с небольшой задержкой
+                Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    PositionTradePriceLevelControl(screenRect);
+                }), System.Windows.Threading.DispatcherPriority.Loaded);
                 
                 Logger.LogTagInfo("SimpleTradingOverlay", $"Price Level control shown and positioned for {_currentTradeSymbol}: Entry={_entryPrice:F5}");
             }
@@ -1085,12 +1084,7 @@ namespace ScreenCaptureApp
             try
             {
                 // Получаем экран, на котором находится окно
-                var screen = System.Windows.Forms.Screen.FromHandle(_currentWindowHandle);
-                if (screen == null)
-                {
-                    // Если не удалось определить экран, используем основной
-                    screen = System.Windows.Forms.Screen.PrimaryScreen;
-                }
+                var screen = System.Windows.Forms.Screen.PrimaryScreen;
                 
                 double screenHeight = screen.Bounds.Height;
                 double screenWidth = screen.Bounds.Width;
@@ -1105,7 +1099,11 @@ namespace ScreenCaptureApp
                 Canvas.SetTop(TradePriceLevelControl, centerY - (controlHeight / 2));
                 
                 // Устанавливаем отступ справа (контрол должен быть виден)
-                Canvas.SetRight(TradePriceLevelControl, 0);
+                Canvas.SetRight(TradePriceLevelControl, 3);
+                
+                // Принудительно обновляем layout
+                TradePriceLevelControl.UpdateLayout();
+                MainCanvas.UpdateLayout();
                 
                 Logger.LogTagInfo("SimpleTradingOverlay", $"TradePriceLevelControl positioned at screen center-right: Y={centerY:F0}, ControlHeight={controlHeight:F0}, ScreenHeight={screenHeight:F0}, Right=20, Screen: {screen.DeviceName}");
                 Logger.LogTagInfo("SimpleTradingOverlay", $"TradePriceLevelControl Canvas.Top: {Canvas.GetTop(TradePriceLevelControl)}, Canvas.Right: {Canvas.GetRight(TradePriceLevelControl)}");
