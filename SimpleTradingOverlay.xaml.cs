@@ -371,10 +371,10 @@ namespace ScreenCaptureApp
             if (_hotkeysService != null)
             {
                 _hotkeysService.OnEscapeKeyPressed += OnEscapeKeyPressed;
-                _hotkeysService.OnPKeyPressed += OnPKeyPressed;
+                _hotkeysService.OnFKeyPressed += OnFKeyPressed;
                 _hotkeysService.OnSKeyPressed += OnSKeyPressed;
                 
-                Logger.LogInfo("SimpleTradingOverlay subscribed to HotkeyService events (Escape, P, and S)");
+                Logger.LogInfo("SimpleTradingOverlay subscribed to HotkeyService events (Escape, F, and S)");
             }
             else
             {
@@ -684,11 +684,11 @@ namespace ScreenCaptureApp
             }
         }
 
-        public void OnPKeyPressed()
+        public void OnFKeyPressed()
         {
             if (!_isEnabled) return;
 
-            Logger.LogTagInfo("SimpleTradingOverlay", "P key pressed via HotkeyService - waiting for mouse click");
+            Logger.LogTagInfo("SimpleTradingOverlay", "F key pressed via HotkeyService - waiting for mouse click");
 
             // Активируем режим ожидания клика мыши
             _isWaitingForMouseClick = true;
@@ -1109,9 +1109,9 @@ namespace ScreenCaptureApp
             if (_hotkeysService != null)
             {
                 _hotkeysService.OnEscapeKeyPressed -= OnEscapeKeyPressed;
-                _hotkeysService.OnPKeyPressed -= OnPKeyPressed;
+                _hotkeysService.OnFKeyPressed -= OnFKeyPressed;
                 _hotkeysService.OnSKeyPressed -= OnSKeyPressed;
-                Logger.LogInfo("SimpleTradingOverlay unsubscribed from HotkeyService events (Escape, P, and S)");
+                Logger.LogInfo("SimpleTradingOverlay unsubscribed from HotkeyService events (Escape, F, and S)");
             }
             
             // Отписываемся от событий HttpServerService
