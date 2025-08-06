@@ -45,6 +45,9 @@ namespace ScreenCaptureApp.Helpers
                 // Register HTTP Server Service
                 container.RegisterSingleton(new HttpServerService());
 
+                // Register JForex Strategy Socket Server
+                container.RegisterSingleton(new JForexStrategySocketServer());
+
                 // Register ToolbarSettingsManager (singleton, in-memory)
                 container.RegisterSingleton(new ToolbarSettingsManager());
 
@@ -60,6 +63,13 @@ namespace ScreenCaptureApp.Helpers
                 if (httpServerService != null)
                 {
                     Task.Run(async () => await httpServerService.StartAsync());
+                }
+
+                // Асинхронный запуск JForex Strategy Socket Server
+                var jforexStrategySocketServer = container.GetService<JForexStrategySocketServer>();
+                if (jforexStrategySocketServer != null)
+                {
+                    Task.Run(async () => await jforexStrategySocketServer.StartAsync());
                 }
                 
                 Logger.LogInfo("All services registered in DI container");
@@ -97,6 +107,12 @@ namespace ScreenCaptureApp.Helpers
                 {
                     var binaryOptionsService = container.GetService<BinaryOptionsSocketService>();
                     binaryOptionsService?.DisconnectAsync();
+                }
+                
+                if (container.IsRegistered<JForexStrategySocketServer>())
+                {
+                    var jforexStrategySocketServer = container.GetService<JForexStrategySocketServer>();
+                    jforexStrategySocketServer?.StopAsync();
                 }
                 
                 if (container.IsRegistered<HttpServerService>())
