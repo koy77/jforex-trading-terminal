@@ -86,6 +86,8 @@ namespace ScreenCaptureApp.Controls
             OrderBEButton.Click += (s, e) => OnOrderBEClicked();
             OrderTP1Button.Click += (s, e) => OnOrderTP1Clicked();
             OrderTP2Button.Click += (s, e) => OnOrderTP2Clicked();
+            OrderTP3Button.Click += (s, e) => OnOrderTP3Clicked();
+            OrderINFButton.Click += (s, e) => OnOrderINFClicked();
             
             // Ensure default duration is properly highlighted when panel becomes visible
             DurationPanel.IsVisibleChanged += (s, e) => 
@@ -245,6 +247,24 @@ namespace ScreenCaptureApp.Controls
             {
                 Logger.LogTagInfo("TradingToolbar", $"TP2 clicked for {_currentSymbol}");
                 // TODO: Implement TP2 functionality
+            }
+        }
+
+        private void OnOrderTP3Clicked()
+        {
+            if (!string.IsNullOrEmpty(_currentSymbol))
+            {
+                Logger.LogTagInfo("TradingToolbar", $"TP3 clicked for {_currentSymbol}");
+                // TODO: Implement TP3 functionality
+            }
+        }
+
+        private void OnOrderINFClicked()
+        {
+            if (!string.IsNullOrEmpty(_currentSymbol))
+            {
+                Logger.LogTagInfo("TradingToolbar", $"INF clicked for {_currentSymbol}");
+                // TODO: Implement INF functionality
             }
         }
 
