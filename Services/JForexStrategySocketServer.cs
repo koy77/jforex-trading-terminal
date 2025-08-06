@@ -14,7 +14,7 @@ namespace ScreenCaptureApp.Services
     public class JForexStrategySocketServer : IDisposable
     {
         private TcpListener _tcpListener;
-        private readonly string _host = "localhost";
+        private readonly string _host = "127.0.0.1";
         private readonly int _port = 5555;
         private bool _isRunning = false;
         private bool _isDisposed = false;
