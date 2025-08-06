@@ -177,6 +177,14 @@ namespace ScreenCaptureApp.Services
         }
 
         /// <summary>
+        /// Отправка JSON команды для проверки статуса
+        /// </summary>
+        public async Task<bool> SendStatusCommandAsync()
+        {
+            return await SendCommandToAllClientsAsync("status");
+        }
+
+        /// <summary>
         /// Отправка произвольного JSON всем клиентам
         /// </summary>
         public async Task<bool> SendJsonToAllClientsAsync(string jsonMessage)
@@ -397,17 +405,16 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         private void ProcessStatusMessage(JsonElement jsonElement, string clientEndPoint)
         {
-            var totalObjectsFound = jsonElement.TryGetProperty("totalObjectsFound", out var foundElement) ? foundElement.GetInt32() : 0;
-            var totalObjectsSent = jsonElement.TryGetProperty("totalObjectsSent", out var sentElement) ? sentElement.GetInt32() : 0;
-            var totalErrors = jsonElement.TryGetProperty("totalErrors", out var errorsElement) ? errorsElement.GetInt32() : 0;
-            var totalSocketMessagesSent = jsonElement.TryGetProperty("totalSocketMessagesSent", out var socketMsgElement) ? socketMsgElement.GetInt32() : 0;
-            var totalSocketErrors = jsonElement.TryGetProperty("totalSocketErrors", out var socketErrElement) ? socketErrElement.GetInt32() : 0;
-            var totalCommandsReceived = jsonElement.TryGetProperty("totalCommandsReceived", out var cmdRecvElement) ? cmdRecvElement.GetInt32() : 0;
-            var totalCommandsProcessed = jsonElement.TryGetProperty("totalCommandsProcessed", out var cmdProcElement) ? cmdProcElement.GetInt32() : 0;
-
-            Logger.LogTagInfo("JForexStrategySocketServer", $"Status from {clientEndPoint} - Objects Found: {totalObjectsFound}, Sent: {totalObjectsSent}, Errors: {totalErrors}, " +
-                          $"Socket Messages: {totalSocketMessagesSent}, Socket Errors: {totalSocketErrors}, " +
-                          $"Commands Received: {totalCommandsReceived}, Processed: {totalCommandsProcessed}");
+            // Проверяем, является ли это ответом на команду status
+            if (jsonElement.TryGetProperty("type", out var typeElement) && typeElement.GetString() == "command_response")
+            {
+                var status = jsonElement.TryGetProperty("status", out var statusElement) ? statusElement.GetString() : "unknown";
+                var message = jsonElement.TryGetProperty("message", out var messageElement) ? messageElement.GetString() : "unknown";
+                var timestamp = jsonElement.TryGetProperty("timestamp", out var timeElement) ? timeElement.GetString() : "unknown";
+                
+                Logger.LogTagInfo("JForexStrategySocketServer", $"Status response from {clientEndPoint} - Status: {status}, Message: {message}, Timestamp: {timestamp}");
+            }
+            
         }
 
         /// <summary>

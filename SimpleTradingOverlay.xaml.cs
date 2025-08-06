@@ -404,8 +404,9 @@ namespace ScreenCaptureApp
                 _hotkeysService.OnEscapeKeyPressed += OnEscapeKeyPressed;
                 _hotkeysService.OnFKeyPressed += OnFKeyPressed;
                 _hotkeysService.OnSKeyPressed += OnSKeyPressed;
+                _hotkeysService.OnCKeyPressed += OnCKeyPressed;
                 
-                Logger.LogInfo("SimpleTradingOverlay subscribed to HotkeyService events (Escape, F, and S)");
+                Logger.LogInfo("SimpleTradingOverlay subscribed to HotkeyService events (Escape, F, S, and C)");
             }
             else
             {
@@ -745,6 +746,86 @@ namespace ScreenCaptureApp
             // Активируем режим ожидания торгового паттерна (два клика мыши)
             _isWaitingForTradingPattern = true;
             _tradingPatternClickCount = 0;
+        }
+
+        public async void OnCKeyPressed()
+        {
+            if (!_isEnabled) return;
+
+            Logger.LogTagInfo("SimpleTradingOverlay", "C key pressed via HotkeyService - sending clear chart command");
+
+            try
+            {
+                // Получаем текущий символ из TradingToolbar
+                string currentSymbol = TradingToolbar.CurrentSymbol;
+                
+                if (string.IsNullOrEmpty(currentSymbol) || currentSymbol.Equals("UNKNOWN", StringComparison.OrdinalIgnoreCase))
+                {
+                    Logger.LogTagWarning("SimpleTradingOverlay", "Cannot send clear chart command: no valid symbol available");
+                    
+                    // Показываем toast сообщение об ошибке
+                    var toastNotifyService = ServiceContainer.Instance.GetService<ToastNotifyService>();
+                    if (toastNotifyService != null)
+                    {
+                        toastNotifyService.ShowToast("Не удалось очистить график: символ не определен", ToastType.Error, 3000);
+                    }
+                    return;
+                }
+
+                // Получаем JForexStrategySocketServer
+                var jforexSocketServer = ServiceContainer.Instance.GetService<JForexStrategySocketServer>();
+                if (jforexSocketServer != null)
+                {
+                    // Отправляем команду ClearChart с текущим символом
+                    bool result = await jforexSocketServer.SendClearChartCommandAsync(currentSymbol);
+                    
+                    if (result)
+                    {
+                        Logger.LogTagInfo("SimpleTradingOverlay", $"Clear chart command sent successfully for symbol: {currentSymbol}");
+                        
+                        // Показываем toast сообщение об успехе
+                        var toastNotifyService = ServiceContainer.Instance.GetService<ToastNotifyService>();
+                        if (toastNotifyService != null)
+                        {
+                            string toastMessage = $"Команда очистки графика отправлена для {currentSymbol}";
+                            toastNotifyService.ShowToast(toastMessage, ToastType.Success, 3000);
+                        }
+                    }
+                    else
+                    {
+                        Logger.LogTagWarning("SimpleTradingOverlay", "Failed to send clear chart command");
+                        
+                        // Показываем toast сообщение об ошибке
+                        var toastNotifyService = ServiceContainer.Instance.GetService<ToastNotifyService>();
+                        if (toastNotifyService != null)
+                        {
+                            toastNotifyService.ShowToast("Ошибка отправки команды очистки графика", ToastType.Error, 3000);
+                        }
+                    }
+                }
+                else
+                {
+                    Logger.LogTagWarning("SimpleTradingOverlay", "JForexStrategySocketServer not found");
+                    
+                    // Показываем toast сообщение об ошибке
+                    var toastNotifyService = ServiceContainer.Instance.GetService<ToastNotifyService>();
+                    if (toastNotifyService != null)
+                    {
+                        toastNotifyService.ShowToast("Сервис JForex не найден", ToastType.Error, 3000);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("SimpleTradingOverlay", "Error sending clear chart command", ex);
+                
+                // Показываем toast сообщение об ошибке
+                var toastNotifyService = ServiceContainer.Instance.GetService<ToastNotifyService>();
+                if (toastNotifyService != null)
+                {
+                    toastNotifyService.ShowToast("Ошибка при отправке команды очистки графика", ToastType.Error, 3000);
+                }
+            }
         }
 
         private void UpdateTradingToolbarUiByBroker(BrokerType brokerType)
@@ -1246,7 +1327,8 @@ namespace ScreenCaptureApp
                 _hotkeysService.OnEscapeKeyPressed -= OnEscapeKeyPressed;
                 _hotkeysService.OnFKeyPressed -= OnFKeyPressed;
                 _hotkeysService.OnSKeyPressed -= OnSKeyPressed;
-                Logger.LogInfo("SimpleTradingOverlay unsubscribed from HotkeyService events (Escape, F, and S)");
+                _hotkeysService.OnCKeyPressed -= OnCKeyPressed;
+                Logger.LogInfo("SimpleTradingOverlay unsubscribed from HotkeyService events (Escape, F, S, and C)");
             }
             
             // Отписываемся от событий HttpServerService
