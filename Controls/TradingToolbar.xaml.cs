@@ -177,7 +177,6 @@ namespace ScreenCaptureApp.Controls
 
         private void UpdateOrderSummaryUI(Mt4SocketService.OrdersSummary.SymbolInfo symbolInfo)
         {
-            OrderSymbolText.Text = symbolInfo.Symbol;
             OrderLotsText.Text = $"%: {symbolInfo.Percent:F2}";
             OrderPercentText.Text = $"Lots: {symbolInfo.Lots:F2}";
             OrderPointsText.Text = $"Pts: {symbolInfo.ProfitPoints:F0}";
@@ -217,8 +216,8 @@ namespace ScreenCaptureApp.Controls
         {
             if (!string.IsNullOrEmpty(_currentSymbol))
             {
-                // Используем символ из OrderSummary (с суффиксом), если он доступен
-                string symbolToClose = OrderSymbolText.Text ?? _currentSymbol;
+                // Используем текущий символ
+                string symbolToClose = _currentSymbol;
                 CloseSymbolOrder(symbolToClose);
             }
         }

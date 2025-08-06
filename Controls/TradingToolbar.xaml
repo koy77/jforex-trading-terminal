@@ -26,13 +26,12 @@
             <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="4" Background="#80000000" Padding="4,4">
                 <StackPanel Orientation="Vertical">
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,2">
-                        <TextBlock x:Name="OrderSymbolText" FontWeight="Bold" Foreground="Cyan" Margin="0,0,4,0"/>
-                        <TextBlock x:Name="OrderLotsText" Foreground="LightGreen" Margin="0,0,8,0"/>
-                        <Button x:Name="OrderCloseButton" Content="Close" Margin="0,0,0,0" Padding="4,2" Background="OrangeRed" Foreground="White" FontWeight="Bold" Cursor="Hand" FontSize="10"/>
+                        <TextBlock x:Name="OrderPercentText" Foreground="LightBlue" Margin="0,0,8,0" FontSize="19"/>
+                        <TextBlock x:Name="OrderLotsText" Foreground="LightGreen" Margin="0,0,8,0" FontSize="16"/>
+                        <Button x:Name="OrderCloseButton" Content="Close" Margin="0,0,0,0" Padding="4,2" Background="OrangeRed" Foreground="White" FontWeight="Bold" Cursor="Hand" FontSize="16"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock x:Name="OrderPercentText" Foreground="LightBlue" Margin="0,0,8,0" FontSize="14"/>
-                        <TextBlock x:Name="OrderPointsText" Foreground="LightCoral" Margin="0,0,8,0" FontSize="14"/>
+                        <TextBlock x:Name="OrderPointsText" Foreground="LightCoral" Margin="0,0,8,0" FontSize="16"/>
                         <Button x:Name="OrderBEButton" Content="BE" Margin="2,0,0,0" Padding="2,1" Background="LightGray" Foreground="Black" FontWeight="Bold" Cursor="Hand" FontSize="9"/>
                         <Button x:Name="OrderTP1Button" Content="TP1" Margin="2,0,0,0" Padding="2,1" Background="LightGray" Foreground="Black" FontWeight="Bold" Cursor="Hand" FontSize="9"/>
                         <Button x:Name="OrderTP2Button" Content="TP2" Margin="2,0,0,0" Padding="2,1" Background="LightGray" Foreground="Black" FontWeight="Bold" Cursor="Hand" FontSize="9"/>
