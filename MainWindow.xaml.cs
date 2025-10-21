@@ -61,9 +61,9 @@ namespace ScreenCaptureApp
             if (mt4SocketService != null && captureTrackingService != null)
                 mt4SocketService.SubscribeToCaptureTrackingEvents(captureTrackingService);
 
-            var binaryOptionsSocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
-            if (binaryOptionsSocketService != null && captureTrackingService != null)
-                binaryOptionsSocketService.SubscribeToCaptureTrackingEvents(captureTrackingService);
+            // var binaryOptionsSocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>(); // Temporarily disabled
+            // if (binaryOptionsSocketService != null && captureTrackingService != null)
+            //     binaryOptionsSocketService.SubscribeToCaptureTrackingEvents(captureTrackingService);
 
             // Инициализация HTTP Server Service
             ServiceInitializer.InitializeHttpServerService(this.Dispatcher);
@@ -466,12 +466,12 @@ namespace ScreenCaptureApp
             HotkeyToggleButton.IsChecked = true;
             EnableHotkeys();
             
-            // Инициализируем статус Binary Options
-            var binaryOptionsSocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
-            if (binaryOptionsSocketService != null)
-            {
-                PocketOptionHelper.CheckPocketOptionConnectionStatusWithUi(this, BinaryOptionsStatusIndicator, binaryOptionsSocketService);
-            }
+            // Инициализируем статус Binary Options - Temporarily disabled
+            // var binaryOptionsSocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
+            // if (binaryOptionsSocketService != null)
+            // {
+            //     PocketOptionHelper.CheckPocketOptionConnectionStatusWithUi(this, BinaryOptionsStatusIndicator, binaryOptionsSocketService);
+            // }
             
             // Обновляем заголовок окна с начальными статусами
             UpdateWindowTitle();
@@ -734,11 +734,12 @@ namespace ScreenCaptureApp
 
         private async void ReconnectBinaryOptions_Click(object sender, RoutedEventArgs e)
         {
-            var binaryOptionsSocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
-            if (binaryOptionsSocketService != null)
-            {
-                await PocketOptionHelper.ReconnectPocketOptionWithUiAsync(this, BinaryOptionsStatusIndicator, binaryOptionsSocketService);
-            }
+            // Temporarily disabled
+            // var binaryOptionsSocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
+            // if (binaryOptionsSocketService != null)
+            // {
+            //     await PocketOptionHelper.ReconnectPocketOptionWithUiAsync(this, BinaryOptionsStatusIndicator, binaryOptionsSocketService);
+            // }
             UpdateWindowTitle();
         }
 
@@ -748,20 +749,20 @@ namespace ScreenCaptureApp
         private void UpdateWindowTitle()
         {
             var mt4SocketService = ServiceContainer.Instance.GetService<Mt4SocketService>();
-            var binaryOptionsSocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
+            // var binaryOptionsSocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>(); // Temporarily disabled
             
             string mt4Status = "⚫";
-            string binaryOptionsStatus = "⚫";
+            string binaryOptionsStatus = "⚫"; // Always disconnected when service is disabled
             
             if (mt4SocketService != null && mt4SocketService.IsConnected)
                 mt4Status = "🟢";
             else if (mt4SocketService != null)
                 mt4Status = "🔴";
-                
-            if (binaryOptionsSocketService != null && binaryOptionsSocketService.IsConnected)
-                binaryOptionsStatus = "🟢";
-            else if (binaryOptionsSocketService != null)
-                binaryOptionsStatus = "🔴";
+            
+            // if (binaryOptionsSocketService != null && binaryOptionsSocketService.IsConnected)
+            //     binaryOptionsStatus = "🟢";
+            // else if (binaryOptionsSocketService != null)
+            //     binaryOptionsStatus = "🔴";
                 
             this.Title = $"Screen Capture Tool [MT4: {mt4Status}] [Binary Options: {binaryOptionsStatus}]";
         }

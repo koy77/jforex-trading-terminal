@@ -27,7 +27,7 @@ namespace ScreenCaptureApp.Helpers
                 container.RegisterSingleton(new ScreenshotService());
                 container.RegisterSingleton(new DatabaseService());
                 container.RegisterSingleton(new Mt4SocketService());
-                container.RegisterSingleton(new BinaryOptionsSocketService());
+                // container.RegisterSingleton(new BinaryOptionsSocketService()); // Temporarily disabled
                 container.RegisterSingleton(new ToastNotifyService());
                 container.RegisterSingleton(new JForexWindowsManagerService());
                 
@@ -51,12 +51,12 @@ namespace ScreenCaptureApp.Helpers
                 // Register ToolbarSettingsManager (singleton, in-memory)
                 container.RegisterSingleton(new ToolbarSettingsManager());
 
-                // Асинхронный запуск подключения BinaryOptionsSocketService
-                var binaryOptionsSocketService = container.GetService<BinaryOptionsSocketService>();
-                if (binaryOptionsSocketService != null)
-                {
-                    Task.Run(async () => await binaryOptionsSocketService.ConnectAsync());
-                }
+                // Асинхронный запуск подключения BinaryOptionsSocketService - Temporarily disabled
+                // var binaryOptionsSocketService = container.GetService<BinaryOptionsSocketService>();
+                // if (binaryOptionsSocketService != null)
+                // {
+                //     Task.Run(async () => await binaryOptionsSocketService.ConnectAsync());
+                // }
 
                 // Асинхронный запуск HTTP Server Service
                 var httpServerService = container.GetService<HttpServerService>();
@@ -103,11 +103,11 @@ namespace ScreenCaptureApp.Helpers
                     mt4Service?.DisconnectAsync();
                 }
                 
-                if (container.IsRegistered<BinaryOptionsSocketService>())
-                {
-                    var binaryOptionsService = container.GetService<BinaryOptionsSocketService>();
-                    binaryOptionsService?.DisconnectAsync();
-                }
+                // if (container.IsRegistered<BinaryOptionsSocketService>()) // Temporarily disabled
+                // {
+                //     var binaryOptionsService = container.GetService<BinaryOptionsSocketService>();
+                //     binaryOptionsService?.DisconnectAsync();
+                // }
                 
                 if (container.IsRegistered<JForexStrategySocketServer>())
                 {

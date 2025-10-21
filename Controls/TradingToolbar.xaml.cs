@@ -498,21 +498,22 @@ namespace ScreenCaptureApp.Controls
         {
             try
             {
-                var binarySocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
-                if (binarySocketService != null)
-                {
-                    string brokerName = SelectedBroker.ToString();
-                    bool success = await binarySocketService.SetRisk(brokerName, risk);
-                    
-                    if (!success)
-                    {
-                        Logger.LogTagWarning("TradingToolbar", $"Failed to set risk {risk} for broker {brokerName}");
-                    }
-                }
-                else
-                {
-                    Logger.LogTagWarning("TradingToolbar", "Binary socket service not available for risk command");
-                }
+                // Temporarily disabled
+                // var binarySocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
+                // if (binarySocketService != null)
+                // {
+                //     string brokerName = SelectedBroker.ToString();
+                //     bool success = await binarySocketService.SetRisk(brokerName, risk);
+                //     
+                //     if (!success)
+                //     {
+                //         Logger.LogTagWarning("TradingToolbar", $"Failed to set risk {risk} for broker {brokerName}");
+                //     }
+                // }
+                // else
+                // {
+                //     Logger.LogTagWarning("TradingToolbar", "Binary socket service not available for risk command");
+                // }
             }
             catch (Exception ex)
             {
@@ -527,21 +528,22 @@ namespace ScreenCaptureApp.Controls
         {
             try
             {
-                var binarySocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
-                if (binarySocketService != null)
-                {
-                    string brokerName = SelectedBroker.ToString();
-                    bool success = await binarySocketService.SetDuration(brokerName, duration);
-                    
-                    if (!success)
-                    {
-                        Logger.LogTagWarning("TradingToolbar", $"Failed to set duration {duration} for broker {brokerName}");
-                    }
-                }
-                else
-                {
-                    Logger.LogTagWarning("TradingToolbar", "Binary socket service not available for duration command");
-                }
+                // Temporarily disabled
+                // var binarySocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
+                // if (binarySocketService != null)
+                // {
+                //     string brokerName = SelectedBroker.ToString();
+                //     bool success = await binarySocketService.SetDuration(brokerName, duration);
+                //     
+                //     if (!success)
+                //     {
+                //         Logger.LogTagWarning("TradingToolbar", $"Failed to set duration {duration} for broker {brokerName}");
+                //     }
+                // }
+                // else
+                // {
+                //     Logger.LogTagWarning("TradingToolbar", "Binary socket service not available for duration command");
+                // }
             }
             catch (Exception ex)
             {
@@ -557,26 +559,27 @@ namespace ScreenCaptureApp.Controls
             Logger.LogTagInfo("TradingToolbar", $"SendOpenSymbolCommand: Starting to send command for symbol {symbolName}, broker {SelectedBroker}");
             try
             {
-                var binarySocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
-                if (binarySocketService != null)
-                {
-                    string brokerName = SelectedBroker.ToString();
-                    Logger.LogTagInfo("TradingToolbar", $"SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol({brokerName}, {symbolName})");
-                    bool success = await binarySocketService.OpenSymbol(brokerName, symbolName);
-                    
-                    if (!success)
-                    {
-                        Logger.LogTagWarning("TradingToolbar", $"Failed to open symbol {symbolName} for broker {brokerName}");
-                    }
-                    else
-                    {
-                        Logger.LogTagInfo("TradingToolbar", $"Successfully sent open symbol command for {symbolName} to {brokerName}");
-                    }
-                }
-                else
-                {
-                    Logger.LogTagWarning("TradingToolbar", "Binary socket service not available for open symbol command");
-                }
+                // Temporarily disabled
+                // var binarySocketService = ServiceContainer.Instance.GetService<BinaryOptionsSocketService>();
+                // if (binarySocketService != null)
+                // {
+                //     string brokerName = SelectedBroker.ToString();
+                //     Logger.LogTagInfo("TradingToolbar", $"SendOpenSymbolCommand: Calling binarySocketService.OpenSymbol({brokerName}, {symbolName})");
+                //     bool success = await binarySocketService.OpenSymbol(brokerName, symbolName);
+                //     
+                //     if (!success)
+                //     {
+                //         Logger.LogTagWarning("TradingToolbar", $"Failed to open symbol {symbolName} for broker {brokerName}");
+                //     }
+                //     else
+                //     {
+                //         Logger.LogTagInfo("TradingToolbar", $"Successfully sent open symbol command for {symbolName} to {brokerName}");
+                //     }
+                // }
+                // else
+                // {
+                //     Logger.LogTagWarning("TradingToolbar", "Binary socket service not available for open symbol command");
+                // }
             }
             catch (Exception ex)
             {
