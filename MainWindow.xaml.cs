@@ -152,11 +152,11 @@ namespace ScreenCaptureApp
             // Проверяем, находится ли курсор мыши над CanvasWindow
             if (IsMouseOverCanvasWindow())
             {
-                // Если курсор над CanvasWindow — переключаем Trading Mode
+                // Если курсор над CanvasWindow — устанавливаем фокус на InkCanvas
                 if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
                 {
-                    currentCanvasWindow.ToggleTradingMode();
-                    Logger.LogDebug("Space pressed over CanvasWindow: toggled trading mode");
+                    // Фокус уже установлен в CanvasWindow, просто логируем
+                    Logger.LogDebug("Space pressed over CanvasWindow: focus already set to InkCanvas");
                 }
                 return;
             }

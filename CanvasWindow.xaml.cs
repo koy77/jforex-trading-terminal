@@ -74,13 +74,8 @@ namespace ScreenCaptureApp
         private int secondsLeft;
         private const int BackgroundUpdateIntervalSeconds = 5; // match your backgroundUpdateTimer interval
         
-        // Brush mode variables
-        private bool isTradingDrawingMode = false; // false = yellow (simple), true = trading (white)
-        private const string TRADING_MODE = "T";
-        private const string SIMPLE_MODE = "S";
-        
         // Trading mode settings
-        private bool useJForexIntegration = false; // false = save to CaptureData with TradingCanvas source, true = send to JForex
+        private bool useJForexIntegration = false; // false = save to CaptureData with trading_canvas source, true = send to JForex
         
         // Event for stroke completion
         public event EventHandler<StrokeCompletedEventArgs> StrokeCompleted;
@@ -225,7 +220,6 @@ namespace ScreenCaptureApp
             {
                 Logger.LogInfo("Pressed C: clear canvas and delete files");
                 DrawingCanvas.Strokes.Clear();
-                TradingCanvas.Strokes.Clear();
                 DeleteCanvasFiles();
 
                 // --- Mark all related captures as skipped ---
@@ -242,11 +236,6 @@ namespace ScreenCaptureApp
                 {
                     Logger.LogError("Error marking captures as skipped after canvas clear", ex);
                 }
-            }
-            else if (e.Key == Key.T)
-            {
-                Logger.LogInfo("Pressed T: toggle trading mode");
-                ToggleTradingMode();
             }
             else if (e.Key == Key.Space)
             {
@@ -295,17 +284,13 @@ namespace ScreenCaptureApp
             LoadCanvas();
             
             // Initialize brush indicator
-            isTradingDrawingMode = false;
             UpdateBrushMode();
-            UpdateTradingMode();
             
-            // Subscribe to stroke completion events for both canvases
+            // Subscribe to stroke completion events
             DrawingCanvas.StrokeCollected += DrawingCanvas_StrokeCollected;
-            TradingCanvas.StrokeCollected += TradingCanvas_StrokeCollected;
             
             // Subscribe to stroke erasing events
             DrawingCanvas.StrokeErasing += DrawingCanvas_StrokeErasing;
-            TradingCanvas.StrokeErasing += DrawingCanvas_StrokeErasing;
 
             // Initialize broker state
             InitializeBrokerComboBox();
@@ -346,34 +331,16 @@ namespace ScreenCaptureApp
                 StylusTip = StylusTip.Ellipse
             };
             
-            // Настройка TradingCanvas для торгового режима
-            TradingCanvas.EditingMode = System.Windows.Controls.InkCanvasEditingMode.Ink;
-            TradingCanvas.DefaultDrawingAttributes = new System.Windows.Ink.DrawingAttributes
-            {
-                Color = Colors.White,
-                Width = 2,
-                Height = 2,
-                FitToCurve = true,
-                IgnorePressure = false,
-                IsHighlighter = false,
-                StylusTip = StylusTip.Ellipse
-            };
-            
-            // Убеждаемся, что InkCanvas могут принимать ввод
+            // Убеждаемся, что InkCanvas может принимать ввод
             DrawingCanvas.IsHitTestVisible = true;
             DrawingCanvas.IsEnabled = true;
-            TradingCanvas.IsHitTestVisible = true;
-            TradingCanvas.IsEnabled = true;
             
             // Добавляем обработчики событий для отладки
             DrawingCanvas.MouseDown += DrawingCanvas_MouseDown;
             DrawingCanvas.MouseMove += DrawingCanvas_MouseMove;
             DrawingCanvas.MouseUp += DrawingCanvas_MouseUp;
-            TradingCanvas.MouseDown += DrawingCanvas_MouseDown;
-            TradingCanvas.MouseMove += DrawingCanvas_MouseMove;
-            TradingCanvas.MouseUp += DrawingCanvas_MouseUp;
             
-            Logger.LogInfo($"InkCanvas initialized successfully with {(isYellowBrush ? "Yellow" : "Black")} brush for DrawingCanvas and White for TradingCanvas");
+            Logger.LogInfo($"InkCanvas initialized successfully with {(isYellowBrush ? "Yellow" : "Black")} brush for DrawingCanvas");
         }
 
         private void DrawingCanvas_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -584,46 +551,6 @@ namespace ScreenCaptureApp
             }
         }
 
-        /// <summary>
-        /// Сохраняет торговые штрихи в отдельный файл для CaptureTrackingService
-        /// </summary>
-        private void SaveTradingCanvas()
-        {
-            try
-            {
-                if (TradingCanvas.Strokes.Count == 0)
-                    return;
-                    
-                string handlerStr = targetWindowHandle.ToInt64().ToString();
-                string canvasesDir = Path.Combine(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), "Canvases");
-                Directory.CreateDirectory(canvasesDir);
-                string tradingPngFile = Path.Combine(canvasesDir, $"trading_{handlerStr}.png");
-                string tradingXamlFile = Path.Combine(canvasesDir, $"trading_{handlerStr}.xaml");
-
-                // Save TradingCanvas as XAML
-                var xaml = XamlWriter.Save(TradingCanvas.Strokes);
-                File.WriteAllText(tradingXamlFile, xaml);
-
-                // Save TradingCanvas as PNG
-                var rtb = new RenderTargetBitmap((int)TradingCanvas.ActualWidth, (int)TradingCanvas.ActualHeight, 96d, 96d, PixelFormats.Pbgra32);
-                TradingCanvas.Measure(new System.Windows.Size(TradingCanvas.ActualWidth, TradingCanvas.ActualHeight));
-                TradingCanvas.Arrange(new Rect(0, 0, TradingCanvas.ActualWidth, TradingCanvas.ActualHeight));
-                rtb.Render(TradingCanvas);
-
-                var encoder = new PngBitmapEncoder();
-                encoder.Frames.Add(BitmapFrame.Create(rtb));
-                using (var fs = new FileStream(tradingPngFile, FileMode.Create))
-                {
-                    encoder.Save(fs);
-                }
-
-                Logger.LogInfo($"Trading canvas saved: {tradingXamlFile}, {tradingPngFile}");
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError($"Error saving trading canvas: {ex.Message}", ex);
-            }
-        }
 
 
 
@@ -667,112 +594,68 @@ namespace ScreenCaptureApp
         
         private void UpdateBrushMode()
         {
-            if (isTradingDrawingMode)
+            // Always use DrawingCanvas in simple mode
+            DrawingCanvas.Visibility = Visibility.Visible;
+            
+            // Get current brush color from MainWindow
+            var mainWindow = System.Windows.Application.Current.MainWindow as MainWindow;
+            bool isYellowBrush = true; // default to yellow
+            if (mainWindow != null)
             {
-                // Переключаемся на TradingCanvas
-                DrawingCanvas.Visibility = Visibility.Collapsed;
-                TradingCanvas.Visibility = Visibility.Visible;
-                
-                // Настройка TradingCanvas
-                TradingCanvas.DefaultDrawingAttributes.Color = Colors.White;
-                TradingCanvas.DefaultDrawingAttributes.Width = 2;
-                TradingCanvas.DefaultDrawingAttributes.Height = 2;
-                TradingCanvas.EditingMode = System.Windows.Controls.InkCanvasEditingMode.Ink;
-                
-                // --- Border: red, thick ---
-                CanvasBorder.Stroke = new SolidColorBrush(Colors.Red);
-                CanvasBorder.StrokeThickness = 4;
-                
-                // Устанавливаем фокус на TradingCanvas
-                TradingCanvas.IsHitTestVisible = true;
-                TradingCanvas.IsEnabled = true;
-                TradingCanvas.Focus();
+                isYellowBrush = mainWindow.IsYellowBrush;
+            }
+            
+            // Set brush color based on MainWindow state
+            if (isYellowBrush)
+            {
+                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
             }
             else
             {
-                // Переключаемся на DrawingCanvas
-                TradingCanvas.Visibility = Visibility.Collapsed;
-                DrawingCanvas.Visibility = Visibility.Visible;
-                
-                // Get current brush color from MainWindow
-                var mainWindow = System.Windows.Application.Current.MainWindow as MainWindow;
-                bool isYellowBrush = true; // default to yellow
-                if (mainWindow != null)
-                {
-                    isYellowBrush = mainWindow.IsYellowBrush;
-                }
-                
-                // Set brush color based on MainWindow state
-                if (isYellowBrush)
-                {
-                    DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
-                }
-                else
-                {
-                    DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Black;
-                }
-                // Border always yellow in simple mode
-                CanvasBorder.Stroke = new SolidColorBrush(Colors.Yellow);
-                CanvasBorder.StrokeThickness = 4;
-                DrawingCanvas.DefaultDrawingAttributes.Width = 2;
-                DrawingCanvas.DefaultDrawingAttributes.Height = 2;
-                DrawingCanvas.EditingMode = System.Windows.Controls.InkCanvasEditingMode.Ink;
-            
-                // Устанавливаем фокус на DrawingCanvas
+                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Black;
+            }
+            // Border always yellow in simple mode
+            CanvasBorder.Stroke = new SolidColorBrush(Colors.Yellow);
+            CanvasBorder.StrokeThickness = 4;
+            DrawingCanvas.DefaultDrawingAttributes.Width = 2;
+            DrawingCanvas.DefaultDrawingAttributes.Height = 2;
+            DrawingCanvas.EditingMode = System.Windows.Controls.InkCanvasEditingMode.Ink;
+        
+            // Устанавливаем фокус на DrawingCanvas
             DrawingCanvas.IsHitTestVisible = true;
             DrawingCanvas.IsEnabled = true;
             DrawingCanvas.Focus();
-            }
             
-            Logger.LogInfo($"Brush mode updated: {(isTradingDrawingMode ? "Trading" : "Simple")} mode");
+            Logger.LogInfo($"Brush mode updated: Simple mode");
         }
 
         private void UpdateTradingMode()
         {
-            TradingToolbar.ShowDurationPanel(isTradingDrawingMode);
+            // Trading toolbar is always hidden in simple mode
+            TradingToolbar.ShowDurationPanel(false);
         }
 
         private void UpdateTradingToolbarVisibility()
         {
-            TradingToolbar.Visibility = isTradingDrawingMode ? Visibility.Visible : Visibility.Collapsed;
+            TradingToolbar.Visibility = Visibility.Collapsed;
         }
 
-        public void ToggleTradingMode()
-        {
-            // Если переключаемся из торгового режима в простой, сохраняем канвас
-            if (isTradingDrawingMode)
-            {
-                SaveCanvasProperly();
-            }
-            
-            isTradingDrawingMode = !isTradingDrawingMode;
-            UpdateBrushMode();
-            UpdateTradingMode();
-            UpdateTradingToolbarVisibility();
-            
-            // Обновляем позиции тостов после переключения режима
-            var toastService = ServiceContainer.Instance.GetService<ToastNotifyService>();
-            toastService?.RefreshToastPositions();
-        }
 
         public void UpdateSimpleBrushColor(bool isYellow)
         {
-            // Update brush color only if we're in simple drawing mode
-            if (!isTradingDrawingMode)
+            // Always update brush color in simple mode
+            if (isYellow)
             {
-                if (isYellow)
-                {
-                    DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
-                }
-                else
-                {
-                    DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Black;
-                }
-                // Border always yellow in simple mode
-                CanvasBorder.Stroke = new SolidColorBrush(Colors.Yellow);
-                CanvasBorder.StrokeThickness = 4;
-                Logger.LogInfo($"Simple brush color updated to {(isYellow ? "Yellow" : "Black")}");
+                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
             }
+            else
+            {
+                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Black;
+            }
+            // Border always yellow in simple mode
+            CanvasBorder.Stroke = new SolidColorBrush(Colors.Yellow);
+            CanvasBorder.StrokeThickness = 4;
+            Logger.LogInfo($"Simple brush color updated to {(isYellow ? "Yellow" : "Black")}");
         }
 
         public void UpdateTargetWindow(IntPtr newTargetWindow, string symbol = null)
@@ -787,7 +670,6 @@ namespace ScreenCaptureApp
             }
             UpdateActiveSymbolDisplay();
             DrawingCanvas.Strokes.Clear();
-            TradingCanvas.Strokes.Clear();
             LoadCanvas();
             SetBackgroundImage();
             DrawingCanvas.Focus();
@@ -796,37 +678,42 @@ namespace ScreenCaptureApp
 
         private void DrawingCanvas_StrokeCollected(object sender, System.Windows.Controls.InkCanvasStrokeCollectedEventArgs e)
         {
-            // Handle stroke completion for simple mode
-            var args = new StrokeCompletedEventArgs
-            {
-                Stroke = e.Stroke,
-                IsTradingMode = false,
-                Bounds = e.Stroke.GetBounds()
-            };
+            Logger.LogInfo("Stroke collected - checking if it's a trading stroke");
             
-            StrokeCompleted?.Invoke(this, args);
+            // Check if this stroke is in MACD area (trading stroke)
+            var bounds = e.Stroke.GetBounds();
+            bool isTradingStroke = bounds.Top >= 656 && bounds.Bottom >= 656;
+            
+            if (isTradingStroke)
+            {
+                Logger.LogInfo("Trading stroke detected (MACD area) - processing immediately");
+                ProcessTradingStrokeDirectly(e.Stroke);
+                
+                // Remove the stroke from DrawingCanvas after processing
+                DrawingCanvas.Strokes.Remove(e.Stroke);
+            }
+            else
+            {
+                Logger.LogInfo("Simple stroke detected - saving normally");
+                // Handle stroke completion for simple mode
+                var args = new StrokeCompletedEventArgs
+                {
+                    Stroke = e.Stroke,
+                    IsTradingMode = false,
+                    Bounds = bounds
+                };
+                
+                StrokeCompleted?.Invoke(this, args);
                 SaveCanvasProperly();
+            }
         }
         
-        private void TradingCanvas_StrokeCollected(object sender, System.Windows.Controls.InkCanvasStrokeCollectedEventArgs e)
-        {
-            Logger.LogInfo("Trading stroke collected - processing immediately");
-            
-            // Обрабатываем штрих напрямую (включая сохранение canvas)
-            ProcessTradingStrokeDirectly(e.Stroke);
-            
-            // Удаляем штрих с TradingCanvas после обработки
-            TradingCanvas.Strokes.Remove(e.Stroke);
-        }
         
         private void DrawingCanvas_StrokeErasing(object sender, System.Windows.Controls.InkCanvasStrokeErasingEventArgs e)
         {
-            // Если это торговый режим, разрешаем стирание
-            if (isTradingDrawingMode)
-            {
-                e.Cancel = false;
-                Logger.LogInfo("Stroke erasing allowed in trading mode");
-            }
+            // Always allow stroke erasing in simple mode
+            e.Cancel = false;
+            Logger.LogInfo("Stroke erasing allowed");
         }
         
         /// <summary>
@@ -928,9 +815,6 @@ namespace ScreenCaptureApp
         {
             try
             {
-                // Сохраняем торговый canvas перед обработкой
-                SaveTradingCanvas();
-                
                 // Создаем и сохраняем CaptureData
                 var captureData = CreateCaptureDataFromStroke(stroke);
                 if (captureData != null)
@@ -965,8 +849,8 @@ namespace ScreenCaptureApp
                 }
                 else
                 {
-                    // Режим TradingCanvas - просто закрываем окно
-                    Logger.LogTagInfo("Trading", "TradingCanvas mode - closing window without JForex integration");
+                    // Режим без JForex - просто закрываем окно
+                    Logger.LogTagInfo("Trading", "Trading stroke processed - closing window without JForex integration");
                     this.Close();
                 }
             }
@@ -1001,9 +885,9 @@ namespace ScreenCaptureApp
                 var firstPoint = points[0];
                 var lastPoint = points[points.Count - 1];
 
-                // Конвертируем координаты из TradingCanvas в экранные координаты с учетом смещения canvas
-                var firstScreenPoint = TradingCanvas.PointToScreen(new System.Windows.Point(firstPoint.X - canvasOffsetX, firstPoint.Y - canvasOffsetY));
-                var lastScreenPoint = TradingCanvas.PointToScreen(new System.Windows.Point(lastPoint.X - canvasOffsetX, lastPoint.Y - canvasOffsetY));
+                // Конвертируем координаты из DrawingCanvas в экранные координаты с учетом смещения canvas
+                var firstScreenPoint = DrawingCanvas.PointToScreen(new System.Windows.Point(firstPoint.X - canvasOffsetX, firstPoint.Y - canvasOffsetY));
+                var lastScreenPoint = DrawingCanvas.PointToScreen(new System.Windows.Point(lastPoint.X - canvasOffsetX, lastPoint.Y - canvasOffsetY));
 
                 Logger.LogTagInfo("JForex", $"Processing JForex integration: Canvas offsets: X={canvasOffsetX}, Y={canvasOffsetY}");
                 Logger.LogTagInfo("JForex", $"Original stroke points: Point1=({firstPoint.X}, {firstPoint.Y}), Point2=({lastPoint.X}, {lastPoint.Y})");
@@ -1237,9 +1121,7 @@ namespace ScreenCaptureApp
             canvasOffsetX += deltaX;
             canvasOffsetY += deltaY;
             
-            // Сдвигаем все штрихи в DrawingCanvas (только в простом режиме)
-            if (!isTradingDrawingMode)
-            {
+            // Сдвигаем все штрихи в DrawingCanvas
             var shiftedStrokes = new StrokeCollection();
             foreach (var stroke in DrawingCanvas.Strokes)
             {
@@ -1260,7 +1142,6 @@ namespace ScreenCaptureApp
             
             // Сразу сохраняем обновленные штрихи
             SaveCanvasProperly();
-            }
         }
         
         private void ApplyCanvasShift()
@@ -1285,7 +1166,6 @@ namespace ScreenCaptureApp
         {
             Logger.LogInfo("Clearing canvas and deleting files");
             DrawingCanvas.Strokes.Clear();
-            TradingCanvas.Strokes.Clear();
             DeleteCanvasFiles();
             
             // Сбрасываем позицию
@@ -1314,7 +1194,6 @@ namespace ScreenCaptureApp
             // (Удалено: SymbolSettingsManager)
             // Очищаем canvas и загружаем новый
             DrawingCanvas.Strokes.Clear();
-            TradingCanvas.Strokes.Clear();
             LoadCanvas();
             SetBackgroundImage();
             DrawingCanvas.Focus();

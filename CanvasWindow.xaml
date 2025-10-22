@@ -31,13 +31,6 @@
                    IsHitTestVisible="True"
                    EditingMode="Ink"/>
         
-        <!-- InkCanvas для торгового режима -->
-        <InkCanvas x:Name="TradingCanvas" 
-                   Background="Transparent"
-                   Panel.ZIndex="1"
-                   IsHitTestVisible="True"
-                   EditingMode="Ink"
-                   Visibility="Collapsed"/>
         
         <Rectangle x:Name="CanvasBorder"
                    IsHitTestVisible="False"
