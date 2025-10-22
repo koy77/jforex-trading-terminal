@@ -79,6 +79,9 @@ namespace ScreenCaptureApp
         private const string TRADING_MODE = "T";
         private const string SIMPLE_MODE = "S";
         
+        // Trading mode settings
+        private bool useJForexIntegration = false; // false = save to CaptureData with TradingCanvas source, true = send to JForex
+        
         // Event for stroke completion
         public event EventHandler<StrokeCompletedEventArgs> StrokeCompleted;
 
@@ -581,6 +584,42 @@ namespace ScreenCaptureApp
             }
         }
 
+        /// <summary>
+        /// Сохраняет торговые штрихи в отдельный файл для CaptureTrackingService
+        /// </summary>
+        private void SaveTradingCanvas()
+        {
+            try
+            {
+                if (TradingCanvas.Strokes.Count == 0)
+                    return;
+                    
+                string handlerStr = targetWindowHandle.ToInt64().ToString();
+                string canvasesDir = Path.Combine(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), "Canvases");
+                Directory.CreateDirectory(canvasesDir);
+                string tradingPngFile = Path.Combine(canvasesDir, $"trading_{handlerStr}.png");
+
+                // Save TradingCanvas as PNG
+                var rtb = new RenderTargetBitmap((int)TradingCanvas.ActualWidth, (int)TradingCanvas.ActualHeight, 96d, 96d, PixelFormats.Pbgra32);
+                TradingCanvas.Measure(new System.Windows.Size(TradingCanvas.ActualWidth, TradingCanvas.ActualHeight));
+                TradingCanvas.Arrange(new Rect(0, 0, TradingCanvas.ActualWidth, TradingCanvas.ActualHeight));
+                rtb.Render(TradingCanvas);
+
+                var encoder = new PngBitmapEncoder();
+                encoder.Frames.Add(BitmapFrame.Create(rtb));
+                using (var fs = new FileStream(tradingPngFile, FileMode.Create))
+                {
+                    encoder.Save(fs);
+                }
+
+                Logger.LogInfo($"Trading canvas saved: {tradingPngFile}");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Error saving trading canvas: {ex.Message}", ex);
+            }
+        }
+
 
 
         private void LoadCanvas()
@@ -839,7 +878,7 @@ namespace ScreenCaptureApp
                     Timestamp = DateTime.Now.ToString("o"),
                     Symbol = activeSymbol,
                     Risk = selectedRisk,
-                    Source = "window",
+                    Source = useJForexIntegration ? "window" : "trading_canvas",
                     Broker = brokerState.GetDisplayName(),
                     Duration = duration,
                     Model = model,
@@ -884,6 +923,61 @@ namespace ScreenCaptureApp
         {
             try
             {
+                // Сохраняем торговый canvas перед обработкой
+                SaveTradingCanvas();
+                
+                // Создаем и сохраняем CaptureData
+                var captureData = CreateCaptureDataFromStroke(stroke);
+                if (captureData != null)
+                {
+                    var databaseService = ServiceContainer.Instance.GetService<DatabaseService>();
+                    var screenshotService = ServiceContainer.Instance.GetService<ScreenshotService>();
+                    
+                    databaseService.SaveCapture(captureData);
+                
+                    // Capture screenshot
+                    var debugInfo = screenshotService.CaptureScreenAreaDebug(
+                            captureData.X, 
+                            captureData.Y, 
+                            captureData.Width, 
+                            captureData.Height, 
+                            captureData.Monitor, 
+                            captureData.ID
+                        );
+                    captureData.ScreenshotPath = debugInfo.ScreenshotPath;
+                    databaseService.UpdateCapture(captureData);
+                
+                    // Обновляем настройки символа и брокера
+                    UpdateSettingsFromCapture(captureData);
+                    
+                    Logger.LogTagInfo("Trading", $"CaptureData saved to database: ID={captureData.ID}, Source={captureData.Source}");
+                }
+
+                // Проверяем настройку интеграции с JForex
+                if (useJForexIntegration)
+                {
+                    await ProcessJForexIntegration(stroke);
+                }
+                else
+                {
+                    // Режим TradingCanvas - просто закрываем окно
+                    Logger.LogTagInfo("Trading", "TradingCanvas mode - closing window without JForex integration");
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("Trading", $"Error processing trading stroke directly: {ex.Message}", ex);
+            }
+        }
+        
+        /// <summary>
+        /// Обработка интеграции с JForex (старая логика)
+        /// </summary>
+        private async Task ProcessJForexIntegration(Stroke stroke)
+        {
+            try
+            {
                 if (jForexService == null)
                 {
                     Logger.LogTagError("JForex", "JForex service is not initialized");
@@ -906,40 +1000,13 @@ namespace ScreenCaptureApp
                 var firstScreenPoint = TradingCanvas.PointToScreen(new System.Windows.Point(firstPoint.X - canvasOffsetX, firstPoint.Y - canvasOffsetY));
                 var lastScreenPoint = TradingCanvas.PointToScreen(new System.Windows.Point(lastPoint.X - canvasOffsetX, lastPoint.Y - canvasOffsetY));
 
-                Logger.LogTagInfo("JForex", $"Processing trading stroke directly: Canvas offsets: X={canvasOffsetX}, Y={canvasOffsetY}");
+                Logger.LogTagInfo("JForex", $"Processing JForex integration: Canvas offsets: X={canvasOffsetX}, Y={canvasOffsetY}");
                 Logger.LogTagInfo("JForex", $"Original stroke points: Point1=({firstPoint.X}, {firstPoint.Y}), Point2=({lastPoint.X}, {lastPoint.Y})");
                 Logger.LogTagInfo("JForex", $"Adjusted stroke points: Point1=({firstPoint.X - canvasOffsetX}, {firstPoint.Y - canvasOffsetY}), Point2=({lastPoint.X - canvasOffsetX}, {lastPoint.Y - canvasOffsetY})");
                 Logger.LogTagInfo("JForex", $"Final screen points: Point1=({firstScreenPoint.X}, {firstScreenPoint.Y}), Point2=({lastScreenPoint.X}, {lastScreenPoint.Y})");
 
-                // Создаем и сохраняем CaptureData
-                var captureData = CreateCaptureDataFromStroke(stroke);
-                if (captureData != null)
-                {
-                var databaseService = ServiceContainer.Instance.GetService<DatabaseService>();
-                var screenshotService = ServiceContainer.Instance.GetService<ScreenshotService>();
-                
-                    databaseService.SaveCapture(captureData);
-                
-                // Capture screenshot
-                var debugInfo = screenshotService.CaptureScreenAreaDebug(
-                        captureData.X, 
-                        captureData.Y, 
-                        captureData.Width, 
-                        captureData.Height, 
-                        captureData.Monitor, 
-                        captureData.ID
-                    );
-                    captureData.ScreenshotPath = debugInfo.ScreenshotPath;
-                    databaseService.UpdateCapture(captureData);
-                
-                // Обновляем настройки символа и брокера
-                    UpdateSettingsFromCapture(captureData);
-                    
-                    Logger.LogTagInfo("JForex", $"CaptureData saved to database: ID={captureData.ID}");
-                }
-
                 // Закрываем CanvasWindow
-                Logger.LogTagInfo("JForex", "Closing CanvasWindow for trading mode");
+                Logger.LogTagInfo("JForex", "Closing CanvasWindow for JForex integration");
                 this.Close();
 
                 // Небольшая задержка для закрытия окна
@@ -959,7 +1026,7 @@ namespace ScreenCaptureApp
 
                 trendlineDrawn = await jForexService.AddTrendlineToGForexDirectlyAsync(targetWindowHandle, firstScreenPoint, lastScreenPoint);
 
-                Logger.LogTagInfo("JForex", "Trading stroke processing completed");
+                Logger.LogTagInfo("JForex", "JForex integration completed");
 
                 // Если трендовая линия была успешно нарисована, запускаем callback для активации canvas window
                 if (trendlineDrawn)
@@ -970,7 +1037,7 @@ namespace ScreenCaptureApp
             }
             catch (Exception ex)
             {
-                Logger.LogTagError("JForex", $"Error processing trading stroke directly: {ex.Message}", ex);
+                Logger.LogTagError("JForex", $"Error in JForex integration: {ex.Message}", ex);
             }
         }
         
@@ -1269,6 +1336,23 @@ namespace ScreenCaptureApp
                 ActiveSymbolText.Visibility = Visibility.Collapsed;
                 Logger.LogInfo("Active symbol display hidden - no active symbol");
             }
+        }
+
+        /// <summary>
+        /// Переключает режим интеграции с JForex
+        /// </summary>
+        public void SetJForexIntegration(bool enabled)
+        {
+            useJForexIntegration = enabled;
+            Logger.LogInfo($"JForex integration {(enabled ? "enabled" : "disabled")}. Trading strokes will be saved with Source={(enabled ? "window" : "trading_canvas")}");
+        }
+        
+        /// <summary>
+        /// Получает текущее состояние интеграции с JForex
+        /// </summary>
+        public bool GetJForexIntegration()
+        {
+            return useJForexIntegration;
         }
 
 

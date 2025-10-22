@@ -37,6 +37,9 @@ namespace ScreenCaptureApp
         
         // Public property to access brush color state
         public bool IsYellowBrush => isYellowBrush;
+        
+        // JForex integration setting
+        private bool useJForexIntegration = false; // false = save to CaptureData with TradingCanvas source, true = send to JForex
 
         public MainWindow()
         {
@@ -93,6 +96,7 @@ namespace ScreenCaptureApp
                 hotkeysService.OnWHotkey += () => { Logger.LogInfo("[DEBUG] OnWHotkey event in MainWindow"); ClickHotkeyButtonByIndex(1); };
                 hotkeysService.OnEHotkey += () => { Logger.LogInfo("[DEBUG] OnEHotkey event in MainWindow"); ClickHotkeyButtonByIndex(2); };
                 hotkeysService.OnRHotkey += () => { Logger.LogInfo("[DEBUG] OnRHotkey event in MainWindow"); ClickHotkeyButtonByIndex(3); };
+                hotkeysService.OnJHotkey += () => { Logger.LogInfo("[DEBUG] OnJHotkey event in MainWindow"); ToggleJForexIntegration(); };
                 hotkeysService.OnLeftShiftHotkey += () =>
                 {
                     Logger.LogInfo("[DEBUG] OnLeftShiftHotkey event in MainWindow");
@@ -399,6 +403,7 @@ namespace ScreenCaptureApp
                     currentCanvasWindow = null;
                 }
                 currentCanvasWindow = new CanvasWindow(targetWindow, activeSymbol);
+                currentCanvasWindow.SetJForexIntegration(useJForexIntegration);
                 currentCanvasWindow.Closed += (s, args) => currentCanvasWindow = null;
                 
                 currentCanvasWindow.Show();
@@ -943,6 +948,49 @@ namespace ScreenCaptureApp
         private void MinimizeEllipse_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
+        }
+        
+        /// <summary>
+        /// Переключает режим интеграции с JForex
+        /// </summary>
+        public void SetJForexIntegration(bool enabled)
+        {
+            useJForexIntegration = enabled;
+            Logger.LogInfo($"MainWindow: JForex integration {(enabled ? "enabled" : "disabled")}");
+            
+            // Обновляем настройку в текущем CanvasWindow если он открыт
+            if (currentCanvasWindow != null)
+            {
+                currentCanvasWindow.SetJForexIntegration(enabled);
+            }
+        }
+        
+        /// <summary>
+        /// Получает текущее состояние интеграции с JForex
+        /// </summary>
+        public bool GetJForexIntegration()
+        {
+            return useJForexIntegration;
+        }
+        
+        /// <summary>
+        /// Переключает режим интеграции с JForex
+        /// </summary>
+        private void ToggleJForexIntegration()
+        {
+            useJForexIntegration = !useJForexIntegration;
+            Logger.LogInfo($"JForex integration toggled: {(useJForexIntegration ? "enabled" : "disabled")}");
+            
+            // Обновляем настройку в текущем CanvasWindow если он открыт
+            if (currentCanvasWindow != null)
+            {
+                currentCanvasWindow.SetJForexIntegration(useJForexIntegration);
+            }
+            
+            // Показываем уведомление
+            var toastService = ServiceContainer.Instance.GetService<ToastNotifyService>();
+            toastService?.ShowToast($"JForex integration: {(useJForexIntegration ? "ON" : "OFF")}", 
+                useJForexIntegration ? ToastType.Success : ToastType.Info);
         }
     }
 } 

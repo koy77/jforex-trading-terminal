@@ -42,6 +42,7 @@ namespace ScreenCaptureApp.Services
         public event Action OnWHotkey;
         public event Action OnEHotkey;
         public event Action OnRHotkey;
+        public event Action OnJHotkey; // JForex integration toggle
         public event Action OnLeftShiftHotkey;
         // Properties
         public bool IsEnabled { get; private set; } = false;
@@ -80,6 +81,7 @@ namespace ScreenCaptureApp.Services
         private const int VK_E = 0x45;
         private const int VK_R = 0x52;
         private const int VK_Z = 0x5A; // Клавиша Z
+        private const int VK_J = 0x4A; // Клавиша J
         private const int VK_LSHIFT = 0xA0;
 
         // Delegate for the keyboard hook
@@ -220,6 +222,11 @@ namespace ScreenCaptureApp.Services
                 {
                     Logger.LogDebug("R hotkey detected and service is enabled");
                     OnRHotkey?.Invoke();
+                }
+                else if (vkCode == VK_J && IsEnabled)
+                {
+                    Logger.LogDebug("J hotkey detected and service is enabled");
+                    // OnJHotkey?.Invoke();
                 }
                 else if (vkCode == VK_Z && IsEnabled)
                 {
