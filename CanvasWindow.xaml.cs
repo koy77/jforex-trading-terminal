@@ -598,6 +598,11 @@ namespace ScreenCaptureApp
                 string canvasesDir = Path.Combine(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), "Canvases");
                 Directory.CreateDirectory(canvasesDir);
                 string tradingPngFile = Path.Combine(canvasesDir, $"trading_{handlerStr}.png");
+                string tradingXamlFile = Path.Combine(canvasesDir, $"trading_{handlerStr}.xaml");
+
+                // Save TradingCanvas as XAML
+                var xaml = XamlWriter.Save(TradingCanvas.Strokes);
+                File.WriteAllText(tradingXamlFile, xaml);
 
                 // Save TradingCanvas as PNG
                 var rtb = new RenderTargetBitmap((int)TradingCanvas.ActualWidth, (int)TradingCanvas.ActualHeight, 96d, 96d, PixelFormats.Pbgra32);
@@ -612,7 +617,7 @@ namespace ScreenCaptureApp
                     encoder.Save(fs);
                 }
 
-                Logger.LogInfo($"Trading canvas saved: {tradingPngFile}");
+                Logger.LogInfo($"Trading canvas saved: {tradingXamlFile}, {tradingPngFile}");
             }
             catch (Exception ex)
             {
@@ -807,11 +812,11 @@ namespace ScreenCaptureApp
         {
             Logger.LogInfo("Trading stroke collected - processing immediately");
             
-            // Удаляем штрих с TradingCanvas сразу
-            TradingCanvas.Strokes.Remove(e.Stroke);
-            
-            // Обрабатываем штрих напрямую
+            // Обрабатываем штрих напрямую (включая сохранение canvas)
             ProcessTradingStrokeDirectly(e.Stroke);
+            
+            // Удаляем штрих с TradingCanvas после обработки
+            TradingCanvas.Strokes.Remove(e.Stroke);
         }
         
         private void DrawingCanvas_StrokeErasing(object sender, System.Windows.Controls.InkCanvasStrokeErasingEventArgs e)
