@@ -33,7 +33,7 @@ namespace ScreenCaptureApp
         private const double ExpandedHeight = 600;
         
         // Brush color state
-        private bool isYellowBrush = true; // true = yellow, false = black - default to yellow for SimpleMod
+        private bool isYellowBrush = false; // true = yellow, false = white - default to white for SimpleMod
         
         // Public property to access brush color state
         public bool IsYellowBrush => isYellowBrush;
@@ -848,7 +848,6 @@ namespace ScreenCaptureApp
             UpdateBrushColorIndicators();
             if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
                 currentCanvasWindow.UpdateSimpleBrushColor(isYellowBrush);
-            Logger.LogInfo("Brush color set to Black");
         }
 
         private void UpdateBrushColorIndicators()

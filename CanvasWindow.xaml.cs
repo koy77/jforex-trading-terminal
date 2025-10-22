@@ -100,6 +100,9 @@ namespace ScreenCaptureApp
         private double canvasOffsetX = 0;
         private double canvasOffsetY = 0;
         private const double SHIFT_STEP = 10.0; // 10 pixels for W/S, 5 pixels for A/D
+        
+        // MACD area threshold - strokes below this Y coordinate are considered trading strokes
+        private const double MACD_AREA_THRESHOLD = 756.0;
 
 
 
@@ -314,7 +317,7 @@ namespace ScreenCaptureApp
             
             // Получаем цвет кисти по умолчанию из MainWindow
             var mainWindow = System.Windows.Application.Current.MainWindow as MainWindow;
-            bool isYellowBrush = true; // default to yellow
+            bool isYellowBrush = false; // default to white
             if (mainWindow != null)
             {
                 isYellowBrush = mainWindow.IsYellowBrush;
@@ -322,7 +325,7 @@ namespace ScreenCaptureApp
             
             DrawingCanvas.DefaultDrawingAttributes = new System.Windows.Ink.DrawingAttributes
             {
-                Color = isYellowBrush ? Colors.Yellow : Colors.Black,
+                Color = isYellowBrush ? Colors.Yellow : Colors.White,
                 Width = 2,
                 Height = 2,
                 FitToCurve = true,
@@ -498,7 +501,10 @@ namespace ScreenCaptureApp
             string handlerStr = targetWindowHandle.ToInt64().ToString();
             string canvasesDir = Path.Combine(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), "Canvases");
             Directory.CreateDirectory(canvasesDir);
-            return Path.Combine(canvasesDir, handlerStr);
+            
+            // Add "trading_" prefix for trading_canvas source to match CaptureTrackingService expectations
+            string fileName = useJForexIntegration ? handlerStr : $"trading_{handlerStr}";
+            return Path.Combine(canvasesDir, fileName);
         }
 
 
@@ -599,7 +605,7 @@ namespace ScreenCaptureApp
             
             // Get current brush color from MainWindow
             var mainWindow = System.Windows.Application.Current.MainWindow as MainWindow;
-            bool isYellowBrush = true; // default to yellow
+            bool isYellowBrush = false; // default to white
             if (mainWindow != null)
             {
                 isYellowBrush = mainWindow.IsYellowBrush;
@@ -612,7 +618,7 @@ namespace ScreenCaptureApp
             }
             else
             {
-                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Black;
+                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
             }
             // Border always yellow in simple mode
             CanvasBorder.Stroke = new SolidColorBrush(Colors.Yellow);
@@ -650,12 +656,12 @@ namespace ScreenCaptureApp
             }
             else
             {
-                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Black;
+                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
             }
             // Border always yellow in simple mode
             CanvasBorder.Stroke = new SolidColorBrush(Colors.Yellow);
             CanvasBorder.StrokeThickness = 4;
-            Logger.LogInfo($"Simple brush color updated to {(isYellow ? "Yellow" : "Black")}");
+            Logger.LogInfo($"Simple brush color updated to {(isYellow ? "Yellow" : "White")}");
         }
 
         public void UpdateTargetWindow(IntPtr newTargetWindow, string symbol = null)
@@ -682,15 +688,15 @@ namespace ScreenCaptureApp
             
             // Check if this stroke is in MACD area (trading stroke)
             var bounds = e.Stroke.GetBounds();
-            bool isTradingStroke = bounds.Top >= 656 && bounds.Bottom >= 656;
+            bool isTradingStroke = bounds.Top >= MACD_AREA_THRESHOLD && bounds.Bottom >= MACD_AREA_THRESHOLD;
             
             if (isTradingStroke)
             {
                 Logger.LogInfo("Trading stroke detected (MACD area) - processing immediately");
                 ProcessTradingStrokeDirectly(e.Stroke);
                 
-                // Remove the stroke from DrawingCanvas after processing
-                DrawingCanvas.Strokes.Remove(e.Stroke);
+                // Keep the stroke on DrawingCanvas after processing
+                Logger.LogInfo("Trading stroke kept on Canvas");
             }
             else
             {
@@ -752,9 +758,9 @@ namespace ScreenCaptureApp
                 
                 // Определяем модель по координатам
                 string model = "OHLC";
-                if (bounds.Top >= 656 && bounds.Bottom >= 656)
+                if (bounds.Top >= MACD_AREA_THRESHOLD && bounds.Bottom >= MACD_AREA_THRESHOLD)
                     model = "MACD";
-                else if (bounds.Top < 656 && bounds.Bottom < 656)
+                else if (bounds.Top < MACD_AREA_THRESHOLD && bounds.Bottom < MACD_AREA_THRESHOLD)
                     model = "OHLC";
                 
                 string windowTitle = MainHelper.GetWindowTitle(targetWindowHandle);
@@ -849,9 +855,8 @@ namespace ScreenCaptureApp
                 }
                 else
                 {
-                    // Режим без JForex - просто закрываем окно
-                    Logger.LogTagInfo("Trading", "Trading stroke processed - closing window without JForex integration");
-                    this.Close();
+                    // Режим без JForex - оставляем Canvas открытым
+                    Logger.LogTagInfo("Trading", "Trading stroke processed - keeping Canvas open");
                 }
             }
             catch (Exception ex)
@@ -894,11 +899,7 @@ namespace ScreenCaptureApp
                 Logger.LogTagInfo("JForex", $"Adjusted stroke points: Point1=({firstPoint.X - canvasOffsetX}, {firstPoint.Y - canvasOffsetY}), Point2=({lastPoint.X - canvasOffsetX}, {lastPoint.Y - canvasOffsetY})");
                 Logger.LogTagInfo("JForex", $"Final screen points: Point1=({firstScreenPoint.X}, {firstScreenPoint.Y}), Point2=({lastScreenPoint.X}, {lastScreenPoint.Y})");
 
-                // Закрываем CanvasWindow
-                Logger.LogTagInfo("JForex", "Closing CanvasWindow for JForex integration");
-                this.Close();
-
-                // Небольшая задержка для закрытия окна
+                // Небольшая задержка для стабилизации
                 await Task.Delay(100);
 
                 // Активируем целевое окно и устанавливаем его в foreground
@@ -929,16 +930,6 @@ namespace ScreenCaptureApp
                 Logger.LogTagError("JForex", $"Error in JForex integration: {ex.Message}", ex);
             }
         }
-        
-
-        
-
-        
-
-        
-
-        
-
 
         private void RiskButton_Click(object sender, RoutedEventArgs e)
         {

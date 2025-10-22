@@ -26,6 +26,9 @@ namespace ScreenCaptureApp.Services
         private const int WM_LBUTTONDOWN = 0x0201;
         private const int WM_LBUTTONUP = 0x0202;
         private const int WM_MOUSEMOVE = 0x0200;
+        
+        // MACD area threshold - strok es below this Y coordinate are considered trading strokes
+        private const double MACD_AREA_THRESHOLD = 700.0;
 
         // Mouse hook DllImports
         [DllImport("user32.dll")]
@@ -111,9 +114,9 @@ namespace ScreenCaptureApp.Services
             
             // Определяем модель по координатам Y
             string model = "OHLC";
-            if (y >= 656 && (y + height) >= 656)
+            if (y >= MACD_AREA_THRESHOLD && (y + height) >= MACD_AREA_THRESHOLD)
                 model = "MACD";
-            else if (y < 656 && (y + height) < 656)
+            else if (y < MACD_AREA_THRESHOLD && (y + height) < MACD_AREA_THRESHOLD)
                 model = "OHLC";
             // Если одна точка выше, другая ниже — по умолчанию OHLC
             
