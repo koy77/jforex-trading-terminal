@@ -40,9 +40,6 @@ namespace ScreenCaptureApp
 
         public MainWindow()
         {
-            // Очищаем папки logs и log в первую очередь, до инициализации сервисов
-            ClearLogFolders();
-            
             ServiceInitializer.RegisterAllServices();
             InitializeComponent();
 
@@ -633,73 +630,6 @@ namespace ScreenCaptureApp
             }
         }
 
-        /// <summary>
-        /// Очищает папки logs и log при старте приложения
-        /// </summary>
-        private void ClearLogFolders()
-        {
-            try
-            {
-                // Анонимная функция для очистки папки
-                Action<string> clearFolder = (folderName) =>
-                {
-                    string folderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, folderName);
-                    Logger.LogInfo($"Attempting to clear folder: {folderPath}");
-                    
-                    if (Directory.Exists(folderPath))
-                    {
-                        var directoryInfo = new DirectoryInfo(folderPath);
-                        var files = directoryInfo.GetFiles("*.*", SearchOption.AllDirectories);
-                        Logger.LogInfo($"Found {files.Length} files in {folderName} folder");
-                        
-                        foreach (var fileInfo in files)
-                        {
-                            try
-                            {
-                                Logger.LogInfo($"Attempting to delete file: {fileInfo.FullName}");
-                                
-                                // Снимаем атрибуты только для чтения если они есть
-                                if (fileInfo.Attributes.HasFlag(FileAttributes.ReadOnly))
-                                {
-                                    fileInfo.Attributes = fileInfo.Attributes & ~FileAttributes.ReadOnly;
-                                }
-                                
-                                fileInfo.Delete();
-                                Logger.LogInfo($"Successfully deleted file: {fileInfo.FullName}");
-                            }
-                            catch (Exception ex)
-                            {
-                                Logger.LogError($"Failed to delete file {fileInfo.FullName}: {ex.Message}");
-                                
-                                // Попробуем принудительно удалить через File.Delete
-                                try
-                                {
-                                    File.Delete(fileInfo.FullName);
-                                    Logger.LogInfo($"Successfully deleted file using File.Delete: {fileInfo.FullName}");
-                                }
-                                catch (Exception ex2)
-                                {
-                                    Logger.LogError($"File.Delete also failed for {fileInfo.FullName}: {ex2.Message}");
-                                }
-                            }
-                        }
-                        Logger.LogInfo($"Cleared {folderName} folder: {folderPath}");
-                    }
-                    else
-                    {
-                        Logger.LogInfo($"{folderName} folder does not exist, nothing to clear");
-                    }
-                };
-
-                // Вызываем анонимную функцию дважды
-                clearFolder("logs");
-                clearFolder("log");
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError($"Error clearing log folders: {ex.Message}", ex);
-            }
-        }
 
         private async void RunCaptureTracking_Click(object sender, RoutedEventArgs e)
         {
