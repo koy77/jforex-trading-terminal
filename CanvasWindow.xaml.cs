@@ -848,6 +848,19 @@ namespace ScreenCaptureApp
                     Logger.LogTagInfo("Trading", $"CaptureData saved to database: ID={captureData.ID}, Source={captureData.Source}");
                 }
 
+                // Сохраняем canvas сразу после создания торгового штриха
+                // чтобы Tracking-сервис мог его найти
+                SaveCanvas();
+                Logger.LogTagInfo("Trading", "Canvas saved immediately for Tracking service");
+
+                // Запускаем Tracking-сервис немедленно для обработки нового capture
+                var captureTrackingService = ServiceContainer.Instance.GetService<CaptureTrackingService>();
+                if (captureTrackingService != null)
+                {
+                    _ = Task.Run(async () => await captureTrackingService.RunOnceAsync());
+                    Logger.LogTagInfo("Trading", "Tracking service triggered immediately");
+                }
+
                 // Проверяем настройку интеграции с JForex
                 if (useJForexIntegration)
                 {
