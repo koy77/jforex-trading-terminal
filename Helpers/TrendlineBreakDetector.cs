@@ -26,10 +26,10 @@ namespace ScreenCaptureApp.Helpers
             if (capture.Model == "MACD")
             {
                 // Можно задать другие параметры для MACD
-                int zoneWidth = 20;
-                int zoneHeight = 20;
-                int breakoutPixelCount = 16;
-                int zoneOffset = 5;
+                int zoneWidth = 10;
+                int zoneHeight = 10;
+                int breakoutPixelCount = 10;
+                int zoneOffset = 3;
                 return DetectBreakoutMACD(cropped, saveDebugPath, zoneWidth, zoneHeight, breakoutPixelCount, zoneOffset);
             }
             else
