@@ -225,9 +225,11 @@ namespace ScreenCaptureApp.Helpers
         {
             // Получаем все экраны
             var screens = Screen.AllScreens;
-            var screen = screens[0]; // Всегда используем основной экран
+            
+            // Используем вторичный монитор, если он есть, иначе основной
+            var screen = screens.Length > 1 ? screens[1] : screens[0];
 
-            // Вычисляем параметры
+            // Вычисляем параметры на том же месте относительно экрана
             double left = screen.WorkingArea.Left;
             double top = screen.WorkingArea.Top;
             double width = screen.WorkingArea.Width;
@@ -244,9 +246,11 @@ namespace ScreenCaptureApp.Helpers
         {
             // Получаем все экраны
             var screens = Screen.AllScreens;
-            var screen = screens[0]; // Всегда используем основной экран
+            
+            // Используем вторичный монитор, если он есть, иначе основной
+            var screen = screens.Length > 1 ? screens[1] : screens[0];
 
-            // Вычисляем параметры для окна трекинга
+            // Вычисляем параметры для окна трекинга на том же месте относительно экрана
             double left = screen.WorkingArea.Left;
             double top = screen.WorkingArea.Top + 100;
             double width = screen.WorkingArea.Width;

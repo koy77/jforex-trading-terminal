@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 using ScreenCaptureApp.Models;
+using System.Linq;
+using ScreenCaptureApp.Helpers;
 
 namespace ScreenCaptureApp.Services
 {
@@ -361,6 +363,9 @@ namespace ScreenCaptureApp.Services
                     
                     // Вызываем событие нового бара
                     OnNewBarReceived(newBarData);
+                    
+                    // Сдвигаем торговые штрихи в базе данных
+                    _ = Task.Run(async () => await ShiftTradingStrokesInDatabase(newBarData));
                 }
 
                 // Отправляем успешный ответ
@@ -527,6 +532,123 @@ namespace ScreenCaptureApp.Services
         protected virtual void OnNewBarReceived(dynamic newBarData)
         {
             NewBarReceived?.Invoke(this, newBarData);
+        }
+
+        /// <summary>
+        /// Сдвигает торговые штрихи в базе данных при получении нового бара
+        /// </summary>
+        private async Task ShiftTradingStrokesInDatabase(dynamic newBarData)
+        {
+            try
+            {
+                if (newBarData == null)
+                {
+                    Logger.LogWarning("Cannot shift trading strokes - NewBar data is null");
+                    return;
+                }
+
+                // Извлекаем данные из NewBar
+                string symbol = null;
+                string feedType = null;
+                int? tickBarSize = null;
+                
+                try
+                {
+                    symbol = newBarData.symbol?.ToString();
+                    feedType = newBarData.feedType?.ToString();
+                    if (newBarData.tickBarSize != null)
+                    {
+                        tickBarSize = Convert.ToInt32(newBarData.tickBarSize);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Logger.LogWarning($"Error extracting NewBar data: {ex.Message}");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(symbol))
+                {
+                    Logger.LogWarning("Cannot shift trading strokes - symbol is null or empty");
+                    return;
+                }
+
+                // Получаем DatabaseService
+                var databaseService = ServiceContainer.Instance.GetService<DatabaseService>();
+                if (databaseService == null)
+                {
+                    Logger.LogWarning("Cannot shift trading strokes - DatabaseService is not available");
+                    return;
+                }
+
+                // Получаем только отслеживаемые CaptureData с Source="trading_canvas"
+                var tradingCaptures = databaseService.GetTrackingCaptures();
+
+                Logger.LogInfo($"Found {tradingCaptures.Count} trading canvas captures to check for shifting");
+
+                int shiftedCount = 0;
+
+                foreach (var capture in tradingCaptures)
+                {
+                    try
+                    {
+                        // Проверяем символ
+                        if (string.IsNullOrEmpty(capture.Symbol) || !capture.Symbol.Equals(symbol, StringComparison.OrdinalIgnoreCase))
+                        {
+                            continue;
+                        }
+
+                        // Проверяем период для тиковых баров
+                        bool shouldShift = false;
+                        
+                        if (!string.IsNullOrEmpty(feedType) && feedType.Equals("TICK_BAR", StringComparison.OrdinalIgnoreCase))
+                        {
+                            // Для тиковых баров проверяем, что период начинается с "T" и содержит размер тика
+                            if (!string.IsNullOrEmpty(capture.Period) && 
+                                capture.Period.StartsWith("T", StringComparison.OrdinalIgnoreCase) &&
+                                tickBarSize.HasValue)
+                            {
+                                // Извлекаем число из периода (например, "T89" -> 89)
+                                string periodNumber = capture.Period.Substring(1);
+                                if (int.TryParse(periodNumber, out int periodTickSize) && periodTickSize == tickBarSize.Value)
+                                {
+                                    shouldShift = true;
+                                    Logger.LogDebug($"TICK_BAR match: Symbol={symbol}, Period={capture.Period}, TickSize={tickBarSize}");
+                                }
+                            }
+                        }
+                        else
+                        {
+                            // Для обычных периодов просто проверяем символ
+                            shouldShift = true;
+                            Logger.LogDebug($"Regular period match: Symbol={symbol}, FeedType={feedType}");
+                        }
+
+                        if (shouldShift)
+                        {
+                            // Сдвигаем координаты влево
+                            int newX = capture.X - (int)CanvasConstants.NEW_BAR_SHIFT_AMOUNT;
+                            
+                            // Обновляем координаты в базе данных
+                            capture.X = newX;
+                            databaseService.UpdateCapture(capture);
+                            
+                            shiftedCount++;
+                            Logger.LogDebug($"Shifted trading stroke: ID={capture.ID}, OldX={capture.X + (int)CanvasConstants.NEW_BAR_SHIFT_AMOUNT}, NewX={newX}");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Logger.LogError($"Error processing capture ID={capture.ID}: {ex.Message}", ex);
+                    }
+                }
+
+                Logger.LogInfo($"Shifted {shiftedCount} trading strokes for symbol '{symbol}' due to new bar");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Error shifting trading strokes in database: {ex.Message}", ex);
+            }
         }
 
         /// <summary>

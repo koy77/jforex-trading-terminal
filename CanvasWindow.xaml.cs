@@ -1311,10 +1311,10 @@ namespace ScreenCaptureApp
 
                             if (shouldShift)
                             {
-                                Logger.LogInfo($"NewBar received for matching symbol '{newBarSymbol}' - shifting strokes left by {SHIFT_STEP} pixels");
+                                Logger.LogInfo($"NewBar received for matching symbol '{newBarSymbol}' - shifting strokes left by {CanvasConstants.NEW_BAR_SHIFT_AMOUNT} pixels");
                                 
                                 Dispatcher.Invoke(() => {
-                                    ShiftStrokes(-SHIFT_STEP, 0);
+                                    ShiftStrokes(-CanvasConstants.NEW_BAR_SHIFT_AMOUNT, 0);
                                     
                                     // Сохраняем canvas после сдвига
                                     SaveCanvasProperly();
