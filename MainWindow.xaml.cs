@@ -92,7 +92,19 @@ namespace ScreenCaptureApp
                 hotkeysService.OnSymbolHotkeyPressed4 += () => TriggerSymbolButton(3);
                 hotkeysService.OnSymbolHotkeyPressed5 += () => TriggerSymbolButton(4);
                 hotkeysService.OnSymbolHotkeyPressed6 += () => TriggerSymbolButton(5);
-                hotkeysService.OnQHotkey += () => { Logger.LogInfo("[DEBUG] OnQHotkey event in MainWindow"); ClickHotkeyButtonByIndex(0); };
+                hotkeysService.OnQHotkey += () => { 
+                    Logger.LogInfo("[DEBUG] OnQHotkey event in MainWindow - Skipping all tracking captures"); 
+                    var databaseService = ServiceContainer.Instance.GetService<DatabaseService>();
+                    if (databaseService != null)
+                    {
+                        databaseService.SkipAllTrackingCaptures();
+                        Logger.LogInfo("Q hotkey: All tracking captures marked as skipped");
+                    }
+                    else
+                    {
+                        Logger.LogWarning("Q hotkey: DatabaseService not available");
+                    }
+                };
                 hotkeysService.OnWHotkey += () => { Logger.LogInfo("[DEBUG] OnWHotkey event in MainWindow"); ClickHotkeyButtonByIndex(1); };
                 hotkeysService.OnEHotkey += () => { Logger.LogInfo("[DEBUG] OnEHotkey event in MainWindow"); ClickHotkeyButtonByIndex(2); };
                 hotkeysService.OnRHotkey += () => { Logger.LogInfo("[DEBUG] OnRHotkey event in MainWindow"); ClickHotkeyButtonByIndex(3); };

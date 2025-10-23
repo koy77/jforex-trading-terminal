@@ -224,6 +224,30 @@ namespace ScreenCaptureApp.Services
             }
         }
 
+        /// <summary>
+        /// Помечает все захваты для трекинга (не сработавшие и не пропущенные) как пропущенные
+        /// </summary>
+        public void SkipAllTrackingCaptures()
+        {
+            var root = LoadOrCreateRoot();
+            var capturesToUpdate = root.Captures.Where(c => !c.IsSkipped && !c.IsFired).ToList();
+            
+            foreach (var capture in capturesToUpdate)
+            {
+                capture.IsSkipped = true;
+            }
+            
+            if (capturesToUpdate.Count > 0)
+            {
+                SaveRoot(root);
+                Logger.LogInfo($"DatabaseService: Marked {capturesToUpdate.Count} tracking captures as skipped");
+            }
+            else
+            {
+                Logger.LogInfo("DatabaseService: No tracking captures found to skip");
+            }
+        }
+
         #endregion
 
         #region Symbol Methods
