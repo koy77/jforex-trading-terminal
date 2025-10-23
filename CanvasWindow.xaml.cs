@@ -72,7 +72,7 @@ namespace ScreenCaptureApp
         private DispatcherTimer backgroundUpdateTimer;
         private DispatcherTimer countdownTimer;
         private int secondsLeft;
-        private const int BackgroundUpdateIntervalSeconds = 5; // match your backgroundUpdateTimer interval
+        private const int BackgroundUpdateIntervalSeconds = 1; // match your backgroundUpdateTimer interval
         
         // Trading mode settings
         private bool useJForexIntegration = false; // false = save to CaptureData with trading_canvas source, true = send to JForex
@@ -95,11 +95,12 @@ namespace ScreenCaptureApp
         private BrokerState brokerState;
         private DurationState durationState;
         private JForexWindowsManagerService jForexService;
+        private HttpServerService httpServerService;
         
         // Canvas shift variables
         private double canvasOffsetX = 0;
         private double canvasOffsetY = 0;
-        private const double SHIFT_STEP = 10.0; // 10 pixels for W/S, 5 pixels for A/D
+        private const double SHIFT_STEP = 4.0; // 10 zpixels for W/S, 5 pixels for A/D
         
         // MACD area threshold - strokes below this Y coordinate are considered trading strokes
         private const double MACD_AREA_THRESHOLD = 756.0;
@@ -118,6 +119,7 @@ namespace ScreenCaptureApp
             brokerState = ServiceContainer.Instance.GetService<BrokerState>();
             durationState = ServiceContainer.Instance.GetService<DurationState>();
             jForexService = ServiceContainer.Instance.GetService<JForexWindowsManagerService>();
+            httpServerService = ServiceContainer.Instance.GetService<HttpServerService>();
             _toolbarSettingsManager = ServiceContainer.Instance.GetService<ToolbarSettingsManager>();
             
             // Применяем настройки тулбара по handle окна
@@ -167,6 +169,7 @@ namespace ScreenCaptureApp
             brokerState = ServiceContainer.Instance.GetService<BrokerState>();
             durationState = ServiceContainer.Instance.GetService<DurationState>();
             jForexService = ServiceContainer.Instance.GetService<JForexWindowsManagerService>();
+            httpServerService = ServiceContainer.Instance.GetService<HttpServerService>();
             _toolbarSettingsManager = ServiceContainer.Instance.GetService<ToolbarSettingsManager>();
             
             // Применяем настройки тулбара по handle окна
@@ -259,6 +262,13 @@ namespace ScreenCaptureApp
                 countdownTimer.Stop();
                 countdownTimer = null;
             }
+            
+            // Отписываемся от событий NewBar
+            if (httpServerService != null)
+            {
+                httpServerService.NewBarReceived -= OnNewBarReceived;
+                Logger.LogInfo("Unsubscribed from NewBar events from HttpServerService");
+            }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -304,6 +314,13 @@ namespace ScreenCaptureApp
             // Обновляем позиции тостов после загрузки CanvasWindow
             var toastService = ServiceContainer.Instance.GetService<ToastNotifyService>();
             toastService?.RefreshToastPositions();
+            
+            // Подписываемся на события NewBar от HttpServerService
+            if (httpServerService != null)
+            {
+                httpServerService.NewBarReceived += OnNewBarReceived;
+                Logger.LogInfo("Subscribed to NewBar events from HttpServerService");
+            }
         }
 
         private void InitializeInkCanvas()
@@ -1237,6 +1254,94 @@ namespace ScreenCaptureApp
         public bool GetJForexIntegration()
         {
             return useJForexIntegration;
+        }
+
+        /// <summary>
+        /// Обработчик события нового бара от HttpServerService
+        /// </summary>
+        private void OnNewBarReceived(object sender, dynamic newBarData)
+        {
+            try
+            {
+                if (newBarData != null)
+                {
+                    // Безопасно получаем символ из dynamic объекта
+                    string newBarSymbol = null;
+                    try
+                    {
+                        newBarSymbol = newBarData.symbol?.ToString();
+                    }
+                    catch (Exception ex)
+                    {
+                        Logger.LogWarning($"Error extracting symbol from NewBar data: {ex.Message}");
+                    }
+
+                    if (!string.IsNullOrEmpty(newBarSymbol))
+                    {
+                        // Проверяем, совпадает ли символ с активным символом CanvasWindow
+                        if (!string.IsNullOrEmpty(activeSymbol) && activeSymbol.Equals(newBarSymbol, StringComparison.OrdinalIgnoreCase))
+                        {
+                            // Дополнительная проверка заголовка окна для тиковых баров
+                            string feedType = null;
+                            try
+                            {
+                                feedType = newBarData.feedType?.ToString();
+                            }
+                            catch (Exception ex)
+                            {
+                                Logger.LogWarning($"Error extracting feedType from NewBar data: {ex.Message}");
+                            }
+
+                            bool shouldShift = true;
+                            
+                            if (!string.IsNullOrEmpty(feedType) && feedType.Equals("TICK_BAR", StringComparison.OrdinalIgnoreCase))
+                            {
+                                // Для тиковых баров проверяем, что в заголовке окна есть буква T
+                                string windowTitle = MainHelper.GetWindowTitle(targetWindowHandle);
+                                if (string.IsNullOrEmpty(windowTitle) || !windowTitle.Contains("T"))
+                                {
+                                    Logger.LogDebug($"NewBar is TICK_BAR but window title '{windowTitle}' does not contain 'T' - ignoring");
+                                    shouldShift = false;
+                                }
+                                else
+                                {
+                                    Logger.LogInfo($"Window title '{windowTitle}' contains 'T' - proceeding with TICK_BAR shift");
+                                }
+                            }
+
+                            if (shouldShift)
+                            {
+                                Logger.LogInfo($"NewBar received for matching symbol '{newBarSymbol}' - shifting strokes left by {SHIFT_STEP} pixels");
+                                
+                                Dispatcher.Invoke(() => {
+                                    ShiftStrokes(-SHIFT_STEP, 0);
+                                    
+                                    // Сохраняем canvas после сдвига
+                                    SaveCanvasProperly();
+                                });
+                                
+                                Logger.LogInfo($"Strokes shifted left for symbol '{newBarSymbol}' due to new bar");
+                            }
+                        }
+                        else
+                        {
+                            Logger.LogDebug($"NewBar symbol '{newBarSymbol}' does not match active symbol '{activeSymbol}' - ignoring");
+                        }
+                    }
+                    else
+                    {
+                        Logger.LogWarning("Received NewBar event with null or empty symbol");
+                    }
+                }
+                else
+                {
+                    Logger.LogWarning("Received NewBar event with null data");
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Error handling NewBar event: {ex.Message}", ex);
+            }
         }
 
 

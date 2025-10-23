@@ -43,6 +43,11 @@ namespace ScreenCaptureApp.Services
         public event EventHandler<JForexChartObjectData> NewJForexChartObject;
 
         /// <summary>
+        /// Событие нового бара
+        /// </summary>
+        public event EventHandler<dynamic> NewBarReceived;
+
+        /// <summary>
         /// Список последних полученных данных (для отладки)
         /// </summary>
         public List<PriceLevelData> RecentPriceLevels { get; private set; }
@@ -164,6 +169,11 @@ namespace ScreenCaptureApp.Services
                     case "/pricelevel":
                     case "/api/pricelevel":
                         await HandlePriceLevelRequestAsync(request, response);
+                        break;
+                    
+                    case "/new-bar":
+                    case "/api/new-bar":
+                        await HandleNewBarRequestAsync(request, response);
                         break;
                     
                     case "/health":
@@ -310,6 +320,76 @@ namespace ScreenCaptureApp.Services
         }
 
         /// <summary>
+        /// Обрабатывает запрос нового бара от JForex стратегии
+        /// </summary>
+        private async Task HandleNewBarRequestAsync(HttpListenerRequest request, HttpListenerResponse response)
+        {
+            try
+            {
+                if (request.HttpMethod != "POST")
+                {
+                    var errorResponse = "Method not allowed";
+                    Logger.LogTagInfo("http_service", $"Server Response (405): {errorResponse}");
+                    await SendResponseAsync(response, errorResponse, 405);
+                    return;
+                }
+
+                // Читаем тело запроса
+                string requestBody;
+                using (var reader = new StreamReader(request.InputStream, request.ContentEncoding))
+                {
+                    requestBody = await reader.ReadToEndAsync();
+                }
+
+                // Логируем входящие данные по тегу
+                Logger.LogTagInfo("http_service", $"New Bar Input Data (raw): {requestBody}");
+                Logger.LogDebug($"Received new bar data: {requestBody}");
+
+                // Парсим JSON для извлечения данных
+                var newBarData = JsonConvert.DeserializeObject<dynamic>(requestBody);
+                
+                if (newBarData != null)
+                {
+                    // Логируем все поля из JSON
+                    Logger.LogTagInfo("http_service", $"New Bar Data - Symbol: {newBarData.symbol}, ChartKey: {newBarData.chartKey}");
+                    Logger.LogTagInfo("http_service", $"New Bar Data - FeedType: {newBarData.feedType}, TickBarSize: {newBarData.tickBarSize}");
+                    Logger.LogTagInfo("http_service", $"New Bar Data - BarStartTime: {newBarData.barStartTime}, ChartInfo: {newBarData.chartInfo}");
+                    Logger.LogTagInfo("http_service", $"New Bar Data - TickTime: {newBarData.tickTime}, TickPrice: {newBarData.tickPrice}");
+                    Logger.LogTagInfo("http_service", $"New Bar Data - Timestamp: {newBarData.timestamp}, Strategy: {newBarData.strategy}");
+                    
+                    Logger.LogInfo($"New bar detected: {newBarData.symbol} on chart {newBarData.chartKey} at {newBarData.timestamp}");
+                    
+                    // Вызываем событие нового бара
+                    OnNewBarReceived(newBarData);
+                }
+
+                // Отправляем успешный ответ
+                var responseData = new { success = true, message = "New bar data received and logged", timestamp = DateTime.Now };
+                var responseJson = JsonConvert.SerializeObject(responseData, Formatting.Indented);
+                await SendJsonResponseAsync(response, responseData, 200);
+
+                // Логируем ответ по тегу
+                Logger.LogTagInfo("http_service", $"Server Response (200): {responseJson}");
+            }
+            catch (JsonException ex)
+            {
+                Logger.LogError("Invalid JSON in new bar request", ex);
+                Logger.LogTagError("http_service", "Invalid JSON in new bar request", ex);
+                var errorResponse = "Invalid JSON format";
+                Logger.LogTagInfo("http_service", $"Server Response (400): {errorResponse}");
+                await SendResponseAsync(response, errorResponse, 400);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("Error processing new bar request", ex);
+                Logger.LogTagError("http_service", "Error processing new bar request", ex);
+                var errorResponse = "Internal server error";
+                Logger.LogTagInfo("http_service", $"Server Response (500): {errorResponse}");
+                await SendResponseAsync(response, errorResponse, 500);
+            }
+        }
+
+        /// <summary>
         /// Обрабатывает запрос проверки здоровья сервера
         /// </summary>
         private async Task HandleHealthRequestAsync(HttpListenerResponse response)
@@ -359,7 +439,7 @@ namespace ScreenCaptureApp.Services
             {
                 error = "Not Found",
                 message = "The requested endpoint does not exist",
-                availableEndpoints = new[] { "/pricelevel", "/health", "/status" },
+                availableEndpoints = new[] { "/pricelevel", "/new-bar", "/health", "/status" },
                 timestamp = DateTime.Now
             };
             
@@ -439,6 +519,14 @@ namespace ScreenCaptureApp.Services
         protected virtual void OnNewJForexChartObject(JForexChartObjectData jforexChartObject)
         {
             NewJForexChartObject?.Invoke(this, jforexChartObject);
+        }
+
+        /// <summary>
+        /// Вызывает событие нового бара
+        /// </summary>
+        protected virtual void OnNewBarReceived(dynamic newBarData)
+        {
+            NewBarReceived?.Invoke(this, newBarData);
         }
 
         /// <summary>
