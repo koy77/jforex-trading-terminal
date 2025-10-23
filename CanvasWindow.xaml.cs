@@ -240,11 +240,7 @@ namespace ScreenCaptureApp
                     Logger.LogError("Error marking captures as skipped after canvas clear", ex);
                 }
             }
-            else if (e.Key == Key.Space)
-            {
-                Logger.LogInfo("Pressed Space: force focus to InkCanvas");
-                DrawingCanvas.Focus();
-            }
+            // Space key is now handled globally in MainWindow
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -1242,8 +1238,6 @@ namespace ScreenCaptureApp
         {
             return useJForexIntegration;
         }
-
-
 
 
     }

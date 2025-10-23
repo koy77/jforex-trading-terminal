@@ -10,7 +10,10 @@
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,10,0">
             <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                 <TextBlock x:Name="SymbolLabel" Text="XAUUSD" Foreground="Cyan" FontWeight="Bold" FontSize="32" Background="#80000000" Padding="15,10" TextAlignment="Center" MinWidth="120"/>
-                <TextBlock x:Name="HandleIDLabel" Text="HandleID: 0" Foreground="Aqua" FontSize="10" TextAlignment="Center" Margin="0,2,0,0"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,2,0,0">
+                    <TextBlock x:Name="HandleIDLabel" Text="HandleID: 0" Foreground="Aqua" FontSize="10" TextAlignment="Center" Margin="0,0,10,0"/>
+                    <TextBlock x:Name="TrackingCountLabel" Text="Tracking: 0" Foreground="Yellow" FontSize="10" TextAlignment="Center"/>
+                </StackPanel>
             </StackPanel>
             
             <!-- Price Display Panel - справа от символа -->

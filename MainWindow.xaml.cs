@@ -161,45 +161,45 @@ namespace ScreenCaptureApp
 
         private void OnSpaceKeyPressed()
         {
-            // Проверяем, находится ли курсор мыши над CanvasWindow
-            if (IsMouseOverCanvasWindow())
-            {
-                // Если курсор над CanvasWindow — устанавливаем фокус на InkCanvas
-                if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
-                {
-                    // Фокус уже установлен в CanvasWindow, просто логируем
-                    Logger.LogDebug("Space pressed over CanvasWindow: focus already set to InkCanvas");
-                }
-                return;
-            }
-            
-            // Если курсор не над CanvasWindow — обновляем target window
-            IntPtr newTargetWindow = MainHelper.GetWindowUnderCursor();
-            
-            // Show status information
-            if (newTargetWindow != IntPtr.Zero)
-            {
-                Logger.LogDebug($"Target window captured (Handle: 0x{newTargetWindow:X})");
-            }
-            else
-            {
-                Logger.LogDebug("No target window found under cursor");
-                return;
-            }
-            
-            // Если CanvasWindow уже открыт, обновляем его target window
+            // Toggle Canvas window visibility
             if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
             {
-                currentCanvasWindow.UpdateTargetWindow(newTargetWindow, activeSymbol);
-                targetWindow = newTargetWindow;
-                Logger.LogDebug("CanvasWindow target updated");
+                // Canvas window is visible - hide it
+                currentCanvasWindow.Visibility = Visibility.Hidden;
+                Logger.LogDebug("Space pressed: Canvas window HIDDEN");
             }
             else
             {
-                // Если CanvasWindow не открыт, открываем новый
-                targetWindow = newTargetWindow;
-                Canvas_Click(null, null);
-                Logger.LogDebug("New CanvasWindow opened");
+                // Canvas window is hidden or doesn't exist - show it
+                IntPtr newTargetWindow = MainHelper.GetWindowUnderCursor();
+                
+                if (newTargetWindow != IntPtr.Zero)
+                {
+                    Logger.LogDebug($"Target window captured (Handle: 0x{newTargetWindow:X})");
+                }
+                else
+                {
+                    Logger.LogDebug("No target window found under cursor");
+                    return;
+                }
+                
+                if (currentCanvasWindow != null)
+                {
+                    // Canvas window exists but is hidden - show it and update target
+                    currentCanvasWindow.UpdateTargetWindow(newTargetWindow, activeSymbol);
+                    currentCanvasWindow.Visibility = Visibility.Visible;
+                    currentCanvasWindow.Activate();
+                    currentCanvasWindow.Focus();
+                    targetWindow = newTargetWindow;
+                    Logger.LogDebug("Space pressed: Canvas window SHOWN (existing window)");
+                }
+                else
+                {
+                    // Canvas window doesn't exist - create new one
+                    targetWindow = newTargetWindow;
+                    Canvas_Click(null, null);
+                    Logger.LogDebug("Space pressed: Canvas window SHOWN (new window)");
+                }
             }
         }
 

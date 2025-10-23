@@ -22,6 +22,7 @@ namespace ScreenCaptureApp.Controls
         private Mt4SocketService _mt4SocketService;
         private ToolbarSettingsManager _toolbarSettingsManager;
         private ToastNotifyService _toastNotifyService;
+        private DatabaseService _databaseService;
         private string _currentSymbol;
         public string CurrentSymbol => _currentSymbol;
         private long _currentHandleID;
@@ -70,6 +71,24 @@ namespace ScreenCaptureApp.Controls
             catch (Exception ex)
             {
                 Logger.LogTagError("TradingToolbar", "Failed to get ToastNotifyService from DI container", ex);
+            }
+
+            // Получаем DatabaseService из DI контейнера
+            try
+            {
+                _databaseService = ServiceContainer.Instance.GetService<DatabaseService>();
+                if (_databaseService != null)
+                {
+                    Logger.LogTagInfo("TradingToolbar", "DatabaseService initialized successfully");
+                }
+                else
+                {
+                    Logger.LogTagWarning("TradingToolbar", "DatabaseService is null - tracking count will not be updated");
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("TradingToolbar", "Failed to get DatabaseService from DI container", ex);
             }
             
             HighlightSelectedBroker(SelectedBroker);
@@ -322,6 +341,9 @@ namespace ScreenCaptureApp.Controls
             
             // Hide prices when symbol changes
             HidePrices();
+            
+            // Update tracking count for the new symbol
+            UpdateTrackingCount();
         }
 
         /// <summary>
@@ -371,6 +393,9 @@ namespace ScreenCaptureApp.Controls
                     Logger.LogTagInfo("TradingToolbar", $"Created default settings for HandleID {handleID}: Risk={SelectedRisk}, Duration={SelectedDuration}, Broker={SelectedBroker}");
                 }
             }
+            
+            // Update tracking count when handle changes
+            UpdateTrackingCount();
         }
 
         /// <summary>
@@ -709,6 +734,37 @@ namespace ScreenCaptureApp.Controls
             PriceDisplayPanel.Visibility = Visibility.Visible;
             
             Logger.LogTagInfo("TradingToolbar", $"Price display updated: Entry={entryPrice:F5}, StopLoss={stopLossPrice:F5}, TradeType={tradeType}");
+        }
+
+        /// <summary>
+        /// Обновляет счетчик трекинга для текущего символа
+        /// </summary>
+        public void UpdateTrackingCount()
+        {
+            try
+            {
+                if (_databaseService == null || string.IsNullOrEmpty(_currentSymbol))
+                {
+                    TrackingCountLabel.Text = "Tracking: 0";
+                    return;
+                }
+
+                // Получаем все CaptureData для текущего символа, которые не сработали и не пропущены
+                var trackingCaptures = _databaseService.GetAllUnfiredAndUnskippedCaptures()
+                    .Where(c => !string.IsNullOrEmpty(c.Symbol) && 
+                               c.Symbol.Equals(_currentSymbol, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+
+                int trackingCount = trackingCaptures.Count;
+                TrackingCountLabel.Text = $"Tracking: {trackingCount}";
+                
+                Logger.LogTagInfo("TradingToolbar", $"Updated tracking count for symbol {_currentSymbol}: {trackingCount} captures");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("TradingToolbar", $"Error updating tracking count: {ex.Message}", ex);
+                TrackingCountLabel.Text = "Tracking: ?";
+            }
         }
     }
 } 
