@@ -103,7 +103,7 @@ namespace ScreenCaptureApp
         private const double SHIFT_STEP = 4.0; // 10 zpixels for W/S, 5 pixels for A/D
         
         // MACD area threshold - strokes below this Y coordinate are considered trading strokes
-        private const double MACD_AREA_THRESHOLD = 756.0;
+        private const double MACD_AREA_THRESHOLD = 740.0;
 
 
 
