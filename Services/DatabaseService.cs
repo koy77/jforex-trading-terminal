@@ -11,13 +11,53 @@ namespace ScreenCaptureApp.Services
     public class DatabaseService
     {
         private readonly string _dbPath;
-        private readonly JsonSerializerOptions _jsonOptions;
+        private readonly JsonSerializerOptions _jsonOptions;        private CaptureDbRoot _cachedRoot;
+        private bool _isInitialized = false;
+        private readonly object _lockObject = new object();
 
         public DatabaseService()
         {
             _dbPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "db.json");
             _dbPath = Path.GetFullPath(_dbPath);
             _jsonOptions = new JsonSerializerOptions { WriteIndented = true };
+        }
+
+        /// <summary>
+        /// Инициализирует сервис - загружает базу данных в память
+        /// </summary>
+        public void Initialize()
+        {
+            lock (_lockObject)
+            {
+                if (_isInitialized)
+                {
+                    Logger.LogWarning("DatabaseService: Already initialized");
+                    return;
+                }
+
+                _cachedRoot = LoadOrCreateRoot();
+                _isInitialized = true;
+                Logger.LogInfo($"DatabaseService: Initialized with {_cachedRoot.Captures.Count} captures and {_cachedRoot.Symbols.Count} symbols");
+            }
+        }
+
+        /// <summary>
+        /// Сохраняет базу данных на диск и закрывает сервис
+        /// </summary>
+        public void Shutdown()
+        {
+            lock (_lockObject)
+            {
+                if (!_isInitialized)
+                {
+                    Logger.LogWarning("DatabaseService: Not initialized, nothing to save");
+                    return;
+                }
+
+                SaveRoot(_cachedRoot);
+                _isInitialized = false;
+                Logger.LogInfo("DatabaseService: Shutdown completed, database saved to disk");
+            }
         }
 
         #region Capture Methods
@@ -27,9 +67,12 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public void SaveCapture(CaptureData entry)
         {
-            var root = LoadOrCreateRoot();
-            root.Captures.Add(entry);
-            SaveRoot(root);
+            lock (_lockObject)
+            {
+                EnsureInitialized();
+                _cachedRoot.Captures.Add(entry);
+                SaveRoot(_cachedRoot);
+            }
         }
 
         /// <summary>
@@ -37,16 +80,19 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public void UpdateCapture(CaptureData updatedEntry)
         {
-            var root = LoadOrCreateRoot();
-            
-            // Находим последнюю запись и обновляем её
-            if (root.Captures.Count > 0)
+            lock (_lockObject)
             {
-                var lastCapture = root.Captures[root.Captures.Count - 1];
-                lastCapture.ScreenshotPath = updatedEntry.ScreenshotPath;
+                EnsureInitialized();
+                
+                // Находим последнюю запись и обновляем её
+                if (_cachedRoot.Captures.Count > 0)
+                {
+                    var lastCapture = _cachedRoot.Captures[_cachedRoot.Captures.Count - 1];
+                    lastCapture.ScreenshotPath = updatedEntry.ScreenshotPath;
+                }
+                
+                SaveRoot(_cachedRoot);
             }
-            
-            SaveRoot(root);
         }
 
         /// <summary>
@@ -54,8 +100,11 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public List<CaptureData> GetAllCaptures()
         {
-            var root = LoadOrCreateRoot();
-            return root.Captures;
+            lock (_lockObject)
+            {
+                EnsureInitialized();
+                return _cachedRoot.Captures;
+            }
         }
 
         /// <summary>
@@ -63,8 +112,11 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public List<CaptureData> GetAllUnfiredCaptures()
         {
-            var root = LoadOrCreateRoot();
-            return root.Captures.Where(c => !c.IsFired).ToList();
+            lock (_lockObject)
+            {
+                EnsureInitialized();
+                return _cachedRoot.Captures.Where(c => !c.IsFired).ToList();
+            }
         }
 
         /// <summary>
@@ -72,18 +124,21 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public void UpdateCaptureIsFired(CaptureData capture, bool isFired = true)
         {
-            var root = LoadOrCreateRoot();
-            var existingCapture = root.Captures.FirstOrDefault(c => c.ID == capture.ID);
-            
-            if (existingCapture != null)
+            lock (_lockObject)
             {
-                existingCapture.IsFired = isFired;
-                SaveRoot(root);
-                Logger.LogInfo($"CaptureTrackingService: Updated IsFired={isFired} for capture ID={capture.ID}, Handle={capture.Handle}");
-            }
-            else
-            {
-                Logger.LogWarning($"CaptureTrackingService: Capture not found for update IsFired. ID={capture.ID}, Handle={capture.Handle}");
+                EnsureInitialized();
+                var existingCapture = _cachedRoot.Captures.FirstOrDefault(c => c.ID == capture.ID);
+                
+                if (existingCapture != null)
+                {
+                    existingCapture.IsFired = isFired;
+                    SaveRoot(_cachedRoot);
+                    Logger.LogInfo($"CaptureTrackingService: Updated IsFired={isFired} for capture ID={capture.ID}, Handle={capture.Handle}");
+                }
+                else
+                {
+                    Logger.LogWarning($"CaptureTrackingService: Capture not found for update IsFired. ID={capture.ID}, Handle={capture.Handle}");
+                }
             }
         }
 
@@ -92,18 +147,21 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public void UpdateCaptureIsSkipped(CaptureData capture, bool isSkipped = true)
         {
-            var root = LoadOrCreateRoot();
-            var existingCapture = root.Captures.FirstOrDefault(c => c.ID == capture.ID);
-            
-            if (existingCapture != null)
+            lock (_lockObject)
             {
-                existingCapture.IsSkipped = isSkipped;
-                SaveRoot(root);
-                Logger.LogInfo($"CaptureTrackingService: Updated IsSkipped={isSkipped} for capture ID={capture.ID}, Handle={capture.Handle}");
-            }
-            else
-            {
-                Logger.LogWarning($"CaptureTrackingService: Capture not found for update IsSkipped. ID={capture.ID}, Handle={capture.Handle}");
+                EnsureInitialized();
+                var existingCapture = _cachedRoot.Captures.FirstOrDefault(c => c.ID == capture.ID);
+                
+                if (existingCapture != null)
+                {
+                    existingCapture.IsSkipped = isSkipped;
+                    SaveRoot(_cachedRoot);
+                    Logger.LogInfo($"CaptureTrackingService: Updated IsSkipped={isSkipped} for capture ID={capture.ID}, Handle={capture.Handle}");
+                }
+                else
+                {
+                    Logger.LogWarning($"CaptureTrackingService: Capture not found for update IsSkipped. ID={capture.ID}, Handle={capture.Handle}");
+                }
             }
         }
 
@@ -112,8 +170,11 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public List<CaptureData> GetAllUnfiredAndUnskippedCaptures()
         {
-            var root = LoadOrCreateRoot();
-            return root.Captures.Where(c => !c.IsFired && !c.IsSkipped).ToList();
+            lock (_lockObject)
+            {
+                EnsureInitialized();
+                return _cachedRoot.Captures.Where(c => !c.IsFired && !c.IsSkipped).ToList();
+            }
         }
 
         /// <summary>
@@ -121,8 +182,11 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public List<CaptureData> GetAllFiredCaptures()
         {
-            var root = LoadOrCreateRoot();
-            return root.Captures.Where(c => c.IsFired).ToList();
+            lock (_lockObject)
+            {
+                EnsureInitialized();
+                return _cachedRoot.Captures.Where(c => c.IsFired).ToList();
+            }
         }
 
         /// <summary>
@@ -130,8 +194,11 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public List<CaptureData> GetAllSkippedCaptures()
         {
-            var root = LoadOrCreateRoot();
-            return root.Captures.Where(c => c.IsSkipped).ToList();
+            lock (_lockObject)
+            {
+                EnsureInitialized();
+                return _cachedRoot.Captures.Where(c => c.IsSkipped).ToList();
+            }
         }
 
         /// <summary>
@@ -147,8 +214,11 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public List<CaptureData> GetTradingCanvasCapturesByHandle(long handle)
         {
-            var root = LoadOrCreateRoot();
-            return root.Captures.Where(c => c.Source == "trading_canvas" && c.Handle == handle).ToList();
+            lock (_lockObject)
+            {
+                EnsureInitialized();
+                return _cachedRoot.Captures.Where(c => c.Source == "trading_canvas" && c.Handle == handle).ToList();
+            }
         }
 
         /// <summary>
@@ -156,18 +226,21 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public void MarkTradingCanvasCapturesAsSkipped(long handle)
         {
-            var root = LoadOrCreateRoot();
-            var capturesToUpdate = root.Captures.Where(c => c.Source == "trading_canvas" && c.Handle == handle && !c.IsSkipped && !c.IsFired).ToList();
-            
-            foreach (var capture in capturesToUpdate)
+            lock (_lockObject)
             {
-                capture.IsSkipped = true;
-            }
-            
-            if (capturesToUpdate.Count > 0)
-            {
-                SaveRoot(root);
-                Logger.LogInfo($"DatabaseService: Marked {capturesToUpdate.Count} trading_canvas captures as skipped for handle {handle}");
+                EnsureInitialized();
+                var capturesToUpdate = _cachedRoot.Captures.Where(c => c.Source == "trading_canvas" && c.Handle == handle && !c.IsSkipped && !c.IsFired).ToList();
+                
+                foreach (var capture in capturesToUpdate)
+                {
+                    capture.IsSkipped = true;
+                }
+                
+                if (capturesToUpdate.Count > 0)
+                {
+                    SaveRoot(_cachedRoot);
+                    Logger.LogInfo($"DatabaseService: Marked {capturesToUpdate.Count} trading_canvas captures as skipped for handle {handle}");
+                }
             }
         }
 
@@ -176,8 +249,11 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public CaptureData GetLastCapture()
         {
-            var captures = GetAllCaptures();
-            return captures.Count > 0 ? captures[captures.Count - 1] : null;
+            lock (_lockObject)
+            {
+                EnsureInitialized();
+                return _cachedRoot.Captures.Count > 0 ? _cachedRoot.Captures[_cachedRoot.Captures.Count - 1] : null;
+            }
         }
 
         /// <summary>
@@ -185,21 +261,24 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public List<CaptureData> GetCapturesByDateRange(DateTime startDate, DateTime endDate)
         {
-            var captures = GetAllCaptures();
-            var result = new List<CaptureData>();
-
-            foreach (var capture in captures)
+            lock (_lockObject)
             {
-                if (DateTime.TryParse(capture.Timestamp, out DateTime captureDate))
+                EnsureInitialized();
+                var result = new List<CaptureData>();
+
+                foreach (var capture in _cachedRoot.Captures)
                 {
-                    if (captureDate >= startDate && captureDate <= endDate)
+                    if (DateTime.TryParse(capture.Timestamp, out DateTime captureDate))
                     {
-                        result.Add(capture);
+                        if (captureDate >= startDate && captureDate <= endDate)
+                        {
+                            result.Add(capture);
+                        }
                     }
                 }
-            }
 
-            return result;
+                return result;
+            }
         }
 
         /// <summary>
@@ -207,20 +286,23 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public void UpdateCaptureMt4Order(string id, string mt4OrderJson)
         {
-            var root = LoadOrCreateRoot();
-            
-            // Find capture by ID field
-            var capture = root.Captures.FirstOrDefault(c => c.ID == id);
-            
-            if (capture != null)
+            lock (_lockObject)
             {
-                capture.Mt4Order = mt4OrderJson;
-                SaveRoot(root);
-                Logger.LogInfo($"DatabaseService: Updated Mt4Order for capture ID={capture.ID}, Order data: {mt4OrderJson}");
-            }
-            else
-            {
-                Logger.LogWarning($"DatabaseService: No capture found with ID={id} to update with Mt4Order");
+                EnsureInitialized();
+                
+                // Find capture by ID field
+                var capture = _cachedRoot.Captures.FirstOrDefault(c => c.ID == id);
+                
+                if (capture != null)
+                {
+                    capture.Mt4Order = mt4OrderJson;
+                    SaveRoot(_cachedRoot);
+                    Logger.LogInfo($"DatabaseService: Updated Mt4Order for capture ID={capture.ID}, Order data: {mt4OrderJson}");
+                }
+                else
+                {
+                    Logger.LogWarning($"DatabaseService: No capture found with ID={id} to update with Mt4Order");
+                }
             }
         }
 
@@ -229,22 +311,25 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public void SkipAllTrackingCaptures()
         {
-            var root = LoadOrCreateRoot();
-            var capturesToUpdate = root.Captures.Where(c => !c.IsSkipped && !c.IsFired).ToList();
-            
-            foreach (var capture in capturesToUpdate)
+            lock (_lockObject)
             {
-                capture.IsSkipped = true;
-            }
-            
-            if (capturesToUpdate.Count > 0)
-            {
-                SaveRoot(root);
-                Logger.LogInfo($"DatabaseService: Marked {capturesToUpdate.Count} tracking captures as skipped");
-            }
-            else
-            {
-                Logger.LogInfo("DatabaseService: No tracking captures found to skip");
+                EnsureInitialized();
+                var capturesToUpdate = _cachedRoot.Captures.Where(c => !c.IsSkipped && !c.IsFired).ToList();
+                
+                foreach (var capture in capturesToUpdate)
+                {
+                    capture.IsSkipped = true;
+                }
+                
+                if (capturesToUpdate.Count > 0)
+                {
+                    SaveRoot(_cachedRoot);
+                    Logger.LogInfo($"DatabaseService: Marked {capturesToUpdate.Count} tracking captures as skipped");
+                }
+                else
+                {
+                    Logger.LogInfo("DatabaseService: No tracking captures found to skip");
+                }
             }
         }
 
@@ -257,26 +342,29 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public void SaveSymbol(SymbolData symbol)
         {
-            var root = LoadOrCreateRoot();
-            
-            // Проверяем, существует ли уже такой символ
-            var existingSymbol = root.Symbols.FirstOrDefault(s => s.Symbol == symbol.Symbol);
-            if (existingSymbol != null)
+            lock (_lockObject)
             {
-                // Обновляем существующий символ
-                existingSymbol.RiskPercent = symbol.RiskPercent;
-                existingSymbol.IsActive = symbol.IsActive;
-                existingSymbol.LastUpdated = DateTime.Now;
+                EnsureInitialized();
+                
+                // Проверяем, существует ли уже такой символ
+                var existingSymbol = _cachedRoot.Symbols.FirstOrDefault(s => s.Symbol == symbol.Symbol);
+                if (existingSymbol != null)
+                {
+                    // Обновляем существующий символ
+                    existingSymbol.RiskPercent = symbol.RiskPercent;
+                    existingSymbol.IsActive = symbol.IsActive;
+                    existingSymbol.LastUpdated = DateTime.Now;
+                }
+                else
+                {
+                    // Добавляем новый символ
+                    symbol.CreatedAt = DateTime.Now;
+                    symbol.LastUpdated = DateTime.Now;
+                    _cachedRoot.Symbols.Add(symbol);
+                }
+                
+                SaveRoot(_cachedRoot);
             }
-            else
-            {
-                // Добавляем новый символ
-                symbol.CreatedAt = DateTime.Now;
-                symbol.LastUpdated = DateTime.Now;
-                root.Symbols.Add(symbol);
-            }
-            
-            SaveRoot(root);
         }
 
         /// <summary>
@@ -284,27 +372,30 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public void SaveSymbolsFromArray(string[] symbols, double defaultRiskPercent = 1.0)
         {
-            var root = LoadOrCreateRoot();
-            
-            foreach (var symbolName in symbols)
+            lock (_lockObject)
             {
-                var existingSymbol = root.Symbols.FirstOrDefault(s => s.Symbol == symbolName);
-                if (existingSymbol == null)
+                EnsureInitialized();
+                
+                foreach (var symbolName in symbols)
                 {
-                    // Добавляем новый символ с дефолтным риском
-                    var newSymbol = new SymbolData
+                    var existingSymbol = _cachedRoot.Symbols.FirstOrDefault(s => s.Symbol == symbolName);
+                    if (existingSymbol == null)
                     {
-                        Symbol = symbolName,
-                        RiskPercent = defaultRiskPercent,
-                        IsActive = true,
-                        CreatedAt = DateTime.Now,
-                        LastUpdated = DateTime.Now
-                    };
-                    root.Symbols.Add(newSymbol);
+                        // Добавляем новый символ с дефолтным риском
+                        var newSymbol = new SymbolData
+                        {
+                            Symbol = symbolName,
+                            RiskPercent = defaultRiskPercent,
+                            IsActive = true,
+                            CreatedAt = DateTime.Now,
+                            LastUpdated = DateTime.Now
+                        };
+                        _cachedRoot.Symbols.Add(newSymbol);
+                    }
                 }
+                
+                SaveRoot(_cachedRoot);
             }
-            
-            SaveRoot(root);
         }
 
         /// <summary>
@@ -337,8 +428,11 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public List<SymbolData> GetAllSymbols()
         {
-            var root = LoadOrCreateRoot();
-            return root.Symbols;
+            lock (_lockObject)
+            {
+                EnsureInitialized();
+                return _cachedRoot.Symbols;
+            }
         }
 
         /// <summary>
@@ -346,8 +440,11 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public List<SymbolData> GetActiveSymbols()
         {
-            var root = LoadOrCreateRoot();
-            return root.Symbols.Where(s => s.IsActive).ToList();
+            lock (_lockObject)
+            {
+                EnsureInitialized();
+                return _cachedRoot.Symbols.Where(s => s.IsActive).ToList();
+            }
         }
 
         /// <summary>
@@ -355,8 +452,11 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public SymbolData GetSymbolByName(string symbolName)
         {
-            var root = LoadOrCreateRoot();
-            return root.Symbols.FirstOrDefault(s => s.Symbol == symbolName);
+            lock (_lockObject)
+            {
+                EnsureInitialized();
+                return _cachedRoot.Symbols.FirstOrDefault(s => s.Symbol == symbolName);
+            }
         }
 
         /// <summary>
@@ -364,14 +464,17 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public void UpdateSymbolRisk(string symbolName, double riskPercent)
         {
-            var root = LoadOrCreateRoot();
-            var symbol = root.Symbols.FirstOrDefault(s => s.Symbol == symbolName);
-            
-            if (symbol != null)
+            lock (_lockObject)
             {
-                symbol.RiskPercent = riskPercent;
-                symbol.LastUpdated = DateTime.Now;
-                SaveRoot(root);
+                EnsureInitialized();
+                var symbol = _cachedRoot.Symbols.FirstOrDefault(s => s.Symbol == symbolName);
+                
+                if (symbol != null)
+                {
+                    symbol.RiskPercent = riskPercent;
+                    symbol.LastUpdated = DateTime.Now;
+                    SaveRoot(_cachedRoot);
+                }
             }
         }
 
@@ -380,14 +483,17 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public void SetSymbolActive(string symbolName, bool isActive)
         {
-            var root = LoadOrCreateRoot();
-            var symbol = root.Symbols.FirstOrDefault(s => s.Symbol == symbolName);
-            
-            if (symbol != null)
+            lock (_lockObject)
             {
-                symbol.IsActive = isActive;
-                symbol.LastUpdated = DateTime.Now;
-                SaveRoot(root);
+                EnsureInitialized();
+                var symbol = _cachedRoot.Symbols.FirstOrDefault(s => s.Symbol == symbolName);
+                
+                if (symbol != null)
+                {
+                    symbol.IsActive = isActive;
+                    symbol.LastUpdated = DateTime.Now;
+                    SaveRoot(_cachedRoot);
+                }
             }
         }
 
@@ -396,13 +502,16 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public void RemoveSymbol(string symbolName)
         {
-            var root = LoadOrCreateRoot();
-            var symbol = root.Symbols.FirstOrDefault(s => s.Symbol == symbolName);
-            
-            if (symbol != null)
+            lock (_lockObject)
             {
-                root.Symbols.Remove(symbol);
-                SaveRoot(root);
+                EnsureInitialized();
+                var symbol = _cachedRoot.Symbols.FirstOrDefault(s => s.Symbol == symbolName);
+                
+                if (symbol != null)
+                {
+                    _cachedRoot.Symbols.Remove(symbol);
+                    SaveRoot(_cachedRoot);
+                }
             }
         }
 
@@ -415,9 +524,12 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public void ClearAllCaptures()
         {
-            var root = LoadOrCreateRoot();
-            root.Captures.Clear();
-            SaveRoot(root);
+            lock (_lockObject)
+            {
+                EnsureInitialized();
+                _cachedRoot.Captures.Clear();
+                SaveRoot(_cachedRoot);
+            }
         }
 
         /// <summary>
@@ -425,8 +537,12 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public void ClearAllData()
         {
-            var root = new CaptureDbRoot();
-            SaveRoot(root);
+            lock (_lockObject)
+            {
+                EnsureInitialized();
+                _cachedRoot = new CaptureDbRoot();
+                SaveRoot(_cachedRoot);
+            }
         }
 
         /// <summary>
@@ -434,8 +550,11 @@ namespace ScreenCaptureApp.Services
         /// </summary>
         public (int capturesCount, int symbolsCount) GetDatabaseStats()
         {
-            var root = LoadOrCreateRoot();
-            return (root.Captures.Count, root.Symbols.Count);
+            lock (_lockObject)
+            {
+                EnsureInitialized();
+                return (_cachedRoot.Captures.Count, _cachedRoot.Symbols.Count);
+            }
         }
 
         #endregion
@@ -472,6 +591,18 @@ namespace ScreenCaptureApp.Services
                 }
             }
             return new CaptureDbRoot();
+        }
+
+        /// <summary>
+        /// Проверяет, что сервис инициализирован, и инициализирует его если нужно
+        /// </summary>
+        private void EnsureInitialized()
+        {
+            if (!_isInitialized)
+            {
+                Logger.LogWarning("DatabaseService: Auto-initializing service");
+                Initialize();
+            }
         }
 
         /// <summary>

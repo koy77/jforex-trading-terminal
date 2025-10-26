@@ -138,6 +138,14 @@ namespace ScreenCaptureApp
         {
             try
             {
+                // Initialize DatabaseService first
+                var databaseService = ServiceContainer.Instance.GetService<DatabaseService>();
+                if (databaseService != null)
+                {
+                    databaseService.Initialize();
+                    Logger.LogInfo("DatabaseService initialized successfully");
+                }
+
                 // Initialize services using helper
                             ServiceInitializer.InitializeHotkeysService(
                 Dispatcher,
@@ -446,6 +454,14 @@ namespace ScreenCaptureApp
             
             // Stop auto tracking
             StopAutoTracking();
+            
+            // Save database before closing
+            var databaseService = ServiceContainer.Instance.GetService<DatabaseService>();
+            if (databaseService != null)
+            {
+                databaseService.Shutdown();
+                Logger.LogInfo("DatabaseService shutdown completed");
+            }
             
                     // Закрытие SimpleTradingOverlay
         if (simpleTradingOverlay != null)
