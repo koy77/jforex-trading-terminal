@@ -137,10 +137,19 @@ namespace ScreenCaptureApp.Models
                 newBarEvent.TickTime = SafeGetDateTime(newBarData.tickTime);
                 
                 // Парсим timestamp, если не удалось - используем текущее время
-                var parsedTimestamp = SafeGetDateTime(newBarData.timestamp);
-                if (parsedTimestamp != null)
+                try
                 {
-                    newBarEvent.Timestamp = parsedTimestamp.Value;
+                    if (newBarData.timestamp != null)
+                    {
+                        if (DateTime.TryParse(newBarData.timestamp.ToString(), out DateTime timestampResult))
+                        {
+                            newBarEvent.Timestamp = timestampResult;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Logger.LogWarning($"Failed to parse timestamp: {ex.Message}");
                 }
                 
                 // Валидация обязательных полей
