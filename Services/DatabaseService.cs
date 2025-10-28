@@ -8,6 +8,11 @@ using ScreenCaptureApp.Services;
 
 namespace ScreenCaptureApp.Services
 {
+    /// <summary>
+    /// Сервис для работы с базой данных в памяти.
+    /// ВСЕ операции выполняются только в памяти во время работы приложения.
+    /// Запись в файл происходит ТОЛЬКО при инициализации (загрузка) и закрытии (сохранение).
+    /// </summary>
     public class DatabaseService
     {
         private readonly string _dbPath;
@@ -43,6 +48,7 @@ namespace ScreenCaptureApp.Services
 
         /// <summary>
         /// Сохраняет базу данных на диск и закрывает сервис
+        /// ЕДИНСТВЕННОЕ место, где происходит запись в файл
         /// </summary>
         public void Shutdown()
         {
@@ -63,7 +69,7 @@ namespace ScreenCaptureApp.Services
         #region Capture Methods
 
         /// <summary>
-        /// Сохраняет данные о захвате
+        /// Сохраняет данные о захвате (только в памяти)
         /// </summary>
         public void SaveCapture(CaptureData entry)
         {
@@ -71,7 +77,7 @@ namespace ScreenCaptureApp.Services
             {
                 EnsureInitialized();
                 _cachedRoot.Captures.Add(entry);
-                SaveRoot(_cachedRoot);
+                // Не сохраняем в файл - работаем только в памяти
             }
         }
 
@@ -91,7 +97,7 @@ namespace ScreenCaptureApp.Services
                     lastCapture.ScreenshotPath = updatedEntry.ScreenshotPath;
                 }
                 
-                SaveRoot(_cachedRoot);
+                // Не сохраняем в файл - работаем только в памяти
             }
         }
 
@@ -132,7 +138,7 @@ namespace ScreenCaptureApp.Services
                 if (existingCapture != null)
                 {
                     existingCapture.IsFired = isFired;
-                    SaveRoot(_cachedRoot);
+                    // Не сохраняем в файл - работаем только в памяти
                     Logger.LogInfo($"CaptureTrackingService: Updated IsFired={isFired} for capture ID={capture.ID}, Handle={capture.Handle}");
                 }
                 else
@@ -155,7 +161,7 @@ namespace ScreenCaptureApp.Services
                 if (existingCapture != null)
                 {
                     existingCapture.IsSkipped = isSkipped;
-                    SaveRoot(_cachedRoot);
+                    // Не сохраняем в файл - работаем только в памяти
                     Logger.LogInfo($"CaptureTrackingService: Updated IsSkipped={isSkipped} for capture ID={capture.ID}, Handle={capture.Handle}");
                 }
                 else
@@ -238,7 +244,7 @@ namespace ScreenCaptureApp.Services
                 
                 if (capturesToUpdate.Count > 0)
                 {
-                    SaveRoot(_cachedRoot);
+                    // Не сохраняем в файл - работаем только в памяти
                     Logger.LogInfo($"DatabaseService: Marked {capturesToUpdate.Count} trading_canvas captures as skipped for handle {handle}");
                 }
             }
@@ -296,7 +302,7 @@ namespace ScreenCaptureApp.Services
                 if (capture != null)
                 {
                     capture.Mt4Order = mt4OrderJson;
-                    SaveRoot(_cachedRoot);
+                    // Не сохраняем в файл - работаем только в памяти
                     Logger.LogInfo($"DatabaseService: Updated Mt4Order for capture ID={capture.ID}, Order data: {mt4OrderJson}");
                 }
                 else
@@ -323,7 +329,7 @@ namespace ScreenCaptureApp.Services
                 
                 if (capturesToUpdate.Count > 0)
                 {
-                    SaveRoot(_cachedRoot);
+                    // Не сохраняем в файл - работаем только в памяти
                     Logger.LogInfo($"DatabaseService: Marked {capturesToUpdate.Count} tracking captures as skipped");
                 }
                 else
@@ -363,7 +369,7 @@ namespace ScreenCaptureApp.Services
                     _cachedRoot.Symbols.Add(symbol);
                 }
                 
-                SaveRoot(_cachedRoot);
+                // Не сохраняем в файл - работаем только в памяти
             }
         }
 
@@ -394,7 +400,7 @@ namespace ScreenCaptureApp.Services
                     }
                 }
                 
-                SaveRoot(_cachedRoot);
+                // Не сохраняем в файл - работаем только в памяти
             }
         }
 
@@ -473,7 +479,7 @@ namespace ScreenCaptureApp.Services
                 {
                     symbol.RiskPercent = riskPercent;
                     symbol.LastUpdated = DateTime.Now;
-                    SaveRoot(_cachedRoot);
+                    // Не сохраняем в файл - работаем только в памяти
                 }
             }
         }
@@ -492,7 +498,7 @@ namespace ScreenCaptureApp.Services
                 {
                     symbol.IsActive = isActive;
                     symbol.LastUpdated = DateTime.Now;
-                    SaveRoot(_cachedRoot);
+                    // Не сохраняем в файл - работаем только в памяти
                 }
             }
         }
@@ -510,7 +516,7 @@ namespace ScreenCaptureApp.Services
                 if (symbol != null)
                 {
                     _cachedRoot.Symbols.Remove(symbol);
-                    SaveRoot(_cachedRoot);
+                    // Не сохраняем в файл - работаем только в памяти
                 }
             }
         }
@@ -528,7 +534,7 @@ namespace ScreenCaptureApp.Services
             {
                 EnsureInitialized();
                 _cachedRoot.Captures.Clear();
-                SaveRoot(_cachedRoot);
+                // Не сохраняем в файл - работаем только в памяти
             }
         }
 
@@ -541,7 +547,7 @@ namespace ScreenCaptureApp.Services
             {
                 EnsureInitialized();
                 _cachedRoot = new CaptureDbRoot();
-                SaveRoot(_cachedRoot);
+                // Не сохраняем в файл - работаем только в памяти
             }
         }
 
