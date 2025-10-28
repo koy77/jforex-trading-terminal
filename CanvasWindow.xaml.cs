@@ -104,6 +104,9 @@ namespace ScreenCaptureApp
         
         // MACD area threshold - strokes below this Y coordinate are considered trading strokes
         private const double MACD_AREA_THRESHOLD = 740.0;
+        
+        // Track if Control key is pressed when stroke starts
+        private bool isControlPressedAtStrokeStart = false;
 
 
 
@@ -300,7 +303,7 @@ namespace ScreenCaptureApp
             
             // Subscribe to stroke erasing events
             DrawingCanvas.StrokeErasing += DrawingCanvas_StrokeErasing;
-
+            
             // Initialize broker state
             InitializeBrokerComboBox();
             UpdateTradingToolbarVisibility();
@@ -328,17 +331,10 @@ namespace ScreenCaptureApp
             // Настройка DrawingCanvas для обычного рисования
             DrawingCanvas.EditingMode = System.Windows.Controls.InkCanvasEditingMode.Ink;
             
-            // Получаем цвет кисти по умолчанию из MainWindow
-            var mainWindow = System.Windows.Application.Current.MainWindow as MainWindow;
-            bool isYellowBrush = false; // default to white
-            if (mainWindow != null)
-            {
-                isYellowBrush = mainWindow.IsYellowBrush;
-            }
-            
+            // Устанавливаем желтый цвет кисти по умолчанию
             DrawingCanvas.DefaultDrawingAttributes = new System.Windows.Ink.DrawingAttributes
             {
-                Color = isYellowBrush ? Colors.Yellow : Colors.White,
+                Color = Colors.Yellow, // По умолчанию желтый цвет
                 Width = 2,
                 Height = 2,
                 FitToCurve = true,
@@ -356,12 +352,30 @@ namespace ScreenCaptureApp
             DrawingCanvas.MouseMove += DrawingCanvas_MouseMove;
             DrawingCanvas.MouseUp += DrawingCanvas_MouseUp;
             
-            Logger.LogInfo($"InkCanvas initialized successfully with {(isYellowBrush ? "Yellow" : "Black")} brush for DrawingCanvas");
+            // Добавляем PreviewMouseDown для более раннего захвата состояния Control
+            DrawingCanvas.PreviewMouseDown += DrawingCanvas_PreviewMouseDown;
+            
+            Logger.LogInfo($"InkCanvas initialized successfully with Yellow brush for DrawingCanvas");
         }
 
         private void DrawingCanvas_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            Logger.LogInfo($"Mouse down on InkCanvas at {e.GetPosition(DrawingCanvas)}");
+            // Проверяем состояние Control при MouseDown - это самый надежный способ
+            isControlPressedAtStrokeStart = Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl);
+            
+            // Устанавливаем цвет кисти в зависимости от состояния Control
+            if (isControlPressedAtStrokeStart)
+            {
+                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
+                Logger.LogInfo($"MouseDown: Control pressed - setting brush to White for trading stroke");
+            }
+            else
+            {
+                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
+                Logger.LogInfo($"MouseDown: Control not pressed - setting brush to Yellow for simple stroke");
+            }
+            
+            Logger.LogInfo($"MouseDown: Control state captured: {isControlPressedAtStrokeStart} at {e.GetPosition(DrawingCanvas)}");
         }
 
         private void DrawingCanvas_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
@@ -377,6 +391,27 @@ namespace ScreenCaptureApp
         {
             Logger.LogInfo($"Mouse up on InkCanvas at {e.GetPosition(DrawingCanvas)}");
         }
+        
+        private void DrawingCanvas_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            // PreviewMouseDown срабатывает раньше MouseDown - более надежный захват Control
+            isControlPressedAtStrokeStart = Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl);
+            
+            // Устанавливаем цвет кисти в зависимости от состояния Control
+            if (isControlPressedAtStrokeStart)
+            {
+                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
+                Logger.LogInfo($"PreviewMouseDown: Control pressed - setting brush to White for trading stroke");
+            }
+            else
+            {
+                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
+                Logger.LogInfo($"PreviewMouseDown: Control not pressed - setting brush to Yellow for simple stroke");
+            }
+            
+            Logger.LogInfo($"PreviewMouseDown: Control state captured: {isControlPressedAtStrokeStart} at {e.GetPosition(DrawingCanvas)}");
+        }
+        
 
         private void SetFullScreen()
         {
@@ -616,23 +651,9 @@ namespace ScreenCaptureApp
             // Always use DrawingCanvas in simple mode
             DrawingCanvas.Visibility = Visibility.Visible;
             
-            // Get current brush color from MainWindow
-            var mainWindow = System.Windows.Application.Current.MainWindow as MainWindow;
-            bool isYellowBrush = false; // default to white
-            if (mainWindow != null)
-            {
-                isYellowBrush = mainWindow.IsYellowBrush;
-            }
+            // Устанавливаем желтый цвет кисти по умолчанию
+            DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
             
-            // Set brush color based on MainWindow state
-            if (isYellowBrush)
-            {
-                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
-            }
-            else
-            {
-                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
-            }
             // Border always yellow in simple mode
             CanvasBorder.Stroke = new SolidColorBrush(Colors.Yellow);
             CanvasBorder.StrokeThickness = 4;
@@ -645,7 +666,7 @@ namespace ScreenCaptureApp
             DrawingCanvas.IsEnabled = true;
             DrawingCanvas.Focus();
             
-            Logger.LogInfo($"Brush mode updated: Simple mode");
+            Logger.LogInfo($"Brush mode updated: Simple mode with Yellow brush");
         }
 
         private void UpdateTradingMode()
@@ -662,7 +683,7 @@ namespace ScreenCaptureApp
 
         public void UpdateSimpleBrushColor(bool isYellow)
         {
-            // Always update brush color in simple mode
+            // Обновляем цвет кисти в простом режиме
             if (isYellow)
             {
                 DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
@@ -697,15 +718,14 @@ namespace ScreenCaptureApp
 
         private void DrawingCanvas_StrokeCollected(object sender, System.Windows.Controls.InkCanvasStrokeCollectedEventArgs e)
         {
-            Logger.LogInfo("Stroke collected - checking if it's a trading stroke");
+            Logger.LogInfo($"Stroke collected - Control was pressed at start: {isControlPressedAtStrokeStart}");
             
-            // Check if this stroke is in MACD area (trading stroke)
-            var bounds = e.Stroke.GetBounds();
-            bool isTradingStroke = bounds.Top >= MACD_AREA_THRESHOLD && bounds.Bottom >= MACD_AREA_THRESHOLD;
+            // Проверяем, был ли зажат Control при начале штриха
+            bool isTradingStroke = isControlPressedAtStrokeStart;
             
             if (isTradingStroke)
             {
-                Logger.LogInfo("Trading stroke detected (MACD area) - processing immediately");
+                Logger.LogInfo("Trading stroke detected (Control was pressed) - processing immediately");
                 ProcessTradingStrokeDirectly(e.Stroke);
                 
                 // Keep the stroke on DrawingCanvas after processing
@@ -719,12 +739,16 @@ namespace ScreenCaptureApp
                 {
                     Stroke = e.Stroke,
                     IsTradingMode = false,
-                    Bounds = bounds
+                    Bounds = e.Stroke.GetBounds()
                 };
                 
                 StrokeCompleted?.Invoke(this, args);
                 SaveCanvasProperly();
             }
+            
+            // Сбрасываем состояние Control для следующего штриха
+            isControlPressedAtStrokeStart = false;
+            Logger.LogInfo("Control state reset for next stroke");
         }
         
         
