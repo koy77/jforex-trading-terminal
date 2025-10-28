@@ -347,6 +347,9 @@ namespace ScreenCaptureApp
             DrawingCanvas.IsHitTestVisible = true;
             DrawingCanvas.IsEnabled = true;
             
+            // Включаем поддержку различных типов ввода
+            DrawingCanvas.IsManipulationEnabled = true;
+            
             // Добавляем обработчики событий для отладки
             DrawingCanvas.MouseDown += DrawingCanvas_MouseDown;
             DrawingCanvas.MouseMove += DrawingCanvas_MouseMove;
@@ -355,24 +358,42 @@ namespace ScreenCaptureApp
             // Добавляем PreviewMouseDown для более раннего захвата состояния Control
             DrawingCanvas.PreviewMouseDown += DrawingCanvas_PreviewMouseDown;
             
+            // Добавляем обработчики событий стилуса для графического планшета
+            DrawingCanvas.StylusDown += DrawingCanvas_StylusDown;
+            DrawingCanvas.StylusMove += DrawingCanvas_StylusMove;
+            DrawingCanvas.StylusUp += DrawingCanvas_StylusUp;
+            
+            // Добавляем PreviewStylusDown для более раннего захвата состояния Control
+            DrawingCanvas.PreviewStylusDown += DrawingCanvas_PreviewStylusDown;
+            
+            // Добавляем обработчики событий касания для планшетов
+            DrawingCanvas.TouchDown += DrawingCanvas_TouchDown;
+            DrawingCanvas.TouchMove += DrawingCanvas_TouchMove;
+            DrawingCanvas.TouchUp += DrawingCanvas_TouchUp;
+            
+            // Добавляем PreviewTouchDown для более раннего захвата состояния Control
+            DrawingCanvas.PreviewTouchDown += DrawingCanvas_PreviewTouchDown;
+            
             Logger.LogInfo($"InkCanvas initialized successfully with Yellow brush for DrawingCanvas");
         }
 
         private void DrawingCanvas_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             // Проверяем состояние Control при MouseDown - это самый надежный способ
-            isControlPressedAtStrokeStart = Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl);
+            // Проверяем состояние Control для каждого нового штриха
+            bool controlPressedNow = Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl);
+            isControlPressedAtStrokeStart = controlPressedNow;
             
-            // Устанавливаем цвет кисти в зависимости от состояния Control
-            if (isControlPressedAtStrokeStart)
+            // Устанавливаем цвет кисти в зависимости от текущего состояния Control
+            if (controlPressedNow)
             {
                 DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
-                Logger.LogInfo($"MouseDown: Control pressed - setting brush to White for trading stroke");
+                Logger.LogInfo($"MouseDown: Control pressed NOW - setting brush to White for trading stroke");
             }
             else
             {
                 DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
-                Logger.LogInfo($"MouseDown: Control not pressed - setting brush to Yellow for simple stroke");
+                Logger.LogInfo($"MouseDown: Control NOT pressed NOW - setting brush to Yellow for simple stroke");
             }
             
             Logger.LogInfo($"MouseDown: Control state captured: {isControlPressedAtStrokeStart} at {e.GetPosition(DrawingCanvas)}");
@@ -395,21 +416,135 @@ namespace ScreenCaptureApp
         private void DrawingCanvas_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             // PreviewMouseDown срабатывает раньше MouseDown - более надежный захват Control
-            isControlPressedAtStrokeStart = Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl);
+            // Проверяем состояние Control для каждого нового штриха
+            bool controlPressedNow = Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl);
+            isControlPressedAtStrokeStart = controlPressedNow;
             
-            // Устанавливаем цвет кисти в зависимости от состояния Control
-            if (isControlPressedAtStrokeStart)
+            // Устанавливаем цвет кисти в зависимости от текущего состояния Control
+            if (controlPressedNow)
             {
                 DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
-                Logger.LogInfo($"PreviewMouseDown: Control pressed - setting brush to White for trading stroke");
+                Logger.LogInfo($"PreviewMouseDown: Control pressed NOW - setting brush to White for trading stroke");
             }
             else
             {
                 DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
-                Logger.LogInfo($"PreviewMouseDown: Control not pressed - setting brush to Yellow for simple stroke");
+                Logger.LogInfo($"PreviewMouseDown: Control NOT pressed NOW - setting brush to Yellow for simple stroke");
             }
             
             Logger.LogInfo($"PreviewMouseDown: Control state captured: {isControlPressedAtStrokeStart} at {e.GetPosition(DrawingCanvas)}");
+        }
+        
+        // Обработчики событий стилуса для графического планшета
+        private void DrawingCanvas_PreviewStylusDown(object sender, System.Windows.Input.StylusDownEventArgs e)
+        {
+            // PreviewStylusDown срабатывает раньше StylusDown - более надежный захват Control
+            // Проверяем состояние Control для каждого нового штриха стилусом
+            bool controlPressedNow = Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl);
+            isControlPressedAtStrokeStart = controlPressedNow;
+            
+            // Устанавливаем цвет кисти в зависимости от текущего состояния Control
+            if (controlPressedNow)
+            {
+                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
+                Logger.LogInfo($"PreviewStylusDown: Control pressed NOW - setting brush to White for trading stroke");
+            }
+            else
+            {
+                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
+                Logger.LogInfo($"PreviewStylusDown: Control NOT pressed NOW - setting brush to Yellow for simple stroke");
+            }
+            
+            Logger.LogInfo($"PreviewStylusDown: Control state captured: {isControlPressedAtStrokeStart} at {e.GetPosition(DrawingCanvas)}");
+        }
+        
+        private void DrawingCanvas_StylusDown(object sender, System.Windows.Input.StylusDownEventArgs e)
+        {
+            // Проверяем состояние Control при начале штриха стилусом
+            bool controlPressedNow = Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl);
+            isControlPressedAtStrokeStart = controlPressedNow;
+            
+            // Устанавливаем цвет кисти в зависимости от текущего состояния Control
+            if (controlPressedNow)
+            {
+                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
+                Logger.LogInfo($"StylusDown: Control pressed NOW - setting brush to White for trading stroke");
+            }
+            else
+            {
+                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
+                Logger.LogInfo($"StylusDown: Control NOT pressed NOW - setting brush to Yellow for simple stroke");
+            }
+            
+            Logger.LogInfo($"StylusDown: Control state captured: {isControlPressedAtStrokeStart} at {e.GetPosition(DrawingCanvas)}");
+        }
+        
+        private void DrawingCanvas_StylusMove(object sender, System.Windows.Input.StylusEventArgs e)
+        {
+            // Логируем только при активном стилусе
+            if (e.StylusDevice.InAir == false)
+            {
+                Logger.LogInfo($"Stylus move on InkCanvas at {e.GetPosition(DrawingCanvas)}");
+            }
+        }
+        
+        private void DrawingCanvas_StylusUp(object sender, System.Windows.Input.StylusEventArgs e)
+        {
+            Logger.LogInfo($"Stylus up on InkCanvas at {e.GetPosition(DrawingCanvas)}");
+        }
+        
+        // Обработчики событий касания для планшетов
+        private void DrawingCanvas_PreviewTouchDown(object sender, System.Windows.Input.TouchEventArgs e)
+        {
+            // PreviewTouchDown срабатывает раньше TouchDown - более надежный захват Control
+            // Проверяем состояние Control для каждого нового касания
+            bool controlPressedNow = Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl);
+            isControlPressedAtStrokeStart = controlPressedNow;
+            
+            // Устанавливаем цвет кисти в зависимости от текущего состояния Control
+            if (controlPressedNow)
+            {
+                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
+                Logger.LogInfo($"PreviewTouchDown: Control pressed NOW - setting brush to White for trading stroke");
+            }
+            else
+            {
+                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
+                Logger.LogInfo($"PreviewTouchDown: Control NOT pressed NOW - setting brush to Yellow for simple stroke");
+            }
+            
+            Logger.LogInfo($"PreviewTouchDown: Control state captured: {isControlPressedAtStrokeStart} at {e.GetTouchPoint(DrawingCanvas).Position}");
+        }
+        
+        private void DrawingCanvas_TouchDown(object sender, System.Windows.Input.TouchEventArgs e)
+        {
+            // Проверяем состояние Control при начале касания
+            bool controlPressedNow = Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl);
+            isControlPressedAtStrokeStart = controlPressedNow;
+            
+            // Устанавливаем цвет кисти в зависимости от текущего состояния Control
+            if (controlPressedNow)
+            {
+                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
+                Logger.LogInfo($"TouchDown: Control pressed NOW - setting brush to White for trading stroke");
+            }
+            else
+            {
+                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
+                Logger.LogInfo($"TouchDown: Control NOT pressed NOW - setting brush to Yellow for simple stroke");
+            }
+            
+            Logger.LogInfo($"TouchDown: Control state captured: {isControlPressedAtStrokeStart} at {e.GetTouchPoint(DrawingCanvas).Position}");
+        }
+        
+        private void DrawingCanvas_TouchMove(object sender, System.Windows.Input.TouchEventArgs e)
+        {
+            Logger.LogInfo($"Touch move on InkCanvas at {e.GetTouchPoint(DrawingCanvas).Position}");
+        }
+        
+        private void DrawingCanvas_TouchUp(object sender, System.Windows.Input.TouchEventArgs e)
+        {
+            Logger.LogInfo($"Touch up on InkCanvas at {e.GetTouchPoint(DrawingCanvas).Position}");
         }
         
 
@@ -651,8 +786,19 @@ namespace ScreenCaptureApp
             // Always use DrawingCanvas in simple mode
             DrawingCanvas.Visibility = Visibility.Visible;
             
-            // Устанавливаем желтый цвет кисти по умолчанию
-            DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
+            // Проверяем текущее состояние Control и устанавливаем соответствующий цвет
+            bool controlPressedNow = Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl);
+            
+            if (controlPressedNow)
+            {
+                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
+                Logger.LogInfo($"UpdateBrushMode: Control pressed - setting brush to White");
+            }
+            else
+            {
+                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
+                Logger.LogInfo($"UpdateBrushMode: Control not pressed - setting brush to Yellow");
+            }
             
             // Border always yellow in simple mode
             CanvasBorder.Stroke = new SolidColorBrush(Colors.Yellow);
@@ -666,7 +812,7 @@ namespace ScreenCaptureApp
             DrawingCanvas.IsEnabled = true;
             DrawingCanvas.Focus();
             
-            Logger.LogInfo($"Brush mode updated: Simple mode with Yellow brush");
+            Logger.LogInfo($"Brush mode updated: Simple mode with {(controlPressedNow ? "White" : "Yellow")} brush");
         }
 
         private void UpdateTradingMode()
@@ -683,19 +829,25 @@ namespace ScreenCaptureApp
 
         public void UpdateSimpleBrushColor(bool isYellow)
         {
-            // Обновляем цвет кисти в простом режиме
-            if (isYellow)
+            // Проверяем текущее состояние Control для более точного определения цвета
+            bool controlPressedNow = Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl);
+            
+            // Устанавливаем цвет кисти в зависимости от состояния Control
+            if (controlPressedNow)
             {
-                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
+                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
+                Logger.LogInfo($"UpdateSimpleBrushColor: Control pressed - setting brush to White");
             }
             else
             {
-                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
+                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
+                Logger.LogInfo($"UpdateSimpleBrushColor: Control not pressed - setting brush to Yellow");
             }
+            
             // Border always yellow in simple mode
             CanvasBorder.Stroke = new SolidColorBrush(Colors.Yellow);
             CanvasBorder.StrokeThickness = 4;
-            Logger.LogInfo($"Simple brush color updated to {(isYellow ? "Yellow" : "White")}");
+            Logger.LogInfo($"Simple brush color updated to {(controlPressedNow ? "White" : "Yellow")} based on Control state");
         }
 
         public void UpdateTargetWindow(IntPtr newTargetWindow, string symbol = null)
@@ -748,7 +900,11 @@ namespace ScreenCaptureApp
             
             // Сбрасываем состояние Control для следующего штриха
             isControlPressedAtStrokeStart = false;
-            Logger.LogInfo("Control state reset for next stroke");
+            
+            // Сбрасываем цвет кисти на желтый по умолчанию для следующего штриха
+            DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
+            
+            Logger.LogInfo("Control state reset and brush color reset to Yellow for next stroke");
         }
         
         
