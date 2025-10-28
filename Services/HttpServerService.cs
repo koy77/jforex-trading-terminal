@@ -47,7 +47,7 @@ namespace ScreenCaptureApp.Services
         /// <summary>
         /// Событие нового бара
         /// </summary>
-        public event EventHandler<dynamic> NewBarReceived;
+        public event EventHandler<NewBarEvent> NewBarReceived;
 
         /// <summary>
         /// Список последних полученных данных (для отладки)
@@ -352,20 +352,30 @@ namespace ScreenCaptureApp.Services
                 
                 if (newBarData != null)
                 {
-                    // Логируем все поля из JSON
-                    Logger.LogTagInfo("http_service", $"New Bar Data - Symbol: {newBarData.symbol}, ChartKey: {newBarData.chartKey}");
-                    Logger.LogTagInfo("http_service", $"New Bar Data - FeedType: {newBarData.feedType}, TickBarSize: {newBarData.tickBarSize}");
-                    Logger.LogTagInfo("http_service", $"New Bar Data - BarStartTime: {newBarData.barStartTime}, ChartInfo: {newBarData.chartInfo}");
-                    Logger.LogTagInfo("http_service", $"New Bar Data - TickTime: {newBarData.tickTime}, TickPrice: {newBarData.tickPrice}");
-                    Logger.LogTagInfo("http_service", $"New Bar Data - Timestamp: {newBarData.timestamp}, Strategy: {newBarData.strategy}");
+                    // Создаем объект NewBarEvent используя статический метод модели
+                    var newBarEvent = NewBarEvent.CreateFromDynamicData(newBarData);
                     
-                    Logger.LogInfo($"New bar detected: {newBarData.symbol} on chart {newBarData.chartKey} at {newBarData.timestamp}");
-                    
-                    // Вызываем событие нового бара
-                    OnNewBarReceived(newBarData);
-                    
-                    // Сдвигаем торговые штрихи в базе данных
-                    _ = Task.Run(async () => await ShiftTradingStrokesInDatabase(newBarData));
+                    if (newBarEvent != null)
+                    {
+                        // Логируем все поля из JSON
+                        Logger.LogTagInfo("http_service", $"New Bar Data - Symbol: {newBarEvent.Symbol}, ChartKey: {newBarEvent.ChartKey}");
+                        Logger.LogTagInfo("http_service", $"New Bar Data - FeedType: {newBarEvent.FeedType}, TickBarSize: {newBarEvent.TickBarSize}");
+                        Logger.LogTagInfo("http_service", $"New Bar Data - BarStartTime: {newBarEvent.BarStartTime}, ChartInfo: {newBarEvent.ChartInfo}");
+                        Logger.LogTagInfo("http_service", $"New Bar Data - TickTime: {newBarEvent.TickTime}, TickPrice: {newBarEvent.TickPrice}");
+                        Logger.LogTagInfo("http_service", $"New Bar Data - Timestamp: {newBarEvent.Timestamp}, Strategy: {newBarEvent.Strategy}");
+                        
+                        Logger.LogInfo($"New bar detected: {newBarEvent.Symbol} on chart {newBarEvent.ChartKey} at {newBarEvent.Timestamp}");
+                        
+                        // Вызываем событие нового бара
+                        OnNewBarReceived(newBarEvent);
+                        
+                        // Сдвигаем торговые штрихи в базе данных
+                        _ = Task.Run(async () => await ShiftTradingStrokesInDatabase(newBarEvent));
+                    }
+                    else
+                    {
+                        Logger.LogWarning("Failed to create NewBarEvent from received data");
+                    }
                 }
 
                 // Отправляем успешный ответ
@@ -529,43 +539,28 @@ namespace ScreenCaptureApp.Services
         /// <summary>
         /// Вызывает событие нового бара
         /// </summary>
-        protected virtual void OnNewBarReceived(dynamic newBarData)
+        protected virtual void OnNewBarReceived(NewBarEvent newBarEvent)
         {
-            NewBarReceived?.Invoke(this, newBarData);
+            NewBarReceived?.Invoke(this, newBarEvent);
         }
 
         /// <summary>
         /// Сдвигает торговые штрихи в базе данных при получении нового бара
         /// </summary>
-        private async Task ShiftTradingStrokesInDatabase(dynamic newBarData)
+        private async Task ShiftTradingStrokesInDatabase(NewBarEvent newBarEvent)
         {
             try
             {
-                if (newBarData == null)
+                if (newBarEvent == null)
                 {
-                    Logger.LogWarning("Cannot shift trading strokes - NewBar data is null");
+                    Logger.LogWarning("Cannot shift trading strokes - NewBarEvent is null");
                     return;
                 }
 
-                // Извлекаем данные из NewBar
-                string symbol = null;
-                string feedType = null;
-                int? tickBarSize = null;
-                
-                try
-                {
-                    symbol = newBarData.symbol?.ToString();
-                    feedType = newBarData.feedType?.ToString();
-                    if (newBarData.tickBarSize != null)
-                    {
-                        tickBarSize = Convert.ToInt32(newBarData.tickBarSize);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Logger.LogWarning($"Error extracting NewBar data: {ex.Message}");
-                    return;
-                }
+                // Извлекаем данные из NewBarEvent
+                string symbol = newBarEvent.Symbol;
+                string feedType = newBarEvent.FeedType;
+                int? tickBarSize = newBarEvent.TickBarSize;
 
                 if (string.IsNullOrEmpty(symbol))
                 {
@@ -601,7 +596,7 @@ namespace ScreenCaptureApp.Services
                         // Проверяем период для тиковых баров
                         bool shouldShift = false;
                         
-                        if (!string.IsNullOrEmpty(feedType) && feedType.Equals("TICK_BAR", StringComparison.OrdinalIgnoreCase))
+                        if (newBarEvent.IsTickBar)
                         {
                             // Для тиковых баров проверяем, что период начинается с "T" и содержит размер тика
                             if (!string.IsNullOrEmpty(capture.Period) && 

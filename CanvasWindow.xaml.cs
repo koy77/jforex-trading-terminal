@@ -1439,78 +1439,48 @@ namespace ScreenCaptureApp
         /// <summary>
         /// Обработчик события нового бара от HttpServerService
         /// </summary>
-        private void OnNewBarReceived(object sender, dynamic newBarData)
+        private void OnNewBarReceived(object sender, NewBarEvent newBarEvent)
         {
             try
             {
-                if (newBarData != null)
+                if (newBarEvent != null)
                 {
-                    // Безопасно получаем символ из dynamic объекта
-                    string newBarSymbol = null;
-                    try
+                    // Проверяем, совпадает ли символ с активным символом CanvasWindow
+                    if (!string.IsNullOrEmpty(activeSymbol) && newBarEvent.MatchesSymbol(activeSymbol))
                     {
-                        newBarSymbol = newBarData.symbol?.ToString();
-                    }
-                    catch (Exception ex)
-                    {
-                        Logger.LogWarning($"Error extracting symbol from NewBar data: {ex.Message}");
-                    }
-
-                    if (!string.IsNullOrEmpty(newBarSymbol))
-                    {
-                        // Проверяем, совпадает ли символ с активным символом CanvasWindow
-                        if (!string.IsNullOrEmpty(activeSymbol) && activeSymbol.Equals(newBarSymbol, StringComparison.OrdinalIgnoreCase))
+                        // Дополнительная проверка заголовка окна для тиковых баров
+                        bool shouldShift = true;
+                        
+                        if (newBarEvent.IsTickBar)
                         {
-                            // Дополнительная проверка заголовка окна для тиковых баров
-                            string feedType = null;
-                            try
+                            // Для тиковых баров проверяем, что в заголовке окна есть буква T
+                            string windowTitle = MainHelper.GetWindowTitle(targetWindowHandle);
+                            if (string.IsNullOrEmpty(windowTitle) || !windowTitle.Contains("T"))
                             {
-                                feedType = newBarData.feedType?.ToString();
+                                Logger.LogDebug($"NewBar is TICK_BAR but window title '{windowTitle}' does not contain 'T' - ignoring");
+                                shouldShift = false;
                             }
-                            catch (Exception ex)
+                            else
                             {
-                                Logger.LogWarning($"Error extracting feedType from NewBar data: {ex.Message}");
-                            }
-
-                            bool shouldShift = true;
-                            
-                            if (!string.IsNullOrEmpty(feedType) && feedType.Equals("TICK_BAR", StringComparison.OrdinalIgnoreCase))
-                            {
-                                // Для тиковых баров проверяем, что в заголовке окна есть буква T
-                                string windowTitle = MainHelper.GetWindowTitle(targetWindowHandle);
-                                if (string.IsNullOrEmpty(windowTitle) || !windowTitle.Contains("T"))
-                                {
-                                    Logger.LogDebug($"NewBar is TICK_BAR but window title '{windowTitle}' does not contain 'T' - ignoring");
-                                    shouldShift = false;
-                                }
-                                else
-                                {
-                                    Logger.LogInfo($"Window title '{windowTitle}' contains 'T' - proceeding with TICK_BAR shift");
-                                }
-                            }
-
-                            if (shouldShift)
-                            {
-                                Logger.LogInfo($"NewBar received for matching symbol '{newBarSymbol}' - shifting strokes left by {CanvasConstants.NEW_BAR_SHIFT_AMOUNT} pixels");
-                                
-                                Dispatcher.Invoke(() => {
-                                    ShiftStrokes(-CanvasConstants.NEW_BAR_SHIFT_AMOUNT, 0);
-                                    
-                                    // Сохраняем canvas после сдвига
-                                    SaveCanvasProperly();
-                                });
-                                
-                                Logger.LogInfo($"Strokes shifted left for symbol '{newBarSymbol}' due to new bar");
+                                Logger.LogInfo($"Window title '{windowTitle}' contains 'T' - proceeding with TICK_BAR shift");
                             }
                         }
-                        else
+
+                        if (shouldShift)
                         {
-                            Logger.LogDebug($"NewBar symbol '{newBarSymbol}' does not match active symbol '{activeSymbol}' - ignoring");
+                            Logger.LogInfo($"NewBar received for matching symbol '{newBarEvent.Symbol}' - shifting strokes left by {CanvasConstants.NEW_BAR_SHIFT_AMOUNT} pixels");
+                            
+                            Dispatcher.Invoke(() => {
+                                ShiftStrokes(-CanvasConstants.NEW_BAR_SHIFT_AMOUNT, 0);
+                                // Убираем сохранение на диск - только движение Canvas
+                            });
+                            
+                            Logger.LogInfo($"Strokes shifted left for symbol '{newBarEvent.Symbol}' due to new bar");
                         }
                     }
                     else
                     {
-                        Logger.LogWarning("Received NewBar event with null or empty symbol");
+                        Logger.LogDebug($"NewBar symbol '{newBarEvent.Symbol}' does not match active symbol '{activeSymbol}' - ignoring");
                     }
                 }
                 else
