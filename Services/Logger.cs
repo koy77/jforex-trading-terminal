@@ -7,64 +7,43 @@ namespace ScreenCaptureApp.Services
     public static class Logger
     {
         private static readonly object _lock = new object();
-        private static readonly string _logsDirectory = "logs";
-        private static readonly string _logDirectory = "log";
-        private static readonly string _logFilePath = Path.Combine(_logsDirectory, "app.log");
-        private static readonly string _socketLogFilePath = Path.Combine(_logsDirectory, "socket.log");
+        private static readonly string _logFilePath = "app.log";
 
         static Logger()
         {
-            // Удаляем и пересоздаем папки для логов при инициализации
+            // Очищаем файл лога при инициализации
             try
             {
-                // Удаляем папки если они существуют
-                if (Directory.Exists(_logsDirectory))
+                if (File.Exists(_logFilePath))
                 {
-                    try
-                    {
-                        Directory.Delete(_logsDirectory, true);
-                    }
-                    catch (Exception ex)
-                    {
-                        // Если не можем удалить папку (файлы заблокированы), очищаем содержимое
-                        Console.WriteLine($"Cannot delete {_logsDirectory}, clearing contents instead: {ex.Message}");
-                        ClearDirectoryContents(_logsDirectory);
-                    }
+                    File.WriteAllText(_logFilePath, string.Empty);
                 }
-                if (Directory.Exists(_logDirectory))
-                {
-                    try
-                    {
-                        Directory.Delete(_logDirectory, true);
-                    }
-                    catch (Exception ex)
-                    {
-                        // Если не можем удалить папку (файлы заблокированы), очищаем содержимое
-                        Console.WriteLine($"Cannot delete {_logDirectory}, clearing contents instead: {ex.Message}");
-                        ClearDirectoryContents(_logDirectory);
-                    }
-                }
-                
-                // Создаем папки заново
-                Directory.CreateDirectory(_logsDirectory);
-                Directory.CreateDirectory(_logDirectory);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Failed to recreate log directories: {ex.Message}");
+                Console.WriteLine($"Failed to clear log file: {ex.Message}");
             }
         }
 
         public static event Action LogUpdated;
 
-        public static void Log(string message, string level = "INFO")
+        public static void Log(string message, string level = "INFO", string tag = null)
         {
             try
             {
                 lock (_lock)
                 {
                     string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
-                    string logEntry = $"[{timestamp}] [{level}] {message}";
+                    string logEntry;
+                    
+                    if (!string.IsNullOrEmpty(tag))
+                    {
+                        logEntry = $"[{timestamp}] [{level}][{tag}] {message}";
+                    }
+                    else
+                    {
+                        logEntry = $"[{timestamp}] [{level}] {message}";
+                    }
                     
                     File.AppendAllText(_logFilePath, logEntry + Environment.NewLine);
                 }
@@ -82,24 +61,24 @@ namespace ScreenCaptureApp.Services
             Log(message, "INFO");
         }
 
-        public static void LogError(string message, Exception ex = null)
+        public static void LogError(string message, Exception ex = null, string tag = null)
         {
             string errorMessage = message;
             if (ex != null)
             {
                 errorMessage += $"\nException: {ex.Message}\nStackTrace: {ex.StackTrace}";
             }
-            Log(errorMessage, "ERROR");
+            Log(errorMessage, "ERROR", tag);
         }
 
-        public static void LogDebug(string message)
+        public static void LogDebug(string message, string tag = null)
         {
-            Log(message, "DEBUG");
+            Log(message, "DEBUG", tag);
         }
 
-        public static void LogWarning(string message)
+        public static void LogWarning(string message, string tag = null)
         {
-            Log(message, "WARNING");
+            Log(message, "WARNING", tag);
         }
 
         public static string GetAllLogs()
@@ -132,205 +111,60 @@ namespace ScreenCaptureApp.Services
 
         public static void LogSocket(string message)
         {
-            try
-            {
-                lock (_lock)
-                {
-                    string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
-                    string logEntry = $"[{timestamp}] [SOCKET] {message}";
-                    File.AppendAllText(_socketLogFilePath, logEntry + Environment.NewLine);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Logger SOCKET error: {ex.Message}");
-            }
-        }
-
-        public static string GetAllSocketLogs()
-        {
-            try
-            {
-                if (File.Exists(_socketLogFilePath))
-                {
-                    return File.ReadAllText(_socketLogFilePath);
-                }
-                else
-                {
-                    return string.Empty;
-                }
-            }
-            catch (Exception ex)
-            {
-                return $"Logger SOCKET error: {ex.Message}";
-            }
-        }
-
-        public static void ClearSocketLog()
-        {
-            lock (_lock)
-            {
-                File.WriteAllText(_socketLogFilePath, string.Empty);
-            }
+            Log(message, "SOCKET");
         }
 
         /// <summary>
-        /// Логирует сообщение в отдельный файл по тегу в папке log
+        /// Логирует сообщение с тегом в единый файл лога
         /// </summary>
-        /// <param name="tag">Тег (название файла)</param>
+        /// <param name="tag">Тег для категоризации</param>
         /// <param name="message">Сообщение для логирования</param>
         /// <param name="logLevel">Уровень логирования (INFO, ERROR, DEBUG, WARNING)</param>
         public static void LogTag(string tag, string message, string logLevel = "INFO")
         {
-            try
-            {
-                lock (_lock)
-                {
-                    string logFileName = Path.Combine(_logDirectory, $"{tag}.log");
-                    string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
-                    string logEntry = $"[{timestamp}] [{logLevel}] {message}";
-                    
-                    File.AppendAllText(logFileName, logEntry + Environment.NewLine);
-                }
-                LogUpdated?.Invoke();
-            }
-            catch (Exception ex)
-            {
-                // Если не можем записать в лог, выводим в консоль
-                Console.WriteLine($"Logger Tag error for {tag}: {ex.Message}");
-            }
+            Log(message, logLevel, tag);
         }
 
         /// <summary>
         /// Логирует информационное сообщение по тегу
         /// </summary>
-        /// <param name="tag">Тег (название файла)</param>
+        /// <param name="tag">Тег для категоризации</param>
         /// <param name="message">Сообщение для логирования</param>
         public static void LogTagInfo(string tag, string message)
         {
-            LogTag(tag, message, "INFO");
+            Log(message, "INFO", tag);
         }
 
         /// <summary>
         /// Логирует сообщение об ошибке по тегу
         /// </summary>
-        /// <param name="tag">Тег (название файла)</param>
+        /// <param name="tag">Тег для категоризации</param>
         /// <param name="message">Сообщение для логирования</param>
         /// <param name="ex">Исключение (опционально)</param>
         public static void LogTagError(string tag, string message, Exception ex = null)
         {
-            string errorMessage = message;
-            if (ex != null)
-            {
-                errorMessage += $"\nException: {ex.Message}\nStackTrace: {ex.StackTrace}";
-            }
-            LogTag(tag, errorMessage, "ERROR");
+            LogError(message, ex, tag);
         }
 
         /// <summary>
         /// Логирует отладочное сообщение по тегу
         /// </summary>
-        /// <param name="tag">Тег (название файла)</param>
+        /// <param name="tag">Тег для категоризации</param>
         /// <param name="message">Сообщение для логирования</param>
         public static void LogTagDebug(string tag, string message)
         {
-            LogTag(tag, message, "DEBUG");
+            Log(message, "DEBUG", tag);
         }
 
         /// <summary>
         /// Логирует предупреждение по тегу
         /// </summary>
-        /// <param name="tag">Тег (название файла)</param>
+        /// <param name="tag">Тег для категоризации</param>
         /// <param name="message">Сообщение для логирования</param>
         public static void LogTagWarning(string tag, string message)
         {
-            LogTag(tag, message, "WARNING");
+            Log(message, "WARNING", tag);
         }
 
-        /// <summary>
-        /// Получает все логи по тегу
-        /// </summary>
-        /// <param name="tag">Тег (название файла)</param>
-        /// <returns>Содержимое файла лога</returns>
-        public static string GetTagLogs(string tag)
-        {
-            try
-            {
-                string logFileName = Path.Combine(_logDirectory, $"{tag}.log");
-                if (File.Exists(logFileName))
-                {
-                    return File.ReadAllText(logFileName);
-                }
-                else
-                {
-                    return string.Empty;
-                }
-            }
-            catch (Exception ex)
-            {
-                return $"Logger Tag error for {tag}: {ex.Message}";
-            }
-        }
-
-        /// <summary>
-        /// Очищает лог по тегу
-        /// </summary>
-        /// <param name="tag">Тег (название файла)</param>
-        public static void ClearTagLog(string tag)
-        {
-            lock (_lock)
-            {
-                string logFileName = Path.Combine(_logDirectory, $"{tag}.log");
-                File.WriteAllText(logFileName, string.Empty);
-            }
-            LogUpdated?.Invoke();
-        }
-
-        /// <summary>
-        /// Очищает содержимое папки, если не удается удалить папку целиком
-        /// </summary>
-        /// <param name="directoryPath">Путь к папке</param>
-        private static void ClearDirectoryContents(string directoryPath)
-        {
-            try
-            {
-                if (Directory.Exists(directoryPath))
-                {
-                    var directoryInfo = new DirectoryInfo(directoryPath);
-                    var files = directoryInfo.GetFiles("*.*", SearchOption.AllDirectories);
-                    
-                    foreach (var fileInfo in files)
-                    {
-                        try
-                        {
-                            // Снимаем атрибуты только для чтения если они есть
-                            if (fileInfo.Attributes.HasFlag(FileAttributes.ReadOnly))
-                            {
-                                fileInfo.Attributes = fileInfo.Attributes & ~FileAttributes.ReadOnly;
-                            }
-                            
-                            fileInfo.Delete();
-                        }
-                        catch (Exception)
-                        {
-                            // Попробуем принудительно удалить через File.Delete
-                            try
-                            {
-                                File.Delete(fileInfo.FullName);
-                            }
-                            catch (Exception)
-                            {
-                                // Если не удается удалить файл, пропускаем его
-                                // Это может произойти если файл заблокирован другим процессом
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                // Если не удается очистить папку, продолжаем работу приложения
-            }
-        }
     }
 } 
