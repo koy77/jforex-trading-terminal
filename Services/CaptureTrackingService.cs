@@ -54,6 +54,7 @@ namespace ScreenCaptureApp.Services
         private Timer _timer;
         private readonly string _trackingDir;
         private bool _isProcessing = false;
+        private readonly int _trackingIntervalMs = 500; // Интервал трекинга в миллисекундах
 
         // Единственное асинхронное событие для обнаружения breakout
         public event Func<CaptureData, TrendlineBreakResult, Task> BreakoutDetected;
@@ -73,8 +74,8 @@ namespace ScreenCaptureApp.Services
         {
             if (_timer == null)
             {
-                _timer = new Timer(async _ => await ProcessCapturesAsync(), null, 0, 5000);
-                Logger.LogInfo("CaptureTrackingService: Трекинг запущен");
+                _timer = new Timer(async _ => await ProcessCapturesAsync(), null, 0, _trackingIntervalMs);
+                Logger.LogInfo($"CaptureTrackingService: Трекинг запущен с интервалом {_trackingIntervalMs} мс");
             }
             else
             {
@@ -113,6 +114,7 @@ namespace ScreenCaptureApp.Services
                 return;
             }
             _isProcessing = true;
+            var iterationStartTime = DateTime.Now;
             
             try
             {
@@ -126,6 +128,7 @@ namespace ScreenCaptureApp.Services
                 
                 foreach (var capture in captures)
                 {
+                    var captureStartTime = DateTime.Now;
                     try
                     {
                         Logger.LogDebug($"CaptureTrackingService: Обработка capture ID={capture.ID}, Handle={capture.Handle}, X={capture.X}, Y={capture.Y}, W={capture.Width}, H={capture.Height}");
@@ -182,6 +185,12 @@ namespace ScreenCaptureApp.Services
                     {
                         Logger.LogError($"CaptureTrackingService: Ошибка при обработке capture ID={capture.ID}, Handle={capture.Handle}", ex);
                     }
+                    finally
+                    {
+                        var captureEndTime = DateTime.Now;
+                        var processingTime = captureEndTime - captureStartTime;
+                        Logger.LogInfo($"CaptureTrackingService: Capture ID={capture.ID} обработан за {processingTime.TotalMilliseconds:F2} мс");
+                    }
                 }
             }
             catch (Exception ex)
@@ -191,7 +200,9 @@ namespace ScreenCaptureApp.Services
             finally
             {
                 _isProcessing = false;
-                // Logger.LogInfo("CaptureTrackingService: Завершение обработки captures");
+                var iterationEndTime = DateTime.Now;
+                var totalProcessingTime = iterationEndTime - iterationStartTime;
+                Logger.LogInfo($"CaptureTrackingService: Итерация трекинга завершена за {totalProcessingTime.TotalMilliseconds:F2} мс");
                 await OnCaptureTrackingIterationEnded();
             }
         }
