@@ -19,6 +19,7 @@ using System.Linq;
 using System.Windows.Controls;
 using System.Collections.Generic;
 using ScreenCaptureApp.Helpers;
+using ScreenCaptureApp.Observers;
 
 namespace ScreenCaptureApp
 {
@@ -1472,7 +1473,6 @@ namespace ScreenCaptureApp
                             
                             Dispatcher.Invoke(() => {
                                 ShiftStrokes(-CanvasConstants.NEW_BAR_SHIFT_AMOUNT, 0);
-                                // Убираем сохранение на диск - только движение Canvas
                             });
                             
                             Logger.LogInfo($"Strokes shifted left for symbol '{newBarEvent.Symbol}' due to new bar");
@@ -1493,8 +1493,6 @@ namespace ScreenCaptureApp
                 Logger.LogError($"Error handling NewBar event: {ex.Message}", ex);
             }
         }
-
-
     }
     
     public class StrokeCompletedEventArgs : EventArgs

@@ -138,7 +138,7 @@ namespace ScreenCaptureApp.Models
                 
                 // Парсим timestamp, если не удалось - используем текущее время
                 var parsedTimestamp = SafeGetDateTime(newBarData.timestamp);
-                if (parsedTimestamp.HasValue)
+                if (parsedTimestamp != null)
                 {
                     newBarEvent.Timestamp = parsedTimestamp.Value;
                 }

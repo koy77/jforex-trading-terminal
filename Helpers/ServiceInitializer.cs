@@ -4,6 +4,7 @@ using System.Windows.Threading;
 using ScreenCaptureApp.Services;
 using ScreenCaptureApp.Models;
 using System.Threading.Tasks;
+using ScreenCaptureApp.Observers;
 
 namespace ScreenCaptureApp.Helpers
 {
@@ -344,6 +345,13 @@ namespace ScreenCaptureApp.Helpers
                     {
                         Logger.LogInfo($"HTTP Server status: {status}");
                     });
+                };
+                
+                // Подписываемся на события NewBar для обработки торговых штрихов
+                httpServerService.NewBarReceived += (sender, newBarEvent) =>
+                {
+                    var tradingStrokesObserver = new TradingStrokesNewBarObserver();
+                    tradingStrokesObserver.OnNewBarReceived(newBarEvent);
                 };
                 
                 Logger.LogInfo("HTTP Server Service initialized in MainWindow");
