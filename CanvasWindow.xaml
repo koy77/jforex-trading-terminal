@@ -92,6 +92,14 @@
                                  Panel.ZIndex="3"
                                  Visibility="Collapsed" />
 
+        <!-- Canvas Trading Toolbar - показывается при наличии открытых сделок -->
+        <controls:CanvasTradingToolBar x:Name="CanvasTradingToolBar" 
+                                       HorizontalAlignment="Center" 
+                                       VerticalAlignment="Top" 
+                                       Margin="0,10,0,0"
+                                       Panel.ZIndex="4"
+                                       Visibility="Collapsed" />
+
         <!-- Дублирующая надпись TradingModeText внизу -->
         <TextBlock
             Text="{Binding ElementName=TradingModeText, Path=Text}"

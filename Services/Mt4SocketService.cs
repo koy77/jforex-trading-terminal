@@ -546,6 +546,47 @@ namespace ScreenCaptureApp.Services
             }
         }
 
+        /// <summary>
+        /// Отправляет команду закрытия всех позиций для указанного символа
+        /// </summary>
+        /// <param name="symbol">Символ торгового инструмента</param>
+        /// <returns>True если команда отправлена успешно, иначе False</returns>
+        public async Task<bool> ClosePositionsCommand(string symbol)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(symbol))
+                {
+                    Logger.LogWarning("MT4 Socket: Cannot close positions - symbol is null or empty");
+                    return false;
+                }
+
+                // Формируем команду закрытия позиций
+                string json = $"{{\"cmd\":\"close_positions\",\"symbol\":\"{symbol}\"}}\r\n";
+                
+                Logger.LogInfo($"MT4 Socket: Sending close_positions command for symbol: {symbol}");
+                Logger.LogSocket($"MT4 OUT: {json.Trim()}");
+                
+                bool result = await WriteAsync(json);
+                
+                if (result)
+                {
+                    Logger.LogInfo($"MT4 Socket: close_positions command sent successfully for {symbol}");
+                }
+                else
+                {
+                    Logger.LogWarning($"MT4 Socket: Failed to send close_positions command for {symbol}");
+                }
+                
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"MT4 Socket: Error sending close_positions command for {symbol}", ex);
+                return false;
+            }
+        }
+
         public async Task<string> ReadLineAsync()
         {
             try

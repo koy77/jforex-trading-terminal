@@ -97,6 +97,7 @@ namespace ScreenCaptureApp
         private DurationState durationState;
         private JForexWindowsManagerService jForexService;
         private HttpServerService httpServerService;
+        private Mt4SocketService mt4SocketService;
         
         // Canvas shift variables
         private double canvasOffsetX = 0;
@@ -160,6 +161,9 @@ namespace ScreenCaptureApp
             TradingToolbar.HighlightSelectedBroker(brokerState.CurrentBroker);
             TradingToolbar.HighlightSelectedRiskButton(selectedRisk);
             TradingToolbar.HighlightSelectedDurationButton(selectedDuration);
+            
+            // Инициализация CanvasTradingToolBar
+            InitializeCanvasTradingToolBar();
         }
 
         public CanvasWindow(IntPtr targetWindow, string symbol = null)
@@ -174,6 +178,7 @@ namespace ScreenCaptureApp
             durationState = ServiceContainer.Instance.GetService<DurationState>();
             jForexService = ServiceContainer.Instance.GetService<JForexWindowsManagerService>();
             httpServerService = ServiceContainer.Instance.GetService<HttpServerService>();
+            mt4SocketService = ServiceContainer.Instance.GetService<Mt4SocketService>();
             _toolbarSettingsManager = ServiceContainer.Instance.GetService<ToolbarSettingsManager>();
             
             // Применяем настройки тулбара по handle окна
@@ -217,6 +222,9 @@ namespace ScreenCaptureApp
             TradingToolbar.HighlightSelectedBroker(brokerState.CurrentBroker);
             TradingToolbar.HighlightSelectedRiskButton(selectedRisk);
             TradingToolbar.HighlightSelectedDurationButton(selectedDuration);
+            
+            // Инициализация CanvasTradingToolBar
+            InitializeCanvasTradingToolBar();
         }
 
         private void CanvasWindow_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
@@ -272,6 +280,18 @@ namespace ScreenCaptureApp
             {
                 httpServerService.NewBarReceived -= OnNewBarReceived;
                 Logger.LogInfo("Unsubscribed from NewBar events from HttpServerService");
+            }
+            
+            // Очищаем ресурсы CanvasTradingToolBar
+            try
+            {
+                CanvasTradingToolBar.OnSecButtonClicked -= OnSecButtonClicked;
+                CanvasTradingToolBar.Dispose();
+                Logger.LogInfo("CanvasTradingToolBar resources cleaned up");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Error cleaning up CanvasTradingToolBar: {ex.Message}", ex);
             }
         }
 
@@ -1395,6 +1415,10 @@ namespace ScreenCaptureApp
             LoadCanvas();
             SetBackgroundImage();
             DrawingCanvas.Focus();
+            
+            // Обновляем символ в CanvasTradingToolBar
+            CanvasTradingToolBar.SetSymbol(newSymbol);
+            
             Logger.LogInfo($"CanvasWindow reinitialized successfully for symbol {newSymbol}");
         }
 
@@ -1410,6 +1434,9 @@ namespace ScreenCaptureApp
                 {
                     TradingToolbar.SetHandleID(targetWindowHandle.ToInt64());
                 }
+                
+                // Обновляем символ в CanvasTradingToolBar
+                CanvasTradingToolBar.SetSymbol(activeSymbol);
                 
                 Logger.LogInfo($"Active symbol display updated: {activeSymbol}");
                 }
@@ -1435,6 +1462,39 @@ namespace ScreenCaptureApp
         public bool GetJForexIntegration()
         {
             return useJForexIntegration;
+        }
+
+        /// <summary>
+        /// Инициализирует CanvasTradingToolBar
+        /// </summary>
+        private void InitializeCanvasTradingToolBar()
+        {
+            try
+            {
+                // Устанавливаем символ в CanvasTradingToolBar
+                CanvasTradingToolBar.SetSymbol(activeSymbol);
+                
+                // Подписываемся на событие клика по кнопке Sec
+                CanvasTradingToolBar.OnSecButtonClicked += OnSecButtonClicked;
+                
+                Logger.LogInfo("CanvasTradingToolBar initialized successfully");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Error initializing CanvasTradingToolBar: {ex.Message}", ex);
+            }
+        }
+
+        /// <summary>
+        /// Обработчик клика по кнопке Sec в CanvasTradingToolBar
+        /// </summary>
+        private async void OnSecButtonClicked()
+        {
+            if (!string.IsNullOrEmpty(activeSymbol) && mt4SocketService != null)
+            {
+                // Используем новый метод ClosePositionsCommand из Mt4SocketService
+                bool success = await mt4SocketService.ClosePositionsCommand(activeSymbol);
+            }
         }
 
         /// <summary>

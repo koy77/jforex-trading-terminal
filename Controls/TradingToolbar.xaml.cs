@@ -286,16 +286,23 @@ namespace ScreenCaptureApp.Controls
             }
         }
 
-        private void CloseSymbolOrder(string symbol)
+        private async void CloseSymbolOrder(string symbol)
         {
             try
             {
                 if (_mt4SocketService != null && !string.IsNullOrEmpty(symbol))
                 {
-                    // Send close_positions command for the symbol
-                    var cmd = $"{{\"cmd\":\"close_positions\",\"symbol\":\"{symbol}\"}}\r\n";
-                    _ = _mt4SocketService.WriteAsync(cmd);
-                    Logger.LogTagInfo("TradingToolbar", $"Sent close_positions command for {symbol}");
+                    // Используем новый метод ClosePositionsCommand из Mt4SocketService
+                    bool success = await _mt4SocketService.ClosePositionsCommand(symbol);
+                    
+                    if (success)
+                    {
+                        Logger.LogTagInfo("TradingToolbar", $"Successfully sent close_positions command for {symbol}");
+                    }
+                    else
+                    {
+                        Logger.LogTagWarning("TradingToolbar", $"Failed to send close_positions command for {symbol}");
+                    }
                 }
             }
             catch (Exception ex)
