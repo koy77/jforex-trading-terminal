@@ -152,11 +152,13 @@ namespace ScreenCaptureApp.Controls
                     PercentText.Foreground = symbolInfo.Percent >= 0 ? Brushes.LimeGreen : Brushes.Red;
                     
                     // Обновляем пункты (всегда желтым цветом)
-                    PointsText.Text = $"{symbolInfo.ProfitPoints:F1}pts";
+                    // Требование: делим на 10 и показываем только целую часть без округления
+                    var pointsDivided = Math.Truncate(symbolInfo.ProfitPoints / 10.0);
+                    PointsText.Text = $"{pointsDivided:F0}pts";
                     PointsText.Foreground = Brushes.Yellow;
                 });
                 
-                Logger.LogDebug($"CanvasTradingToolBar: Updated toolbar data - Percent: {symbolInfo.Percent:F1}%, Lots: {symbolInfo.Lots:F2}, Points: {symbolInfo.ProfitPoints:F1}");
+                Logger.LogDebug($"CanvasTradingToolBar: Updated toolbar data - Percent: {symbolInfo.Percent:F1}%, Lots: {symbolInfo.Lots:F2}, PointsDiv10Int: {Math.Truncate(symbolInfo.ProfitPoints / 10.0):F0}");
             }
             catch (Exception ex)
             {
@@ -185,21 +187,8 @@ namespace ScreenCaptureApp.Controls
         /// Обработчик клика по кнопке Sec
         /// </summary>
         private void SecButton_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                Logger.LogInfo("CanvasTradingToolBar: Sec button clicked");
-                
-                // Показываем уведомление
-                _toastNotifyService?.ShowToast("Sec button clicked!", ToastType.Info);
-                
-                // Вызываем событие
-                OnSecButtonClicked?.Invoke();
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError($"CanvasTradingToolBar: Error handling Sec button click: {ex.Message}", ex);
-            }
+        {   
+            OnSecButtonClicked?.Invoke();
         }
 
         /// <summary>
