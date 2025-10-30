@@ -778,30 +778,6 @@ namespace ScreenCaptureApp
                 {
                     // Отправляем команду ClearChart с текущим символом
                     bool result = await jforexSocketServer.SendClearChartCommandAsync(currentSymbol);
-                    
-                    if (result)
-                    {
-                        Logger.LogTagInfo("SimpleTradingOverlay", $"Clear chart command sent successfully for symbol: {currentSymbol}");
-                        
-                        // Показываем toast сообщение об успехе
-                        var toastNotifyService = ServiceContainer.Instance.GetService<ToastNotifyService>();
-                        if (toastNotifyService != null)
-                        {
-                            string toastMessage = $"Команда очистки графика отправлена для {currentSymbol}";
-                            toastNotifyService.ShowToast(toastMessage, ToastType.Success, 3000);
-                        }
-                    }
-                    else
-                    {
-                        Logger.LogTagWarning("SimpleTradingOverlay", "Failed to send clear chart command");
-                        
-                        // Показываем toast сообщение об ошибке
-                        var toastNotifyService = ServiceContainer.Instance.GetService<ToastNotifyService>();
-                        if (toastNotifyService != null)
-                        {
-                            toastNotifyService.ShowToast("Ошибка отправки команды очистки графика", ToastType.Error, 3000);
-                        }
-                    }
                 }
                 else
                 {

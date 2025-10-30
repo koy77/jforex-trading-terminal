@@ -1274,6 +1274,27 @@ namespace ScreenCaptureApp
                     tempInkCanvas.Strokes = adjustedStrokes;
                     tempCanvas.Children.Add(tempInkCanvas);
                     
+                    // Добавляем CanvasTradingToolBar если он видим
+                    if (CanvasTradingToolBar.Visibility == Visibility.Visible)
+                    {
+                        // Создаем копию CanvasTradingToolBar для рендеринга
+                        var toolbarCopy = new Controls.CanvasTradingToolBar();
+                        
+                        // Копируем текущие данные из оригинального тулбара
+                        toolbarCopy.PercentText.Text = CanvasTradingToolBar.PercentText.Text;
+                        toolbarCopy.PercentText.Foreground = CanvasTradingToolBar.PercentText.Foreground;
+                        toolbarCopy.PointsText.Text = CanvasTradingToolBar.PointsText.Text;
+                        toolbarCopy.PointsText.Foreground = CanvasTradingToolBar.PointsText.Foreground;
+                        
+                        // Позиционируем тулбар в центре верхней части
+                        Canvas.SetLeft(toolbarCopy, (windowWidth - 350) / 2); // 350 - фиксированная ширина тулбара
+                        Canvas.SetTop(toolbarCopy, 10); // 10px от верха
+                        
+                        tempCanvas.Children.Add(toolbarCopy);
+                        
+                        Logger.LogInfo("CanvasTradingToolBar added to clipboard image");
+                    }
+                    
                     // Рендерим композицию
                     tempCanvas.Measure(new System.Windows.Size(windowWidth, windowHeight));
                     tempCanvas.Arrange(new Rect(0, 0, windowWidth, windowHeight));
