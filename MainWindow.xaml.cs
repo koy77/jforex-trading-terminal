@@ -38,6 +38,9 @@ namespace ScreenCaptureApp
         // Public property to access brush color state
         public bool IsYellowBrush => isYellowBrush;
         
+        // Trading Toolbar visibility control
+        private bool showTradingToolbar = false; // false = do not show TradingToolbar
+
         // JForex integration setting
         private bool useJForexIntegration = false; // false = save to CaptureData with TradingCanvas source, true = send to JForex
 
@@ -123,8 +126,8 @@ namespace ScreenCaptureApp
             {
                 simpleTradingOverlay = new SimpleTradingOverlay();
                 
-                // Принудительно показываем Trading Toolbar
-                simpleTradingOverlay.ForceShowTradingToolbar();
+                // Управляем показом Trading Toolbar через переменную
+                simpleTradingOverlay.SetTradingToolbarEnabled(showTradingToolbar);
                 
                 Logger.LogInfo("SimpleTradingOverlay initialized successfully");
             }
@@ -1000,6 +1003,19 @@ namespace ScreenCaptureApp
             return useJForexIntegration;
         }
         
+        /// <summary>
+        /// Управляет показом Trading Toolbar в SimpleTradingOverlay
+        /// </summary>
+        public void SetShowTradingToolbar(bool enabled)
+        {
+            showTradingToolbar = enabled;
+            if (simpleTradingOverlay != null)
+            {
+                simpleTradingOverlay.SetTradingToolbarEnabled(enabled);
+            }
+            Logger.LogInfo($"Trading Toolbar visibility set to {(enabled ? "ON" : "OFF")}");
+        }
+
         /// <summary>
         /// Переключает режим интеграции с JForex
         /// </summary>

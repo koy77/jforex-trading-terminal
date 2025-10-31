@@ -108,6 +108,8 @@ namespace ScreenCaptureApp
         private bool _isEnabled = true;
         private int _lastMouseX = 0;
         private int _lastMouseY = 0;
+        // Управление показом Trading Toolbar
+        private bool _tradingToolbarEnabled = true;
         
         // Флаг для различения пользовательского и сервисного нажатия Escape
         private bool _isServiceEscapeSending = false;
@@ -161,11 +163,12 @@ namespace ScreenCaptureApp
             // Установка символа по умолчанию
             TradingToolbar.SetSymbol("UNKNOWN");
 
-            // Установка глобального хука мыши
-            SetupMouseHook();
-            
-            // Принудительно показываем окно с Trading Toolbar
-            ShowTradingToolbar();
+            // Установка глобального хука мыши и показ окна только если включено
+            if (_tradingToolbarEnabled)
+            {
+                SetupMouseHook();
+                ShowTradingToolbar();
+            }
         }
 
         private void InitializeWindow()
@@ -183,6 +186,10 @@ namespace ScreenCaptureApp
         {
             try
             {
+                if (!_tradingToolbarEnabled)
+                {
+                    return;
+                }
                 // Позиционируем окно на основной экран при запуске
                 var screen = System.Windows.Forms.Screen.PrimaryScreen;
                 this.Left = screen.Bounds.Left;
@@ -404,7 +411,7 @@ namespace ScreenCaptureApp
                 _hotkeysService.OnEscapeKeyPressed += OnEscapeKeyPressed;
                 _hotkeysService.OnFKeyPressed += OnFKeyPressed;
                 _hotkeysService.OnSKeyPressed += OnSKeyPressed;
-                _hotkeysService.OnCKeyPressed += OnCKeyPressed;
+                // _hotkeysService.OnCKeyPressed += OnCKeyPressed;
                 
                 Logger.LogInfo("SimpleTradingOverlay subscribed to HotkeyService events (Escape, F, S, and C)");
             }
@@ -865,6 +872,7 @@ namespace ScreenCaptureApp
         {
             try
             {
+                if (mouseHook != IntPtr.Zero) return;
                 mouseProc = new LowLevelMouseProc(MouseHookCallback);
                 IntPtr moduleHandle = GetModuleHandle("user32.dll");
                 mouseHook = SetWindowsHookEx(WH_MOUSE_LL, Marshal.GetFunctionPointerForDelegate(mouseProc), moduleHandle, 0);
@@ -886,7 +894,7 @@ namespace ScreenCaptureApp
 
         private IntPtr MouseHookCallback(int nCode, IntPtr wParam, IntPtr lParam)
         {
-            if (nCode >= 0 && _isEnabled)
+            if (nCode >= 0 && _isEnabled && _tradingToolbarEnabled)
             {
                 int message = wParam.ToInt32();
                 
@@ -955,6 +963,7 @@ namespace ScreenCaptureApp
 
         private void UpdateOverlayPosition(IntPtr windowHandle)
         {
+            if (!_tradingToolbarEnabled) return;
             if (windowHandle == _currentWindowHandle) return;
 
             try
@@ -1295,6 +1304,29 @@ namespace ScreenCaptureApp
             ShowTradingToolbar();
         }
 
+        public void SetTradingToolbarEnabled(bool enabled)
+        {
+            _tradingToolbarEnabled = enabled;
+            if (!enabled)
+            {
+                // Скрываем окно и снимаем хук мыши
+                this.Hide();
+                if (mouseHook != IntPtr.Zero)
+                {
+                    UnhookWindowsHookEx(mouseHook);
+                    mouseHook = IntPtr.Zero;
+                }
+                Logger.LogInfo("Trading Toolbar disabled");
+            }
+            else
+            {
+                // Включаем хук и показываем окно
+                SetupMouseHook();
+                ShowTradingToolbar();
+                Logger.LogInfo("Trading Toolbar enabled");
+            }
+        }
+
         protected override void OnClosed(EventArgs e)
         {
             // Отписываемся от событий HotkeyService
@@ -1303,7 +1335,7 @@ namespace ScreenCaptureApp
                 _hotkeysService.OnEscapeKeyPressed -= OnEscapeKeyPressed;
                 _hotkeysService.OnFKeyPressed -= OnFKeyPressed;
                 _hotkeysService.OnSKeyPressed -= OnSKeyPressed;
-                _hotkeysService.OnCKeyPressed -= OnCKeyPressed;
+                // _hotkeysService.OnCKeyPressed -= OnCKeyPressed;
                 Logger.LogInfo("SimpleTradingOverlay unsubscribed from HotkeyService events (Escape, F, S, and C)");
             }
             
