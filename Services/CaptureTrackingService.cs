@@ -304,16 +304,33 @@ namespace ScreenCaptureApp.Services
 
         /// <summary>
         /// Мержит Canvas поверх скриншота окна и вырезает нужную область. Если Canvas не найден — возвращает null.
+        /// Для торгового Canvas использует capture.ID: trading_{capture.ID}.png
+        /// Для обычного Canvas использует capture.Handle: {capture.Handle}.png
         /// </summary>
         private Bitmap MergeCanvasWithScreenshot(CaptureData capture, Bitmap bmp)
         {
             string canvasesDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Canvases");
-            string canvasFile = capture.Source == "trading_canvas"
-                ? Path.Combine(canvasesDir, $"trading_{capture.Handle}.png")
-                : Path.Combine(canvasesDir, capture.Handle + ".png");
+            string canvasFile;
+            
+            if (capture.Source == "trading_canvas")
+            {
+                // Торговый Canvas: используем ID capture
+                if (string.IsNullOrEmpty(capture.ID))
+                {
+                    Logger.LogError($"Cannot find trading canvas: capture.ID is null or empty for capture with handle {capture.Handle}");
+                    return null;
+                }
+                canvasFile = Path.Combine(canvasesDir, $"trading_{capture.ID}.png");
+            }
+            else
+            {
+                // Обычный Canvas: используем handle окна
+                canvasFile = Path.Combine(canvasesDir, $"{capture.Handle}.png");
+            }
+            
             if (!File.Exists(canvasFile))
             {
-                Logger.LogError($"Canvas file not found for handle {capture.Handle}: {canvasFile}");
+                Logger.LogError($"Canvas file not found: {canvasFile} (Source={capture.Source}, ID={capture.ID}, Handle={capture.Handle})");
                 return null;
             }
             using var canvasBmp = new Bitmap(canvasFile);

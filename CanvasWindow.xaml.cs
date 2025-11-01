@@ -700,14 +700,29 @@ namespace ScreenCaptureApp
             }
         }
 
-        private string GetCanvasFileBase()
+        /// <summary>
+        /// Получает путь к файлу Canvas.
+        /// Для обычного Canvas использует handle окна: {Handle}
+        /// Для торгового Canvas использует ID capture: trading_{CaptureID}
+        /// </summary>
+        private string GetCanvasFileBase(string captureId = null)
         {
-            string handlerStr = targetWindowHandle.ToInt64().ToString();
             string canvasesDir = Path.Combine(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), "Canvases");
             Directory.CreateDirectory(canvasesDir);
             
-            // Add "trading_" prefix for trading_canvas source to match CaptureTrackingService expectations
-            string fileName = useJForexIntegration ? handlerStr : $"trading_{handlerStr}";
+            string fileName;
+            if (!string.IsNullOrEmpty(captureId))
+            {
+                // Торговый Canvas: используем ID capture
+                fileName = $"trading_{captureId}";
+            }
+            else
+            {
+                // Обычный Canvas: используем handle окна
+                string handlerStr = targetWindowHandle.ToInt64().ToString();
+                fileName = handlerStr;
+            }
+            
             return Path.Combine(canvasesDir, fileName);
         }
 
@@ -761,8 +776,81 @@ namespace ScreenCaptureApp
             }
         }
 
+        /// <summary>
+        /// Сохраняет только последний торговый (белый) штрих в торговый Canvas файл.
+        /// Используется для создания Canvas файла, который будет мержиться в Tracking Service.
+        /// Торговый Canvas сохраняется с именем trading_{captureId}.png
+        /// </summary>
+        private void SaveTradingCanvas(Stroke lastTradingStroke, string captureId)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(captureId))
+                {
+                    Logger.LogError("SaveTradingCanvas: captureId is required for trading canvas");
+                    return;
+                }
 
+                var fileBase = GetCanvasFileBase(captureId);
+                var xamlFile = fileBase + ".xaml";
+                var pngFile = fileBase + ".png";
 
+                // Создаем коллекцию с только последним торговым штрихом
+                var tradingStrokes = new StrokeCollection();
+                
+                if (lastTradingStroke != null)
+                {
+                    // Используем переданный штрих (последний торговый)
+                    tradingStrokes.Add(lastTradingStroke);
+                    Logger.LogInfo($"SaveTradingCanvas: Using provided last trading stroke");
+                }
+                else
+                {
+                    Logger.LogError("SaveTradingCanvas: lastTradingStroke is required");
+                    return;
+                }
+
+                if (tradingStrokes.Count == 0)
+                {
+                    Logger.LogWarning("SaveTradingCanvas: No trading strokes found to save");
+                    return;
+                }
+
+                Logger.LogInfo($"SaveTradingCanvas: Saving {tradingStrokes.Count} trading stroke(s) (out of {DrawingCanvas.Strokes.Count} total strokes)");
+
+                // Сохраняем только торговый штрих в XAML
+                var xaml = XamlWriter.Save(tradingStrokes);
+                File.WriteAllText(xamlFile, xaml);
+
+                // Создаем временный InkCanvas только с последним торговым штрихом для рендеринга
+                var tempInkCanvas = new System.Windows.Controls.InkCanvas
+                {
+                    Width = DrawingCanvas.ActualWidth,
+                    Height = DrawingCanvas.ActualHeight,
+                    Background = System.Windows.Media.Brushes.Transparent,
+                    Strokes = tradingStrokes
+                };
+
+                // Save as PNG
+                var rtb = new RenderTargetBitmap((int)DrawingCanvas.ActualWidth, (int)DrawingCanvas.ActualHeight, 96d, 96d, PixelFormats.Pbgra32);
+                tempInkCanvas.Measure(new System.Windows.Size(DrawingCanvas.ActualWidth, DrawingCanvas.ActualHeight));
+                tempInkCanvas.Arrange(new Rect(0, 0, DrawingCanvas.ActualWidth, DrawingCanvas.ActualHeight));
+                rtb.Render(tempInkCanvas);
+
+                var encoder = new PngBitmapEncoder();
+                encoder.Frames.Add(BitmapFrame.Create(rtb));
+                using (var fs = new FileStream(pngFile, FileMode.Create))
+                {
+                    encoder.Save(fs);
+                }
+
+                Logger.LogInfo($"Trading Canvas saved: {xamlFile}, {pngFile} (only last trading stroke, captureId={captureId})");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Error saving trading canvas: {ex.Message}", ex);
+            }
+        }
 
         private void LoadCanvas()
         {
@@ -1060,12 +1148,21 @@ namespace ScreenCaptureApp
                     UpdateSettingsFromCapture(captureData);
                     
                     Logger.LogTagInfo("Trading", $"CaptureData saved to database: ID={captureData.ID}, Source={captureData.Source}");
+                    
+                    // Сохраняем только последний торговый штрих в Canvas файл
+                    // чтобы Tracking-сервис мог его найти без желтых штрихов
+                    // Используем capture.ID для формирования имени файла: trading_{capture.ID}.png
+                    if (!string.IsNullOrEmpty(captureData.ID))
+                    {
+                        SaveTradingCanvas(stroke, captureData.ID);
+                        Logger.LogTagInfo("Trading", $"Trading Canvas saved immediately for Tracking service (only last trading stroke, captureId={captureData.ID})");
+                    }
+                    else
+                    {
+                        Logger.LogTagError("Trading", "Cannot save trading canvas: captureData.ID is null or empty");
+                    }
                 }
-
-                // Сохраняем canvas сразу после создания торгового штриха
-                // чтобы Tracking-сервис мог его найти
-                SaveCanvas();
-                Logger.LogTagInfo("Trading", "Canvas saved immediately for Tracking service");
+                
 
                 // Запускаем Tracking-сервис немедленно для обработки нового capture
                 var captureTrackingService = ServiceContainer.Instance.GetService<CaptureTrackingService>();
