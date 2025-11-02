@@ -25,8 +25,10 @@ namespace ScreenCaptureApp.Services
         private readonly object _lockObject = new object();
         private const int MaxToasts = 5;
         private const double ToastHeight = 60;
+        private const double ToastWidth = 300;
         private const double ToastSpacing = 10;
-        private const double BottomMargin = 60;
+        private const double BottomMargin = 20;
+        private const double LeftMargin = 20;
 
         public void ShowToast(string message, ToastType type, int durationMs = 2500)
         {
@@ -87,7 +89,6 @@ namespace ScreenCaptureApp.Services
             if (_activeToasts.Count > 0)
             {
                 var oldestToast = _activeToasts[0];
-                _activeToasts.RemoveAt(0);
                 AnimateToastOut(oldestToast);
             }
         }
@@ -95,56 +96,70 @@ namespace ScreenCaptureApp.Services
         private void RecalculateToastPositions()
         {
             var screen = System.Windows.Forms.Screen.PrimaryScreen;
-            var stableToasts = _activeToasts.Where(t => !t.IsAnimating && !t.IsRemoving).ToList();
+            var bottomY = screen.Bounds.Bottom - BottomMargin - ToastHeight;
+            var stableToasts = _activeToasts.Where(t => !t.IsRemoving).OrderBy(t => t.CreatedAt).ToList();
 
             for (int i = 0; i < stableToasts.Count; i++)
             {
                 var toast = stableToasts[i];
-                var newTargetTop = screen.Bounds.Bottom - BottomMargin - (ToastHeight + ToastSpacing) * (i + 1);
+                var newTargetLeft = screen.Bounds.Left + LeftMargin + (ToastWidth + ToastSpacing) * i;
                 
-                // Если позиция изменилась, анимируем перемещение
-                if (Math.Abs(toast.CurrentTop - newTargetTop) > 1)
+                // Если позиция изменилась, анимируем горизонтальное перемещение
+                if (Math.Abs(toast.CurrentLeft - newTargetLeft) > 1 && !toast.IsRemoving)
                 {
-                    AnimateToastReposition(toast, newTargetTop, i);
+                    AnimateToastReposition(toast, newTargetLeft, i);
                 }
                 else
                 {
                     toast.TargetPosition = i;
-                    toast.TargetTop = newTargetTop;
+                    toast.TargetLeft = newTargetLeft;
+                    if (!toast.IsAnimating)
+                    {
+                        toast.CurrentLeft = newTargetLeft;
+                        toast.Window.Left = newTargetLeft;
+                    }
+                }
+                
+                // Вертикальная позиция всегда одинакова - внизу экрана
+                toast.TargetTop = bottomY;
+                if (!toast.IsAnimating)
+                {
+                    toast.CurrentTop = bottomY;
+                    toast.Window.Top = bottomY;
                 }
             }
         }
 
-        private void AnimateToastReposition(ToastItem toastItem, double newTargetTop, int newPosition)
+        private void AnimateToastReposition(ToastItem toastItem, double newTargetLeft, int newPosition)
         {
             if (toastItem.IsAnimating || toastItem.IsRemoving) return;
 
             toastItem.IsAnimating = true;
             toastItem.TargetPosition = newPosition;
-            toastItem.TargetTop = newTargetTop;
+            toastItem.TargetLeft = newTargetLeft;
 
             var animation = new DoubleAnimation
             {
-                From = toastItem.CurrentTop,
-                To = newTargetTop,
-                Duration = TimeSpan.FromMilliseconds(400),
+                From = toastItem.CurrentLeft,
+                To = newTargetLeft,
+                Duration = TimeSpan.FromMilliseconds(300),
                 EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut }
             };
 
             animation.Completed += (s, e) =>
             {
                 toastItem.IsAnimating = false;
-                toastItem.CurrentTop = newTargetTop;
+                toastItem.CurrentLeft = newTargetLeft;
             };
 
-            toastItem.Window.BeginAnimation(Window.TopProperty, animation);
+            toastItem.Window.BeginAnimation(Window.LeftProperty, animation);
         }
 
         private ToastItem CreateToastItem(string message, ToastType type, int durationMs)
         {
             var window = new Window
             {
-                Width = 400,
+                Width = ToastWidth,
                 Height = ToastHeight,
                 WindowStyle = WindowStyle.None,
                 AllowsTransparency = true,
@@ -180,20 +195,22 @@ namespace ScreenCaptureApp.Services
                     Text = message,
                     Foreground = Brushes.White,
                     FontWeight = FontWeights.Bold,
-                    FontSize = 18,
+                    FontSize = 16,
                     TextAlignment = TextAlignment.Center,
                     VerticalAlignment = VerticalAlignment.Center,
                     HorizontalAlignment = HorizontalAlignment.Center,
-                    TextWrapping = TextWrapping.Wrap
+                    TextWrapping = TextWrapping.Wrap,
+                    TextTrimming = TextTrimming.CharacterEllipsis
                 }
             };
 
             window.Content = border;
 
-            // Позиционируем за пределами экрана (снизу)
+            // Позиционируем за пределами экрана (слева)
             var screen = System.Windows.Forms.Screen.PrimaryScreen;
-            window.Left = screen.Bounds.Left + (screen.Bounds.Width - window.Width) / 2;
-            window.Top = screen.Bounds.Bottom + 100; // Начинаем за пределами экрана
+            var bottomY = screen.Bounds.Bottom - BottomMargin - ToastHeight;
+            window.Top = bottomY;
+            window.Left = screen.Bounds.Left - ToastWidth - 100; // Начинаем за пределами экрана слева
 
             var toastItem = new ToastItem
             {
@@ -205,8 +222,10 @@ namespace ScreenCaptureApp.Services
                 IsAnimating = false,
                 TargetPosition = 0,
                 IsRemoving = false,
-                CurrentTop = screen.Bounds.Bottom + 100,
-                TargetTop = 0
+                CurrentLeft = screen.Bounds.Left - ToastWidth - 100,
+                CurrentTop = bottomY,
+                TargetLeft = 0,
+                TargetTop = bottomY
             };
 
             // Создаем таймер для удаления
@@ -226,36 +245,26 @@ namespace ScreenCaptureApp.Services
         private void AnimateToastIn(ToastItem toastItem)
         {
             var screen = System.Windows.Forms.Screen.PrimaryScreen;
+            var bottomY = screen.Bounds.Bottom - BottomMargin - ToastHeight;
             
-            // Находим свободную позицию (не занятую анимирующимися тостами)
-            var occupiedPositions = _activeToasts
-                .Where(t => t != toastItem && t.IsAnimating)
-                .Select(t => t.TargetPosition)
-                .ToHashSet();
-
-            int targetIndex = 0;
-            while (occupiedPositions.Contains(targetIndex))
-            {
-                targetIndex++;
-            }
-
-            var targetTop = screen.Bounds.Bottom - BottomMargin - (ToastHeight + ToastSpacing) * (targetIndex + 1);
+            // Определяем позицию: сколько тостов уже есть (включая анимирующиеся)
+            int targetIndex = _activeToasts.Count - 1; // Новый тост всегда последний
+            var targetLeft = screen.Bounds.Left + LeftMargin + (ToastWidth + ToastSpacing) * targetIndex;
             
             toastItem.TargetPosition = targetIndex;
-            toastItem.TargetTop = targetTop;
+            toastItem.TargetLeft = targetLeft;
+            toastItem.TargetTop = bottomY;
             toastItem.IsAnimating = true;
 
-            // Анимация позиции
+            // Анимация горизонтального появления (слева направо)
             var positionAnimation = new DoubleAnimation
             {
-                From = screen.Bounds.Bottom + 100,
-                To = targetTop,
-                Duration = TimeSpan.FromMilliseconds(800),
-                EasingFunction = new ElasticEase 
+                From = screen.Bounds.Left - ToastWidth - 100,
+                To = targetLeft,
+                Duration = TimeSpan.FromMilliseconds(400),
+                EasingFunction = new CubicEase 
                 { 
-                    EasingMode = EasingMode.EaseOut,
-                    Oscillations = 1,
-                    Springiness = 3
+                    EasingMode = EasingMode.EaseOut
                 }
             };
 
@@ -264,18 +273,22 @@ namespace ScreenCaptureApp.Services
             {
                 From = 0.0,
                 To = 0.95,
-                Duration = TimeSpan.FromMilliseconds(600),
+                Duration = TimeSpan.FromMilliseconds(400),
                 EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut }
             };
 
             positionAnimation.Completed += (s, e) =>
             {
                 toastItem.IsAnimating = false;
-                toastItem.CurrentTop = targetTop;
+                toastItem.CurrentLeft = targetLeft;
+                toastItem.CurrentTop = bottomY;
             };
 
-            // Запускаем обе анимации одновременно
-            toastItem.Window.BeginAnimation(Window.TopProperty, positionAnimation);
+            // Устанавливаем вертикальную позицию сразу (без анимации)
+            toastItem.Window.Top = bottomY;
+
+            // Запускаем анимации появления
+            toastItem.Window.BeginAnimation(Window.LeftProperty, positionAnimation);
             ((Border)toastItem.Window.Content).BeginAnimation(UIElement.OpacityProperty, opacityAnimation);
         }
 
@@ -286,26 +299,16 @@ namespace ScreenCaptureApp.Services
             toastItem.IsRemoving = true;
             toastItem.Timer?.Stop();
 
-            var screen = System.Windows.Forms.Screen.PrimaryScreen;
-
-            // Анимация исчезновения (движение вниз + затухание)
-            var positionAnimation = new DoubleAnimation
-            {
-                From = toastItem.CurrentTop,
-                To = screen.Bounds.Bottom + 100,
-                Duration = TimeSpan.FromMilliseconds(600),
-                EasingFunction = new CubicEase { EasingMode = EasingMode.EaseIn }
-            };
-
+            // Анимация исчезновения (только затухание, без движения)
             var opacityAnimation = new DoubleAnimation
             {
                 From = 0.95,
                 To = 0.0,
-                Duration = TimeSpan.FromMilliseconds(400),
+                Duration = TimeSpan.FromMilliseconds(300),
                 EasingFunction = new CubicEase { EasingMode = EasingMode.EaseIn }
             };
 
-            positionAnimation.Completed += (s, e) =>
+            opacityAnimation.Completed += (s, e) =>
             {
                 Application.Current.Dispatcher.Invoke(() =>
                 {
@@ -316,15 +319,14 @@ namespace ScreenCaptureApp.Services
                             _activeToasts.Remove(toastItem);
                             toastItem.Window.Close();
                             
-                            // Пересчитываем позиции оставшихся тостов
+                            // Пересчитываем позиции оставшихся тостов (сдвигаем влево)
                             RecalculateToastPositions();
                         }
                     }
                 });
             };
 
-            // Запускаем анимации исчезновения
-            toastItem.Window.BeginAnimation(Window.TopProperty, positionAnimation);
+            // Запускаем анимацию затухания
             ((Border)toastItem.Window.Content).BeginAnimation(UIElement.OpacityProperty, opacityAnimation);
         }
 
@@ -373,7 +375,9 @@ namespace ScreenCaptureApp.Services
             public bool IsAnimating { get; set; }
             public int TargetPosition { get; set; }
             public bool IsRemoving { get; set; }
+            public double CurrentLeft { get; set; }
             public double CurrentTop { get; set; }
+            public double TargetLeft { get; set; }
             public double TargetTop { get; set; }
 
             public bool IsExpired => DateTime.Now - CreatedAt > TimeSpan.FromMilliseconds(DurationMs);
