@@ -109,6 +109,9 @@ namespace ScreenCaptureApp
         
         // Track if Control key is pressed when stroke starts
         private bool isControlPressedAtStrokeStart = false;
+        
+        // Monitor index for this Canvas window (0 = primary, 1 = secondary, etc.)
+        private int monitorIndex = 0;
 
 
 
@@ -166,12 +169,13 @@ namespace ScreenCaptureApp
             InitializeCanvasTradingToolBar();
         }
 
-        public CanvasWindow(IntPtr targetWindow, string symbol = null)
+        public CanvasWindow(IntPtr targetWindow, string symbol = null, int monitorIndex = 0)
         {
             InitializeComponent();
             this.PreviewKeyDown += CanvasWindow_PreviewKeyDown;
             this.targetWindowHandle = targetWindow;
             this.activeSymbol = symbol;
+            this.monitorIndex = monitorIndex;
             
             // Инициализируем сервисы
             brokerState = ServiceContainer.Instance.GetService<BrokerState>();
@@ -571,13 +575,18 @@ namespace ScreenCaptureApp
 
         private void SetFullScreen()
         {
-            // Fallback to primary screen if no target window
-            var screen = System.Windows.Forms.Screen.PrimaryScreen;
+            // Используем указанный монитор или fallback к primary screen
+            var screens = System.Windows.Forms.Screen.AllScreens;
+            var screen = monitorIndex >= 0 && monitorIndex < screens.Length 
+                ? screens[monitorIndex] 
+                : System.Windows.Forms.Screen.PrimaryScreen;
             
             this.Left = screen.Bounds.Left;
             this.Top = screen.Bounds.Top;
             this.Width = screen.Bounds.Width;
             this.Height = screen.Bounds.Height;
+            
+            Logger.LogInfo($"CanvasWindow positioned on monitor {monitorIndex}: X={screen.Bounds.Left}, Y={screen.Bounds.Top}, Width={screen.Bounds.Width}, Height={screen.Bounds.Height}");
         }
 
         private void SetBackgroundImage()
@@ -702,7 +711,7 @@ namespace ScreenCaptureApp
 
         /// <summary>
         /// Получает путь к файлу Canvas.
-        /// Для обычного Canvas использует handle окна: {Handle}
+        /// Для обычного Canvas использует handle окна и монитор: {Handle}_monitor{MonitorIndex}
         /// Для торгового Canvas использует ID capture: trading_{CaptureID}
         /// </summary>
         private string GetCanvasFileBase(string captureId = null)
@@ -718,9 +727,9 @@ namespace ScreenCaptureApp
             }
             else
             {
-                // Обычный Canvas: используем handle окна
+                // Обычный Canvas: используем handle окна и индекс монитора для независимого сохранения
                 string handlerStr = targetWindowHandle.ToInt64().ToString();
-                fileName = handlerStr;
+                fileName = $"{handlerStr}_monitor{monitorIndex}";
             }
             
             return Path.Combine(canvasesDir, fileName);

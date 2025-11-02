@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows;
@@ -420,6 +421,142 @@ namespace ScreenCaptureApp.Helpers
             {
                 Logger.LogError($"Error getting monitor left boundary for index {monitorIndex}: {ex.Message}", ex);
                 return 0; // Default to 0 for primary monitor
+            }
+        }
+
+        /// <summary>
+        /// Извлекает символ из заголовка окна
+        /// </summary>
+        /// <param name="windowHandle">Handle окна</param>
+        /// <returns>Ключ символа (например, "XAUUSD") или null если символ не найден</returns>
+        public static string ExtractSymbolFromWindowTitle(IntPtr windowHandle)
+        {
+            try
+            {
+                var windowManagementService = ServiceContainer.Instance.GetService<WindowManagementService>();
+                if (windowManagementService == null)
+                    return null;
+                
+                string windowTitle = windowManagementService.GetWindowTitle(windowHandle);
+                
+                if (string.IsNullOrEmpty(windowTitle))
+                {
+                    Logger.LogDebug($"Empty window title for handle {windowHandle}");
+                    return null;
+                }
+                
+                Logger.LogDebug($"Window title: {windowTitle}");
+                
+                // Используем словарь символов из WindowManagementService
+                var symbols = windowManagementService.Symbols;
+                
+                // Проверяем каждый символ в словаре
+                foreach (var symbolPair in symbols)
+                {
+                    string symbolKey = symbolPair.Key;
+                    string symbolValue = symbolPair.Value;
+                    
+                    if (windowTitle.Contains(symbolValue))
+                    {
+                        Logger.LogInfo($"Found symbol {symbolKey} in window title: {windowTitle}");
+                        return symbolKey;
+                    }
+                }
+                
+                Logger.LogDebug($"No known symbol found in window title: {windowTitle}");
+                return null;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Error extracting symbol from window title: {ex.Message}", ex);
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Находит окно с указанным символом на конкретном мониторе
+        /// </summary>
+        /// <param name="symbolKey">Ключ символа (например, "XAUUSD")</param>
+        /// <param name="monitorIndex">Индекс монитора (0 = основной, 1 = вторичный, и т.д.)</param>
+        /// <returns>Handle окна или IntPtr.Zero если не найдено</returns>
+        public static IntPtr FindWindowBySymbolOnMonitor(string symbolKey, int monitorIndex)
+        {
+            try
+            {
+                var windowManagementService = ServiceContainer.Instance.GetService<WindowManagementService>();
+                if (windowManagementService == null || string.IsNullOrEmpty(symbolKey))
+                    return IntPtr.Zero;
+                
+                var symbols = windowManagementService.Symbols;
+                if (!symbols.ContainsKey(symbolKey))
+                {
+                    Logger.LogWarning($"Symbol {symbolKey} not found in symbols dictionary");
+                    return IntPtr.Zero;
+                }
+                
+                string searchText = symbols[symbolKey];
+                var screens = Screen.AllScreens;
+                
+                if (monitorIndex < 0 || monitorIndex >= screens.Length)
+                {
+                    Logger.LogWarning($"Invalid monitor index: {monitorIndex}");
+                    return IntPtr.Zero;
+                }
+                
+                var targetScreen = screens[monitorIndex];
+                var targetBounds = targetScreen.Bounds;
+                
+                Logger.LogDebug($"Searching for window with symbol '{symbolKey}' (search text: '{searchText}') on monitor {monitorIndex} (bounds: {targetBounds})");
+                
+                // Используем EnumWindows для поиска всех окон
+                List<IntPtr> candidateWindows = new List<IntPtr>();
+                
+                EnumWindowsProc callback = (hWnd, lParam) =>
+                {
+                    if (IsWindowVisible(hWnd))
+                    {
+                        string windowTitle = windowManagementService.GetWindowTitle(hWnd);
+                        if (!string.IsNullOrEmpty(windowTitle) && windowTitle.Contains(searchText))
+                        {
+                            // Проверяем, находится ли окно на целевом мониторе
+                            RECT windowRect;
+                            if (GetWindowRect(hWnd, out windowRect))
+                            {
+                                // Используем центр окна для определения монитора
+                                int windowCenterX = (windowRect.Left + windowRect.Right) / 2;
+                                int windowCenterY = (windowRect.Top + windowRect.Bottom) / 2;
+                                
+                                if (targetBounds.Contains(windowCenterX, windowCenterY))
+                                {
+                                    Logger.LogDebug($"Found window on monitor {monitorIndex}: {windowTitle} (Handle: {hWnd.ToInt64()})");
+                                    candidateWindows.Add(hWnd);
+                                }
+                            }
+                        }
+                    }
+                    return true; // Continue enumeration
+                };
+                
+                EnumWindows(callback, IntPtr.Zero);
+                
+                if (candidateWindows.Count > 0)
+                {
+                    // Возвращаем первое найденное окно
+                    IntPtr foundWindow = candidateWindows[0];
+                    string foundTitle = windowManagementService.GetWindowTitle(foundWindow);
+                    Logger.LogInfo($"Found window on monitor {monitorIndex} with symbol {symbolKey}: {foundTitle} (Handle: {foundWindow.ToInt64()})");
+                    return foundWindow;
+                }
+                else
+                {
+                    Logger.LogWarning($"No window found with symbol '{symbolKey}' on monitor {monitorIndex}");
+                    return IntPtr.Zero;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Error finding window by symbol on monitor: {ex.Message}", ex);
+                return IntPtr.Zero;
             }
         }
     }

@@ -25,6 +25,7 @@ namespace ScreenCaptureApp
         private bool isCapturing = false;
         private IntPtr targetWindow = IntPtr.Zero; // Variable to store target window handle
         private CanvasWindow currentCanvasWindow = null;
+        private CanvasWindow secondaryCanvasWindow = null; // Canvas для второго монитора
         private string activeSymbol = null;
         private CancellationTokenSource _autoTrackingCts;
         private Task _autoTrackingTask;
@@ -172,45 +173,183 @@ namespace ScreenCaptureApp
 
         private void OnSpaceKeyPressed()
         {
-            // Toggle Canvas window visibility
-            if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
+            IntPtr newTargetWindow = MainHelper.GetWindowUnderCursor();
+            
+            if (newTargetWindow == IntPtr.Zero)
             {
-                // Canvas window is visible - hide it
-                currentCanvasWindow.Visibility = Visibility.Hidden;
-                Logger.LogDebug("Space pressed: Canvas window HIDDEN");
+                Logger.LogDebug("No target window found under cursor");
+                return;
+            }
+            
+            Logger.LogDebug($"Target window captured (Handle: 0x{newTargetWindow:X})");
+            targetWindow = newTargetWindow;
+            
+            // Извлекаем символ из заголовка окна на основном мониторе
+            string symbolFromPrimaryWindow = MainHelper.ExtractSymbolFromWindowTitle(newTargetWindow);
+            Logger.LogDebug($"Symbol extracted from primary window: {symbolFromPrimaryWindow ?? "null"}");
+            
+            // Проверяем, все ли Canvas открыты и видимы - если да, скрываем все
+            var screens = Screen.AllScreens;
+            bool allVisible = true;
+            if (currentCanvasWindow == null || !currentCanvasWindow.IsVisible)
+                allVisible = false;
+            if (screens.Length > 1 && (secondaryCanvasWindow == null || !secondaryCanvasWindow.IsVisible))
+                allVisible = false;
+            
+            if (allVisible)
+            {
+                // Скрываем все Canvas
+                if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
+                {
+                    currentCanvasWindow.Visibility = Visibility.Hidden;
+                    Logger.LogDebug("Space pressed: Primary Canvas window HIDDEN");
+                }
+                if (secondaryCanvasWindow != null && secondaryCanvasWindow.IsVisible)
+                {
+                    secondaryCanvasWindow.Visibility = Visibility.Hidden;
+                    Logger.LogDebug("Space pressed: Secondary Canvas window HIDDEN");
+                }
+                return;
+            }
+            
+            // Открываем/показываем Canvas на всех мониторах одновременно
+            Logger.LogDebug($"Opening Canvas on all {screens.Length} monitor(s)");
+            
+            // Монитор 0 (основной) - используем окно под курсором
+            if (currentCanvasWindow != null)
+            {
+                currentCanvasWindow.UpdateTargetWindow(newTargetWindow, activeSymbol);
+                currentCanvasWindow.Visibility = Visibility.Visible;
+                currentCanvasWindow.Activate();
+                currentCanvasWindow.Focus();
+                Logger.LogDebug("Space pressed: Primary Canvas window SHOWN (existing window)");
             }
             else
             {
-                // Canvas window is hidden or doesn't exist - show it
-                IntPtr newTargetWindow = MainHelper.GetWindowUnderCursor();
+                OpenCanvasOnPrimaryMonitor(newTargetWindow);
+                Logger.LogDebug("Space pressed: Primary Canvas window SHOWN (new window)");
+            }
+            
+            // Монитор 1 (вторичный), если есть - ищем окно с тем же символом
+            if (screens.Length > 1)
+            {
+                IntPtr secondaryTargetWindow = IntPtr.Zero;
                 
-                if (newTargetWindow != IntPtr.Zero)
+                if (!string.IsNullOrEmpty(symbolFromPrimaryWindow))
                 {
-                    Logger.LogDebug($"Target window captured (Handle: 0x{newTargetWindow:X})");
+                    // Ищем окно с тем же символом на втором мониторе
+                    secondaryTargetWindow = MainHelper.FindWindowBySymbolOnMonitor(symbolFromPrimaryWindow, 1);
+                    if (secondaryTargetWindow != IntPtr.Zero)
+                    {
+                        Logger.LogDebug($"Found window with symbol '{symbolFromPrimaryWindow}' on secondary monitor (Handle: 0x{secondaryTargetWindow:X})");
+                    }
+                    else
+                    {
+                        Logger.LogWarning($"No window found with symbol '{symbolFromPrimaryWindow}' on secondary monitor, using primary window");
+                        // Если не нашли, используем то же окно (fallback)
+                        secondaryTargetWindow = newTargetWindow;
+                    }
                 }
                 else
                 {
-                    Logger.LogDebug("No target window found under cursor");
+                    // Если не удалось извлечь символ, используем то же окно
+                    Logger.LogWarning("Could not extract symbol from primary window, using same window for secondary monitor");
+                    secondaryTargetWindow = newTargetWindow;
+                }
+                
+                if (secondaryCanvasWindow != null)
+                {
+                    secondaryCanvasWindow.UpdateTargetWindow(secondaryTargetWindow, activeSymbol);
+                    secondaryCanvasWindow.Visibility = Visibility.Visible;
+                    secondaryCanvasWindow.Activate();
+                    secondaryCanvasWindow.Focus();
+                    Logger.LogDebug("Space pressed: Secondary Canvas window SHOWN (existing window)");
+                }
+                else
+                {
+                    OpenCanvasOnSecondaryMonitor(secondaryTargetWindow);
+                    Logger.LogDebug("Space pressed: Secondary Canvas window SHOWN (new window)");
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Открывает Canvas на основном мониторе
+        /// </summary>
+        private void OpenCanvasOnPrimaryMonitor(IntPtr targetWindowHandle)
+        {
+            try
+            {
+                if (!MainHelper.ValidateTargetWindow(targetWindowHandle))
+                {
                     return;
                 }
                 
                 if (currentCanvasWindow != null)
                 {
-                    // Canvas window exists but is hidden - show it and update target
-                    currentCanvasWindow.UpdateTargetWindow(newTargetWindow, activeSymbol);
-                    currentCanvasWindow.Visibility = Visibility.Visible;
-                    currentCanvasWindow.Activate();
-                    currentCanvasWindow.Focus();
-                    targetWindow = newTargetWindow;
-                    Logger.LogDebug("Space pressed: Canvas window SHOWN (existing window)");
+                    currentCanvasWindow.Close();
+                    currentCanvasWindow = null;
                 }
-                else
+                
+                currentCanvasWindow = new CanvasWindow(targetWindowHandle, activeSymbol, 0); // 0 = primary monitor
+                currentCanvasWindow.SetJForexIntegration(useJForexIntegration);
+                currentCanvasWindow.Closed += (s, args) => currentCanvasWindow = null;
+                
+                currentCanvasWindow.Show();
+                
+                // Обновляем позиции тостов после создания CanvasWindow
+                var toastService = ServiceContainer.Instance.GetService<ToastNotifyService>();
+                toastService?.RefreshToastPositions();
+                
+                Logger.LogDebug("Primary Canvas window opened");
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show($"Error opening primary canvas window: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        
+        /// <summary>
+        /// Открывает Canvas на втором мониторе
+        /// </summary>
+        private void OpenCanvasOnSecondaryMonitor(IntPtr targetWindowHandle)
+        {
+            try
+            {
+                if (!MainHelper.ValidateTargetWindow(targetWindowHandle))
                 {
-                    // Canvas window doesn't exist - create new one
-                    targetWindow = newTargetWindow;
-                    Canvas_Click(null, null);
-                    Logger.LogDebug("Space pressed: Canvas window SHOWN (new window)");
+                    return;
                 }
+                
+                // Проверяем, есть ли второй монитор
+                var screens = Screen.AllScreens;
+                if (screens.Length < 2)
+                {
+                    Logger.LogWarning("Secondary monitor not found - cannot open secondary canvas");
+                    return;
+                }
+                
+                if (secondaryCanvasWindow != null)
+                {
+                    secondaryCanvasWindow.Close();
+                    secondaryCanvasWindow = null;
+                }
+                
+                secondaryCanvasWindow = new CanvasWindow(targetWindowHandle, activeSymbol, 1); // 1 = secondary monitor
+                secondaryCanvasWindow.SetJForexIntegration(useJForexIntegration);
+                secondaryCanvasWindow.Closed += (s, args) => secondaryCanvasWindow = null;
+                
+                secondaryCanvasWindow.Show();
+                
+                // Обновляем позиции тостов после создания CanvasWindow
+                var toastService = ServiceContainer.Instance.GetService<ToastNotifyService>();
+                toastService?.RefreshToastPositions();
+                
+                Logger.LogDebug("Secondary Canvas window opened");
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show($"Error opening secondary canvas window: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -259,13 +398,20 @@ namespace ScreenCaptureApp
             
             Logger.LogDebug($"Before cleanup: isCapturing={isCapturing}, overlay={(overlay == null ? "null" : "not null")}");
             
-            // Check if canvas window is open and close it
+            // Check if canvas windows are open and close them
             if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
             {
-                Logger.LogDebug("Closing canvas window");
+                Logger.LogDebug("Closing primary canvas window");
                 currentCanvasWindow.Close();
                 currentCanvasWindow = null;
-                Logger.LogDebug("Canvas window closed");
+                Logger.LogDebug("Primary canvas window closed");
+            }
+            if (secondaryCanvasWindow != null && secondaryCanvasWindow.IsVisible)
+            {
+                Logger.LogDebug("Closing secondary canvas window");
+                secondaryCanvasWindow.Close();
+                secondaryCanvasWindow = null;
+                Logger.LogDebug("Secondary canvas window closed");
             }
             
             // Check if screen capture overlay is open and close it
@@ -299,21 +445,56 @@ namespace ScreenCaptureApp
             });
         }
         
+        /// <summary>
+        /// Получает Canvas на мониторе, где находится курсор
+        /// </summary>
+        private CanvasWindow GetCanvasOnCursorMonitor()
+        {
+            var cursorPos = System.Windows.Forms.Cursor.Position;
+            int monitorIndex = MainHelper.GetMonitorIndexByCoordinates(cursorPos.X, cursorPos.Y);
+            
+            Logger.LogDebug($"Cursor is on monitor {monitorIndex}");
+            
+            if (monitorIndex == 0)
+            {
+                return currentCanvasWindow;
+            }
+            else if (monitorIndex == 1)
+            {
+                return secondaryCanvasWindow;
+            }
+            
+            // Fallback к основному монитору
+            return currentCanvasWindow;
+        }
+        
         private void OnCKeyPressed()
         {
-            Logger.LogDebug("C key pressed - clearing canvas");
-            if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
+            Logger.LogDebug("C key pressed - clearing canvas on cursor monitor");
+            var canvasOnCursorMonitor = GetCanvasOnCursorMonitor();
+            if (canvasOnCursorMonitor != null && canvasOnCursorMonitor.IsVisible)
             {
-                currentCanvasWindow.ClearCanvas();
+                canvasOnCursorMonitor.ClearCanvas();
+                Logger.LogDebug($"Canvas cleared on monitor with cursor");
+            }
+            else
+            {
+                Logger.LogDebug("No visible Canvas found on cursor monitor");
             }
         }
         
         private void OnWKeyPressed()
         {
-            Logger.LogDebug("W key pressed - shifting canvas up");
-            if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
+            Logger.LogDebug("W key pressed - shifting canvas up on cursor monitor");
+            var canvasOnCursorMonitor = GetCanvasOnCursorMonitor();
+            if (canvasOnCursorMonitor != null && canvasOnCursorMonitor.IsVisible)
             {
-                currentCanvasWindow.ShiftCanvasUp();
+                canvasOnCursorMonitor.ShiftCanvasUp();
+                Logger.LogDebug($"Canvas shifted up on monitor with cursor");
+            }
+            else
+            {
+                Logger.LogDebug("No visible Canvas found on cursor monitor");
             }
         }
         
@@ -322,9 +503,15 @@ namespace ScreenCaptureApp
             Logger.LogDebug("A key pressed - starting inclined pattern capture");
             
             // Также выполняем оригинальную логику для CanvasWindow
-            if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
+            var canvasOnCursorMonitor = GetCanvasOnCursorMonitor();
+            if (canvasOnCursorMonitor != null && canvasOnCursorMonitor.IsVisible)
             {
-                currentCanvasWindow.ShiftCanvasLeft();
+                canvasOnCursorMonitor.ShiftCanvasLeft();
+                Logger.LogDebug($"Canvas shifted left on monitor with cursor");
+            }
+            else
+            {
+                Logger.LogDebug("No visible Canvas found on cursor monitor");
             }
         }
         
@@ -341,12 +528,18 @@ namespace ScreenCaptureApp
         
         private void OnDKeyPressed()
         {
-            Logger.LogDebug("D key pressed - shifting canvas right");
+            Logger.LogDebug("D key pressed - shifting canvas right on cursor monitor");
             
             // Также выполняем оригинальную логику для CanvasWindow
-            if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
+            var canvasOnCursorMonitor = GetCanvasOnCursorMonitor();
+            if (canvasOnCursorMonitor != null && canvasOnCursorMonitor.IsVisible)
             {
-                currentCanvasWindow.ShiftCanvasRight();
+                canvasOnCursorMonitor.ShiftCanvasRight();
+                Logger.LogDebug($"Canvas shifted right on monitor with cursor");
+            }
+            else
+            {
+                Logger.LogDebug("No visible Canvas found on cursor monitor");
             }
         }
 
@@ -413,34 +606,7 @@ namespace ScreenCaptureApp
 
         private void Canvas_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                if (!MainHelper.ValidateTargetWindow(targetWindow))
-                {
-                    return;
-                }
-                
-                if (currentCanvasWindow != null)
-                {
-                    currentCanvasWindow.Close();
-                    currentCanvasWindow = null;
-                }
-                currentCanvasWindow = new CanvasWindow(targetWindow, activeSymbol);
-                currentCanvasWindow.SetJForexIntegration(useJForexIntegration);
-                currentCanvasWindow.Closed += (s, args) => currentCanvasWindow = null;
-                
-                currentCanvasWindow.Show();
-                
-                // Обновляем позиции тостов после создания CanvasWindow
-                var toastService = ServiceContainer.Instance.GetService<ToastNotifyService>();
-                toastService?.RefreshToastPositions();
-                
-                Logger.LogDebug("Canvas window opened");
-            }
-            catch (Exception ex)
-            {
-                System.Windows.MessageBox.Show($"Error opening canvas window: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            OpenCanvasOnPrimaryMonitor(targetWindow);
         }
 
         protected override void OnClosing(CancelEventArgs e)
@@ -603,13 +769,20 @@ namespace ScreenCaptureApp
             activeSymbol = MainHelper.HandleSymbolButtonClick(sender, windowManagementService);
             UpdateSymbolIndicators(activeSymbol);
             
-            // Если CanvasWindow открыт, переинициализируем его для нового символа
+            // Если CanvasWindow открыты, переинициализируем их для нового символа
             if (currentCanvasWindow != null && !string.IsNullOrEmpty(activeSymbol))
             {
                 // Используем новый метод для полной переинициализации
                 currentCanvasWindow.ReinitializeForNewSymbol(activeSymbol);
                 
-                Logger.LogInfo($"CanvasWindow reinitialized for new symbol: {activeSymbol}");
+                Logger.LogInfo($"Primary CanvasWindow reinitialized for new symbol: {activeSymbol}");
+            }
+            if (secondaryCanvasWindow != null && !string.IsNullOrEmpty(activeSymbol))
+            {
+                // Используем новый метод для полной переинициализации
+                secondaryCanvasWindow.ReinitializeForNewSymbol(activeSymbol);
+                
+                Logger.LogInfo($"Secondary CanvasWindow reinitialized for new symbol: {activeSymbol}");
             }
         }
 
@@ -870,6 +1043,8 @@ namespace ScreenCaptureApp
             UpdateBrushColorIndicators();
             if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
                 currentCanvasWindow.UpdateSimpleBrushColor(isYellowBrush);
+            if (secondaryCanvasWindow != null && secondaryCanvasWindow.IsVisible)
+                secondaryCanvasWindow.UpdateSimpleBrushColor(isYellowBrush);
             Logger.LogInfo("Brush color set to Yellow");
         }
 
@@ -879,6 +1054,8 @@ namespace ScreenCaptureApp
             UpdateBrushColorIndicators();
             if (currentCanvasWindow != null && currentCanvasWindow.IsVisible)
                 currentCanvasWindow.UpdateSimpleBrushColor(isYellowBrush);
+            if (secondaryCanvasWindow != null && secondaryCanvasWindow.IsVisible)
+                secondaryCanvasWindow.UpdateSimpleBrushColor(isYellowBrush);
         }
 
         private void UpdateBrushColorIndicators()
@@ -943,11 +1120,23 @@ namespace ScreenCaptureApp
         private static extern bool GetCursorPos(out POINT lpPoint);
         [DllImport("user32.dll")]
         private static extern bool SetCursorPos(int X, int Y);
+        
+        [DllImport("user32.dll")]
+        private static extern bool GetWindowRect(IntPtr hWnd, out RECT lpRect);
 
         private struct POINT
         {
             public int X;
             public int Y;
+        }
+        
+        [StructLayout(LayoutKind.Sequential)]
+        private struct RECT
+        {
+            public int Left;
+            public int Top;
+            public int Right;
+            public int Bottom;
         }
 
         private void ClickHotkeyButtonByIndex(int index)
@@ -988,10 +1177,14 @@ namespace ScreenCaptureApp
             useJForexIntegration = enabled;
             Logger.LogInfo($"MainWindow: JForex integration {(enabled ? "enabled" : "disabled")}");
             
-            // Обновляем настройку в текущем CanvasWindow если он открыт
+            // Обновляем настройку в текущих CanvasWindow если они открыты
             if (currentCanvasWindow != null)
             {
                 currentCanvasWindow.SetJForexIntegration(enabled);
+            }
+            if (secondaryCanvasWindow != null)
+            {
+                secondaryCanvasWindow.SetJForexIntegration(enabled);
             }
         }
         
@@ -1024,10 +1217,14 @@ namespace ScreenCaptureApp
             useJForexIntegration = !useJForexIntegration;
             Logger.LogInfo($"JForex integration toggled: {(useJForexIntegration ? "enabled" : "disabled")}");
             
-            // Обновляем настройку в текущем CanvasWindow если он открыт
+            // Обновляем настройку в текущих CanvasWindow если они открыты
             if (currentCanvasWindow != null)
             {
                 currentCanvasWindow.SetJForexIntegration(useJForexIntegration);
+            }
+            if (secondaryCanvasWindow != null)
+            {
+                secondaryCanvasWindow.SetJForexIntegration(useJForexIntegration);
             }
             
             // Показываем уведомление
