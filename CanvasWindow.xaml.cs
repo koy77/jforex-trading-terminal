@@ -297,6 +297,17 @@ namespace ScreenCaptureApp
             {
                 Logger.LogError($"Error cleaning up CanvasTradingToolBar: {ex.Message}", ex);
             }
+            
+            // Очищаем ресурсы CanvasTrackingList
+            try
+            {
+                CanvasTrackingList.Dispose();
+                Logger.LogInfo("CanvasTrackingList resources cleaned up");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Error cleaning up CanvasTrackingList: {ex.Message}", ex);
+            }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -335,6 +346,31 @@ namespace ScreenCaptureApp
             
             // Обновляем отображение активного символа
             UpdateActiveSymbolDisplay();
+            
+            // Показываем CanvasTrackingList только на вторичном Canvas (monitorIndex > 0)
+            if (monitorIndex > 0)
+            {
+                CanvasTrackingList.Visibility = Visibility.Visible;
+                Logger.LogInfo($"CanvasTrackingList will be shown for secondary monitor (monitorIndex={monitorIndex})");
+            }
+            else
+            {
+                CanvasTrackingList.Visibility = Visibility.Collapsed;
+                Logger.LogInfo($"CanvasTrackingList hidden for primary monitor (monitorIndex={monitorIndex})");
+            }
+            
+            // Показываем CanvasTradingToolBar только на Primary Monitor (monitorIndex == 0)
+            if (monitorIndex > 0)
+            {
+                // Скрываем CanvasTradingToolBar на Secondary Monitor
+                CanvasTradingToolBar.Visibility = Visibility.Collapsed;
+                Logger.LogInfo($"CanvasTradingToolBar hidden for secondary monitor (monitorIndex={monitorIndex})");
+            }
+            else
+            {
+                // На Primary Monitor видимость управляется логикой CanvasTradingToolBar
+                Logger.LogInfo($"CanvasTradingToolBar will be controlled by its own logic for primary monitor (monitorIndex={monitorIndex})");
+            }
             
             // Устанавливаем фокус на InkCanvas
             DrawingCanvas.Focus();
@@ -1598,13 +1634,16 @@ namespace ScreenCaptureApp
         {
             try
             {
+                // Устанавливаем индекс монитора в CanvasTradingToolBar
+                CanvasTradingToolBar.SetMonitorIndex(monitorIndex);
+                
                 // Устанавливаем символ в CanvasTradingToolBar
                 CanvasTradingToolBar.SetSymbol(activeSymbol);
                 
                 // Подписываемся на событие клика по кнопке Sec
                 CanvasTradingToolBar.OnSecButtonClicked += OnSecButtonClicked;
                 
-                Logger.LogInfo("CanvasTradingToolBar initialized successfully");
+                Logger.LogInfo($"CanvasTradingToolBar initialized successfully (monitorIndex={monitorIndex})");
             }
             catch (Exception ex)
             {

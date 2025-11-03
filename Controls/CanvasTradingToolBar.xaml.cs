@@ -15,6 +15,7 @@ namespace ScreenCaptureApp.Controls
         private Mt4SocketService _mt4SocketService;
         private ToastNotifyService _toastNotifyService;
         private string _currentSymbol;
+        private int _monitorIndex = 0; // 0 = primary monitor, >0 = secondary monitor
 
         public CanvasTradingToolBar()
         {
@@ -31,6 +32,23 @@ namespace ScreenCaptureApp.Controls
             catch (Exception ex)
             {
                 Logger.LogError($"CanvasTradingToolBar: Error initializing services: {ex.Message}", ex);
+            }
+        }
+
+        /// <summary>
+        /// Устанавливает индекс монитора (0 = primary, >0 = secondary)
+        /// CanvasTradingToolBar показывается только на Primary Monitor
+        /// </summary>
+        public void SetMonitorIndex(int monitorIndex)
+        {
+            _monitorIndex = monitorIndex;
+            Logger.LogInfo($"CanvasTradingToolBar: Monitor index set to {monitorIndex}");
+            
+            // Скрываем тулбар на Secondary Monitor
+            if (monitorIndex > 0)
+            {
+                this.Visibility = Visibility.Collapsed;
+                Logger.LogInfo($"CanvasTradingToolBar: Hidden for secondary monitor (monitorIndex={monitorIndex})");
             }
         }
 
@@ -117,10 +135,21 @@ namespace ScreenCaptureApp.Controls
                 {
                     if (matchingSymbol != null)
                     {
-                        // Есть открытые сделки для текущего символа - показываем тулбар
+                        // Есть открытые сделки для текущего символа
                         UpdateToolbarData(matchingSymbol);
-                        this.Visibility = Visibility.Visible;
-                        Logger.LogInfo($"CanvasTradingToolBar: Showing toolbar for symbol '{_currentSymbol}' with data: Percent={matchingSymbol.Percent:F1}%, Lots={matchingSymbol.Lots:F2}, Points={matchingSymbol.ProfitPoints:F1}");
+                        
+                        // Показываем тулбар только на Primary Monitor
+                        if (_monitorIndex == 0)
+                        {
+                            this.Visibility = Visibility.Visible;
+                            Logger.LogInfo($"CanvasTradingToolBar: Showing toolbar for symbol '{_currentSymbol}' with data: Percent={matchingSymbol.Percent:F1}%, Lots={matchingSymbol.Lots:F2}, Points={matchingSymbol.ProfitPoints:F1}");
+                        }
+                        else
+                        {
+                            // На Secondary Monitor тулбар всегда скрыт
+                            this.Visibility = Visibility.Collapsed;
+                            Logger.LogInfo($"CanvasTradingToolBar: Hidden on secondary monitor (monitorIndex={_monitorIndex}), matching symbol found");
+                        }
                     }
                     else
                     {
@@ -201,12 +230,21 @@ namespace ScreenCaptureApp.Controls
         }
 
         /// <summary>
-        /// Показывает тулбар
+        /// Показывает тулбар (только на Primary Monitor)
         /// </summary>
         public void Show()
         {
-            this.Visibility = Visibility.Visible;
-            Logger.LogDebug("CanvasTradingToolBar: Shown");
+            // Показываем только на Primary Monitor
+            if (_monitorIndex == 0)
+            {
+                this.Visibility = Visibility.Visible;
+                Logger.LogDebug("CanvasTradingToolBar: Shown");
+            }
+            else
+            {
+                this.Visibility = Visibility.Collapsed;
+                Logger.LogDebug($"CanvasTradingToolBar: Cannot show on secondary monitor (monitorIndex={_monitorIndex})");
+            }
         }
 
         /// <summary>

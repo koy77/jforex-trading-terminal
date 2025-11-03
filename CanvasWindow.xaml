@@ -100,6 +100,13 @@
                                        Panel.ZIndex="4"
                                        Visibility="Collapsed" />
 
+        <!-- Canvas Tracking List - показывает список трекающихся CaptureData -->
+        <controls:CanvasTrackingList x:Name="CanvasTrackingList" 
+                                     HorizontalAlignment="Center" 
+                                     VerticalAlignment="Top" 
+                                     Margin="0,5,0,0"
+                                     Panel.ZIndex="5" />
+
         <!-- Дублирующая надпись TradingModeText внизу -->
         <TextBlock
             Text="{Binding ElementName=TradingModeText, Path=Text}"
