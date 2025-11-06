@@ -45,6 +45,10 @@ namespace ScreenCaptureApp
         // JForex integration setting
         private bool useJForexIntegration = false; // false = save to CaptureData with TradingCanvas source, true = send to JForex
 
+        // Canvas Window on secondary monitor control
+        // false = open Canvas only on primary monitor (default), true = open on all monitors
+        private bool openCanvasOnSecondaryMonitor = false;
+
         public MainWindow()
         {
             ServiceInitializer.RegisterAllServices();
@@ -193,7 +197,7 @@ namespace ScreenCaptureApp
             bool allVisible = true;
             if (currentCanvasWindow == null || !currentCanvasWindow.IsVisible)
                 allVisible = false;
-            if (screens.Length > 1 && (secondaryCanvasWindow == null || !secondaryCanvasWindow.IsVisible))
+            if (openCanvasOnSecondaryMonitor && screens.Length > 1 && (secondaryCanvasWindow == null || !secondaryCanvasWindow.IsVisible))
                 allVisible = false;
             
             if (allVisible)
@@ -212,8 +216,15 @@ namespace ScreenCaptureApp
                 return;
             }
             
-            // Открываем/показываем Canvas на всех мониторах одновременно
-            Logger.LogDebug($"Opening Canvas on all {screens.Length} monitor(s)");
+            // Открываем/показываем Canvas на мониторах (в зависимости от настройки openCanvasOnSecondaryMonitor)
+            if (openCanvasOnSecondaryMonitor && screens.Length > 1)
+            {
+                Logger.LogDebug($"Opening Canvas on all {screens.Length} monitor(s)");
+            }
+            else
+            {
+                Logger.LogDebug("Opening Canvas on primary monitor only");
+            }
             
             // Монитор 0 (основной) - используем окно под курсором
             if (currentCanvasWindow != null)
@@ -231,7 +242,7 @@ namespace ScreenCaptureApp
             }
             
             // Монитор 1 (вторичный), если есть - ищем окно с тем же символом
-            if (screens.Length > 1)
+            if (openCanvasOnSecondaryMonitor && screens.Length > 1)
             {
                 IntPtr secondaryTargetWindow = IntPtr.Zero;
                 
