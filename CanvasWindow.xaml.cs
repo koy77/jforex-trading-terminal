@@ -109,7 +109,7 @@ namespace ScreenCaptureApp
         private const double MACD_AREA_THRESHOLD = 740.0;
         
         // Track if stroke is trading stroke (OHLC model) when stroke starts
-        // true = OHLC model (trading, white color), false = MACD model (non-trading, yellow color)
+        // true = OHLC model (trading, white color) AND CTRL is pressed, false = MACD model (non-trading, yellow color) OR CTRL not pressed
         private bool isControlPressedAtStrokeStart = false;
         
         // Monitor index for this Canvas window (0 = primary, 1 = secondary, etc.)
@@ -446,22 +446,25 @@ namespace ScreenCaptureApp
             var position = e.GetPosition(DrawingCanvas);
             bool isOHLCModel = position.Y < MACD_AREA_THRESHOLD;
             
-            // Для OHLC модели - торговый штрих (белый), для MACD - не торговый (желтый)
-            isControlPressedAtStrokeStart = isOHLCModel;
+            // Проверяем, зажата ли CTRL
+            bool isCtrlPressed = Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl);
             
-            // Устанавливаем цвет кисти в зависимости от модели
-            if (isOHLCModel)
+            // Торговый штрих (белый) только если CTRL зажата И это OHLC модель
+            isControlPressedAtStrokeStart = isOHLCModel && isCtrlPressed;
+            
+            // Устанавливаем цвет кисти в зависимости от модели и CTRL
+            if (isControlPressedAtStrokeStart)
             {
                 DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
-                Logger.LogInfo($"MouseDown: OHLC model detected (Y={position.Y} < {MACD_AREA_THRESHOLD}) - setting brush to White for trading stroke");
+                Logger.LogInfo($"MouseDown: OHLC model detected (Y={position.Y} < {MACD_AREA_THRESHOLD}) AND CTRL pressed - setting brush to White for trading stroke");
             }
             else
             {
                 DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
-                Logger.LogInfo($"MouseDown: MACD model detected (Y={position.Y} >= {MACD_AREA_THRESHOLD}) - setting brush to Yellow for simple stroke");
+                Logger.LogInfo($"MouseDown: {(isOHLCModel ? "OHLC model but CTRL not pressed" : "MACD model")} (Y={position.Y}) - setting brush to Yellow for simple stroke");
             }
             
-            Logger.LogInfo($"MouseDown: Model determined: {(isOHLCModel ? "OHLC (trading)" : "MACD (non-trading)")} at {position}");
+            Logger.LogInfo($"MouseDown: Model determined: {(isControlPressedAtStrokeStart ? "OHLC (trading)" : "MACD (non-trading)")} at {position}, CTRL pressed: {isCtrlPressed}");
         }
 
         private void DrawingCanvas_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
@@ -484,22 +487,25 @@ namespace ScreenCaptureApp
             var position = e.GetPosition(DrawingCanvas);
             bool isOHLCModel = position.Y < MACD_AREA_THRESHOLD;
             
-            // Для OHLC модели - торговый штрих (белый), для MACD - не торговый (желтый)
-            isControlPressedAtStrokeStart = isOHLCModel;
+            // Проверяем, зажата ли CTRL
+            bool isCtrlPressed = Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl);
             
-            // Устанавливаем цвет кисти в зависимости от модели
-            if (isOHLCModel)
+            // Торговый штрих (белый) только если CTRL зажата И это OHLC модель
+            isControlPressedAtStrokeStart = isOHLCModel && isCtrlPressed;
+            
+            // Устанавливаем цвет кисти в зависимости от модели и CTRL
+            if (isControlPressedAtStrokeStart)
             {
                 DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
-                Logger.LogInfo($"PreviewMouseDown: OHLC model detected (Y={position.Y} < {MACD_AREA_THRESHOLD}) - setting brush to White for trading stroke");
+                Logger.LogInfo($"PreviewMouseDown: OHLC model detected (Y={position.Y} < {MACD_AREA_THRESHOLD}) AND CTRL pressed - setting brush to White for trading stroke");
             }
             else
             {
                 DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
-                Logger.LogInfo($"PreviewMouseDown: MACD model detected (Y={position.Y} >= {MACD_AREA_THRESHOLD}) - setting brush to Yellow for simple stroke");
+                Logger.LogInfo($"PreviewMouseDown: {(isOHLCModel ? "OHLC model but CTRL not pressed" : "MACD model")} (Y={position.Y}) - setting brush to Yellow for simple stroke");
             }
             
-            Logger.LogInfo($"PreviewMouseDown: Model determined: {(isOHLCModel ? "OHLC (trading)" : "MACD (non-trading)")} at {position}");
+            Logger.LogInfo($"PreviewMouseDown: Model determined: {(isControlPressedAtStrokeStart ? "OHLC (trading)" : "MACD (non-trading)")} at {position}, CTRL pressed: {isCtrlPressed}");
         }
         
         // Обработчики событий стилуса для графического планшета
@@ -509,22 +515,25 @@ namespace ScreenCaptureApp
             var position = e.GetPosition(DrawingCanvas);
             bool isOHLCModel = position.Y < MACD_AREA_THRESHOLD;
             
-            // Для OHLC модели - торговый штрих (белый), для MACD - не торговый (желтый)
-            isControlPressedAtStrokeStart = isOHLCModel;
+            // Проверяем, зажата ли CTRL
+            bool isCtrlPressed = Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl);
             
-            // Устанавливаем цвет кисти в зависимости от модели
-            if (isOHLCModel)
+            // Торговый штрих (белый) только если CTRL зажата И это OHLC модель
+            isControlPressedAtStrokeStart = isOHLCModel && isCtrlPressed;
+            
+            // Устанавливаем цвет кисти в зависимости от модели и CTRL
+            if (isControlPressedAtStrokeStart)
             {
                 DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
-                Logger.LogInfo($"PreviewStylusDown: OHLC model detected (Y={position.Y} < {MACD_AREA_THRESHOLD}) - setting brush to White for trading stroke");
+                Logger.LogInfo($"PreviewStylusDown: OHLC model detected (Y={position.Y} < {MACD_AREA_THRESHOLD}) AND CTRL pressed - setting brush to White for trading stroke");
             }
             else
             {
                 DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
-                Logger.LogInfo($"PreviewStylusDown: MACD model detected (Y={position.Y} >= {MACD_AREA_THRESHOLD}) - setting brush to Yellow for simple stroke");
+                Logger.LogInfo($"PreviewStylusDown: {(isOHLCModel ? "OHLC model but CTRL not pressed" : "MACD model")} (Y={position.Y}) - setting brush to Yellow for simple stroke");
             }
             
-            Logger.LogInfo($"PreviewStylusDown: Model determined: {(isOHLCModel ? "OHLC (trading)" : "MACD (non-trading)")} at {position}");
+            Logger.LogInfo($"PreviewStylusDown: Model determined: {(isControlPressedAtStrokeStart ? "OHLC (trading)" : "MACD (non-trading)")} at {position}, CTRL pressed: {isCtrlPressed}");
         }
         
         private void DrawingCanvas_StylusDown(object sender, System.Windows.Input.StylusDownEventArgs e)
@@ -533,22 +542,25 @@ namespace ScreenCaptureApp
             var position = e.GetPosition(DrawingCanvas);
             bool isOHLCModel = position.Y < MACD_AREA_THRESHOLD;
             
-            // Для OHLC модели - торговый штрих (белый), для MACD - не торговый (желтый)
-            isControlPressedAtStrokeStart = isOHLCModel;
+            // Проверяем, зажата ли CTRL
+            bool isCtrlPressed = Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl);
             
-            // Устанавливаем цвет кисти в зависимости от модели
-            if (isOHLCModel)
+            // Торговый штрих (белый) только если CTRL зажата И это OHLC модель
+            isControlPressedAtStrokeStart = isOHLCModel && isCtrlPressed;
+            
+            // Устанавливаем цвет кисти в зависимости от модели и CTRL
+            if (isControlPressedAtStrokeStart)
             {
                 DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
-                Logger.LogInfo($"StylusDown: OHLC model detected (Y={position.Y} < {MACD_AREA_THRESHOLD}) - setting brush to White for trading stroke");
+                Logger.LogInfo($"StylusDown: OHLC model detected (Y={position.Y} < {MACD_AREA_THRESHOLD}) AND CTRL pressed - setting brush to White for trading stroke");
             }
             else
             {
                 DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
-                Logger.LogInfo($"StylusDown: MACD model detected (Y={position.Y} >= {MACD_AREA_THRESHOLD}) - setting brush to Yellow for simple stroke");
+                Logger.LogInfo($"StylusDown: {(isOHLCModel ? "OHLC model but CTRL not pressed" : "MACD model")} (Y={position.Y}) - setting brush to Yellow for simple stroke");
             }
             
-            Logger.LogInfo($"StylusDown: Model determined: {(isOHLCModel ? "OHLC (trading)" : "MACD (non-trading)")} at {position}");
+            Logger.LogInfo($"StylusDown: Model determined: {(isControlPressedAtStrokeStart ? "OHLC (trading)" : "MACD (non-trading)")} at {position}, CTRL pressed: {isCtrlPressed}");
         }
         
         private void DrawingCanvas_StylusMove(object sender, System.Windows.Input.StylusEventArgs e)
@@ -572,22 +584,25 @@ namespace ScreenCaptureApp
             var position = e.GetTouchPoint(DrawingCanvas).Position;
             bool isOHLCModel = position.Y < MACD_AREA_THRESHOLD;
             
-            // Для OHLC модели - торговый штрих (белый), для MACD - не торговый (желтый)
-            isControlPressedAtStrokeStart = isOHLCModel;
+            // Проверяем, зажата ли CTRL
+            bool isCtrlPressed = Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl);
             
-            // Устанавливаем цвет кисти в зависимости от модели
-            if (isOHLCModel)
+            // Торговый штрих (белый) только если CTRL зажата И это OHLC модель
+            isControlPressedAtStrokeStart = isOHLCModel && isCtrlPressed;
+            
+            // Устанавливаем цвет кисти в зависимости от модели и CTRL
+            if (isControlPressedAtStrokeStart)
             {
                 DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
-                Logger.LogInfo($"PreviewTouchDown: OHLC model detected (Y={position.Y} < {MACD_AREA_THRESHOLD}) - setting brush to White for trading stroke");
+                Logger.LogInfo($"PreviewTouchDown: OHLC model detected (Y={position.Y} < {MACD_AREA_THRESHOLD}) AND CTRL pressed - setting brush to White for trading stroke");
             }
             else
             {
                 DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
-                Logger.LogInfo($"PreviewTouchDown: MACD model detected (Y={position.Y} >= {MACD_AREA_THRESHOLD}) - setting brush to Yellow for simple stroke");
+                Logger.LogInfo($"PreviewTouchDown: {(isOHLCModel ? "OHLC model but CTRL not pressed" : "MACD model")} (Y={position.Y}) - setting brush to Yellow for simple stroke");
             }
             
-            Logger.LogInfo($"PreviewTouchDown: Model determined: {(isOHLCModel ? "OHLC (trading)" : "MACD (non-trading)")} at {position}");
+            Logger.LogInfo($"PreviewTouchDown: Model determined: {(isControlPressedAtStrokeStart ? "OHLC (trading)" : "MACD (non-trading)")} at {position}, CTRL pressed: {isCtrlPressed}");
         }
         
         private void DrawingCanvas_TouchDown(object sender, System.Windows.Input.TouchEventArgs e)
@@ -596,22 +611,25 @@ namespace ScreenCaptureApp
             var position = e.GetTouchPoint(DrawingCanvas).Position;
             bool isOHLCModel = position.Y < MACD_AREA_THRESHOLD;
             
-            // Для OHLC модели - торговый штрих (белый), для MACD - не торговый (желтый)
-            isControlPressedAtStrokeStart = isOHLCModel;
+            // Проверяем, зажата ли CTRL
+            bool isCtrlPressed = Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl);
             
-            // Устанавливаем цвет кисти в зависимости от модели
-            if (isOHLCModel)
+            // Торговый штрих (белый) только если CTRL зажата И это OHLC модель
+            isControlPressedAtStrokeStart = isOHLCModel && isCtrlPressed;
+            
+            // Устанавливаем цвет кисти в зависимости от модели и CTRL
+            if (isControlPressedAtStrokeStart)
             {
                 DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
-                Logger.LogInfo($"TouchDown: OHLC model detected (Y={position.Y} < {MACD_AREA_THRESHOLD}) - setting brush to White for trading stroke");
+                Logger.LogInfo($"TouchDown: OHLC model detected (Y={position.Y} < {MACD_AREA_THRESHOLD}) AND CTRL pressed - setting brush to White for trading stroke");
             }
             else
             {
                 DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
-                Logger.LogInfo($"TouchDown: MACD model detected (Y={position.Y} >= {MACD_AREA_THRESHOLD}) - setting brush to Yellow for simple stroke");
+                Logger.LogInfo($"TouchDown: {(isOHLCModel ? "OHLC model but CTRL not pressed" : "MACD model")} (Y={position.Y}) - setting brush to Yellow for simple stroke");
             }
             
-            Logger.LogInfo($"TouchDown: Model determined: {(isOHLCModel ? "OHLC (trading)" : "MACD (non-trading)")} at {position}");
+            Logger.LogInfo($"TouchDown: Model determined: {(isControlPressedAtStrokeStart ? "OHLC (trading)" : "MACD (non-trading)")} at {position}, CTRL pressed: {isCtrlPressed}");
         }
         
         private void DrawingCanvas_TouchMove(object sender, System.Windows.Input.TouchEventArgs e)
@@ -1020,16 +1038,18 @@ namespace ScreenCaptureApp
 
         private void DrawingCanvas_StrokeCollected(object sender, System.Windows.Controls.InkCanvasStrokeCollectedEventArgs e)
         {
-            // Определяем модель по начальной точке штриха для проверки
+            // Используем переменную isControlPressedAtStrokeStart, которая была установлена при начале штриха
+            // Она содержит true только если CTRL была зажата И штрих в области OHLC модели
+            bool isTradingStroke = isControlPressedAtStrokeStart;
+            
             var firstPoint = e.Stroke.StylusPoints[0];
             bool isOHLCModel = firstPoint.Y < MACD_AREA_THRESHOLD;
-            bool isTradingStroke = isOHLCModel;
             
-            Logger.LogInfo($"Stroke collected - Model: {(isOHLCModel ? "OHLC (trading)" : "MACD (non-trading)")}, Y={firstPoint.Y}, isTrading={isTradingStroke}");
+            Logger.LogInfo($"Stroke collected - Model: {(isOHLCModel ? "OHLC" : "MACD")}, Y={firstPoint.Y}, isTrading={isTradingStroke} (CTRL was pressed: {isControlPressedAtStrokeStart})");
             
             if (isTradingStroke)
             {
-                Logger.LogInfo("Trading stroke detected (OHLC model) - processing immediately");
+                Logger.LogInfo("Trading stroke detected (OHLC model AND CTRL pressed) - processing immediately");
                 ProcessTradingStrokeDirectly(e.Stroke);
                 
                 // Keep the stroke on DrawingCanvas after processing
@@ -1037,7 +1057,7 @@ namespace ScreenCaptureApp
             }
             else
             {
-                Logger.LogInfo("Simple stroke detected (MACD model) - saving normally");
+                Logger.LogInfo($"Simple stroke detected ({(isOHLCModel ? "OHLC model but CTRL not pressed" : "MACD model")}) - saving normally");
                 // Handle stroke completion for simple mode
                 var args = new StrokeCompletedEventArgs
                 {
