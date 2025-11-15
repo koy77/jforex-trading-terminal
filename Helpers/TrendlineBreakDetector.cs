@@ -51,18 +51,21 @@ namespace ScreenCaptureApp.Helpers
             List<Point> bestCluster = null;
             using (var analysisBmp = new Bitmap(cropped))
             {
-                List<Point> whitePoints = new List<Point>();
+                // Search for bright green trading stroke pixels (RGB approximately 38, 230, 0)
+                // Bright green: G > 200, R < 50, B < 50
+                List<Point> brightGreenPoints = new List<Point>();
                 for (int y = 0; y < analysisBmp.Height; y++)
                     for (int x = 0; x < analysisBmp.Width; x++)
                     {
                         var pixel = analysisBmp.GetPixel(x, y);
-                        if (pixel.R > 180 && pixel.G > 180 && pixel.B > 180)
-                            whitePoints.Add(new Point(x, y));
+                        // Bright green trading stroke: high green (>200), low red (<50), low blue (<50)
+                        if (pixel.G > 200 && pixel.R < 50 && pixel.B < 50)
+                            brightGreenPoints.Add(new Point(x, y));
                     }
-                Logger.LogDebug($"TrendlineBreakDetector: Found {whitePoints.Count} white pixels");
+                Logger.LogDebug($"TrendlineBreakDetector: Found {brightGreenPoints.Count} bright green trading stroke pixels");
                 List<List<Point>> clusters = new List<List<Point>>();
                 int maxDist = 10;
-                foreach (var pt in whitePoints)
+                foreach (var pt in brightGreenPoints)
                 {
                     bool added = false;
                     foreach (var cluster in clusters)
@@ -109,12 +112,12 @@ namespace ScreenCaptureApp.Helpers
                 }
                 if (bestCluster == null)
                 {
-                    Logger.LogInfo("TrendlineBreakDetector: No white line cluster detected");
+                    Logger.LogInfo("TrendlineBreakDetector: No bright green trading stroke cluster detected");
                     if (!string.IsNullOrEmpty(saveDebugPath))
                         SaveDebugVisualization(cropped, debugPoints, new Emgu.CV.Structure.LineSegment2D(new System.Drawing.Point(0,0), new System.Drawing.Point(0,0)), saveDebugPath);
                     return TrendlineBreakResult.NoTrendline;
                 }
-                Logger.LogDebug($"TrendlineBreakDetector: Selected white line from ({bestP1.X},{bestP1.Y}) to ({bestP2.X},{bestP2.Y})");
+                Logger.LogDebug($"TrendlineBreakDetector: Selected bright green trading stroke from ({bestP1.X},{bestP1.Y}) to ({bestP2.X},{bestP2.Y})");
                 var trendline = new Emgu.CV.Structure.LineSegment2D(bestP1, bestP2);
                 var left = bestP1.X < bestP2.X ? bestP1 : bestP2;
                 var right = bestP1.X < bestP2.X ? bestP2 : bestP1;
@@ -229,8 +232,8 @@ namespace ScreenCaptureApp.Helpers
             using (var vis = new Bitmap(cropped))
             using (var g = Graphics.FromImage(vis))
             {
-                // Линия тренда
-                g.DrawLine(new Pen(Color.White, 2), trendline.P1, trendline.P2);
+                // Линия тренда (bright green for trading stroke)
+                g.DrawLine(new Pen(Color.FromArgb(38, 230, 0), 2), trendline.P1, trendline.P2);
                 
                 // Определяем направление тренда для смещения зон
                 var left = trendline.P1.X < trendline.P2.X ? trendline.P1 : trendline.P2;
@@ -313,7 +316,29 @@ namespace ScreenCaptureApp.Helpers
 
         private bool IsGreen(System.Drawing.Color pixel)
         {
-            return pixel.G > 130 && pixel.R < 100 && pixel.B < 100;
+            // First, exclude bright green trading stroke pixels (RGB ~38, 230, 0) to avoid false breakouts
+            // Bright green trading strokes: G > 200, R < 50, B < 50
+            if (pixel.G > 200 && pixel.R < 50 && pixel.B < 50)
+            {
+                // This is a bright green trading stroke pixel, not a candle
+                return false;
+            }
+            
+            // Green candle color: RGB(36, 131, 92) with tolerance
+            // Target color: R=36, G=131, B=92
+            // Allow deviation: ±20 for each channel
+            int targetR = 36;
+            int targetG = 131;
+            int targetB = 92;
+            int tolerance = 20;
+            
+            // Check if pixel is close to the target green candle color
+            bool rMatch = Math.Abs(pixel.R - targetR) <= tolerance;
+            bool gMatch = Math.Abs(pixel.G - targetG) <= tolerance;
+            bool bMatch = Math.Abs(pixel.B - targetB) <= tolerance;
+            
+            // All channels must be within tolerance
+            return rMatch && gMatch && bMatch;
         }
         private bool IsRed(System.Drawing.Color pixel)
         {

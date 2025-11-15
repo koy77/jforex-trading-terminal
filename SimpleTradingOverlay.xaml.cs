@@ -1327,6 +1327,14 @@ namespace ScreenCaptureApp
             }
         }
 
+        /// <summary>
+        /// Получает экземпляр TradingToolbar для внешнего доступа
+        /// </summary>
+        public Controls.TradingToolbar GetTradingToolbar()
+        {
+            return TradingToolbar;
+        }
+
         protected override void OnClosed(EventArgs e)
         {
             // Отписываемся от событий HotkeyService

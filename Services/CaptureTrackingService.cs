@@ -115,10 +115,12 @@ namespace ScreenCaptureApp.Services
             }
             _isProcessing = true;
             var iterationStartTime = DateTime.Now;
+            int capturesCount = 0;
             
             try
             {
                 var captures = _databaseService.GetAllUnfiredAndUnskippedCaptures();
+                capturesCount = captures.Count;
                 // Logger.LogDebug($"CaptureTrackingService: Найдено {captures.Count} неактивированных и не пропущенных capture(ов) для обработки");
                 
                 if(captures.Count > 0)
@@ -202,7 +204,13 @@ namespace ScreenCaptureApp.Services
                 _isProcessing = false;
                 var iterationEndTime = DateTime.Now;
                 var totalProcessingTime = iterationEndTime - iterationStartTime;
-                Logger.LogInfo($"CaptureTrackingService: Итерация трекинга завершена за {totalProcessingTime.TotalMilliseconds:F2} мс");
+                
+                // Only log if there were captures to process
+                if (capturesCount > 0)
+                {
+                    Logger.LogInfo($"CaptureTrackingService: Итерация трекинга завершена за {totalProcessingTime.TotalMilliseconds:F2} мс");
+                }
+                
                 await OnCaptureTrackingIterationEnded();
             }
         }

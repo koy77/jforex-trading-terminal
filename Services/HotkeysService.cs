@@ -28,7 +28,6 @@ namespace ScreenCaptureApp.Services
         public event Action OnCKeyPressed;
         public event Action OnWKeyPressed;
         public event Action OnAKeyPressed;
-        public event Action OnSKeyPressed;
         public event Action OnDKeyPressed;
         public event Action OnFKeyPressed;
         // Symbol hotkey events (1-6)
@@ -44,6 +43,8 @@ namespace ScreenCaptureApp.Services
         public event Action OnRHotkey;
         public event Action OnJHotkey; // JForex integration toggle
         public event Action OnLeftShiftHotkey;
+        public event Action OnBKeyPressed; // Buy trade pattern
+        public event Action OnSKeyPressed; // Sell trade pattern (replaces old OnSKeyPressed)
         // Properties
         public bool IsEnabled { get; private set; } = false;
         
@@ -83,6 +84,7 @@ namespace ScreenCaptureApp.Services
         private const int VK_Z = 0x5A; // Клавиша Z
         private const int VK_J = 0x4A; // Клавиша J
         private const int VK_LSHIFT = 0xA0;
+        private const int VK_B = 0x42; // Клавиша B
 
         // Delegate for the keyboard hook
         private delegate IntPtr LowLevelKeyboardProc(int nCode, IntPtr wParam, IntPtr lParam);
@@ -197,11 +199,6 @@ namespace ScreenCaptureApp.Services
                     Logger.LogDebug("A key detected and service is enabled");
                     OnAKeyPressed?.Invoke();
                 }
-                else if (vkCode == VK_S && IsEnabled)
-                {
-                    Logger.LogDebug("S key detected and service is enabled");
-                    OnSKeyPressed?.Invoke();
-                }
                 else if (vkCode == VK_D && IsEnabled)
                 {
                     Logger.LogDebug("D key detected and service is enabled");
@@ -252,6 +249,20 @@ namespace ScreenCaptureApp.Services
                 {
                     Logger.LogDebug("Right Arrow key detected and service is enabled");
                     OnDKeyPressed?.Invoke();
+                }
+                else if (vkCode == VK_B)
+                {
+                    // B key works regardless of IsEnabled state
+                    Logger.LogDebug("B key detected (trade pattern)");
+                    OnBKeyPressed?.Invoke();
+                }
+                else if (vkCode == VK_S)
+                {
+                    // S key works regardless of IsEnabled state, but check if it's not the old S key handler
+                    // The old S key handler is for movement, so we need to distinguish
+                    // For now, we'll let both handlers work, but the trade pattern takes precedence
+                    Logger.LogDebug("S key detected (trade pattern)");
+                    OnSKeyPressed?.Invoke();
                 }
             }
             

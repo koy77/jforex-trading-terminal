@@ -109,7 +109,7 @@ namespace ScreenCaptureApp
         private const double MACD_AREA_THRESHOLD = 740.0;
         
         // Track if stroke is trading stroke (OHLC model) when stroke starts
-        // true = OHLC model (trading, white color) AND CTRL is pressed, false = MACD model (non-trading, yellow color) OR CTRL not pressed
+        // true = OHLC model (trading, bright green color) AND CTRL is pressed, false = MACD model (non-trading, yellow color) OR CTRL not pressed
         private bool isControlPressedAtStrokeStart = false;
         
         // Monitor index for this Canvas window (0 = primary, 1 = secondary, etc.)
@@ -449,14 +449,15 @@ namespace ScreenCaptureApp
             // Проверяем, зажата ли CTRL
             bool isCtrlPressed = Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl);
             
-            // Торговый штрих (белый) только если CTRL зажата И это OHLC модель
+            // Торговый штрих (ярко-зеленый) только если CTRL зажата И это OHLC модель
             isControlPressedAtStrokeStart = isOHLCModel && isCtrlPressed;
             
             // Устанавливаем цвет кисти в зависимости от модели и CTRL
             if (isControlPressedAtStrokeStart)
             {
-                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
-                Logger.LogInfo($"MouseDown: OHLC model detected (Y={position.Y} < {MACD_AREA_THRESHOLD}) AND CTRL pressed - setting brush to White for trading stroke");
+                // Bright green color for trading strokes: RGB(38, 230, 0)
+                DrawingCanvas.DefaultDrawingAttributes.Color = System.Windows.Media.Color.FromRgb(38, 230, 0);
+                Logger.LogInfo($"MouseDown: OHLC model detected (Y={position.Y} < {MACD_AREA_THRESHOLD}) AND CTRL pressed - setting brush to Bright Green for trading stroke");
             }
             else
             {
@@ -490,14 +491,15 @@ namespace ScreenCaptureApp
             // Проверяем, зажата ли CTRL
             bool isCtrlPressed = Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl);
             
-            // Торговый штрих (белый) только если CTRL зажата И это OHLC модель
+            // Торговый штрих (ярко-зеленый) только если CTRL зажата И это OHLC модель
             isControlPressedAtStrokeStart = isOHLCModel && isCtrlPressed;
             
             // Устанавливаем цвет кисти в зависимости от модели и CTRL
             if (isControlPressedAtStrokeStart)
             {
-                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
-                Logger.LogInfo($"PreviewMouseDown: OHLC model detected (Y={position.Y} < {MACD_AREA_THRESHOLD}) AND CTRL pressed - setting brush to White for trading stroke");
+                // Bright green color for trading strokes: RGB(38, 230, 0)
+                DrawingCanvas.DefaultDrawingAttributes.Color = System.Windows.Media.Color.FromRgb(38, 230, 0);
+                Logger.LogInfo($"PreviewMouseDown: OHLC model detected (Y={position.Y} < {MACD_AREA_THRESHOLD}) AND CTRL pressed - setting brush to Bright Green for trading stroke");
             }
             else
             {
@@ -518,14 +520,15 @@ namespace ScreenCaptureApp
             // Проверяем, зажата ли CTRL
             bool isCtrlPressed = Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl);
             
-            // Торговый штрих (белый) только если CTRL зажата И это OHLC модель
+            // Торговый штрих (ярко-зеленый) только если CTRL зажата И это OHLC модель
             isControlPressedAtStrokeStart = isOHLCModel && isCtrlPressed;
             
             // Устанавливаем цвет кисти в зависимости от модели и CTRL
             if (isControlPressedAtStrokeStart)
             {
-                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
-                Logger.LogInfo($"PreviewStylusDown: OHLC model detected (Y={position.Y} < {MACD_AREA_THRESHOLD}) AND CTRL pressed - setting brush to White for trading stroke");
+                // Bright green color for trading strokes: RGB(38, 230, 0)
+                DrawingCanvas.DefaultDrawingAttributes.Color = System.Windows.Media.Color.FromRgb(38, 230, 0);
+                Logger.LogInfo($"PreviewStylusDown: OHLC model detected (Y={position.Y} < {MACD_AREA_THRESHOLD}) AND CTRL pressed - setting brush to Bright Green for trading stroke");
             }
             else
             {
@@ -545,14 +548,15 @@ namespace ScreenCaptureApp
             // Проверяем, зажата ли CTRL
             bool isCtrlPressed = Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl);
             
-            // Торговый штрих (белый) только если CTRL зажата И это OHLC модель
+            // Торговый штрих (ярко-зеленый) только если CTRL зажата И это OHLC модель
             isControlPressedAtStrokeStart = isOHLCModel && isCtrlPressed;
             
             // Устанавливаем цвет кисти в зависимости от модели и CTRL
             if (isControlPressedAtStrokeStart)
             {
-                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
-                Logger.LogInfo($"StylusDown: OHLC model detected (Y={position.Y} < {MACD_AREA_THRESHOLD}) AND CTRL pressed - setting brush to White for trading stroke");
+                // Bright green color for trading strokes: RGB(38, 230, 0)
+                DrawingCanvas.DefaultDrawingAttributes.Color = System.Windows.Media.Color.FromRgb(38, 230, 0);
+                Logger.LogInfo($"StylusDown: OHLC model detected (Y={position.Y} < {MACD_AREA_THRESHOLD}) AND CTRL pressed - setting brush to Bright Green for trading stroke");
             }
             else
             {
@@ -587,14 +591,15 @@ namespace ScreenCaptureApp
             // Проверяем, зажата ли CTRL
             bool isCtrlPressed = Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl);
             
-            // Торговый штрих (белый) только если CTRL зажата И это OHLC модель
+            // Торговый штрих (ярко-зеленый) только если CTRL зажата И это OHLC модель
             isControlPressedAtStrokeStart = isOHLCModel && isCtrlPressed;
             
             // Устанавливаем цвет кисти в зависимости от модели и CTRL
             if (isControlPressedAtStrokeStart)
             {
-                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
-                Logger.LogInfo($"PreviewTouchDown: OHLC model detected (Y={position.Y} < {MACD_AREA_THRESHOLD}) AND CTRL pressed - setting brush to White for trading stroke");
+                // Bright green color for trading strokes: RGB(38, 230, 0)
+                DrawingCanvas.DefaultDrawingAttributes.Color = System.Windows.Media.Color.FromRgb(38, 230, 0);
+                Logger.LogInfo($"PreviewTouchDown: OHLC model detected (Y={position.Y} < {MACD_AREA_THRESHOLD}) AND CTRL pressed - setting brush to Bright Green for trading stroke");
             }
             else
             {
@@ -614,14 +619,15 @@ namespace ScreenCaptureApp
             // Проверяем, зажата ли CTRL
             bool isCtrlPressed = Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl);
             
-            // Торговый штрих (белый) только если CTRL зажата И это OHLC модель
+            // Торговый штрих (ярко-зеленый) только если CTRL зажата И это OHLC модель
             isControlPressedAtStrokeStart = isOHLCModel && isCtrlPressed;
             
             // Устанавливаем цвет кисти в зависимости от модели и CTRL
             if (isControlPressedAtStrokeStart)
             {
-                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.White;
-                Logger.LogInfo($"TouchDown: OHLC model detected (Y={position.Y} < {MACD_AREA_THRESHOLD}) AND CTRL pressed - setting brush to White for trading stroke");
+                // Bright green color for trading strokes: RGB(38, 230, 0)
+                DrawingCanvas.DefaultDrawingAttributes.Color = System.Windows.Media.Color.FromRgb(38, 230, 0);
+                Logger.LogInfo($"TouchDown: OHLC model detected (Y={position.Y} < {MACD_AREA_THRESHOLD}) AND CTRL pressed - setting brush to Bright Green for trading stroke");
             }
             else
             {
