@@ -85,6 +85,7 @@ namespace ScreenCaptureApp
         public event Action OnTrendlineDrawn;
 
         private string activeSymbol;
+        public string ActiveSymbol => activeSymbol;
         private double selectedRisk = 1.0; // по умолчанию
         private int selectedDuration = 2; // по умолчанию
 

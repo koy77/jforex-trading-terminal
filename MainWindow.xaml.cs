@@ -104,17 +104,54 @@ namespace ScreenCaptureApp
                 hotkeysService.OnSymbolHotkeyPressed4 += () => TriggerSymbolButton(3);
                 hotkeysService.OnSymbolHotkeyPressed5 += () => TriggerSymbolButton(4);
                 hotkeysService.OnSymbolHotkeyPressed6 += () => TriggerSymbolButton(5);
-                hotkeysService.OnQHotkey += () => { 
-                    Logger.LogInfo("[DEBUG] OnQHotkey event in MainWindow - Skipping all tracking captures"); 
-                    var databaseService = ServiceContainer.Instance.GetService<DatabaseService>();
-                    if (databaseService != null)
+                hotkeysService.OnQHotkey += async () => { 
+                    Logger.LogInfo("[DEBUG] OnQHotkey event in MainWindow - Closing all positions for current symbol");
+                    
+                    // Получаем активный символ из текущего CanvasWindow или из activeSymbol
+                    string symbolToClose = null;
+                    
+                    // Сначала проверяем currentCanvasWindow (primary monitor)
+                    if (currentCanvasWindow != null && currentCanvasWindow.IsVisible && !string.IsNullOrEmpty(currentCanvasWindow.ActiveSymbol))
                     {
-                        databaseService.SkipAllTrackingCaptures();
-                        Logger.LogInfo("Q hotkey: All tracking captures marked as skipped");
+                        symbolToClose = currentCanvasWindow.ActiveSymbol;
+                        Logger.LogInfo($"Q hotkey: Using symbol from primary CanvasWindow: {symbolToClose}");
+                    }
+                    // Если нет primary, проверяем secondary
+                    else if (secondaryCanvasWindow != null && secondaryCanvasWindow.IsVisible && !string.IsNullOrEmpty(secondaryCanvasWindow.ActiveSymbol))
+                    {
+                        symbolToClose = secondaryCanvasWindow.ActiveSymbol;
+                        Logger.LogInfo($"Q hotkey: Using symbol from secondary CanvasWindow: {symbolToClose}");
+                    }
+                    // Если CanvasWindow не открыты или нет символа, используем activeSymbol из MainWindow
+                    else if (!string.IsNullOrEmpty(activeSymbol))
+                    {
+                        symbolToClose = activeSymbol;
+                        Logger.LogInfo($"Q hotkey: Using symbol from MainWindow activeSymbol: {symbolToClose}");
+                    }
+                    
+                    if (!string.IsNullOrEmpty(symbolToClose))
+                    {
+                        var mt4SocketService = ServiceContainer.Instance.GetService<Mt4SocketService>();
+                        if (mt4SocketService != null)
+                        {
+                            bool success = await mt4SocketService.ClosePositionsCommand(symbolToClose);
+                            if (success)
+                            {
+                                Logger.LogInfo($"Q hotkey: Successfully closed all positions for symbol {symbolToClose}");
+                            }
+                            else
+                            {
+                                Logger.LogWarning($"Q hotkey: Failed to close positions for symbol {symbolToClose}");
+                            }
+                        }
+                        else
+                        {
+                            Logger.LogWarning("Q hotkey: Mt4SocketService not available");
+                        }
                     }
                     else
                     {
-                        Logger.LogWarning("Q hotkey: DatabaseService not available");
+                        Logger.LogWarning("Q hotkey: No active symbol found to close positions");
                     }
                 };
                 hotkeysService.OnWHotkey += () => { Logger.LogInfo("[DEBUG] OnWHotkey event in MainWindow"); ClickHotkeyButtonByIndex(1); };
