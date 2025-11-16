@@ -30,6 +30,21 @@
                                          Panel.ZIndex="1001"
                                          Visibility="Collapsed" />
         
+        <!-- Trading Mode Indicator Label -->
+        <Label x:Name="TradingModeLabel"
+               Content="TRADING MODE"
+               FontSize="48"
+               FontWeight="Bold"
+               Foreground="#00FF00"
+               Background="#80000000"
+               Padding="20,10"
+               Panel.ZIndex="2000"
+               Visibility="Collapsed">
+            <Label.Effect>
+                <DropShadowEffect Color="Black" Direction="315" ShadowDepth="3" BlurRadius="5" Opacity="0.8"/>
+            </Label.Effect>
+        </Label>
+        
         <!-- Yellow Trading Pattern Rectangle -->
         <Rectangle x:Name="TradingPatternRectangle" 
                    Stroke="Yellow" 

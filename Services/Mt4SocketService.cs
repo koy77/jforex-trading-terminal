@@ -306,10 +306,10 @@ namespace ScreenCaptureApp.Services
         /// <param name="tradeType">Тип сделки ("buy" или "sell")</param>
         /// <param name="entryPrice">Цена входа</param>
         /// <param name="stopLossPrice">Цена стоп-лосса</param>
-        /// <param name="risk">Риск (размер позиции)<
-        /// /param>
+        /// <param name="risk">Риск (размер позиции)</param>
+        /// <param name="takeProfit">Take Profit ("1x", "2x", "3x", "inf" или null)</param>
         /// <returns>True если команда отправлена успешно, иначе False</returns>
-        public async Task<bool> SendNewOrderCommand(string symbol, string tradeType, double entryPrice, double stopLossPrice, double risk)
+        public async Task<bool> SendNewOrderCommand(string symbol, string tradeType, double entryPrice, double stopLossPrice, double risk, string takeProfit = null)
         {
             string command="";
             try
@@ -325,10 +325,18 @@ namespace ScreenCaptureApp.Services
                 // Определяем команду в зависимости от типа операции
                 command = tradeType.ToLower() == "buy" ? "pending_buy" : "pending_sell";
                 
-                // Формируем команду без поля type
-                string json = $"{{\"cmd\":\"{command}\",\"symbol\":\"{symbol}\",\"entry_price\":{entryPriceFormatted},\"stop_loss\":{stopLossPriceFormatted},\"risk\":{risk}}}";
+                // Формируем команду с опциональным полем take_profit
+                string json;
+                if (!string.IsNullOrEmpty(takeProfit))
+                {
+                    json = $"{{\"cmd\":\"{command}\",\"symbol\":\"{symbol}\",\"entry_price\":{entryPriceFormatted},\"stop_loss\":{stopLossPriceFormatted},\"risk\":{risk},\"take_profit\":\"{takeProfit}\"}}";
+                }
+                else
+                {
+                    json = $"{{\"cmd\":\"{command}\",\"symbol\":\"{symbol}\",\"entry_price\":{entryPriceFormatted},\"stop_loss\":{stopLossPriceFormatted},\"risk\":{risk}}}";
+                }
 
-                Logger.LogTagInfo("MT4SocketService", $"Sending {command} command: {symbol} Entry:{entryPriceFormatted} SL:{stopLossPriceFormatted} Risk:{risk}");
+                Logger.LogTagInfo("MT4SocketService", $"Sending {command} command: {symbol} Entry:{entryPriceFormatted} SL:{stopLossPriceFormatted} Risk:{risk} TP:{takeProfit ?? "none"}");
 
                 // Добавляем CRLF как в breakout командах
                 json += "\r\n";

@@ -4,11 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="280" d:DesignWidth="150">
+             d:DesignHeight="350" d:DesignWidth="180">
     
     <Border Background="#2D2D30" BorderBrush="#3F3F46" BorderThickness="1" CornerRadius="5">
         <Grid Margin="10">
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -37,6 +38,18 @@
                 <Button x:Name="Risk30Button" Content="30" Tag="30" Width="30" Height="25" Margin="2" 
                         Background="#4A4A4A" Foreground="White" Click="RiskButton_Click"/>
             </StackPanel>
+            
+            <!-- Кнопки Take Profit -->
+            <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,5">
+                <Button x:Name="TP1xButton" Content="1x" Tag="1x" Width="35" Height="25" Margin="2" 
+                        Background="#4A4A4A" Foreground="White" Click="TPButton_Click"/>
+                <Button x:Name="TP2xButton" Content="2x" Tag="2x" Width="35" Height="25" Margin="2" 
+                        Background="#4A4A4A" Foreground="White" Click="TPButton_Click"/>
+                <Button x:Name="TP3xButton" Content="3x" Tag="3x" Width="35" Height="25" Margin="2" 
+                        Background="#4A4A4A" Foreground="White" Click="TPButton_Click"/>
+                <Button x:Name="TPInfButton" Content="inf" Tag="inf" Width="35" Height="25" Margin="2" 
+                        Background="#4A4A4A" Foreground="White" Click="TPButton_Click"/>
+            </StackPanel>
 
             
                         <!-- Place Sell (красным) -->
@@ -58,7 +71,7 @@
            
             
             <!-- Place Buy (синим) -->
-            <TextBlock Grid.Row="4" 
+            <TextBlock Grid.Row="5" 
                        Text="Place Buy stop loss below" 
                        Foreground="#74B9FF" 
                        FontWeight="Bold" 

@@ -10,10 +10,12 @@ namespace ScreenCaptureApp.Controls
     public partial class TradePriceLevelControl : UserControl
     {
         public event EventHandler<double> RiskChanged;
+        public event EventHandler<string> TakeProfitChanged;
 
         private string _symbol;
         private double _entryPrice;
         private double _selectedRisk = 1; // По умолчанию риск 1
+        private string _selectedTakeProfit = "1x"; // По умолчанию TP 1x
 
         public TradePriceLevelControl()
         {
@@ -21,12 +23,20 @@ namespace ScreenCaptureApp.Controls
             
             // Устанавливаем начальное состояние - кнопка с риском 1 активна
             HighlightSelectedRiskButton(_selectedRisk);
+            
+            // Устанавливаем начальное состояние - кнопка TP 1x активна
+            HighlightSelectedTPButton(_selectedTakeProfit);
         }
 
         /// <summary>
         /// Получает выбранный риск
         /// </summary>
         public double SelectedRisk => _selectedRisk;
+
+        /// <summary>
+        /// Получает выбранный Take Profit
+        /// </summary>
+        public string SelectedTakeProfit => _selectedTakeProfit;
 
         /// <summary>
         /// Устанавливает риск извне (например, из Trading Toolbar)
@@ -36,6 +46,16 @@ namespace ScreenCaptureApp.Controls
         {
             _selectedRisk = risk;
             HighlightSelectedRiskButton(risk);
+        }
+
+        /// <summary>
+        /// Устанавливает Take Profit извне
+        /// </summary>
+        /// <param name="takeProfit">Значение Take Profit ("1x", "2x", "3x", "inf")</param>
+        public void SetTakeProfit(string takeProfit)
+        {
+            _selectedTakeProfit = takeProfit;
+            HighlightSelectedTPButton(takeProfit);
         }
 
         /// <summary>
@@ -97,6 +117,22 @@ namespace ScreenCaptureApp.Controls
             }
         }
 
+        private void TPButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button && button.Tag is string tpValue)
+            {
+                _selectedTakeProfit = tpValue;
+                
+                // Подсвечиваем выбранную кнопку
+                HighlightSelectedTPButton(tpValue);
+                
+                // Вызываем событие изменения Take Profit
+                TakeProfitChanged?.Invoke(this, tpValue);
+                
+                Logger.LogTagInfo("TradePriceLevelControl", $"Take Profit changed to {tpValue}");
+            }
+        }
+
         /// <summary>
         /// Подсвечивает выбранную кнопку риска
         /// </summary>
@@ -134,6 +170,44 @@ namespace ScreenCaptureApp.Controls
                         button.Background = new System.Windows.Media.SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#4A4A4A"));
                         button.Foreground = System.Windows.Media.Brushes.White;
                     }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Подсвечивает выбранную кнопку Take Profit
+        /// </summary>
+        /// <param name="takeProfit">Выбранный Take Profit</param>
+        public void HighlightSelectedTPButton(string takeProfit)
+        {
+            if (Dispatcher.CheckAccess())
+            {
+                UpdateTPButtonColors(takeProfit);
+            }
+            else
+            {
+                Dispatcher.Invoke(() => UpdateTPButtonColors(takeProfit));
+            }
+        }
+
+        /// <summary>
+        /// Обновляет цвета кнопок Take Profit (выполняется в UI потоке)
+        /// </summary>
+        /// <param name="takeProfit">Выбранный Take Profit</param>
+        private void UpdateTPButtonColors(string takeProfit)
+        {
+            var tpButtons = FindVisualChildren<Button>(this).Where(b => b.Tag is string && (b.Tag.ToString() == "1x" || b.Tag.ToString() == "2x" || b.Tag.ToString() == "3x" || b.Tag.ToString() == "inf"));
+            foreach (var button in tpButtons)
+            {
+                if (button.Tag?.ToString() == takeProfit)
+                {
+                    button.Background = new System.Windows.Media.SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#FFA500"));
+                    button.Foreground = System.Windows.Media.Brushes.White;
+                }
+                else
+                {
+                    button.Background = new System.Windows.Media.SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#4A4A4A"));
+                    button.Foreground = System.Windows.Media.Brushes.White;
                 }
             }
         }

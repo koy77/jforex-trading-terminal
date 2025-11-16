@@ -414,7 +414,11 @@ namespace ScreenCaptureApp
                 }
             };
 
-
+            // Обработчик изменения Take Profit в Price Level Control
+            TradePriceLevelControl.TakeProfitChanged += (sender, takeProfit) =>
+            {
+                Logger.LogTagInfo("SimpleTradingOverlay", $"Price Level Control Take Profit changed to {takeProfit}");
+            };
         }
 
         private void SetupHttpServerEvents()
@@ -685,21 +689,25 @@ namespace ScreenCaptureApp
                 
                 // Получаем риск из тулбара
                 double risk = TradingToolbar.SelectedRisk;
+                
+                // Получаем Take Profit из TradePriceLevelControl
+                string takeProfit = TradePriceLevelControl?.SelectedTakeProfit;
 
-                Logger.LogTagInfo("SimpleTradingOverlay", $"Sending trade command to MT4: {tradeType} {_currentTradeSymbol} Entry:{_entryPrice} SL:{_stopLossPrice} Risk:{risk}");
+                Logger.LogTagInfo("SimpleTradingOverlay", $"Sending trade command to MT4: {tradeType} {_currentTradeSymbol} Entry:{_entryPrice} SL:{_stopLossPrice} Risk:{risk} TP:{takeProfit ?? "none"}");
 
                 // Показываем toast сообщение о создании новой сделки
                 var toastNotifyService = ServiceContainer.Instance.GetService<ToastNotifyService>();
                 if (toastNotifyService != null)
                 {
                     string tradeTypeDisplay = tradeType.ToUpper();
-                    string toastMessage = $"Сделка {tradeTypeDisplay} от {_entryPrice:F5} с риском {risk} отправлена";
+                    string tpText = !string.IsNullOrEmpty(takeProfit) ? $" TP:{takeProfit}" : "";
+                    string toastMessage = $"Сделка {tradeTypeDisplay} от {_entryPrice:F5} с риском {risk}{tpText} отправлена";
                     toastNotifyService.ShowToast(toastMessage, ToastType.Info, 4000);
                     Logger.LogTagInfo("SimpleTradingOverlay", $"Trade creation toast shown: {toastMessage}");
                 }
 
                 // Используем новый метод SendNewOrderCommand из MT4SocketService
-                bool result = await mt4SocketService.SendNewOrderCommand(_currentTradeSymbol, tradeType, _entryPrice, _stopLossPrice, risk);
+                bool result = await mt4SocketService.SendNewOrderCommand(_currentTradeSymbol, tradeType, _entryPrice, _stopLossPrice, risk, takeProfit);
 
                 if (result)
                 {
@@ -845,6 +853,10 @@ namespace ScreenCaptureApp
                 SetupTradingPatternMouseHook();
 
                 _isTradingPatternActive = true;
+                
+                // Show trading mode indicator
+                ShowTradingModeIndicator();
+                
                 Logger.LogTagInfo("SimpleTradingOverlay", $"Trading pattern started - Type: {tradeType}. Waiting for mouse click to determine target window...");
             }
             catch (Exception ex)
@@ -881,6 +893,9 @@ namespace ScreenCaptureApp
                     Dispatcher.Invoke(() => _showCanvasWindow());
                 }
 
+                // Hide trading mode indicator
+                HideTradingModeIndicator();
+
                 Logger.LogTagInfo("SimpleTradingOverlay", "Trading pattern completed successfully");
             }
             catch (Exception ex)
@@ -916,6 +931,9 @@ namespace ScreenCaptureApp
                     Logger.LogTagInfo("SimpleTradingOverlay", "Restoring Canvas Window");
                     Dispatcher.Invoke(() => _showCanvasWindow());
                 }
+
+                // Hide trading mode indicator
+                HideTradingModeIndicator();
 
                 Logger.LogTagInfo("SimpleTradingOverlay", "Trading pattern canceled");
             }
@@ -1612,6 +1630,58 @@ namespace ScreenCaptureApp
             catch (Exception ex)
             {
                 Logger.LogTagError("SimpleTradingOverlay", "Error positioning TradePriceLevelControl", ex);
+            }
+        }
+
+        /// <summary>
+        /// Показывает индикатор торгового режима
+        /// </summary>
+        private void ShowTradingModeIndicator()
+        {
+            try
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    // Позиционируем индикатор вверху по центру экрана
+                    var screen = System.Windows.Forms.Screen.PrimaryScreen;
+                    double screenWidth = screen.Bounds.Width;
+                    
+                    // Центрируем горизонтально
+                    TradingModeLabel.UpdateLayout();
+                    double labelWidth = TradingModeLabel.ActualWidth > 0 ? TradingModeLabel.ActualWidth : 400;
+                    double centerX = (screenWidth - labelWidth) / 2;
+                    
+                    Canvas.SetLeft(TradingModeLabel, centerX);
+                    Canvas.SetTop(TradingModeLabel, 0); // Прижато к верхней границе экрана
+                    
+                    // Показываем индикатор
+                    TradingModeLabel.Visibility = Visibility.Visible;
+                    
+                    Logger.LogTagInfo("SimpleTradingOverlay", "Trading mode indicator shown");
+                });
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("SimpleTradingOverlay", "Error showing trading mode indicator", ex);
+            }
+        }
+
+        /// <summary>
+        /// Скрывает индикатор торгового режима
+        /// </summary>
+        private void HideTradingModeIndicator()
+        {
+            try
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    TradingModeLabel.Visibility = Visibility.Collapsed;
+                    Logger.LogTagInfo("SimpleTradingOverlay", "Trading mode indicator hidden");
+                });
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("SimpleTradingOverlay", "Error hiding trading mode indicator", ex);
             }
         }
 
