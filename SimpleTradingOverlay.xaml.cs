@@ -29,6 +29,9 @@ namespace ScreenCaptureApp
         private const int WM_LBUTTONDOWN = 0x0201;
         private const int WM_LBUTTONUP = 0x0202;
         
+        // Trading pattern constants
+        private const int VK_P = 0x50;
+        
         // Keyboard message constants
         private const int WM_KEYDOWN = 0x0100;
         private const int WM_KEYUP = 0x0101;
@@ -68,6 +71,9 @@ namespace ScreenCaptureApp
 
         [DllImport("user32.dll")]
         private static extern bool SetForegroundWindow(IntPtr hWnd);
+        
+        [DllImport("user32.dll")]
+        private static extern bool ScreenToClient(IntPtr hWnd, ref POINT lpPoint);
 
         [DllImport("user32.dll")]
         private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
@@ -109,7 +115,7 @@ namespace ScreenCaptureApp
         private int _lastMouseX = 0;
         private int _lastMouseY = 0;
         // Управление показом Trading Toolbar
-        private bool _tradingToolbarEnabled = true;
+        private bool _tradingToolbarEnabled = false; // Trading Toolbar disabled by default
         
         // Флаг для различения пользовательского и сервисного нажатия Escape
         private bool _isServiceEscapeSending = false;
@@ -123,9 +129,24 @@ namespace ScreenCaptureApp
         private bool _isWaitingForMouseClick = false;
         private IntPtr _windowHandle = IntPtr.Zero;
         
-        // Состояние для обработки торгового паттерна (S-кнопка)
-        private bool _isWaitingForTradingPattern = false;
+        // Состояние для обработки торгового паттерна (TAB-кнопка)
+        private bool _isTradingPatternActive = false;
+        private string _tradingPatternTradeType = ""; // "buy" or "sell"
         private int _tradingPatternClickCount = 0;
+        private double _tradingPatternEntryPrice = 0;
+        private double _tradingPatternStopLossPrice = 0;
+        private string _tradingPatternSymbol = "";
+        private IntPtr _tradingPatternTargetWindowHandle = IntPtr.Zero;
+        private bool _wasCanvasWindowVisible = false;
+        
+        // Mouse hook for trading pattern
+        private IntPtr _tradingPatternMouseHook = IntPtr.Zero;
+        private LowLevelMouseProc _tradingPatternMouseProc;
+        
+        // Delegates for canvas window management (optional)
+        private Func<bool> _isCanvasWindowVisible;
+        private Action _hideCanvasWindow;
+        private Action _showCanvasWindow;
         
         public SimpleTradingOverlay()
         {
@@ -150,6 +171,9 @@ namespace ScreenCaptureApp
             // Подписка на события HotkeyService
             SetupHotkeyServiceEvents();
             
+            // Initialize trading pattern mouse hook delegate
+            _tradingPatternMouseProc = TradingPatternMouseHookCallback;
+            
             // Настройка событий TradeRectangleControl
             SetupTradeRectangleControlEvents();
             
@@ -163,12 +187,16 @@ namespace ScreenCaptureApp
             // Установка символа по умолчанию
             TradingToolbar.SetSymbol("UNKNOWN");
 
-            // Установка глобального хука мыши и показ окна только если включено
-            if (_tradingToolbarEnabled)
-            {
-                SetupMouseHook();
-                ShowTradingToolbar();
-            }
+            // Hide Trading Toolbar (but keep window visible for other controls)
+            TradingToolbar.Visibility = Visibility.Collapsed;
+            
+            // Show window and position it on primary screen (needed for TradePriceLevelControl and TradeRectangleControl)
+            var screen = System.Windows.Forms.Screen.PrimaryScreen;
+            this.Left = screen.Bounds.Left;
+            this.Top = screen.Bounds.Top;
+            this.Width = screen.Bounds.Width;
+            this.Height = screen.Bounds.Height;
+            this.Show();
         }
 
         private void InitializeWindow()
@@ -410,15 +438,25 @@ namespace ScreenCaptureApp
             {
                 _hotkeysService.OnEscapeKeyPressed += OnEscapeKeyPressed;
                 _hotkeysService.OnFKeyPressed += OnFKeyPressed;
-                _hotkeysService.OnSKeyPressed += OnSKeyPressed;
+                _hotkeysService.OnTabKeyPressed += OnTabKeyPressed;
                 // _hotkeysService.OnCKeyPressed += OnCKeyPressed;
                 
-                Logger.LogInfo("SimpleTradingOverlay subscribed to HotkeyService events (Escape, F, S, and C)");
+                Logger.LogInfo("SimpleTradingOverlay subscribed to HotkeyService events (Escape, F, Tab, and C)");
             }
             else
             {
                 Logger.LogWarning("HotkeyService not found, cannot subscribe to hotkey events");
             }
+        }
+        
+        /// <summary>
+        /// Sets delegates for canvas window management (optional)
+        /// </summary>
+        public void SetCanvasWindowDelegates(Func<bool> isCanvasWindowVisible, Action hideCanvasWindow, Action showCanvasWindow)
+        {
+            _isCanvasWindowVisible = isCanvasWindowVisible;
+            _hideCanvasWindow = hideCanvasWindow;
+            _showCanvasWindow = showCanvasWindow;
         }
 
         private async void HttpServerService_NewJForexChartObject(object sender, JForexChartObjectData jforexChartObject)
@@ -451,6 +489,9 @@ namespace ScreenCaptureApp
 
                 // Обрабатываем JForex объект в зависимости от типа
                 ProcessJForexChartObject(jforexChartObject);
+                
+                // Also process for trading pattern if active
+                ProcessTradingPatternJForexChartObject(jforexChartObject);
             }
             catch (Exception ex)
             {
@@ -588,6 +629,17 @@ namespace ScreenCaptureApp
                         Right = screen.Bounds.Right, 
                         Bottom = screen.Bounds.Bottom 
                     };
+                    
+                    // Убеждаемся, что окно показано (даже если Trading Toolbar отключен)
+                    if (!this.IsVisible)
+                    {
+                        this.Left = screen.Bounds.Left;
+                        this.Top = screen.Bounds.Top;
+                        this.Width = screen.Bounds.Width;
+                        this.Height = screen.Bounds.Height;
+                        this.Show();
+                    }
+                    
                     PositionTradeRectangleControl(screenRect);
                     
                     // Показываем контрол
@@ -726,11 +778,10 @@ namespace ScreenCaptureApp
             }
 
             // Отменяем торговый паттерн если он активен
-            if (_isWaitingForTradingPattern)
+            if (_isTradingPatternActive)
             {
-                Logger.LogTagInfo("SimpleTradingOverlay", "Escape key pressed - canceling trading pattern capture");
-                _isWaitingForTradingPattern = false;
-                _tradingPatternClickCount = 0;
+                Logger.LogTagInfo("SimpleTradingOverlay", "Escape key pressed - canceling trading pattern");
+                CancelTradingPattern();
             }
         }
 
@@ -744,15 +795,407 @@ namespace ScreenCaptureApp
             _isWaitingForMouseClick = true;
         }
 
-        public void OnSKeyPressed()
+        public void OnTabKeyPressed()
         {
             if (!_isEnabled) return;
 
-            Logger.LogTagInfo("SimpleTradingOverlay", "S key pressed via HotkeyService - starting trading pattern capture");
+            Logger.LogTagInfo("SimpleTradingOverlay", "Tab key pressed via HotkeyService - starting trading pattern mode");
+            
+            // Determine trade type based on entry and stop loss prices (if available)
+            // For now, we'll use a toggle or determine from current state
+            // This will be handled by the user selecting buy/sell after TAB
+            // For simplicity, we'll start with "buy" and allow switching
+            StartTradingPattern("buy");
+        }
+        
+        /// <summary>
+        /// Starts the trading pattern mode
+        /// </summary>
+        private void StartTradingPattern(string tradeType)
+        {
+            try
+            {
+                if (_isTradingPatternActive)
+                {
+                    Logger.LogTagWarning("SimpleTradingOverlay", "Trading pattern already active, canceling previous one");
+                    CancelTradingPattern();
+                }
 
-            // Активируем режим ожидания торгового паттерна (два клика мыши)
-            _isWaitingForTradingPattern = true;
-            _tradingPatternClickCount = 0;
+                _tradingPatternTradeType = tradeType;
+                _tradingPatternClickCount = 0;
+                _tradingPatternEntryPrice = 0;
+                _tradingPatternStopLossPrice = 0;
+                _tradingPatternSymbol = "";
+
+                // Check if Canvas Window is visible
+                if (_isCanvasWindowVisible != null)
+                {
+                    _wasCanvasWindowVisible = _isCanvasWindowVisible();
+                    if (_wasCanvasWindowVisible && _hideCanvasWindow != null)
+                    {
+                        Logger.LogTagInfo("SimpleTradingOverlay", "Canvas Window is visible, hiding it");
+                        Dispatcher.Invoke(() => _hideCanvasWindow());
+                    }
+                }
+
+                // Target window will be determined automatically on mouse click
+                _tradingPatternTargetWindowHandle = IntPtr.Zero;
+
+                // Setup mouse hook for trading pattern
+                SetupTradingPatternMouseHook();
+
+                _isTradingPatternActive = true;
+                Logger.LogTagInfo("SimpleTradingOverlay", $"Trading pattern started - Type: {tradeType}. Waiting for mouse click to determine target window...");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("SimpleTradingOverlay", $"Error starting trading pattern: {ex.Message}", ex);
+            }
+        }
+
+        /// <summary>
+        /// Completes the trading pattern (both prices are set)
+        /// </summary>
+        private void CompleteTradingPattern()
+        {
+            try
+            {
+                if (!_isTradingPatternActive)
+                    return;
+
+                // Remove mouse hook
+                RemoveTradingPatternMouseHook();
+
+                // Reset state
+                _isTradingPatternActive = false;
+                _tradingPatternClickCount = 0;
+                _tradingPatternEntryPrice = 0;
+                _tradingPatternStopLossPrice = 0;
+                _tradingPatternSymbol = "";
+                _tradingPatternTargetWindowHandle = IntPtr.Zero;
+
+                // Restore Canvas Window if it was visible
+                if (_wasCanvasWindowVisible && _showCanvasWindow != null)
+                {
+                    Logger.LogTagInfo("SimpleTradingOverlay", "Restoring Canvas Window after pattern completion");
+                    Dispatcher.Invoke(() => _showCanvasWindow());
+                }
+
+                Logger.LogTagInfo("SimpleTradingOverlay", "Trading pattern completed successfully");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("SimpleTradingOverlay", $"Error completing trading pattern: {ex.Message}", ex);
+            }
+        }
+
+        /// <summary>
+        /// Cancels the trading pattern
+        /// </summary>
+        private void CancelTradingPattern()
+        {
+            try
+            {
+                if (!_isTradingPatternActive)
+                    return;
+
+                // Remove mouse hook
+                RemoveTradingPatternMouseHook();
+
+                // Reset state
+                _isTradingPatternActive = false;
+                _tradingPatternClickCount = 0;
+                _tradingPatternEntryPrice = 0;
+                _tradingPatternStopLossPrice = 0;
+                _tradingPatternSymbol = "";
+                _tradingPatternTargetWindowHandle = IntPtr.Zero;
+
+                // Restore Canvas Window if it was visible
+                if (_wasCanvasWindowVisible && _showCanvasWindow != null)
+                {
+                    Logger.LogTagInfo("SimpleTradingOverlay", "Restoring Canvas Window");
+                    Dispatcher.Invoke(() => _showCanvasWindow());
+                }
+
+                Logger.LogTagInfo("SimpleTradingOverlay", "Trading pattern canceled");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("SimpleTradingOverlay", $"Error canceling trading pattern: {ex.Message}", ex);
+            }
+        }
+
+        /// <summary>
+        /// Sets up the mouse hook to track clicks for trading pattern
+        /// </summary>
+        private void SetupTradingPatternMouseHook()
+        {
+            try
+            {
+                if (_tradingPatternMouseHook != IntPtr.Zero)
+                {
+                    UnhookWindowsHookEx(_tradingPatternMouseHook);
+                }
+
+                _tradingPatternMouseHook = SetWindowsHookEx(WH_MOUSE_LL, Marshal.GetFunctionPointerForDelegate(_tradingPatternMouseProc), GetModuleHandle(null), 0);
+
+                if (_tradingPatternMouseHook == IntPtr.Zero)
+                {
+                    Logger.LogTagError("SimpleTradingOverlay", "Failed to set trading pattern mouse hook");
+                }
+                else
+                {
+                    Logger.LogTagInfo("SimpleTradingOverlay", "Trading pattern mouse hook set up successfully");
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("SimpleTradingOverlay", $"Error setting up trading pattern mouse hook: {ex.Message}", ex);
+            }
+        }
+
+        /// <summary>
+        /// Removes the trading pattern mouse hook
+        /// </summary>
+        private void RemoveTradingPatternMouseHook()
+        {
+            try
+            {
+                if (_tradingPatternMouseHook != IntPtr.Zero)
+                {
+                    UnhookWindowsHookEx(_tradingPatternMouseHook);
+                    _tradingPatternMouseHook = IntPtr.Zero;
+                    Logger.LogTagInfo("SimpleTradingOverlay", "Trading pattern mouse hook removed");
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("SimpleTradingOverlay", $"Error removing trading pattern mouse hook: {ex.Message}", ex);
+            }
+        }
+
+        /// <summary>
+        /// Mouse hook callback to handle clicks for trading pattern
+        /// </summary>
+        private IntPtr TradingPatternMouseHookCallback(int nCode, IntPtr wParam, IntPtr lParam)
+        {
+            if (nCode >= 0 && wParam == (IntPtr)WM_LBUTTONDOWN && _isTradingPatternActive)
+            {
+                try
+                {
+                    MSLLHOOKSTRUCT hookStruct = (MSLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(MSLLHOOKSTRUCT));
+                    POINT clickPoint = hookStruct.pt;
+
+                    // Get window under cursor automatically
+                    IntPtr clickedWindow = WindowFromPoint(new System.Drawing.Point(clickPoint.X, clickPoint.Y));
+
+                    if (clickedWindow == IntPtr.Zero)
+                    {
+                        Logger.LogTagWarning("SimpleTradingOverlay", $"No window found at click point ({clickPoint.X}, {clickPoint.Y})");
+                        return CallNextHookEx(_tradingPatternMouseHook, nCode, wParam, lParam);
+                    }
+
+                    // On first click, set target window and get symbol
+                    if (_tradingPatternTargetWindowHandle == IntPtr.Zero)
+                    {
+                        _tradingPatternTargetWindowHandle = clickedWindow;
+                        
+                        // Try to get symbol from window title
+                        if (_windowManagementService != null)
+                        {
+                            string windowTitle = _windowManagementService.GetWindowTitle(_tradingPatternTargetWindowHandle);
+                            _tradingPatternSymbol = MainHelper.ExtractSymbolFromWindowTitle(_tradingPatternTargetWindowHandle);
+                            if (string.IsNullOrEmpty(_tradingPatternSymbol))
+                            {
+                                Logger.LogTagWarning("SimpleTradingOverlay", $"Could not extract symbol from window title: {windowTitle}");
+                            }
+                            else
+                            {
+                                Logger.LogTagInfo("SimpleTradingOverlay", $"Symbol extracted from window: {_tradingPatternSymbol}");
+                            }
+                        }
+                    }
+
+                    // Only process clicks on the target window
+                    if (clickedWindow == _tradingPatternTargetWindowHandle)
+                    {
+                        Logger.LogTagInfo("SimpleTradingOverlay", $"Mouse click detected on target window at ({clickPoint.X}, {clickPoint.Y})");
+
+                        // Convert screen coordinates to client coordinates
+                        POINT clientPoint = clickPoint;
+                        ScreenToClient(_tradingPatternTargetWindowHandle, ref clientPoint);
+
+                        // Send P key to window
+                        SendPKeyToWindow(_tradingPatternTargetWindowHandle);
+
+                        // Increment click count
+                        _tradingPatternClickCount++;
+
+                        if (_tradingPatternClickCount == 1)
+                        {
+                            Logger.LogTagInfo("SimpleTradingOverlay", "First click - Entry Level");
+                            // Entry level will be set by the application when it receives the price level event
+                        }
+                        else if (_tradingPatternClickCount == 2)
+                        {
+                            Logger.LogTagInfo("SimpleTradingOverlay", "Second click - Stop Loss Level");
+                            // Stop loss level will be set by the application when it receives the price level event
+                            // After both levels are set, we'll send to MT4 Socket
+                        }
+                    }
+                    else
+                    {
+                        Logger.LogTagDebug("SimpleTradingOverlay", $"Click detected on different window, ignoring (target: {_tradingPatternTargetWindowHandle.ToInt64()}, clicked: {clickedWindow.ToInt64()})");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Logger.LogTagError("SimpleTradingOverlay", $"Error in trading pattern mouse hook callback: {ex.Message}", ex);
+                }
+            }
+
+            return CallNextHookEx(_tradingPatternMouseHook, nCode, wParam, lParam);
+        }
+
+        /// <summary>
+        /// Sends P key to the target window
+        /// </summary>
+        private void SendPKeyToWindow(IntPtr windowHandle)
+        {
+            try
+            {
+                // Bring window to foreground
+                SetForegroundWindow(windowHandle);
+                System.Threading.Thread.Sleep(100);
+
+                // Send P key using PostMessage
+                bool keyDownResult = PostMessage(windowHandle, WM_KEYDOWN, VK_P, 0);
+                System.Threading.Thread.Sleep(50);
+                bool keyUpResult = PostMessage(windowHandle, WM_KEYUP, VK_P, 0);
+
+                if (keyDownResult && keyUpResult)
+                {
+                    Logger.LogTagInfo("SimpleTradingOverlay", $"P key sent successfully to window {windowHandle.ToInt64()}");
+                }
+                else
+                {
+                    Logger.LogTagWarning("SimpleTradingOverlay", $"Failed to send P key to window {windowHandle.ToInt64()}");
+                }
+
+                // Send Escape after delay (as in Python code)
+                Task.Delay(400).ContinueWith(_ =>
+                {
+                    PostMessage(windowHandle, WM_KEYDOWN, VK_ESCAPE, 0);
+                    System.Threading.Thread.Sleep(50);
+                    PostMessage(windowHandle, WM_KEYUP, VK_ESCAPE, 0);
+                    Logger.LogTagInfo("SimpleTradingOverlay", "Escape key sent after P key");
+                });
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("SimpleTradingOverlay", $"Error sending P key to window: {ex.Message}", ex);
+            }
+        }
+        
+        /// <summary>
+        /// Handles JForex chart object received event for trading pattern - called when Entry or Stop Loss level is set
+        /// </summary>
+        private void ProcessTradingPatternJForexChartObject(JForexChartObjectData jforexChartObject)
+        {
+            if (!_isTradingPatternActive)
+                return;
+
+            try
+            {
+                // Check if this is a PriceMarker object
+                if (jforexChartObject.ObjectType != JForexChartObjectType.PriceMarker)
+                    return;
+
+                // Check if symbol matches
+                if (!string.IsNullOrEmpty(_tradingPatternSymbol) && !string.IsNullOrEmpty(jforexChartObject.Symbol))
+                {
+                    if (!_tradingPatternSymbol.Equals(jforexChartObject.Symbol, StringComparison.OrdinalIgnoreCase))
+                    {
+                        Logger.LogTagDebug("SimpleTradingOverlay", $"Symbol mismatch - expected {_tradingPatternSymbol}, got {jforexChartObject.Symbol}");
+                        return;
+                    }
+                }
+
+                double price = Convert.ToDouble(jforexChartObject.Price);
+
+                // First price level sets Entry Price
+                if (_tradingPatternEntryPrice == 0)
+                {
+                    _tradingPatternEntryPrice = price;
+                    Logger.LogTagInfo("SimpleTradingOverlay", $"Trading pattern Entry price set: {_tradingPatternEntryPrice} for symbol {jforexChartObject.Symbol}");
+                }
+                // Second price level sets Stop Loss Price
+                else if (_tradingPatternStopLossPrice == 0)
+                {
+                    _tradingPatternStopLossPrice = price;
+                    Logger.LogTagInfo("SimpleTradingOverlay", $"Trading pattern Stop loss price set: {_tradingPatternStopLossPrice} for symbol {jforexChartObject.Symbol}");
+
+                    // Both levels are set, send to MT4 Socket and complete pattern
+                    if (_tradingPatternEntryPrice > 0 && _tradingPatternStopLossPrice > 0)
+                    {
+                        SendTradingPatternTradeToMt4();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("SimpleTradingOverlay", $"Error handling trading pattern JForex chart object: {ex.Message}", ex);
+            }
+        }
+
+        /// <summary>
+        /// Sends trade data to MT4 Socket for trading pattern
+        /// </summary>
+        private async void SendTradingPatternTradeToMt4()
+        {
+            try
+            {
+                var mt4SocketService = ServiceContainer.Instance.GetService<Mt4SocketService>();
+                if (mt4SocketService == null || !mt4SocketService.IsConnected)
+                {
+                    Logger.LogTagWarning("SimpleTradingOverlay", "MT4 Socket Service is not connected");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(_tradingPatternSymbol) || _tradingPatternEntryPrice <= 0 || _tradingPatternStopLossPrice <= 0)
+                {
+                    Logger.LogTagWarning("SimpleTradingOverlay", "Invalid trade data, cannot send to MT4");
+                    return;
+                }
+
+                // Get risk from settings (default to 1.0 if not available)
+                double risk = TradingToolbar?.SelectedRisk ?? 1.0;
+
+                // Send trade command to MT4
+                bool success = await mt4SocketService.SendNewOrderCommand(
+                    _tradingPatternSymbol,
+                    _tradingPatternTradeType,
+                    _tradingPatternEntryPrice,
+                    _tradingPatternStopLossPrice,
+                    risk
+                );
+
+                if (success)
+                {
+                    Logger.LogTagInfo("SimpleTradingOverlay", $"Trading pattern trade sent to MT4 successfully - {_tradingPatternTradeType} {_tradingPatternSymbol} Entry:{_tradingPatternEntryPrice} SL:{_tradingPatternStopLossPrice}");
+                    
+                    // Complete trading pattern after successful send (both prices are set)
+                    CompleteTradingPattern();
+                }
+                else
+                {
+                    Logger.LogTagError("SimpleTradingOverlay", "Failed to send trading pattern trade to MT4");
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogTagError("SimpleTradingOverlay", $"Error sending trading pattern trade to MT4: {ex.Message}", ex);
+            }
         }
 
         public async void OnCKeyPressed()
@@ -937,25 +1380,6 @@ namespace ScreenCaptureApp
                     // Отправляем Escape через 200 мс в текущее окно Toolbar
                     SendDelayedEscapeToCurrentWindow();
                 }
-                else if (message == WM_LBUTTONDOWN && _isWaitingForTradingPattern)
-                {
-                    // Обрабатываем клик мыши для торгового паттерна
-                    _tradingPatternClickCount++;
-                    Logger.LogTagInfo("SimpleTradingOverlay", $"Trading pattern click {_tradingPatternClickCount} detected");
-                    
-                    if (_tradingPatternClickCount >= 2)
-                    {
-                        // Торговый паттерн завершен
-                        Logger.LogTagInfo("SimpleTradingOverlay", "Trading pattern completed - sending delayed escape");
-                        
-                        // Отключаем режим ожидания торгового паттерна
-                        _isWaitingForTradingPattern = false;
-                        _tradingPatternClickCount = 0;
-                        
-                        // Отправляем Escape через 300 мс в текущее окно
-                        SendDelayedEscapeForTradingPattern();
-                    }
-                }
             }
             
             return CallNextHookEx(mouseHook, nCode, wParam, lParam);
@@ -1125,6 +1549,17 @@ namespace ScreenCaptureApp
                     Right = screen.Bounds.Right, 
                     Bottom = screen.Bounds.Bottom 
                 };
+                
+                // Убеждаемся, что окно показано (даже если Trading Toolbar отключен)
+                if (!this.IsVisible)
+                {
+                    this.Left = screen.Bounds.Left;
+                    this.Top = screen.Bounds.Top;
+                    this.Width = screen.Bounds.Width;
+                    this.Height = screen.Bounds.Height;
+                    this.Show();
+                }
+                
                 // Показываем контрол
                 TradePriceLevelControl.Show();
                 
@@ -1309,18 +1744,21 @@ namespace ScreenCaptureApp
             _tradingToolbarEnabled = enabled;
             if (!enabled)
             {
-                // Скрываем окно и снимаем хук мыши
-                this.Hide();
+                // Скрываем только TradingToolbar, но оставляем окно видимым для других контролов
+                TradingToolbar.Visibility = Visibility.Collapsed;
+                // Снимаем хук мыши для позиционирования тулбара
                 if (mouseHook != IntPtr.Zero)
                 {
                     UnhookWindowsHookEx(mouseHook);
                     mouseHook = IntPtr.Zero;
                 }
-                Logger.LogInfo("Trading Toolbar disabled");
+                Logger.LogInfo("Trading Toolbar disabled (but window remains visible for controls)");
             }
             else
             {
-                // Включаем хук и показываем окно
+                // Показываем TradingToolbar
+                TradingToolbar.Visibility = Visibility.Visible;
+                // Включаем хук для позиционирования тулбара
                 SetupMouseHook();
                 ShowTradingToolbar();
                 Logger.LogInfo("Trading Toolbar enabled");
@@ -1342,10 +1780,13 @@ namespace ScreenCaptureApp
             {
                 _hotkeysService.OnEscapeKeyPressed -= OnEscapeKeyPressed;
                 _hotkeysService.OnFKeyPressed -= OnFKeyPressed;
-                _hotkeysService.OnSKeyPressed -= OnSKeyPressed;
+                _hotkeysService.OnTabKeyPressed -= OnTabKeyPressed;
                 // _hotkeysService.OnCKeyPressed -= OnCKeyPressed;
-                Logger.LogInfo("SimpleTradingOverlay unsubscribed from HotkeyService events (Escape, F, S, and C)");
+                Logger.LogInfo("SimpleTradingOverlay unsubscribed from HotkeyService events (Escape, F, Tab, and C)");
             }
+            
+            // Remove trading pattern mouse hook
+            RemoveTradingPatternMouseHook();
             
             // Отписываемся от событий HttpServerService
             var httpServerService = ServiceContainer.Instance.GetService<HttpServerService>();

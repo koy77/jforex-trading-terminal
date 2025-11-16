@@ -194,13 +194,14 @@ namespace ScreenCaptureApp.Helpers
                     };
                 }
                 
-                if (onSKeyPressed != null)
-                {
-                    hotkeysService.OnSKeyPressed += () =>
-                    {
-                        dispatcher.Invoke(onSKeyPressed);
-                    };
-                }
+                // OnSKeyPressed removed - replaced with OnTabKeyPressed for trading pattern
+                // if (onSKeyPressed != null)
+                // {
+                //     hotkeysService.OnSKeyPressed += () =>
+                //     {
+                //         dispatcher.Invoke(onSKeyPressed);
+                //     };
+                // }
                 
                 if (onDKeyPressed != null)
                 {

@@ -27,7 +27,6 @@ namespace ScreenCaptureApp
         private CanvasWindow currentCanvasWindow = null;
         private CanvasWindow secondaryCanvasWindow = null; // Canvas для второго монитора
         private string activeSymbol = null;
-        private Observers.NewTradeObserver newTradeObserver = null;
         private CancellationTokenSource _autoTrackingCts;
         private Task _autoTrackingTask;
         private bool isAutoTrackingActive = false;
@@ -91,9 +90,6 @@ namespace ScreenCaptureApp
 
                     // Инициализация SimpleTradingOverlay
         InitializeSimpleTradingOverlay();
-
-            // Initialize NewTradeObserver
-            InitializeNewTradeObserver();
 
             var hotkeysService = ServiceContainer.Instance.GetService<HotkeysService>();
             if (hotkeysService != null)
@@ -163,16 +159,11 @@ namespace ScreenCaptureApp
                     Logger.LogInfo("[DEBUG] OnLeftShiftHotkey event in MainWindow");
                     ToggleTrackingViewer_Click(null, null);
                 };
-                // Subscribe to B and S keys for trade pattern
-                hotkeysService.OnBKeyPressed += () =>
+                // Subscribe to Tab key for trading pattern mode
+                hotkeysService.OnTabKeyPressed += () =>
                 {
-                    Logger.LogInfo("[DEBUG] OnBKeyPressed event in MainWindow");
-                    newTradeObserver?.OnBKeyPressed();
-                };
-                hotkeysService.OnSKeyPressed += () =>
-                {
-                    Logger.LogInfo("[DEBUG] OnSKeyPressed event in MainWindow");
-                    newTradeObserver?.OnSKeyPressed();
+                    Logger.LogInfo("[DEBUG] OnTabKeyPressed event in MainWindow");
+                    // Trading pattern is handled in SimpleTradingOverlay
                 };
             }
         }
@@ -186,20 +177,8 @@ namespace ScreenCaptureApp
                 // Управляем показом Trading Toolbar через переменную
                 simpleTradingOverlay.SetTradingToolbarEnabled(showTradingToolbar);
                 
-                Logger.LogInfo("SimpleTradingOverlay initialized successfully");
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("Error initializing SimpleTradingOverlay", ex);
-            }
-        }
-
-        private void InitializeNewTradeObserver()
-        {
-            try
-            {
-                newTradeObserver = new Observers.NewTradeObserver(
-                    Dispatcher,
+                // Set canvas window delegates for trading pattern
+                simpleTradingOverlay.SetCanvasWindowDelegates(
                     () => currentCanvasWindow != null && currentCanvasWindow.IsVisible,
                     () =>
                     {
@@ -226,28 +205,14 @@ namespace ScreenCaptureApp
                             secondaryCanvasWindow.Activate();
                             secondaryCanvasWindow.Focus();
                         }
-                    },
-                    () => targetWindow,
-                    () => activeSymbol,
-                    simpleTradingOverlay
+                    }
                 );
-
-                // Subscribe to HttpServerService events for price levels
-                var httpServerService = ServiceContainer.Instance.GetService<HttpServerService>();
-                if (httpServerService != null)
-                {
-                    httpServerService.NewJForexChartObject += (sender, jforexChartObject) =>
-                    {
-                        newTradeObserver?.OnJForexChartObjectReceived(jforexChartObject);
-                    };
-                    Logger.LogInfo("NewTradeObserver subscribed to HttpServerService.NewJForexChartObject");
-                }
-
-                Logger.LogInfo("NewTradeObserver initialized successfully");
+                
+                Logger.LogInfo("SimpleTradingOverlay initialized successfully");
             }
             catch (Exception ex)
             {
-                Logger.LogError("Error initializing NewTradeObserver", ex);
+                Logger.LogError("Error initializing SimpleTradingOverlay", ex);
             }
         }
 
@@ -508,10 +473,6 @@ namespace ScreenCaptureApp
             Logger.LogDebug("Escape key pressed - starting cleanup");
             
             // Handle trade pattern cancellation first
-            if (newTradeObserver != null)
-            {
-                newTradeObserver.OnEscapeKeyPressed();
-            }
             
             // Логика обработки ценовых уровней перенесена в SimpleTradingOverlay
             // Отмена происходит через simpleTradingOverlay.OnEscapeKeyPressed()
@@ -765,13 +726,6 @@ namespace ScreenCaptureApp
             simpleTradingOverlay = null;
             Logger.LogInfo("SimpleTradingOverlay closed");
 
-            // Dispose NewTradeObserver
-            if (newTradeObserver != null)
-            {
-                newTradeObserver.Dispose();
-                newTradeObserver = null;
-                Logger.LogInfo("NewTradeObserver disposed");
-            }
         }
             
             // Cleanup services
