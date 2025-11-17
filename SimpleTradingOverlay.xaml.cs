@@ -807,13 +807,21 @@ namespace ScreenCaptureApp
         {
             if (!_isEnabled) return;
 
-            Logger.LogTagInfo("SimpleTradingOverlay", "Tab key pressed via HotkeyService - starting trading pattern mode");
-            
-            // Determine trade type based on entry and stop loss prices (if available)
-            // For now, we'll use a toggle or determine from current state
-            // This will be handled by the user selecting buy/sell after TAB
-            // For simplicity, we'll start with "buy" and allow switching
-            StartTradingPattern("buy");
+            // Toggle trading pattern mode: if active, cancel it; if not active, start it
+            if (_isTradingPatternActive)
+            {
+                Logger.LogTagInfo("SimpleTradingOverlay", "Tab key pressed via HotkeyService - canceling trading pattern mode");
+                CancelTradingPattern();
+            }
+            else
+            {
+                Logger.LogTagInfo("SimpleTradingOverlay", "Tab key pressed via HotkeyService - starting trading pattern mode");
+                // Determine trade type based on entry and stop loss prices (if available)
+                // For now, we'll use a toggle or determine from current state
+                // This will be handled by the user selecting buy/sell after TAB
+                // For simplicity, we'll start with "buy" and allow switching
+                StartTradingPattern("buy");
+            }
         }
         
         /// <summary>
@@ -886,15 +894,30 @@ namespace ScreenCaptureApp
                 _tradingPatternSymbol = "";
                 _tradingPatternTargetWindowHandle = IntPtr.Zero;
 
-                // Restore Canvas Window if it was visible
-                if (_wasCanvasWindowVisible && _showCanvasWindow != null)
-                {
-                    Logger.LogTagInfo("SimpleTradingOverlay", "Restoring Canvas Window after pattern completion");
-                    Dispatcher.Invoke(() => _showCanvasWindow());
-                }
-
                 // Hide trading mode indicator
                 HideTradingModeIndicator();
+
+                // Restore Canvas Window if it was visible before trading pattern started
+                if (_wasCanvasWindowVisible)
+                {
+                    Logger.LogTagInfo("SimpleTradingOverlay", $"Canvas Window was visible before trading pattern, restoring it (wasVisible={_wasCanvasWindowVisible})");
+                    if (_showCanvasWindow != null)
+                    {
+                        Dispatcher.Invoke(() =>
+                        {
+                            _showCanvasWindow();
+                            Logger.LogTagInfo("SimpleTradingOverlay", "Canvas Window restored after pattern completion");
+                        });
+                    }
+                    else
+                    {
+                        Logger.LogTagWarning("SimpleTradingOverlay", "Canvas Window show delegate is null, cannot restore");
+                    }
+                }
+                else
+                {
+                    Logger.LogTagInfo("SimpleTradingOverlay", "Canvas Window was not visible before trading pattern, no need to restore");
+                }
 
                 Logger.LogTagInfo("SimpleTradingOverlay", "Trading pattern completed successfully");
             }
@@ -925,15 +948,30 @@ namespace ScreenCaptureApp
                 _tradingPatternSymbol = "";
                 _tradingPatternTargetWindowHandle = IntPtr.Zero;
 
-                // Restore Canvas Window if it was visible
-                if (_wasCanvasWindowVisible && _showCanvasWindow != null)
-                {
-                    Logger.LogTagInfo("SimpleTradingOverlay", "Restoring Canvas Window");
-                    Dispatcher.Invoke(() => _showCanvasWindow());
-                }
-
                 // Hide trading mode indicator
                 HideTradingModeIndicator();
+
+                // Restore Canvas Window if it was visible before trading pattern started
+                if (_wasCanvasWindowVisible)
+                {
+                    Logger.LogTagInfo("SimpleTradingOverlay", $"Canvas Window was visible before trading pattern, restoring it (wasVisible={_wasCanvasWindowVisible})");
+                    if (_showCanvasWindow != null)
+                    {
+                        Dispatcher.Invoke(() =>
+                        {
+                            _showCanvasWindow();
+                            Logger.LogTagInfo("SimpleTradingOverlay", "Canvas Window restored after pattern cancellation");
+                        });
+                    }
+                    else
+                    {
+                        Logger.LogTagWarning("SimpleTradingOverlay", "Canvas Window show delegate is null, cannot restore");
+                    }
+                }
+                else
+                {
+                    Logger.LogTagInfo("SimpleTradingOverlay", "Canvas Window was not visible before trading pattern, no need to restore");
+                }
 
                 Logger.LogTagInfo("SimpleTradingOverlay", "Trading pattern canceled");
             }
@@ -1203,16 +1241,25 @@ namespace ScreenCaptureApp
                     Logger.LogTagInfo("SimpleTradingOverlay", $"Trading pattern trade sent to MT4 successfully - {_tradingPatternTradeType} {_tradingPatternSymbol} Entry:{_tradingPatternEntryPrice} SL:{_tradingPatternStopLossPrice}");
                     
                     // Complete trading pattern after successful send (both prices are set)
+                    // This will restore CanvasWindow if it was visible before
                     CompleteTradingPattern();
                 }
                 else
                 {
                     Logger.LogTagError("SimpleTradingOverlay", "Failed to send trading pattern trade to MT4");
+                    
+                    // Even if sending failed, complete the pattern and restore CanvasWindow
+                    // to return the interface to its previous state
+                    CompleteTradingPattern();
                 }
             }
             catch (Exception ex)
             {
                 Logger.LogTagError("SimpleTradingOverlay", $"Error sending trading pattern trade to MT4: {ex.Message}", ex);
+                
+                // Even if there was an error, complete the pattern and restore CanvasWindow
+                // to return the interface to its previous state
+                CompleteTradingPattern();
             }
         }
 

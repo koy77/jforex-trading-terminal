@@ -107,7 +107,7 @@ namespace ScreenCaptureApp
         
         // MACD area threshold - strokes above this Y coordinate (Y >= 740.0) are MACD model (non-trading)
         // Strokes below this Y coordinate (Y < 740.0) are OHLC model (trading)
-        private const double MACD_AREA_THRESHOLD = 740.0;
+        private const double MACD_AREA_THRESHOLD = 900.0;
         
         // Track if stroke is trading stroke (OHLC model) when stroke starts
         // true = OHLC model (trading, bright green color) AND CTRL is pressed, false = MACD model (non-trading, yellow color) OR CTRL not pressed
