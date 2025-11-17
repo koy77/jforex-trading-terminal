@@ -114,7 +114,56 @@ namespace ScreenCaptureApp
                         Logger.LogWarning("Q hotkey: DatabaseService not available");
                     }
                 };
-                hotkeysService.OnWHotkey += () => { Logger.LogInfo("[DEBUG] OnWHotkey event in MainWindow"); ClickHotkeyButtonByIndex(1); };
+                hotkeysService.OnWHotkey += async () => { 
+                    Logger.LogInfo("[DEBUG] OnWHotkey event in MainWindow - Closing all open positions for current symbol");
+                    
+                    // Получаем активный символ из текущего CanvasWindow или из activeSymbol
+                    string symbolToClose = null;
+                    
+                    // Сначала проверяем currentCanvasWindow (primary monitor)
+                    if (currentCanvasWindow != null && currentCanvasWindow.IsVisible && !string.IsNullOrEmpty(currentCanvasWindow.ActiveSymbol))
+                    {
+                        symbolToClose = currentCanvasWindow.ActiveSymbol;
+                        Logger.LogInfo($"W hotkey: Using symbol from primary CanvasWindow: {symbolToClose}");
+                    }
+                    // Если нет primary, проверяем secondary
+                    else if (secondaryCanvasWindow != null && secondaryCanvasWindow.IsVisible && !string.IsNullOrEmpty(secondaryCanvasWindow.ActiveSymbol))
+                    {
+                        symbolToClose = secondaryCanvasWindow.ActiveSymbol;
+                        Logger.LogInfo($"W hotkey: Using symbol from secondary CanvasWindow: {symbolToClose}");
+                    }
+                    // Если CanvasWindow не открыты или нет символа, используем activeSymbol из MainWindow
+                    else if (!string.IsNullOrEmpty(activeSymbol))
+                    {
+                        symbolToClose = activeSymbol;
+                        Logger.LogInfo($"W hotkey: Using symbol from MainWindow activeSymbol: {symbolToClose}");
+                    }
+                    
+                    if (!string.IsNullOrEmpty(symbolToClose))
+                    {
+                        var mt4SocketService = ServiceContainer.Instance.GetService<Mt4SocketService>();
+                        if (mt4SocketService != null)
+                        {
+                            bool success = await mt4SocketService.ClosePositionsCommand(symbolToClose);
+                            if (success)
+                            {
+                                Logger.LogInfo($"W hotkey: Successfully closed all open positions for symbol {symbolToClose}");
+                            }
+                            else
+                            {
+                                Logger.LogWarning($"W hotkey: Failed to close positions for symbol {symbolToClose}");
+                            }
+                        }
+                        else
+                        {
+                            Logger.LogWarning("W hotkey: Mt4SocketService not available");
+                        }
+                    }
+                    else
+                    {
+                        Logger.LogWarning("W hotkey: No active symbol found to close positions");
+                    }
+                };
                 hotkeysService.OnEHotkey += () => { Logger.LogInfo("[DEBUG] OnEHotkey event in MainWindow"); ClickHotkeyButtonByIndex(2); };
                 hotkeysService.OnRHotkey += () => { Logger.LogInfo("[DEBUG] OnRHotkey event in MainWindow"); ClickHotkeyButtonByIndex(3); };
                 hotkeysService.OnJHotkey += () => { Logger.LogInfo("[DEBUG] OnJHotkey event in MainWindow"); ToggleJForexIntegration(); };
