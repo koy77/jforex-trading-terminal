@@ -1,0 +1,104 @@
+[33mcommit 63db4ee4e13755486250d048f2f2b22ebe8db66c[m
+Author: Vlad Silchenko <webdevsol6@gmail.com>
+Date:   Sat Nov 15 19:58:12 2025 +0200
+
+    c
+
+[1mdiff --git a/MainWindow.xaml.cs b/MainWindow.xaml.cs[m
+[1mindex 7e25fb5..1a65aab 100644[m
+[1m--- a/MainWindow.xaml.cs[m
+[1m+++ b/MainWindow.xaml.cs[m
+[36m@@ -104,17 +104,54 @@[m [mnamespace ScreenCaptureApp[m
+                 hotkeysService.OnSymbolHotkeyPressed4 += () => TriggerSymbolButton(3);[m
+                 hotkeysService.OnSymbolHotkeyPressed5 += () => TriggerSymbolButton(4);[m
+                 hotkeysService.OnSymbolHotkeyPressed6 += () => TriggerSymbolButton(5);[m
+[31m-                hotkeysService.OnQHotkey += () => { [m
+[31m-                    Logger.LogInfo("[DEBUG] OnQHotkey event in MainWindow - Skipping all tracking captures"); [m
+[31m-                    var databaseService = ServiceContainer.Instance.GetService<DatabaseService>();[m
+[31m-                    if (databaseService != null)[m
+[32m+[m[32m                hotkeysService.OnQHotkey += async () => {[m[41m [m
+[32m+[m[32m                    Logger.LogInfo("[DEBUG] OnQHotkey event in MainWindow - Closing all positions for current symbol");[m
+[32m+[m[41m                    [m
+[32m+[m[32m                    // Получаем активный символ из текущего CanvasWindow или из activeSymbol[m
+[32m+[m[32m                    string symbolToClose = null;[m
+[32m+[m[41m                    [m
+[32m+[m[32m                    // Сначала проверяем currentCanvasWindow (primary monitor)[m
+[32m+[m[32m                    if (currentCanvasWindow != null && currentCanvasWindow.IsVisible && !string.IsNullOrEmpty(currentCanvasWindow.ActiveSymbol))[m
+[32m+[m[32m                    {[m
+[32m+[m[32m                        symbolToClose = currentCanvasWindow.ActiveSymbol;[m
+[32m+[m[32m                        Logger.LogInfo($"Q hotkey: Using symbol from primary CanvasWindow: {symbolToClose}");[m
+[32m+[m[32m                    }[m
+[32m+[m[32m                    // Если нет primary, проверяем secondary[m
+[32m+[m[32m                    else if (secondaryCanvasWindow != null && secondaryCanvasWindow.IsVisible && !string.IsNullOrEmpty(secondaryCanvasWindow.ActiveSymbol))[m
+                     {[m
+[31m-                        databaseService.SkipAllTrackingCaptures();[m
+[31m-                        Logger.LogInfo("Q hotkey: All tracking captures marked as skipped");[m
+[32m+[m[32m                        symbolToClose = secondaryCanvasWindow.ActiveSymbol;[m
+[32m+[m[32m                        Logger.LogInfo($"Q hotkey: Using symbol from secondary CanvasWindow: {symbolToClose}");[m
+[32m+[m[32m                    }[m
+[32m+[m[32m                    // Если CanvasWindow не открыты или нет символа, используем activeSymbol из MainWindow[m
+[32m+[m[32m                    else if (!string.IsNullOrEmpty(activeSymbol))[m
+[32m+[m[32m                    {[m
+[32m+[m[32m                        symbolToClose = activeSymbol;[m
+[32m+[m[32m                        Logger.LogInfo($"Q hotkey: Using symbol from MainWindow activeSymbol: {symbolToClose}");[m
+[32m+[m[32m                    }[m
+[32m+[m[41m                    [m
+[32m+[m[32m                    if (!string.IsNullOrEmpty(symbolToClose))[m
+[32m+[m[32m                    {[m
+[32m+[m[32m                        var mt4SocketService = ServiceContainer.Instance.GetService<Mt4SocketService>();[m
+[32m+[m[32m                        if (mt4SocketService != null)[m
+[32m+[m[32m                        {[m
+[32m+[m[32m                            bool success = await mt4SocketService.ClosePositionsCommand(symbolToClose);[m
+[32m+[m[32m                            if (success)[m
+[32m+[m[32m                            {[m
+[32m+[m[32m                                Logger.LogInfo($"Q hotkey: Successfully closed all positions for symbol {symbolToClose}");[m
+[32m+[m[32m                            }[m
+[32m+[m[32m                            else[m
+[32m+[m[32m                            {[m
+[32m+[m[32m                                Logger.LogWarning($"Q hotkey: Failed to close positions for symbol {symbolToClose}");[m
+[32m+[m[32m                            }[m
+[32m+[m[32m                        }[m
+[32m+[m[32m                        else[m
+[32m+[m[32m                        {[m
+[32m+[m[32m                            Logger.LogWarning("Q hotkey: Mt4SocketService not available");[m
+[32m+[m[32m                        }[m
+                     }[m
+                     else[m
+                     {[m
+[31m-                        Logger.LogWarning("Q hotkey: DatabaseService not available");[m
+[32m+[m[32m                        Logger.LogWarning("Q hotkey: No active symbol found to close positions");[m
+                     }[m
+                 };[m
+                 hotkeysService.OnWHotkey += () => { Logger.LogInfo("[DEBUG] OnWHotkey event in MainWindow"); ClickHotkeyButtonByIndex(1); };[m
+
+[33mcommit c09937811c96a4ac1c95c623602c83a5485d3a47[m
+Author: Vlad Silchenko <webdevsol6@gmail.com>
+Date:   Thu Oct 23 07:41:16 2025 +0300
+
+    d
+
+[1mdiff --git a/MainWindow.xaml.cs b/MainWindow.xaml.cs[m
+[1mindex 9eb9d67..1c36011 100644[m
+[1m--- a/MainWindow.xaml.cs[m
+[1m+++ b/MainWindow.xaml.cs[m
+[36m@@ -92,7 +92,19 @@[m [mnamespace ScreenCaptureApp[m
+                 hotkeysService.OnSymbolHotkeyPressed4 += () => TriggerSymbolButton(3);[m
+                 hotkeysService.OnSymbolHotkeyPressed5 += () => TriggerSymbolButton(4);[m
+                 hotkeysService.OnSymbolHotkeyPressed6 += () => TriggerSymbolButton(5);[m
+[31m-                hotkeysService.OnQHotkey += () => { Logger.LogInfo("[DEBUG] OnQHotkey event in MainWindow"); ClickHotkeyButtonByIndex(0); };[m
+[32m+[m[32m                hotkeysService.OnQHotkey += () => {[m[41m [m
+[32m+[m[32m                    Logger.LogInfo("[DEBUG] OnQHotkey event in MainWindow - Skipping all tracking captures");[m[41m [m
+[32m+[m[32m                    var databaseService = ServiceContainer.Instance.GetService<DatabaseService>();[m
+[32m+[m[32m                    if (databaseService != null)[m
+[32m+[m[32m                    {[m
+[32m+[m[32m                        databaseService.SkipAllTrackingCaptures();[m
+[32m+[m[32m                        Logger.LogInfo("Q hotkey: All tracking captures marked as skipped");[m
+[32m+[m[32m                    }[m
+[32m+[m[32m                    else[m
+[32m+[m[32m                    {[m
+[32m+[m[32m                        Logger.LogWarning("Q hotkey: DatabaseService not available");[m
+[32m+[m[32m                    }[m
+[32m+[m[32m                };[m
+                 hotkeysService.OnWHotkey += () => { Logger.LogInfo("[DEBUG] OnWHotkey event in MainWindow"); ClickHotkeyButtonByIndex(1); };[m
+                 hotkeysService.OnEHotkey += () => { Logger.LogInfo("[DEBUG] OnEHotkey event in MainWindow"); ClickHotkeyButtonByIndex(2); };[m
+                 hotkeysService.OnRHotkey += () => { Logger.LogInfo("[DEBUG] OnRHotkey event in MainWindow"); ClickHotkeyButtonByIndex(3); };[m
