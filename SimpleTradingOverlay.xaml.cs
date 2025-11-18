@@ -583,7 +583,7 @@ namespace ScreenCaptureApp
                 // Проверяем, если обе цены установлены, отправляем команду в MT4
                 if (_entryPrice > 0 && _stopLossPrice > 0)
                 {
-                    SendTradeCommandToMt4();
+                    // SendTradeCommandToMt4();
                     ResetPriceLevelStateToWaitForEntry();
                 }
             }

@@ -300,45 +300,67 @@ namespace ScreenCaptureApp.Services
         }
 
         /// <summary>
-        /// Отправляет команду создания нового ордера в MT4
+        /// Вычисляет количество пипсов между двумя ценами для символа
+        /// </summary>
+        /// <param name="symbol">Символ торгового инструмента</param>
+        /// <param name="price1">Первая цена</param>
+        /// <param name="price2">Вторая цена</param>
+        /// <returns>Количество пипсов</returns>
+        private int CalculateSlPips(string symbol, double price1, double price2)
+        {
+            // Check if symbol is gold (XAUUSD)
+            bool isGold = symbol.ToUpper().Contains("XAU") || symbol.ToUpper() == "GOLD";
+            
+            double priceDiff = Math.Abs(price1 - price2);
+            
+            if (isGold)
+            {
+                // For XAUUSD: 1 pip = 0.1 in price, so multiply by 10
+                return (int)Math.Round(priceDiff * 10);
+            }
+            else
+            {
+                // For other symbols, assume 4-5 digits (standard forex pairs)
+                // 1 pip = 0.0001 for 4-digit pairs, 0.01 for 3-digit pairs
+                // We'll use 0.0001 as default (most common)
+                return (int)Math.Round(priceDiff / 0.0001);
+            }
+        }
+
+        /// <summary>
+        /// Отправляет команду создания нового уровня в MT4 (new_level_added)
         /// </summary>
         /// <param name="symbol">Символ торгового инструмента</param>
         /// <param name="tradeType">Тип сделки ("buy" или "sell")</param>
-        /// <param name="entryPrice">Цена входа</param>
+        /// <param name="entryPrice">Цена входа (уровень)</param>
         /// <param name="stopLossPrice">Цена стоп-лосса</param>
-        /// <param name="risk">Риск (размер позиции)</param>
-        /// <param name="takeProfit">Take Profit ("1x", "2x", "3x", "inf" или null)</param>
+        /// <param name="risk">Риск (размер позиции в процентах)</param>
+        /// <param name="takeProfit">Take Profit ("1x", "2x", "3x", "inf" или null) - не используется в новой структуре</param>
         /// <returns>True если команда отправлена успешно, иначе False</returns>
         public async Task<bool> SendNewOrderCommand(string symbol, string tradeType, double entryPrice, double stopLossPrice, double risk, string takeProfit = null)
         {
-            string command="";
+            string command = "new_level_added";
             try
             {
-                // Форматируем числа с точкой как разделителем десятичных дробей
-                string entryPriceFormatted = entryPrice.ToString("F5", System.Globalization.CultureInfo.InvariantCulture);
-                string stopLossPriceFormatted = stopLossPrice.ToString("F5", System.Globalization.CultureInfo.InvariantCulture);
-
-                Logger.LogTagInfo("MT4SocketService", $"Formatting prices - Entry: {entryPrice} -> {entryPriceFormatted}, StopLoss: {stopLossPrice} -> {stopLossPriceFormatted}");
-
-                // Logger.LogTagInfo("MT4SocketService", $"Converting prices - Entry: {entryPrice} -> {entryPrice}, StopLoss: {stopLossPrice} -> {stopLossPrice}");
-
-                // Определяем команду в зависимости от типа операции
-                command = tradeType.ToLower() == "buy" ? "pending_buy" : "pending_sell";
+                // Format prices with dot as decimal separator
+                string priceFormatted = entryPrice.ToString("F5", System.Globalization.CultureInfo.InvariantCulture);
                 
-                // Формируем команду с опциональным полем take_profit
-                string json;
-                if (!string.IsNullOrEmpty(takeProfit))
-                {
-                    json = $"{{\"cmd\":\"{command}\",\"symbol\":\"{symbol}\",\"entry_price\":{entryPriceFormatted},\"stop_loss\":{stopLossPriceFormatted},\"risk\":{risk},\"take_profit\":\"{takeProfit}\"}}";
-                }
-                else
-                {
-                    json = $"{{\"cmd\":\"{command}\",\"symbol\":\"{symbol}\",\"entry_price\":{entryPriceFormatted},\"stop_loss\":{stopLossPriceFormatted},\"risk\":{risk}}}";
-                }
+                // Convert trade type to uppercase direction
+                string direction = tradeType.ToUpper() == "BUY" ? "BUY" : "SELL";
+                
+                // Calculate sl_pips from price difference
+                int slPips = CalculateSlPips(symbol, entryPrice, stopLossPrice);
+                
+                // Format risk as integer (server expects int)
+                int riskInt = (int)Math.Round(risk);
+                
+                // Build JSON command according to server structure
+                // Structure: {"cmd":"new_level_added","symbol":"XAUUSD","direction":"BUY","price":4037.11883,"risk":1,"sl_pips":20}
+                string json = $"{{\"cmd\":\"{command}\",\"symbol\":\"{symbol}\",\"direction\":\"{direction}\",\"price\":{priceFormatted},\"risk\":{riskInt},\"sl_pips\":{slPips}}}";
 
-                Logger.LogTagInfo("MT4SocketService", $"Sending {command} command: {symbol} Entry:{entryPriceFormatted} SL:{stopLossPriceFormatted} Risk:{risk} TP:{takeProfit ?? "none"}");
+                Logger.LogTagInfo("MT4SocketService", $"Sending {command} command: {symbol} Direction:{direction} Price:{priceFormatted} Risk:{riskInt} SL_pips:{slPips}");
 
-                // Добавляем CRLF как в breakout командах
+                // Add CRLF as in breakout commands
                 json += "\r\n";
                 Logger.LogInfo($"MT4 Socket: Sending to MT4: {json.Trim()} (with CRLF)");
 
