@@ -395,10 +395,10 @@ namespace ScreenCaptureApp
             // Настройка DrawingCanvas для обычного рисования
             DrawingCanvas.EditingMode = System.Windows.Controls.InkCanvasEditingMode.Ink;
             
-            // Устанавливаем желтый цвет кисти по умолчанию
+            // Устанавливаем черный цвет кисти по умолчанию
             DrawingCanvas.DefaultDrawingAttributes = new System.Windows.Ink.DrawingAttributes
             {
-                Color = Colors.Yellow, // По умолчанию желтый цвет
+                Color = System.Windows.Media.Color.FromRgb(0, 0, 0), // По умолчанию черный цвет
                 Width = 2,
                 Height = 2,
                 FitToCurve = true,
@@ -438,7 +438,7 @@ namespace ScreenCaptureApp
             // Добавляем PreviewTouchDown для более раннего захвата состояния Control
             DrawingCanvas.PreviewTouchDown += DrawingCanvas_PreviewTouchDown;
             
-            Logger.LogInfo($"InkCanvas initialized successfully with Yellow brush for DrawingCanvas");
+            Logger.LogInfo($"InkCanvas initialized successfully with Black brush for DrawingCanvas");
         }
 
         private void DrawingCanvas_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -462,8 +462,8 @@ namespace ScreenCaptureApp
             }
             else
             {
-                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
-                Logger.LogInfo($"MouseDown: {(isOHLCModel ? "OHLC model but CTRL not pressed" : "MACD model")} (Y={position.Y}) - setting brush to Yellow for simple stroke");
+                DrawingCanvas.DefaultDrawingAttributes.Color = System.Windows.Media.Color.FromRgb(0, 0, 0);
+                Logger.LogInfo($"MouseDown: {(isOHLCModel ? "OHLC model but CTRL not pressed" : "MACD model")} (Y={position.Y}) - setting brush to Black for simple stroke");
             }
             
             Logger.LogInfo($"MouseDown: Model determined: {(isControlPressedAtStrokeStart ? "OHLC (trading)" : "MACD (non-trading)")} at {position}, CTRL pressed: {isCtrlPressed}");
@@ -504,8 +504,8 @@ namespace ScreenCaptureApp
             }
             else
             {
-                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
-                Logger.LogInfo($"PreviewMouseDown: {(isOHLCModel ? "OHLC model but CTRL not pressed" : "MACD model")} (Y={position.Y}) - setting brush to Yellow for simple stroke");
+                DrawingCanvas.DefaultDrawingAttributes.Color = System.Windows.Media.Color.FromRgb(0, 0, 0);
+                Logger.LogInfo($"PreviewMouseDown: {(isOHLCModel ? "OHLC model but CTRL not pressed" : "MACD model")} (Y={position.Y}) - setting brush to Black for simple stroke");
             }
             
             Logger.LogInfo($"PreviewMouseDown: Model determined: {(isControlPressedAtStrokeStart ? "OHLC (trading)" : "MACD (non-trading)")} at {position}, CTRL pressed: {isCtrlPressed}");
@@ -533,8 +533,8 @@ namespace ScreenCaptureApp
             }
             else
             {
-                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
-                Logger.LogInfo($"PreviewStylusDown: {(isOHLCModel ? "OHLC model but CTRL not pressed" : "MACD model")} (Y={position.Y}) - setting brush to Yellow for simple stroke");
+                DrawingCanvas.DefaultDrawingAttributes.Color = System.Windows.Media.Color.FromRgb(0, 0, 0);
+                Logger.LogInfo($"PreviewStylusDown: {(isOHLCModel ? "OHLC model but CTRL not pressed" : "MACD model")} (Y={position.Y}) - setting brush to Black for simple stroke");
             }
             
             Logger.LogInfo($"PreviewStylusDown: Model determined: {(isControlPressedAtStrokeStart ? "OHLC (trading)" : "MACD (non-trading)")} at {position}, CTRL pressed: {isCtrlPressed}");
@@ -561,8 +561,8 @@ namespace ScreenCaptureApp
             }
             else
             {
-                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
-                Logger.LogInfo($"StylusDown: {(isOHLCModel ? "OHLC model but CTRL not pressed" : "MACD model")} (Y={position.Y}) - setting brush to Yellow for simple stroke");
+                DrawingCanvas.DefaultDrawingAttributes.Color = System.Windows.Media.Color.FromRgb(0, 0, 0);
+                Logger.LogInfo($"StylusDown: {(isOHLCModel ? "OHLC model but CTRL not pressed" : "MACD model")} (Y={position.Y}) - setting brush to Black for simple stroke");
             }
             
             Logger.LogInfo($"StylusDown: Model determined: {(isControlPressedAtStrokeStart ? "OHLC (trading)" : "MACD (non-trading)")} at {position}, CTRL pressed: {isCtrlPressed}");
@@ -604,8 +604,8 @@ namespace ScreenCaptureApp
             }
             else
             {
-                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
-                Logger.LogInfo($"PreviewTouchDown: {(isOHLCModel ? "OHLC model but CTRL not pressed" : "MACD model")} (Y={position.Y}) - setting brush to Yellow for simple stroke");
+                DrawingCanvas.DefaultDrawingAttributes.Color = System.Windows.Media.Color.FromRgb(0, 0, 0);
+                Logger.LogInfo($"PreviewTouchDown: {(isOHLCModel ? "OHLC model but CTRL not pressed" : "MACD model")} (Y={position.Y}) - setting brush to Black for simple stroke");
             }
             
             Logger.LogInfo($"PreviewTouchDown: Model determined: {(isControlPressedAtStrokeStart ? "OHLC (trading)" : "MACD (non-trading)")} at {position}, CTRL pressed: {isCtrlPressed}");
@@ -632,8 +632,8 @@ namespace ScreenCaptureApp
             }
             else
             {
-                DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
-                Logger.LogInfo($"TouchDown: {(isOHLCModel ? "OHLC model but CTRL not pressed" : "MACD model")} (Y={position.Y}) - setting brush to Yellow for simple stroke");
+                DrawingCanvas.DefaultDrawingAttributes.Color = System.Windows.Media.Color.FromRgb(0, 0, 0);
+                Logger.LogInfo($"TouchDown: {(isOHLCModel ? "OHLC model but CTRL not pressed" : "MACD model")} (Y={position.Y}) - setting brush to Black for simple stroke");
             }
             
             Logger.LogInfo($"TouchDown: Model determined: {(isControlPressedAtStrokeStart ? "OHLC (trading)" : "MACD (non-trading)")} at {position}, CTRL pressed: {isCtrlPressed}");
@@ -981,12 +981,12 @@ namespace ScreenCaptureApp
             // Always use DrawingCanvas in simple mode
             DrawingCanvas.Visibility = Visibility.Visible;
             
-            // Устанавливаем желтый цвет по умолчанию (цвет будет выбран при начале рисования по модели)
-            DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
-            Logger.LogInfo($"UpdateBrushMode: Brush color will be determined by model (OHLC=White, MACD=Yellow) when drawing starts");
+            // Устанавливаем черный цвет по умолчанию (цвет будет выбран при начале рисования по модели)
+            DrawingCanvas.DefaultDrawingAttributes.Color = System.Windows.Media.Color.FromRgb(0, 0, 0);
+            Logger.LogInfo($"UpdateBrushMode: Brush color will be determined by model (OHLC=White, MACD=Black) when drawing starts");
             
-            // Border always yellow in simple mode
-            CanvasBorder.Stroke = new SolidColorBrush(Colors.Yellow);
+            // Border always dark blue in simple mode
+            CanvasBorder.Stroke = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0, 77, 230));
             CanvasBorder.StrokeThickness = 4;
             DrawingCanvas.DefaultDrawingAttributes.Width = 2;
             DrawingCanvas.DefaultDrawingAttributes.Height = 2;
@@ -1015,12 +1015,12 @@ namespace ScreenCaptureApp
         public void UpdateSimpleBrushColor(bool isYellow)
         {
             // Цвет кисти теперь определяется по модели при начале рисования
-            // Устанавливаем желтый по умолчанию (цвет будет выбран при начале рисования по модели)
-            DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
-            Logger.LogInfo($"UpdateSimpleBrushColor: Brush color will be determined by model (OHLC=White, MACD=Yellow) when drawing starts");
+            // Устанавливаем черный по умолчанию (цвет будет выбран при начале рисования по модели)
+            DrawingCanvas.DefaultDrawingAttributes.Color = System.Windows.Media.Color.FromRgb(0, 0, 0);
+            Logger.LogInfo($"UpdateSimpleBrushColor: Brush color will be determined by model (OHLC=White, MACD=Black) when drawing starts");
             
-            // Border always yellow in simple mode
-            CanvasBorder.Stroke = new SolidColorBrush(Colors.Yellow);
+            // Border always dark blue in simple mode
+            CanvasBorder.Stroke = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0, 77, 230));
             CanvasBorder.StrokeThickness = 4;
             Logger.LogInfo($"Simple brush color updated - color will be set based on model when drawing starts");
         }
@@ -1080,10 +1080,10 @@ namespace ScreenCaptureApp
             // Сбрасываем состояние для следующего штриха
             isControlPressedAtStrokeStart = false;
             
-            // Сбрасываем цвет кисти на желтый по умолчанию для следующего штриха
-            DrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
+            // Сбрасываем цвет кисти на черный по умолчанию для следующего штриха
+            DrawingCanvas.DefaultDrawingAttributes.Color = System.Windows.Media.Color.FromRgb(0, 0, 0);
             
-            Logger.LogInfo("Stroke state reset and brush color reset to Yellow for next stroke");
+            Logger.LogInfo("Stroke state reset and brush color reset to Black for next stroke");
         }
         
         

@@ -404,10 +404,10 @@ namespace ScreenCaptureApp
             // Настройка GeForceDrawingCanvas для обычного рисования
             GeForceDrawingCanvas.EditingMode = System.Windows.Controls.InkCanvasEditingMode.Ink;
             
-            // Устанавливаем желтый цвет кисти по умолчанию для GeForce
+            // Устанавливаем темно-синий цвет кисти по умолчанию для GeForce
             GeForceDrawingCanvas.DefaultDrawingAttributes = new System.Windows.Ink.DrawingAttributes
             {
-                Color = Colors.Yellow, // По умолчанию желтый цвет
+                Color = System.Windows.Media.Color.FromRgb(0, 77, 230), // По умолчанию темно-синий цвет
                 Width = 2,
                 Height = 2,
                 FitToCurve = true,
@@ -434,10 +434,10 @@ namespace ScreenCaptureApp
             // Настройка Mt4DrawingCanvas для рисования
             Mt4DrawingCanvas.EditingMode = System.Windows.Controls.InkCanvasEditingMode.Ink;
             
-            // Устанавливаем желтый цвет кисти по умолчанию для MT4
+            // Устанавливаем темно-синий цвет кисти по умолчанию для MT4
             Mt4DrawingCanvas.DefaultDrawingAttributes = new System.Windows.Ink.DrawingAttributes
             {
-                Color = Colors.Yellow, // По умолчанию желтый цвет
+                Color = System.Windows.Media.Color.FromRgb(0, 77, 230), // По умолчанию темно-синий цвет
                 Width = 2,
                 Height = 2,
                 FitToCurve = true,
@@ -453,7 +453,7 @@ namespace ScreenCaptureApp
             // Включаем поддержку различных типов ввода
             Mt4DrawingCanvas.IsManipulationEnabled = true;
             
-            Logger.LogInfo($"InkCanvas initialized successfully: GeForceDrawingCanvas and Mt4DrawingCanvas with Yellow brush");
+            Logger.LogInfo($"InkCanvas initialized successfully: GeForceDrawingCanvas and Mt4DrawingCanvas with Dark Blue brush");
         }
 
         // GeForce канвас обработчики событий
@@ -470,8 +470,8 @@ namespace ScreenCaptureApp
             }
             else
             {
-                GeForceDrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
-                Logger.LogInfo($"GeForce MouseDown: MACD model detected (Y={position.Y} >= {MACD_AREA_THRESHOLD}) - setting brush to Yellow for simple stroke");
+                GeForceDrawingCanvas.DefaultDrawingAttributes.Color = System.Windows.Media.Color.FromRgb(0, 77, 230);
+                Logger.LogInfo($"GeForce MouseDown: MACD model detected (Y={position.Y} >= {MACD_AREA_THRESHOLD}) - setting brush to Dark Blue for simple stroke");
             }
         }
         
@@ -488,8 +488,8 @@ namespace ScreenCaptureApp
             }
             else
             {
-                GeForceDrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
-                Logger.LogInfo($"GeForce PreviewMouseDown: MACD model detected - setting brush to Yellow");
+                GeForceDrawingCanvas.DefaultDrawingAttributes.Color = System.Windows.Media.Color.FromRgb(0, 77, 230);
+                Logger.LogInfo($"GeForce PreviewMouseDown: MACD model detected - setting brush to Dark Blue");
             }
         }
         
@@ -505,7 +505,7 @@ namespace ScreenCaptureApp
             }
             else
             {
-                GeForceDrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
+                GeForceDrawingCanvas.DefaultDrawingAttributes.Color = System.Windows.Media.Color.FromRgb(0, 77, 230);
             }
         }
         
@@ -521,7 +521,7 @@ namespace ScreenCaptureApp
             }
             else
             {
-                GeForceDrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
+                GeForceDrawingCanvas.DefaultDrawingAttributes.Color = System.Windows.Media.Color.FromRgb(0, 77, 230);
             }
         }
         
@@ -537,7 +537,7 @@ namespace ScreenCaptureApp
             }
             else
             {
-                GeForceDrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
+                GeForceDrawingCanvas.DefaultDrawingAttributes.Color = System.Windows.Media.Color.FromRgb(0, 77, 230);
             }
         }
         
@@ -553,7 +553,7 @@ namespace ScreenCaptureApp
             }
             else
             {
-                GeForceDrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
+                GeForceDrawingCanvas.DefaultDrawingAttributes.Color = System.Windows.Media.Color.FromRgb(0, 77, 230);
             }
         }
         
@@ -653,9 +653,9 @@ namespace ScreenCaptureApp
                     Mt4DrawingCanvas.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
                     Mt4DrawingCanvas.VerticalAlignment = System.Windows.VerticalAlignment.Top;
                     
-                    // Инициализируем MT4 канвас с желтой кистью
+                    // Инициализируем MT4 канвас с темно-синей кистью
                     var mt4DrawingAttributes = new System.Windows.Ink.DrawingAttributes();
-                    mt4DrawingAttributes.Color = Colors.Yellow;
+                    mt4DrawingAttributes.Color = System.Windows.Media.Color.FromRgb(0, 77, 230);
                     mt4DrawingAttributes.Width = 2;
                     mt4DrawingAttributes.Height = 2;
                     Mt4DrawingCanvas.DefaultDrawingAttributes = mt4DrawingAttributes;
@@ -1091,9 +1091,9 @@ namespace ScreenCaptureApp
             // Always use GeForceDrawingCanvas in simple mode
             GeForceDrawingCanvas.Visibility = Visibility.Visible;
             
-            // Устанавливаем желтый цвет по умолчанию (цвет будет выбран при начале рисования по модели)
-            GeForceDrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
-            Logger.LogInfo($"UpdateBrushMode: Brush color will be determined by model (OHLC=White, MACD=Yellow) when drawing starts");
+            // Устанавливаем темно-синий цвет по умолчанию (цвет будет выбран при начале рисования по модели)
+            GeForceDrawingCanvas.DefaultDrawingAttributes.Color = System.Windows.Media.Color.FromRgb(0, 77, 230);
+            Logger.LogInfo($"UpdateBrushMode: Brush color will be determined by model (OHLC=White, MACD=Dark Blue) when drawing starts");
             
             // Border always yellow in simple mode
             // CanvasBorder removed in 2-column layout
@@ -1124,9 +1124,9 @@ namespace ScreenCaptureApp
         public void UpdateSimpleBrushColor(bool isYellow)
         {
             // Цвет кисти теперь определяется по модели при начале рисования
-            // Устанавливаем желтый по умолчанию (цвет будет выбран при начале рисования по модели)
-            GeForceDrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
-            Logger.LogInfo($"UpdateSimpleBrushColor: Brush color will be determined by model (OHLC=White, MACD=Yellow) when drawing starts");
+            // Устанавливаем темно-синий по умолчанию (цвет будет выбран при начале рисования по модели)
+            GeForceDrawingCanvas.DefaultDrawingAttributes.Color = System.Windows.Media.Color.FromRgb(0, 77, 230);
+            Logger.LogInfo($"UpdateSimpleBrushColor: Brush color will be determined by model (OHLC=White, MACD=Dark Blue) when drawing starts");
             
             // Border removed in 2-column layout
             Logger.LogInfo($"Simple brush color updated - color will be set based on model when drawing starts");
@@ -1342,10 +1342,10 @@ namespace ScreenCaptureApp
             // Сбрасываем состояние для следующего штриха
             isControlPressedAtStrokeStart = false;
             
-            // Сбрасываем цвет кисти на желтый по умолчанию для следующего штриха
-            GeForceDrawingCanvas.DefaultDrawingAttributes.Color = Colors.Yellow;
+            // Сбрасываем цвет кисти на темно-синий по умолчанию для следующего штриха
+            GeForceDrawingCanvas.DefaultDrawingAttributes.Color = System.Windows.Media.Color.FromRgb(0, 77, 230);
             
-            Logger.LogInfo("GeForce stroke state reset and brush color reset to Yellow for next stroke");
+            Logger.LogInfo("GeForce stroke state reset and brush color reset to Dark Blue for next stroke");
         }
         
         private void GeForceDrawingCanvas_StrokeErasing(object sender, System.Windows.Controls.InkCanvasStrokeErasingEventArgs e)

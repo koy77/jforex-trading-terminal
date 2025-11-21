@@ -1146,7 +1146,7 @@ namespace ScreenCaptureApp
                 currentCanvasWindow.UpdateSimpleBrushColor(isYellowBrush);
             if (secondaryCanvasWindow != null && secondaryCanvasWindow.IsVisible)
                 secondaryCanvasWindow.UpdateSimpleBrushColor(isYellowBrush);
-            Logger.LogInfo("Brush color set to Yellow");
+            Logger.LogInfo("Brush color set to Dark Blue");
         }
 
         private void BlackBrushButton_Click(object sender, RoutedEventArgs e)
