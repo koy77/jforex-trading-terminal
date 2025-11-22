@@ -169,21 +169,27 @@ namespace ScreenCaptureApp.Helpers
                             var pixel = analysisBmp.GetPixel(x, y);
                             totalPixels++;
                             
-                            // Проверяем, что пиксель находится в правильной стороне от линии тренда
-                            if (IsPointInCorrectSide(x, y, isDownward))
-                            {
-                                if (IsRed(pixel))
-                                    redCount++;
-                                else if (IsGreen(pixel))
-                                    greenCount++;
-                            }
+                            // Check all pixels in the zone (zone is already offset in correct direction)
+                            // Count colors regardless of side check to catch breakouts more reliably
+                            if (IsRed(pixel))
+                                redCount++;
+                            else if (IsGreen(pixel))
+                                greenCount++;
                             
-                            debugPoints.Add((x, y, IsRed(pixel) || IsGreen(pixel)));
+                            // Also verify pixel is on correct side for additional validation
+                            bool isOnCorrectSide = IsPointInCorrectSide(x, y, isDownward);
+                            debugPoints.Add((x, y, (IsRed(pixel) || IsGreen(pixel)) && isOnCorrectSide));
                         }
                     }
                     
                     if (totalPixels > 0)
                     {
+                        // Debug logging for BUY breakout detection
+                        if (isDownward && i % 10 == 0)
+                        {
+                            Logger.LogDebug($"TrendlineBreakDetector: Zone {i} at ({centerX},{offsetY}) - Green: {greenCount}, Red: {redCount}, Total: {totalPixels}, Required: {breakoutPixelCount}");
+                        }
+                        
                         // Проверяем абсолютное количество пикселей вместо процентов
                         if (isDownward && greenCount >= breakoutPixelCount)
                         {
@@ -263,7 +269,7 @@ namespace ScreenCaptureApp.Helpers
                     );
                     
                     // Цвет зоны зависит от направления тренда
-                    var zoneColor = isDownward ? Color.FromArgb(80, Color.Blue) : Color.FromArgb(80, Color.Orange);
+                    var zoneColor = isDownward ? Color.FromArgb(80, Color.Green) : Color.FromArgb(80, Color.Orange);
                     using (var brush = new SolidBrush(zoneColor))
                         g.FillRectangle(brush, zoneRect);
                     g.DrawRectangle(new Pen(zoneColor, 1), zoneRect);
@@ -322,6 +328,25 @@ namespace ScreenCaptureApp.Helpers
             {
                 // This is a bright green trading stroke pixel, not a candle
                 return false;
+            }
+            
+            // Check for bright green BUY candle color: RGB(124, 252, 0) with tolerance
+            // Target color: R=124, G=252, B=0
+            // Allow deviation: ±40 for R, ±30 for G, ±10 for B
+            int brightTargetR = 124;
+            int brightTargetG = 252;
+            int brightTargetB = 0;
+            int brightToleranceR = 40;
+            int brightToleranceG = 30;
+            int brightToleranceB = 10;
+            
+            bool brightRMatch = Math.Abs(pixel.R - brightTargetR) <= brightToleranceR;
+            bool brightGMatch = Math.Abs(pixel.G - brightTargetG) <= brightToleranceG;
+            bool brightBMatch = Math.Abs(pixel.B - brightTargetB) <= brightToleranceB;
+            
+            if (brightRMatch && brightGMatch && brightBMatch)
+            {
+                return true;
             }
             
             // Green candle color: RGB(36, 131, 92) with tolerance
