@@ -134,12 +134,12 @@ namespace ScreenCaptureApp.Helpers
                     
                     if (isDownwardTrend)
                     {
-                        // Для нисходящего тренда ищем пробой вверх (зеленые пиксели выше линии)
+                        // For downward trend we search for breakout up (green BUY pixels above the line)
                         return y < lineY;
                     }
                     else
                     {
-                        // Для восходящего тренда ищем пробой вниз (красные пиксели ниже линии)
+                        // For upward trend we search for breakout down (red SELL pixels below the line)
                         return y > lineY;
                     }
                 }
@@ -155,7 +155,7 @@ namespace ScreenCaptureApp.Helpers
                         continue;
                     int halfW = zoneWidth / 2;
                     int halfH = zoneHeight / 2;
-                    int redCount = 0, greenCount = 0, totalPixels = 0;
+                    int redCount = 0, blueCount = 0, totalPixels = 0;
                     
                     for (int dx = 0; dx < zoneWidth; dx++)
                     {
@@ -173,12 +173,12 @@ namespace ScreenCaptureApp.Helpers
                             // Count colors regardless of side check to catch breakouts more reliably
                             if (IsRed(pixel))
                                 redCount++;
-                            else if (IsGreen(pixel))
-                                greenCount++;
+                            else if (IsBlue(pixel))
+                                blueCount++;
                             
                             // Also verify pixel is on correct side for additional validation
                             bool isOnCorrectSide = IsPointInCorrectSide(x, y, isDownward);
-                            debugPoints.Add((x, y, (IsRed(pixel) || IsGreen(pixel)) && isOnCorrectSide));
+                            debugPoints.Add((x, y, (IsRed(pixel) || IsBlue(pixel)) && isOnCorrectSide));
                         }
                     }
                     
@@ -187,24 +187,24 @@ namespace ScreenCaptureApp.Helpers
                         // Debug logging for BUY breakout detection
                         if (isDownward && i % 10 == 0)
                         {
-                            Logger.LogDebug($"TrendlineBreakDetector: Zone {i} at ({centerX},{offsetY}) - Green: {greenCount}, Red: {redCount}, Total: {totalPixels}, Required: {breakoutPixelCount}");
+                            Logger.LogDebug($"TrendlineBreakDetector: Zone {i} at ({centerX},{offsetY}) - Green (BUY): {blueCount}, Red (SELL): {redCount}, Total: {totalPixels}, Required: {breakoutPixelCount}");
                         }
                         
-                        // Проверяем абсолютное количество пикселей вместо процентов
-                        if (isDownward && greenCount >= breakoutPixelCount)
+                        // Check absolute pixel count instead of percentages
+                        if (isDownward && blueCount >= breakoutPixelCount)
                         {
-                            Logger.LogInfo($"TrendlineBreakDetector: Breakout UP detected at ({centerX},{offsetY}) - Green pixels: {greenCount}");
+                            Logger.LogInfo($"TrendlineBreakDetector: Breakout UP detected at ({centerX},{offsetY}) - Green (BUY) pixels: {blueCount}");
                             if (redCount >= breakoutPixelCount)
-                                Logger.LogError("Impossible: Downward trendline cannot одновременно иметь SELL breakout (red) и BUY breakout (green). Это логическая ошибка.");
+                                Logger.LogError("Impossible: Downward trendline cannot simultaneously have SELL breakout (red) and BUY breakout (green). This is a logic error.");
                             if (!string.IsNullOrEmpty(saveDebugPath))
                                 SaveDebugVisualization(cropped, debugPoints, trendline, saveDebugPath, (centerX, offsetY), zoneWidth, zoneHeight, true);
                             return TrendlineBreakResult.BreakoutUp;
                         }
                         else if (!isDownward && redCount >= breakoutPixelCount)
                         {
-                            Logger.LogInfo($"TrendlineBreakDetector: Breakout DOWN detected at ({centerX},{offsetY}) - Red pixels: {redCount}");
-                            if (greenCount >= breakoutPixelCount)
-                                Logger.LogError("Impossible: Upward trendline cannot одновременно иметь BUY breakout (green) и SELL breakout (red). Это логическая ошибка.");
+                            Logger.LogInfo($"TrendlineBreakDetector: Breakout DOWN detected at ({centerX},{offsetY}) - Red (SELL) pixels: {redCount}");
+                            if (blueCount >= breakoutPixelCount)
+                                Logger.LogError("Impossible: Upward trendline cannot simultaneously have BUY breakout (green) and SELL breakout (red). This is a logic error.");
                             if (!string.IsNullOrEmpty(saveDebugPath))
                                 SaveDebugVisualization(cropped, debugPoints, trendline, saveDebugPath, (centerX, offsetY), zoneWidth, zoneHeight, true);
                             return TrendlineBreakResult.BreakoutDown;
@@ -213,7 +213,7 @@ namespace ScreenCaptureApp.Helpers
                         {
                             Logger.LogError("Impossible: Downward trendline cannot have SELL breakout (red). This is a logic error.");
                         }
-                        else if (!isDownward && greenCount >= breakoutPixelCount)
+                        else if (!isDownward && blueCount >= breakoutPixelCount)
                         {
                             Logger.LogError("Impossible: Upward trendline cannot have BUY breakout (green). This is a logic error.");
                         }
@@ -268,19 +268,19 @@ namespace ScreenCaptureApp.Helpers
                         zoneHeight
                     );
                     
-                    // Цвет зоны зависит от направления тренда
-                    var zoneColor = isDownward ? Color.FromArgb(80, Color.Green) : Color.FromArgb(80, Color.Orange);
+                    // Zone color depends on trend direction
+                    var zoneColor = isDownward ? Color.FromArgb(80, Color.FromArgb(47, 170, 119)) : Color.FromArgb(80, Color.FromArgb(215, 55, 55));
                     using (var brush = new SolidBrush(zoneColor))
                         g.FillRectangle(brush, zoneRect);
                     g.DrawRectangle(new Pen(zoneColor, 1), zoneRect);
                 }
                 
-                // Рисуем проверенные пиксели
+                // Draw checked pixels
                 foreach (var pt in points)
                 {
                     if (showOnlyBreakoutPixels && !pt.isBreakout)
                         continue;
-                    var color = pt.isBreakout ? Color.Lime : Color.FromArgb(128, Color.Red);
+                    var color = pt.isBreakout ? Color.FromArgb(47, 170, 119) : Color.FromArgb(128, Color.FromArgb(215, 55, 55));
                     var rect = new Rectangle(pt.x - 2, pt.y - 2, 5, 5);
                     using (var brush = new SolidBrush(Color.FromArgb(80, color)))
                         g.FillRectangle(brush, rect);
@@ -320,7 +320,7 @@ namespace ScreenCaptureApp.Helpers
             }
         }
 
-        private bool IsGreen(System.Drawing.Color pixel)
+        private bool IsBlue(System.Drawing.Color pixel)
         {
             // First, exclude bright green trading stroke pixels (RGB ~38, 230, 0) to avoid false breakouts
             // Bright green trading strokes: G > 200, R < 50, B < 50
@@ -330,34 +330,15 @@ namespace ScreenCaptureApp.Helpers
                 return false;
             }
             
-            // Check for bright green BUY candle color: RGB(124, 252, 0) with tolerance
-            // Target color: R=124, G=252, B=0
-            // Allow deviation: ±40 for R, ±30 for G, ±10 for B
-            int brightTargetR = 124;
-            int brightTargetG = 252;
-            int brightTargetB = 0;
-            int brightToleranceR = 40;
-            int brightToleranceG = 30;
-            int brightToleranceB = 10;
+            // Check for green BUY candle color: RGB(47, 170, 119) with tolerance
+            // Target color: R=47, G=170, B=119
+            // Allow deviation: ±30 for each channel
+            int targetR = 47;
+            int targetG = 170;
+            int targetB = 119;
+            int tolerance = 30;
             
-            bool brightRMatch = Math.Abs(pixel.R - brightTargetR) <= brightToleranceR;
-            bool brightGMatch = Math.Abs(pixel.G - brightTargetG) <= brightToleranceG;
-            bool brightBMatch = Math.Abs(pixel.B - brightTargetB) <= brightToleranceB;
-            
-            if (brightRMatch && brightGMatch && brightBMatch)
-            {
-                return true;
-            }
-            
-            // Green candle color: RGB(36, 131, 92) with tolerance
-            // Target color: R=36, G=131, B=92
-            // Allow deviation: ±20 for each channel
-            int targetR = 36;
-            int targetG = 131;
-            int targetB = 92;
-            int tolerance = 20;
-            
-            // Check if pixel is close to the target green candle color
+            // Check if pixel is close to the target green BUY candle color
             bool rMatch = Math.Abs(pixel.R - targetR) <= tolerance;
             bool gMatch = Math.Abs(pixel.G - targetG) <= tolerance;
             bool bMatch = Math.Abs(pixel.B - targetB) <= tolerance;
@@ -367,7 +348,21 @@ namespace ScreenCaptureApp.Helpers
         }
         private bool IsRed(System.Drawing.Color pixel)
         {
-            return pixel.R > 130 && pixel.G < 100 && pixel.B < 100;
+            // Check for red SELL candle color: RGB(215, 55, 55) with tolerance
+            // Target color: R=215, G=55, B=55
+            // Allow deviation: ±30 for each channel
+            int targetR = 215;
+            int targetG = 55;
+            int targetB = 55;
+            int tolerance = 30;
+            
+            // Check if pixel is close to the target red SELL candle color
+            bool rMatch = Math.Abs(pixel.R - targetR) <= tolerance;
+            bool gMatch = Math.Abs(pixel.G - targetG) <= tolerance;
+            bool bMatch = Math.Abs(pixel.B - targetB) <= tolerance;
+            
+            // All channels must be within tolerance
+            return rMatch && gMatch && bMatch;
         }
     }
 } 
