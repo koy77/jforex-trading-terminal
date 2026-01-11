@@ -1561,12 +1561,38 @@ namespace ScreenCaptureApp
                     tempCanvas.Arrange(new Rect(0, 0, windowWidth, windowHeight));
                     rtb.Render(tempCanvas);
                     
+                    // Копируем в буфер обмена
                     System.Windows.Clipboard.SetImage(rtb);
                     
                     var toast = ServiceContainer.Instance.GetService<ToastNotifyService>();
                     toast?.ShowToast("Скопировано в буфер обмена!", ToastType.Success);
                     
                     Logger.LogInfo($"Copied window area to clipboard: {windowWidth}x{windowHeight} pixels");
+                    
+                    // Сохраняем во временный файл и отправляем в Telegram
+                    try
+                    {
+                        var tempFilePath = System.IO.Path.Combine(System.IO.Path.GetTempPath(), $"screenshot_{System.DateTime.Now:yyyyMMdd_HHmmss}.png");
+                        
+                        // Конвертируем RenderTargetBitmap в Bitmap и сохраняем
+                        var encoder = new System.Windows.Media.Imaging.PngBitmapEncoder();
+                        encoder.Frames.Add(System.Windows.Media.Imaging.BitmapFrame.Create(rtb));
+                        
+                        using (var fileStream = new System.IO.FileStream(tempFilePath, System.IO.FileMode.Create))
+                        {
+                            encoder.Save(fileStream);
+                        }
+                        
+                        Logger.LogInfo($"Screenshot saved to temp file: {tempFilePath}");
+                        
+                        // Отправляем в Telegram
+                        var telegramService = ServiceContainer.Instance.GetService<TelegramService>();
+                        telegramService?.SendPhoto(tempFilePath);
+                    }
+                    catch (Exception telegramEx)
+                    {
+                        Logger.LogError($"Error sending screenshot to Telegram: {telegramEx.Message}", telegramEx);
+                    }
                 }
             }
             catch (Exception ex)

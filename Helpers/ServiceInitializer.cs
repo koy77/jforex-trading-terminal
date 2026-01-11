@@ -31,6 +31,7 @@ namespace ScreenCaptureApp.Helpers
                 // container.RegisterSingleton(new BinaryOptionsSocketService()); // Temporarily disabled
                 container.RegisterSingleton(new ToastNotifyService());
                 container.RegisterSingleton(new JForexWindowsManagerService());
+                container.RegisterSingleton(new TelegramService());
                 
                 // Register global state
                 container.RegisterSingleton(new BrokerState());
