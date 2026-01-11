@@ -30,17 +30,14 @@ namespace ScreenCaptureApp.Services
             {
                 try
                 {
-                    using (var bot = new TelegramBotClient(_botToken))
+                    var bot = new TelegramBotClient(_botToken);
+                    using (var photoStream = File.OpenRead(photoPath))
                     {
-                        using (var photoStream = File.OpenRead(photoPath))
-                        {
-                            await bot.SendPhotoAsync(
-                                chatId: _channelId,
-                                photo: new InputFileStream(photoStream, Path.GetFileName(photoPath))
-                            );
-                        }
+                        await bot.SendPhoto(
+                            chatId: _channelId,
+                            photo: InputFile.FromStream(photoStream, Path.GetFileName(photoPath))
+                        );
                     }
-
                     Logger.LogInfo($"Скриншот отправлен в Telegram: {photoPath} (попытка {attempt})");
                     return; // Успешная отправка, выходим из метода
                 }
